@@ -1,0 +1,16 @@
+{
+	"name": "ORUK",
+	"license": "UNLICENSED",
+	"private": true,
+	"workspaces": [
+		"packages/apps/*",
+		"packages/libraries/**/*"
+	],
+	"scripts":{
+		"hub": "yarn workspace @oruk/hub dev"
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	}
+}
