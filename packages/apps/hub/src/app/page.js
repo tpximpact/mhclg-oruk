@@ -4,7 +4,7 @@ import {LoremIpsum} from "@tpx/LoremIpsum"
 
 export default function Home() {
   return (
-    <main>
+    <main className={styles.main}>
 		<h1>Open Referral UK</h1>
 		<LoremIpsum/>
 		<Link href="/dashboard">Dashboard</Link>
