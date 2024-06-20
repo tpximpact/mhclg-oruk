@@ -1,0 +1,17 @@
+{
+	"name": "openreferraluk",
+	"license": "UNLICENSED",
+	"private": true,
+	"workspaces": [
+		"packages/apps/*",
+		"packages/libraries/**/*"
+	],
+	"scripts":{
+		"hub": "yarn workspace @oruk/hub dev",
+		"build": "yarn workspace @oruk/hub build"
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	}
+}
