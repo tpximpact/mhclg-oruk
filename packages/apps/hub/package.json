@@ -1,6 +1,5 @@
 {
   "name": "@oruk/hub",
-  "author": "G.Hilton <guy.hilton@tpximpact.com>",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,6 +12,8 @@
     "react": "^18",
     "react-dom": "^18",
     "next": "14.2.4",
-    "@tpx/LoremIpsum":"0.0.1"
+    "@tpx/LoremIpsum":"0.0.1",
+	"@oruk/Dashboard":"0.0.1",
+	"@oruk/Validate":"0.0.1"
   }
 }

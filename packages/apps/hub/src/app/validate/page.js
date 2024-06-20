@@ -1,9 +1,9 @@
-import {Dashboard} from "@oruk/Dashboard"
+import {Validate} from "@oruk/Validate"
 
 export default async function Page() {
 	return (
 		<>
-			<Dashboard />
+			<Validate />
 		</>
 	)
 }

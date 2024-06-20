@@ -8,7 +8,7 @@ export default function Home() {
 		<h1>Open Referral UK</h1>
 		<LoremIpsum/>
 		<Link href="/dashboard">Dashboard</Link>
-		<Link href="/validator">Validator</Link>
+		<Link href="/validate">Validate</Link>
     </main>
   );
 }
