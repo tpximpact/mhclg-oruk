@@ -3,5 +3,8 @@
 	"version": "0.0.1",
 	"main": "src/index.js",
 	"author": "swirrl <info@swirrl.com>",
-	"license": "UNLICENSED"
+	"license": "UNLICENSED",
+		"dependencies": {
+    "react": "^18"
+  }
 }

@@ -2,5 +2,8 @@
 	"name": "@oruk/Dashboard",
 	"version": "0.0.1",
 	"main": "src/index.js",
-	"license": "UNLICENSED"
+	"license": "UNLICENSED",
+		"dependencies": {
+    "react": "^18"
+  }
 }

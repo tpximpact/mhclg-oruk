@@ -2,5 +2,9 @@
 	"name": "@oruk/Validate",
 	"version": "0.0.1",
 	"main": "src/index.js",
-	"license": "UNLICENSED"
+	"license": "UNLICENSED",
+	"dependencies": {
+    "react": "^18",
+    "@tpx/LoremIpsum":"0.0.1"
+  }
 }
