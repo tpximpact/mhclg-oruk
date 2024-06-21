@@ -6,12 +6,18 @@
 		"packages/apps/*",
 		"packages/libraries/**/*"
 	],
-	"scripts":{
+	"scripts": {
 		"hub": "yarn workspace @oruk/hub dev",
-		"build": "yarn workspace @oruk/hub build"
+		"build": "yarn workspace @oruk/hub build",
+		"tidy": "yarn prettier . --write",
+		"lint": "yarn run eslint --fix ./packages"
 	},
 	"dependencies": {
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"eslint": "9.5.0",
+		"prettier": "3.3.2"
 	}
 }

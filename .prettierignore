@@ -1,17 +1,4 @@
 *.min.js
-**/node_modules/**
-plop-templates/*
-
-# cache-dirs
 **/.cache
-
-# ignore built packages
-storybook-static/**
-packages/apps/embed/**
-packages/apps/embed-gds/**
-packages/**/dist/**
-packages/**/build/**
-packages/**/out/**
 **/.next/**
 **/node_modules/**
-storybook-static/**
