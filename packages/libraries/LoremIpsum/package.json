@@ -4,7 +4,7 @@
 	"main": "src/index.js",
 	"author": "swirrl <info@swirrl.com>",
 	"license": "UNLICENSED",
-		"dependencies": {
-    "react": "^18"
-  }
+	"dependencies": {
+		"react": "^18"
+	}
 }

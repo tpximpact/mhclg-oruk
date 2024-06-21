@@ -1,4 +1,4 @@
-import {Dashboard} from "@oruk/Dashboard"
+import { Dashboard } from '@oruk/Dashboard'
 
 export default async function Page() {
 	return (
