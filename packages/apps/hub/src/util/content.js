@@ -1,9 +1,10 @@
 import fs from 'fs'
 import { join } from 'path'
 import { PATHS } from './paths'
+import { FILE_EXTENSION } from './markdown'
 
-export const slugsFrom = (folder, extension) =>
-	allFilesOfType(getPath(folder), extension).map(f => ({ slug: f.split('.')[0] }))
+export const slugsFrom = (folder) =>
+	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({ slug: f.split('.')[0] }))
 
 const getPath = dir => join(process.cwd(), PATHS.contentRoot, dir)
 
@@ -14,7 +15,8 @@ const allFilesOfType = (path, fileExtension) => {
 	}
 }
 
-export const readFile = ({ file, folder }) => {
+export const readFile = ({ slug, folder }) => {
+	const file = `${slug}.${FILE_EXTENSION}`
 	const path = getPath(folder)
 	const filePath = join(path, file)
 	return fs.readFileSync(filePath, 'utf8')
