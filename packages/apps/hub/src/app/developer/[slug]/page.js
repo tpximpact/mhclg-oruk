@@ -1,29 +1,14 @@
-import fs from 'fs'
-import { join } from 'path'
+import { slugsFrom, readFile } from '../../../util/content'
+import { PATHS } from '../../../util/paths'
+import { FILE_EXTENSION } from '../../../util/markdown'
 
-const SUBFOLDER = 'developer'
-const EXTENSION = 'md'
+const SUBFOLDER = PATHS.developer
 
-export const generateStaticParams = () => slugsFrom(SUBFOLDER,EXTENSION)
-export default function Page({ params }) {
+export const generateStaticParams = () => slugsFrom(SUBFOLDER, FILE_EXTENSION)
+
+const Page = ({ params }) => {
 	const { slug } = params
-	const markdownRaw = readFile({file:`${slug}.${EXTENSION}`,folder:SUBFOLDER})
+	const markdownRaw = readFile({ file: `${slug}.${FILE_EXTENSION}`, folder: SUBFOLDER })
 	return <div>{markdownRaw}</div>
 }
-
-const slugsFrom = (folder,extension) => allFilesOfType(getPath(folder), extension).map(f => ({slug:f}))
-
-const getPath = dir => join(process.cwd(), 'content', dir)
-
-const allFilesOfType = (path, fileExtension) => {
-	if (fs.existsSync(path)) {
-		const result = fs.readdirSync(path).filter(f => f.split('.')[1] === fileExtension)
-		return result
-	}
-}
-
-export const readFile = ({ file, folder }) => {
-	const path = getPath(folder)
-	const filePath = join(path, file)
-	return fs.readFileSync(filePath, 'utf8')
-}
+export default Page
