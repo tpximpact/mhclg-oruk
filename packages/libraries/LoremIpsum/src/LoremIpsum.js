@@ -1,13 +1,13 @@
 import React from 'react'
 
-export const Small = props => (
+export const Small = () => (
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla eros, rutrum at justo sed,
 		fermentum mattis tortor.
 	</p>
 )
 
-export const Medium = props => (
+export const Medium = () => (
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla eros, rutrum at justo sed,
 		fermentum mattis tortor. Nulla viverra sit amet neque ut laoreet. Integer vel congue est. Donec
@@ -20,7 +20,7 @@ export const Medium = props => (
 	</p>
 )
 
-export const Large = ({ props }) => (
+export const Large = () => (
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla eros, rutrum at justo sed,
 		fermentum mattis tortor. Nulla viverra sit amet neque ut laoreet. Integer vel congue est. Donec
