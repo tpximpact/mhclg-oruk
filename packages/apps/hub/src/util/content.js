@@ -3,7 +3,7 @@ import { join } from 'path'
 import { PATHS } from './paths'
 import { FILE_EXTENSION } from './markdown'
 
-export const slugsFrom = (folder) =>
+export const slugsFrom = folder =>
 	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({ slug: f.split('.')[0] }))
 
 const getPath = dir => join(process.cwd(), PATHS.contentRoot, dir)
