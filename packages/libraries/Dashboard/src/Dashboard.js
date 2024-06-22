@@ -1,14 +1,10 @@
-import React,  { createContext, useContext } from 'react'
-
-export const LevelContext = createContext(1);
+import React from 'react'
 
 export const Dashboard = () => {
-	const level = useContext(LevelContext);
-	
 	return (
-	<div>
-		<h1>Dashboard tool</h1>
-		<p>Hello world</p>
-	</div>
-)
+		<div>
+			<h1>Dashboard tool</h1>
+			<p>Hello world</p>
+		</div>
+	)
 }
