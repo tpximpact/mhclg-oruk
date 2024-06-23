@@ -15,7 +15,7 @@ const Page = () => {
 	return (
 		<>
 			<MarkdownContent raw={markdownRaw} />
-			<Menu items={items} folder={'/community/case-studies'}/>
+			<Menu items={items} folder={'community/case-studies'}/>
 		</>
 	)
 }
