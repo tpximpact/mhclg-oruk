@@ -1,3 +1,3 @@
-# How it works
+# Community
 
-Find out how to adopt the standard and learn more about the features of the standard.
+Open Referral UK is a community-led data standard. Find out more about our community and get involved.

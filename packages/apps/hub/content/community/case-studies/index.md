@@ -1,3 +1,3 @@
-# How it works
+# Case studies
 
-Find out how to adopt the standard and learn more about the features of the standard.
+Read about how others adopted the standard – their experience of the process and what they've learned. 
