@@ -1,3 +1,15 @@
 .header {
-	
+	text-align: left;
+	padding-bottom: 0;
+}
+
+.header ol {
+	margin:2rem 0 0;
+    padding:0;
+    list-style: inside none;
+}
+
+.header ol li {
+	padding-right:2rem;
+	display: inline;
 }
