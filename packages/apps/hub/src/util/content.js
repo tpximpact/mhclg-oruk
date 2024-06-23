@@ -6,7 +6,7 @@ import { FILE_EXTENSION } from './markdown'
 export const slugsFrom = folder =>
 	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({ slug: f.split('.')[0] }))
 
-const getPath = dir => join(process.cwd(), PATHS.contentRoot, dir)
+export const getPath = dir => join(process.cwd(), PATHS.contentRoot, dir)
 
 export const allFilesOfType = (path, fileExtension) => {
 	if (fs.existsSync(path)) {
