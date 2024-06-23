@@ -1,0 +1,7 @@
+.menuItem {
+	display: block;
+	border: 1px solid black;
+	padding: 2rem;
+
+	margin-bottom: 1rem;
+}
