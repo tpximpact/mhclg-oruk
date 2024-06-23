@@ -9,10 +9,11 @@ const Page = () => {
 	const markdownRaw = readFile({
 		folder: SUBFOLDER
 	})
-	return  (<>
-	<Header />
-	<MarkdownContent raw={markdownRaw}/>
-	</>)
+	return (
+		<>
+			<Header selected={SUBFOLDER} />
+			<MarkdownContent raw={markdownRaw} />
+		</>
+	)
 }
 export default Page
-
