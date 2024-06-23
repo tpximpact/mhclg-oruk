@@ -1,16 +1,18 @@
-import { slugsFrom, readFile } from '../../../util/content'
-import { PATHS } from '../../../util/paths'
+import { readFile } from '@/util/content'
+import { PATHS } from '@/util/paths'
+import { marked } from 'marked'
 
-const SUBFOLDER = PATHS.developer
+const SUBFOLDER = PATHS.about
 
-export const generateStaticParams = () => slugsFrom(SUBFOLDER)
-
-const Page = ({ params }) => {
-	const { slug } = params
+const Page = () => {
 	const markdownRaw = readFile({
-		slug: slug,
 		folder: SUBFOLDER
 	})
-	return <div>{markdownRaw}</div>
+	return  <PageMarkdown raw={markdownRaw}/>
 }
 export default Page
+
+const PageMarkdown = ({raw}) => {
+	const markup = { __html: marked.parse(raw) }
+	return <main dangerouslySetInnerHTML={markup} />
+}

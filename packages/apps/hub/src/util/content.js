@@ -15,7 +15,7 @@ const allFilesOfType = (path, fileExtension) => {
 	}
 }
 
-export const readFile = ({ slug, folder }) => {
+export const readFile = ({ slug='index', folder }) => {
 	const file = `${slug}.${FILE_EXTENSION}`
 	const path = getPath(folder)
 	const filePath = join(path, file)
