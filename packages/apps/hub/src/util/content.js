@@ -18,11 +18,11 @@ const fileNameToText = fileName => {
 	result = result.replace(regex, '')
 	result = result.replace('-', '')
 	result = result.replaceAll('-', ' ')
-	result = result.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function (c) {
+	result = result.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, function (c) {
 		return c.toUpperCase()
 	})
 	return result
-}
+} 
 
 export const slugsFrom = folder =>
 	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({ slug: f.split('.')[0] }))
