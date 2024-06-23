@@ -19,7 +19,7 @@ export const Menu = () => {
 }
 
 const MenuItem = props => (
-	<Link className={styles.menuItem} href={props.target}>
+	<Link className={styles.menuItem} href={'/' + 'how' + '/' + props.target}>
 		{props.text}
 	</Link>
 )

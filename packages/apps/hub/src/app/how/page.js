@@ -1,4 +1,4 @@
-import { readFile, allFilesOfType } from '@/util/content'
+import { readFile  } from '@/util/content'
 import { PATHS } from '@/util/paths'
 import { MarkdownContent } from '@/components/MarkdownContent'
 
