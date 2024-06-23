@@ -5,11 +5,11 @@ import { MarkdownContent } from '@/components/MarkdownContent'
 import { Menu } from '@/components/Menu'
 */
 const Page = () => {
-	
-
 	return (
 		<>
-			<main><h1>Organisations</h1></main>
+			<main>
+				<h1>Organisations</h1>
+			</main>
 		</>
 	)
 }

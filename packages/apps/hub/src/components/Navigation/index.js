@@ -22,11 +22,16 @@ const NavItem = ({ key, selectedTarget, target, text, offsite }) => {
 			</li>
 		)
 
-	if (selectedTarget === target) return <li key={key} className={styles.selected}>{text}</li>
+	if (selectedTarget === target)
+		return (
+			<li key={key} className={styles.selected}>
+				{text}
+			</li>
+		)
 
 	return (
-		<li key={key} >
-			<Link  href={'/' + target}>{text}</Link>
+		<li key={key}>
+			<Link href={'/' + target}>{text}</Link>
 		</li>
 	)
 }
