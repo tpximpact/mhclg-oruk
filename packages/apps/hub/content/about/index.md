@@ -28,6 +28,7 @@ Open data standards are:
 Every community faces a similar challenge: there are many different kinds of health, human, and social services that are available to people in need, yet no one way that information about them is produced and shared. Instead, organisations tend to collect community services data in isolation from each other in fragmented silos.
 
 This means:
+
 - many people never discover services that could help improve their lives
 - service providers spend time checking and verifying data rather than helping people
 - decision-makers struggle to evaluate the effectiveness of community programmes as they don’t have access to the right information
@@ -37,30 +38,49 @@ This can lead to systems that fail people and communities.
 ### The opportunity
 
 Using the open data standard approach is a way of gathering data that is reliable and reduces duplication of effort.
-The Open Referral UK initiative brings together local councils, government organisations, voluntary bodies, funders and technologists, and focuses efforts on a shared goal: let’s make it as easy as possible to publish, find and use resource directory information.
-By adopting the standard there is an opportunity
-for better use of resources by collecting information once and sharing it between partners and across geographical boundaries
-to rationalise software by sharing capability
-to save frontline workers time having to research their own information
-to ensure that progressive initiatives such as social prescribing are successful in identifying the most appropriate support and activities to keep people safe and well
-Local Digital Declaration – a shared ambition
-Improving our information systems is part of the work of the Local Digital Declaration – a shared ambition for the future of local public services written in 2018.
-Never before has it been possible to collaborate so effectively, to deliver services across so many boundaries, to interrogate our data so insightfully, to realise such great efficiencies, and to reshape public services for the benefit of all while retaining local sovereignty.
-Local Digital Declaration, 2018
-An important principle of the Declaration insists on using ‘open standards to give a common structure to the data we create’ and ‘modular building blocks for IT applications’. Open Referral UK is one such standard.
-International Open Referral data standard
-The standard is rooted in open data standard principles which is part of the remit of the Local Digital Declaration, but the standard itself originates in the US and builds on the work done by Greg Bloom. The specific focus of the Open Referral data standard was to set up a standard for local directories using community services data.
-Examples of US programmes using the standard to structure their service information:
-North Carolina Department of Health and Human Services implemented an interoperable resource directory to match clients to health care providers, community-based organisations, and public services
-District of Columbia Primary Care Association is using Open Referral to help understand how to build infrastructure that supports coordinated screening, referral and tracking across a range of health, human, and social services
-Hunger Free America publishes printed guides to help people get free food in New York City and operates a National Hunger Hotline
-Bay Area Community provides information on food programmes, legal aid, mental health, domestic violence support, housing, benefits, and more during the COVID-19 pandemic
 
-Background to the standard
-In 2019 a discovery report undertaken by Snook, an award-winning design agency based in Glasgow and London, showed the benefits of adopting a common standard for community services data. The research showed how adopting a common data standard could result in:
-savings of £7 million in adult social care nationally a year
-savings of up to £73,096 a year from direct costs (across a typical upper-tier geographic area)
+The Open Referral UK initiative brings together local councils, government organisations, voluntary bodies, funders and technologists, and focuses efforts on a shared goal: let’s make it as easy as possible to publish, find and use resource directory information.
+
+By adopting the standard there is an opportunity
+
+- for better use of resources by collecting information once and sharing it between partners and across geographical boundaries
+- to rationalise software by sharing capability
+- to save frontline workers time having to research their own information
+- to ensure that progressive initiatives such as social prescribing are successful in identifying the most appropriate support and activities to keep people safe and well
+
+## Local Digital Declaration – a shared ambition
+
+Improving our information systems is part of the work of the Local Digital Declaration – a shared ambition for the future of local public services written in 2018.
+
+<blockquote>
+Never before has it been possible to collaborate so effectively, to deliver services across so many boundaries, to interrogate our data so insightfully, to realise such great efficiencies, and to reshape public services for the benefit of all while retaining local sovereignty.
+<cite>Local Digital Declaration, 2018</cite>
+</blockquote>
+
+An important principle of the Declaration insists on using ‘open standards to give a common structure to the data we create’ and ‘modular building blocks for IT applications’. Open Referral UK is one such standard.
+
+## International Open Referral data standard
+
+The standard is rooted in open data standard principles which is part of the remit of the Local Digital Declaration, but the standard itself originates in the US and builds on the work done by Greg Bloom. The specific focus of the Open Referral data standard was to set up a standard for local directories using community services data.
+
+Examples of US programmes using the standard to structure their service information:
+
+- [North Carolina](https://www.unitedwaync.org) Department of Health and Human Services implemented an interoperable resource directory to match clients to health care providers, community-based organisations, and public services
+- [District of Columbia Primary Care Association](https://www.dcpca.org) is using Open Referral to help understand how to build infrastructure that supports coordinated screening, referral and tracking across a range of health, human, and social services
+- [Hunger Free America](https://www.hungerfreeamerica.org/en-us/) publishes printed guides to help people get free food in New York City and operates a National Hunger Hotline
+- [Bay Area Community](https://dcl-covid-19.github.io/mega-map-dev/#/) provides information on food programmes, legal aid, mental health, domestic violence support, housing, benefits, and more during the COVID-19 pandemic
+
+## Background to the standard
+
+In 2019 a [discovery report](https://opencommunity.org.uk/wp-content/uploads/2019/05/Report-OpenCommunity-Data-standards.pdf) undertaken by Snook, an award-winning design agency based in Glasgow and London, showed the benefits of adopting a common standard for community services data. The research showed how adopting a common data standard could result in:
+
+- savings of £7 million in adult social care nationally a year
+- savings of up to £73,096 a year from direct costs (across a typical upper-tier geographic area)
+
 The report recommended that an existing data standard be selected for further development for this purpose. It outlined a vision for a coordinated ecosystem-approach to drive its adoption.
-The Local Government Association (LGA), working with Porism, iStandUK and Digital Gaps, extended the existing Open Referral standard to create Open Referral UK. They ran a pilot project for the Department for Digital, Culture, Media and Sport (DCMS) to combat loneliness in Elmbridge District Council, Hull City Council and Blackburn with Darwen Council. There was further interest from other councils including Bristol, South Gloucestershire and North Yorkshire. See the LGA’s report on Loneliness Pilots.
-At the same time, Buckinghamshire Council ran an OpenCommunity alpha project. FutureGov, Placecube and Public Consulting Group all developed their products to support the standard. Read the alpha report on extending the Open Referral standard.
+
+The Local Government Association (LGA), working with Porism, iStandUK and Digital Gaps, extended the existing Open Referral standard to create Open Referral UK. They ran a pilot project for the Department for Digital, Culture, Media and Sport (DCMS) to combat loneliness in Elmbridge District Council, Hull City Council and Blackburn with Darwen Council. There was further interest from other councils including Bristol, South Gloucestershire and North Yorkshire. See the [LGA’s report on Loneliness Pilots](https://home.esd.org.uk/news-item/283).
+
+At the same time, Buckinghamshire Council ran an OpenCommunity alpha project. FutureGov, Placecube and Public Consulting Group all developed their products to support the standard. Read the alpha [report on extending the Open Referral standard](https://docs.google.com/document/d/1xgbeNGiHSwmRsShtrUgNFm4SYLdsc5vXSoTmb1DEirY/edit#heading=h.slpaf0vj4ibu).
+
 In 2021, Adur and Worthing, Leeds and Essex Councils partnered on a beta project with the goal of driving widespread adoption of the data standard. The outputs of the beta project included this website.
