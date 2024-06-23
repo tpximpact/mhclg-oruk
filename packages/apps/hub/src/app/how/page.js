@@ -1,4 +1,4 @@
-import { readFile  } from '@/util/content'
+import { readFile } from '@/util/content'
 import { PATHS } from '@/util/paths'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { buildItemMenuData } from '@/util/content'
@@ -20,7 +20,7 @@ const Page = () => {
 	return (
 		<>
 			<MarkdownContent raw={markdownRaw} />
-			<Menu items={items} folder={folder}/>
+			<Menu items={items} folder={folder} />
 		</>
 	)
 }

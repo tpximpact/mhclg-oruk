@@ -6,7 +6,7 @@ Process
 We implemented the standard in our directory for Hull who were participating in a pilot project managed by the Local Government Association.
 Our experience of the process was great - there was lots of support on hand throughout the project and many opportunities to share feedback, queries and experience between the pilot local authorities and technology providers.
 Challenges
-We know from experience that engaging providers can be challenging and, with this in mind, we are always working to make the directory registration process as simple as possible. 
+We know from experience that engaging providers can be challenging and, with this in mind, we are always working to make the directory registration process as simple as possible.
 One challenge we faced was determining the length of the registration form. There are many different lists of categories available within the schema, so working with Hull City Council in achieving a good balance to ensure that providers would not be put off or confused by the process was vital.
 Another difficulty was working through the existing database, re-tagging the listings to match the new values from the schema. From Hull City Council’s perspective, this was a significantly resource-intensive task and the data then needed to be reviewed and re-uploaded by PPL.
 Benefits

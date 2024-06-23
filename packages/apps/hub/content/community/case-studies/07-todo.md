@@ -10,7 +10,7 @@ The main challenge will be to expand and maintain the quality of our online reso
 Benefits
 We anticipate that adopting the standard will help make our online resource a rich source of information for residents and frontline professionals. The classification of services by needs, circumstances and types will allows professionals such as social prescribers to match their clients to services that will support their needs.
 What we learned
-They will need to consider the format and structure of their current data compared to the standard. 
+They will need to consider the format and structure of their current data compared to the standard.
 Contact details
 mbussicott@elmbridge.gov.uk
 nwade@elmbridge.gov.uk
