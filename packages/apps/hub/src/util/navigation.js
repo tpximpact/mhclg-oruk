@@ -18,7 +18,7 @@ export const NAVIGATION_ITEMS = [
 		text: 'Community'
 	},
 	{
-		target: PATHS.developers,
+		target: PATHS.developer,
 		text: 'For developers'
 	},
 	{

@@ -3,7 +3,7 @@ import { join } from 'path'
 import { PATHS } from './paths'
 import { FILE_EXTENSION } from './markdown'
 
-export const buildItemMenuData = dir =>
+export const buildItemMenuData = dir => 
 	allFilesOfType(getPath(dir), FILE_EXTENSION)
 		.filter(f => f !== 'index.md')
 		.map(item => ({

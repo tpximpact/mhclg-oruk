@@ -1,25 +1,25 @@
 import styles from './Menu.module.css'
 import Link from 'next/link'
-import { buildItemMenuData } from '@/util/content'
 
-export const Menu = () => {
-	const items = buildItemMenuData('how')
-	items.push({
-		target: '/tools/dashhboard',
-		text: 'Data feed dashboard'
-	})
+export const Menu = ({folder, items}) => {
 
 	return (
 		<main>
 			{items.map(item => (
-				<MenuItem key={item.target} text={item.text} target={item.target} />
+				<MenuItem key={item.target} folder={folder} teaser={item.teaser} absolute={item.absolute} text={item.text} target={item.target} />
 			))}
 		</main>
 	)
 }
 
 const MenuItem = props => (
-	<Link className={styles.menuItem} href={'/' + 'how' + '/' + props.target}>
+	<Link className={styles.menuItem} href={
+		props.absolute ? 
+		 props.target
+		:
+		'/' + props.folder + '/' + props.target
+		}>
 		{props.text}
+		{props.teaser && <span className={styles.teaser}>{props.teaser}</span>}
 	</Link>
 )
