@@ -8,7 +8,7 @@ export const slugsFrom = folder =>
 
 const getPath = dir => join(process.cwd(), PATHS.contentRoot, dir)
 
-const allFilesOfType = (path, fileExtension) => {
+export const allFilesOfType = (path, fileExtension) => {
 	if (fs.existsSync(path)) {
 		const result = fs.readdirSync(path).filter(f => f.split('.')[1] === fileExtension)
 		return result
