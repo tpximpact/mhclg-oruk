@@ -6,7 +6,7 @@ export const Menu = () => {
 	const items = buildItemMenuData('how')
 	items.push({
 		target: '/tools/dashhboard',
-		text: 'Data feed dahboard'
+		text: 'Data feed dashboard'
 	})
 
 	return (
