@@ -1,6 +1,7 @@
 import { readFile } from '@/util/content'
 import { PATHS } from '@/util/paths'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { Header } from '@/components/Header'
 
 const SUBFOLDER = PATHS.about
 
@@ -9,6 +10,7 @@ const Page = () => {
 		folder: SUBFOLDER
 	})
 	return  (<>
+	<Header />
 	<MarkdownContent raw={markdownRaw}/>
 	</>)
 }
