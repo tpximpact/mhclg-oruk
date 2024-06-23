@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import { Footer } from '@/components/Footer/index'
-import _ from '@swirrl/CssReset' // eslint-disable-line no-unused-vars
-import __ from '@swirrl/CssColoursTailwind' // eslint-disable-line no-unused-vars
+//import _ from '@swirrl/CssReset' // eslint-disable-line no-unused-vars
 import './tokens.css'
 import './mvp.css' // temporary placeholder styles
 
