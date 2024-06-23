@@ -23,7 +23,7 @@ export const NAVIGATION_ITEMS = [
 	},
 	{
 		target: 'https://forum.openreferral.org',
-		text: 'forum',
+		text: 'Forum',
 		offsite: true
 	},
 	{
