@@ -1,14 +1,11 @@
-import styles from './page.module.css'
-import Link from 'next/link'
-import { LoremIpsum } from '@tpx/LoremIpsum'
+import { Header } from '@/components/Header'
+import { Homepage } from '@/components/Homepage'
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
-			<h1>Open Referral UK</h1>
-			<LoremIpsum />
-			<Link href='/dashboard'>Dashboard</Link>
-			<Link href='/validate'>Validate</Link>
-		</main>
+		<>
+			<Header selected='' />
+			<Homepage />
+		</>
 	)
 }
