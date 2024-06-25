@@ -1,7 +1,12 @@
 import fs from 'fs'
 import { join } from 'path'
-import { PATHS } from './paths'
-import { FILE_EXTENSION } from './markdown'
+
+export const PATHS = {
+	contentRoot: 'content',
+	developer: 'developer'
+}
+
+const FILE_EXTENSION = 'md'
 
 export const slugsFrom = (folder) =>
 	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({ slug: f.split('.')[0] }))

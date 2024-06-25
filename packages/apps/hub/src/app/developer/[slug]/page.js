@@ -1,5 +1,4 @@
-import { slugsFrom, readFile } from '../../../util/content'
-import { PATHS } from '../../../util/paths'
+import { slugsFrom, readFile, PATHS } from '@/util/content'
 
 const SUBFOLDER = PATHS.developer
 
