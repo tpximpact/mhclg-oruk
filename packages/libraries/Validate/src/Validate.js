@@ -2,8 +2,8 @@ import React from 'react'
 import { LoremIpsum } from '@tpx/LoremIpsum'
 
 export const Validate = () => (
-	<div>
+	<main>
 		<h1>Validate tool</h1>
 		<LoremIpsum />
-	</div>
+	</main>
 )
