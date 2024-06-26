@@ -9,11 +9,13 @@ Date: 25 June, 2024
 
 ## 1.0 Executive summary
 
-- 1.1 This document describes changes proposed to the architecture of the user-facing websites.
+- 1.1 This document describes changes proposed to the architecture of the user-facing websites. A shared understanding of the implications and benefits is important. As these are prerequisite requirements, we need to commit to these, and if possible, escalate to client for sign-off.
 
-- 1.2 A shared understanding of the implications and benefits is important. As these are prerequisite requirements, we need to commit to these, and if possible, escalate to client for sign-off.
+- 1.2 There would be (at least) two ways of approaching this brief. The first would be to accept the existing architecture and confine our work strictly to the validator and dashboard tools. This approach has the benefit of minimalism and remains a possible option. It would not however allow us to deliver to the quality of accessibilty to which we would usually aspire, would accept inbuilt scalability limitations on the dashboard, and would require manual co-ordination of styling accross the several affected sites (ie the front end, the developer site, the validator, the dashboard). The latter in particular involves accepting an unknown level of risk and potentially error-prone manual work. 
 
-- 1.3 Most of the existing online properties can be - and will benefit from being - consolidated into a common platform.
+- 1.3 For this reason the proposed approach instead accepts a known quantity of additional work at the beginning of the process - to consolidate and render consistent the various elements upfront - with the result of streamlining and de-risking the process especially in the later stages, and delivering to an overall higher, more accessible, more maintainable and more robust techncial standard.
+
+- 1.4 Most of the existing online properties can be - and will benefit from being - consolidated into a common platform.
 
 - 1.5 A static site build will be triggered - and tested and deployed if successful - automatically, whenever new content is committed to a git repository. This inverts the current arrangement, which combines human-initiated builds and demand-time information requests.
 
