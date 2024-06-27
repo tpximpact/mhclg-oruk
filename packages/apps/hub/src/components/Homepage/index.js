@@ -1,9 +1,8 @@
 import { PageMargin } from '@tpx/PageMargin'
 import Columns from '@tpx/Columns'
 import { Organisations } from './Organisations'
-import styles from './Homepage.module.css'
 
-const Section = ({ children }) => <section className={styles.section}>{children}</section>
+import { Section } from '@tpx/Section'
 
 const Transcript = () => (
 	<div>
@@ -124,7 +123,7 @@ const CaseStudiesSignpost = () => (
 )
 
 const Quote = () => (
-	<section>
+	<Section>
 		<figure>
 			<blockquote>
 				The services out there can change people&apos; lives. But if we don&apos;t have accurate and
@@ -133,11 +132,11 @@ const Quote = () => (
 			</blockquote>
 			<figcaption>– Key worker in Blackburn</figcaption>
 		</figure>
-	</section>
+	</Section>
 )
 
 const Benefits = () => (
-	<section className='format list-items-boxed benefits'>
+	<Section>
 		<h3>What are the benefits?</h3>
 		<p>
 			Adopting the Open Referral UK standard for community services data can enable the following
@@ -165,14 +164,12 @@ const Benefits = () => (
 			See how the standard helps you to realise these benefits,
 			<a href='/how-it-works/standard-features'>features of the standard</a>
 		</p>
-	</section>
+	</Section>
 )
 
 const Trailinglinks = () => (
-	<>
-		{' '}
+	<Section>
 		<hr />
-		<div>
 			<ul className='listnostyle readlinkscard'>
 				<li>
 					<a href='/how-it-works'>Find out more about how the standard works</a>
@@ -183,8 +180,8 @@ const Trailinglinks = () => (
 					</a>
 				</li>
 			</ul>
-		</div>
-	</>
+
+	</Section>
 )
 
 export const Homepage = () => (
