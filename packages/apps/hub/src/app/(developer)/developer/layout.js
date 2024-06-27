@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 
 const Layout = ({ children }) => (
 	<>
-		<Header selected={PATHS.developer} developer={true}/>
+		<Header selected={PATHS.developer} developer={true} />
 		<main>(developer sub menu - TODO)</main>
 		{children}
 	</>
