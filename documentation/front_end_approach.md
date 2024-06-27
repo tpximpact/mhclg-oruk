@@ -11,7 +11,7 @@ Date: 25 June, 2024
 
 - 1.1 This document describes changes proposed to the architecture of the user-facing websites. A shared understanding of the implications and benefits is important. As these are prerequisite requirements, we need to commit to these, and if possible, escalate to client for sign-off.
 
-- 1.2 There would be (at least) two ways of approaching this brief. The first would be to accept the existing architecture and confine our work strictly to the validator and dashboard tools. This approach has the benefit of minimalism and remains a possible option. It would not however allow us to deliver to the quality of accessibilty to which we would usually aspire, would accept inbuilt scalability limitations on the dashboard, and would require manual co-ordination of styling accross the several affected sites (ie the front end, the developer site, the validator, the dashboard). The latter in particular involves accepting an unknown level of risk and potentially error-prone manual work. 
+- 1.2 There would be (at least) two ways of approaching this brief. The first would be to accept the existing architecture and confine our work strictly to the validator and dashboard tools. This approach has the benefit of minimalism and remains a possible option. It would not however allow us to deliver to the quality of accessibilty to which we would usually aspire, would accept inbuilt scalability limitations on the dashboard, and would require manual co-ordination of styling accross the several affected sites (ie the front end, the developer site, the validator, the dashboard). The latter in particular involves accepting an unknown level of risk and potentially error-prone manual work.
 
 - 1.3 For this reason the proposed approach instead accepts a known quantity of additional work at the beginning of the process - to consolidate and render consistent the various elements upfront - with the result of streamlining and de-risking the process especially in the later stages, and delivering to an overall higher, more accessible, more maintainable and more robust techncial standard.
 
@@ -31,19 +31,19 @@ Date: 25 June, 2024
 
 - 2.1.1 A single canonical git repository hosted on Github consolidates all front end code. (This supersedes several existing repositories).
 
-- 2.1.2 The `main` branch is the single source of truth for publication. Development - including content updating as and if required  - is done in feature branches.
+- 2.1.2 The `main` branch is the single source of truth for publication. Development - including content updating as and if required - is done in feature branches.
 
 - 2.1.3 Development and content updating leverage the normal git workflows of branching, pull requests etc.
 
-- 2.1.4 This enables publishing of complete - but separately encapsulated and private - iterations of the site *and its content* for preview, testing, approval and quality assurance.
+- 2.1.4 This enables publishing of complete - but separately encapsulated and private - iterations of the site _and its content_ for preview, testing, approval and quality assurance.
 
 ### 2.2 Site hosting, continuous deployment and testing
 
-- 2.2.1 During development and while TPX is responsible for the site, we will deploy to Netlify, and will use that service to provide automated builds, continuous deployment, parallel builds, hosting, security and backup. 
+- 2.2.1 During development and while TPX is responsible for the site, we will deploy to Netlify, and will use that service to provide automated builds, continuous deployment, parallel builds, hosting, security and backup.
 
 - 2.2.2 Netlify [https://www.netlify.com](https://www.netlify.com) is a fully-hosted service, with rich functionality, and enables fast and efficient working during development.
 
-- 2.2.3 When the service is handed over, responsibility for all of this passes to the new party. They can remain using Netlify, with existing functionality, or migrate to their preferred host. Depending on their preferred arrangements, they may choose to implement the dev ops picture differently. There are alternative fully hosted services, or they can use their own infrastructure. 
+- 2.2.3 When the service is handed over, responsibility for all of this passes to the new party. They can remain using Netlify, with existing functionality, or migrate to their preferred host. Depending on their preferred arrangements, they may choose to implement the dev ops picture differently. There are alternative fully hosted services, or they can use their own infrastructure.
 
 - 2.2.4 The continuous deployment, testing, deployment and hosting are OUT OF SCOPE of TPX's deliverable - but we will provide a fully working end-to-end Netlify-based proof of concept.
 
@@ -57,11 +57,11 @@ Date: 25 June, 2024
 
 ### 2.4 Content organisation
 
-- 2.4.1 The existing content, which has diverse provenances, some hardcoded, some dynamic via Strapi (a content management technology), some the output of upstream tools, is standardised and consolidated into markdown files in the repository. 
+- 2.4.1 The existing content, which has diverse provenances, some hardcoded, some dynamic via Strapi (a content management technology), some the output of upstream tools, is standardised and consolidated into markdown files in the repository.
 
 - 2.4.2 Markdown is standard and portable and provides adequate separation of content and presentation without imposing any assumptions about hosting or authoring.
 
-- 2.4.3 Some work (estimated at ≈ 2 days) will be required to extract and re-format existing content. 
+- 2.4.3 Some work (estimated at ≈ 2 days) will be required to extract and re-format existing content.
 
 - 2.4.4 **NB: NO changes to content are in scope of this work** Existing content will be migrated / ported verbatim to the new system.
 
@@ -81,7 +81,7 @@ Date: 25 June, 2024
 
 - 2.6.1 The existing front end services will be consolidated into one site (excluding the mailing list, which will continue to be hosted on Mailchimp and the discussion forum).
 
-- 2.6.2 Specifically, the existing front end site, the  dashboard, the validator and the existing developer site will now all be moved to a single codebase and single deployment workflow.
+- 2.6.2 Specifically, the existing front end site, the dashboard, the validator and the existing developer site will now all be moved to a single codebase and single deployment workflow.
 
 ### 2.7 Design and styling
 
@@ -89,7 +89,7 @@ Date: 25 June, 2024
 
 - 2.7.2 As the styling will be unified, made consistent and accessibility will be assessed and addressed, there will be inevitable minor visual changes, so expectations should be calibrated accordingly.
 
-- 2.7.3 The styling across all the content and tools will be made consistent with the existing legacy https://openreferraluk.org. This will mean the developer site will change in appearance slightly to match. 
+- 2.7.3 The styling across all the content and tools will be made consistent with the existing legacy https://openreferraluk.org. This will mean the developer site will change in appearance slightly to match.
 
 - 2.7.4 Only one minor design revision is anticipated: the site level navigation menu, which is presently single level will be minimally revised to allow more flexibility of number of items and better to show context. ie We will be adding a 'developer' section and its associated navigation.
 
@@ -133,27 +133,27 @@ Date: 25 June, 2024
 
 - 2.10.1 At present no changes to the homepage (excepting the navigation are proposed
 
-- 2.10.2 We may at a later stage of the project find it aligns with wider project goals to make content, organisational or design changes to the homepage. 
+- 2.10.2 We may at a later stage of the project find it aligns with wider project goals to make content, organisational or design changes to the homepage.
 
 ### 2.11 Subdomains
 
-- 2.11.1 Some tools are available at present on dedicated sub domains, eg https://validator.openreferraluk.org. 
+- 2.11.1 Some tools are available at present on dedicated sub domains, eg https://validator.openreferraluk.org.
 
-- 2.11.2 It is presently unclear if this is a requirement. The specifics of a solution for this will depend on the eventual deployment scenario, but some combination of the dns hosting and web server configuration should be able to replicate most needs. 
+- 2.11.2 It is presently unclear if this is a requirement. The specifics of a solution for this will depend on the eventual deployment scenario, but some combination of the dns hosting and web server configuration should be able to replicate most needs.
 
 ## 3.0 Benefits
 
 - 3.0.1 It is seldom advisable to make any but the most minimal possible interventions in a codebase, however in this case we believe it is justified. The existing site has some hallmarks of a 'technology zoo' and can be simplified considerably.
 
-- 3.0.2 This is beneficial for service robustness but in particular is pragmatic given the requirement that the site be handed over for future maintenance. Consolidating the code and hosting requirements on on platform makes it easier to deliver to quality, easier to document and simpler to hand over. 
+- 3.0.2 This is beneficial for service robustness but in particular is pragmatic given the requirement that the site be handed over for future maintenance. Consolidating the code and hosting requirements on on platform makes it easier to deliver to quality, easier to document and simpler to hand over.
 
-- 3.0.3 As the present validator front end  and dashboard do not share a codebase with the rest of the project, enforcing consistency makes these more robust against future requirements and de-risks the need to iterate on their visual design for acceptance or quality purposes. 
+- 3.0.3 As the present validator front end and dashboard do not share a codebase with the rest of the project, enforcing consistency makes these more robust against future requirements and de-risks the need to iterate on their visual design for acceptance or quality purposes.
 
 - 3.0.4 ie A small amount of up-front work to enforce consistency minimises subsequent work involved in innovating in the design of the improved tools.
 
 - 3.0.5 Because the new architecture can be rendered server-side (with the sole exception of the validator - see 3.1), we can significantly improve the reliability, performance and accessibility of the site.
 
-- 3.0.6 Similarly, we reduce server load on the dashboard API 
+- 3.0.6 Similarly, we reduce server load on the dashboard API
 
 - 3.0.7 With all content now synchronised and version controlled, there is a full audit trail of the historical state of the site at any point.
 
