@@ -1,17 +1,5 @@
-import { Noto_Sans_Meetei_Mayek } from 'next/font/google'
+import { Section } from '@tpx/Section'
 
-const data = [
-	{
-		name: 'Buckinghamshire Council',
-		url: 'https://www.buckinghamshire.gov.uk/',
-		logo: 'bc.png'
-	},
-	{
-		name: 'TPXImpact',
-		url: 'https://tpximpact.com/',
-		logo: 'tpx.png'
-	}
-]
 
 const Org = ({ url, name, logo }) => (
 	<li>
@@ -21,8 +9,10 @@ const Org = ({ url, name, logo }) => (
 	</li>
 )
 
-export const Organisations = () => (
-	<div className='who who--homepage'>
+export const Organisations = () => {
+    let data = require('../../../content/homepageOrganisations.json');
+    return (
+	<Section>
 		<h2>Organisations using Open Referral UK</h2>
 		<div>
 			<ul className='numbers-container'>
@@ -209,5 +199,6 @@ export const Organisations = () => (
 		<a className='nav-link' href='/community/standard-community'>
 			View all of the organisations in our community
 		</a>
-	</div>
+	</Section>
 )
+}
