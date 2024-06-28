@@ -14,7 +14,7 @@ const Page = () => {
 		<>
 			<Header selected={SUBFOLDER} />
 			<Main>
-				<MarkdownContent raw={markdownRaw} />
+				<MarkdownContent raw={markdownRaw} autoMenu={true}/>
 			</Main>
 		</>
 	)

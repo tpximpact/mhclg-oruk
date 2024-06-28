@@ -53,6 +53,10 @@ html {
 	}
 }
 
+h1 {
+	font-size: 2rem;
+}
+
 /* Layout */
 article aside {
 	background: var(--color-secondary-accent);
