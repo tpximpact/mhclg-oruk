@@ -2,11 +2,11 @@
 
 ## Step 1 Understand the case for using the standard
 
-Explore what the Open Referral UK data standard is and the benefits of adopting the standard for your organisation or the partners you work with. 
+Explore what the [Open Referral UK data standard](/about) is and the benefits of adopting the standard for your organisation or the partners you work with. 
 
-You can find out information on this site and join our expanding community to get support both before and during the process of adopting the standard.
+You can find out information on this site and join our expanding [community](/community) to get support both before and during the process of adopting the standard.
 
-See Why adopt the standard? You can share this with people in your organisation to help explain what the standard is and the case for adopting the standard. 
+See [Why adopt the standard?](/about#why) You can share this with people in your organisation to help explain what the standard is and the case for adopting the standard. 
 
 ## Step 2 Assess the current situation - what is the opportunity for your organisation?
 

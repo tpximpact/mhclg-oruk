@@ -10,7 +10,7 @@ export const MarkdownContent = ({ raw, autoMenu }) => {
 	if (autoMenu) {
 		return <MarkdownContentWithMenu html={html}/>
 	} 
-	return <section dangerouslySetInnerHTML={{ __html: html }} />
+	return <MarkdownContentNoMenu html={html} />
 }
 
 const linkify = text => {
@@ -19,6 +19,7 @@ const linkify = text => {
 	return arr.join('_');
 }
 
+const MarkdownContentNoMenu = ({ html}) => <section dangerouslySetInnerHTML={{ __html: html }} />
 
 const MarkdownContentWithMenu = ({ html}) => {
 	const nodes = parse(html)
@@ -35,10 +36,14 @@ const MarkdownContentWithMenu = ({ html}) => {
 		return child
 	})
 
+	if (menu.length<1) {
+		return <MarkdownContentNoMenu html={html} />
+	}
 
 	return <section>
 		<Columns layout="24">
 			<div>
+				<h4 style={{fontWeight: 300}}>On this page</h4>
 				<ol className={styles.menu}>
 					{menu.map(
 						(item,i) => <li key={i}><a href={"#" + linkify(item)}>{item}</a></li>
@@ -50,17 +55,3 @@ const MarkdownContentWithMenu = ({ html}) => {
 
 	</section>
 }
-
-/*
-const MarkdownContentWithMenu = ({ raw }) => {
-	const html = marked.parse(raw)
-	const nodes = parse(html)
-	const menu = 
-	nodes.forEach(node => {
-		if (node.type === "h2") {
-			 console.log(node.props.children)
-		}
-	})
-
-	return <main>{nodes}</main>
-}*/

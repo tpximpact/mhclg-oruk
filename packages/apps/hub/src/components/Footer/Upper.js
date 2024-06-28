@@ -6,7 +6,7 @@ import { Logo } from '@/components/Logo'
 import Link from 'next/link'
 
 const Stakeholder = ({ url, name, logo }) => (
-	<li>
+	<li className={styles.stakeholder}>
 		<a href={url} target='_new'>
 			<img alt={name} src={'/organisations/' + logo} />
 		</a>
@@ -18,7 +18,7 @@ export const Upper = () => {
 	return (
 		<Section className={styles.upper}>
 			<PageMargin>
-				<div>
+				<div style={{marginBottom: "4rem"}}>
 					<Link href='/'>
 						<Logo />
 					</Link>
@@ -26,11 +26,11 @@ export const Upper = () => {
 				<Columns layout='222'>
 					<div>
 						<h3>Our Stakeholders</h3>
-						<ul>
+						<div className={styles.stakeholders}>
 							{stakeholders.map(d => (
 								<Stakeholder key={d.logo} {...d} />
 							))}
-						</ul>
+						</div>
 					</div>
 					<div>
 						<h3>Get Involved</h3>
