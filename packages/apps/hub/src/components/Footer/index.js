@@ -1,8 +1,10 @@
 import styles from './Footer.module.css'
-import { PageMargin } from '@tpx/PageMargin'
+import { Lower } from './Lower'
+import { Upper } from './Upper'
 
 export const Footer = () => (
 	<footer className={styles.footer}>
-		<PageMargin>FOOTER</PageMargin>
+		<Upper />
+		<Lower />
 	</footer>
 )
