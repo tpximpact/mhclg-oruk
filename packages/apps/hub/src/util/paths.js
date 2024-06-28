@@ -4,5 +4,10 @@ export const PATHS = {
 	contact: 'contact',
 	contentRoot: 'content',
 	developer: 'developer',
-	how: 'how'
+	how: 'how',
+	info: {
+		accessibility: 'info/accessibility',
+		privacy: 'info/privacy',
+		terms: 'info/terms',
+	}
 }
