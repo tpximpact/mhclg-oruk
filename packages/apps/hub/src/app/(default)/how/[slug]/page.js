@@ -12,6 +12,8 @@ const Page = ({ params }) => {
 		slug: slug,
 		folder: SUBFOLDER
 	})
-	return <MarkdownContent raw={markdownRaw} autoMenu ={true} />
+	return <MarkdownContent raw={markdownRaw} autoMenu ={true} afterLinks={
+		[{url: "/how/02-features-of-the-standard", name: "Features of the standard"}]
+	}/>
 }
 export default Page
