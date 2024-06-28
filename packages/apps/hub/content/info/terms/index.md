@@ -140,4 +140,5 @@ If any of these terms and conditions are held to be invalid, unenforceable or il
 ## Changes to these terms and conditions
 
 Please check these terms and conditions regularly. We can update them at any time without notice.
+
 You’ll agree to any changes if you continue to use OpenReferralUK after the terms and conditions have been updated.

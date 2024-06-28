@@ -1,5 +1,6 @@
 import { slugsFrom, readFile } from '@/util/content'
 import { PATHS } from '@/util/paths'
+import { MarkdownContent } from '@/components/MarkdownContent'
 
 const SUBFOLDER = PATHS.how
 
@@ -11,6 +12,6 @@ const Page = ({ params }) => {
 		slug: slug,
 		folder: SUBFOLDER
 	})
-	return <div>{markdownRaw}</div>
+	return <MarkdownContent raw={markdownRaw} />
 }
 export default Page
