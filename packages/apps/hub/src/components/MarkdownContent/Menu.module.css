@@ -1,0 +1,14 @@
+.menu {
+	padding: 0;
+	margin:5rem 0;
+	text-indent: 0;
+	list-style: none;
+	border: 10px solid redl;
+}
+
+.menu li {
+	padding: 0;
+	margin:0 0 1rem;
+	text-indent: 0;
+	list-style: none;
+}
