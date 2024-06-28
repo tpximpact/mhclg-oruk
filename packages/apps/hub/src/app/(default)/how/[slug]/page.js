@@ -12,6 +12,6 @@ const Page = ({ params }) => {
 		slug: slug,
 		folder: SUBFOLDER
 	})
-	return <MarkdownContent raw={markdownRaw} />
+	return <MarkdownContent raw={markdownRaw} autoMenu ={true} />
 }
 export default Page
