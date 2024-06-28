@@ -12,25 +12,20 @@ export const Navigation = ({ selected }) => (
 	</nav>
 )
 
-const NavItem = ({ key, selectedTarget, target, text, offsite }) => {
+const NavItem = ({ selectedTarget, target, text, offsite }) => {
 	if (offsite)
 		return (
-			<li key={key} className={styles.offsite}>
+			<li className={styles.offsite}>
 				<a href={target} target='_new'>
 					{text}
 				</a>
 			</li>
 		)
 
-	if (selectedTarget === target)
-		return (
-			<li key={key} className={styles.selected}>
-				{text}
-			</li>
-		)
+	if (selectedTarget === target) return <li className={styles.selected}>{text}</li>
 
 	return (
-		<li key={key}>
+		<li>
 			<Link href={'/' + target}>{text}</Link>
 		</li>
 	)

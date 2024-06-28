@@ -2,6 +2,7 @@ import { readFile } from '@/util/content'
 import { PATHS } from '@/util/paths'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { Header } from '@/components/Header'
+import { Main } from '@tpx/Main'
 
 const SUBFOLDER = PATHS.about
 
@@ -12,7 +13,9 @@ const Page = () => {
 	return (
 		<>
 			<Header selected={SUBFOLDER} />
-			<MarkdownContent raw={markdownRaw} />
+			<Main>
+				<MarkdownContent raw={markdownRaw} />
+			</Main>
 		</>
 	)
 }

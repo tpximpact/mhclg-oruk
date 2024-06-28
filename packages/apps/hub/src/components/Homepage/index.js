@@ -1,7 +1,7 @@
 import { PageMargin } from '@tpx/PageMargin'
 import Columns from '@tpx/Columns'
 import { Organisations } from './Organisations'
-
+import Link from 'next/link'
 import { Section } from '@tpx/Section'
 
 const Transcript = () => (
@@ -31,10 +31,10 @@ const Transcript = () => (
 		<p>That’s a massive duplication of effort and cost.</p>
 		<p>
 			This is a big problem for service commissioners at a local and national level, who need to
-			understand what services already exist and how we might better meet people's needs.
+			understand what services already exist and how we might better meet people’s needs.
 		</p>
 		<p>
-			And it's also a big problem for people in the NHS who need trustworthy data for social
+			And it’s also a big problem for people in the NHS who need trustworthy data for social
 			prescribing.
 		</p>
 		<p>The good news is, we already have a solution for this.</p>
@@ -105,7 +105,7 @@ const VideoRow = () => (
 					src='https://www.youtube.com/embed/dn1ryloOLvk'
 					title='YouTube video player'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-					allowfullscreen='true'
+					allowFullScreen={true}
 				></iframe>
 				<details>
 					<summary>View the full video transcript including visual description</summary>
@@ -162,7 +162,7 @@ const Benefits = () => (
 		</ul>
 		<p>
 			See how the standard helps you to realise these benefits,
-			<a href='/how-it-works/standard-features'>features of the standard</a>
+			<Link href='/how/02-features-of-the-standard'>features of the standard</Link>
 		</p>
 	</Section>
 )
@@ -170,17 +170,14 @@ const Benefits = () => (
 const Trailinglinks = () => (
 	<Section>
 		<hr />
-			<ul className='listnostyle readlinkscard'>
-				<li>
-					<a href='/how-it-works'>Find out more about how the standard works</a>
-				</li>
-				<li>
-					<a href='https://developers.openreferraluk.org/'>
-						Information on data structure and tools for the standard.{' '}
-					</a>
-				</li>
-			</ul>
-
+		<ul className='listnostyle readlinkscard'>
+			<li>
+				<Link href='/how'>Find out more about how the standard works</Link>
+			</li>
+			<li>
+				<Link href='/developer'>Information on data structure and tools for the standard. </Link>
+			</li>
+		</ul>
 	</Section>
 )
 
