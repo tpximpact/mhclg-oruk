@@ -1,4 +1,0 @@
-*.min.js
-**/.cache
-**/.next/**
-**/node_modules/**
