@@ -1,0 +1,14 @@
+.menuItem {
+	display: block;
+	border: 1px solid black;
+	padding: 2rem;
+
+	margin-bottom: 1rem;
+}
+
+.teaser {
+	display: block;
+	margin-top: 1rem;
+	font-size: 0.8rem;
+	font-weight: 400;
+}

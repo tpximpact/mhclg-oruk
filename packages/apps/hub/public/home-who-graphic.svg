@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+<rect x="200" width="200" height="200" transform="rotate(90 200 0)" fill="#C4C4C4"/>
+<rect x="198.5" y="1.5" width="197" height="197" transform="rotate(90 198.5 1.5)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+</mask>
+<g mask="url(#mask0)">
+<circle cx="200.465" cy="1.73165" r="168.434" transform="rotate(30 200.465 1.73165)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73198" r="178.579" transform="rotate(30 200.465 1.73198)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73235" r="188.725" transform="rotate(30 200.465 1.73235)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200" cy="0.000271393" r="198.87" transform="rotate(30 200 0.000271393)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.464" cy="1.73325" r="158.289" transform="rotate(30 200.464 1.73325)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.7319" r="148.143" transform="rotate(30 200.465 1.7319)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73255" r="137.998" transform="rotate(30 200.465 1.73255)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.7322" r="127.853" transform="rotate(30 200.465 1.7322)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73382" r="117.707" transform="rotate(30 200.465 1.73382)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.464" cy="1.73249" r="107.562" transform="rotate(30 200.464 1.73249)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73165" r="168.434" transform="rotate(30 200.465 1.73165)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73198" r="178.579" transform="rotate(30 200.465 1.73198)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73235" r="188.725" transform="rotate(30 200.465 1.73235)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200" cy="0.000271393" r="198.87" transform="rotate(30 200 0.000271393)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.464" cy="1.73325" r="158.289" transform="rotate(30 200.464 1.73325)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.7319" r="148.143" transform="rotate(30 200.465 1.7319)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73255" r="137.998" transform="rotate(30 200.465 1.73255)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.7322" r="127.853" transform="rotate(30 200.465 1.7322)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.465" cy="1.73382" r="117.707" transform="rotate(30 200.465 1.73382)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+<circle cx="200.464" cy="1.73249" r="107.562" transform="rotate(30 200.464 1.73249)" stroke="#58C19F" stroke-opacity="0.5" stroke-width="3"/>
+</g>
+</svg>
