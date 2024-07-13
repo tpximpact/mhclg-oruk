@@ -19,8 +19,8 @@ const DebugWidget = () => (
 	</aside>
 )
 
-const Columns = ({ children, layout = '1111', debug, ...props }) => (
-	<div className={[columns.columns, columns[`layout_${layout}`]].join(' ')} {...props}>
+const Columns = ({ className, children, layout = '1111', debug, ...props }) => (
+	<div className={[columns.columns, columns[`layout_${layout}`], className].join(' ')} {...props}>
 		{children}
 		{debug ? <DebugWidget /> : null}
 	</div>
