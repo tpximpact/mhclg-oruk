@@ -1,8 +1,14 @@
-import React from 'react'
-import { Main } from '@tpx/Main'
+"use client";
 
-export const Validator = () => (
-	<Main>
-		validator ui here
-	</Main>
-)
+import { Main } from "@tpx/Main";
+
+export const Validator = ({ validationAction }) => (
+  <Main>
+    <form action={validationAction}>
+      <label>
+        GUID: <input type="text" name="id" />
+      </label>
+      <button>Submit</button>
+    </form>
+  </Main>
+);

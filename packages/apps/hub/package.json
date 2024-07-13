@@ -1,19 +1,20 @@
 {
-	"name": "@oruk/hub",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@oruk/Dashboard": "0.0.1",
-		"@oruk/Validator": "0.0.1",
-		"marked": "^13.0.0",
-		"next": "14.2.4",
-		"react": "^18",
-		"react-dom": "^18"
-	}
+  "name": "@oruk/hub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@oruk/Dashboard": "0.0.1",
+    "@oruk/Validator": "0.0.1",
+    "@tpx/Spinner": "0.0.1",
+    "marked": "^13.0.0",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18"
+  }
 }

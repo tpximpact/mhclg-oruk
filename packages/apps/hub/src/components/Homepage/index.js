@@ -1,5 +1,3 @@
-import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
+import { NamedMarkdownPage } from "@/components/NamedMarkdownPage";
 
-export const Homepage = () => <NamedMarkdownPage name='home' />
-
-
+export const Homepage = () => <NamedMarkdownPage name="home" />;

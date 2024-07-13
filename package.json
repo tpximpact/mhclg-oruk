@@ -1,27 +1,27 @@
 {
-	"name": "openreferraluk",
-	"license": "UNLICENSED",
-	"private": true,
-	"workspaces": [
-		"packages/apps/*",
-		"packages/libraries/**/*"
-	],
-	"scripts": {
-		"hub": "yarn workspace @oruk/hub dev",
-		"build": "yarn workspace @oruk/hub build",
-		"tidy": "yarn prettier . --write",
-		"lint": "yarn run eslint --fix ./packages"
-	},
-	"dependencies": {
-		"html-react-parser": "^5.1.10",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
-	},
-	"devDependencies": {
-		"eslint": "^8.57.0",
-		"eslint-config-next": "^14.2.4",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-react": "^7.34.3",
-		"prettier": "3.3.2"
-	}
+  "name": "openreferraluk",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "packages/apps/*",
+    "packages/libraries/**/*"
+  ],
+  "scripts": {
+    "hub": "yarn workspace @oruk/hub dev",
+    "build": "yarn workspace @oruk/hub build",
+    "tidy": "yarn prettier . --write",
+    "lint": "yarn run eslint --fix ./packages"
+  },
+  "dependencies": {
+    "html-react-parser": "^5.1.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.3",
+    "prettier": "3.3.2"
+  }
 }
