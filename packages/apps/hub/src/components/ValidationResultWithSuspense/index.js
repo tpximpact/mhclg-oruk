@@ -26,9 +26,9 @@ export function ValidationResultSkeleton() {
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function fetchValidationResult() {
-  await delay(3000)
-  const url = 'https://dummyjson.com/quotes'
+  await delay(3000);
+  const url = "https://dummyjson.com/quotes";
   const res = await fetch(url);
   const data = await res.json();
- return data
+  return data;
 }
