@@ -1,4 +1,5 @@
 import {SuspenseIf} from "@/components/SuspenseIf";
+import Spinner from "@tpx/Spinner";
 
 async function ValidationResultLoader() {
   const products = await fetchValidationResult();
@@ -19,13 +20,17 @@ export function ValidationResult({ products }) {
 }
 
 export function ValidationResultSkeleton() {
-  return <div>loading</div>;
+  return <Spinner />
 }
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function fetchValidationResult() {
   await delay(3000);
+  //const result = await fetch('https://dummyjson.com/quotes', { cache: 'no-store' })
+  //console.log(result)
+ // console.log("=========")
+ // return JSON.stringify(result)
 
   return [
     {
