@@ -1,15 +1,11 @@
-import { PATHS } from '@/util/paths'
-import { Header } from '@/components/Header'
-import { Main } from '@tpx/Main'
+import Link from 'next/link'
+			
 
-const Layout = ({ children }) => (
-	<>
-		<Header selected={PATHS.developer} developer={true} />
-		<Main>
-			<nav>(developer sub menu - TODO)</nav>
-			{children}
-		</Main>
-	</>
-)
-
-export default Layout
+export default function DeveloperLayout({ children }) {
+	return (
+		<>
+			<nav style={{padding:"2rem"}}><Link href="/">[home]</Link></nav>
+				{children}
+		</>
+	)
+}
