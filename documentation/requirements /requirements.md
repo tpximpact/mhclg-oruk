@@ -1,23 +1,52 @@
-Memorandum: Adopting Open Referral UK - Front end requirements
-Distribution: Matos, Catarina; O'Brien, Jay; Thacker, Mike; Unsworth, Ben
-Author: Hilton,G (TPXImpact) guy.hilton@tpximpact.com
-Date: 13 Jily 2024
-
----
-
-# Adopting Open Referral UK - Front end requirements
+# Requirements
 
 ## 1.0 Dashboard
 
-- 1.1 Use cases
--- 1.1.1 MUST support the needs of a **consumer of services** looking for services to integrate into thier system.
--- 1.1.2 MUST support the needs of a **commissioner of services** - who will be interested on in who developed the feed erc
--- 1.1.3 MUST support the needs of quality assurance for the **incentive schene**
--- 1.1.4 MUST suooprt the project goal of building and enthsiastic and **infomed commmunity**
--- 1.1.5 MAY partition / speicalise the dashhboard functioanlity to target the agove={}use cases separately eg with a **directory** of -- 1.2.1 MUST present a tabulat display for users with in-band shields erx,=
--- 1.2.2 MAY provide a non-tabular equialent for users of samller screens
-- WILL provide an administrator CEUD interface for creating and updating dashboard orgs
-- MAY notify and admin / the wowber with an alert uf valudatoin fails
+### 1.1 Use cases
+
+#### a) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ support the needs of a _consumer of services_ looking for services to integrate into their system.
+
+This user is interested in the content of feeds, e.g. their coverage and richness.
+
+#### b) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ support the needs of a **commissioner of services**
+
+This user may e.g. be interested in who developed the feed etc.
+
+#### c) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ support the needs of quality assurance for the **incentive schene**
+
+Validity and availability of the feed are criteria contributory to award of incentives.
+
+#### d) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ support the project goal of building an enthsiastic and **infomed commmunity**
+
+For a general audience, it is important to give a sense that ORUK is active and is increasingly widely adopted.
+
+### 1.2 Functionality
+
+#### a) ${{\color{GoldenRod}\normalsize{\textsf{  May\ \}}}}\$ partition / specialise the dashboard functionality 
+
+i.e. to target use cases separately eg with a browsable _directory_ of services (cases a,b,d) and a _dashboard_ to monitor availability (case c)
+
+#### b) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ present a tabular display for users with in-band browsers
+
+#### c) ${{\color{GoldenRod}\normalsize{\textsf{  May\ \}}}}\$ provide a non-tabular equialent for users of samller screens
+
+#### d) ${{\color{GoldenRod}\normalsize{\textsf{  May\ \}}}}\$ offer sorting and/or filtering of tablular display 
+
+Particularly usefu to support _directory_ functionality.
+
+#### e) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ paginate tabular display past a certain number of rows.
+
+#### f) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ enable click-through to a detail view of validation for a chosen table row
+
+#### g) ${{\color{GoldenRod}\normalsize{\textsf{  May\ \}}}}\$ *MAY* make detail views available at a bookmarkable permalink
+
+To suport use case (c)
+
+#### h) ${{\color{LimeGreen}\normalsize{\textsf{  Must\ \}}}}\$ provide a simple administrator CRUD interface for creating and updating dashboard organisation
+
+Not public-facing, does not need to be branded.
+
+#### i) ${{\color{GoldenRod}\normalsize{\textsf{  May\ \}}}}\$ provide UI to configure preferences for notifcation of service administrator if validation fails
 
 ## 2.0 Validator
 
