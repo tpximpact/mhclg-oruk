@@ -1,9 +1,9 @@
-import React from 'react'
-import { Homepage } from './index'
+import React from "react";
+import { Homepage } from "./index";
 
-describe('<Homepage />', () => {
-  it('renders', () => {
+describe("<Homepage />", () => {
+  it("renders", () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<Homepage />)
-  })
-})
+    cy.mount(<Homepage />);
+  });
+});
