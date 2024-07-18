@@ -1,7 +1,7 @@
-"use server";
+'use server'
 
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation'
 
 export async function navigate(data) {
-  redirect(`/developer/tools/validator/${data.get("id")}`);
+	redirect(`/developer/tools/validator/${data.get('id')}`)
 }

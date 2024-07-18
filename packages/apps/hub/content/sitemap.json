@@ -1,22 +1,22 @@
 [
-  {
-    "name": "home",
-    "label": "home",
-    "contentPath": "/home"
-  },
-  {
-    "name": "not-found",
-    "label": "404",
-    "contentPath": "/not-found"
-  },
-  {
-    "name": "dashboard",
-    "label": "dashboard",
-    "contentPath": "/developer/tools/dashboard"
-  },
-  {
-    "name": "validator",
-    "label": "validator",
-    "contentPath": "/developer/tools/validator"
-  }
+	{
+		"name": "home",
+		"label": "home",
+		"contentPath": "/home"
+	},
+	{
+		"name": "not-found",
+		"label": "404",
+		"contentPath": "/not-found"
+	},
+	{
+		"name": "dashboard",
+		"label": "dashboard",
+		"contentPath": "/developer/tools/dashboard"
+	},
+	{
+		"name": "validator",
+		"label": "validator",
+		"contentPath": "/developer/tools/validator"
+	}
 ]
