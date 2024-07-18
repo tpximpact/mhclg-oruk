@@ -1,6 +1,6 @@
 import { ValidationResultWithSuspense } from '@/components/ValidationResultWithSuspense'
 import { fetchValidationResult } from '@/components/ValidationResultWithSuspense'
-import { Main } from '@tpx/Main'
+// import { Main } from '@tpx/Main'
 import { Masthead } from '@/components/Masthead'
 import { PageMargin } from '@tpx/PageMargin'
 import { headers } from 'next/headers'

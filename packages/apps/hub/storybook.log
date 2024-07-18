@@ -1,0 +1,3 @@
+yarn add v1.22.22
+[1/4] Resolving packages...
+warning storybook > jscodeshift > temp > rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported

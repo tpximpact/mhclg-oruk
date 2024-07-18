@@ -7,9 +7,9 @@ export const NamedMarkdownPage = ({ name, autoMenu = true, children }) => {
 		folder: pageData.contentPath
 	})
 	return (
-		<PageMargin >
+		<PageMargin>
 			<MarkdownContent raw={markdownRaw} autoMenu={autoMenu} />
 			{children}
-		</PageMargin >
+		</PageMargin>
 	)
 }
