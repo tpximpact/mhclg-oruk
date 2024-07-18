@@ -1,5 +1,5 @@
 import style from './Footer.module.css'
-import Link from 'next/link'
+
 import { PageMargin } from '@tpx/PageMargin'
 
 export const Footer = ({ children }) => {

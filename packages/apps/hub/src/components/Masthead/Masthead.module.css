@@ -3,11 +3,11 @@
 	padding: 1rem 0;
 }
 
-.Masthead ol{
-	background: #fff;
-	padding: 1rem 0;
+.Masthead ol {
+	padding: 0 0 1rem;
+	list-style: inside none;
 }
-.Masthead li{
-	background: #fff;
-	padding: 1rem 0;
+.Masthead li {
+	padding-right: 2rem;
+	display: inline;
 }
