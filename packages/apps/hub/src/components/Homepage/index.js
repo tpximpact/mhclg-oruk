@@ -4,6 +4,6 @@ import { Masthead } from '@/components/Masthead'
 export const Homepage = () => (
 	<div>
 		<Masthead />
-		<NamedMarkdownPage name='home' />
+		<main><NamedMarkdownPage name='home' /></main>
 	</div>
 )
