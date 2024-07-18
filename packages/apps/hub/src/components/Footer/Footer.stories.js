@@ -1,8 +1,8 @@
-import { Masthead } from './Masthead'
+import { Footer } from './Footer '
 
 export default {
-	title: 'Masthead',
-	component: Masthead
+	title: 'Footer ',
+	component: Footer 
 }
 
-export const Header = () => <Masthead />
+export const FooterElement = () => <Footer />

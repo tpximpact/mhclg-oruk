@@ -1,15 +1,18 @@
 import style from './Masthead.module.css'
 import Link from 'next/link'
 import { PageMargin } from '@tpx/PageMargin'
+import { Logo } from '@/components/Logo'
 
 export const Masthead = ({ children }) => {
 	return (
-		<main className={style.Masthead}>
+		<header className={style.Masthead}>
 			<PageMargin>
-				<nav style={{ padding: '2rem' }}>
-					<Link href='/'>[home]</Link>
+				<nav>
+					<Link href='/'>
+						<Logo />
+					</Link>
 				</nav>
 			</PageMargin>
-		</main>
+		</header>
 	)
 }
