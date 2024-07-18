@@ -5,7 +5,11 @@ import { PageMargin } from '@tpx/PageMargin'
 export const Masthead = ({ children }) => {
 	return (
 		<main className={style.Masthead}>
-			<PageMargin>{children}</PageMargin>
+			<PageMargin>
+				<nav style={{ padding: '2rem' }}>
+					<Link href='/'>[home]</Link>
+				</nav>
+			</PageMargin>
 		</main>
 	)
 }
