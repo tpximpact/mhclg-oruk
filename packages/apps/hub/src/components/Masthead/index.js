@@ -11,6 +11,14 @@ export const Masthead = ({ children }) => {
 					<Link href='/'>
 						<Logo />
 					</Link>
+					<ol>
+					<li><Link href='/developer/tools/dashboard'>
+						Dashboard
+					</Link></li>
+					<li><Link href='/developer/tools/validator'>
+						Validator
+					</Link></li>
+					</ol>
 				</nav>
 			</PageMargin>
 		</header>
