@@ -3,6 +3,7 @@ import './tokens.css'
 import './mvp.css' // temporary placeholder styles
 
 import Axe from '@/components/Axe'
+import { Masthead } from '@/components/Masthead'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
 		<html lang='en'>
 			<body className={inter.className}>
 				<Axe />
+				<Masthead home="true"/>
 				{children}
 			</body>
 		</html>
