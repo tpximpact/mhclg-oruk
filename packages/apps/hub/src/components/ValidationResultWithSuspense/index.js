@@ -1,6 +1,9 @@
 import { SuspenseIf } from '@tpx/SuspenseIf'
 import Spinner from '@tpx/Spinner'
 
+const REMOTE_ENDPOINT = 'https://run.mocky.io/v3/7fbde686-46c1-4ca5-a0b3-1b0008fd54a6'
+// const REMOTE_ENDPOINT = 'https://dummyjson.com/quotes'
+
 async function ValidationResultLoader() {
 	const result = await fetchValidationResult()
 
@@ -26,8 +29,8 @@ export function ValidationResultSkeleton() {
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export async function fetchValidationResult() {
-	await delay(3000)
-	const url = 'https://dummyjson.com/quotes'
+	await delay(2000)
+	const url = REMOTE_ENDPOINT
 	const res = await fetch(url)
 	const data = await res.json()
 	return data
