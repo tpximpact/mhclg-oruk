@@ -3,6 +3,7 @@ import './tokens.css'
 import './mvp.css' // temporary placeholder styles
 
 import Axe from '@/components/Axe'
+import { NoJsBanner } from '@/components/NoJsBanner'
 import { Footer } from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
+			
 				<div
 					style={{
 						display: 'grid',
@@ -27,6 +29,11 @@ export default function RootLayout({ children }) {
 					{children}
 					<Footer />
 				</div>
+				<script>
+					// IIFE..
+
+					</script>
+					<NoJsBanner />
 			</body>
 		</html>
 	)
