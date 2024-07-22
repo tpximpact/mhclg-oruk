@@ -1,6 +1,6 @@
 import { ValidationResultWithSuspense } from '@/components/ValidationResultWithSuspense'
 import { fetchValidationResult } from '@/components/ValidationResultWithSuspense'
-// import { Main } from '@tpx/Main'
+import { Main } from '@tpx/Main'
 import { Masthead } from '@/components/Masthead'
 import { PageMargin } from '@tpx/PageMargin'
 import { headers } from 'next/headers'
@@ -22,10 +22,13 @@ export default async function Page({ params }) {
 		<div>
 			<Masthead />
 			<PageMargin>
-				<div> ID: {params.id}</div>
-				<div>
-					Result: <ValidationResultWithSuspense products={products} />
-				</div>
+				<Main>
+					<h1>Service Validation results</h1>
+					<div> ID: {params.id}</div>
+					<div>
+						Raw response: <ValidationResultWithSuspense products={products} />
+					</div>
+				</Main>
 			</PageMargin>
 		</div>
 	)
