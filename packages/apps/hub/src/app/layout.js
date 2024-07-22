@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-			
 				<div
 					style={{
 						display: 'grid',
@@ -29,11 +28,8 @@ export default function RootLayout({ children }) {
 					{children}
 					<Footer />
 				</div>
-				<script>
-					// IIFE..
-
-					</script>
-					<NoJsBanner />
+				<script>// IIFE..</script>
+				<NoJsBanner />
 			</body>
 		</html>
 	)

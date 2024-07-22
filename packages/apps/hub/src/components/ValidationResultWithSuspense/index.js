@@ -33,40 +33,40 @@ export function ValidationResult({ result }) {
 					You have passed level 2 compliance, which means your Service Directory API supports the
 					more advanced features of the API standard.
 				</div>
-				<div >
-					<div >
+				<div>
+					<div>
 						<h3>Issues</h3>
-						<div >
+						<div>
 							<div>
 								<strong>Unique fields with duplicate content</strong>
 							</div>
 							<div>
 								<ul>
-									<li >service_at_location.id</li>
-									<li >location.id</li>
-									<li >regular_schedule.id</li>
+									<li>service_at_location.id</li>
+									<li>location.id</li>
+									<li>regular_schedule.id</li>
 								</ul>
 							</div>
 						</div>
-						<div >
-							<div >
+						<div>
+							<div>
 								<strong>Invalid format fields</strong>
 							</div>
-							<div >
-								<ul >
-									<li >service.id should be in uuid format</li>
-									<li >service.url should be in url format</li>
-									<li >location.id should be in uuid format</li>
+							<div>
+								<ul>
+									<li>service.id should be in uuid format</li>
+									<li>service.url should be in url format</li>
+									<li>location.id should be in uuid format</li>
 								</ul>
 							</div>
 						</div>
-						<div >
-							<div >
+						<div>
+							<div>
 								<strong>Warnings</strong>
 							</div>
-							<div >
-								<ul >
-									<li >
+							<div>
+								<ul>
+									<li>
 										The 'Access-Control-Allow-Origin: *' response header is missing this limits how
 										the API can be read.
 									</li>
@@ -75,10 +75,10 @@ export function ValidationResult({ result }) {
 						</div>
 					</div>
 				</div>
-				<div >
+				<div>
 					<h2>Statistics</h2>
-					<div >
-						<ul >
+					<div>
+						<ul>
 							<li>Count of organization: 0</li>
 							<li>Count of service: 500</li>
 							<li>Count of service_taxonomy: 0</li>
