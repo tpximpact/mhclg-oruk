@@ -1,11 +1,12 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { Masthead } from '@/components/Masthead'
+import { Main } from '@tpx/Main'
 
-export const Homepage = () => (
-	<div>
+export const Homepage = ({ contentName }) => (
+	<>
 		<Masthead />
-		<main>
-			<NamedMarkdownPage name='home' />
-		</main>
-	</div>
+		<Main>
+			<NamedMarkdownPage name={contentName} />
+		</Main>
+	</>
 )

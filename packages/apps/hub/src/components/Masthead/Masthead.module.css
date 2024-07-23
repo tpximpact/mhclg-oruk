@@ -1,6 +1,19 @@
 .Masthead {
 	background: #fff;
 	padding: 1rem 0;
+	--selectedBg: #000;
+	--selectedFg: #fff;
+}
+
+.developer {
+	background: #000;
+	--selectedBg: #fff;
+	--selectedFg: #000;
+}
+
+.developer * {
+	color: #fff;
+	fill: #fff;
 }
 
 .Masthead ol {
@@ -21,12 +34,16 @@
 	flex: 100% 0 0;
 }
 
+.spacer {
+	flex: 100% 0 0;
+}
+
 .nav {
 	flex: 100% 0 0;
 }
 
+/*
 @value device: max-width: 900px;
-
 
 @media (device) {
 	.box {
@@ -36,7 +53,9 @@
 		flex: 200px 0 0;
 	}
 	.nav {
-		flex:  200px 0 0;
+		flex: 200px 0 0;
 	}
 }
 
+
+*/

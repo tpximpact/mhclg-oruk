@@ -1,22 +1,23 @@
-import style from './Masthead.module.css'
+import styles from './Masthead.module.css'
 import Link from 'next/link'
 import { PageMargin } from '@tpx/PageMargin'
 import { Logo } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
 
-export const Masthead = ({ children }) => {
+export const Masthead = ({ selected, developer, children }) => {
 	return (
-		<header className={style.Masthead}>
+		<header className={`${styles.Masthead} ${developer && styles.developer}`}>
 			<PageMargin>
-				<div className={style.box}>
-					<div className={style.logo}>
-			<Link href='/'>
-						<Logo />
-					</Link>
+				<div className={styles.box}>
+					<div className={styles.logo}>
+						<Link href='/'>
+							<Logo />
+						</Link>
 					</div>
-					<div className={style.nav}>
-				<Navigation />
-				</div>
+					<div className={styles.spacer}></div>
+					<div className={styles.nav}>
+						<Navigation selected={selected} />
+					</div>
 				</div>
 				{/*
 				<nav>

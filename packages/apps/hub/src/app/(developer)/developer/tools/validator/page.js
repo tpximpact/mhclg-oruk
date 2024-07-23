@@ -7,7 +7,6 @@ import { navigate } from '@/actions/validate'
 export default function Home() {
 	return (
 		<div>
-			<Masthead />
 			<NamedMarkdownPage name='validator' />
 			<Validator validationAction={navigate} />
 		</div>
