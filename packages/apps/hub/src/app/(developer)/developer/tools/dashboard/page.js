@@ -1,7 +1,9 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { Masthead } from '@/components/Masthead'
 import { PageMargin } from '@tpx/PageMargin'
 import { Dashboard } from '@oruk/Dashboard'
+
+import meta from '/content/developer/tools/dashboard/metadata.json'
+export const metadata = meta
 
 export default function Home() {
 	return (
