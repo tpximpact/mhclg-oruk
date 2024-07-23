@@ -1,3 +1,15 @@
 .no-js  {
-	border:40px solid red;
+	/* border:40px solid red; */
+}
+
+.no-js .hide-when-no-js {
+	display:none;
+}
+
+.show-when-no-js {
+	display:none;
+}
+
+.no-js .show-when-no-js {
+	display:block;
 }
