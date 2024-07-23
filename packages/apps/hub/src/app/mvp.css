@@ -461,25 +461,28 @@ dialog {
 
 table {
 	width: 100%;
-    table-layout: fixed;
+	table-layout: fixed;
 	margin-top: 4rem;
 	margin-bottom: 4rem;
 }
 
-td, th {
-
-	word-break:break-all;
+td,
+th {
+	word-break: break-all;
 	border-top: 2px solid black;
 	vertical-align: top;
 	align: left;
-  }
+}
 
-.help-text, .message, .modal-background {
+.help-text,
+.message,
+.modal-background {
 	display: none;
 }
 
 .button-link {
-	max-width: 100px; padding: 0;
+	max-width: 100px;
+	padding: 0;
 }
 
 /* Tables 
