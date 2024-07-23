@@ -1,16 +1,15 @@
 .nav {
 	margin-bottom: 1rem;
-	background: #f4f4f4;
+	background: #ccc;
 	padding: 1rem 0;
 }
 
 .nav ol {
-	margin: 0;
+	margin: 0 0 0 -1.5rem;
 	padding: 0;
 	list-style: inside none;
 }
 
 .nav ol li {
-	padding-right: 2rem;
 	display: inline;
 }

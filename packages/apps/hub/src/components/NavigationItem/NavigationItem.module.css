@@ -1,6 +1,7 @@
 .selected {
 	background: var(--selectedBg);
 	color: var(--selectedFg);
+	background: #fc0;
 }
 
 .offsite,

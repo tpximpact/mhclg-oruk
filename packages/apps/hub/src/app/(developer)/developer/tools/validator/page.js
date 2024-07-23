@@ -1,6 +1,4 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { Masthead } from '@/components/Masthead'
-
 import { Validator } from '@oruk/Validator'
 import { navigate } from '@/actions/validate'
 
