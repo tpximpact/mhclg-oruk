@@ -20,7 +20,6 @@ export default async function Page({ params }) {
 
 	return (
 		<div>
-			<Masthead />
 			<PageMargin>
 				<Main>
 					<h1>Service Validation results</h1>

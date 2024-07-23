@@ -7,30 +7,24 @@ import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { Footer } from '@/components/Footer'
 import { NoJsFallback } from '@/components/NoJsFallback'
+import { PageWrapper } from '@/components/PageWrapper'
+
+import defaultMetadata from '/content/metadata.json'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-	title: 'Open Referral UK',
-	description: 'Description here'
-}
+export const metadata = defaultMetadata
 
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-				<div
-					style={{
-						display: 'grid',
-						gridTemplateRows: '1fr auto',
-						minHeight: '100vh'
-					}}
-				>
+				<PageWrapper>
 					<Axe />
-					{children}
+					<div>{children}</div>
 					<Footer />
-				</div>
-				<NoJsBanner />
+					<NoJsBanner />
+				</PageWrapper>
 				<NoJsFallback />
 			</body>
 		</html>
