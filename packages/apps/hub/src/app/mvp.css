@@ -459,7 +459,32 @@ dialog {
 	z-index: 999;
 }
 
-/* Tables */
+table {
+	width: 100%;
+    table-layout: fixed;
+	margin-bottom: 4rem;
+}
+
+td, th {
+
+	word-break:break-all;
+	border-top: 2px solid black;
+	vertical-align: top;
+	align: left;
+  }
+
+.help-text, .message, .modal-background {
+	display: none;
+}
+
+.button-link {
+	max-width: 100px; padding: 0;
+}
+
+/* Tables 
+
+
+
 table {
 	border: 1px solid var(--color-bg-secondary);
 	border-radius: var(--border-radius);
@@ -502,7 +527,7 @@ table tr td:first-child {
 
 table tr:nth-child(even) {
 	background-color: var(--color-accent);
-}
+} */
 
 /* Quotes */
 blockquote {
