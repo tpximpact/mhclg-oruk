@@ -4,8 +4,9 @@ export const Navigation = () => {
 	return (
 		<nav role='navigation'>
 			<div className={style.toggle}>
-				<input type='checkbox' />
-
+			<label for="cb">Menu</label>
+				<input id="cb" type='checkbox' />
+				
 				<span></span>
 				<span></span>
 				<span></span>
@@ -16,15 +17,15 @@ export const Navigation = () => {
 					</li>
 
 					<li>
-						<a href='#'>About</a>
+						About
 					</li>
 
 					<li>
-						<a href='#'>How it works</a>
+						How it works
 					</li>
 
 					<li>
-						<a href='#'>Community</a>
+						Community
 					</li>
 					<li>
 						<a href='#'>Forum</a>
@@ -33,7 +34,7 @@ export const Navigation = () => {
 						<a href='#'>For Developers</a>
 					</li>
 					<li>
-						<a href='#'>Contact us</a>
+						Contact us
 					</li>
 				</ul>
 			</div>

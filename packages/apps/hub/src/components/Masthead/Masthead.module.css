@@ -11,3 +11,32 @@
 	padding-right: 2rem;
 	display: inline;
 }
+
+.box {
+	display: flex;
+	flex-direction: column;
+}
+
+.logo {
+	flex: 100% 0 0;
+}
+
+.nav {
+	flex: 100% 0 0;
+}
+
+@value device: max-width: 900px;
+
+
+@media (device) {
+	.box {
+		flex-direction: row-reverse;
+	}
+	.logo {
+		flex: 200px 0 0;
+	}
+	.nav {
+		flex:  200px 0 0;
+	}
+}
+

@@ -8,7 +8,16 @@ export const Masthead = ({ children }) => {
 	return (
 		<header className={style.Masthead}>
 			<PageMargin>
+				<div className={style.box}>
+					<div className={style.logo}>
+			<Link href='/'>
+						<Logo />
+					</Link>
+					</div>
+					<div className={style.nav}>
 				<Navigation />
+				</div>
+				</div>
 				{/*
 				<nav>
 					<Link href='/'>
