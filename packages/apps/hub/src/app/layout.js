@@ -1,10 +1,13 @@
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './tokens.css'
+import './no-js.css'
 import './mvp.css' // temporary placeholder styles
 
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { Footer } from '@/components/Footer'
+import { NoJsFallback} from '@/components/NoJsFallback'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
+		<html lang='en'  id="html" className="no-js">
 			<body className={inter.className}>
 				<div
 					style={{
@@ -28,8 +31,8 @@ export default function RootLayout({ children }) {
 					{children}
 					<Footer />
 				</div>
-				<script>// IIFE..</script>
 				<NoJsBanner />
+				<NoJsFallback />
 			</body>
 		</html>
 	)
