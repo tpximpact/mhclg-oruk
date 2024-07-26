@@ -5,6 +5,6 @@
 	"license": "UNLICENSED",
 	"dependencies": {
 		"react": "^18",
-		"@tpx/Main":"0.0.1"
+		"@tpx/Main": "0.0.1"
 	}
 }
