@@ -3,6 +3,7 @@ import './tokens.css'
 import './no-js.css'
 import './mvp.css' // temporary placeholder styles
 
+import {Cookies} from "@/components/Cookies"
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { Footer } from '@/components/Footer'
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
 			<body className={inter.className}>
 				<PageWrapper>
 					<Axe />
+					<Cookies />
 					<div>{children}</div>
 					<Footer />
 					<NoJsBanner />

@@ -67,7 +67,7 @@ export function ValidationResult({ result }) {
 							<div>
 								<ul>
 									<li>
-										The 'Access-Control-Allow-Origin: *' response header is missing this limits how
+										The <code>Access-Control-Allow-Origin: *</code> response header is missing this limits how
 										the API can be read.
 									</li>
 								</ul>
@@ -111,7 +111,7 @@ export function ValidationResultSkeleton() {
 	return <Spinner />
 }
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+// const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export async function fetchValidationResult() {
 	// await delay(2000)
