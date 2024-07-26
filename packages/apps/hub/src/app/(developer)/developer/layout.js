@@ -1,11 +1,10 @@
-import Link from 'next/link'
-			
+import { Masthead } from '@/components/Masthead'
 
-export default function DeveloperLayout({ children }) {
-	return (
-		<>
-			<nav style={{padding:"2rem"}}><Link href="/">[home]</Link></nav>
-				{children}
-		</>
-	)
-}
+const Layout = ({ children }) => (
+	<>
+		<Masthead selected='developers' developer={true} />
+		{children}
+	</>
+)
+
+export default Layout

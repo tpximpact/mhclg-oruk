@@ -97,7 +97,9 @@ const fileNameToLabel = fileName => {
 }
 
 export const slugsFrom = folder =>
-	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({ slug: f.split('.')[0] }))
+	allFilesOfType(getPath(folder), FILE_EXTENSION).map(f => ({
+		slug: f.split('.')[0]
+	}))
 
 export const getPath = dir => join(process.cwd(), PATHS.contentRoot, dir)
 

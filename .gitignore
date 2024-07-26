@@ -1,2 +1,8 @@
 /node_modules
 /packages/apps/hub/.next
+
+*storybook.log
+/packages/apps/hub/node_modules
+/packages/apps/hub/node_modules
+/packages/apps/hub/node_modules
+/packages/apps/hub/node_modules

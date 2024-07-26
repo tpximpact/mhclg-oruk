@@ -1,16 +1,20 @@
 import { readFile, getNamedSiteItem } from '@/util/content'
 import { MarkdownContent } from '@/components/MarkdownContent'
-import { Main } from '@tpx/Main'
-
+import { PageMargin } from '@tpx/PageMargin'
 export const NamedMarkdownPage = ({ name, autoMenu = true, children }) => {
 	const pageData = getNamedSiteItem(name)
-	const markdownRaw = readFile({
-		folder: pageData.contentPath
-	})
+	const markdownRaw =
+		pageData && pageData.contentPath
+			? readFile({
+					folder: pageData.contentPath
+				})
+			: null
 	return (
-		<Main>
-			<MarkdownContent raw={markdownRaw} autoMenu={autoMenu} />
+		<PageMargin>
+			{markdownRaw ? <MarkdownContent raw={markdownRaw} autoMenu={autoMenu} /> : <MarkdownError />}
 			{children}
-		</Main>
+		</PageMargin>
 	)
 }
+
+const MarkdownError = () => <div>Sorry the requested content file counld not be read</div>

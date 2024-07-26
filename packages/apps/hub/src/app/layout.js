@@ -1,19 +1,31 @@
 import { Inter } from 'next/font/google'
 import './tokens.css'
+import './no-js.css'
 import './mvp.css' // temporary placeholder styles
+
+import Axe from '@/components/Axe'
+import { NoJsBanner } from '@/components/NoJsBanner'
+import { Footer } from '@/components/Footer'
+import { NoJsFallback } from '@/components/NoJsFallback'
+import { PageWrapper } from '@/components/PageWrapper'
+
+import defaultMetadata from '/content/metadata.json'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-	title: 'Open Referral UK',
-	description: 'Description here'
-}
+export const metadata = defaultMetadata
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
+		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-				{children}
+				<PageWrapper>
+					<Axe />
+					<div>{children}</div>
+					<Footer />
+					<NoJsBanner />
+				</PageWrapper>
+				<NoJsFallback />
 			</body>
 		</html>
 	)
