@@ -14,3 +14,5 @@ jobs:
           uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
           with:
             path: build
+            install_command: yarn install
+            build_command: yarn run build-storybook
