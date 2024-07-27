@@ -1,8 +1,8 @@
 import { SuspenseIf } from '@tpx/SuspenseIf'
 import Spinner from '@tpx/Spinner'
 
-const REMOTE_ENDPOINT = 'https://run.mocky.io/v3/7fbde686-46c1-4ca5-a0b3-1b0008fd54a6'
-// const REMOTE_ENDPOINT = 'https://dummyjson.com/quotes'
+// const REMOTE_ENDPOINT = 'https://run.mocky.io/v3/7fbde686-46c1-4ca5-a0b3-1b0008fd54a6'
+const REMOTE_ENDPOINT = 'https://dummyjson.com/quotes'
 
 async function ValidationResultLoader() {
 	const result = await fetchValidationResult()
