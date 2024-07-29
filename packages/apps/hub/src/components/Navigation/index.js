@@ -1,2 +1,1 @@
-export { Navigation} from './Navigation'
-
+export { Navigation } from './Navigation'

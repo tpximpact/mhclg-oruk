@@ -5,7 +5,7 @@ export default {
 	component: Homepage
 }
 
-const md =  `# Hello World
+const md = `# Hello World
 
 This is a paragraph
 
@@ -22,7 +22,6 @@ This is a paragraph
 This is a paragraph
  `
 
+export const Menu = () => <Homepage markdownRaw={md} />
 
-export const Menu = () => <Homepage markdownRaw={md}/>
-
-export const NoMenu = () => <Homepage markdownRaw={md} automenu={false}/>
+export const NoMenu = () => <Homepage markdownRaw={md} automenu={false} />

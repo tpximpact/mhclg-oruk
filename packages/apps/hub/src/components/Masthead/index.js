@@ -1,1 +1,1 @@
-export {Masthead } from './Masthead'
+export { Masthead } from './Masthead'

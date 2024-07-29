@@ -1,5 +1,5 @@
-import { Markdown } from './Markdown';
-import {parseMarkdown} from '../../util/markdown'
+import { Markdown } from './Markdown'
+import { parseMarkdown } from '../../util/markdown'
 
 export default {
 	title: 'Hub/Markdown',
@@ -28,12 +28,12 @@ This is a paragraph
 This is a paragraph
 `
 
+const { content, frontmatter } = parseMarkdown(document)
 
-const {content,frontmatter}=parseMarkdown(document)
+export const NoMenu = () => <Markdown content={content} />
 
-export const NoMenu = () => <Markdown content={content}/>
+export const Menu = () => <Markdown content={content} showMenu={true} />
 
-export const Menu = () => <Markdown content={content} showMenu={true}/>
-
-export const Frontmatter = () => <Markdown  showMenu={true} showFrontmatter={true} content={content} frontmatter={frontmatter}/>
-
+export const Frontmatter = () => (
+	<Markdown showMenu={true} showFrontmatter={true} content={content} frontmatter={frontmatter} />
+)

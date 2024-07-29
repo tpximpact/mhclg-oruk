@@ -5,6 +5,6 @@ export default {
 	component: Logo
 }
 
-export const Basic = () => <Logo/>
+export const Basic = () => <Logo />
 
-export const Red= () => <Logo colour="#f00"/>
+export const Red = () => <Logo colour='#f00' />
