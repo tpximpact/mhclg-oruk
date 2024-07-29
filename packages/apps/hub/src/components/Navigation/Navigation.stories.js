@@ -1,8 +1,8 @@
-import {Navigation} from './Navigation'
+import { Navigation } from './Navigation'
 
 export default {
 	title: 'Hub/Navigation',
 	component: Navigation
 }
 
-export const Basic = () => <Navigation/>
+export const Basic = () => <Navigation />
