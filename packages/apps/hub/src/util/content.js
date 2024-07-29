@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
-import structure from '/content/sitemap.json'
+import structure from '../../content/sitemap.json'
 
 //import organisations from '/content/community/organisations/organisations.json'
 /*
