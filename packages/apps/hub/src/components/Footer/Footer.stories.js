@@ -1,8 +1,8 @@
-import { Footer } from './Footer '
+import { Footer } from './Footer'
 
 export default {
-	title: 'Footer ',
+	title: 'Hub/Footer',
 	component: Footer
 }
 
-export const FooterElement = () => <Footer />
+export const Demo = () => <Footer />

@@ -67,8 +67,8 @@ export function ValidationResult({ result }) {
 							<div>
 								<ul>
 									<li>
-										The <code>Access-Control-Allow-Origin: *</code> response header is missing this limits how
-										the API can be read.
+										The <code>Access-Control-Allow-Origin: *</code> response header is missing this
+										limits how the API can be read.
 									</li>
 								</ul>
 							</div>
