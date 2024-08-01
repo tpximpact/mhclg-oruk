@@ -19,7 +19,8 @@
 		"next": "14.2.4",
 		"react": "^18",
 		"react-cookie-consent": "^9.0.0",
-		"react-dom": "^18"
+		"react-dom": "^18",
+		"uuid": "^10.0.0"
 	},
 	"devDependencies": {
 		"@axe-core/react": "^4.9.1",

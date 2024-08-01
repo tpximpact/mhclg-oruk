@@ -8,6 +8,13 @@ export function isInitialPageLoad() {
 	return !!headers().get('accept')?.includes('text/html')
 }
 
+export async function generateMetadata({ params }) {
+	return {
+	  title: `ORUK validation report: ${params.uri}`,
+	  description: "Report of compliance of the Openreferral feed at ${params.uri}",
+	}
+  }
+
 export default async function Page({ params }) {
 	let products
 
