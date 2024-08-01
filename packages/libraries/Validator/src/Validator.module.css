@@ -1,0 +1,16 @@
+.example {
+    display:block;
+    font-style: italic;
+}
+
+.label {
+
+}
+
+.label input{
+    margin:0;
+}
+
+.submit {
+    margin-top: 1rem;
+}

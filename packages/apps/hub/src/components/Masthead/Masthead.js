@@ -15,9 +15,9 @@ export const Masthead = ({ selected, developer, children }) => {
 						</Link>
 					</div>
 					<div className={styles.spacer}></div>
-					<div className={styles.nav}>
+					{/*<div className={styles.nav}>
 						<Navigation selected={selected} />
-					</div>
+					</div>*/}
 				</div>
 				{/*
 				<nav>
