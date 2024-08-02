@@ -5,13 +5,13 @@ import { navigate } from '@/actions/validate'
 export default function Home() {
 	return (
 		<div>
-			<NamedMarkdownPage name='validator' autoMenu={false}/>
+			<NamedMarkdownPage name='validator' autoMenu={false} />
 			<Validator validationAction={navigate} />
 		</div>
 	)
 }
 
-export const metadata  = {
+export const metadata = {
 	title: 'ORUK service validator',
-	description: "The tool to validate your feed",
-  }
+	description: 'The tool to validate your feed'
+}

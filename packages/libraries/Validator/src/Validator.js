@@ -6,19 +6,23 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './Validator.module.css'
 
 export const Validator = ({ validationAction }) => {
-	const UUID = uuidv4();
+	const UUID = uuidv4()
 	return (
-	<Main>
-		<PageMargin>
-			<form action={validationAction}>
-				<label className={styles.label}>
-					Feed URL<input type='text' name='uri' required/>
-				</label>
-				<span className={styles.example}>eg: http://example.com/feed/</span>
-				<input type="hidden" name="id" value={UUID} />
-				<button className={styles.submit}>Check</button>
-			</form>
-		</PageMargin>
-	</Main>
-)
+		<Main>
+			<PageMargin>
+				<form action={validationAction}>
+					<label className={styles.label}>
+						Feed URL <span aria-label='required'>(required)</span>
+						<input type='URL' name='uri' required />
+					</label>
+					<span className={styles.example}>eg: http://example.com/feed/</span>
+					<input type='hidden' name='id' value={UUID} />
+					<noscript>
+						<input type='hidden' name='jsIsDisabled' value={true} />
+					</noscript>
+					<button className={styles.submit}>Check</button>
+				</form>
+			</PageMargin>
+		</Main>
+	)
 }
