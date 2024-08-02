@@ -3,5 +3,7 @@
 import { redirect } from 'next/navigation'
 
 export async function navigate(data) {
-	redirect(`/developer/tools/validator/${data.get('id')}`)
+	let querystring = `?url=${data.get('uri')}`
+	if (!data.get('jsIsDisabled')) querystring = `${querystring}&js=enabled`
+	redirect(`/developer/tools/validator/${data.get('id')}${querystring}`)
 }

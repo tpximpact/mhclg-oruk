@@ -1,16 +1,16 @@
 .example {
-    display:block;
-    font-style: italic;
+	display: block;
+	font-style: italic;
 }
 
 .label {
-
 }
 
-.label input{
-    margin:0;
+.label input {
+	margin: 0;
+	width: 80%;
 }
 
 .submit {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
