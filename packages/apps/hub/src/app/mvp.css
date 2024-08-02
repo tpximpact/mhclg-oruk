@@ -1,4 +1,8 @@
+
+
 /* MVP.css v1.15 - https://github.com/andybrewer/mvp */
+
+
 
 :root {
 	--active-brightness: 0.85;
@@ -572,4 +576,10 @@ blockquote footer {
 *::-webkit-scrollbar-thumb {
 	background-color: var(--color-scrollbar);
 	border-radius: 10px;
+}
+
+
+
+.cm-theme-light * {
+	font-size:1.1rem;
 }

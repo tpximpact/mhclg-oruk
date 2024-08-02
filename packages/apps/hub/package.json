@@ -9,10 +9,15 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@codemirror/lang-json": "^6.0.1",
 		"@oruk/Dashboard": "0.0.1",
 		"@oruk/Validator": "0.0.1",
+		"@tpx/Icon": "0.0.1",
 		"@tpx/Spinner": "0.0.1",
 		"@tpx/SuspenseIf": "0.0.1",
+		"@uiw/codemirror-theme-okaidia": "^4.23.0",
+		"@uiw/codemirror-theme-vscode": "^4.23.0",
+		"@uiw/react-codemirror": "^4.23.0",
 		"front-matter": "^4.0.2",
 		"gray-matter": "^4.0.3",
 		"marked": "^13.0.0",

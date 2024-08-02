@@ -21,11 +21,12 @@ export default function RootLayout({ children }) {
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
 				<PageWrapper>
+				<NoJsBanner />
 					<Axe />
 					<Cookies />
 					<div>{children}</div>
 					<Footer />
-					<NoJsBanner />
+					
 				</PageWrapper>
 				<NoJsFallback />
 			</body>
