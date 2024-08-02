@@ -3,7 +3,6 @@ import { fetchValidationResult } from '@/components/ValidationResultWithSuspense
 import { Main } from '@tpx/Main'
 import { PageMargin } from '@tpx/PageMargin'
 import { headers } from 'next/headers'
-import { ValidationResult } from '@/components/ValidationResult'
 
 export function isInitialPageLoad() {
 	return !!headers().get('accept')?.includes('text/html')
@@ -16,33 +15,23 @@ export async function generateMetadata({ params }) {
 	}
 }
 
-export const Wrapper = ({ children }) => (
-	<PageMargin>
-		<Main>
-			<h1>Service Validation results</h1>
-			{children}
-		</Main>
-	</PageMargin>
-)
-
 export default async function Page({ params, searchParams }) {
 	let result
-	const js = searchParams.js
-	const uri = searchParams.uri
-	const id = params.id
-	// for initial page load we want to preload all the data
-	// for client side navigation we want to lazy load the data and show loading state
+	const args = {
+		uri: searchParams.uri,
+		id: params.id
+	}
+
 	if (isInitialPageLoad()) {
-		result = await fetchValidationResult()
+		result = await fetchValidationResult(args)
 	}
 
 	return (
-		<Wrapper>
-			{js ? (
-				<ValidationResultWithSuspense result={result} id={id} uri={uri} />
-			) : (
-				<ValidationResult result={result} id={id} uri={uri}/>
-			)}
-		</Wrapper>
+		<PageMargin>
+			<Main>
+				<h1>Service Validation results</h1>
+				<ValidationResultWithSuspense result={result} {...args} />
+			</Main>
+		</PageMargin>
 	)
 }

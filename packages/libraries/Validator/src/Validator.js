@@ -17,9 +17,6 @@ export const Validator = ({ validationAction }) => {
 					</label>
 					<span className={styles.example}>eg: http://example.com/feed/</span>
 					<input type='hidden' name='id' value={UUID} />
-					<noscript>
-						<input type='hidden' name='jsIsDisabled' value={true} />
-					</noscript>
 					<button className={styles.submit}>Check</button>
 				</form>
 			</PageMargin>

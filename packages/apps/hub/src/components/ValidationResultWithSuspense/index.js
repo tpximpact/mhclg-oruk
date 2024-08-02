@@ -4,9 +4,8 @@ import { ValidationResult } from '@/components/ValidationResult'
 
 const REMOTE_ENDPOINT = 'https://dummyjson.com/quotes'
 
-async function ValidationResultLoader(params) {
-	const result = await fetchValidationResult({...params})
-
+async function ValidationResultLoader(args) {
+	const result = await fetchValidationResult(args)
 	return <ValidationResult result={result} />
 }
 
@@ -22,10 +21,14 @@ export function ValidationResultSkeleton() {
 	return <Spinner />
 }
 
-export async function fetchValidationResult() {
-	//console.log("Getting data from " + uri + "/" + id)
+export async function fetchValidationResult(args) {
 	const url = REMOTE_ENDPOINT
-	const res = await fetch(url)
-	const data = await res.json()
+	const res = await fetch(url) /*, {
+		method: "POST"
+	  })*/
+	const data = {
+		uri: args.uri,
+		result: await res.json()
+	}
 	return data
 }
