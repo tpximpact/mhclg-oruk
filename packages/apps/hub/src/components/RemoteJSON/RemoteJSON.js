@@ -3,32 +3,31 @@ import { SuspenseIf } from '@tpx/SuspenseIf'
 import Spinner from '@tpx/Spinner'
 import { ValidationResult } from '@/components/ValidationResult'
 
-const REMOTE_ENDPOINT = 'https://dummyjson.com/quotes'
-
-async function ValidationResultLoader(args) {
-	const result = await fetchValidationResult(args)
+async function ResultLoader(args) {
+	const result = await fetchResult(args)
 	return <ValidationResult result={result} />
 }
 
-export function ValidationResultWithSuspense({ result, ...props }) {
+export function ResultWithSuspense({ result, ...props }) {
 	return (
-		<SuspenseIf condition={!result} fallback={<ValidationResultSkeleton />}>
-			<ValidationResultLoader {...props} />
+		<SuspenseIf condition={!result} fallback={<ResultSkeleton />}>
+			<ResultLoader {...props} />
 		</SuspenseIf>
 	)
 }
 
-export function ValidationResultSkeleton() {
+export function ResultSkeleton() {
 	return <Spinner />
 }
 
-export async function fetchValidationResult(args) {
-	const url = REMOTE_ENDPOINT
-	const res = await fetch(url) /*, {
-		method: "POST"
-	  })*/
+export async function fetchResult({
+    endpoint,
+    queryParams
+}) {
+	const res = await fetch(endpoint)
 	const data = {
-		uri: args.uri,
+        endpoint:endpoint,
+		queryParams: queryParams,
 		result: await res.json()
 	}
 	return data
@@ -38,14 +37,12 @@ function isInitialPageLoad() {
 	return !!headers().get('accept')?.includes('text/html')
 }
 
-export const RemoteJSON = async ({ 
-    request 
-}) => {
+export const RemoteJSON = async (props) => {
 	let result
 
 	if (isInitialPageLoad()) {
-		result = await fetchValidationResult(request)
+		result = await fetchResult(props)
 	}
 
-	return <ValidationResultWithSuspense result={result} {...request} />
+	return <ResultWithSuspense {...props} />
 }
