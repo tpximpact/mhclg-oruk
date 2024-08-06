@@ -1,8 +1,4 @@
-
-
 /* MVP.css v1.15 - https://github.com/andybrewer/mvp */
-
-
 
 :root {
 	--active-brightness: 0.85;
@@ -578,8 +574,6 @@ blockquote footer {
 	border-radius: 10px;
 }
 
-
-
 .cm-theme-light * {
-	font-size:1.1rem;
+	font-size: 1.1rem;
 }
