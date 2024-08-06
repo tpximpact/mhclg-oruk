@@ -1,62 +1,60 @@
 import styles from './ValidationResult.module.css'
-import  Icon, { ICON_TYPE } from "@tpx/Icon"
-import {LiteralResponse} from './LiteralResponse'
+import Icon, { ICON_TYPE } from '@tpx/Icon'
+import { LiteralResponse } from './LiteralResponse'
 
-const Pass = (props) =>
-	<Validation  status="pass" icon={ICON_TYPE.OK} colourClass={styles.pass} {...props}/>
+const Pass = props => (
+	<Validation status='pass' icon={ICON_TYPE.OK} colourClass={styles.pass} {...props} />
+)
 
-const Fail = (props) =>
-	<Validation  status="fail" icon={ICON_TYPE.WARN} colourClass={styles.fail} {...props}/>
+const Fail = props => (
+	<Validation status='fail' icon={ICON_TYPE.WARN} colourClass={styles.fail} {...props} />
+)
 
-const NA = (props) =>
-	<Validation  status="not attempted" iconColour="#949494" icon={ICON_TYPE.WARN} colourClass={styles.na} {...props}/>
+const NA = props => (
+	<Validation
+		status='not attempted'
+		iconColour='#949494'
+		icon={ICON_TYPE.WARN}
+		colourClass={styles.na}
+		{...props}
+	/>
+)
 
-
-
-	const Validation= ({
-		title,
-		text,
-		icon,
-		colourClass,
-		error,
-		status,
-		iconColour
-	}) =>
-		<div className={`${styles.validation} ${colourClass}`}>
-			<div className={styles.icon}><Icon
-			colour={iconColour ? iconColour : "#000"} weight='2' icon={icon} size='36'
-			
-			/></div>
-			<div className={styles.content}>
-			<details>
-  <summary>{title}: <span className={styles.status}>{status}</span></summary>
-  <p>{text}</p>
-				
-</details>{
-					error && <p  className={styles.error}>{error}</p>
-				}
-			</div>
+const Validation = ({ title, text, icon, colourClass, error, status, iconColour }) => (
+	<div className={`${styles.validation} ${colourClass}`}>
+		<div className={styles.icon}>
+			<Icon colour={iconColour ? iconColour : '#000'} weight='2' icon={icon} size='36' />
 		</div>
+		<div className={styles.content}>
+			<details>
+				<summary>
+					{title}: <span className={styles.status}>{status}</span>
+				</summary>
+				<p>{text}</p>
+			</details>
+			{error && <p className={styles.error}>{error}</p>}
+		</div>
+	</div>
+)
 
 export const ValidationResult = ({ result }) => {
 	return (
 		<div>
-			
 			<Pass
-				title="Check A"
-				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. "
+				title='Check A'
+				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
 			/>
 			<Fail
-				title="Check B"
-				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. "
-				error="Ut lobortis venenatis lorem nec commodo. Nullam at arcu metus. Nulla facilisi. Praesent sit amet lacus ante. Sed venenatis quam vel efficitur porttitor. Nunc ultrices massa vulputate euismod sagittis. Vivamus commodo vitae nibh convallis egestas. Proin et efficitur metus."
+				title='Check B'
+				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
+				error='Ut lobortis venenatis lorem nec commodo. Nullam at arcu metus. Nulla facilisi. Praesent sit amet lacus ante. Sed venenatis quam vel efficitur porttitor. Nunc ultrices massa vulputate euismod sagittis. Vivamus commodo vitae nibh convallis egestas. Proin et efficitur metus.'
 			/>
-						<NA
-				title="Check C"
-				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. "
-					/>
-			<div style={{margin: "2rem 0"}}>
-			<LiteralResponse />
+			<NA
+				title='Check C'
+				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
+			/>
+			<div style={{ margin: '2rem 0' }}>
+				<LiteralResponse />
 			</div>
 			{/*
 			<div>

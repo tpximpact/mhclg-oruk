@@ -2,9 +2,13 @@ import styles from './Masthead.module.css'
 import Link from 'next/link'
 import { PageMargin } from '@tpx/PageMargin'
 import { Logo } from '../Logo'
-import { Navigation } from '../Navigation'
+// import { Navigation } from '../Navigation'
 
-export const Masthead = ({ selected, developer, children }) => {
+export const Masthead = ({
+	//selected,
+	developer,
+	children
+}) => {
 	return (
 		<header className={`${styles.Masthead} ${developer && styles.developer}`}>
 			<PageMargin>

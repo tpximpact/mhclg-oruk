@@ -1,53 +1,53 @@
 .validation {
-    padding: 0.2rem 3rem 0.2rem 2rem ;
-    display: flex;
-    margin-bottom:0.3rem;
-    border-width: 3px;
-    border-style: solid;
+	padding: 0.2rem 3rem 0.2rem 2rem;
+	display: flex;
+	margin-bottom: 0.3rem;
+	border-width: 3px;
+	border-style: solid;
 }
 
 .validation h3 {
-    font-size: 1.6rem;
+	font-size: 1.6rem;
 }
 
 .pass {
-    background: #c5e1a5;
-    border-color:#8bc34a;
-}   
+	background: #c5e1a5;
+	border-color: #8bc34a;
+}
 
 .fail {
-    background: #ffcdd2;
-    border-color: #ef9a9a;
-}   
+	background: #ffcdd2;
+	border-color: #ef9a9a;
+}
 
 .na {
-    border-color: #ccc;
-    color: #949494;
-} 
+	border-color: #ccc;
+	color: #949494;
+}
 
 .na svg {
-    stroke: #fc0 !important;
+	stroke: #fc0 !important;
 }
 
 .error {
-    margin-bottom:2rem;
-    font-weight: 600;
+	margin-bottom: 2rem;
+	font-weight: 600;
 }
 
 .content {
-    flex:1;
+	flex: 1;
 }
 
-.content summary{
-    font-size:1.4rem;
-    font-weight: normal;
+.content summary {
+	font-size: 1.4rem;
+	font-weight: normal;
 }
 
 .status {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .icon {
-    flex:0 4rem;
-    padding-top:1rem;
+	flex: 0 4rem;
+	padding-top: 1rem;
 }
