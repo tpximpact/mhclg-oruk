@@ -3,7 +3,7 @@
 import React from 'react'
 import CodeMirror from '@uiw/react-codemirror'
 import { jsonLanguage } from '@codemirror/lang-json'
-import { vscode } from '@uiw/codemirror-theme-vscode'
+import { vscodeLight } from '@uiw/codemirror-theme-vscode'
 import { EditorView } from '@codemirror/view'
 
 const json = `{
@@ -22,7 +22,7 @@ export const LiteralResponse = () => (
 	<div>
 		<h2>JSON response received from www.example.com</h2>
 		<CodeMirror
-			theme={vscode}
+			theme={vscodeLight}
 			value={json}
 			height='200px'
 			extensions={[jsonLanguage, customTheme]}
