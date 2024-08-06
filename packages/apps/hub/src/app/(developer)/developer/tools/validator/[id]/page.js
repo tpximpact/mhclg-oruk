@@ -1,6 +1,7 @@
 import { Main } from '@tpx/Main'
 import { PageMargin } from '@tpx/PageMargin'
 import { RemoteJSON } from '@/components/RemoteJSON'
+import { ValidationResult } from '@/components/ValidationResult'
 
 export async function generateMetadata({ params }) {
 	return {
@@ -15,6 +16,7 @@ export default async function Page({ params, searchParams }) {
 			<Main>
 				<h1>Service Validation results</h1>
 				<RemoteJSON
+					ResultRenderComponent={ValidationResult}
 					endpoint='https://dummyjson.com/quotes'
 					queryParams={{
 						uri: searchParams.uri,
