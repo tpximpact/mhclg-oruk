@@ -3,46 +3,36 @@ import { SuspenseIf } from '@tpx/SuspenseIf'
 import Spinner from '@tpx/Spinner'
 import { ValidationResult } from '@/components/ValidationResult'
 
-async function ResultLoader(args) {
+const ResultLoader = async args => {
+	const ResultRenderComponent = ValidationResult
 	const result = await fetchResult(args)
-	return <ValidationResult result={result} />
+	return <ResultRenderComponent result={result} />
 }
 
-export function ResultWithSuspense({ result, ...props }) {
-	return (
-		<SuspenseIf condition={!result} fallback={<ResultSkeleton />}>
-			<ResultLoader {...props} />
-		</SuspenseIf>
-	)
-}
+const ResultWithSuspense = ({ result, ...props }) => (
+	<SuspenseIf condition={!result} fallback={<Spinner />}>
+		<ResultLoader {...props} />
+	</SuspenseIf>
+)
 
-export function ResultSkeleton() {
-	return <Spinner />
-}
-
-export async function fetchResult({
-    endpoint,
-    queryParams
-}) {
+const fetchResult = async ({ endpoint, queryParams }) => {
 	const res = await fetch(endpoint)
 	const data = {
-        endpoint:endpoint,
+		endpoint: endpoint,
 		queryParams: queryParams,
 		result: await res.json()
 	}
 	return data
 }
 
-function isInitialPageLoad() {
-	return !!headers().get('accept')?.includes('text/html')
-}
+const isInitialPageLoad = () => !!headers().get('accept')?.includes('text/html')
 
-export const RemoteJSON = async (props) => {
+export const RemoteJSON = async props => {
 	let result
 
 	if (isInitialPageLoad()) {
 		result = await fetchResult(props)
 	}
 
-	return <ResultWithSuspense {...props} />
+	return <ResultWithSuspense result={result} {...props} />
 }

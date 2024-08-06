@@ -15,7 +15,7 @@ export default async function Page({ params, searchParams }) {
 			<Main>
 				<h1>Service Validation results</h1>
 				<RemoteJSON
-				endpoint='https://dummyjson.com/quotes'
+					endpoint='https://dummyjson.com/quotes'
 					queryParams={{
 						uri: searchParams.uri,
 						id: params.id
