@@ -40,6 +40,7 @@ const Validation = ({ title, text, icon, colourClass, error, status, iconColour 
 export const ValidationResult = ({ result }) => {
 	return (
 		<div>
+			{JSON.stringify(result)}
 			<Pass
 				title='Check A'
 				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
