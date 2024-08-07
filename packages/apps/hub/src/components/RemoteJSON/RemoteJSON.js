@@ -15,11 +15,11 @@ const ResultWithSuspense = ({ result, ...props }) => (
 
 const fetchResult = async ({ endpoint, queryParams }) => {
 	const res = await fetch(endpoint) // TODO send query params
-	return ({
+	return {
 		endpoint: endpoint,
 		queryParams: queryParams,
 		result: await res.json()
-	})
+	}
 }
 
 const isInitialPageLoad = () => !!headers().get('accept')?.includes('text/html')
