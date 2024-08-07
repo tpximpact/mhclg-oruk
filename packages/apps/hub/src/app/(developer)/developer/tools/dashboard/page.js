@@ -2,23 +2,25 @@
 
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { PageMargin } from '@tpx/PageMargin'
-// import { Dashboard } from '@oruk/Dashboard'
+import { Dashboard } from '@/components/Dashboard'
 
 import meta from '/content/developer/tools/dashboard/metadata.json'
+import data from '/content/developer/tools/dashboard/data.json'
+
 export const metadata = meta
 
 export default function Home() {
 	return (
 		<div>
 			<NamedMarkdownPage name='dashboard' />
-			{/*<Dashboard />*/}
 			<PageMargin>
-				<Placeholder />
+				<Dashboard data={data}/>
 			</PageMargin>
 		</div>
 	)
 }
 
+/*
 const Placeholder = () => (
 	<table className='feeds'>
 		<thead>
@@ -1037,3 +1039,4 @@ const Placeholder = () => (
 		</tbody>
 	</table>
 )
+*/
