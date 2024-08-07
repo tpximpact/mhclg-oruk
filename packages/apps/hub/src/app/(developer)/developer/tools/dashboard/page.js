@@ -14,7 +14,7 @@ export default function Home() {
 		<div>
 			<NamedMarkdownPage name='dashboard' />
 			<PageMargin>
-				<Dashboard data={data}/>
+				<Dashboard data={data} />
 			</PageMargin>
 		</div>
 	)
