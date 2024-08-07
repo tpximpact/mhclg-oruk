@@ -16,13 +16,15 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
+const USE_AXE = false
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
 				<PageWrapper>
 					<NoJsBanner />
-					<Axe />
+					{USE_AXE && <Axe />}
 					<Cookies />
 					<div>{children}</div>
 					<Footer />
