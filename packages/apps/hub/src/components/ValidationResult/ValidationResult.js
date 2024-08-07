@@ -20,7 +20,10 @@ const NA = props => (
 	/>
 )
 
-const Validation = ({ title, text, icon, colourClass, error, status, iconColour }) => (
+const Validation = ({ 
+	title, 
+	text, 
+	icon, colourClass, error, status, iconColour }) => (
 	<div className={`${styles.validation} ${colourClass}`}>
 		<div className={styles.icon}>
 			<Icon colour={iconColour ? iconColour : '#000'} weight='2' icon={icon} size='36' />
@@ -37,10 +40,32 @@ const Validation = ({ title, text, icon, colourClass, error, status, iconColour 
 	</div>
 )
 
+const dummyData = [
+	{
+		title: "Level 1 compliance",
+		status: "pass"
+	},
+	{
+		title: "Level 2 compliance",
+		status: "fail"
+	}
+]
+
+
+
+
 export const ValidationResult = ({ result }) => {
 	return (
 		<div>
-			{JSON.stringify(result)}
+			<h2 className={styles.service}><span className={styles.light}>for </span>{result.queryParams.uri}</h2>
+			
+			{
+				dummyData.map(
+					(sectionData, index) => <Section key={index} data={sectionData} />
+				)
+			}
+
+
 			<Pass
 				title='Check A'
 				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
@@ -142,3 +167,9 @@ export const ValidationResult = ({ result }) => {
 		</div>
 	)
 }
+
+
+const Section = ({data}) => <section className={styles.section}>
+		<h3 className={styles.sectionTitle}>{data.title} <Icon colour={1 ? '#f00' : '#000'} weight='2' icon={ICON_TYPE.CROSS} size='36' />
+		</h3>
+	</section>

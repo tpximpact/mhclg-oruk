@@ -6,6 +6,28 @@
 	border-style: solid;
 }
 
+.section {
+	border-left:4px solid black;
+	padding-left:1rem;
+	margin-bottom:1rem;
+}
+
+.sectionTitle{
+	font-size:1.4rem;
+}
+
+.pageTitle{
+	margin-bottom: 0;
+}
+
+.service{
+	margin-top:0;
+}
+
+.light {
+	font-weight: 300;
+}
+
 .validation h3 {
 	font-size: 1.6rem;
 }
