@@ -7,21 +7,21 @@
 }
 
 .section {
-	border-left:4px solid black;
-	padding-left:1rem;
-	margin-bottom:1rem;
+	border-left: 4px solid black;
+	padding-left: 1rem;
+	margin-bottom: 1rem;
 }
 
-.sectionTitle{
-	font-size:1.4rem;
+.sectionTitle {
+	font-size: 1.4rem;
 }
 
-.pageTitle{
+.pageTitle {
 	margin-bottom: 0;
 }
 
-.service{
-	margin-top:0;
+.service {
+	margin-top: 0;
 }
 
 .light {

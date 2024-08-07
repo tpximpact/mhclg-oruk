@@ -1,7 +1,7 @@
 import { Main } from '@tpx/Main'
 import { PageMargin } from '@tpx/PageMargin'
 import { RemoteJSON } from '@/components/RemoteJSON'
-import { ValidationResult, ValidationResultPageTitle } from '@/components/ValidationResult'
+import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
 
 export async function generateMetadata({ params }) {
 	return {
@@ -14,9 +14,9 @@ export default async function Page({ params, searchParams }) {
 	return (
 		<PageMargin>
 			<Main>
-				<ValidationResultPageTitle/>
+				<ValidatorResultPageTitle/>
 				<RemoteJSON
-					ResultRenderComponent={ValidationResult}
+					ResultRenderComponent={ValidatorResult}
 					endpoint='https://dummyjson.com/quotes'
 					//endpoint='https://doesntexistinthisuniverseoranyother.com/nope'
 					//endpoint='https://google.com'

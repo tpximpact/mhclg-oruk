@@ -4,12 +4,19 @@ import Spinner from '@tpx/Spinner'
 
 const ResultLoader = async ({ ResultRenderComponent, ...args }) => {
 	const result = await fetchResult(args)
-	return result && result.ok ? <ResultRenderComponent result={result} /> :
-	<Error data={result.error} />
+	return result && result.ok ? (
+		<ResultRenderComponent result={result} />
+	) : (
+		<Error data={result.error} />
+	)
 }
 
-const Error = ({data}) => {
-	return <div style={{color: "red"}}><strong>Sorry, an unexpected error occurred.</strong> {data}</div>
+const Error = ({ data }) => {
+	return (
+		<div style={{ color: 'red' }}>
+			<strong>Sorry, an unexpected error occurred.</strong> {data}
+		</div>
+	)
 }
 
 const ResultWithSuspense = ({ result, ...props }) => (
@@ -20,51 +27,25 @@ const ResultWithSuspense = ({ result, ...props }) => (
 
 const fetchResult = async ({ endpoint, queryParams }) => {
 	try {
-		const res = await fetch(endpoint) // TODO send query params
-		if (res.ok) {
+		const response = await fetch(endpoint) // TODO send query params
+		if (response.ok) {
 			return {
-				ok:true,
+				ok: true,
 				endpoint: endpoint,
 				queryParams: queryParams,
-				result: await res.json()
+				result: await response.json()
 			}
 		} else {
-		  if (response.status === 404) throw new Error('404, Not found');
-		  if (response.status === 500) throw new Error('500, internal server error');
-		  throw new Error(response.status);
+			if (response.status === 404) throw new Error('404, Not found')
+			if (response.status === 500) throw new Error('500, internal server error')
+			throw new Error(response.status)
 		}
 	} catch (error) {
-		return ({
+		return {
 			ok: false,
 			error: `${error.message}: ${error.cause && error.cause.message && error.cause.message}`
-		})
-	}
-
-	return 
-
-	/*
-	
-
-console.log(res)
-console.log("########")
-
-		if (res.ok) {
-			return {
-				endpoint: endpoint,
-				queryParams: queryParams,
-				result: await res.json()
-			}
-		} else {
-		  if (response.status === 404) throw new Error('404, Not found');
-		  if (response.status === 500) throw new Error('500, internal server error');
-		  throw new Error(response.status);
 		}
-	  } catch (error) {
-		console.error('Fetch', error);
-		
-	  }
-		*/
-
+	}
 }
 
 const isInitialPageLoad = () => !!headers().get('accept')?.includes('text/html')
