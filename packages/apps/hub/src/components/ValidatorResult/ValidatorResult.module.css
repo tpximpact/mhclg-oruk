@@ -7,13 +7,22 @@
 }
 
 .section {
-	border-left: 4px solid black;
-	padding-left: 1rem;
 	margin-bottom: 1rem;
+}
+
+.payload {
+	border-left: 8px solid black;
+	padding-left: 1rem;
+	width: 600px;
 }
 
 .sectionTitle {
 	font-size: 1.4rem;
+}
+
+.title {
+	display: inline-block;
+	margin-left: 0.25rem;
 }
 
 .pageTitle {
@@ -72,4 +81,56 @@
 .icon {
 	flex: 0 4rem;
 	padding-top: 1rem;
+}
+
+.test {
+	display: flex;
+
+	padding: 1rem;
+}
+
+.test:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+
+.passStatus {
+	background: #00ac1b;
+	color: #fff;
+}
+
+.failStatus {
+	background: #ff3300;
+	color: #fff;
+}
+
+.skipStatus {
+	background: #ccc;
+	color: #000;
+}
+
+.testIcon {
+	flex: 100px 0 0;
+}
+
+.testText {
+	flex: 1;
+}
+
+.testText h4 {
+	margin: 0;
+}
+
+.testText summary,
+.testText details {
+	margin: 0;
+}
+
+.testText summary {
+	text-decoration: underline;
+	font-weight: normal;
+}
+
+.testText summary::marker,
+.testText summary::-webkit-details-marker {
+	display: none;
 }

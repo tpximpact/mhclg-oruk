@@ -18,9 +18,12 @@ const customTheme = EditorView.theme({
 	}
 })
 
-export const LiteralResponse = () => (
+export const LiteralResponse = ({ host }) => (
 	<div>
-		<h2>JSON response received from www.example.com</h2>
+		<h2>
+			<span style={{ fontWeight: 'normal' }}>JSON response received from</span> {host}
+		</h2>
+		<noscript>Sorry. The JSON view feature requires JavaScript</noscript>
 		<CodeMirror
 			theme={vscodeLight}
 			value={json}

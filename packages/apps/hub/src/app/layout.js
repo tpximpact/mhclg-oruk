@@ -16,7 +16,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
-const USE_AXE = false
+const USE_AXE = true
 
 export default function RootLayout({ children }) {
 	return (

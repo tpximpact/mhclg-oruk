@@ -19,9 +19,10 @@ const Error = ({ data }) => {
 	)
 }
 
-const ResultWithSuspense = ({ result, ...props }) => (
+const ResultWithSuspense = ({ result, RetryComponent, ...props }) => (
 	<SuspenseIf condition={!result} fallback={<Spinner />}>
 		<ResultLoader {...props} />
+		{RetryComponent && <RetryComponent />}
 	</SuspenseIf>
 )
 
