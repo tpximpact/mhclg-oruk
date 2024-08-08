@@ -2,12 +2,11 @@
 
 import { v4 as uuidv4 } from 'uuid'
 import styles from './ValidatorForm.module.css'
-import { PageMargin } from '@tpx/PageMargin'
 
 export const ValidatorForm = ({ action, defaultValue }) => {
 	const UUID = uuidv4()
 	return (
-		<PageMargin>
+
 			<form action={action}>
 				<label className={styles.label}>
 					Feed URL <span aria-label='required'>(required)</span>
@@ -17,6 +16,6 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 				<input type='hidden' name='id' value={UUID} />
 				<button className={styles.submit}>Check</button>
 			</form>
-		</PageMargin>
+
 	)
 }
