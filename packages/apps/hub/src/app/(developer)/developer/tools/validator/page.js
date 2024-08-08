@@ -1,12 +1,12 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { Validator } from '@oruk/Validator'
+import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
 
-export default function Home() {
+export default function Page() {
 	return (
 		<div>
 			<NamedMarkdownPage name='validator' autoMenu={false} />
-			<Validator validationAction={navigate} />
+			<ValidatorForm action={navigate} />
 		</div>
 	)
 }

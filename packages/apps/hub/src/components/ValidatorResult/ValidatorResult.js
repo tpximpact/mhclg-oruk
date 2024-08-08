@@ -2,49 +2,52 @@ import styles from './ValidatorResult.module.css'
 import Icon, { ICON_TYPE } from '@tpx/Icon'
 import { LiteralResponse } from './LiteralResponse'
 
-const Pass = props => (
-	<Validation status='pass' icon={ICON_TYPE.OK} colourClass={styles.pass} {...props} />
-)
-
-const Fail = props => (
-	<Validation status='fail' icon={ICON_TYPE.WARN} colourClass={styles.fail} {...props} />
-)
-
-const NA = props => (
-	<Validation
-		status='not attempted'
-		iconColour='#949494'
-		icon={ICON_TYPE.WARN}
-		colourClass={styles.na}
-		{...props}
-	/>
-)
-
-const Validation = ({ title, text, icon, colourClass, error, status, iconColour }) => (
-	<div className={`${styles.validation} ${colourClass}`}>
-		<div className={styles.icon}>
-			<Icon colour={iconColour ? iconColour : '#000'} weight='2' icon={icon} size='36' />
-		</div>
-		<div className={styles.content}>
-			<details>
-				<summary>
-					{title}: <span className={styles.status}>{status}</span>
-				</summary>
-				<p>{text}</p>
-			</details>
-			{error && <p className={styles.error}>{error}</p>}
-		</div>
-	</div>
-)
-
 const dummyData = [
 	{
 		title: 'Level 1 compliance',
-		status: 'pass'
+		status: 'passed',
+		blurb:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ante, placerat sit amet ex non, vestibulum commodo lorem. Maecenas vel molestie dolor. Cras vel faucibus arcu, id ullamcorper massa. Proin non ligula pellentesque, suscipit metus in, sollicitudin urna. Ut pulvinar tristique nisi, eget tristique magna finibus vel. Proin dignissim risus ligula, ut porttitor mauris euismod non. Phasellus tempus orci id magna ullamcorper interdum. Maecenas commodo ultrices lacus at pellentesque. Nullam id efficitur nunc. Sed arcu elit, lacinia sit amet ullamcorper id, euismod nec enim. In dignissim dui nunc, ut malesuada quam facilisis molestie.',
+		tests: [
+			{
+				title: 'Test A',
+				status: 'passed',
+				details: 'Lorem ipsum dolor sit amet si meliora dies'
+			},
+			{
+				title: 'Test B',
+				status: 'passed',
+				details: 'Lorem ipsum dolor sit amet si meliora dies'
+			},
+			{
+				title: 'Test C',
+				status: 'passed',
+				details: 'Lorem ipsum dolor sit amet si meliora dies'
+			}
+		]
 	},
 	{
 		title: 'Level 2 compliance',
-		status: 'fail'
+		status: 'failed',
+		blurb:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ante, placerat sit amet ex non, vestibulum commodo lorem. Maecenas vel molestie dolor. Cras vel faucibus arcu, id ullamcorper massa. Proin non ligula pellentesque, suscipit metus in, sollicitudin urna. Ut pulvinar tristique nisi, eget tristique magna finibus vel. Proin dignissim risus ligula, ut porttitor mauris euismod non. Phasellus tempus orci id magna ullamcorper interdum. Maecenas commodo ultrices lacus at pellentesque. Nullam id efficitur nunc. Sed arcu elit, lacinia sit amet ullamcorper id, euismod nec enim. In dignissim dui nunc, ut malesuada quam facilisis molestie.',
+		tests: [
+			{
+				title: 'Test D',
+				status: 'passed',
+				details: 'Lorem ipsum dolor sit amet si meliora dies'
+			},
+			{
+				title: 'Test E',
+				status: 'failed',
+				details: 'Lorem ipsum dolor sit amet si meliora dies'
+			},
+			{
+				title: 'Test F',
+				status: 'skipped',
+				details: 'Lorem ipsum dolor sit amet si meliora dies'
+			}
+		]
 	}
 ]
 
@@ -59,31 +62,121 @@ export const ValidatorResult = ({ result }) => {
 			{dummyData.map((sectionData, index) => (
 				<Section key={index} data={sectionData} />
 			))}
-
-			<Pass
-				title='Check A'
-				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
-			/>
-			<Fail
-				title='Check B'
-				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
-				error='Ut lobortis venenatis lorem nec commodo. Nullam at arcu metus. Nulla facilisi. Praesent sit amet lacus ante. Sed venenatis quam vel efficitur porttitor. Nunc ultrices massa vulputate euismod sagittis. Vivamus commodo vitae nibh convallis egestas. Proin et efficitur metus.'
-			/>
-			<NA
-				title='Check C'
-				text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus justo sit amet nisl mattis, nec aliquam risus scelerisque. Vestibulum eget tempor leo. Proin pharetra justo nec tincidunt condimentum. Praesent imperdiet turpis nisi, ac interdum arcu tristique vel. Donec maximus sollicitudin nisi, vel pretium nisl rutrum id. '
-			/>
-			<div style={{ margin: '2rem 0' }}>
-				<LiteralResponse />
+			<div style={{ margin: '5rem 0' }}>
+				<LiteralResponse host={result.queryParams.uri} />
 			</div>
 		</div>
 	)
 }
 
-const Section = ({ data }) => (
-	<section className={styles.section}>
-		<h3 className={styles.sectionTitle}>
-			{data.title} <Icon colour={1 ? '#f00' : '#000'} weight='2' icon={ICON_TYPE.CROSS} size='36' />
-		</h3>
-	</section>
-)
+const STATUS = {
+	PASS: 'passed',
+	FAIL: 'failed',
+	SKIPPED: 'skipped'
+}
+
+const getCSSClassForStatus = status => {
+	let klass
+	switch (status) {
+		case STATUS.PASS:
+			klass = styles.passStatus
+			break
+		case STATUS.FAIL:
+			klass = styles.failStatus
+			break
+		default:
+			klass = styles.skipStatus
+	}
+	return klass
+}
+
+const getColourForStatus = status => {
+	let colour
+	switch (status) {
+		case STATUS.PASS:
+			colour = '#00AC1B'
+			break
+		case STATUS.FAIL:
+			colour = '#FF3300'
+			break
+		default:
+			colour = '#999'
+	}
+	return colour
+}
+
+const getIconForStatus = status => {
+	let icon
+	switch (status) {
+		case STATUS.PASS:
+			icon = ICON_TYPE.OK
+			break
+		case STATUS.FAIL:
+			icon = ICON_TYPE.X
+			break
+		default:
+			icon = ICON_TYPE.X
+	}
+	return icon
+}
+
+const Section = ({ data }) => {
+	const title = data.title
+	const status = data.status
+	const tests = data.tests
+	const blurb = data.blurb
+
+	return (
+		<section className={styles.section}>
+			<header>
+				<h3 className={styles.sectionTitle}>
+					<Icon
+						colour={getColourForStatus(status)}
+						weight='4'
+						icon={getIconForStatus(status)}
+						size='26'
+					/>
+					<span className={styles.title}>{title}</span>
+					<span
+						style={{
+							color: getColourForStatus(status),
+							display: 'inline-block',
+							marginLeft: '0.25rem'
+						}}
+					>
+						({status})
+					</span>
+				</h3>
+			</header>
+			<div className={styles.payload} style={{ borderColor: getColourForStatus(status) }}>
+				<p style={{ margin: '0 0 1rem' }}>{blurb}</p>
+				{tests.map((test, index) => (
+					<Test key={index} data={test} />
+				))}
+			</div>
+		</section>
+	)
+}
+
+const Test = ({ data }) => {
+	const status = data.status
+	return (
+		<div className={`${styles.test} ${getCSSClassForStatus(status)}`}>
+			<div className={styles.testIcon}>
+				<Icon colour='#fff' weight='4' icon={getIconForStatus(status)} size='48' />
+			</div>
+			<div className={styles.testText}>
+				<h4>
+					{data.title}{' '}
+					<span style={{ display: 'inline-block', marginLeft: '0.25rem' }}>({status})</span>
+				</h4>
+
+				<details>
+					<summary>more details</summary>
+					<p>{data.details}</p>
+				</details>
+				{/*error && <p className={styles.error}>{error}</p>*/}
+			</div>
+		</div>
+	)
+}

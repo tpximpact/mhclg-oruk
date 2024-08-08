@@ -10,7 +10,6 @@
 	},
 	"dependencies": {
 		"@codemirror/lang-json": "^6.0.1",
-		"@oruk/Validator": "0.0.1",
 		"@tpx/Icon": "0.0.1",
 		"@tpx/Spinner": "0.0.1",
 		"@tpx/SuspenseIf": "0.0.1",
