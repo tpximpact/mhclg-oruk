@@ -8,7 +8,7 @@ const headers = [
 	'Services feed',
 	'Searchable',
 	'Last checked',
-	''
+	'Details'
 ]
 
 export const Dashboard = ({ data }) => (
