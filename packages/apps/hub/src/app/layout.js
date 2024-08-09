@@ -5,33 +5,38 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
+import { LandmarkBanner } from '@/components/LandmarkBanner'
+import { LandmarkNavigation } from '@/components/LandmarkNavigation'
+import { LandmarkMain } from '@/components/LandmarkMain'
+import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
-import { Footer } from '@/components/Footer'
 import { NoJsFallback } from '@/components/NoJsFallback'
-import { PageWrapper } from '@/components/PageWrapper'
-
 import defaultMetadata from '/content/metadata.json'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = defaultMetadata
 
 const USE_AXE = true
+const USE_COOKIES = false
+const USE_NAV = false
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-				<PageWrapper>
-					<NoJsBanner />
-					{USE_AXE && <Axe />}
-					<Cookies />
-					<div>{children}</div>
-					<Footer />
-				</PageWrapper>
+				{USE_AXE && <Axe />}
+				{USE_COOKIES && <Cookies />}
 				<NoJsFallback />
+				<LandmarkBanner>
+					<NoJsBanner />
+				</LandmarkBanner>
+				{USE_NAV && <LandmarkNavigation />}
+				<LandmarkMain>
+					{children}
+				</LandmarkMain>
+				<LandmarkContentInfo />
 			</body>
 		</html>
 	)
