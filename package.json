@@ -7,7 +7,7 @@
 		"packages/libraries/**/*"
 	],
 	"scripts": {
-		"hub": "yarn workspace @oruk/hub dev",
+		"dev": "yarn workspace @oruk/hub dev",
 		"build": "yarn workspace @oruk/hub build",
 		"tidy": "yarn prettier . --write",
 		"lint": "yarn run eslint --fix ./packages",
