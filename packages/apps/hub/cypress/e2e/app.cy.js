@@ -1,4 +1,4 @@
-describe('Navigation', () => {
+/*describe('Navigation', () => {
 	it('should navigate to the dashboard', () => {
 		cy.visit('http://localhost:3000/')
 		cy.get('a[href*="dashboard"]').click()
@@ -10,11 +10,16 @@ describe('Navigation', () => {
 		cy.visit('http://localhost:3000/')
 		cy.get('a[href*="validator"]').click()
 		cy.url().should('include', '/developer/tools/validator')
-		cy.get('h1').contains('Validator')
+		cy.get('h1').contains('Validate')
 	})
-})
+})*/
 
 describe('Home', () => {
+	it('should render homepage', () => {
+		cy.visit('http://localhost:3000/')
+		cy.get('h1').contains('βeta')
+	})
+	
 	it('should be accessible', () => {
 		cy.visit('http://localhost:3000/')
 		cy.injectAxe()

@@ -1,6 +1,7 @@
 import styles from './header.module.css'
 import { PageMargin } from '@tpx/PageMargin'
 import { Logo } from '@/components/Logo'
+import Link from 'next/link'
 
 export const LandmarkBanner = ({
 	children
@@ -8,7 +9,8 @@ export const LandmarkBanner = ({
 role="banner"
 className={styles.header}>
 <PageMargin>
-<Logo colour="#5AC09E" />
+<Link href='/'>
+<Logo colour="#5AC09E" /></Link>
 {children}
 </PageMargin>
 </header>
