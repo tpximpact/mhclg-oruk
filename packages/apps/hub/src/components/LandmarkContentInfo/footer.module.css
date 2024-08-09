@@ -1,0 +1,9 @@
+.footer{
+	margin-top:6rem;
+}
+
+.bottom {
+	background: var(--theme-footer-bg);
+	color: var(--theme-footer-fg);
+	padding: 4rem 0;
+}

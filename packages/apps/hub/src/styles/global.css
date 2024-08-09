@@ -1,10 +1,10 @@
 body{
-	background: var(--colour-paper);
-	color: var(--colour-ink);
+	background: var(--theme-paper);
+	color: var(--theme-ink);
 }
 
 a, a:hover, a:active, a:visited {
-	color: var(--colour-interaction);
+	color: var(--theme-interaction);
 	text-decoration: underline;
 	cursor: pointer;
 }
