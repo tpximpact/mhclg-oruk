@@ -1,6 +1,7 @@
 :root {
 	--colour-paper: #fff;
 	--colour-ink: #000;
+	--colour-interaction: #000;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,6 +3,12 @@ body{
 	color: var(--colour-ink);
 }
 
+a, a:hover, a:active, a:visited {
+	color: var(--colour-interaction);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .cm-theme-light * {
 	font-size: 1.1rem;
 }
