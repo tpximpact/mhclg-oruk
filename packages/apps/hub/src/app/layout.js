@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
-import './tokens.css'
-import './no-js.css'
-import './mvp.css' // temporary placeholder styles
+import '@ /styles/tokens.css'
+import '@/styles/no-js.css'
+import '@/styles/mvp.css' // temporary placeholder styles
 
 import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
