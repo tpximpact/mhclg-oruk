@@ -1,1 +1,1 @@
-export {LandmarkNavigation} from './LandmarkNavigation'
+export { LandmarkNavigation } from './LandmarkNavigation'

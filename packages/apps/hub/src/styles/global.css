@@ -1,10 +1,13 @@
-body{
+body {
 	background: var(--theme-paper);
 	color: var(--theme-ink);
 	font-size: 1.2em;
 }
 
-a, a:hover, a:active, a:visited {
+a,
+a:hover,
+a:active,
+a:visited {
 	color: var(--theme-interaction);
 	text-decoration: underline;
 	cursor: pointer;
@@ -15,10 +18,10 @@ a, a:hover, a:active, a:visited {
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 body {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
 }

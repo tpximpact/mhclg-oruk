@@ -27,19 +27,18 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-			<div>{USE_AXE && <Axe />}
-			{USE_COOKIES && <Cookies />}
-			
-				<LandmarkBanner>
-					<NoJsBanner />
-				</LandmarkBanner>
-				{/*USE_NAV && <LandmarkNavigation />*/}
-				<LandmarkMain>
-					{children}
-				</LandmarkMain>
+				<div>
+					{USE_AXE && <Axe />}
+					{USE_COOKIES && <Cookies />}
+
+					<LandmarkBanner>
+						<NoJsBanner />
+					</LandmarkBanner>
+					{/*USE_NAV && <LandmarkNavigation />*/}
+					<LandmarkMain>{children}</LandmarkMain>
 				</div>
 				<LandmarkContentInfo />
-				
+
 				<NoJsFallback />
 			</body>
 		</html>

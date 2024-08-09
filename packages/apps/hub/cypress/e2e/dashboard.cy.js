@@ -5,7 +5,7 @@ describe('Dashboard', () => {
 		cy.visit(DASHBOARD)
 		cy.get('h1').contains('Dashboard')
 	})
-	
+
 	it('should be accessible', () => {
 		cy.visit(DASHBOARD)
 		cy.injectAxe()

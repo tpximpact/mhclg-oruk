@@ -6,7 +6,7 @@ import styles from './ValidatorForm.module.css'
 export const ValidatorForm = ({ action, defaultValue }) => {
 	const UUID = uuidv4()
 	return (
-<div className={styles.form}>
+		<div className={styles.form}>
 			<form action={action}>
 				<label className={styles.label}>
 					Feed URL <span aria-label='required'>(required)</span>
@@ -16,6 +16,6 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 				<input type='hidden' name='id' value={UUID} />
 				<button className={styles.submit}>Check</button>
 			</form>
-</div>
+		</div>
 	)
 }

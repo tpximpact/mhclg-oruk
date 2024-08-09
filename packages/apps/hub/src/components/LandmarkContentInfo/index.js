@@ -1,1 +1,1 @@
-export {LandmarkContentInfo} from './LandmarkContentInfo'
+export { LandmarkContentInfo } from './LandmarkContentInfo'

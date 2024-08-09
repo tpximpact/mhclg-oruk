@@ -13,8 +13,7 @@ export default function Home() {
 	return (
 		<>
 			<NamedMarkdownPage name='dashboard' />
-				<Dashboard data={data} />
+			<Dashboard data={data} />
 		</>
 	)
 }
-
