@@ -1,3 +1,9 @@
 :root {
-	--foo: 1;
+	--colour-paper: #fff;
+	--colour-ink: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root[color-mode='user'] {
+	}
 }

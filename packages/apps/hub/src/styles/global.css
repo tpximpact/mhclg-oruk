@@ -1,0 +1,8 @@
+body{
+	background: var(--colour-paper);
+	color: var(--colour-ink);
+}
+
+.cm-theme-light * {
+	font-size: 1.1rem;
+}
