@@ -19,7 +19,7 @@ describe('Home', () => {
 		cy.visit('http://localhost:3000/')
 		cy.get('h1').contains('βeta')
 	})
-	
+
 	it('should be accessible', () => {
 		cy.visit('http://localhost:3000/')
 		cy.injectAxe()

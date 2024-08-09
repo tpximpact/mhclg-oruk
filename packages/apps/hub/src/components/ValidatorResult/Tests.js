@@ -1,6 +1,6 @@
 import styles from './ValidatorResult.module.css'
 import Icon, { ICON_TYPE } from '@tpx/Icon'
-import { dummyData }from './dummyData'
+import { dummyData } from './dummyData'
 import { STATUS } from './status'
 
 const getCSSClassForStatus = status => {
@@ -109,9 +109,11 @@ const Test = ({ data }) => {
 	)
 }
 
-
-export const Tests = ({result}) => <>
-{result}
-{dummyData.map((sectionData, index) => (
-				<Section key={index} data={sectionData} />
-			))}</>
+export const Tests = ({ result }) => (
+	<>
+		{result}
+		{dummyData.map((sectionData, index) => (
+			<Section key={index} data={sectionData} />
+		))}
+	</>
+)

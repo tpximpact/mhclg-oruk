@@ -1,1 +1,1 @@
-export {LandmarkMain} from './LandmarkMain'
+export { LandmarkMain } from './LandmarkMain'

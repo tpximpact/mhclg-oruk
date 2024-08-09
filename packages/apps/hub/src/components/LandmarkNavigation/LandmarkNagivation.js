@@ -1,3 +1,1 @@
-export const LandmarkNavigation = ({
-	selected
-}) => <nav> nav {selected} </nav>
+export const LandmarkNavigation = ({ selected }) => <nav> nav {selected} </nav>

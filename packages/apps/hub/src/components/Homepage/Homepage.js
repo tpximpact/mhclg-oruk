@@ -3,9 +3,5 @@ import { NamedMarkdownPage } from '../NamedMarkdownPage'
 //import { Main } from '@tpx/Main'
 
 export const Homepage = ({ contentName, markdownRaw }) => (
-	
-	
-			<NamedMarkdownPage name={contentName} markdownRaw={markdownRaw} />
-		
-	
+	<NamedMarkdownPage name={contentName} markdownRaw={markdownRaw} />
 )

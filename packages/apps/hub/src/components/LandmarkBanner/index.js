@@ -1,1 +1,1 @@
-export {LandmarkBanner} from './LandmarkBanner'
+export { LandmarkBanner } from './LandmarkBanner'

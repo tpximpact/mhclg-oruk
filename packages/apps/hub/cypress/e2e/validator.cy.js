@@ -5,7 +5,7 @@ describe('Validator Form', () => {
 		cy.visit(VALIDATOR_FORM)
 		cy.get('h1').contains('Validate')
 	})
-	
+
 	it('should be accessible', () => {
 		cy.visit(VALIDATOR_FORM)
 		cy.injectAxe()
