@@ -1,14 +1,24 @@
+.form {
+	margin-top:2rem;
+}
+
 .example {
 	display: block;
 	font-style: italic;
 }
 
 .label {
+	display: block;
+	font-weight: bold;
 }
 
 .label input {
 	margin: 0;
-	width: 80%;
+	width: 30rem;
+	display: block;
+	font-weight: normal;
+	padding: 5px;
+	border-radius: 0;
 }
 
 .submit {

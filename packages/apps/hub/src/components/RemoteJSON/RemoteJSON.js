@@ -28,7 +28,8 @@ const ResultWithSuspense = ({ result, RetryComponent, ...props }) => (
 
 const fetchResult = async ({ endpoint, queryParams }) => {
 	try {
-		const response = await fetch(endpoint) // TODO send query params
+		const opts = {method: "POST"}
+		const response = await fetch(endpoint,opts) // TODO send query params
 		if (response.ok) {
 			return {
 				ok: true,

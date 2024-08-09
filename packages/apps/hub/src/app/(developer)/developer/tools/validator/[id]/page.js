@@ -1,5 +1,3 @@
-import { Main } from '@tpx/Main'
-import { PageMargin } from '@tpx/PageMargin'
 import { RemoteJSON } from '@/components/RemoteJSON'
 import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
 import { ValidatorForm } from '@/components/ValidatorForm'
@@ -13,19 +11,18 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params, searchParams }) {
-	return (
-		<PageMargin>
-			<Main>
+	return(<>
 				<ValidatorResultPageTitle />
 				<RemoteJSON
 					RetryComponent={() => (
-						<>
+						<section style={{marginTop:"2rem"}}>
 							<h2>Retry?</h2>
 							<ValidatorForm action={navigate} defaultValue={searchParams.uri} />
-						</>
+						</section>
 					)}
 					ResultRenderComponent={ValidatorResult}
-					endpoint='https://dummyjson.com/quotes'
+					//endpoint='https://dummyjson.com/quotes'
+					endpoint='https://oruk-api-2a920f51d6bb.herokuapp.com/api/Mock/validate'
 					//endpoint='https://doesntexistinthisuniverseoranyother.com/nope'
 					//endpoint='https://google.com'
 
@@ -34,7 +31,7 @@ export default async function Page({ params, searchParams }) {
 						id: params.id
 					}}
 				/>
-			</Main>
-		</PageMargin>
+		
+		</>
 	)
 }
