@@ -22,7 +22,7 @@ const linkify = text => {
 
 const MarkdownContentNoMenu = ({ html, afterLinks }) => (
 	<>
-		<section dangerouslySetInnerHTML={{ __html: html }} />
+		<section className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />
 		{afterLinks && <Afterlinks data={afterLinks} />}
 	</>
 )
@@ -59,7 +59,7 @@ const MarkdownContentWithMenu = ({ html, afterLinks }) => {
 						))}
 					</ol>
 				</div>
-				<div>
+				<div className={styles.content}>
 					{modifiedNodes}
 					{afterLinks && <Afterlinks data={afterLinks} />}
 				</div>

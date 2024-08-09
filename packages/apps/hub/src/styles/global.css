@@ -1,6 +1,7 @@
 body{
 	background: var(--theme-paper);
 	color: var(--theme-ink);
+	font-size: 1.2em;
 }
 
 a, a:hover, a:active, a:visited {
@@ -11,4 +12,13 @@ a, a:hover, a:active, a:visited {
 
 .cm-theme-light * {
 	font-size: 1.1rem;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }

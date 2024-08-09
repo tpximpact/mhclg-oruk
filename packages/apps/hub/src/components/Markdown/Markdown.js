@@ -20,7 +20,8 @@ const Content = ({ data, showMenu }) => {
 
 const FrontMatter = ({ data }) => <div>{JSON.stringify(data)}</div>
 
-const RenderHTML = ({ html }) => <div dangerouslySetInnerHTML={{ __html: html }} />
+const RenderHTML = ({ html }) => <div
+className={styles.bodycopy}>what <div>dangerouslySetInnerHTML={{ __html: html }} /></div>
 
 const WithMenu = ({ html }) => {
 	const nodes = parse(html)
@@ -53,7 +54,7 @@ const WithMenu = ({ html }) => {
 					))}
 				</ol>
 			</div>
-			<div>{modifiedNodes}</div>
+			<div className={styles.bodycopy}>{modifiedNodes}</div>
 		</Columns>
 	)
 }

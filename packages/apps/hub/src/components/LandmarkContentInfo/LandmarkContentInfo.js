@@ -2,6 +2,7 @@ import styles from './footer.module.css'
 import { PageMargin } from '@tpx/PageMargin'
 
 export const LandmarkContentInfo = () => <footer
+role="contentInfo"
 className={styles.footer}
 >
 	<div className={styles.bottom}>
