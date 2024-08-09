@@ -10,6 +10,7 @@ import { LandmarkNavigation } from '@/components/LandmarkNavigation'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
+import { PageWrapper } from '@/components/PageWrapper'
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
@@ -26,9 +27,9 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-				{USE_AXE && <Axe />}
-				{USE_COOKIES && <Cookies />}
-				<NoJsFallback />
+			<div>{USE_AXE && <Axe />}
+			{USE_COOKIES && <Cookies />}
+			
 				<LandmarkBanner>
 					<NoJsBanner />
 				</LandmarkBanner>
@@ -36,7 +37,10 @@ export default function RootLayout({ children }) {
 				<LandmarkMain>
 					{children}
 				</LandmarkMain>
+				</div>
 				<LandmarkContentInfo />
+				
+				<NoJsFallback />
 			</body>
 		</html>
 	)

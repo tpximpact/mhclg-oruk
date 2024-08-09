@@ -4,7 +4,9 @@ import { Logo } from '@/components/Logo'
 
 export const LandmarkBanner = ({
 	children
-}) => <header className={styles.header}>
+}) => <header 
+role="banner"
+className={styles.header}>
 <PageMargin>
 <Logo colour="#5AC09E" />
 {children}

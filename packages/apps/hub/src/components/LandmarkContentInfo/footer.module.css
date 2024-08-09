@@ -1,9 +1,10 @@
 .footer{
-	margin-top:6rem;
+	display:block;
+	margin-top:4rem;
 }
 
 .bottom {
 	background: var(--theme-footer-bg);
 	color: var(--theme-footer-fg);
-	padding: 4rem 0;
+	padding: 1rem 0;
 }

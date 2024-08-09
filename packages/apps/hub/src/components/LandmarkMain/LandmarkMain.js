@@ -1,5 +1,9 @@
+import styles from './main.module.css'
+
 export const LandmarkMain = ({
 children
-})	=> <main>
+})	=> <main className={styles.main}
+role="main"
+>
 {children}
 </main>

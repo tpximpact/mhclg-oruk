@@ -12,3 +12,12 @@
 	text-indent: 0;
 	list-style: none;
 }
+
+.bodycopy{
+	color: red;
+	border:10px solid red;
+}
+
+.bodycopy p {
+	margin-bottom: 1rem;
+}
