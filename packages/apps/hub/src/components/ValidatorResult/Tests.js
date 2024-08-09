@@ -111,6 +111,7 @@ const Test = ({ data }) => {
 
 
 export const Tests = ({result}) => <>
+{result}
 {dummyData.map((sectionData, index) => (
 				<Section key={index} data={sectionData} />
 			))}</>
