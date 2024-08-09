@@ -1,3 +1,3 @@
-export const LandmarkNavigation = () => <nav>
-nav
-</nav>
+export const LandmarkNavigation = ({
+	selected
+}) => <nav> nav {selected} </nav>

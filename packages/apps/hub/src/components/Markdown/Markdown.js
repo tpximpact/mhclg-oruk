@@ -21,7 +21,7 @@ const Content = ({ data, showMenu }) => {
 const FrontMatter = ({ data }) => <div>{JSON.stringify(data)}</div>
 
 const RenderHTML = ({ html }) => <div
-className={styles.bodycopy}>what <div>dangerouslySetInnerHTML={{ __html: html }} /></div>
+dangerouslySetInnerHTML={{ __html: html }} />
 
 const WithMenu = ({ html }) => {
 	const nodes = parse(html)
