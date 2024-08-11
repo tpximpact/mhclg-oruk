@@ -1,4 +1,4 @@
-import { RemoteJSON } from '@/components/RemoteJSON'
+import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
@@ -15,6 +15,7 @@ export default async function Page({ params, searchParams }) {
 		<>
 			<ValidatorResultPageTitle />
 			<RemoteJSON
+				method={METHOD.POST}
 				RetryComponent={() => (
 					<section style={{ marginTop: '2rem' }}>
 						<h2>Retry?</h2>

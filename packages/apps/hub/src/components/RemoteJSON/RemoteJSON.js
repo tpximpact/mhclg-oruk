@@ -2,6 +2,11 @@ import { headers } from 'next/headers'
 import { SuspenseIf } from '@tpx/SuspenseIf'
 import Spinner from '@tpx/Spinner'
 
+export const METHOD = {
+	POST: 1,
+	GET: 2
+}
+
 const ResultLoader = async ({ ResultRenderComponent, ...args }) => {
 	const result = await fetchResult(args)
 	return result && result.ok ? (
@@ -26,9 +31,9 @@ const ResultWithSuspense = ({ result, RetryComponent, ...props }) => (
 	</SuspenseIf>
 )
 
-const fetchResult = async ({ endpoint, queryParams }) => {
+const fetchResult = async ({ endpoint, method, queryParams }) => {
 	try {
-		const opts = { method: 'POST' }
+		const opts = method === METHOD.POST ? { method: 'POST' } : null
 		const response = await fetch(endpoint, opts) // TODO send query params
 		if (response.ok) {
 			return {
