@@ -1,5 +1,6 @@
 import styles from './Dashboard.module.css'
 import { Table } from './Table.js'
+import data from '/content/developer/tools/dashboard/data.json'
 
 const headers = [
 	'Organisation',
@@ -11,8 +12,11 @@ const headers = [
 	'Details'
 ]
 
-export const Dashboard = ({ data }) => (
+export const Dashboard = ({ result }) => (
 	<div className={styles.dashboard}>
+		<h2>This is dummy data</h2>
 		<Table headers={headers} data={data} />
+		<h2>This was the response from the server</h2>
+		{JSON.stringify(result)}
 	</div>
 )

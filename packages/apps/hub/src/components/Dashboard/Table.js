@@ -1,6 +1,11 @@
 import styles from './Dashboard.module.css'
 import Link from 'next/link'
 
+const formatDate = (dateString) => {
+	const options = { hour:"numeric", minute:"numeric", year: "2-digit", month: "2-digit", day: "numeric" }
+	return new Date(dateString).toLocaleDateString(undefined, options)
+  }
+
 export const Table = ({ headers, data }) => (
 	<table className={styles.table}>
 		<thead>
@@ -25,7 +30,7 @@ const Row = ({ data }) => (
 		<td>{data.isUp ? 'pass' : 'fail'}</td>
 		<td>{data.isServicesValid ? 'pass' : 'fail'}</td>
 		<td>{data.isSearchEnabled ? 'pass' : 'fail'}</td>
-		<td>{data.lastCheck}</td>
+		<td>{formatDate(data.lastCheck)}</td>
 
 		<td>
 			<Link href={data.label}>details</Link>
