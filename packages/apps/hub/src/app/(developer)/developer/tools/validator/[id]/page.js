@@ -2,6 +2,7 @@ import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
+import { CONFIG } from '/config'
 
 export async function generateMetadata({ params }) {
 	return {
@@ -23,11 +24,7 @@ export default async function Page({ params, searchParams }) {
 					</section>
 				)}
 				ResultRenderComponent={ValidatorResult}
-				//endpoint='https://dummyjson.com/quotes'
-				endpoint='https://oruk-api-2a920f51d6bb.herokuapp.com/api/Mock/validate'
-				//endpoint='https://doesntexistinthisuniverseoranyother.com/nope'
-				//endpoint='https://google.com'
-
+				endpoint={CONFIG.VALIDATOR_ENDPOINT}
 				queryParams={{
 					uri: searchParams.uri,
 					id: params.id

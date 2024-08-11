@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-				<div>
+				<div style={{maxWidth:"100vw"}}>
 					{USE_AXE && <Axe />}
 					{USE_COOKIES && <Cookies />}
 
