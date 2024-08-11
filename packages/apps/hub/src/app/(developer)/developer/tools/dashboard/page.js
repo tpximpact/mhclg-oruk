@@ -1,7 +1,6 @@
 /* eslint react/no-unescaped-entities: 0 */
 
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { PageMargin } from '@tpx/PageMargin'
 import { Dashboard } from '@/components/Dashboard'
 
 import meta from '/content/developer/tools/dashboard/metadata.json'

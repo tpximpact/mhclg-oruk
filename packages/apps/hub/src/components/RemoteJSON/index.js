@@ -1,1 +1,1 @@
-export { RemoteJSON } from './RemoteJSON'
+export { RemoteJSON, METHOD } from './RemoteJSON'
