@@ -18,7 +18,7 @@ const ResultLoader = async ({ ResultRenderComponent, ...args }) => {
 
 const Error = ({ data }) => {
 	return (
-		<div style={{ color: 'red' }}>
+		<div style={{ fontWeight: 600 }}>
 			<strong>Sorry, an unexpected error occurred.</strong> {data}
 		</div>
 	)
@@ -35,6 +35,7 @@ const fetchResult = async ({ endpoint, method, queryParams }) => {
 	try {
 		const opts = method === METHOD.POST ? { method: 'POST' } : null
 		const response = await fetch(endpoint, opts) // TODO send query params
+
 		if (response.ok) {
 			return {
 				ok: true,
