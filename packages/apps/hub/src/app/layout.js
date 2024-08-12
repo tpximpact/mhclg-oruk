@@ -17,7 +17,7 @@ import defaultMetadata from '/content/metadata.json'
 import {getSiteItems}from '@/util/content'
 
 const USE_AXE = true
-const USE_COOKIES = false
+const USE_COOKIES = true
 const USE_NAV = true
 
 const inter = Inter({ subsets: ['latin'] })
