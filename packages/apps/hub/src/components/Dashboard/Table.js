@@ -1,37 +1,7 @@
 import styles from './Dashboard.module.css'
 import Link from 'next/link'
-import Icon, {ICON_TYPE} from '@tpx/Icon'
-import { STATUS } from '@/components/ValidatorResult'
-
-const getColourForStatus = status => {
-	let colour
-	switch (status) {
-		case STATUS.PASS:
-			colour = '#00AC1B'
-			break
-		case STATUS.FAIL:
-			colour = '#FF3300'
-			break
-		default:
-			colour = '#999'
-	}
-	return colour
-}
-
-const getIconForStatus = status => {
-	let icon
-	switch (status) {
-		case STATUS.PASS:
-			icon = ICON_TYPE.OK
-			break
-		case STATUS.FAIL:
-			icon = ICON_TYPE.X
-			break
-		default:
-			icon = ICON_TYPE.X
-	}
-	return icon
-}
+import Icon  from '@tpx/Icon'
+import { STATUS,getColourForStatus,getIconForStatus } from '@/util/status'
 
 
 const formatDate = dateString => {

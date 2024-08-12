@@ -1,7 +1,8 @@
 import styles from './ValidatorResult.module.css'
 import Icon, { ICON_TYPE } from '@tpx/Icon'
 import { dummyData } from './dummyData'
-import { STATUS } from './status'
+import { STATUS,getColourForStatus,getIconForStatus } from '@/util/status'
+
 
 const getCSSClassForStatus = status => {
 	let klass
@@ -16,36 +17,6 @@ const getCSSClassForStatus = status => {
 			klass = styles.skipStatus
 	}
 	return klass
-}
-
-const getColourForStatus = status => {
-	let colour
-	switch (status) {
-		case STATUS.PASS:
-			colour = '#00AC1B'
-			break
-		case STATUS.FAIL:
-			colour = '#FF3300'
-			break
-		default:
-			colour = '#999'
-	}
-	return colour
-}
-
-const getIconForStatus = status => {
-	let icon
-	switch (status) {
-		case STATUS.PASS:
-			icon = ICON_TYPE.OK
-			break
-		case STATUS.FAIL:
-			icon = ICON_TYPE.X
-			break
-		default:
-			icon = ICON_TYPE.X
-	}
-	return icon
 }
 
 const Section = ({ data }) => {
