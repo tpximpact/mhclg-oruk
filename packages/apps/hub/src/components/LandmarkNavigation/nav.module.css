@@ -1,0 +1,15 @@
+.nav {
+    padding:2rem 0 0;
+	background: var(--theme-header-bg);
+	color: var(--theme-header-fg);
+}
+
+.nav ol {
+	margin: 0 0 0 -1.5rem;
+	padding: 0 0 1rem;
+	list-style: inside none;
+}
+
+.nav ol li {
+	display: inline;
+}

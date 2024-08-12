@@ -6,7 +6,7 @@ import '@/styles/global.css'
 import '@/styles/no-js.css'
 
 import { LandmarkBanner } from '@/components/LandmarkBanner'
-// import { LandmarkNavigation } from '@/components/LandmarkNavigation'
+import { LandmarkNavigation } from '@/components/LandmarkNavigation'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
@@ -14,10 +14,11 @@ import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import defaultMetadata from '/content/metadata.json'
+import {getSiteItems}from '@/util/content'
 
 const USE_AXE = true
 const USE_COOKIES = false
-//const USE_NAV = false
+const USE_NAV = true
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,15 +31,12 @@ export default function RootLayout({ children }) {
 				<div style={{ maxWidth: '100vw' }}>
 					{USE_AXE && <Axe />}
 					{USE_COOKIES && <Cookies />}
-
-					<LandmarkBanner>
-						<NoJsBanner />
-					</LandmarkBanner>
-					{/*USE_NAV && <LandmarkNavigation />*/}
+					<NoJsBanner />
+					<LandmarkBanner/>
+					{USE_NAV && <LandmarkNavigation items={getSiteItems()}/>}
 					<LandmarkMain>{children}</LandmarkMain>
 				</div>
 				<LandmarkContentInfo />
-
 				<NoJsFallback />
 			</body>
 		</html>
