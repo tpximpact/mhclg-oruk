@@ -4,11 +4,11 @@ import { usePathname } from 'next/navigation'
 import { useActivePath } from '@/util/useActivePath'
 import styles from './nav.module.css'
 import { PageMargin } from '@tpx/PageMargin'
-
+import { childrenOfNamedSiteItem } from '@/util/menuing'
 import { NavigationItem } from '../NavigationItem'
 
 
-const checkSubmenu = (items) => {
+const useSubmenu = (items) => {
 	const currentPath = usePathname()
 	if (currentPath === '/') {
 		return false
@@ -16,8 +16,10 @@ const checkSubmenu = (items) => {
 
 	let submenu
 	items.forEach((item) => {
+		console.log(item)
+
 		if(item.urlPath && currentPath.startsWith(item.urlPath)){
-			submenu = item.children
+			submenu = childrenOfNamedSiteItem(item.name, items)
 		}
 	})
 	return submenu
@@ -35,7 +37,7 @@ const NavigationMenu = ({items}) =>{
 
 export const LandmarkNavigation = ({ items }) => {
 
-	const submenu = checkSubmenu(items)
+	const submenu = useSubmenu(items)
 
 return (<nav className={styles.nav}> 
 <PageMargin>

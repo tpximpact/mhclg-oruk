@@ -1,4 +1,5 @@
 // inspired by https://nikolasbarwicki.com/articles/highlight-currently-active-link-in-nextjs-13-with-app-router/
+/* eslint no-unused-vars: 0 */
 
 import { usePathname } from 'next/navigation'
 
