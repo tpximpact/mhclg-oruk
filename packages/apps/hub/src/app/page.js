@@ -1,5 +1,5 @@
-import { Homepage } from '@/components/Homepage'
 import { PageMargin } from '@tpx/PageMargin'
+import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 export const metadata = {
 	title: 'Open Referral UK'
@@ -8,7 +8,7 @@ export const metadata = {
 export default function Home() {
 	return (
 		<PageMargin>
-			<Homepage contentName='home' />
+			<NamedMarkdownPage name='home' />
 		</PageMargin>
 	)
 }
