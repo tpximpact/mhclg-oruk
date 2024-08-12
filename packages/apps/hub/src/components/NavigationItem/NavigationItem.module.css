@@ -8,3 +8,10 @@
 	padding: 0 1rem 1rem;
 	margin: 0 1rem;
 }
+
+.offsite:first-child,
+.selected:first-child,
+.item:first-child {
+	padding: 0 1rem 1rem 0;
+	margin: 0 1rem 0 0;
+}
