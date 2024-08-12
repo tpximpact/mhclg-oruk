@@ -1,5 +1,38 @@
 import styles from './Dashboard.module.css'
 import Link from 'next/link'
+import Icon, {ICON_TYPE} from '@tpx/Icon'
+import { STATUS } from '@/components/ValidatorResult'
+
+const getColourForStatus = status => {
+	let colour
+	switch (status) {
+		case STATUS.PASS:
+			colour = '#00AC1B'
+			break
+		case STATUS.FAIL:
+			colour = '#FF3300'
+			break
+		default:
+			colour = '#999'
+	}
+	return colour
+}
+
+const getIconForStatus = status => {
+	let icon
+	switch (status) {
+		case STATUS.PASS:
+			icon = ICON_TYPE.OK
+			break
+		case STATUS.FAIL:
+			icon = ICON_TYPE.X
+			break
+		default:
+			icon = ICON_TYPE.X
+	}
+	return icon
+}
+
 
 const formatDate = dateString => {
 	const options = {
@@ -29,15 +62,29 @@ export const Table = ({ headers, data }) => (
 	</table>
 )
 
+const StatusReadout = ({pass}) => {
+const status = pass ? STATUS.PASS :  STATUS.FAIL
+return (<>
+<span style={{marginRight: "0.2rem"}}>
+<Icon
+						colour={getColourForStatus(status)}
+						weight='4'
+						icon={getIconForStatus(status)}
+						size='18'
+					/></span>
+{status}
+	</>)}
+
+
 const Row = ({ data }) => {
 	const detailsURL = `/developer/tools/dashboard/${data.id}`
 	return (
 		<tr>
 			<th>{data.label}</th>
 			<td>1.0</td>
-			<td>{data.isUp ? 'pass' : 'fail'}</td>
-			<td>{data.isServicesValid ? 'pass' : 'fail'}</td>
-			<td>{data.isSearchEnabled ? 'pass' : 'fail'}</td>
+			<td><StatusReadout pass={data.isUp}/></td>
+			<td><StatusReadout pass={data.isServicesValid}/></td>
+			<td><StatusReadout pass={data.isSearchEnabled}/></td>
 			<td>{formatDate(data.lastCheck)}</td>
 
 			<td>

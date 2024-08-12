@@ -7,13 +7,13 @@
 	padding: 0;
 	white-space: wrap;
 	overflow-wrap: break-word;
-	margin-bottom: 4rem;
+	margin: 2rem 0 4rem;
 }
 
 .table th,
 .table td {
 	text-align: left;
-	padding-right: 1rem;
+	padding: 0.5rem 1rem 0.5rem 0;
 }
 
 .table th:last-child,
@@ -37,4 +37,9 @@
 .table thead span {
 	display: block;
 	padding: 1rem 0.05rem;
+}
+
+
+.table tbody tr:not(:last-child) {
+	border-bottom:0.5px black solid;
 }
