@@ -7,7 +7,7 @@ export const Cookies = () => (
 		location='bottom'
 		buttonText='Accept'
 		declineButtonText='Decline'
-		cookieName='myAppCookieConsent'
+		cookieName='orukCookieConsent'
 		containerClasses='cookie-consent-container'
 		buttonClasses='cookie-accept-button'
 		declineButtonClasses='cookie-decline-button'

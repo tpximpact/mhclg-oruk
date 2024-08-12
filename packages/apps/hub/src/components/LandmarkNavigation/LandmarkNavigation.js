@@ -1,5 +1,6 @@
-'use client';
-import { usePathname } from 'next/navigation';
+'use client'
+
+import { usePathname } from 'next/navigation'
 import { useActivePath } from '@/util/useActivePath'
 import styles from './nav.module.css'
 import { PageMargin } from '@tpx/PageMargin'
@@ -8,6 +9,9 @@ import { NavigationItem } from '../NavigationItem'
 
 export const LandmarkNavigation = ({ items }) => {
 	const checkActivePath = useActivePath()
+	//const thisPath = usePathname()
+	
+// TODO sumbenu
 
 return (<nav className={styles.nav}> 
 <PageMargin><ol>
