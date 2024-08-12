@@ -7,19 +7,45 @@ import { PageMargin } from '@tpx/PageMargin'
 
 import { NavigationItem } from '../NavigationItem'
 
-export const LandmarkNavigation = ({ items }) => {
+
+const checkSubmenu = (items) => {
+	const currentPath = usePathname()
+	if (currentPath === '/') {
+		return false
+	}
+
+	let submenu
+	items.forEach((item) => {
+		if(item.urlPath && currentPath.startsWith(item.urlPath)){
+			submenu = item.children
+		}
+	})
+	return submenu
+
+	// TODO: highlight sumbmenu
+  }
+  
+const NavigationMenu = ({items}) =>{
 	const checkActivePath = useActivePath()
-	//const thisPath = usePathname()
-	
-// TODO sumbenu
+	return( <ol>
+{items && items.map((item, counter) => (
+	<NavigationItem key={counter} styles={styles} selected={checkActivePath(item.urlPath)} {...item} />
+))}
+</ol>)}
+
+export const LandmarkNavigation = ({ items }) => {
+
+	const submenu = checkSubmenu(items)
 
 return (<nav className={styles.nav}> 
-<PageMargin><ol>
-			{items && items.map((item, counter) => (
-				<NavigationItem key={counter} styles={styles} selected={checkActivePath(item.urlPath)} {...item} />
-			))}
-		</ol>
-</PageMargin>
+<PageMargin>
+	<NavigationMenu items={items}/>
+	</PageMargin>
+	
+		{
+submenu && <div style={{background:"#f9f3eb", padding:"1rem 0 0"}}><PageMargin><NavigationMenu items={submenu}/></PageMargin></div>
+}
+
 </nav>)
 
-		}
+}
