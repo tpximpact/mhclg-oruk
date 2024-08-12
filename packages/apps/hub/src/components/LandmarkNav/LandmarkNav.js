@@ -1,3 +1,5 @@
+
+
 'use client'
 
 import { usePathname } from 'next/navigation'
@@ -16,7 +18,6 @@ const useSubmenu = (items) => {
 
 	let submenu
 	items.forEach((item) => {
-		console.log(item)
 
 		if(item.urlPath && currentPath.startsWith(item.urlPath)){
 			submenu = childrenOfNamedSiteItem(item.name, items)
@@ -35,7 +36,7 @@ const NavigationMenu = ({items}) =>{
 ))}
 </ol>)}
 
-export const LandmarkNavigation = ({ items }) => {
+export const LandmarkNav = ({ items }) => {
 
 	const submenu = useSubmenu(items)
 

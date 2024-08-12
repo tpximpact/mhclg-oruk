@@ -6,7 +6,7 @@ import '@/styles/global.css'
 import '@/styles/no-js.css'
 
 import { LandmarkBanner } from '@/components/LandmarkBanner'
-import { LandmarkNavigation } from '@/components/LandmarkNavigation'
+import {LandmarkNav} from '@/components/LandmarkNav'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 					{USE_COOKIES && <Cookies />}
 					<NoJsBanner />
 					<LandmarkBanner/>
-					{USE_NAV && <LandmarkNavigation items={getSiteItems()}/>}
+					{USE_NAV && <LandmarkNav items={getSiteItems()}/>}
 					<LandmarkMain>{children}</LandmarkMain>
 				</div>
 				<LandmarkContentInfo />
