@@ -1,0 +1,7 @@
+{
+	"name": "@tpx/Icon",
+	"version": "0.0.1",
+	"main": "src/index.js",
+	"author": "swirrl <info@swirrl.com>",
+	"license": "UNLICENSED"
+}

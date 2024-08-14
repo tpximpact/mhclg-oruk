@@ -1,0 +1,22 @@
+:root {
+	--colour-black: #000;
+	--colour-white: #fff;
+	--colour-offwhite: rgb(252, 249, 245);
+	--colour-dark-green: rgb(40, 97, 79);
+	--colour-x-dark-green: rgb(42, 56, 52);
+	--colour-mint: #5ac09e;
+	--colour-dark-blue:  #135e75;
+
+	--theme-paper: var(--colour-offwhite);
+	--theme-ink: var(--colour-x-dark-green);
+	--theme-interaction: var(--colour-dark-blue);
+	--theme-footer-bg: var(--colour-dark-green);
+	--theme-footer-fg: var(--colour-white);
+	--theme-header-bg: var(--colour-white);
+	--theme-header-fg: var(--colour-black);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root[color-mode='user'] {
+	}
+}

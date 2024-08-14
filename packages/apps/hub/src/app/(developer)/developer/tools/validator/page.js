@@ -1,12 +1,17 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { Validator } from '@oruk/Validator'
+import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
 
-export default function Home() {
+export default function Page() {
 	return (
-		<div>
-			<NamedMarkdownPage name='validator' />
-			<Validator validationAction={navigate} />
-		</div>
+		<>
+			<NamedMarkdownPage name='validator' autoMenu={false} />
+			<ValidatorForm action={navigate} />
+		</>
 	)
+}
+
+export const metadata = {
+	title: 'ORUK service validator',
+	description: 'The tool to validate your feed'
 }

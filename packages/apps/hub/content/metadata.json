@@ -1,10 +1,4 @@
 {
-	"title": {
-		"template": "...",
-		"default": "...",
-		"absolute": "..."
-	},
-	"description": "The React Framework for the Web",
 	"generator": "Next.js",
 	"applicationName": "Next.js",
 	"referrer": "origin-when-cross-origin",
