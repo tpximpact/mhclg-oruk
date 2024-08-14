@@ -30,7 +30,7 @@ const useSubmenu = (items) => {
   
 const NavigationMenu = ({items}) =>{
 	const checkActivePath = useActivePath()
-	return( <ol>
+	return( <ol className={styles.menu}>
 {items && items.map((item, counter) => (
 	<NavigationItem key={counter} styles={styles} selected={checkActivePath(item.urlPath)} {...item} />
 ))}
@@ -41,12 +41,12 @@ export const LandmarkNav = ({ items }) => {
 	const submenu = useSubmenu(items)
 
 return (<nav className={styles.nav}> 
-<PageMargin>
+
 	<NavigationMenu items={items}/>
-	</PageMargin>
+
 	
 		{
-submenu && <div style={{background:"#f9f3eb", padding:"1rem 0 0"}}><PageMargin><NavigationMenu items={submenu}/></PageMargin></div>
+submenu && <NavigationMenu items={submenu}/>
 }
 
 </nav>)
