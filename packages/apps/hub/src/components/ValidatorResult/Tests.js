@@ -1,5 +1,5 @@
 import styles from './ValidatorResult.module.css'
-import Icon, { ICON_TYPE } from '@tpx/Icon'
+import Icon from '@tpx/Icon'
 import { dummyData } from './dummyData'
 import { STATUS,getColourForStatus,getIconForStatus } from '@/util/status'
 
