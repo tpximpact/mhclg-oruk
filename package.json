@@ -7,7 +7,7 @@
 		"packages/libraries/**/*"
 	],
 	"scripts": {
-		"hub": "yarn workspace @oruk/hub dev",
+		"dev": "yarn workspace @oruk/hub dev",
 		"build": "yarn workspace @oruk/hub build",
 		"tidy": "yarn prettier . --write",
 		"lint": "yarn run eslint --fix ./packages",
@@ -17,22 +17,21 @@
 		"jest": "yarn workspace @oruk/hub jest"
 	},
 	"dependencies": {
-		"html-react-parser": "^5.1.10",
 		"react": "^18.3.1",
-		"react-cookie-consent": "^9.0.0",
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.6.1",
-		"@storybook/addon-essentials": "^8.2.4",
-		"@storybook/addon-interactions": "^8.2.4",
-		"@storybook/addon-links": "^8.2.4",
-		"@storybook/addon-onboarding": "^8.2.4",
+		"@storybook/addon-essentials": "^8.2.6",
+		"@storybook/addon-interactions": "^8.2.6",
+		"@storybook/addon-links": "^8.2.6",
+		"@storybook/addon-onboarding": "^8.2.6",
 		"@storybook/addon-webpack5-compiler-swc": "^1.0.4",
-		"@storybook/blocks": "^8.2.4",
-		"@storybook/react": "^8.2.4",
-		"@storybook/react-webpack5": "^8.2.4",
-		"@storybook/test": "^8.2.4",
+		"@storybook/blocks": "^8.2.6",
+		"@storybook/nextjs": "^8.2.6",
+		"@storybook/react": "^8.2.6",
+		"@storybook/react-webpack5": "^8.2.6",
+		"@storybook/test": "^8.2.6",
 		"eslint": "^8.57.0",
 		"eslint-config-next": "^14.2.4",
 		"eslint-config-prettier": "^9.1.0",
@@ -41,6 +40,6 @@
 		"eslint-plugin-storybook": "^0.8.0",
 		"prettier": "3.3.2",
 		"prop-types": "^15.8.1",
-		"storybook": "^8.2.4"
+		"storybook": "^8.2.6"
 	}
 }

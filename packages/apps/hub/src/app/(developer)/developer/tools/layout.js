@@ -1,13 +1,9 @@
-import { SubNavigation } from '@/components/SubNavigation'
-import { Crumbtrail } from '@/components/Crumbtrail'
-import { buildCrumbtrail } from '@/util/content'
+// import { SubNavigation } from '@/components/SubNavigation'
+// import { Crumbtrail } from '@/components/Crumbtrail'
+// import { buildCrumbtrail } from '@/util/content'
 
-const Layout = ({ children }) => (
-	<>
-		<SubNavigation selected='tools' />
-		<Crumbtrail crumbs={buildCrumbtrail('tools')} />
-		{children}
-	</>
-)
+import { PageMargin } from '@tpx/PageMargin'
+
+const Layout = ({ children }) => <PageMargin>{children}</PageMargin>
 
 export default Layout

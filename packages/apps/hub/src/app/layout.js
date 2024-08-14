@@ -1,16 +1,24 @@
 import { Inter } from 'next/font/google'
-import './tokens.css'
-import './no-js.css'
-import './mvp.css' // temporary placeholder styles
 
-import {Cookies} from "@/components/Cookies"
+import '@/styles/reset.css'
+import '@/styles/tokens.css'
+import '@/styles/global.css'
+import '@/styles/no-js.css'
+
+import { LandmarkBanner } from '@/components/LandmarkBanner'
+import {LandmarkNav} from '@/components/LandmarkNav'
+import { LandmarkMain } from '@/components/LandmarkMain'
+import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
+import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
-import { Footer } from '@/components/Footer'
 import { NoJsFallback } from '@/components/NoJsFallback'
-import { PageWrapper } from '@/components/PageWrapper'
-
 import defaultMetadata from '/content/metadata.json'
+import {getSiteItems}from '@/util/content'
+
+const USE_AXE = true
+const USE_COOKIES = true
+const USE_NAV = false
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,13 +28,15 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={inter.className}>
-				<PageWrapper>
-					<Axe />
-					<Cookies />
-					<div>{children}</div>
-					<Footer />
+				<div style={{ maxWidth: '100vw' }}>
+					{USE_AXE && <Axe />}
+					{USE_COOKIES && <Cookies />}
 					<NoJsBanner />
-				</PageWrapper>
+					<LandmarkBanner/>
+					{USE_NAV && <LandmarkNav items={getSiteItems()}/>}
+					<LandmarkMain>{children}</LandmarkMain>
+				</div>
+				<LandmarkContentInfo />
 				<NoJsFallback />
 			</body>
 		</html>

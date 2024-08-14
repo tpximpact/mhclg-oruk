@@ -1,33 +1,35 @@
-import { ValidationResultWithSuspense } from '@/components/ValidationResultWithSuspense'
-import { fetchValidationResult } from '@/components/ValidationResultWithSuspense'
-import { Main } from '@tpx/Main'
-import { PageMargin } from '@tpx/PageMargin'
-import { headers } from 'next/headers'
+import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
+import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
+import { ValidatorForm } from '@/components/ValidatorForm'
+import { navigate } from '@/actions/validate'
+import { CONFIG } from '/config'
 
-export function isInitialPageLoad() {
-	return !!headers().get('accept')?.includes('text/html')
+export async function generateMetadata({ params }) {
+	return {
+		title: `ORUK validation report: ${params.uri}`,
+		description: 'Report of compliance of the Openreferral feed at ${params.uri}'
+	}
 }
 
-export default async function Page({ params }) {
-	let products
-
-	// for initial page load we want to preload all the data
-	// for client side navigation we want to lazy load the data and show loading state
-	if (isInitialPageLoad()) {
-		products = await fetchValidationResult()
-	}
-
+export default async function Page({ params, searchParams }) {
 	return (
-		<div>
-			<PageMargin>
-				<Main>
-					<h1>Service Validation results</h1>
-					<div> ID: {params.id}</div>
-					<div>
-						Raw response: <ValidationResultWithSuspense products={products} />
-					</div>
-				</Main>
-			</PageMargin>
-		</div>
+		<>
+			<ValidatorResultPageTitle />
+			<RemoteJSON
+				method={METHOD.POST}
+				RetryComponent={() => (
+					<section style={{ marginTop: '2rem' }}>
+						<h2>Retry?</h2>
+						<ValidatorForm action={navigate} defaultValue={searchParams.uri} />
+					</section>
+				)}
+				ResultRenderComponent={ValidatorResult}
+				endpoint={CONFIG.VALIDATOR_ENDPOINT}
+				queryParams={{
+					uri: searchParams.uri,
+					id: params.id
+				}}
+			/>
+		</>
 	)
 }

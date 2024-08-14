@@ -1,10 +1,3 @@
-import { Masthead } from '@/components/Masthead'
-
-const Layout = ({ children }) => (
-	<>
-		<Masthead selected='developers' developer={true} />
-		{children}
-	</>
-)
+const Layout = ({ children }) => <>{children}</>
 
 export default Layout
