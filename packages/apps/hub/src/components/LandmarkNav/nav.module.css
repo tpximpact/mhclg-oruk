@@ -1,25 +1,21 @@
 .nav {
 	display: flex;
-	margin-top:1rem;
+	background: #fff;
 }
 
 .menu {
 	flex:1;
 }
 
-.menu li {
-	border-bottom: 1px solid rgba(0,0,0,0.2);
+.menu.topMenu li{
+	padding-left: 6vw;
 }
 
-.menu:first-child li{
-	padding-left: 3rem;
-}
-
-.menu + .menu  {
+.menu.subMenu  {
 	background: #fc0;
 }
 
-.menu + .menu li {
+.menu.subMenu li {
 	padding-left: 1rem;
 }
 
@@ -29,16 +25,9 @@
 	flex-direction:column;
 }
 
-.nav ol li {
-	list-style: inside none;
-	flex:1;
+.nav li:not(:last-child) {
+	border-bottom: 0.5px solid #000;
 }
-
-.nav ol li  {
-	display:block;
-	padding: 1rem 0;
-}
-
 
 /*.nav {
     padding:2rem 0 0;

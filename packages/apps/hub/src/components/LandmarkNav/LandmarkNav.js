@@ -28,9 +28,9 @@ const useSubmenu = (items) => {
 	// TODO: highlight sumbmenu
   }
   
-const NavigationMenu = ({items}) =>{
+const NavigationMenu = ({items, className, ...props}) =>{
 	const checkActivePath = useActivePath()
-	return( <ol className={styles.menu}>
+	return( <ol className={`${styles.menu} ${className}` }>
 {items && items.map((item, counter) => (
 	<NavigationItem key={counter} styles={styles} selected={checkActivePath(item.urlPath)} {...item} />
 ))}
@@ -42,11 +42,11 @@ export const LandmarkNav = ({ items }) => {
 
 return (<nav className={styles.nav}> 
 
-	<NavigationMenu items={items}/>
+	<NavigationMenu className={styles.topMenu} items={items}/>
 
 	
 		{
-submenu && <NavigationMenu items={submenu}/>
+submenu && <NavigationMenu className={styles.subMenu} items={submenu}/>
 }
 
 </nav>)

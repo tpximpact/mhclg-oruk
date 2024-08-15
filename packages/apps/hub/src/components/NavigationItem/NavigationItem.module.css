@@ -1,3 +1,20 @@
+.item {
+	list-style: inside none;
+	flex:0;
+	display:block;
+	padding: 0;
+}
+
+.item a,
+.selected {
+	display:block;
+	padding: 1rem 0;
+}
+
+.wselected {
+	background: #fc0;
+}
+
 /*
 .selected {
 	border-bottom:4px solid var(--colour-mint);
