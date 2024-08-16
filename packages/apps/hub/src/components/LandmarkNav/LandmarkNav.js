@@ -46,9 +46,22 @@ return (<nav className={styles.nav}>
 
 	
 		{
-submenu && <NavigationMenu className={styles.subMenu} items={submenu}/>
+submenu && 
+<Centred>
+<Aligner />
+<NavigationMenu className={styles.subMenu} items={submenu}/>
+<Aligner />
+</Centred>
 }
 
 </nav>)
 
 }
+
+
+const Centred = ({children}) => <div className={styles.centred}>
+{children}
+	</div>
+
+const Aligner = () => <div className={styles.aligner}>
+	</div>

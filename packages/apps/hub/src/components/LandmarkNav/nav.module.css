@@ -29,6 +29,16 @@
 	border-bottom: 0.5px solid #000;
 }
 
+.centred {
+	display: flex;
+	flex-direction:column;
+	flex:1;
+}
+
+.aligner {
+	flex: 1;
+}
+
 /*.nav {
     padding:2rem 0 0;
 	background: var(--theme-header-bg);
