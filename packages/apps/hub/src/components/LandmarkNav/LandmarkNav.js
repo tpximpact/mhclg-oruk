@@ -5,7 +5,7 @@
 import { usePathname } from 'next/navigation'
 import { useActivePath } from '@/util/useActivePath'
 import styles from './nav.module.css'
-import { PageMargin } from '@tpx/PageMargin'
+//import { PageMargin } from '@tpx/PageMargin'
 import { childrenOfNamedSiteItem } from '@/util/menuing'
 import { NavigationItem } from '../NavigationItem'
 
@@ -30,7 +30,7 @@ const useSubmenu = (items) => {
   
 const NavigationMenu = ({items, className, ...props}) =>{
 	const checkActivePath = useActivePath()
-	return( <ol className={`${styles.menu} ${className}` }>
+	return( <ol className={`${styles.menu} ${className}` } {...props}>
 {items && items.map((item, counter) => (
 	<NavigationItem key={counter} styles={styles} selected={checkActivePath(item.urlPath)} {...item} />
 ))}
