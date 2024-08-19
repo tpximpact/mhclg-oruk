@@ -1,6 +1,6 @@
 import styles from './Dashboard.module.css'
 import { Table } from './Table.js'
-import data from '/content/developer/tools/dashboard/data.json'
+import data from '/content/developer/dashboard/data.json'
 
 const headers = [
 	'Organisation',

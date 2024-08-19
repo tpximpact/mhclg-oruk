@@ -1,0 +1,118 @@
+{
+	"data": [
+		{
+			"URL": "https://example.com/good",
+			"developer": "AwesomeCo",
+			"id": "0001",
+			"name": "My good feed",
+			"schemaVersion": "3.0",
+			"statusIsUp": 1,
+			"statusIsValid": 1,
+			"statusOverall": 1
+		},
+		{
+			"URL": "https://example.com/bad",
+			"developer": "BadCo",
+			"id": "0002",
+			"name": "My bad feed",
+			"schemaVersion": "1.0",
+			"statusIsPaged": 1,
+			"statusIsUp": 1,
+			"statusIsValid": 0,
+			"statusOverall": 0
+		}
+	],
+	"definitions": {
+		"columns": {
+			"developer": {
+				"description": "",
+				"filterable": true,
+				"label": "Developed by",
+				"sortType": 1,
+				"sortable": true
+			},
+			"id": {
+				"description": "Globally unigue identifier",
+				"filterable": true,
+				"label": "Identifier",
+				"sortable": false,
+				"valueType": "oruk:valueType.uri"
+			},
+			"name": {
+				"description": "Service name",
+				"filterable": true,
+				"label": "",
+				"sortable": true,
+				"valueType": "oruk:valueType.string"
+			},
+			"schemaVersion": {
+				"description": "Service name",
+				"filterable": true,
+				"label": "ORUK version",
+				"sortable": true,
+				"valueType": "oruk:valueType.string"
+			},
+			"statusIsUp": {
+				"description": "",
+				"filterable": false,
+				"hasStatusIcon": true,
+				"label": "Is online?",
+				"sortable": true
+			},
+			"statusIsValid": {
+				"description": "",
+				"filterable": false,
+				"hasStatusIcon": true,
+				"label": "Syntax is valid?",
+				"sortable": true
+			},
+			"statusOverall": {
+				"description": "",
+				"filterable": true,
+				"hasStatusIcon": true,
+				"label": "Feed passes?",
+				"sortType": 2,
+				"sortable": true
+			},
+			"URL": {
+				"description": "",
+				"filterable": true,
+				"hasStatusIcon": true,
+				"label": "Endpoint URI",
+				"sortable": false
+			}
+		},
+		"views": {
+			"dashboard": {
+				"allowFiltering": false,
+				"allowSorting": false,
+				"columns": ["name", "schemaVersion", "statusOverall", "statusIsUp", "statusIsValid"],
+				"defaultSortBy": [
+					{
+						"column": "schemaVersion",
+						"order": "oruk.sort.dsc"
+					},
+					{
+						"column": "name",
+						"order": "oruk.sort.asc"
+					}
+				],
+				"showPassingRowsOnly": false,
+				"showRowDetailsLink": true
+			},
+			"directory": {
+				"allowFiltering": true,
+				"allowSorting": true,
+				"columns": ["name", "developer", "URL", "statusOverall"],
+				"defaultSortBy": [
+					{
+						"column": "name",
+						"order": "oruk.sort.asc"
+					}
+				],
+				"showPassingRowsOnly": true,
+				"showRowDetailsLink": false
+			}
+		}
+	}
+}

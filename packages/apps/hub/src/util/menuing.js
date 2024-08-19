@@ -1,10 +1,10 @@
-export const childrenOfNamedSiteItem = (name,structure)=> {
-	const item = getNamedSiteItem(name,structure)
+export const childrenOfNamedSiteItem = (name, structure) => {
+	const item = getNamedSiteItem(name, structure)
 	if (!item) return
-	return item.children.map(child => getNamedSiteItem(child,structure))
+	return item.children?.map(child => getNamedSiteItem(child, structure))
 }
 
-export const getNamedSiteItem = (name,structure) => 
+export const getNamedSiteItem = (name, structure) =>
 	flatten(structure).filter(item => item.name === name)[0]
 
 const flatten = (a, parent) => {

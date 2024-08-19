@@ -38,9 +38,9 @@ const flatten = (a, parent) => {
 				item.contentPath = parent.contentPath + '/' + item.contentPath
 			}
 		}
-		if (item.children) {
-			items = flatten(item.children, item)
-			item.children = item.children.map(child => child.name)
+		if (item.childNodes) {
+			items = flatten(item.childNodes, item)
+			item.childNodes = item.childNodes.map(child => child.name)
 		}
 		items.push(item)
 		result = result.concat(items)
@@ -59,10 +59,10 @@ export const getNamedSiteItem = name => {
 
 export const getSiteItems = () => structure
 
-export const childrenOfNamedSiteItem = name => {
+export const childNodesOfNamedSiteItem = name => {
 	const item = getNamedSiteItem(name)
 	if (!item) return
-	return item.children.map(child => getNamedSiteItem(child))
+	return item.childNodes.map(child => getNamedSiteItem(child))
 }
 
 export const PATHS = {

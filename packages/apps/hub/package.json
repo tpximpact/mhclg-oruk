@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@codemirror/lang-json": "^6.0.1",
+		"@szhsin/react-accordion": "^1.2.4",
 		"@tpx/Icon": "0.0.1",
 		"@tpx/Spinner": "0.0.1",
 		"@tpx/SuspenseIf": "0.0.1",
@@ -18,20 +19,19 @@
 		"@uiw/react-codemirror": "^4.23.0",
 		"front-matter": "^4.0.2",
 		"gray-matter": "^4.0.3",
+		"html-react-parser": "^5.1.12",
 		"marked": "^14.0.0",
+		"micromark": "^4.0.0",
 		"next": "14.2.5",
 		"react": "^18",
 		"react-cookie-consent": "^9.0.0",
 		"react-dom": "^18",
-		"uuid": "^10.0.0",
-		"html-react-parser": "^5.1.12",
-		"micromark": "^4.0.0",
-		"react-cookie-consent": "^9.0.0",
 		"remark": "^15.0.1",
 		"remark-frontmatter": "^5.0.0",
 		"remark-html": "^16.0.1",
 		"remark-parse": "^11.0.0",
-		"remark-parse-frontmatter": "^1.0.3"
+		"remark-parse-frontmatter": "^1.0.3",
+		"uuid": "^10.0.0"
 	},
 	"devDependencies": {
 		"@axe-core/react": "^4.9.1",

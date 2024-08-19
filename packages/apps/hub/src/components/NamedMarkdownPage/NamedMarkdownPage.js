@@ -11,5 +11,5 @@ export const NamedMarkdownPage = ({ name, markdownRaw, ...props }) => {
 					})
 				: null
 	}
-	return <MarkdownPage markdownRaw={markdownRaw} {...props} />
+	return <MarkdownPage file={name} markdownRaw={markdownRaw} {...props} />
 }

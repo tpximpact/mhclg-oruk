@@ -1,19 +1,20 @@
 import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { CONFIG } from '/config'
 import { Dashboard } from '@/components/Dashboard'
+import { PageMargin } from '@tpx/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import meta from '/content/developer/tools/dashboard/metadata.json'
-export const metadata = meta
+//import meta from '../../../../../../../content/developer/dashboard/metadata.json'
+//export const metadata = meta
 
 export default async function Page() {
 	return (
-		<>
+		<PageMargin>
 			<NamedMarkdownPage name='dashboard' />
 			<RemoteJSON
 				method={METHOD.GET}
 				ResultRenderComponent={Dashboard}
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
 			/>
-		</>
+		</PageMargin>
 	)
 }

@@ -16,7 +16,7 @@ export default async function Page({
 }) {
 	return (
 		<>
-			<Link href="/developer/tools/dashboard">Back to Dashboard</Link>
+			<Link href='/developer/tools/dashboard'>Back to Dashboard</Link>
 			<h1>Feed (details view)</h1>
 			<RemoteJSON
 				method={METHOD.GET}
