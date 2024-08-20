@@ -1,36 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-//import { usePathname } from 'next/navigation'
-import { useActivePath } from '@/util/useActivePath'
+import { useActivePathFragment } from '@/util/useActivePath'
 import styles from './nav.module.css'
-//import { PageMargin } from '@tpx/PageMargin'
-//import { childrenOfNamedSiteItem } from '@/util/menuing'
-
-/*
-const useSubmenu = (items) => {
-	const currentPath = usePathname()
-	if (currentPath === '/') {
-		return false
-	}
-
-	let submenu
-	items.forEach((item) => {
-
-		if(item.urlPath && currentPath.startsWith(item.urlPath)){
-			submenu = childrenOfNamedSiteItem(item.name, items)
-		}
-	})
-	return submenu
-
-	// TODO: highlight sumbmenu
-  }
-	*/
 
 export const OffsiteItem = ({ label, urlPath }) => (
 	<li className={`${styles.item} ${styles.offsite}`}>
 		<a href={urlPath} target='_new'>
-			{label}
+			<span className={styles.inner}>{label}</span>
 		</a>
 	</li>
 )
@@ -38,14 +15,14 @@ export const OffsiteItem = ({ label, urlPath }) => (
 const Submenu = ({ items }) => <NavigationMenu className={styles.submenu} items={items} />
 
 export const SelectedItem = ({ label, urlPath, childNodes }) => (
-	<li className={`${styles.item} ${styles.offsite}`}>
-		<a href={urlPath}>{label} *</a>
+	<li className={`${styles.item} ${styles.selected}`}>
+		<a href={urlPath}><span className={styles.inner}>{label}</span></a>
 		{childNodes ? <Submenu items={childNodes} /> : null}
 	</li>
 )
 
 export const Item = ({ label, urlPath }) => (
-	<li className={styles.item}>{urlPath && <Link href={urlPath}>{label}</Link>}</li>
+	<li className={styles.item}>{urlPath && <Link href={urlPath}><span className={styles.inner}>{label}</span></Link>}</li>
 )
 
 export const NavigationItem = ({ hide, selected, offsite, ...props }) => {
@@ -58,9 +35,9 @@ export const NavigationItem = ({ hide, selected, offsite, ...props }) => {
 }
 
 const NavigationMenu = ({ items, className, ...props }) => {
-	const checkActivePath = useActivePath()
+	const checkActivePath = useActivePathFragment()
 	return (
-		<ol className={`${styles.menu} ${className}`} OL {...props}>
+		<ol className={`${styles.menu} ${className}`} {...props}>
 			{items.map((item, counter) => (
 				<NavigationItem
 					key={counter}
@@ -80,43 +57,3 @@ export const LandmarkNav = ({ items }) => {
 		</nav>
 	)
 }
-
-/*
-
-  
-const NavigationMenu = ({items, className, above, ...props}) =>{
-	const checkActivePath = useActivePath()
-	return( <ol className={`${styles.menu} ${className}` } {...props}>
-
-{items && items.map((item, counter) => (
-	<NavigationItem key={counter} styles={styles} selected={checkActivePath(item.urlPath)} {...item} />
-))}
-</ol>)}
-
-
-
-
-
-
-export const LandmarkNav = ({ items }) => {
-
-	const submenu = useSubmenu(items)
-
-return (<nav className={styles.nav}> 
-
-	<NavigationMenu className={styles.topMenu} items={items}/>
-
-	
-		{
-submenu && 
-
-<NavigationMenu className={styles.subMenu} items={submenu} above={1}/>
-
-}
-
-</nav>)
-
-}
-
-
-*/

@@ -1,3 +1,53 @@
+.nav {
+	background: #fff;
+}
+
+.topMenu > li > a   {
+	font-size:1.6rem;
+}
+
 .menu {
-	margin-left: 3rem;
+	margin: 0;
+	list-style: none;
+}
+
+.menu a,
+.menu a:visited,
+.menu a:active,
+.menu a:hover {
+	color: #000;
+}
+
+.menu a {
+	display: block;
+	padding: 1rem 0;
+}
+
+/* selected leaf */
+.selected:not(:has(.selected)) {
+	background: yellow;
+}
+
+/* selected branch */
+.selected:has(.selected) {
+	wbackground: red;
+}
+
+.selected > a {
+	font-weight: bold;
+	
+}
+
+.inner {
+	display: block;
+	margin: 0 6vw;
+}
+
+.selected ol {
+	border-left: 1px solid black;
+	margin: 0 6vw;
+}
+
+.selected ol .inner {
+	margin: 0 2vw;
 }
