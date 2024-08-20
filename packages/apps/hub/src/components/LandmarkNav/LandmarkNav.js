@@ -16,13 +16,21 @@ const Submenu = ({ items }) => <NavigationMenu className={styles.submenu} items=
 
 export const SelectedItem = ({ label, urlPath, childNodes }) => (
 	<li className={`${styles.item} ${styles.selected}`}>
-		<a href={urlPath}><span className={styles.inner}>{label}</span></a>
+		<a href={urlPath}>
+			<span className={styles.inner}>{label}</span>
+		</a>
 		{childNodes ? <Submenu items={childNodes} /> : null}
 	</li>
 )
 
 export const Item = ({ label, urlPath }) => (
-	<li className={styles.item}>{urlPath && <Link href={urlPath}><span className={styles.inner}>{label}</span></Link>}</li>
+	<li className={styles.item}>
+		{urlPath && (
+			<Link href={urlPath}>
+				<span className={styles.inner}>{label}</span>
+			</Link>
+		)}
+	</li>
 )
 
 export const NavigationItem = ({ hide, selected, offsite, ...props }) => {

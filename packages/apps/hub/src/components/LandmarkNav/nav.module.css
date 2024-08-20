@@ -2,8 +2,8 @@
 	background: #fff;
 }
 
-.topMenu > li > a   {
-	font-size:1.6rem;
+.topMenu > li > a {
+	font-size: 1.6rem;
 }
 
 .menu {
@@ -35,7 +35,6 @@
 
 .selected > a {
 	font-weight: bold;
-	
 }
 
 .inner {
@@ -46,6 +45,10 @@
 .selected ol {
 	border-left: 1px solid black;
 	margin: 0 6vw;
+}
+
+.selected ol .inner {
+	margin: 0 2vw;
 }
 
 .selected ol .inner {
