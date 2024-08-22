@@ -1,7 +1,7 @@
 import style from './Logo.module.css'
 
 export const Logo = ({ colour = '#000' }) => (
-	<div>
+	<div className={style.logo}>
 		<div className={style.hidden}>Openreferral UK</div>
 		<svg
 			style={{ fill: colour }}

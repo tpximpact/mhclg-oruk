@@ -3,13 +3,14 @@ import { PageMargin } from '@tpx/PageMargin'
 import { Logo } from '@/components/Logo'
 import Link from 'next/link'
 
-export const LandmarkBanner = ({ children }) => (
+export const LandmarkBanner = () => (
 	<header role='banner' className={styles.header}>
 		<PageMargin>
-			<Link href='/'>
-				<Logo colour='#5AC09E' />
-			</Link>
-			{children}
+			<div className={styles.content}>
+				<Link href='/'>
+					<Logo colour='#5AC09E' />
+				</Link>
+			</div>
 		</PageMargin>
 	</header>
 )

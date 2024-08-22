@@ -7,6 +7,11 @@
 	--colour-mint: #5ac09e;
 	--colour-dark-blue: #135e75;
 
+	--colour-buff1: #fcf9f5;
+	--colour-buff2: #faf3ec;
+	--colour-buff3: #f7ede3;
+	--colour-buff4: #f4e8db;
+
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-x-dark-green);
 	--theme-interaction: var(--colour-dark-blue);

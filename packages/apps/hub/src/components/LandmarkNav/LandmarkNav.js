@@ -1,3 +1,5 @@
+// BURGER css based on https://dev.to/cwrcode/create-hamburger-menu-using-pure-css-only-45k
+
 'use client'
 
 import Link from 'next/link'
@@ -60,8 +62,37 @@ const NavigationMenu = ({ items, className, ...props }) => {
 
 export const LandmarkNav = ({ items }) => {
 	return (
+		/*
 		<nav className={styles.nav}>
 			<NavigationMenu className={styles.topMenu} items={items} />
+		</nav>
+		*/
+		<nav role='navigation'>
+			<div id={styles.menuToggle}>
+				<input type='checkbox' />
+
+				<span></span>
+				<span></span>
+				<span></span>
+
+				<ul id={styles.menu}>
+					<a href='#'>
+						<li>Home</li>
+					</a>
+					<a href='#'>
+						<li>About</li>
+					</a>
+					<a href='#'>
+						<li>Info</li>
+					</a>
+					<a href='#'>
+						<li>Contact</li>
+					</a>
+					<a href='https://erikterwan.com/' target='_blank'>
+						<li>Show me more</li>
+					</a>
+				</ul>
+			</div>
 		</nav>
 	)
 }
