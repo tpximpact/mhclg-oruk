@@ -12,7 +12,7 @@ export const OffsiteItem = ({ label, urlPath }) => (
 	</li>
 )
 
-const Submenu = ({ items }) => <NavigationMenu className={styles.submenu} items={items} />
+const Submenu = ({ items }) => <NavigationMenu className={styles.subMenu} items={items} />
 
 export const SelectedItem = ({ label, urlPath, childNodes }) => (
 	<li className={`${styles.item} ${styles.selected}`}>
