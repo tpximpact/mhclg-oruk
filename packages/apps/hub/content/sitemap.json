@@ -63,12 +63,6 @@
 				"contentPath": "organisations"
 			},
 			{
-				"name": "forum",
-				"label": "Forum",
-				"urlPath": "https://forum.openreferral.org",
-				"offsite": "true"
-			},
-			{
 				"name": "case-studies",
 				"label": "Case studies",
 				"urlPath": "case-studies",

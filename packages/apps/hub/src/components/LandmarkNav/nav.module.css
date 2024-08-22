@@ -1,15 +1,24 @@
-.nav {
-	--nav-background: #fff;
-	--nav-separator: #2dd4bf;
-	--nav-highlight: #0d9488;
-	--nav-foregroud: #000;
-	--nav-hover: #ecfdf5;
+#menu {
+	position: relative;
+}
+
+#menu a {
+	text-decoration: none;
+	color: #000;
+}
+
+#menu ol,
+#menu li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-indent: 0;
 }
 
 @media only screen and (max-width: 1024px) {
-	/* BURGER */
-
 	#menuToggle {
+		--item-v-pad: 0.6rem;
+
 		display: block;
 		position: absolute;
 		top: 50px;
@@ -22,9 +31,6 @@
 	}
 
 	#menuToggle a {
-		text-decoration: none;
-		color: #232323;
-
 		transition: color 0.3s ease;
 	}
 
@@ -44,10 +50,10 @@
 		-webkit-touch-callout: none;
 	}
 
-	/*
+/*
  * Just a quick hamburger
  */
-	#menuToggle span {
+	#menuToggle .burger {
 		display: block;
 		width: 33px;
 		height: 4px;
@@ -67,48 +73,48 @@
 			opacity 0.55s ease;
 	}
 
-	#menuToggle span:first-child {
+	#menuToggle .burger:first-child {
 		transform-origin: 0% 0%;
 	}
 
-	#menuToggle span:nth-last-child(2) {
+	#menuToggle .burger:nth-last-child(2) {
 		transform-origin: 0% 100%;
 	}
 
-	/* 
+/* 
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-	#menuToggle input:checked ~ span {
+	#menuToggle input:checked ~ .burger {
 		opacity: 1;
 		transform: rotate(45deg) translate(-2px, -1px);
 		background: #232323;
 	}
 
-	/*
+/*
  * But let's hide the middle one.
  */
-	#menuToggle input:checked ~ span:nth-last-child(3) {
+	#menuToggle input:checked ~ .burger:nth-last-child(3) {
 		opacity: 0;
 		transform: rotate(0deg) scale(0.2, 0.2);
 	}
 
-	/*
- * Ohyeah and the last one should go the other direction
+/*
+ * Ohyeah and the last one shoold go the other direction
  */
-	#menuToggle input:checked ~ span:nth-last-child(2) {
+	#menuToggle input:checked ~ .burger:nth-last-child(2) {
 		transform: rotate(-45deg) translate(0, -1px);
 	}
 
-	/*
+/*
  * Make this absolute positioned
  * at the top left of the screen
  */
-	#menu {
+	.wrapTop {
 		position: absolute;
 		width: 100vw;
 		margin: -100px 0 0 -6vw;
-		padding: 50px 6vw;
+		padding: 50px 0;
 		padding-top: 125px;
 
 		background: var(--colour-buff3);
@@ -122,91 +128,38 @@
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
 
-	#menu li {
-		padding: 10px 0;
-		font-size: 22px;
+	#menu a {
+		display: block;
+		padding: var(--item-v-pad) 6vw;
+		font-size: 1.2rem;
 	}
 
-	/*
+/*
  * And let's slide it in from the left
  */
-	#menuToggle input:checked ~ ul {
+	#menuToggle input:checked ~ .wrapTop {
 		transform: none;
 	}
 
-	/* DEVICES */
-	/*
-.nav {
-	background: var(--nav-background);
-	padding:2rem 0 4rem;
-
-	.menu ol,
-	.menu li {
-		list-style: none;
-		margin:0;
-		padding:0;
-		text-indent: 0;
-	}
-
-	.menu a {
-		display: block;
-		padding: 1rem 6vw;
-	}
-
-	.menu a,
-	.menu a:hover,
-	.menu a:active,
-	.menu a:visited {
-		color: var(--nav-foreground);
-	}
-	.menu a:hover {
-		background: var(--nav-hover);
-	}
-
-	.topMenu > li  {
-		display:block;
-		border-top:1px solid var(--nav-separator);
-	}
-
-	.topMenu > li:last-child  {
-		border-bottom:1px solid var(--nav-separator);
-	}
-
-	.topMenu > li > a {
-		font-size: 1.1rem;
-	}
-
-	.subMenu > li > a {
-		font-size: 1rem;
-		padding-left: 8vw !important;
-	}
-
 	.selected > a {
-		font-weight :900;
-		text-decoration: none;
+		border-left: 1vw solid var(--colour-dark-green);
+		padding-left: 5vw !important;
+		font-weight: 700;
 	}
 
-	.topMenu .selected  > a {
-		border-left: 1vw solid var(--nav-highlight);
-		padding-left :5vw;
+	.subMenu a {
+		padding: var(--item-v-pad) 8vw !important;
+		font-size: 1rem !important;
 	}
 
-	.selected:has(.selected) a {
-		border-left:0;
-		padding-left :6vw;
+	.subMenu .selected > a {
+		padding-left: 7vw !important;
 	}
 
-	.subMenu .selected  > a {
-		border-left: 1vw solid var(--nav-highlight) !important;
-		padding-left :7vw !important;
+	.selected:has(.selected) > a {
+		border-left: 0;
+		padding-left: 6vw !important;
 	}
-
-	.selected:has(ol) {
-		padding-bottom:1rem;
-	}
-}
-
-*/
 }
 
 /* DESKTOP */
@@ -214,5 +167,69 @@
 @media only screen and (min-width: 1024px) {
 	#menuToggle input {
 		display: none;
+	}
+
+	.nav {
+		padding: 1rem 6vw 0;
+		background: #fff;
+		font-size: 1rem;
+		margin-bottom: 3rem;
+	}
+
+	.topMenu {
+		display: flex;
+	}
+
+	.topMenu li {
+		flex: 1;
+	}
+
+	.topMenu a {
+		display: block;
+		padding-top: 1.5rem;
+		padding-bottom: 1.1rem;
+	}
+
+	.menu a {
+		text-align: center;
+		height: 5rem;
+	}
+
+	.topMenu a small {
+		display: block;
+		top: -3px;
+		position: relative;
+	}
+
+	.selected > a {
+		border-bottom: 5px solid var(--nav-highlight);
+		font-weight: 700;
+	}
+
+	.wrapSub {
+		background: var(--colour-buff2);
+		position: absolute;
+		top: 5rem;
+		left: -6vw;
+		right: -6vw;
+		padding: 0 6vw;
+	}
+
+	.subMenu {
+		display: flex;
+	}
+
+	.subMenu a {
+		padding-top: 1.5rem;
+		padding-bottom: 1.1rem;
+	}
+
+	.selected:has(.subMenu) > a {
+		border: 0;
+		background: var(--colour-buff2);
+	}
+
+	.menu li:not(.selected) a:hover {
+		border-bottom: 5px solid var(--nav-highlight);
 	}
 }

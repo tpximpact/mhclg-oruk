@@ -9,12 +9,16 @@ import styles from './nav.module.css'
 export const OffsiteItem = ({ label, urlPath }) => (
 	<li className={`${styles.item} ${styles.offsite}`}>
 		<a href={urlPath} target='_new'>
-			<span className={styles.inner}>{label}</span>
+			<span className={styles.inner}>
+				{label} <small>(new window)</small>
+			</span>
 		</a>
 	</li>
 )
 
-const Submenu = ({ items }) => <NavigationMenu className={styles.subMenu} items={items} />
+const Submenu = ({ items }) => (
+	<Menu wrapperClass={styles.wrapSub} className={styles.subMenu} items={items} />
+)
 
 export const SelectedItem = ({ label, urlPath, childNodes }) => (
 	<li className={`${styles.item} ${styles.selected}`}>
@@ -44,55 +48,41 @@ export const NavigationItem = ({ hide, selected, offsite, ...props }) => {
 	return <Item {...props} />
 }
 
-const NavigationMenu = ({ items, className, ...props }) => {
-	const checkActivePath = useActivePathFragment()
-	return (
-		<ol className={`${styles.menu} ${className}`} {...props}>
-			{items.map((item, counter) => (
-				<NavigationItem
-					key={counter}
-					styles={styles}
-					selected={checkActivePath(item.urlPath)}
-					{...item}
-				/>
-			))}
-		</ol>
-	)
-}
-
 export const LandmarkNav = ({ items }) => {
 	return (
-		/*
-		<nav className={styles.nav}>
-			<NavigationMenu className={styles.topMenu} items={items} />
-		</nav>
-		*/
-		<nav role='navigation'>
+		<nav className={styles.nav} role='navigation'>
 			<div id={styles.menuToggle}>
 				<input type='checkbox' />
 
-				<span></span>
-				<span></span>
-				<span></span>
+				<span className={styles.burger}></span>
+				<span className={styles.burger}></span>
+				<span className={styles.burger}></span>
 
-				<ul id={styles.menu}>
-					<a href='#'>
-						<li>Home</li>
-					</a>
-					<a href='#'>
-						<li>About</li>
-					</a>
-					<a href='#'>
-						<li>Info</li>
-					</a>
-					<a href='#'>
-						<li>Contact</li>
-					</a>
-					<a href='https://erikterwan.com/' target='_blank'>
-						<li>Show me more</li>
-					</a>
-				</ul>
+				<Menu
+					wrapperClass={styles.wrapTop}
+					id={styles.menu}
+					className={styles.topMenu}
+					items={items}
+				/>
 			</div>
 		</nav>
+	)
+}
+
+const Menu = ({ items, id, className, wrapperClass, ...props }) => {
+	const checkActivePath = useActivePathFragment()
+	return (
+		<div className={wrapperClass}>
+			<ol id={id} className={`${styles.menu} ${className}`} {...props}>
+				{items.map((item, counter) => (
+					<NavigationItem
+						key={counter}
+						styles={styles}
+						selected={checkActivePath(item.urlPath)}
+						{...item}
+					/>
+				))}
+			</ol>
+		</div>
 	)
 }
