@@ -31,7 +31,7 @@ const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
 						return (
 							<Component key={j} className={getCellClassForValueType(valueType)}
 							{...cellProps}>
-								<CellContent valueType={valueType} payload={row[column]} />
+								<CellContent valueType={valueType} label={headers[column].label} payload={row[column]} />
 							</Component>
 						)
 					})}
@@ -59,6 +59,7 @@ export const Dashboard = (
 
 	return (
 		<div className={styles.dashboard}>
+			<h2>Dashboard</h2>
 			<View
 				columns={columns}
 				headers={headers}
@@ -129,7 +130,7 @@ const getCellClassForValueType = valueType => {
 	return <>{result}</>
 }
 
-const CellContent = ({ valueType, payload }) => {
+const CellContent = ({ valueType, label, payload }) => {
 	let result
 
 	switch (valueType) {
@@ -149,7 +150,7 @@ const CellContent = ({ valueType, payload }) => {
 			result = formatDate(payload)
 			break
 	}
-	return <>{result}</>
+	return <><span className={styles.label}>{label}</span><span>{result}</span></>
 }
 
 const StatusReadout = ({ pass }) => {

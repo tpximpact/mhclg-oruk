@@ -1,3 +1,47 @@
+.deviceOnly {
+	display: block;
+}
+
+.table {
+	display: block;
+}
+
+.thead {
+	display: none;
+}
+
+.tr {
+	margin: 2rem 0;
+	padding: 1rem 0;
+}
+
+.th {
+	font-weight: bold;
+	font-size: 1.4rem;
+	border-bottom: 1px solid gray;
+	margin-bottom:0.5rem;
+	
+}
+
+.td {
+	display: flex;
+}
+
+.td > span {
+	flex: 0 0 30%;
+}
+
+.td > span:last-child {
+	flex: 0 0 70%;
+	font-weight: bold;
+}
+
+.label{
+	
+}
+
+/*
+
 .table {
 	display: table;
 	border-collapse: collapse;
@@ -76,3 +120,5 @@
 .numeric {
 	text-align: right;
 }
+
+*/

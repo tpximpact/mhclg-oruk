@@ -2,6 +2,7 @@
 	"data": [
 		{
 			"URL": "https://example.com/good",
+			"commemt": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime.",
 			"developer": "AwesomeCo",
 			"id": "0001",
 			"name": "My good feed",
@@ -13,6 +14,7 @@
 		},
 		{
 			"URL": "https://example.com/bad",
+			"commemt": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime. Iam in moro copell sed fonculo sed repunae. Magnum refustior et quarcus inferrit.",
 			"developer": "BadCo",
 			"id": "0002",
 			"name": "My bad feed",
@@ -26,36 +28,38 @@
 	],
 	"definitions": {
 		"columns": {
+			"comment": {
+				"filterable": false,
+				"label": "Description",
+				"sortable": false,
+				"valueType": "oruk:valueType.markdown"
+			},
 			"developer": {
-				"description": "",
 				"filterable": true,
 				"label": "Developed by",
 				"sortType": 1,
-				"sortable": true
+				"sortable": true,
+				"valueType": "oruk:valueType.string"
 			},
 			"id": {
-				"description": "Globally unigue identifier",
 				"filterable": true,
 				"label": "Identifier",
 				"sortable": false,
 				"valueType": "oruk:valueType.uri"
 			},
 			"name": {
-				"description": "Service name",
 				"filterable": true,
 				"label": "Name",
 				"sortable": true,
 				"valueType": "oruk:valueType.string"
 			},
 			"schemaVersion": {
-				"description": "Service name",
 				"filterable": true,
 				"label": "ORUK version",
 				"sortable": true,
 				"valueType": "oruk:valueType.numeric"
 			},
 			"statusIsUp": {
-				"description": "",
 				"filterable": false,
 				"hasStatusIcon": true,
 				"label": "Available?",
@@ -63,7 +67,6 @@
 				"valueType": "oruk:valueType.success"
 			},
 			"statusIsValid": {
-				"description": "",
 				"filterable": false,
 				"hasStatusIcon": true,
 				"label": "Valid?",
@@ -71,7 +74,6 @@
 				"valueType": "oruk:valueType.success"
 			},
 			"statusOverall": {
-				"description": "",
 				"filterable": true,
 				"hasStatusIcon": true,
 				"label": "Feed passes?",
@@ -80,7 +82,6 @@
 				"valueType": "oruk:valueType.success"
 			},
 			"URL": {
-				"description": "",
 				"filterable": true,
 				"hasStatusIcon": true,
 				"label": "Endpoint URI",
@@ -88,7 +89,6 @@
 				"valueType": "oruk:valueType.uri"
 			},
 			"testDate": {
-				"description": "Date tested",
 				"label": "Date Tested",
 				"sortable": false,
 				"valueType": "oruk:valueType.dateTime"
@@ -101,10 +101,10 @@
 				"allowSorting": false,
 				"columns": [
 					"name",
-					"schemaVersion",
 					"statusOverall",
 					"statusIsUp",
 					"statusIsValid",
+					"schemaVersion",
 					"testDate"
 				],
 				"defaultSortBy": [
@@ -123,7 +123,7 @@
 			"directory": {
 				"allowFiltering": true,
 				"allowSorting": true,
-				"columns": ["name", "developer", "URL", "statusOverall"],
+				"columns": ["name", "commemt", "developer", "URL", "statusOverall"],
 				"defaultSortBy": [
 					{
 						"column": "name",
