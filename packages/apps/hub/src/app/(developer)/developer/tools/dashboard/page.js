@@ -15,7 +15,7 @@ export default async function Page() {
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
 			/>
 			<h1>Directory</h1>
-			<p>This won't go on the same page in the final thing!  Just for developemnt convenience/</p>
+			<p>This won't go on the same page in the final thing! Just for developemnt convenience/</p>
 			<Directory />
 		</>
 	)

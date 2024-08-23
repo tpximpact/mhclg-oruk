@@ -46,8 +46,6 @@
 	border-bottom: 3px solid black;
 }
 
-
-
 .uri,
 .string,
 .date {
@@ -57,4 +55,3 @@
 .numeric {
 	text-align: right;
 }
-

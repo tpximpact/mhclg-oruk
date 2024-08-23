@@ -60,7 +60,7 @@
 				"hasStatusIcon": true,
 				"label": "Available?",
 				"sortable": true,
-					"valueType": "oruk:valueType.success"
+				"valueType": "oruk:valueType.success"
 			},
 			"statusIsValid": {
 				"description": "",
@@ -99,7 +99,14 @@
 			"dashboard": {
 				"allowFiltering": false,
 				"allowSorting": false,
-				"columns": ["name", "schemaVersion", "statusOverall", "statusIsUp", "statusIsValid","testDate"],
+				"columns": [
+					"name",
+					"schemaVersion",
+					"statusOverall",
+					"statusIsUp",
+					"statusIsValid",
+					"testDate"
+				],
 				"defaultSortBy": [
 					{
 						"column": "schemaVersion",
