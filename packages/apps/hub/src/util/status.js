@@ -1,11 +1,10 @@
-import {ICON_TYPE} from '@tpx/Icon'
+import { ICON_TYPE } from '@tpx/Icon'
 
 export const STATUS = {
 	PASS: 'passed',
 	FAIL: 'failed',
 	SKIPPED: 'skipped'
 }
-
 
 export const getColourForStatus = status => {
 	let colour

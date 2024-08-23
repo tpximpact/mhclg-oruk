@@ -12,8 +12,7 @@
 
 .table th,
 .table td {
-	text-align: left;
-	padding: 0.5rem 1rem 0.5rem 0;
+	padding: 0.5rem 1rem;
 }
 
 .table th:last-child,
@@ -21,12 +20,17 @@
 	text-align: right;
 }
 
+.table th:first-child,
+.table td:first-child {
+	text-align: left;
+}
+
 .table thead tr {
 	border: 0;
 }
 
 .table thead tr {
-	border-top: 0;
+	border-top: 3px solid black;
 	border-bottom: 3px solid black;
 }
 
@@ -34,12 +38,23 @@
 	border: 0;
 }
 
-.table thead span {
-	display: block;
-	padding: 1rem 0.05rem;
-}
-
-
 .table tbody tr:not(:last-child) {
-	border-bottom:0.5px black solid;
+	border-bottom: 0.5px black solid;
 }
+
+.table tbody tr:last-child {
+	border-bottom: 3px solid black;
+}
+
+
+
+.uri,
+.string,
+.date {
+	text-align: left;
+}
+
+.numeric {
+	text-align: right;
+}
+

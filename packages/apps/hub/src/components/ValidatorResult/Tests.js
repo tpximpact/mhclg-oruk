@@ -1,8 +1,7 @@
 import styles from './ValidatorResult.module.css'
 import Icon from '@tpx/Icon'
 import { dummyData } from './dummyData'
-import { STATUS,getColourForStatus,getIconForStatus } from '@/util/status'
-
+import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
 const getCSSClassForStatus = status => {
 	let klass

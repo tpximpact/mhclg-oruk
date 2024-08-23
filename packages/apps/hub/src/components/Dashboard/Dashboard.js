@@ -1,22 +1,172 @@
 import styles from './Dashboard.module.css'
-import { Table } from './Table.js'
-import data from '/content/developer/tools/dashboard/data.json'
+import data from '/content/developer/dashboard/static.json'
+import Link from 'next/link'
+import Icon from '@tpx/Icon'
+import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
-const headers = [
-	'Organisation',
-	'API',
-	'Endpoint up',
-	'Services feed',
-	'Searchable',
-	'Last checked',
-	'Details'
-]
 
-export const Dashboard = ({ result }) => (
-	<div className={styles.dashboard}>
-		<h2>This is dummy data</h2>
-		<Table headers={headers} data={data} />
-		<h2>This was the response from the server</h2>
-		{JSON.stringify(result)}
-	</div>
+const Table = ({
+	columns,headers,showDetails,detailsURL,rows
+}
+) => (
+<table className={styles.table}>
+				<thead>
+					<tr>
+						{columns.map(col => {
+							const valueType = headers[col].valueType
+							const header = headers[col]
+							return <HeaderCell className={getCellClassForValueType(valueType)} key={col}>{header.label}</HeaderCell>
+						})}
+						{showDetails && <HeaderCell>Details</HeaderCell>}
+					</tr>
+				</thead>
+			
+				<tbody>
+					{rows.map((row, i) => (
+						<tr key={i}>
+							{columns.map((column, j) => {
+								const valueType = headers[column].valueType
+								const Component = j === 0 ? HeaderCell : DataCell
+								return <Component key={j} className={getCellClassForValueType(valueType)}><CellContent valueType={valueType} payload={row[column]}/></Component>
+							})}
+							{showDetails && <DataCell>
+								<Link href={detailsURL + row.id}>details</Link>
+								</DataCell>}
+						</tr>
+					))}
+				</tbody>
+				
+			</table>
 )
+
+export const Dashboard = (
+	{
+		/* result */
+	}
+) => {
+	const columns = data.definitions.views.dashboard.columns
+	const headers = data.definitions.columns
+	const showDetails = data.definitions.views.dashboard.showRowDetailsLink
+	const detailsURL = data.definitions.detailsURL
+	let rows = data.data
+
+
+	return (
+		<div className={styles.dashboard}>
+				<Table 
+				columns={columns}
+				headers={headers}
+				showDetails={showDetails}
+				detailsURL={detailsURL}
+				rows={	rows}
+				
+				/>
+		</div>
+	)
+}
+
+export const Directory = (
+	{
+		/* result */
+	}
+) => {
+	const columns = data.definitions.views.directory.columns
+	const headers = data.definitions.columns
+	const showDetails = data.definitions.views.directory.showRowDetailsLink
+	const detailsURL = data.definitions.detailsURL
+	let rows = data.data
+
+rows =rows.filter(row=>row.statusOverall>0)
+
+	return (
+		<div className={styles.directory}>
+				<Table 
+				columns={columns}
+				headers={headers}
+				showDetails={showDetails}
+				detailsURL={detailsURL}
+				rows={	rows}
+				
+				/>
+		</div>
+	)
+}
+
+const HeaderCell = ({ children,...props }) => <th {...props}>{children}</th>
+const DataCell = ({ children,...props }) => <td {...props}>{children}</td>
+
+
+
+const formatDate = dateString => {
+	const options = {
+		hour: 'numeric',
+		minute: 'numeric',
+		year: '2-digit',
+		month: '2-digit',
+		day: 'numeric'
+	}
+	return new Date(dateString).toLocaleDateString(undefined, options)
+}
+
+
+const getCellClassForValueType = valueType => {
+	let result
+	switch (valueType) {
+		case 'oruk:valueType.uri':
+		  result = styles.uri
+		  break;
+		  case 'oruk:valueType.string':
+			result = styles.string
+			break;
+			case 'oruk:valueType.numeric':
+				result = styles.numeric
+				break;
+				case "oruk:valueType.success":
+					result = null
+					break;				
+					case "oruk:valueType.dateTime":
+						result = styles.date
+						break;
+	  }
+	return <>{result}</>
+}
+
+const CellContent = ({valueType,payload}) => {
+	let result
+
+	switch (valueType) {
+		case 'oruk:valueType.uri':
+		  result = payload
+		  break;
+		  case 'oruk:valueType.string':
+			result = payload
+			break;
+			case 'oruk:valueType.numeric':
+				result = payload
+				break;
+				case "oruk:valueType.success":
+					result = <StatusReadout pass={payload}/>
+					break;				
+					case "oruk:valueType.dateTime":
+						result = formatDate(payload)
+						break;
+	  }
+	return <>{result}</>
+}
+
+const StatusReadout = ({ pass }) => {
+	const status = pass ? STATUS.PASS : STATUS.FAIL
+	return (
+		<>
+			<span style={{ marginRight: '0.2rem' }}>
+				<Icon
+					colour={getColourForStatus(status)}
+					weight='4'
+					icon={getIconForStatus(status)}
+					size='18'
+				/>
+			</span>
+			{status}
+		</>
+	)
+}
