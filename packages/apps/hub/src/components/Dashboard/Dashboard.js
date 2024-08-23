@@ -134,6 +134,9 @@ const CellContent = ({ valueType, label, payload }) => {
 	let result
 
 	switch (valueType) {
+		case 'oruk:valueType.markdown':
+			result = <span className={styles.markdown}>{payload}</span>
+			break
 		case 'oruk:valueType.uri':
 			result = payload
 			break

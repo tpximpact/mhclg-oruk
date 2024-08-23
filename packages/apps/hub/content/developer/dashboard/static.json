@@ -2,7 +2,7 @@
 	"data": [
 		{
 			"URL": "https://example.com/good",
-			"commemt": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime.",
+			"comment": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime.",
 			"developer": "AwesomeCo",
 			"id": "0001",
 			"name": "My good feed",
@@ -14,7 +14,7 @@
 		},
 		{
 			"URL": "https://example.com/bad",
-			"commemt": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime. Iam in moro copell sed fonculo sed repunae. Magnum refustior et quarcus inferrit.",
+			"comment": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime. Iam in moro copell sed fonculo sed repunae. Magnum refustior et quarcus inferrit.",
 			"developer": "BadCo",
 			"id": "0002",
 			"name": "My bad feed",
@@ -123,7 +123,7 @@
 			"directory": {
 				"allowFiltering": true,
 				"allowSorting": true,
-				"columns": ["name", "commemt", "developer", "URL", "statusOverall"],
+				"columns": ["name", "comment", "developer", "URL", "statusOverall"],
 				"defaultSortBy": [
 					{
 						"column": "name",

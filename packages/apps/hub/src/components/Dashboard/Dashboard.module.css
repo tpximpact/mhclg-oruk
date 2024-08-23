@@ -11,7 +11,7 @@
 }
 
 .tr {
-	margin: 2rem 0;
+	margin: 1rem 0;
 	padding: 1rem 0;
 }
 
@@ -20,7 +20,6 @@
 	font-size: 1.4rem;
 	border-bottom: 1px solid gray;
 	margin-bottom:0.5rem;
-	
 }
 
 .td {
@@ -36,9 +35,18 @@
 	font-weight: bold;
 }
 
+.th .label {
+	display: none;
+}
+
 .label{
 	
 }
+
+.markdown {
+	font-weight: normal;
+}
+
 
 /*
 
