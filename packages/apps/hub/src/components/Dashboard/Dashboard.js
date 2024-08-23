@@ -4,29 +4,29 @@ import Link from 'next/link'
 import Icon from '@tpx/Icon'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
-const Table = ({ columns, headers, showDetails, detailsURL, rows }) => (
-	<table className={styles.table}>
-		<thead>
-			<tr>
+const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
+	<Table>
+		<Thead>
+			<Tr>
 				{columns.map(col => {
 					const valueType = headers[col].valueType
 					const header = headers[col]
 					return (
-						<HeaderCell className={getCellClassForValueType(valueType)} key={col}>
+						<Th className={getCellClassForValueType(valueType)} key={col}>
 							{header.label}
-						</HeaderCell>
+						</Th>
 					)
 				})}
-				{showDetails && <HeaderCell>Details</HeaderCell>}
-			</tr>
-		</thead>
+				{showDetails && <Th>Details</Th>}
+			</Tr>
+		</Thead>
 
-		<tbody>
+		<Tbody>
 			{rows.map((row, i) => (
-				<tr key={i}>
+				<Tr key={i}>
 					{columns.map((column, j) => {
 						const valueType = headers[column].valueType
-						const Component = j === 0 ? HeaderCell : DataCell
+						const Component = j === 0 ? Th : Td
 						return (
 							<Component key={j} className={getCellClassForValueType(valueType)}>
 								<CellContent valueType={valueType} payload={row[column]} />
@@ -34,14 +34,14 @@ const Table = ({ columns, headers, showDetails, detailsURL, rows }) => (
 						)
 					})}
 					{showDetails && (
-						<DataCell>
+						<Td>
 							<Link href={detailsURL + row.id}>details</Link>
-						</DataCell>
+						</Td>
 					)}
-				</tr>
+				</Tr>
 			))}
-		</tbody>
-	</table>
+		</Tbody>
+	</Table>
 )
 
 export const Dashboard = (
@@ -57,7 +57,7 @@ export const Dashboard = (
 
 	return (
 		<div className={styles.dashboard}>
-			<Table
+			<View
 				columns={columns}
 				headers={headers}
 				showDetails={showDetails}
@@ -83,7 +83,7 @@ export const Directory = (
 
 	return (
 		<div className={styles.directory}>
-			<Table
+			<View
 				columns={columns}
 				headers={headers}
 				showDetails={showDetails}
@@ -93,10 +93,7 @@ export const Directory = (
 		</div>
 	)
 }
-
-const HeaderCell = ({ children, ...props }) => <th {...props}>{children}</th>
-const DataCell = ({ children, ...props }) => <td {...props}>{children}</td>
-
+ 
 const formatDate = dateString => {
 	const options = {
 		hour: 'numeric',
@@ -169,3 +166,11 @@ const StatusReadout = ({ pass }) => {
 		</>
 	)
 }
+
+const Table = ({ children, className,  ...props }) => <table className={`${styles.table} ${className}`} {...props}>{children}</table>
+const Thead = ({ children, className, ...props }) => <thead className={`${styles.thead} ${className}`} {...props}>{children}</thead>
+const Tbody = ({ children, className, ...props }) => <tbody className={`${styles.tbody} ${className}`} {...props}>{children}</tbody>
+const Tfoot = ({ children, className, ...props }) => <tfoot className={`${styles.tfoot} ${className}`} {...props}>{children}</tfoot>
+const Tr = ({ children, className, ...props }) => <tr className={`${styles.tr} ${className}`} {...props}>{children}</tr>
+const Th = ({ children, ...props }) => <th {...props}>{children}</th>
+const Td = ({ children, ...props }) => <td {...props}>{children}</td>
