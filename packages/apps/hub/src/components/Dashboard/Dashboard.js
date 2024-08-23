@@ -27,8 +27,10 @@ const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
 					{columns.map((column, j) => {
 						const valueType = headers[column].valueType
 						const Component = j === 0 ? Th : Td
+						const cellProps = j === 0 ? {column:"false"} : {}
 						return (
-							<Component key={j} className={getCellClassForValueType(valueType)}>
+							<Component key={j} className={getCellClassForValueType(valueType)}
+							{...cellProps}>
 								<CellContent valueType={valueType} payload={row[column]} />
 							</Component>
 						)
@@ -167,10 +169,29 @@ const StatusReadout = ({ pass }) => {
 	)
 }
 
-const Table = ({ children, className,  ...props }) => <table className={`${styles.table} ${className}`} {...props}>{children}</table>
-const Thead = ({ children, className, ...props }) => <thead className={`${styles.thead} ${className}`} {...props}>{children}</thead>
-const Tbody = ({ children, className, ...props }) => <tbody className={`${styles.tbody} ${className}`} {...props}>{children}</tbody>
-const Tfoot = ({ children, className, ...props }) => <tfoot className={`${styles.tfoot} ${className}`} {...props}>{children}</tfoot>
-const Tr = ({ children, className, ...props }) => <tr className={`${styles.tr} ${className}`} {...props}>{children}</tr>
-const Th = ({ children, ...props }) => <th {...props}>{children}</th>
-const Td = ({ children, ...props }) => <td {...props}>{children}</td>
+
+const Table = ({ children, className,  ...props }) => 
+	<div role="table" className={`${styles.table} ${className}`} {...props}>
+		{children}
+	</div>
+const Thead = ({ children, className, ...props }) =>
+	<div role="rowgroup"  className={`${styles.thead} ${className}`} {...props}>
+		{children}
+	</div>
+const Tbody = ({ children, className, ...props }) =>
+	<div role="rowgroup"  className={`${styles.tbody} ${className}`} {...props}>
+		{children}
+	</div>
+const Tr = ({ children, className, ...props }) =>
+	<div role="row" className={`${styles.tr} ${className}`} {...props}>
+		{children}
+	</div>
+const Th = ({ children, className, column, ...props }) =>
+	<div role={column?"columnheader":"rowheader"}
+	className={`${styles.th} ${className}`} {...props}>
+		{children}
+	</div>
+const Td = ({ children, className, ...props }) =>
+	<div role="cell" className={`${styles.td} ${className}`} {...props}>
+		{children}
+	</div>
