@@ -1,6 +1,4 @@
-.deviceOnly {
-	display: block;
-}
+/*
 
 .table {
 	display: block;
@@ -48,7 +46,11 @@
 }
 
 
-/*
+*/
+
+.label {
+	display: none;
+}
 
 .table {
 	display: table;
@@ -84,13 +86,13 @@
 
  .th,
  .td {
-	padding: 0.5rem 1rem;
+	padding: 0.8rem 1rem;
 }
 
-.th:last-child,
+/*.th:last-child,
 .td:last-child {
 	text-align: right;
-}
+}*/
 
 .th:first-child,
 .td:first-child {
@@ -119,14 +121,20 @@
 	border-bottom: 3px solid black;
 }
 
-.uri,
 .string,
 .date {
 	text-align: left;
 }
 
+.url {
+	overflow-wrap: break-word;
+  word-wrap: break-word;
+
+
+  word-break: break-word;
+
+}
+
 .numeric {
 	text-align: right;
 }
-
-*/

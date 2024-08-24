@@ -1,138 +1,222 @@
 {
-	"data": [
-		{
-			"URL": "https://example.com/good",
-			"comment": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime.",
-			"developer": "AwesomeCo",
-			"id": "0001",
-			"name": "My good feed",
-			"schemaVersion": "3.0",
-			"statusIsUp": 1,
-			"statusIsValid": 1,
-			"statusOverall": 1,
-			"testDate": "2024-08-06T18:00:07"
-		},
-		{
-			"URL": "https://example.com/bad",
-			"comment": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime. Iam in moro copell sed fonculo sed repunae. Magnum refustior et quarcus inferrit.",
-			"developer": "BadCo",
-			"id": "0002",
-			"name": "My bad feed",
-			"schemaVersion": "1.0",
-			"statusIsPaged": 1,
-			"statusIsUp": 1,
-			"statusIsValid": 0,
-			"statusOverall": 0,
-			"testDate": "2024-02-06T18:20:07"
-		}
-	],
-	"definitions": {
-		"columns": {
-			"comment": {
-				"filterable": false,
-				"label": "Description",
-				"sortable": false,
-				"valueType": "oruk:valueType.markdown"
-			},
-			"developer": {
-				"filterable": true,
-				"label": "Developed by",
-				"sortType": 1,
-				"sortable": true,
-				"valueType": "oruk:valueType.string"
-			},
-			"id": {
-				"filterable": true,
-				"label": "Identifier",
-				"sortable": false,
-				"valueType": "oruk:valueType.uri"
-			},
-			"name": {
-				"filterable": true,
-				"label": "Name",
-				"sortable": true,
-				"valueType": "oruk:valueType.string"
-			},
-			"schemaVersion": {
-				"filterable": true,
-				"label": "ORUK version",
-				"sortable": true,
-				"valueType": "oruk:valueType.numeric"
-			},
-			"statusIsUp": {
-				"filterable": false,
-				"hasStatusIcon": true,
-				"label": "Available?",
-				"sortable": true,
-				"valueType": "oruk:valueType.success"
-			},
-			"statusIsValid": {
-				"filterable": false,
-				"hasStatusIcon": true,
-				"label": "Valid?",
-				"sortable": true,
-				"valueType": "oruk:valueType.success"
-			},
-			"statusOverall": {
-				"filterable": true,
-				"hasStatusIcon": true,
-				"label": "Feed passes?",
-				"sortType": 2,
-				"sortable": true,
-				"valueType": "oruk:valueType.success"
-			},
-			"URL": {
-				"filterable": true,
-				"hasStatusIcon": true,
-				"label": "Endpoint URI",
-				"sortable": false,
-				"valueType": "oruk:valueType.uri"
-			},
-			"testDate": {
-				"label": "Date Tested",
-				"sortable": false,
-				"valueType": "oruk:valueType.dateTime"
-			}
-		},
-		"detailsURL": "/developer/tools/dashboard/",
-		"views": {
-			"dashboard": {
-				"allowFiltering": false,
-				"allowSorting": false,
-				"columns": [
-					"name",
-					"statusOverall",
-					"statusIsUp",
-					"statusIsValid",
-					"schemaVersion",
-					"testDate"
-				],
-				"defaultSortBy": [
-					{
-						"column": "schemaVersion",
-						"order": "oruk.sort.dsc"
-					},
-					{
-						"column": "name",
-						"order": "oruk.sort.asc"
-					}
-				],
-				"showPassingRowsOnly": false,
-				"showRowDetailsLink": true
-			},
-			"directory": {
-				"allowFiltering": true,
-				"allowSorting": true,
-				"columns": ["name", "comment", "developer", "URL", "statusOverall"],
-				"defaultSortBy": [
-					{
-						"column": "name",
-						"order": "oruk.sort.asc"
-					}
-				],
-				"showPassingRowsOnly": true,
-				"showRowDetailsLink": false
-			}
-		}
-	}
+    "data": [
+        {
+            "name": {
+                "value": "My good feed",
+                "url": "https://example.com/good"
+            },
+            "comment": {
+                "value": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime."
+            },
+           "service": {
+                "url": "http://example.com/really/annoying/very/long/value/which/will/need/to/wrap/oruk.json"
+            },
+            "developer": {
+                "value": "AwesomeCo",
+                "url": "https://example.com/good_developer"
+            },
+            "publisher": {
+                "value": "Shire County Council",
+                "url": "https://example.com/shire"
+            },
+            "schemaVersion": {
+                "value": "3.0"
+            },
+            "statusIsUp": {
+                "value": 1
+            },
+            "statusIsValid": {
+                "value": 1
+            },
+            "statusOverall": {
+                "value": 1
+            },
+            "testDate": {
+                "value": "2024-08-06T18:00:07",
+                "url": "/dashboard/test/000001"
+            }
+        },
+        {
+            "name": {
+                "value": "Another good feed",
+                "url": "https://example.com/alsogood"
+            },
+            "comment": {
+                "value": "Trepor undio imperator. Gospello gratia bona aminici, caldera, senex invonilitabiter. Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime."
+            },
+            "service": {
+                "url": "http://example.com/oruk.json"
+            },
+            "developer": {
+                "value": "AwesomeCo",
+                "url": "https://example.com/good_developer"
+            },
+            "publisher": {
+                "value": "Townville City Council",
+                "url": "https://example.com/city"
+            },
+            "schemaVersion": {
+                "value": "1.0"
+            },
+            "statusIsUp": {
+                "value": 1
+            },
+            "statusIsValid": {
+                "value": 1
+            },
+            "statusOverall": {
+                "value": 1
+            },
+            "testDate": {
+                "value": "2024-08-06T12:00:07",
+                "url": "/dashboard/test/000002"
+            }
+        },
+        {
+            "name": {
+                "value": "My bad feed",
+                "url": "https://example.com/bad"
+            },
+            "comment": {
+                "value": "Nolo operare. Non."
+            },
+            "service": {
+                "url": "http://example.com/oruk.json"
+            },
+            "developer": {
+                "value": "BadCo",
+                "url": "https://example.com/inept_developer"
+            },
+            "publisher": {
+                "value": "Sad County Council",
+                "url": "https://example.com/sad"
+            },
+            "schemaVersion": {
+                "value": "3.0"
+            },
+            "statusIsUp": {
+                "value": 1
+            },
+            "statusIsValid": {
+                "value": 0
+            },
+            "statusOverall": {
+                "value": 0
+            },
+            "testDate": {
+                "value": "2024-08-06T10:00:07",
+                "url": "/dashboard/test/000003"
+            }
+        }
+    ],
+    "definitions": {
+        "columns": {
+            "comment": {
+                "filterable": false,
+                "label": "Description",
+                "sortable": false,
+                "valueType": "oruk:valueType.markdown"
+            },
+            "developer": {
+                "filterable": true,
+                "label": "Developer",
+                "sortType": 1,
+                "sortable": true,
+                "valueType": "oruk:valueType.string"
+            },
+            "name": {
+                "filterable": true,
+                "label": "Name",
+                "sortable": true,
+                "valueType": "oruk:valueType.string"
+            },
+            "publisher": {
+                "filterable": true,
+                "label": "Publisher",
+                "sortType": 1,
+                "sortable": true,
+                "valueType": "oruk:valueType.string"
+            },
+            "schemaVersion": {
+                "filterable": true,
+                "label": "ORUK version",
+                "sortable": true,
+                "valueType": "oruk:valueType.numeric"
+            },
+            "service": {
+                "label": "Service",
+                "valueType": "oruk:valueType.string"
+            },
+            "statusIsUp": {
+                "filterable": false,
+                "hasStatusIcon": true,
+                "label": "Available?",
+                "sortable": true,
+                "valueType": "oruk:valueType.success"
+            },
+            "statusIsValid": {
+                "filterable": false,
+                "hasStatusIcon": true,
+                "label": "Valid?",
+                "sortable": true,
+                "valueType": "oruk:valueType.success"
+            },
+            "statusOverall": {
+                "filterable": true,
+                "hasStatusIcon": true,
+                "label": "Feed passes?",
+                "sortType": 2,
+                "sortable": true,
+                "valueType": "oruk:valueType.success"
+            },
+            "testDate": {
+                "label": "Date Tested",
+                "sortable": false,
+                "valueType": "oruk:valueType.dateTime"
+            }
+        },
+        "views": {
+            "dashboard": {
+                "allowFiltering": false,
+                "allowSorting": false,
+                "columns": [
+                    "name",
+                    "statusOverall",
+                    "statusIsUp",
+                    "statusIsValid",
+                    "schemaVersion",
+                    "testDate"
+                ],
+                "defaultSortBy": [
+                    {
+                        "column": "schemaVersion",
+                        "order": "oruk.sort.dsc"
+                    },
+                    {
+                        "column": "name",
+                        "order": "oruk.sort.asc"
+                    }
+                ],
+                "showPassingRowsOnly": false
+            },
+            "directory": {
+                "allowFiltering": true,
+                "allowSorting": true,
+                "columns": [
+                    "name",
+					"publisher",
+                    "comment",
+                    "developer",
+                    "service"
+                ],
+                "defaultSortBy": [
+                    {
+                        "column": "name",
+                        "order": "oruk.sort.asc"
+                    }
+                ],
+                "showPassingRowsOnly": true
+            }
+        }
+    }
 }

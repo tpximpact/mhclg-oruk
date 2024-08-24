@@ -35,11 +35,6 @@ const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
 							</Component>
 						)
 					})}
-					{showDetails && (
-						<Td>
-							<Link href={detailsURL + row.id}>details</Link>
-						</Td>
-					)}
 				</Tr>
 			))}
 		</Tbody>
@@ -82,7 +77,7 @@ export const Directory = (
 	const detailsURL = data.definitions.detailsURL
 	let rows = data.data
 
-	rows = rows.filter(row => row.statusOverall > 0)
+	rows = rows.filter(row => row.statusOverall.value > 0)
 
 	return (
 		<div className={styles.directory}>
@@ -111,9 +106,6 @@ const formatDate = dateString => {
 const getCellClassForValueType = valueType => {
 	let result
 	switch (valueType) {
-		case 'oruk:valueType.uri':
-			result = styles.uri
-			break
 		case 'oruk:valueType.string':
 			result = styles.string
 			break
@@ -133,24 +125,31 @@ const getCellClassForValueType = valueType => {
 const CellContent = ({ valueType, label, payload }) => {
 	let result
 
+	let val = payload.value
+	const  target = payload.url
+	
+	// if the payload deosnt have a value 
+	// but does have a url, use that as the value
+	if ((val === undefined) && target) {
+		val =  <span className={styles.url}>{target}</span>
+	}
+	
+	// TODO link the links.
 	switch (valueType) {
 		case 'oruk:valueType.markdown':
-			result = <span className={styles.markdown}>{payload}</span>
-			break
-		case 'oruk:valueType.uri':
-			result = payload
+			result = <span className={styles.markdown}>{val}</span>
 			break
 		case 'oruk:valueType.string':
-			result = payload
+			result = val
 			break
 		case 'oruk:valueType.numeric':
-			result = payload
+			result = val
 			break
 		case 'oruk:valueType.success':
-			result = <StatusReadout pass={payload} />
+			result = <StatusReadout pass={val} />
 			break
 		case 'oruk:valueType.dateTime':
-			result = formatDate(payload)
+			result = formatDate(val)
 			break
 	}
 	return <><span className={styles.label}>{label}</span><span>{result}</span></>
