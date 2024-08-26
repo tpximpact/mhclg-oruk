@@ -2,6 +2,7 @@ import styles from './Dashboard.module.css'
 import data from '/content/developer/dashboard/static.json'
 import Link from 'next/link'
 import Icon from '@tpx/Icon'
+import {Pagination} from '@/components/Pagination'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
 const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
@@ -62,6 +63,7 @@ export const Dashboard = (
 				detailsURL={detailsURL}
 				rows={rows}
 			/>
+			<Pagination />
 		</div>
 	)
 }

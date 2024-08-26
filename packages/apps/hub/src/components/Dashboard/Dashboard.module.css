@@ -69,7 +69,7 @@
 	padding: 0;
 	white-space: wrap;
 	overflow-wrap: break-word;
-	margin: 2rem 0 4rem;
+	margin: 2rem 0;
 }
 .thead {
 	display: table-header-group;
