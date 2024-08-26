@@ -1,4 +1,12 @@
-/*
+.url {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+/* DEVICES - list */
+
+@media only screen and (max-width: 1024px) {
 
 .table {
 	display: block;
@@ -37,17 +45,16 @@
 	display: none;
 }
 
-.label{
-	
-}
-
 .markdown {
 	font-weight: normal;
 }
 
+}
 
-*/
+/* DESKTOP - table */
 
+@media only screen and (min-width: 1024px) {
+	
 .label {
 	display: none;
 }
@@ -81,7 +88,7 @@
 }
 
 .thead {
-	background: beige;
+	background: var(--theme-dashboard-header-bg);
 }
 
  .th,
@@ -89,23 +96,9 @@
 	padding: 0.8rem 1rem;
 }
 
-/*.th:last-child,
-.td:last-child {
-	text-align: right;
-}*/
-
-.th:first-child,
-.td:first-child {
-	text-align: left;
-}
-
-.tr {
-	border: 0;
-}
-
 .thead .tr {
-	border-top: 3px solid black;
-	border-bottom: 3px solid black;
+	border-top: var(--theme-dashboard-border);
+	border-bottom: var(--theme-dashboard-border);
 }
 
 .th {
@@ -114,11 +107,11 @@
 }
 
 .tr:not(:last-child) {
-	border-bottom: 0.5px black solid;
+	border-bottom: var(--theme-dashboard-row-divider);
 }
 
 .tr:last-child {
-	border-bottom: 3px solid black;
+	border-bottom: var(--theme-dashboard-border);
 }
 
 .string,
@@ -126,15 +119,8 @@
 	text-align: left;
 }
 
-.url {
-	overflow-wrap: break-word;
-  word-wrap: break-word;
-
-
-  word-break: break-word;
-
-}
-
 .numeric {
 	text-align: right;
+}
+
 }
