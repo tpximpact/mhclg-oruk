@@ -9,6 +9,7 @@
                 "value": "Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime."
             },
            "service": {
+			   "value": "example.com",
                 "url": "http://example.com/really/annoying/very/long/value/which/will/need/to/wrap/oruk.json"
             },
             "developer": {
@@ -45,6 +46,7 @@
                 "value": "Trepor undio imperator. Gospello gratia bona aminici, caldera, senex invonilitabiter. Lorem ipsum dolor si meliora dies. Si poemata rediit nam slottoj. Ad ultrior in quando lacrissime."
             },
             "service": {
+				"value": "example.com",
                 "url": "http://example.com/oruk.json"
             },
             "developer": {
@@ -112,35 +114,23 @@
     "definitions": {
         "columns": {
             "comment": {
-                "filterable": false,
                 "label": "Description",
-                "sortable": false,
                 "valueType": "oruk:valueType.markdown"
             },
             "developer": {
-                "filterable": true,
                 "label": "Developer",
-                "sortType": 1,
-                "sortable": true,
                 "valueType": "oruk:valueType.string"
             },
             "name": {
-                "filterable": true,
                 "label": "Name",
-                "sortable": true,
                 "valueType": "oruk:valueType.string"
             },
             "publisher": {
-                "filterable": true,
                 "label": "Publisher",
-                "sortType": 1,
-                "sortable": true,
                 "valueType": "oruk:valueType.string"
             },
             "schemaVersion": {
-                "filterable": true,
                 "label": "ORUK version",
-                "sortable": true,
                 "valueType": "oruk:valueType.numeric"
             },
             "service": {
@@ -148,37 +138,24 @@
                 "valueType": "oruk:valueType.string"
             },
             "statusIsUp": {
-                "filterable": false,
-                "hasStatusIcon": true,
                 "label": "Available?",
-                "sortable": true,
                 "valueType": "oruk:valueType.success"
             },
             "statusIsValid": {
-                "filterable": false,
-                "hasStatusIcon": true,
                 "label": "Valid?",
-                "sortable": true,
                 "valueType": "oruk:valueType.success"
             },
             "statusOverall": {
-                "filterable": true,
-                "hasStatusIcon": true,
                 "label": "Feed passes?",
-                "sortType": 2,
-                "sortable": true,
                 "valueType": "oruk:valueType.success"
             },
             "testDate": {
                 "label": "Date Tested",
-                "sortable": false,
                 "valueType": "oruk:valueType.dateTime"
             }
         },
         "views": {
             "dashboard": {
-                "allowFiltering": false,
-                "allowSorting": false,
                 "columns": [
                     "name",
                     "statusOverall",
@@ -197,11 +174,10 @@
                         "order": "oruk.sort.asc"
                     }
                 ],
+				"pageSize": 5,
                 "showPassingRowsOnly": false
             },
             "directory": {
-                "allowFiltering": true,
-                "allowSorting": true,
                 "columns": [
                     "name",
 					"publisher",
@@ -215,6 +191,7 @@
                         "order": "oruk.sort.asc"
                     }
                 ],
+				"pageSize": 99999,
                 "showPassingRowsOnly": true
             }
         }
