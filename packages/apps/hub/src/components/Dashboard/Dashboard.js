@@ -1,11 +1,11 @@
 import styles from './Dashboard.module.css'
-import data from '/content/developer/dashboard/static.json'
+import data from './example.json'
 import Link from 'next/link'
-import Icon from '@tpx/Icon'
-import {Pagination} from '@/components/Pagination'
+import Icon, { ICON_TYPE } from '@tpx/Icon'
+// import {Pagination} from '@/components/Pagination'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
-const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
+const View = ({ columns, headers, showDetails, rows }) => (
 	<Table>
 		<Thead>
 			<Tr>
@@ -28,11 +28,14 @@ const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
 					{columns.map((column, j) => {
 						const valueType = headers[column].valueType
 						const Component = j === 0 ? Th : Td
-						const cellProps = j === 0 ? {column:"false"} : {}
+						const cellProps = j === 0 ? { column: 'false' } : {}
 						return (
-							<Component key={j} className={getCellClassForValueType(valueType)}
-							{...cellProps}>
-								<CellContent valueType={valueType} label={headers[column].label} payload={row[column]} />
+							<Component key={j} className={getCellClassForValueType(valueType)} {...cellProps}>
+								<CellContent
+									valueType={valueType}
+									label={headers[column].label}
+									payload={row[column]}
+								/>
 							</Component>
 						)
 					})}
@@ -42,11 +45,7 @@ const View = ({ columns, headers, showDetails, detailsURL, rows }) => (
 	</Table>
 )
 
-export const Dashboard = (
-	{
-		/* result */
-	}
-) => {
+export const Dashboard = () => {
 	const columns = data.definitions.views.dashboard.columns
 	const headers = data.definitions.columns
 	const showDetails = data.definitions.views.dashboard.showRowDetailsLink
@@ -63,16 +62,12 @@ export const Dashboard = (
 				detailsURL={detailsURL}
 				rows={rows}
 			/>
-			<Pagination />
+			{/*<Pagination />*/}
 		</div>
 	)
 }
 
-export const Directory = (
-	{
-		/* result */
-	}
-) => {
+export const Directory = () => {
 	const columns = data.definitions.views.directory.columns
 	const headers = data.definitions.columns
 	const showDetails = data.definitions.views.directory.showRowDetailsLink
@@ -93,7 +88,7 @@ export const Directory = (
 		</div>
 	)
 }
- 
+
 const formatDate = dateString => {
 	const options = {
 		hour: 'numeric',
@@ -128,14 +123,14 @@ const CellContent = ({ valueType, label, payload }) => {
 	let result
 
 	let val = payload.value
-	const  target = payload.url
-	
-	// if the payload deosnt have a value 
+	const target = payload.url
+
+	// if the payload deosnt have a value
 	// but does have a url, use that as the value
-	if ((val === undefined) && target) {
-		val =  <span className={styles.url}>{target}</span>
+	if (val === undefined && target) {
+		val = <span className={styles.url}>{target}</span>
 	}
-	
+
 	// TODO link the links.
 	switch (valueType) {
 		case 'oruk:valueType.markdown':
@@ -154,8 +149,38 @@ const CellContent = ({ valueType, label, payload }) => {
 			result = formatDate(val)
 			break
 	}
-	return <><span className={styles.label}>{label}</span><span>{result}</span></>
+	const str = (
+		<>
+			<span className={styles.label}>{label}</span>
+			<span>{result}</span>
+		</>
+	)
+	if (target) {
+		const offsite = target.startsWith('http')
+		if (offsite) {
+			return (
+				<a
+					href={target}
+					className={offsite ? styles.offsiteLink : null}
+					target={offsite ? '_blank' : '_self'}
+				>
+					{str}
+					{offsite ? <OffsiteIcon /> : null}
+				</a>
+			)
+		} else {
+			return <Link href={target}>{str}</Link>
+		}
+	} else {
+		return str
+	}
 }
+
+const OffsiteIcon = () => (
+	<span style={{ marginLeft: '0.2rem' }}>
+		<Icon weight='2' icon={ICON_TYPE.NEWWINDOW} size='18' />
+	</span>
+)
 
 const StatusReadout = ({ pass }) => {
 	const status = pass ? STATUS.PASS : STATUS.FAIL
@@ -174,29 +199,37 @@ const StatusReadout = ({ pass }) => {
 	)
 }
 
-
-const Table = ({ children, className,  ...props }) => 
-	<div role="table" className={`${styles.table} ${className}`} {...props}>
+const Table = ({ children, className, ...props }) => (
+	<div role='table' className={`${styles.table} ${className}`} {...props}>
 		{children}
 	</div>
-const Thead = ({ children, className, ...props }) =>
-	<div role="rowgroup"  className={`${styles.thead} ${className}`} {...props}>
+)
+const Thead = ({ children, className, ...props }) => (
+	<div role='rowgroup' className={`${styles.thead} ${className}`} {...props}>
 		{children}
 	</div>
-const Tbody = ({ children, className, ...props }) =>
-	<div role="rowgroup"  className={`${styles.tbody} ${className}`} {...props}>
+)
+const Tbody = ({ children, className, ...props }) => (
+	<div role='rowgroup' className={`${styles.tbody} ${className}`} {...props}>
 		{children}
 	</div>
-const Tr = ({ children, className, ...props }) =>
-	<div role="row" className={`${styles.tr} ${className}`} {...props}>
+)
+const Tr = ({ children, className, ...props }) => (
+	<div role='row' className={`${styles.tr} ${className}`} {...props}>
 		{children}
 	</div>
-const Th = ({ children, className, column, ...props }) =>
-	<div role={column?"columnheader":"rowheader"}
-	className={`${styles.th} ${className}`} {...props}>
+)
+const Th = ({ children, className, column, ...props }) => (
+	<div
+		role={column ? 'columnheader' : 'rowheader'}
+		className={`${styles.th} ${className}`}
+		{...props}
+	>
 		{children}
 	</div>
-const Td = ({ children, className, ...props }) =>
-	<div role="cell" className={`${styles.td} ${className}`} {...props}>
+)
+const Td = ({ children, className, ...props }) => (
+	<div role='cell' className={`${styles.td} ${className}`} {...props}>
 		{children}
 	</div>
+)

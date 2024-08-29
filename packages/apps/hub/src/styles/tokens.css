@@ -15,8 +15,8 @@
 	--theme-header-bg: var(--colour-white);
 	--theme-header-fg: var(--colour-black);
 	--theme-dashboard-border: 3px solid var(--colour-black);
---theme-dashboard-row-divider: 0.5px solid var(--colour-black);
---theme-dashboard-header-bg: beige;
+	--theme-dashboard-row-divider: 0.5px solid var(--colour-black);
+	--theme-dashboard-header-bg: beige;
 }
 
 @media (prefers-color-scheme: dark) {

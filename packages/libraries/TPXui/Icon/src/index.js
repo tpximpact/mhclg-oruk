@@ -1,6 +1,6 @@
 /*
 
-Before creating a new icon consider ripping one off from `https://github.com/mikolajdobrucki/ikonate`
+Before creating a new icon consider using one from `https://github.com/mikolajdobrucki/ikonate`
 
 Icons must:
 - have artboard size of 24px x 24px
@@ -132,6 +132,13 @@ export const ICON_TYPE = {
 	MAGNIFY: {
 		names: [],
 		path: 'M14.412 14.412L20 20M10 4a6 6 0 1 0 0 12 6 6 0 1 0 0-12z'
+	},
+	NEWWINDOW: {
+		names: [],
+		/*
+		path:  'M13.9 6.7 4.9 6.7 4.9 20.9 19.1 20.9 19.1 11.8 M21.2 9.8 21.2 4.7 16 4.7 M20.8 5, L16.3 9.5'
+		*/
+		path: 'M12.3,9.3h-7.4v11.6h11.6v-7.4 M21.2,10.8v-6.1h-6.2 M20.8,5l-4.5,4.5 M20.8,5l-8,8'
 	},
 	NEXT: {
 		names: [],
