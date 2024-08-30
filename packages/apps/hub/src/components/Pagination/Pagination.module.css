@@ -21,19 +21,24 @@
 	margin: 0;
 	padding: 0;
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .pagination li {
-	/*margin: 0 1px;*/
 	margin: 0 0.5em;
 }
 
-.pagination a {
+.pagination a,
+.noAnchor {
 	display: block;
 	padding: 0.5em 1em;
 	noborder: 1px solid #000;
 	border-radius: 0.2em;
 	notext-decoration: none;
+}
+
+.noAnchor {
+	color: #999;
 }
 
 .pagination a[aria-current='page'] {

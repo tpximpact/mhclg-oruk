@@ -5,7 +5,9 @@ import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import meta from '/content/developer/tools/dashboard/metadata.json'
 export const metadata = meta
 
-export default async function Page() {
+export default async function Page(
+{ searchParams }
+) {
 	return (
 		<>
 			<NamedMarkdownPage name='dashboard' />
@@ -13,6 +15,7 @@ export default async function Page() {
 				method={METHOD.GET}
 				ResultRenderComponent={Dashboard}
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
+				currentPage={parseInt(searchParams.page)}
 			/>
 			<h1>Directory</h1>
 			<p>This won’t go on the same page in the final thing! Just for developemnt convenience/</p>

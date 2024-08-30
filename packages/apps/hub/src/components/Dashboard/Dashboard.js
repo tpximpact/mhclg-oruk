@@ -1,9 +1,37 @@
+'use client'
+import React, { useState, useEffect } from 'react'
 import styles from './Dashboard.module.css'
 import data from './example.json'
 import Link from 'next/link'
 import Icon, { ICON_TYPE } from '@tpx/Icon'
-// import {Pagination} from '@/components/Pagination'
+import {Pagination} from '@/components/Pagination'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+
+const NoJSView = ({
+currentPage
+})	=> <div>
+<div>No JS
+currentPage = {currentPage} {typeof(currentPage)}
+</div>
+<Pagination 
+baseUrl= "/developer/tools/dashboard?page="
+numPages={4}
+	currentPage={currentPage}/>
+</div>
+
+const InteractiveView = () => <div>Interactive</div>
+
+const DashboardView = (props)	=> {
+	const [clientSide, setClientSide] = useState(false)
+
+	useEffect(() => {
+		setClientSide(true)
+	}, [])
+	
+	return clientSide ? <InteractiveView {...props}/> : <NoJSView
+	{...props}
+	/>
+}
 
 const View = ({ columns, headers, showDetails, rows }) => (
 	<Table>
@@ -45,7 +73,9 @@ const View = ({ columns, headers, showDetails, rows }) => (
 	</Table>
 )
 
-export const Dashboard = () => {
+export const Dashboard = ({
+	currentPage
+})=> {
 	const columns = data.definitions.views.dashboard.columns
 	const headers = data.definitions.columns
 	const showDetails = data.definitions.views.dashboard.showRowDetailsLink
@@ -55,6 +85,9 @@ export const Dashboard = () => {
 	return (
 		<div className={styles.dashboard}>
 			<h2>Dashboard</h2>
+			<DashboardView 
+				currentPage={currentPage}
+			/>
 			<View
 				columns={columns}
 				headers={headers}
@@ -62,7 +95,6 @@ export const Dashboard = () => {
 				detailsURL={detailsURL}
 				rows={rows}
 			/>
-			{/*<Pagination />*/}
 		</div>
 	)
 }
@@ -119,6 +151,8 @@ const getCellClassForValueType = valueType => {
 	return <>{result}</>
 }
 
+const DisplayDate = ({d}) => <span suppressHydrationWarning>{formatDate(d)}</span> 
+
 const CellContent = ({ valueType, label, payload }) => {
 	let result
 
@@ -146,7 +180,7 @@ const CellContent = ({ valueType, label, payload }) => {
 			result = <StatusReadout pass={val} />
 			break
 		case 'oruk:valueType.dateTime':
-			result = formatDate(val)
+			result = <DisplayDate d={val}/>
 			break
 	}
 	const str = (
@@ -169,7 +203,7 @@ const CellContent = ({ valueType, label, payload }) => {
 				</a>
 			)
 		} else {
-			return <Link href={target}>{str}</Link>
+			return <Link  href={target}>{str}</Link>
 		}
 	} else {
 		return str
@@ -228,7 +262,8 @@ const Th = ({ children, className, column, ...props }) => (
 		{children}
 	</div>
 )
-const Td = ({ children, className, ...props }) => (
+const Td = ({ children,
+	className, ...props }) => (
 	<div role='cell' className={`${styles.td} ${className}`} {...props}>
 		{children}
 	</div>
