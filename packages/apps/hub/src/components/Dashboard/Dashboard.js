@@ -6,6 +6,50 @@ import Link from 'next/link'
 import Icon, { ICON_TYPE } from '@tpx/Icon'
 import {Pagination} from '@/components/Pagination'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+import {generate,generateDataRow} from './dummyData'
+
+
+const NoJSView = ({
+currentPage
+})	=> <div>
+<div>No JS version.
+currentPage = <strong>{currentPage}</strong>
+
+</div>
+<Pagination 
+baseUrl= "/developer/tools/dashboard?page="
+numPages={4}
+	currentPage={currentPage}/>
+</div>
+
+const InteractiveView = ({
+currentPage
+}) => {
+	const [activePage, setActivePage] = useState(currentPage)
+	
+	const selectPage = (_,n) => setActivePage(n)
+	
+	return <div>Interactive version. currentPage = <strong>{activePage}</strong>
+	<Pagination 
+	pageChangeFunction={selectPage}
+baseUrl= "/developer/tools/dashboard?page="
+numPages={4}
+	currentPage={activePage}/>
+	
+	</div>
+}
+
+const DashboardView = (props)	=> {
+	const [clientSide, setClientSide] = useState(false)
+
+	useEffect(() => {
+		setClientSide(true)
+	}, [])
+	
+	return clientSide ? <InteractiveView {...props}/> : <NoJSView
+	{...props}
+	/>
+}
 
 const NoJSView = ({
 currentPage
@@ -84,6 +128,9 @@ export const Dashboard = ({
 
 	return (
 		<div className={styles.dashboard}>
+		{
+			JSON.stringify(generateDataRow(10))
+		}
 			<h2>Dashboard</h2>
 			<DashboardView 
 				currentPage={currentPage}

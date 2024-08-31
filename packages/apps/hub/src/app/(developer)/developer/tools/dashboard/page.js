@@ -15,7 +15,10 @@ export default async function Page(
 				method={METHOD.GET}
 				ResultRenderComponent={Dashboard}
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
-				currentPage={parseInt(searchParams.page)}
+				currentPage={
+					searchParams.page ?
+					parseInt(searchParams.page):1}
+
 			/>
 			<h1>Directory</h1>
 			<p>This won’t go on the same page in the final thing! Just for developemnt convenience/</p>
