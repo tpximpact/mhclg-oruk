@@ -5,4 +5,4 @@ export default {
 	component: Cookies
 }
 
-export const Demo = () => <Cookies name="storybookCookie"/>
+export const Demo = () => <Cookies name='storybookCookie' />

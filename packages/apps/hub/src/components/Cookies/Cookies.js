@@ -4,9 +4,7 @@ import CookieConsent from 'react-cookie-consent'
 
 const DEFAULT_COOKIE_NAME = 'orukCookieConsent'
 
-export const Cookies = ({
- name = DEFAULT_COOKIE_NAME
-})	=> (
+export const Cookies = ({ name = DEFAULT_COOKIE_NAME }) => (
 	<CookieConsent
 		location='bottom'
 		buttonText='Accept'

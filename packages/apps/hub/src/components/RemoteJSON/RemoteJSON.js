@@ -62,11 +62,11 @@ export const RemoteJSON = async props => {
 	let result
 
 	const args = {
-		endpoint:props.endpoint,
-		method:props.method,
-		queryParams:props.queryParams
+		endpoint: props.endpoint,
+		method: props.method,
+		queryParams: props.queryParams
 	}
-	
+
 	if (isInitialPageLoad()) {
 		result = await fetchResult(args)
 	}
