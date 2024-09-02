@@ -6,7 +6,7 @@ import '@/styles/global.css'
 import '@/styles/no-js.css'
 
 import { LandmarkBanner } from '@/components/LandmarkBanner'
-import {LandmarkNav} from '@/components/LandmarkNav'
+import { LandmarkNav } from '@/components/LandmarkNav'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
@@ -14,7 +14,7 @@ import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import defaultMetadata from '/content/metadata.json'
-import {getSiteItems}from '@/util/content'
+import { getSiteItems } from '@/util/content'
 
 const USE_AXE = true
 const USE_COOKIES = true
@@ -32,8 +32,8 @@ export default function RootLayout({ children }) {
 					{USE_AXE && <Axe />}
 					{USE_COOKIES && <Cookies />}
 					<NoJsBanner />
-					<LandmarkBanner/>
-					{USE_NAV && <LandmarkNav items={getSiteItems()}/>}
+					<LandmarkBanner />
+					{USE_NAV && <LandmarkNav items={getSiteItems()} />}
 					<LandmarkMain>{children}</LandmarkMain>
 				</div>
 				<LandmarkContentInfo />

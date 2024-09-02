@@ -1,5 +1,7 @@
-import '../packages/apps/hub/src/app/tokens.css'
-import '../packages/apps/hub/src/app/no-js.css'
+import '../packages/apps/hub/src/styles/reset.css'
+import '../packages/apps/hub/src/styles/global.css'
+import '../packages/apps/hub/src/styles/tokens.css'
+import '../packages/apps/hub/src/styles/no-js.css'
 
 const preview = {
 	parameters: {
