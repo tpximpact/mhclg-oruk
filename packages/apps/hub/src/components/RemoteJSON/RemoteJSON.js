@@ -7,10 +7,10 @@ export const METHOD = {
 	GET: 2
 }
 
-const ResultLoader = async ({ ResultRenderComponent, ...args }) => {
+const ResultLoader = async ({ ResultRenderComponent, args, ...props }) => {
 	const result = await fetchResult(args)
 	return result && result.ok ? (
-		<ResultRenderComponent result={result} />
+		<ResultRenderComponent result={result} {...props} />
 	) : (
 		<Error data={result.error} />
 	)
@@ -61,8 +61,14 @@ const isInitialPageLoad = () => !!headers().get('accept')?.includes('text/html')
 export const RemoteJSON = async props => {
 	let result
 
-	if (isInitialPageLoad()) {
-		result = await fetchResult(props)
+	const args = {
+		endpoint: props.endpoint,
+		method: props.method,
+		queryParams: props.queryParams
 	}
-	return <ResultWithSuspense result={result} {...props} />
+
+	if (isInitialPageLoad()) {
+		result = await fetchResult(args)
+	}
+	return <ResultWithSuspense result={result} args={args} {...props} />
 }

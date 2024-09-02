@@ -1,5 +1,5 @@
 .nav {
-    padding:2rem 0 0;
+	padding: 2rem 0 0;
 	background: var(--theme-header-bg);
 	color: var(--theme-header-fg);
 }

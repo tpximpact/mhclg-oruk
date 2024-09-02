@@ -2,12 +2,14 @@
 
 import CookieConsent from 'react-cookie-consent'
 
-export const Cookies = () => (
+const DEFAULT_COOKIE_NAME = 'orukCookieConsent'
+
+export const Cookies = ({ name = DEFAULT_COOKIE_NAME }) => (
 	<CookieConsent
 		location='bottom'
 		buttonText='Accept'
 		declineButtonText='Decline'
-		cookieName='orukCookieConsent'
+		cookieName={name}
 		containerClasses='cookie-consent-container'
 		buttonClasses='cookie-accept-button'
 		declineButtonClasses='cookie-decline-button'

@@ -7,4 +7,6 @@ export default {
 
 export const Basic = () => <Logo />
 
-export const Red = () => <Logo colour='#f00' />
+export const ColourLiteralRed = () => <Logo colour='#f00' />
+
+export const ColourVariableMint = () => <Logo colour='var(--colour-mint)' />
