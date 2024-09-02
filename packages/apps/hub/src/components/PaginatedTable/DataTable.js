@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Icon, { ICON_TYPE } from '@tpx/Icon'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
-import {formatDate } from './formatDate'
+import { formatDate } from './formatDate'
 import styles from './DataTable.module.css'
 
-export const DataTable = ({ columns, headers, showDetails, rows }) => (
+export const DataTable = ({ columns, headers, rows }) => (
 	<Table>
 		<Thead>
 			<Tr>
@@ -17,7 +17,6 @@ export const DataTable = ({ columns, headers, showDetails, rows }) => (
 						</Th>
 					)
 				})}
-				{showDetails && <Th>Details</Th>}
 			</Tr>
 		</Thead>
 
@@ -79,7 +78,6 @@ const Td = ({ children, className, ...props }) => (
 	</div>
 )
 
-
 const getCellClassForValueType = valueType => {
 	let result
 	switch (valueType) {
@@ -101,13 +99,23 @@ const getCellClassForValueType = valueType => {
 
 const DisplayDate = ({ d }) => <span suppressHydrationWarning>{formatDate(d)}</span>
 
+const truncate = (str, numWords) => {
+	let truncated = str.split(' ').splice(0, numWords).join(' ')
+	if (truncated.length < str.length) {
+		truncated = truncated + '…'
+	}
+	return truncated
+}
+
+const MAX_TEXT_LENGTH_WORDCOUNT = 40
+
 const CellContent = ({ valueType, label, payload }) => {
 	let result
 
 	let val = payload.value
 	const target = payload.url
 
-	// if the payload deosnt have a value
+	// if the payload doesnt have a value
 	// but does have a url, use that as the value
 	if (val === undefined && target) {
 		val = <span className={styles.url}>{target}</span>
@@ -116,7 +124,7 @@ const CellContent = ({ valueType, label, payload }) => {
 	// TODO link the links.
 	switch (valueType) {
 		case 'oruk:valueType.markdown':
-			result = <span className={styles.markdown}>{val}</span>
+			result = <span className={styles.markdown}>{truncate(val, MAX_TEXT_LENGTH_WORDCOUNT)}</span>
 			break
 		case 'oruk:valueType.string':
 			result = val
@@ -180,4 +188,3 @@ const StatusReadout = ({ pass }) => {
 		</>
 	)
 }
-

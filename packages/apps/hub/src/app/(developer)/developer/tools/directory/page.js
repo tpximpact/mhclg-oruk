@@ -1,17 +1,17 @@
 import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { CONFIG } from '/config'
-import { Dashboard } from '@/components/Dashboard'
+import { Directory } from '@/components/Directory'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import meta from '/content/developer/tools/dashboard/metadata.json'
+import meta from '/content/developer/tools/directory/metadata.json'
 export const metadata = meta
 
 export default async function Page({ searchParams }) {
 	return (
 		<>
-			<NamedMarkdownPage name='dashboard' />
+			<NamedMarkdownPage name='directory' />
 			<RemoteJSON
 				method={METHOD.GET}
-				ResultRenderComponent={Dashboard}
+				ResultRenderComponent={Directory}
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
 				currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
 			/>

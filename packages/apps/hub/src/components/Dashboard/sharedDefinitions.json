@@ -64,7 +64,7 @@
 			"showPassingRowsOnly": false
 		},
 		"directory": {
-			"columns": ["name", "publisher", "comment", "developer", "service"],
+			"columns": ["name", "publisher", "comment", "developer", "service", "testDate"],
 			"defaultSortBy": [
 				{
 					"column": "name",

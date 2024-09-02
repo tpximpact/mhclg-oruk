@@ -1,1 +1,2 @@
-export { Dashboard, Directory } from './Dashboard'
+export { Dashboard } from './Dashboard'
+export { generate } from './generateDummyData'

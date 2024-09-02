@@ -179,6 +179,12 @@
 						"label": "Data Provider Dashboard",
 						"urlPath": "dashboard",
 						"contentPath": "dashboard"
+					},
+					{
+						"name": "directory",
+						"label": "ORUK Adopter Directory",
+						"urlPath": "directory",
+						"contentPath": "directory"
 					}
 				]
 			}
