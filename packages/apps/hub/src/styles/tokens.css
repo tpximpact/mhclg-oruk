@@ -23,6 +23,9 @@
 	--nav-background: var(--colour-buff3);
 	--nav-highlight: #5ac09e;
 	--nav-foregroud: #000;
+	--theme-dashboard-border: 3px solid var(--colour-black);
+	--theme-dashboard-row-divider: 0.5px solid var(--colour-black);
+	--theme-dashboard-header-bg: beige;
 }
 
 @media (prefers-color-scheme: dark) {

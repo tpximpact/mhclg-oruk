@@ -6,7 +6,7 @@ import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 //import meta from '../../../../../../../content/developer/dashboard/metadata.json'
 //export const metadata = meta
 
-export default async function Page() {
+export default async function Page({ searchParams }) {
 	return (
 		<PageMargin>
 			<NamedMarkdownPage name='dashboard' />
@@ -14,6 +14,7 @@ export default async function Page() {
 				method={METHOD.GET}
 				ResultRenderComponent={Dashboard}
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
+				currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
 			/>
 		</PageMargin>
 	)
