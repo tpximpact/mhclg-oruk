@@ -50,7 +50,7 @@
 		-webkit-touch-callout: none;
 	}
 
-/*
+	/*
  * Just a quick hamburger
  */
 	#menuToggle .burger {
@@ -81,7 +81,7 @@
 		transform-origin: 0% 100%;
 	}
 
-/* 
+	/* 
  * Transform all the slices of hamburger
  * into a crossmark.
  */
@@ -91,7 +91,7 @@
 		background: #232323;
 	}
 
-/*
+	/*
  * But let's hide the middle one.
  */
 	#menuToggle input:checked ~ .burger:nth-last-child(3) {
@@ -99,14 +99,14 @@
 		transform: rotate(0deg) scale(0.2, 0.2);
 	}
 
-/*
+	/*
  * Ohyeah and the last one shoold go the other direction
  */
 	#menuToggle input:checked ~ .burger:nth-last-child(2) {
 		transform: rotate(-45deg) translate(0, -1px);
 	}
 
-/*
+	/*
  * Make this absolute positioned
  * at the top left of the screen
  */
@@ -134,7 +134,7 @@
 		font-size: 1.2rem;
 	}
 
-/*
+	/*
  * And let's slide it in from the left
  */
 	#menuToggle input:checked ~ .wrapTop {
