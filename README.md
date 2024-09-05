@@ -5,3 +5,5 @@
 For documentation, see [the wiki](https://github.com/tpximpact/mhclg-oruk/wiki)
 
 The component storybook is [here](https://tpximpact.github.io/mhclg-oruk/).
+
+The (password protected) prototype preview is at [https://openreferraluk.netlify.app](https://openreferraluk.netlify.app)
