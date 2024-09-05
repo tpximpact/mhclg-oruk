@@ -40,7 +40,7 @@
 	},
 	{
 		"name": "about",
-		"label": "About Open Referral UK",
+		"label": "About",
 		"urlPath": "/about",
 		"contentPath": "/about"
 	},
@@ -68,7 +68,12 @@
 				"urlPath": "case-studies",
 				"contentPath": "case-studies"
 			},
-
+{
+						"name": "directory",
+						"label": "ORUK Adopter Directory",
+						"urlPath": "directory",
+						"contentPath": "directory"
+					},
 			{
 				"name": "join",
 				"label": "Join our community",
@@ -79,7 +84,7 @@
 	},
 	{
 		"name": "developers",
-		"label": "For developers",
+		"label": "Developers",
 		"urlPath": "/developer",
 		"contentPath": "/developer",
 		"childNodes": [
@@ -142,26 +147,6 @@
 				]
 			},
 			{
-				"name": "tools",
-				"label": "Tools",
-				"urlPath": "tools",
-				"contentPath": "tools",
-				"children": [
-					{
-						"name": "api-query",
-						"label": "API Query Tool",
-						"urlPath": "api-query",
-						"contentPath": "api-query",
-						"teaser": "This lets you connect to your chosen API endpoint to query taxonomy and service data. It exposes each API call it makes so you can copy the syntax. You can examine results in diagrammatic and JSON format to better understand the data structure."
-					},
-					{
-						"name": "exporter",
-						"label": "Service Directory Exporter",
-						"urlPath": "exporter",
-						"contentPath": "exporter",
-						"teaser": "The Service Exporter allows providers to easily view the entire contents of a Service Directory in a Google Spreadsheet form. With derived columns to show how services relate to organisations, service types etc."
-					},
-					{
 						"name": "validator",
 						"label": "Service Directory Validator",
 						"urlPath": "validator",
@@ -173,15 +158,7 @@
 						"label": "Data Provider Dashboard",
 						"urlPath": "dashboard",
 						"contentPath": "dashboard"
-					},
-					{
-						"name": "directory",
-						"label": "ORUK Adopter Directory",
-						"urlPath": "directory",
-						"contentPath": "directory"
 					}
-				]
-			}
 		]
 	},
 	{

@@ -221,7 +221,6 @@
 
 	.subMenu a {
 		padding-top: 1.5rem;
-		padding-bottom: 1.1rem;
 	}
 
 	.selected:has(.subMenu) > a {

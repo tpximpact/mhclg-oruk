@@ -8,7 +8,7 @@ import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 export default async function Page({ searchParams }) {
 	return (
-		<PageMargin>
+		<>
 			<NamedMarkdownPage name='dashboard' />
 			<RemoteJSON
 				method={METHOD.GET}
@@ -16,6 +16,6 @@ export default async function Page({ searchParams }) {
 				endpoint={CONFIG.DASHBOARD_ENDPOINT}
 				currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
 			/>
-		</PageMargin>
+		</>
 	)
 }
