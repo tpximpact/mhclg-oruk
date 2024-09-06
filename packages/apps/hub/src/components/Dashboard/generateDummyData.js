@@ -64,7 +64,7 @@ export const generateDataRow = (rowNum, fail) => {
 		},
 		testDate: {
 			value: '2024-08-06T18:00:07',
-			url: '/developer/validator/' + rowNum
+			url: '/developer/dashboard/' + rowNum
 		}
 	}
 }

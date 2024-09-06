@@ -18,7 +18,7 @@ import { getSiteItems } from '@/util/content'
 
 const USE_AXE = true
 const USE_COOKIES = true
-const USE_NAV = true
+const USE_NAV = false
 
 const inter = Inter({ subsets: ['latin'] })
 

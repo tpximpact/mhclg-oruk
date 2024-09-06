@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { DashboardDetails } from '@/components/DashboardDetails'
 import { CONFIG } from '/config'
+import { PageMargin } from '@tpx/PageMargin'
 
 export async function generateMetadata() {
 	return {
@@ -15,9 +16,8 @@ export default async function Page({
 	// searchParams
 }) {
 	return (
-		<>
-			<Link href='/developer/tools/dashboard'>Dashboard</Link> |{' '}
-			<Link href='/developer/tools/directory'>Directory</Link>
+		<PageMargin>
+			<Link href='/developer/tools/dashboard'>Back to dashboard</Link>
 			<h1>Feed (details view)</h1>
 			<RemoteJSON
 				method={METHOD.GET}
@@ -27,6 +27,6 @@ export default async function Page({
 					id: params.id
 				}}
 			/>
-		</>
+		</PageMargin>
 	)
 }

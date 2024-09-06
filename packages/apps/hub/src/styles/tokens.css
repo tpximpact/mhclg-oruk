@@ -26,6 +26,9 @@
 	--theme-dashboard-border: 3px solid var(--colour-black);
 	--theme-dashboard-row-divider: 0.5px solid var(--colour-black);
 	--theme-dashboard-header-bg: beige;
+
+	--theme-test-pass: 
+	--theme-test-fail: 
 }
 
 @media (prefers-color-scheme: dark) {

@@ -45,6 +45,12 @@
 		"contentPath": "/about"
 	},
 	{
+		"name": "playbook",
+		"label": "Playbook",
+		"urlPath": "/playbook",
+		"contentPath": "/playbook"
+	},
+	{
 		"name": "how",
 		"label": "How it works",
 		"urlPath": "/how",
@@ -70,7 +76,7 @@
 			},
 {
 						"name": "directory",
-						"label": "ORUK Adopter Directory",
+						"label": "Service Directory",
 						"urlPath": "directory",
 						"contentPath": "directory"
 					},
@@ -79,6 +85,12 @@
 				"label": "Join our community",
 				"urlPath": "join",
 				"contentPath": "join"
+			},
+			{
+				"name": "forum",
+				"label": "Forum",
+				"urlPath": "https://forum.openreferral.org",
+				"offsite": true
 			}
 		]
 	},
@@ -167,12 +179,7 @@
 					}
 		]
 	},
-	{
-		"name": "forum",
-		"label": "Forum",
-		"urlPath": "https://forum.openreferral.org",
-		"offsite": true
-	},
+
 	{
 		"name": "contact",
 		"label": "Contact us",

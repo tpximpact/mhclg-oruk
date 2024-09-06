@@ -6,6 +6,9 @@ export const STATUS = {
 	SKIPPED: 'skipped'
 }
 
+
+export const resultToStatus = (data) => data.success===true ? STATUS.PASS : STATUS.FAIL
+
 export const getColourForStatus = status => {
 	let colour
 	switch (status) {
