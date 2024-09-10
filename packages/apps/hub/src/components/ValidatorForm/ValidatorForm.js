@@ -2,7 +2,7 @@
 
 import { v4 as uuidv4 } from 'uuid'
 import styles from './ValidatorForm.module.css'
-import {Button} from '@/components/Button'
+import { Button } from '@/components/Button'
 
 export const ValidatorForm = ({ action, defaultValue }) => {
 	const UUID = uuidv4()

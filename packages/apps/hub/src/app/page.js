@@ -5,9 +5,5 @@ export const metadata = {
 }
 
 export default function Home() {
-	return (
-
-			<NamedMarkdownPage name='home' />
-
-	)
+	return <NamedMarkdownPage name='home' />
 }

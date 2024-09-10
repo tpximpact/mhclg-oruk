@@ -12,7 +12,10 @@ export async function generateMetadata({ params }) {
 	}
 }
 
-export default async function Page({ params, searchParams }) {
+export default async function Page({
+	//params,
+	searchParams
+}) {
 	return (
 		<PageMargin>
 			<ValidatorResultPageTitle />
@@ -20,15 +23,14 @@ export default async function Page({ params, searchParams }) {
 				method={METHOD.POST}
 				RetryComponent={() => (
 					<section style={{ marginTop: '2rem' }}>
-						<h2 style={{fontSize:"2rem", marginBottom:"2rem"}}>Retry validation</h2>
+						<h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Retry validation</h2>
 						<ValidatorForm action={navigate} defaultValue={searchParams.uri} />
 					</section>
 				)}
 				ResultRenderComponent={ValidatorResult}
 				endpoint={CONFIG.VALIDATOR_ENDPOINT}
-			
-				queryParams = {{
-					serviceUrl:searchParams.uri
+				queryParams={{
+					serviceUrl: searchParams.uri
 				}}
 			/>
 		</PageMargin>

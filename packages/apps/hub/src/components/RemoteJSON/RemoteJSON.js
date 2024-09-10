@@ -35,14 +35,15 @@ const fetchResult = async ({ endpoint, method, queryParams }) => {
 	try {
 		const opts = method === METHOD.POST ? { method: 'POST' } : null
 
-		let queryString = endpoint + "?"
+		let queryString = endpoint + '?'
 
 		if (queryParams) {
-		Object.keys(queryParams).forEach(
-			key => queryString = `${queryString}${key}=${queryParams[key]}&`
-		)}
-		
-		const response = await fetch(queryString, opts);
+			Object.keys(queryParams).forEach(
+				key => (queryString = `${queryString}${key}=${queryParams[key]}&`)
+			)
+		}
+
+		const response = await fetch(queryString, opts)
 
 		if (response.ok) {
 			const result = await response.json()

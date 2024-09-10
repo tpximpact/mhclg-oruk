@@ -1,38 +1,37 @@
 .tests {
-    margin-bottom: 6rem;
+	margin-bottom: 6rem;
 
-    .title {
-	font-weight: 700;
-	font-size:2rem;
-    margin-bottom: 2rem;
-    .light {
-		font-weight: 300;
+	.title {
+		font-weight: 700;
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		.light {
+			font-weight: 300;
+		}
 	}
 }
 
-}
-
 .test {
-    margin-bottom:0.5rem;
-    display: flex;
-    border-style: solid;
-    border-width: 5px;
+	margin-bottom: 0.5rem;
+	display: flex;
+	border-style: solid;
+	border-width: 5px;
 
-    .status {
-        flex:0 0 120px;
-        min-height: 120px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 2rem;
+	.status {
+		flex: 0 0 120px;
+		min-height: 120px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-top: 2rem;
 
-        .testText {
-            flex:1;
-    }
+		.testText {
+			flex: 1;
+		}
 
-    .testText span {
-        /*
+		.testText span {
+			/*
         font-weight: 900;
         font-variant:small-caps;
         color: #000;
@@ -40,32 +39,31 @@
         padding: 5px 0.5rem;
         border-radius:1rem;
         */
-        clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+		}
 
-    .testIcon {
-        flex:1;
-    }
-    }
+		.testIcon {
+			flex: 1;
+		}
+	}
 
-    .payload {
-        flex: 1;
-        padding: 1rem;
-    }
+	.payload {
+		flex: 1;
+		padding: 1rem;
+	}
 }
 
 .issue {
-    margin-top: 1rem;
+	margin-top: 1rem;
 
-.issueMessage {
-    display: block;
-    font-weight: 700;
+	.issueMessage {
+		display: block;
+		font-weight: 700;
+	}
 }
-}
-

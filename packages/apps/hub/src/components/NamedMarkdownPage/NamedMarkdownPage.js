@@ -12,5 +12,9 @@ export const NamedMarkdownPage = ({ name, markdownRaw, ...props }) => {
 					})
 				: null
 	}
-	return <PageMargin><MarkdownPage file={name} markdownRaw={markdownRaw} {...props} /></PageMargin>
+	return (
+		<PageMargin>
+			<MarkdownPage file={name} markdownRaw={markdownRaw} {...props} />
+		</PageMargin>
+	)
 }

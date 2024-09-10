@@ -10,12 +10,13 @@ export default async function Page({ searchParams }) {
 	return (
 		<>
 			<NamedMarkdownPage name='dashboard' />
-			<PageMargin><RemoteJSON
-				method={METHOD.GET}
-				ResultRenderComponent={Dashboard}
-				endpoint={CONFIG.DASHBOARD_ENDPOINT}
-				currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
-			/>
+			<PageMargin>
+				<RemoteJSON
+					method={METHOD.GET}
+					ResultRenderComponent={Dashboard}
+					endpoint={CONFIG.DASHBOARD_ENDPOINT}
+					currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
+				/>
 			</PageMargin>
 		</>
 	)
