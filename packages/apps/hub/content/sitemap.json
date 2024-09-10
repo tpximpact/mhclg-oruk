@@ -64,7 +64,7 @@
 		"childNodes": [
 			{
 				"name": "organisations",
-				"label": "Organisations adopting the standard",
+				"label": "Organisations adopting ORUK",
 				"urlPath": "organisations",
 				"contentPath": "organisations"
 			},
@@ -74,12 +74,12 @@
 				"urlPath": "case-studies",
 				"contentPath": "case-studies"
 			},
-{
-						"name": "directory",
-						"label": "Service Directory",
-						"urlPath": "directory",
-						"contentPath": "directory"
-					},
+			{
+				"name": "directory",
+				"label": "Service Directory",
+				"urlPath": "directory",
+				"contentPath": "directory"
+			},
 			{
 				"name": "join",
 				"label": "Join our community",
@@ -159,24 +159,24 @@
 				]
 			},
 			{
-						"name": "validator",
-						"label": "Service Directory Validator",
-						"urlPath": "validator",
-						"contentPath": "validator",
-						"teaser": "This tool checks that a specific service directory follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned Service Directory. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
-					},
-					{
-						"name": "dashboard",
-						"label": "Data Provider Dashboard",
-						"urlPath": "dashboard",
-						"contentPath": "dashboard"
-					},
-					{
-						"name": "directory",
-						"label": "ORUK Adopter Directory",
-						"urlPath": "directory",
-						"contentPath": "directory"
-					}
+				"name": "validator",
+				"label": "Service Validator",
+				"urlPath": "validator",
+				"contentPath": "validator",
+				"teaser": "This tool checks that a specific service directory follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned Service Directory. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
+			},
+			{
+				"name": "dashboard",
+				"label": "Data Provider Dashboard",
+				"urlPath": "dashboard",
+				"contentPath": "dashboard"
+			},
+			{
+				"name": "directory",
+				"label": "ORUK Adopter Directory",
+				"urlPath": "directory",
+				"contentPath": "directory"
+			}
 		]
 	},
 
