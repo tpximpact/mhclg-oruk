@@ -25,3 +25,20 @@
 .content {
 	max-width: 40rem;
 }
+
+.solo {
+	max-width: 50rem;
+}
+
+.onthispage {
+	font-size: 1.5rem;
+}
+
+.content ul,
+.content ol {
+	margin-left: 2rem;
+}
+
+.content li {
+	margin-bottom: 1rem;
+}

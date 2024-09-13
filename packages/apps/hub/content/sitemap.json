@@ -17,24 +17,28 @@
 		"urlPath": "/info",
 		"contentPath": "/info",
 		"hide": true,
+		"autoMenu": false,
 		"childNodes": [
 			{
 				"name": "accessibility",
 				"label": "Accessibility statement",
 				"urlPath": "accessibility",
-				"contentPath": "accessibility"
+				"contentPath": "accessibility",
+				"autoMenu": true
 			},
 			{
 				"name": "privacy",
 				"label": "Privacy policy",
 				"urlPath": "privacy",
-				"contentPath": "privacy"
+				"contentPath": "privacy",
+				"autoMenu": true
 			},
 			{
 				"name": "terms",
 				"label": "Terms and conditions",
 				"urlPath": "terms",
-				"contentPath": "terms"
+				"contentPath": "terms",
+				"autoMenu": true
 			}
 		]
 	},
@@ -42,19 +46,38 @@
 		"name": "about",
 		"label": "About",
 		"urlPath": "/about",
-		"contentPath": "/about"
+		"contentPath": "/about",
+		"autoMenu": true
 	},
 	{
 		"name": "playbook",
 		"label": "Playbook",
 		"urlPath": "/playbook",
-		"contentPath": "/playbook"
+		"contentPath": "/playbook",
+		"autoMenu": true
 	},
 	{
 		"name": "how",
 		"label": "How it works",
 		"urlPath": "/how",
-		"contentPath": "/how"
+		"contentPath": "/how",
+		"autoMenu": false,
+		"childNodes": [
+			{
+				"name": "steps",
+				"label": "Steps to adopt",
+				"urlPath": "steps",
+				"contentPath": "steps",
+				"autoMenu": true
+			},
+			{
+				"name": "features",
+				"label": "Features of the standard",
+				"urlPath": "features",
+				"contentPath": "features",
+				"autoMenu": true
+			}
+		]
 	},
 	{
 		"name": "community",
@@ -64,7 +87,7 @@
 		"childNodes": [
 			{
 				"name": "organisations",
-				"label": "Organisations adopting ORUK",
+				"label": "Adoptors",
 				"urlPath": "organisations",
 				"contentPath": "organisations"
 			},
@@ -84,7 +107,8 @@
 				"name": "join",
 				"label": "Join our community",
 				"urlPath": "join",
-				"contentPath": "join"
+				"contentPath": "join",
+				"autoMenu": false
 			},
 			{
 				"name": "forum",
@@ -97,8 +121,9 @@
 	{
 		"name": "developers",
 		"label": "Developers",
-		"urlPath": "/developer",
-		"contentPath": "/developer",
+		"urlPath": "/developers",
+		"contentPath": "/developers",
+		"automenu": false,
 		"childNodes": [
 			{
 				"name": "data-standard",
@@ -160,7 +185,7 @@
 			},
 			{
 				"name": "validator",
-				"label": "Service Validator",
+				"label": "Service Validator tool",
 				"urlPath": "validator",
 				"contentPath": "validator",
 				"teaser": "This tool checks that a specific service directory follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned Service Directory. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
@@ -170,12 +195,6 @@
 				"label": "Data Provider Dashboard",
 				"urlPath": "dashboard",
 				"contentPath": "dashboard"
-			},
-			{
-				"name": "directory",
-				"label": "ORUK Adopter Directory",
-				"urlPath": "directory",
-				"contentPath": "directory"
 			}
 		]
 	},

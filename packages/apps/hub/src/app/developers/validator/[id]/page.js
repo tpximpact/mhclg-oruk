@@ -2,7 +2,6 @@ import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
-import { CONFIG } from '/config'
 import { PageMargin } from '@tpx/PageMargin'
 
 export async function generateMetadata({ params }) {
@@ -28,7 +27,7 @@ export default async function Page({
 					</section>
 				)}
 				ResultRenderComponent={ValidatorResult}
-				endpoint={CONFIG.VALIDATOR_ENDPOINT}
+				endpoint={process.env.VALIDATOR_ENDPOINT}
 				queryParams={{
 					serviceUrl: searchParams.uri
 				}}

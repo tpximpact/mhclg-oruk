@@ -1,6 +1,6 @@
 const expandPaths = (node, parentNode) => {
 	// id this node is offsite, nothing to do
-	if (node.offsite) return
+	if (node.offsite) return node
 
 	// expand oarhs in this node
 	if (parentNode) {
