@@ -107,7 +107,7 @@ const truncate = (str, numWords) => {
 	return truncated
 }
 
-const MAX_TEXT_LENGTH_WORDCOUNT = 40
+const MAX_TEXT_LENGTH_WORDCOUNT = 20
 
 const CellContent = ({ valueType, label, payload }) => {
 	let result

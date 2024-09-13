@@ -1,12 +1,15 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
+import { PageMargin } from '@tpx/PageMargin'
 
 export default function Page() {
 	return (
 		<>
 			<NamedMarkdownPage name='validator' autoMenu={false} />
-			<ValidatorForm action={navigate} />
+			<PageMargin>
+				<ValidatorForm action={navigate} />
+			</PageMargin>
 		</>
 	)
 }

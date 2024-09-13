@@ -1,8 +1,8 @@
-import styles from './ValidatorResult.module.css'
-import Icon from '@tpx/Icon'
-import { dummyData } from './dummyData'
-import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+import styles from './Tests.module.css'
+import Icon /*, { ICON_TYPE }*/ from '@tpx/Icon'
+import { STATUS, getColourForStatus, getIconForStatus, resultToStatus } from '@/util/status'
 
+/*
 const getCSSClassForStatus = status => {
 	let klass
 	switch (status) {
@@ -73,17 +73,75 @@ const Test = ({ data }) => {
 					<summary>more details</summary>
 					<p>{data.details}</p>
 				</details>
-				{/*error && <p className={styles.error}>{error}</p>*/}
-			</div>
+				</div>
 		</div>
 	)
 }
 
-export const Tests = ({ result }) => (
-	<>
-		{result}
-		{dummyData.map((sectionData, index) => (
-			<Section key={index} data={sectionData} />
+*/
+
+export const Tests = ({ result }) => {
+	const nTests = result.tests.length
+	const nPasses = result.tests.filter(t => t.success === true).length
+	return (
+		<section className={styles.tests}>
+			<h2 className={styles.title}>
+				<span className={styles.light}>Tests:</span> {nPasses}/{nTests} passed
+			</h2>
+			{result.tests.map((t, i) => (
+				<Test key={i} data={t} />
+			))}
+		</section>
+	)
+}
+
+const Test = ({ data }) => {
+	const status = resultToStatus(data)
+	return (
+		<>
+			<div
+				className={styles.test}
+				style={{
+					borderColor: getColourForStatus(status)
+				}}
+			>
+				<div
+					className={styles.status}
+					style={{
+						background: getColourForStatus(status)
+					}}
+				>
+					<div className={styles.testIcon}>
+						<Icon colour='#fff' weight='4' icon={getIconForStatus(status)} size='48' />
+					</div>
+					<div className={styles.testText}>
+						<span>{status === STATUS.PASS ? 'PASS' : 'FAIL'}</span>
+					</div>
+				</div>
+				<div className={styles.payload}>
+					<h3>{data.name}</h3>
+					<p>{data.description}?</p>
+					<p>
+						Endpoint: <strong>{data.endpoint}</strong>
+					</p>
+					{data.issues.length > 0 ? <Issues data={data.issues} /> : null}
+				</div>
+			</div>
+		</>
+	)
+}
+
+const Issues = ({ data }) => (
+	<ul className={styles.issues}>
+		{data.map((issue, k) => (
+			<Issue issue={issue} key={k} />
 		))}
-	</>
+	</ul>
+)
+
+const Issue = ({ issue }) => (
+	<li className={styles.issue}>
+		<span className={styles.issueDescription}>{issue.description} :</span>
+		<span className={styles.issueMessage}>{issue.message}</span>
+	</li>
 )

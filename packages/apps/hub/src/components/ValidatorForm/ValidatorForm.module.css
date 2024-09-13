@@ -2,6 +2,10 @@
 	margin-top: 2rem;
 }
 
+.submit {
+	padding: 0.2rem 2rem;
+}
+
 .example {
 	display: block;
 	font-style: italic;

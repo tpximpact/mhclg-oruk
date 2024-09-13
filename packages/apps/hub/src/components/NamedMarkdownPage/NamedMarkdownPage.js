@@ -1,5 +1,6 @@
 import { readFile, getNamedSiteItem } from '../../util/content'
 import { MarkdownPage } from './MarkdownPage'
+import { PageMargin } from '@tpx/PageMargin'
 
 export const NamedMarkdownPage = ({ name, markdownRaw, ...props }) => {
 	if (!markdownRaw) {
@@ -11,5 +12,9 @@ export const NamedMarkdownPage = ({ name, markdownRaw, ...props }) => {
 					})
 				: null
 	}
-	return <MarkdownPage markdownRaw={markdownRaw} {...props} />
+	return (
+		<PageMargin>
+			<MarkdownPage file={name} markdownRaw={markdownRaw} {...props} />
+		</PageMargin>
+	)
 }

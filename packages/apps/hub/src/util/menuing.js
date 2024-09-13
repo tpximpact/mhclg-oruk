@@ -1,7 +1,38 @@
+const expandPaths = (node, parentNode) => {
+	// id this node is offsite, nothing to do
+	if (node.offsite) return
+
+	// expand oarhs in this node
+	if (parentNode) {
+		node.contentPath = parentNode.contentPath + '/' + node.contentPath
+		node.urlPath = parentNode.urlPath + '/' + node.urlPath
+	}
+
+	// recurse over children
+	if (node.childNodes) {
+		node.childNodes = node.childNodes.map(child => expandPaths(child, node))
+	}
+
+	// done
+	return node
+}
+
+export const siteStructureWithFullPaths = structure => {
+	let result = JSON.parse(JSON.stringify(structure))
+	result.map(node => expandPaths(node, null))
+	return result
+}
+
+// const recursivelyExpandPaths
+
 export const childrenOfNamedSiteItem = (name, structure) => {
 	const item = getNamedSiteItem(name, structure)
+	return childrenOfSiteItem(item)
+}
+
+export const childrenOfSiteItem = (item, structure) => {
 	if (!item) return
-	return item.children.map(child => getNamedSiteItem(child, structure))
+	return item.children?.map(child => getNamedSiteItem(child, structure))
 }
 
 export const getNamedSiteItem = (name, structure) =>
