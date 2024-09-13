@@ -1,5 +1,7 @@
 # Open Referral Playbook
 
+An example of an image. ![alt text](localdigital.png 'Local Digital')
+
 ## TODO
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper congue velit, vitae molestie erat facilisis non. Curabitur sit amet mollis metus. Mauris non diam auctor, commodo est non, fringilla sapien. Praesent pulvinar rutrum ultrices. Nam augue risus, mattis et ex eget, bibendum tempus tortor. Integer aliquet augue in erat ornare, aliquet tincidunt velit maximus. Integer euismod ante tellus, at rhoncus ligula luctus et. In elementum mauris ligula, ut blandit ante efficitur non.

@@ -2,8 +2,8 @@
 
 'use client'
 
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useActivePathFragment } from '@/util/useActivePath'
 import styles from './nav.module.css'
 
 export const OffsiteItem = ({ label, urlPath }) => (
@@ -16,16 +16,22 @@ export const OffsiteItem = ({ label, urlPath }) => (
 	</li>
 )
 
-const Submenu = ({ items }) => (
-	<Menu wrapperClass={styles.wrapSub} className={styles.subMenu} items={items} />
+const Submenu = ({ items, activePath }) => (
+	<Menu
+		isSubmenu={true}
+		activePath={activePath}
+		wrapperClass={styles.wrapSub}
+		className={styles.subMenu}
+		items={items}
+	/>
 )
 
-export const SelectedItem = ({ label, urlPath, childNodes }) => (
+export const SelectedItem = ({ isSubmenu, label, urlPath, childNodes, activePath }) => (
 	<li className={`${styles.item} ${styles.selected}`}>
 		<a href={urlPath}>
 			<span className={styles.inner}>{label}</span>
 		</a>
-		{childNodes ? <Submenu items={childNodes} /> : null}
+		{!isSubmenu && childNodes ? <Submenu activePath={activePath} items={childNodes} /> : null}
 	</li>
 )
 
@@ -49,6 +55,7 @@ export const NavigationItem = ({ hide, selected, offsite, ...props }) => {
 }
 
 export const LandmarkNav = ({ items }) => {
+	const path = usePathname()
 	return (
 		<nav className={styles.nav} role='navigation'>
 			<div id={styles.menuToggle}>
@@ -59,6 +66,7 @@ export const LandmarkNav = ({ items }) => {
 				<span className={styles.burger}></span>
 
 				<Menu
+					activePath={path}
 					wrapperClass={styles.wrapTop}
 					id={styles.menu}
 					className={styles.topMenu}
@@ -69,8 +77,7 @@ export const LandmarkNav = ({ items }) => {
 	)
 }
 
-const Menu = ({ items, id, className, wrapperClass, ...props }) => {
-	const checkActivePath = useActivePathFragment()
+const Menu = ({ isSubmenu, items, id, className, wrapperClass, activePath, ...props }) => {
 	return (
 		<div className={wrapperClass}>
 			<ol id={id} className={`${styles.menu} ${className}`} {...props}>
@@ -78,11 +85,29 @@ const Menu = ({ items, id, className, wrapperClass, ...props }) => {
 					<NavigationItem
 						key={counter}
 						styles={styles}
-						selected={checkActivePath(item.urlPath)}
+						selected={checkActivePath(item.urlPath, activePath)}
+						activePath={activePath}
+						isSubmenu={isSubmenu}
 						{...item}
 					/>
 				))}
 			</ol>
 		</div>
 	)
+}
+
+const checkActivePath = (itemPath, activePath) => {
+	if (!activePath) {
+		return false
+	}
+
+	if (!itemPath) {
+		return false
+	}
+
+	if (activePath === '/' && itemPath !== activePath) {
+		return false
+	}
+
+	return activePath.startsWith(itemPath)
 }
