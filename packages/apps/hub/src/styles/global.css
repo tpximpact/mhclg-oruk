@@ -1,7 +1,7 @@
 body {
 	background: var(--theme-paper);
 	color: var(--theme-ink);
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 a,
@@ -24,4 +24,45 @@ body {
 	min-height: 100%;
 	display: grid;
 	grid-template-rows: 1fr auto;
+}
+
+
+h4 {
+	font-size: 1.875rem; /* 30px */
+line-height: 2.25rem;
+font-weight: normal;
+}
+
+h3{
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	font-weight: normal;
+}
+
+h2 {
+font-size: 3rem; /* 48px */
+line-height: 1;
+font-weight: normal;
+}
+
+h1 {
+font-size: 3.75rem; /* 60px */
+line-height: 1;
+font-weight: normal;
+}  
+
+
+.blockquote { 
+	margin-bottom: 2rem;
+	background: #fff;
+	padding:2rem;
+	border-left: solid var(--colour-mint) 5px;
+	font-size:1.4rem;
+
+	cite {
+		margin-top:1rem;
+		display: block;
+		font-style: normal;
+		font-size:1.2rem;
+	}
 }

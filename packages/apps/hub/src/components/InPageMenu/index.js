@@ -1,0 +1,1 @@
+export {InPageMenu} from './InPageMenu'

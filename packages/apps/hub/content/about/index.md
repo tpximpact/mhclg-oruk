@@ -23,7 +23,7 @@ Open data standards are:
 
 ## Why adopt the standard?
 
-### The data problem]
+### The data problem
 
 Every community faces a similar challenge: there are many different kinds of health, human, and social services that are available to people in need, yet no one way that information about them is produced and shared. Instead, organisations tend to collect community services data in isolation from each other in fragmented silos.
 
@@ -52,7 +52,7 @@ By adopting the standard there is an opportunity
 
 Improving our information systems is part of the work of the Local Digital Declaration – a shared ambition for the future of local public services written in 2018.
 
-<blockquote>
+<blockquote class="blockquote">
 Never before has it been possible to collaborate so effectively, to deliver services across so many boundaries, to interrogate our data so insightfully, to realise such great efficiencies, and to reshape public services for the benefit of all while retaining local sovereignty.
 <cite>Local Digital Declaration, 2018</cite>
 </blockquote>
