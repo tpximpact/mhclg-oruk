@@ -3,6 +3,7 @@ import { ValidatorResult, ValidatorResultPageTitle } from '@/components/Validato
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
 import { CONFIG } from '/config'
+import { PageMargin } from '@tpx/PageMargin'
 
 export async function generateMetadata({ params }) {
 	return {
@@ -11,25 +12,27 @@ export async function generateMetadata({ params }) {
 	}
 }
 
-export default async function Page({ params, searchParams }) {
+export default async function Page({
+	//params,
+	searchParams
+}) {
 	return (
-		<>
+		<PageMargin>
 			<ValidatorResultPageTitle />
 			<RemoteJSON
 				method={METHOD.POST}
 				RetryComponent={() => (
 					<section style={{ marginTop: '2rem' }}>
-						<h2>Retry?</h2>
+						<h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Retry validation</h2>
 						<ValidatorForm action={navigate} defaultValue={searchParams.uri} />
 					</section>
 				)}
 				ResultRenderComponent={ValidatorResult}
 				endpoint={CONFIG.VALIDATOR_ENDPOINT}
 				queryParams={{
-					uri: searchParams.uri,
-					id: params.id
+					serviceUrl: searchParams.uri
 				}}
 			/>
-		</>
+		</PageMargin>
 	)
 }

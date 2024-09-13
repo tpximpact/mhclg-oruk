@@ -17,7 +17,7 @@
 		"urlPath": "/info",
 		"contentPath": "/info",
 		"hide": true,
-		"children": [
+		"childNodes": [
 			{
 				"name": "accessibility",
 				"label": "Accessibility statement",
@@ -40,9 +40,15 @@
 	},
 	{
 		"name": "about",
-		"label": "About Open Referral UK",
+		"label": "About",
 		"urlPath": "/about",
 		"contentPath": "/about"
+	},
+	{
+		"name": "playbook",
+		"label": "Playbook",
+		"urlPath": "/playbook",
+		"contentPath": "/playbook"
 	},
 	{
 		"name": "how",
@@ -55,18 +61,12 @@
 		"label": "Community",
 		"urlPath": "/community",
 		"contentPath": "/community",
-		"children": [
+		"childNodes": [
 			{
 				"name": "organisations",
-				"label": "Organisations adopting the standard",
+				"label": "Organisations adopting ORUK",
 				"urlPath": "organisations",
 				"contentPath": "organisations"
-			},
-			{
-				"name": "forum",
-				"label": "Forum",
-				"urlPath": "https://forum.openreferral.org",
-				"offsite": "true"
 			},
 			{
 				"name": "case-studies",
@@ -74,27 +74,38 @@
 				"urlPath": "case-studies",
 				"contentPath": "case-studies"
 			},
-
+			{
+				"name": "directory",
+				"label": "Service Directory",
+				"urlPath": "directory",
+				"contentPath": "directory"
+			},
 			{
 				"name": "join",
 				"label": "Join our community",
 				"urlPath": "join",
 				"contentPath": "join"
+			},
+			{
+				"name": "forum",
+				"label": "Forum",
+				"urlPath": "https://forum.openreferral.org",
+				"offsite": true
 			}
 		]
 	},
 	{
 		"name": "developers",
-		"label": "For developers",
+		"label": "Developers",
 		"urlPath": "/developer",
 		"contentPath": "/developer",
-		"children": [
+		"childNodes": [
 			{
 				"name": "data-standard",
 				"label": "Data standard",
 				"urlPath": "data-standard",
 				"contentPath": "data-standard",
-				"children": [
+				"childNodes": [
 					{
 						"name": "reference",
 						"label": "Reference",
@@ -126,7 +137,7 @@
 				"label": "API",
 				"urlPath": "api",
 				"contentPath": "api",
-				"children": [
+				"childNodes": [
 					{
 						"name": "api-reference",
 						"label": "Reference",
@@ -148,54 +159,27 @@
 				]
 			},
 			{
-				"name": "tools",
-				"label": "Tools",
-				"urlPath": "tools",
-				"contentPath": "tools",
-				"children": [
-					{
-						"name": "api-query",
-						"label": "API Query Tool",
-						"urlPath": "api-query",
-						"contentPath": "api-query",
-						"teaser": "This lets you connect to your chosen API endpoint to query taxonomy and service data. It exposes each API call it makes so you can copy the syntax. You can examine results in diagrammatic and JSON format to better understand the data structure."
-					},
-					{
-						"name": "exporter",
-						"label": "Service Directory Exporter",
-						"urlPath": "exporter",
-						"contentPath": "exporter",
-						"teaser": "The Service Exporter allows providers to easily view the entire contents of a Service Directory in a Google Spreadsheet form. With derived columns to show how services relate to organisations, service types etc."
-					},
-					{
-						"name": "validator",
-						"label": "Service Directory Validator",
-						"urlPath": "validator",
-						"contentPath": "validator",
-						"teaser": "This tool checks that a specific service directory follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned Service Directory. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
-					},
-					{
-						"name": "dashboard",
-						"label": "Data Provider Dashboard",
-						"urlPath": "dashboard",
-						"contentPath": "dashboard"
-					},
-					{
-						"name": "directory",
-						"label": "ORUK Adopter Directory",
-						"urlPath": "directory",
-						"contentPath": "directory"
-					}
-				]
+				"name": "validator",
+				"label": "Service Validator",
+				"urlPath": "validator",
+				"contentPath": "validator",
+				"teaser": "This tool checks that a specific service directory follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned Service Directory. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
+			},
+			{
+				"name": "dashboard",
+				"label": "Data Provider Dashboard",
+				"urlPath": "dashboard",
+				"contentPath": "dashboard"
+			},
+			{
+				"name": "directory",
+				"label": "ORUK Adopter Directory",
+				"urlPath": "directory",
+				"contentPath": "directory"
 			}
 		]
 	},
-	{
-		"name": "forum",
-		"label": "Forum",
-		"urlPath": "https://forum.openreferral.org",
-		"offsite": true
-	},
+
 	{
 		"name": "contact",
 		"label": "Contact us",

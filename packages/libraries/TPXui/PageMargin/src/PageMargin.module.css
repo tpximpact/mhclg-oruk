@@ -1,3 +1,5 @@
 .pagemargin {
 	margin: 0 6vw;
+	max-width: 88vw;
+	overflow-wrap: break-word;
 }

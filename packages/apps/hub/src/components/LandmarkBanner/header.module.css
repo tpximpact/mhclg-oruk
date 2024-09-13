@@ -3,3 +3,10 @@
 	background: var(--theme-header-bg);
 	color: var(--theme-header-fg);
 }
+
+@media only screen and (max-width: 1024px) {
+	.content {
+		display: flex;
+		justify-content: right;
+	}
+}

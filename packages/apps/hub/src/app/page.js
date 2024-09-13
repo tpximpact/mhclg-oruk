@@ -1,4 +1,3 @@
-import { PageMargin } from '@tpx/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 export const metadata = {
@@ -6,9 +5,5 @@ export const metadata = {
 }
 
 export default function Home() {
-	return (
-		<PageMargin>
-			<NamedMarkdownPage name='home' />
-		</PageMargin>
-	)
+	return <NamedMarkdownPage name='home' />
 }

@@ -34,14 +34,25 @@ const ResultWithSuspense = ({ result, RetryComponent, ...props }) => (
 const fetchResult = async ({ endpoint, method, queryParams }) => {
 	try {
 		const opts = method === METHOD.POST ? { method: 'POST' } : null
-		const response = await fetch(endpoint, opts) // TODO send query params
+
+		let queryString = endpoint + '?'
+
+		if (queryParams) {
+			Object.keys(queryParams).forEach(
+				key => (queryString = `${queryString}${key}=${queryParams[key]}&`)
+			)
+		}
+
+		const response = await fetch(queryString, opts)
 
 		if (response.ok) {
+			const result = await response.json()
+
 			return {
 				ok: true,
 				endpoint: endpoint,
 				queryParams: queryParams,
-				result: await response.json()
+				result: result
 			}
 		} else {
 			if (response.status === 404) throw new Error('404, Not found')
