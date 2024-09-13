@@ -16,10 +16,10 @@ export default async function Page({
 }) {
 	return (
 		<PageMargin>
-			<div style={{marginBottom:"2rem"}}>
-			<Link href='/developers/tools/dashboard'>Back to dashboard</Link>
+			<div style={{ marginBottom: '2rem' }}>
+				<Link href='/developers/tools/dashboard'>Back to dashboard</Link>
 			</div>
-			<h1 style={{marginBottom:"2rem"}}>Feed (details view)</h1>
+			<h1 style={{ marginBottom: '2rem' }}>Feed (details view)</h1>
 			<RemoteJSON
 				method={METHOD.GET}
 				ResultRenderComponent={DashboardDetails}

@@ -22,7 +22,10 @@ const linkify = text => {
 
 const MarkdownContentNoMenu = ({ html, afterLinks }) => (
 	<>
-		<section className={`${styles.content} ${styles.solo}`} dangerouslySetInnerHTML={{ __html: html }} />
+		<section
+			className={`${styles.content} ${styles.solo}`}
+			dangerouslySetInnerHTML={{ __html: html }}
+		/>
 		{afterLinks && <Afterlinks data={afterLinks} />}
 	</>
 )
@@ -50,7 +53,9 @@ const MarkdownContentWithMenu = ({ html, afterLinks }) => {
 		<section>
 			<Columns layout='24'>
 				<div>
-					<h4 className={styles.onthispage} style={{ fontWeight: 300 }}>On this page</h4>
+					<h4 className={styles.onthispage} style={{ fontWeight: 300 }}>
+						On this page
+					</h4>
 					<ol className={styles.menu}>
 						{menu.map((item, i) => (
 							<li key={i}>

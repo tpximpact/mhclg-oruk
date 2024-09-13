@@ -1,1 +1,1 @@
-export {GenericPage, metadata} from './GenericPage'
+export { GenericPage, metadata } from './GenericPage'

@@ -1,21 +1,21 @@
 .list {
-    margin-left:2rem;
-    margin-top: 2rem;
+	margin-left: 2rem;
+	margin-top: 2rem;
 }
 
 .list li {
-    list-style:none;
-    margin-bottom: 2rem;
+	list-style: none;
+	margin-bottom: 2rem;
 }
 
 .list {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
 .list .list {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
-.list .list .list{
-    font-size: 1.2rem;
+.list .list .list {
+	font-size: 1.2rem;
 }

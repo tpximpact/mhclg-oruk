@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
 					<LandmarkBanner />
-					{configValueToBoolean(process.env.USE_NAV) ? <LandmarkNav items={siteStructureWithFullPaths(getSiteItems())} /> : null}
+					{configValueToBoolean(process.env.USE_NAV) ? (
+						<LandmarkNav items={siteStructureWithFullPaths(getSiteItems())} />
+					) : null}
 					<LandmarkMain>{children}</LandmarkMain>
 				</div>
 				<LandmarkContentInfo />

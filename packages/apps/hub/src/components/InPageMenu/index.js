@@ -1,1 +1,1 @@
-export {InPageMenu} from './InPageMenu'
+export { InPageMenu } from './InPageMenu'

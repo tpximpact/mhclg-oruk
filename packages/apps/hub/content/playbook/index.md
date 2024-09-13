@@ -1,6 +1,6 @@
 # Open Referral Playbook
 
-An example of an image. ![alt text](localdigital.png "Local Digital")
+An example of an image. ![alt text](localdigital.png 'Local Digital')
 
 ## TODO
 

@@ -17,15 +17,21 @@ export const OffsiteItem = ({ label, urlPath }) => (
 )
 
 const Submenu = ({ items, activePath }) => (
-	<Menu isSubmenu={true} activePath={ activePath} wrapperClass={styles.wrapSub} className={styles.subMenu} items={items} />
+	<Menu
+		isSubmenu={true}
+		activePath={activePath}
+		wrapperClass={styles.wrapSub}
+		className={styles.subMenu}
+		items={items}
+	/>
 )
 
-export const SelectedItem = ({ isSubmenu,label, urlPath, childNodes, activePath }) => (
+export const SelectedItem = ({ isSubmenu, label, urlPath, childNodes, activePath }) => (
 	<li className={`${styles.item} ${styles.selected}`}>
 		<a href={urlPath}>
 			<span className={styles.inner}>{label}</span>
 		</a>
-		{!isSubmenu && childNodes ? <Submenu activePath={ activePath} items={childNodes} /> : null}
+		{!isSubmenu && childNodes ? <Submenu activePath={activePath} items={childNodes} /> : null}
 	</li>
 )
 
@@ -52,7 +58,6 @@ export const LandmarkNav = ({ items }) => {
 	const path = usePathname()
 	return (
 		<nav className={styles.nav} role='navigation'>
-		
 			<div id={styles.menuToggle}>
 				<input type='checkbox' />
 
@@ -75,13 +80,12 @@ export const LandmarkNav = ({ items }) => {
 const Menu = ({ isSubmenu, items, id, className, wrapperClass, activePath, ...props }) => {
 	return (
 		<div className={wrapperClass}>
-			
 			<ol id={id} className={`${styles.menu} ${className}`} {...props}>
 				{items.map((item, counter) => (
 					<NavigationItem
 						key={counter}
 						styles={styles}
-						selected={checkActivePath(item.urlPath,activePath)}
+						selected={checkActivePath(item.urlPath, activePath)}
 						activePath={activePath}
 						isSubmenu={isSubmenu}
 						{...item}
@@ -92,8 +96,7 @@ const Menu = ({ isSubmenu, items, id, className, wrapperClass, activePath, ...pr
 	)
 }
 
-
-const checkActivePath = (itemPath,activePath) => {
+const checkActivePath = (itemPath, activePath) => {
 	if (!activePath) {
 		return false
 	}

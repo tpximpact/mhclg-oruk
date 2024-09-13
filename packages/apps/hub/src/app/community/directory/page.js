@@ -7,7 +7,6 @@ export const metadata = {
 	title: 'ORUK directory'
 }
 
-
 export default async function Page({ searchParams }) {
 	return (
 		<>
