@@ -13,6 +13,7 @@ import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
+import { Crumbtrail } from '@/components/Crumbtrail'
 import defaultMetadata from '/content/metadata.json'
 import { getSiteItems } from '@/util/content'
 import { siteStructureWithFullPaths } from '@/util/menuing'
@@ -26,7 +27,7 @@ const configValueToBoolean = v => JSON.parse(v.toLowerCase())
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
-			<body className={inter.className}>
+			<body className={`${inter.className}`}>
 				<div style={{ maxWidth: '100vw' }}>
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
@@ -35,7 +36,10 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_NAV) ? (
 						<LandmarkNav items={siteStructureWithFullPaths(getSiteItems())} />
 					) : null}
-					<LandmarkMain>{children}</LandmarkMain>
+					<LandmarkMain>
+						<Crumbtrail />
+						{children}
+					</LandmarkMain>
 				</div>
 				<LandmarkContentInfo />
 				<NoJsFallback />
