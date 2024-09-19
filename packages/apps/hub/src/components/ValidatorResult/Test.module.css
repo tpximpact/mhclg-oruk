@@ -1,16 +1,3 @@
-.tests {
-	margin-bottom: 6rem;
-
-	.title {
-		font-weight: 700;
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		.light {
-			font-weight: 300;
-		}
-	}
-}
-
 .test {
 	margin-bottom: 0.5rem;
 	display: flex;
@@ -59,10 +46,10 @@
 	}
 }
 
-.issue {
+.result {
 	margin-top: 1rem;
 
-	.issueMessage {
+	.resultMessage {
 		display: block;
 		font-weight: 700;
 	}

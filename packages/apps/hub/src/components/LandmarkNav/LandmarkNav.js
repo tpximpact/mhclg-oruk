@@ -5,6 +5,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import styles from './nav.module.css'
+import { isDeveloperSection } from '@/util/isDeveloperSection'
 
 export const OffsiteItem = ({ label, urlPath }) => (
 	<li className={`${styles.item} ${styles.offsite}`}>
@@ -45,19 +46,37 @@ export const Item = ({ label, urlPath }) => (
 	</li>
 )
 
-export const NavigationItem = ({ hide, selected, offsite, ...props }) => {
+export const Todo = ({ label, urlPath }) => (
+	<li className={`${styles.item} ${styles.todo}`}>
+		{urlPath && (
+			<Link href={urlPath}>
+				<span className={styles.inner}>{label}</span>
+			</Link>
+		)}
+	</li>
+)
+
+export const NavigationItem = ({ todo, hide, selected, offsite, ...props }) => {
 	if (hide) return
+
 	if (offsite) {
 		return <OffsiteItem {...props} />
 	}
 	if (selected) return <SelectedItem {...props} />
+	if (todo) {
+		return <Todo {...props} />
+	}
 	return <Item {...props} />
 }
 
 export const LandmarkNav = ({ items }) => {
 	const path = usePathname()
+	const developersSection = isDeveloperSection(path)
 	return (
-		<nav className={styles.nav} role='navigation'>
+		<nav
+			className={`${styles.nav} ${developersSection ? styles.developers : null}`}
+			role='navigation'
+		>
 			<div id={styles.menuToggle}>
 				<input type='checkbox' />
 
