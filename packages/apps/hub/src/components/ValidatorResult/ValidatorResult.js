@@ -5,16 +5,21 @@ import styles from './ValidatorResult.module.css'
 
 export const ValidatorResult = ({ result }) => {
 	result = result.result
-	result = dummyData
+	//result = dummyData
 	return (
+	<div>{JSON.stringify(result)}</div>
+	
+	)
+}
+/*
 		<div>
 			<Title result={result} />
 			{result.metadata && <Metadata result={result} />}
 			{result.testSuites && <Tests result={result} />}
 			{result.counts && <Counts result={result} />}
 		</div>
-	)
-}
+	*/
+
 
 const Metadata = ({ result }) => (
 	<Section title='Metadata'>
