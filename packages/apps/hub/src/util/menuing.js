@@ -41,7 +41,10 @@ export const getPathedSiteItem = (path, structure) => {
 	return flatten(structure).filter(item => item.urlPath === path)[0]
 }
 
-const reallyFlatten = (arr, parent) => {
+const reallyFlatten = (
+	arr
+	//, parent
+) => {
 	arr = JSON.parse(JSON.stringify(arr))
 	let result = []
 	arr.forEach(item => {

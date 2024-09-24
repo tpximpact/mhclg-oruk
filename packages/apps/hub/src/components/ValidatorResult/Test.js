@@ -1,9 +1,9 @@
 import styles from './Test.module.css'
 import Icon from '@tpx/Icon'
-import { STATUS, getColourForStatus, getIconForStatus, resultToStatus } from '@/util/status'
+import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
 export const Test = ({ data, label, errorsAreFatal }) => {
-	const status = resultToStatus(data)
+	const status = data.success ? STATUS.PASS : errorsAreFatal ? STATUS.FAIL : STATUS.OTHER
 	return (
 		<>
 			<div
@@ -44,6 +44,12 @@ export const Test = ({ data, label, errorsAreFatal }) => {
 		</>
 	)
 }
+
+/*
+	
+
+
+*/
 
 const Results = ({ data, ...props }) => (
 	<ul className={styles.results}>
