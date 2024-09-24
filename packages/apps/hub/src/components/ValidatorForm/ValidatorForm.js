@@ -8,6 +8,7 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 	const UUID = uuidv4()
 	return (
 		<div className={styles.form}>
+			<Banner />
 			<form action={action}>
 				<label className={styles.label}>
 					Feed URL <span aria-label='required'>(required)</span>
@@ -20,3 +21,12 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 		</div>
 	)
 }
+
+const Banner = () => <div className={styles.banner}>
+	<p>NB: The back end service presently returns simulated results, by default a passing test suite.</p>
+	<p>To simulate a failing test, include the word <code>fail</code> somewhere in the url you are testing, eg <code>
+	http://example.com/feed/fail</code>
+	.</p>
+	
+	
+</div>
