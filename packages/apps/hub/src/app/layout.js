@@ -37,7 +37,12 @@ export default function RootLayout({ children }) {
 						<LandmarkNav items={siteStructureWithFullPaths(getSiteItems())} />
 					) : null}
 					<LandmarkMain>
-						<Crumbtrail />
+						{configValueToBoolean(process.env.USE_NAV) ? (
+							<Crumbtrail />
+						) : (
+							<div style={{ height: '4rem' }}></div>
+						)}
+
 						{children}
 					</LandmarkMain>
 				</div>

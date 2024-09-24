@@ -3,37 +3,39 @@ import { ICON_TYPE } from '@tpx/Icon'
 export const STATUS = {
 	PASS: 'passed',
 	FAIL: 'failed',
-	SKIPPED: 'skipped'
+	OTHER: 'other'
 }
 
-export const resultToStatus = data => (data.success === true ? STATUS.PASS : STATUS.FAIL)
+export const resultToStatus = data => (data.service.isValid === true ? STATUS.PASS : STATUS.FAIL)
 
-export const getColourForStatus = (status, errorsAreFatal) => {
+export const getColourForStatus = status => {
 	let colour
 	switch (status) {
 		case STATUS.PASS:
 			colour = '#00AC1B'
 			break
 		case STATUS.FAIL:
-			colour = errorsAreFatal ? '#FF3300' : '#fa0'
+			colour = '#FF3300'
 			break
+		case STATUS.OTHER:
 		default:
-			colour = '#999'
+			colour = '#fa0'
 	}
 	return colour
 }
 
-export const getIconForStatus = (status, errorsAreFatal) => {
+export const getIconForStatus = status => {
 	let icon
 	switch (status) {
 		case STATUS.PASS:
 			icon = ICON_TYPE.OK
 			break
 		case STATUS.FAIL:
-			icon = errorsAreFatal ? ICON_TYPE.X : ICON_TYPE.WARN
-			break
-		default:
 			icon = ICON_TYPE.X
+			break
+		case STATUS.OTHER:
+		default:
+			icon = ICON_TYPE.WARN
 	}
 	return icon
 }

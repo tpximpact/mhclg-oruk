@@ -1,11 +1,10 @@
 import { Test } from './Test'
 import { Title } from './Title'
-import dummyData from './dummy.json'
+
 import styles from './ValidatorResult.module.css'
 
 export const ValidatorResult = ({ result }) => {
 	result = result.result
-	result = dummyData
 	return (
 		<div>
 			<Title result={result} />
@@ -53,11 +52,11 @@ const Tests = ({ result }) => (
 )
 
 const TestSuite = ({ data }) => {
-	const errorsAreFatal = data.dealbreaker
 	return (
 		<Section title={'Tests: ' + data.name} className={styles.testsuite}>
+			{data.description && <p style={{ marginBottom: '2rem' }}>{data.description}</p>}
 			{data.tests.map((t, i) => (
-				<Test key={i} data={t} label={data.label} errorsAreFatal={errorsAreFatal} />
+				<Test key={i} data={t} label={data.messageLevel} errorsAreFatal={data.required} />
 			))}
 		</Section>
 	)
