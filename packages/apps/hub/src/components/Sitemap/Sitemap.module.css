@@ -19,3 +19,12 @@
 .list .list .list {
 	font-size: 1.2rem;
 }
+
+.todo a {
+	opacity: 0.2;
+}
+
+.todo:before {
+	content: '🚧';
+	margin-right: 1rem;
+}
