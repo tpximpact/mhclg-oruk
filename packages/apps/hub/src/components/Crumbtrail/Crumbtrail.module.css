@@ -1,6 +1,6 @@
 .crumbtrail {
 	padding: 0;
-	margin: 2rem 0 0;
+	margin: 4rem 0 6rem;
 }
 
 .crumbtrail ol {
@@ -16,7 +16,7 @@
 	text-indent: 0;
 }
 
-.crumbtrail li + li:before {
+.crumbtrail li:after {
 	padding: 1rem;
 	font-weight: 900;
 	color: rgba(0, 0, 0, 0.2);

@@ -173,7 +173,20 @@
 		padding: 1rem 6vw 0;
 		background: #fff;
 		font-size: 1.4rem;
-		margin-bottom: 3rem;
+	}
+
+	.nav.developers {
+		background: var(--theme-header-dev-bg);
+		color: var(--theme-header-dev-fg);
+	}
+
+	.nav.developers .topMenu > li > a,
+	.nav.developers .topMenu.todo a {
+		color: var(--theme-header-dev-fg) !important;
+	}
+
+	.nav.developers .topMenu .selected > a {
+		color: black !important;
 	}
 
 	.topMenu {
@@ -193,6 +206,7 @@
 	.menu a {
 		text-align: center;
 		height: 5rem;
+		line-height: 1.2rem;
 	}
 
 	.topMenu a small {
@@ -220,7 +234,7 @@
 	}
 
 	.subMenu a {
-		padding-top: 1.5rem;
+		padding-top: 2rem;
 	}
 
 	.selected:has(.subMenu) > a {
@@ -231,4 +245,13 @@
 	.menu li:not(.selected) a:hover {
 		border-bottom: 5px solid var(--nav-highlight);
 	}
+
+	.menu:has(.subMenu) {
+		margin-bottom: 8rem;
+	}
+}
+
+.todo a {
+	color: rgba(0, 0, 0, 0.3) !important;
+	cursor: not-allowed !important;
 }

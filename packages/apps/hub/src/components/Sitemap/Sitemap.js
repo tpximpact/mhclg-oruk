@@ -16,14 +16,23 @@ export const Sitemap = ({ data }) => (
 const List = ({ data, children }) => (
 	<ol className={styles.list}>
 		{children}
-		{data.map((node, i) => (
-			<Node data={node} key={i} />
-		))}
+		{data.map((node, i) => {
+			return <Node data={node} key={i} />
+		})}
 	</ol>
 )
 
 const Node = ({ data }) => {
 	if (!data.urlPath) return
+	if (data.todo) {
+		return (
+			<li className={styles.todo}>
+				<Link href={data.urlPath}>{data.label} (todo)</Link>
+
+				{data.childNodes ? <List data={data.childNodes} /> : null}
+			</li>
+		)
+	}
 	return (
 		<li>
 			<Link href={data.urlPath}>{data.label}</Link>

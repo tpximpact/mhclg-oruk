@@ -37,9 +37,9 @@ const StatusReadout = ({ pass }) => {
 		<>
 			<span style={{ marginRight: '0.2rem' }}>
 				<Icon
-					colour={getColourForStatus(status)}
+					colour={getColourForStatus(status, true)}
 					weight='4'
-					icon={getIconForStatus(status)}
+					icon={getIconForStatus(status, true)}
 					size='18'
 				/>
 			</span>

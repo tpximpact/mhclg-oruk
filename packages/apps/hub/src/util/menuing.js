@@ -23,8 +23,6 @@ export const siteStructureWithFullPaths = structure => {
 	return result
 }
 
-// const recursivelyExpandPaths
-
 export const childrenOfNamedSiteItem = (name, structure) => {
 	const item = getNamedSiteItem(name, structure)
 	return childrenOfSiteItem(item)
@@ -38,7 +36,27 @@ export const childrenOfSiteItem = (item, structure) => {
 export const getNamedSiteItem = (name, structure) =>
 	flatten(structure).filter(item => item.name === name)[0]
 
-const flatten = (a, parent) => {
+export const getPathedSiteItem = (path, structure) => {
+	console.log(reallyFlatten(structure))
+	return flatten(structure).filter(item => item.urlPath === path)[0]
+}
+
+const reallyFlatten = (
+	arr
+	//, parent
+) => {
+	arr = JSON.parse(JSON.stringify(arr))
+	let result = []
+	arr.forEach(item => {
+		result.push(item)
+		if (item.childNodes) {
+			result.concat(reallyFlatten(item.childNodes))
+		}
+	})
+	return result
+}
+
+export const flatten = (a, parent) => {
 	a = JSON.parse(JSON.stringify(a))
 	if (parent) {
 		parent = JSON.parse(JSON.stringify(parent))
