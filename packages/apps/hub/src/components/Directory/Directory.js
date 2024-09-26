@@ -1,4 +1,6 @@
-import { PaginatedTable } from '@/components/PaginatedTable'
+import { SortedAndPaginatedTable } from '@/components/SortedAndPaginatedTable'
+
+
 import { generate } from '@/components/Dashboard'
 
 // TODO real data !
@@ -9,21 +11,13 @@ const data = generate({
 	failEveryNRows: 3
 })
 
-export const Directory = ({ currentPage }) => {
-	const columns = data.definitions.views.directory.columns
-	const headers = data.definitions.columns
-	let rows = data.data
 
-	rows = rows.filter(row => row.statusOverall.value > 0)
-	const rowsPerPage = data.definitions.views.directory.rowsPerPage
-
-	return (
-		<PaginatedTable
-			rowsPerPage={rowsPerPage}
-			columns={columns}
-			headers={headers}
-			rows={rows}
-			currentPage={currentPage}
-		/>
-	)
+export const Directory = (props) => {
+	const view = data.definitions.views.directory
+	
+	return <SortedAndPaginatedTable
+	view={view}
+	tableData={data}
+	{...props}
+	/>
 }
