@@ -31,10 +31,13 @@ export const generateData = ({ numRows, failEveryNRows }) => {
 	return data
 }
 
+const padRowNum = rowNum => 	rowNum<=9 ? "0" + rowNum :rowNum
+
 export const generateDataRow = (rowNum, fail) => {
+
 	return {
 		name: {
-			value: 'Dummy service ' + rowNum
+			value: 'Dummy service ' + padRowNum(rowNum)
 		},
 		comment: {
 			value: lipsum(rowNum)
@@ -52,7 +55,7 @@ export const generateDataRow = (rowNum, fail) => {
 			url: 'https://example.com/localauthority'
 		},
 		schemaVersion: {
-			value: '3.0'
+			value: rowNum < 9 ? '1.0' : '3.0'
 		},
 		statusIsUp: {
 			value: 1
@@ -64,7 +67,7 @@ export const generateDataRow = (rowNum, fail) => {
 			value: fail ? 0 : 1
 		},
 		testDate: {
-			value: '2024-08-06T18:00:07',
+			value: '2024-08-06T18:'+padRowNum(rowNum)+':07',
 			url: '/developers/dashboard/' + rowNum
 		}
 	}

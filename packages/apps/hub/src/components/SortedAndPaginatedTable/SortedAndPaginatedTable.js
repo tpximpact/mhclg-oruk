@@ -1,0 +1,1 @@
+export {SortedAndPaginatedTable} from './SortedAndPaginatedTable'
