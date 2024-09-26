@@ -20,13 +20,15 @@
     font: inherit;
    
     width: 20rem;
-    padding: 1rem 4rem 1rem 1rem;
+    padding: 0.5rem 2rem 0.5rem 1rem;
     background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
       linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
     color: black;
     border-radius: 0.25em;
-    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border:1px solid black;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    margin-right:0.5rem;
   
     &::-ms-expand {
       display: none;

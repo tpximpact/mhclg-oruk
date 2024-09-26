@@ -51,12 +51,12 @@
 				"schemaVersion",
 				"testDate"
 			],
-			"defaultSortBy": [
+			"defaultSortBy": 
 				{
 					"column": "name",
 					"order": "asc"
 				}
-			],
+			,
 			"sortBy": [
 				"name",
 				"statusOverall",
@@ -67,12 +67,12 @@
 		},
 		"directory": {
 			"columns": ["name", "publisher", "comment", "developer", "service", "testDate"],
-			"defaultSortBy": [
+			"defaultSortBy": 
 				{
 					"column": "name",
 					"order": "asc"
 				}
-			],
+			,
 			"columns": ["name", "publisher", "developer",  "testDate"],
 			"sortBy": ["name", "publisher",  "developer",  "testDate"],
 			
