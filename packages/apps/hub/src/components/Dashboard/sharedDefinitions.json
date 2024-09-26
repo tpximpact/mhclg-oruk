@@ -74,6 +74,7 @@
 				}
 			],
 			"columns": ["name", "publisher", "developer",  "testDate"],
+			"sortBy": ["name", "publisher",  "developer",  "testDate"],
 			
 			"showPassingRowsOnly": true
 		}
