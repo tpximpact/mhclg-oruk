@@ -17,17 +17,32 @@ const data = generate({
 export const Dashboard = ({ currentPage }) => {
 	const view = data.definitions.views.dashboard
 	const headers = data.definitions.columns
-	const [sortBy,setSortBy] = useState('coconut')
+	const [sortBy,setSortBy] = useState(view.defaultSortBy.value)
+	const [sortedRows,setSortedRows] = useState(data.data)
 
-	const sortOptions = [
-		['grapefruit', 'Grapefruit'],
-		['lime', 'Lime'],
-		['coconut', 'Coconut'],
-		['mango', 'Mango'],
-	  ];
+	const sortOptions = view.sortBy.map(
+		(col) => 
+			[col,data.definitions.columns[col].label]
+	)
+
+const compareRows = (a,b) => {
+	const valA = a.name.value.toUpperCase(); 
+const valB = b.name.value.toUpperCase(); 
+if (valA < valB) {
+  return -1;
+}
+if (valA > valB) {
+  return 1;
+}
+
+return 0;
+}
 
 const changeSort = newVal => {
 	setSortBy(newVal)
+	let newSortedRows = data.data.sort(compareRows)
+	// newSortedRows = newSortedRows.reverse()
+	setSortedRows(newSortedRows)
 }
 
 	return (
@@ -42,7 +57,7 @@ const changeSort = newVal => {
 			rowsPerPage={view.rowsPerPage}
 			columns={view.columns}
 			headers={headers}
-			rows={data.data}
+			rows={sortedRows}
 			currentPage={currentPage}
 		/>
 		</>

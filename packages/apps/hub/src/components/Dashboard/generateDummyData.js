@@ -31,10 +31,13 @@ export const generateData = ({ numRows, failEveryNRows }) => {
 	return data
 }
 
+const padRowNum = rowNum => 	rowNum<=9 ? "0" + rowNum :rowNum
+
 export const generateDataRow = (rowNum, fail) => {
+
 	return {
 		name: {
-			value: 'Dummy service ' + rowNum
+			value: 'Dummy service ' + padRowNum(rowNum)
 		},
 		comment: {
 			value: lipsum(rowNum)
