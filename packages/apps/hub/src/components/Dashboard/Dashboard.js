@@ -1,5 +1,10 @@
+'use client'
+
+import {useState} from 'react'
 import { PaginatedTable } from '@/components/PaginatedTable'
 import { generate } from './generateDummyData'
+import sort from './Sorting.module.css'
+
 
 // TODO real data !
 
@@ -10,19 +15,61 @@ const data = generate({
 })
 
 export const Dashboard = ({ currentPage }) => {
-	const columns = data.definitions.views.dashboard.columns
+	const view = data.definitions.views.dashboard
 	const headers = data.definitions.columns
-	const rowsPerPage = data.definitions.views.dashboard.rowsPerPage
+	const [sortBy,setSortBy] = useState('coconut')
+
+	const sortOptions = [
+		['grapefruit', 'Grapefruit'],
+		['lime', 'Lime'],
+		['coconut', 'Coconut'],
+		['mango', 'Mango'],
+	  ];
+
+const changeSort = newVal => {
+	setSortBy(newVal)
+}
 
 	return (
+		<>
+		{sortBy}
+		<Sorting 
+		 values={sortOptions}
+		 selectedValue="lime"
+		 onValueChange={changeSort}
+		/>
 		<PaginatedTable
-			rowsPerPage={rowsPerPage}
-			columns={columns}
+			rowsPerPage={view.rowsPerPage}
+			columns={view.columns}
 			headers={headers}
 			rows={data.data}
 			currentPage={currentPage}
 		/>
+		</>
 	)
+}
+
+const Sorting = ({
+	values, 
+	onValueChange, 
+	selectedValue, 
+	...rest
+}) => {
+	return <div  className={sort.sorting}>
+		<label for="sortBy">Sort by... </label>
+
+		<select
+      defaultValue={selectedValue}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
+    >
+      {values.map(([value, text]) => (
+        <option key={value} value={value}>
+          {text}
+        </option>
+      ))}
+    </select>
+	</div>
 }
 
 /*
