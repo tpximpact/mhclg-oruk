@@ -55,7 +55,7 @@ export const generateDataRow = (rowNum, fail) => {
 			url: 'https://example.com/localauthority'
 		},
 		schemaVersion: {
-			value: '3.0'
+			value: rowNum < 9 ? '1.0' : '3.0'
 		},
 		statusIsUp: {
 			value: 1
