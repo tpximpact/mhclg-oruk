@@ -1,1 +1,2 @@
-export { TableSorting, getSortingOptions, getSortedRows } from './TableSorting'
+export { DIRECTION, TableSorting, getSortingOptions, getSortedRows } from './TableSorting'
+

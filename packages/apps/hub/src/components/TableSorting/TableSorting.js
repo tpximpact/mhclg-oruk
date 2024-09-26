@@ -7,7 +7,12 @@ export const getSortingOptions = (view,data) => view.sortBy.map(
 )
 
 
-export const getSortedRows = (sortColumn,data) => {
+export const DIRECTION = {
+    ASCENDING: "a",
+    DESCENDING: "d"
+}
+
+export const getSortedRows = (sortColumn,data ) => {
 
 	const compareRows = (a,b) => {
 
@@ -37,8 +42,10 @@ export const getSortedRows = (sortColumn,data) => {
 
 export const TableSorting = ({
 	values, 
-	onValueChange, 
+	onValueChange,
+	onDirectionChange, 
 	selectedValue, 
+	selectedDirection,
 	...rest
 }) => {
 	return <div  className={sort.sorting}>
@@ -54,6 +61,18 @@ export const TableSorting = ({
           {text}
         </option>
       ))}
+    </select>
+	<select
+      defaultValue={selectedDirection}
+      onChange={({ target: { value } }) => onDirectionChange(value)}
+      {...rest}
+    >
+        <option  value={DIRECTION.ASCENDING}>
+          Ascending
+        </option>
+		<option  value={DIRECTION.DESCENDING}>
+          Descending
+        </option>
     </select>
 	</div>
 }
