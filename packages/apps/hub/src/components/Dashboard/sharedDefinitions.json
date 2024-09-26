@@ -53,13 +53,15 @@
 			],
 			"defaultSortBy": [
 				{
-					"column": "schemaVersion",
-					"order": "oruk.sort.dsc"
-				},
-				{
 					"column": "name",
-					"order": "oruk.sort.asc"
+					"order": "asc"
 				}
+			],
+			"sortBy": [
+				"name",
+				"statusOverall",
+				"schemaVersion",
+				"testDate"
 			],
 			"showPassingRowsOnly": false
 		},
@@ -68,9 +70,11 @@
 			"defaultSortBy": [
 				{
 					"column": "name",
-					"order": "oruk.sort.asc"
+					"order": "asc"
 				}
 			],
+			"columns": ["name", "publisher", "developer",  "testDate"],
+			
 			"showPassingRowsOnly": true
 		}
 	}
