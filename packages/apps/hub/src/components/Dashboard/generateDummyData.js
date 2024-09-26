@@ -67,7 +67,7 @@ export const generateDataRow = (rowNum, fail) => {
 			value: fail ? 0 : 1
 		},
 		testDate: {
-			value: '2024-08-06T18:'+rowNum+':07',
+			value: '2024-08-06T18:'+padRowNum(rowNum)+':07',
 			url: '/developers/dashboard/' + rowNum
 		}
 	}
