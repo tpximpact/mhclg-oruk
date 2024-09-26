@@ -17,40 +17,58 @@ const data = generate({
 export const Dashboard = ({ currentPage }) => {
 	const view = data.definitions.views.dashboard
 	const headers = data.definitions.columns
-	const [sortBy,setSortBy] = useState(view.defaultSortBy.value)
+	const [sortBy,setSortBy] = useState(view.defaultSortBy.column)
 	const [sortedRows,setSortedRows] = useState(data.data)
 
-	const sortOptions = view.sortBy.map(
+	const sortingOptions = view.sortBy.map(
 		(col) => 
 			[col,data.definitions.columns[col].label]
 	)
 
-const compareRows = (a,b) => {
-	const valA = a.name.value.toUpperCase(); 
-const valB = b.name.value.toUpperCase(); 
-if (valA < valB) {
-  return -1;
-}
-if (valA > valB) {
-  return 1;
-}
 
-return 0;
+const getSortedRows = sortColumn => {
+	//alert(sortColumn)
+	const compareRows = (a,b) => {
+/*
+		if (a[sortColumn] && String(a[sortColumn].value)){
+			
+		} else {
+			alert(sortColumn)
+			alert (a[sortColumn] && a[sortColumn].value)
+			alert(JSON.stringify(a))
+			alert(JSON.stringify(a[sortColumn]))
+			alert(JSON.stringify(a[sortColumn].value))
+		}
+			*/
+
+
+		const valA = String(a[sortColumn].value).toUpperCase(); 
+	const valB = String(b[sortColumn].value).toUpperCase(); 
+	if (valA < valB) {
+	  return -1;
+	}
+	if (valA > valB) {
+	  return 1;
+	}
+	
+	return 0;
+	}
+
+	return data.data.sort(compareRows)
 }
 
 const changeSort = newVal => {
 	setSortBy(newVal)
-	let newSortedRows = data.data.sort(compareRows)
+	let newSortedRows =getSortedRows(newVal)
 	// newSortedRows = newSortedRows.reverse()
 	setSortedRows(newSortedRows)
 }
 
 	return (
 		<>
-		{sortBy}
 		<Sorting 
-		 values={sortOptions}
-		 selectedValue="lime"
+		 values={sortingOptions}
+		 selectedValue={sortBy}
 		 onValueChange={changeSort}
 		/>
 		<PaginatedTable
