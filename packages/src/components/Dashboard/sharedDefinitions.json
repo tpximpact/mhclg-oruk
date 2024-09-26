@@ -1,0 +1,73 @@
+{
+	"columns": {
+		"comment": {
+			"label": "Description",
+			"valueType": "oruk:valueType.markdown"
+		},
+		"developer": {
+			"label": "Developer",
+			"valueType": "oruk:valueType.string"
+		},
+		"name": {
+			"label": "Name",
+			"valueType": "oruk:valueType.string"
+		},
+		"publisher": {
+			"label": "Publisher",
+			"valueType": "oruk:valueType.string"
+		},
+		"schemaVersion": {
+			"label": "ORUK version",
+			"valueType": "oruk:valueType.numeric"
+		},
+		"service": {
+			"label": "Service",
+			"valueType": "oruk:valueType.string"
+		},
+		"statusIsUp": {
+			"label": "Available?",
+			"valueType": "oruk:valueType.success"
+		},
+		"statusIsValid": {
+			"label": "Valid?",
+			"valueType": "oruk:valueType.success"
+		},
+		"statusOverall": {
+			"label": "Feed passes?",
+			"valueType": "oruk:valueType.success"
+		},
+		"testDate": {
+			"label": "Last tested",
+			"valueType": "oruk:valueType.dateTime"
+		}
+	},
+	"views": {
+		"dashboard": {
+			"columns": [
+				"name",
+				"statusOverall",
+				"statusIsUp",
+				"statusIsValid",
+				"schemaVersion",
+				"testDate"
+			],
+			"defaultSortBy": {
+				"column": "name",
+				"order": "asc"
+			},
+			"sortBy": ["name", "statusOverall", "schemaVersion", "testDate"],
+			"showPassingRowsOnly": false
+		},
+		"directory": {
+			"columns": ["name", "publisher", "comment", "developer", "service", "testDate"],
+			"defaultSortBy": {
+				"column": "name",
+				"order": "asc"
+			},
+			"columns": ["name", "publisher", "developer", "testDate"],
+			"sortBy": ["name", "publisher", "developer", "testDate"],
+
+			"showPassingRowsOnly": true
+		}
+	}
+}

@@ -1,0 +1,46 @@
+.banner {
+	width: 400px;
+	height: 400px;
+	background: #fea;
+	margin-bottom: 3rem;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+	transform: rotate(-2deg);
+}
+
+.banner p {
+	margin-bottom: 1rem;
+}
+
+.form {
+	margin-top: 2rem;
+}
+
+.submit {
+	padding: 0.2rem 2rem;
+}
+
+.example {
+	display: block;
+	font-style: italic;
+}
+
+.label {
+	display: block;
+	font-weight: bold;
+}
+
+.label input {
+	margin: 0;
+	width: 30rem;
+	display: block;
+	font-weight: normal;
+	padding: 5px;
+	border-radius: 0;
+	border: 1px solid black;
+}
+
+.submit {
+	margin-top: 1rem;
+}
