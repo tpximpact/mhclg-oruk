@@ -1,0 +1,1 @@
+export { NamedMarkdownPage } from './NamedMarkdownPage'

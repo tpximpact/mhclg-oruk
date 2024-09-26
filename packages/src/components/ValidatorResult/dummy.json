@@ -1,0 +1,99 @@
+{
+	"service": {
+		"url": "https://run.mocky.io/",
+		"isValid": false,
+		"profile": "HSDS-3.0-UK"
+	},
+	"metadata": [
+		{
+			"label": "Service provider",
+			"value": "Fooshire County Council"
+		},
+		{
+			"label": "Email",
+			"value": "service@fooshire.gov"
+		},
+		{
+			"label": "Telephone",
+			"value": "+44 123 456 7890"
+		}
+	],
+	"counts": {
+		"Organisations": 0,
+		"Services": 500,
+		"Service taxonomies": 0,
+		"Services at location": 444,
+		"Locations": 444,
+		"Phone numbers": 0,
+		"Contacts": 625,
+		"Physical addresses": 0,
+		"Postal addresses": 0,
+		"Regular schedules": 927,
+		"Holiday schedules": 0,
+		"Funding": 0,
+		"Eligibility": 0,
+		"Service areas": 0,
+		"Languages": 0,
+		"Disabled access": 0,
+		"Taxonomies": 0,
+		"Cost options": 403,
+		"Reviews": 0,
+		"Linked taxonomies": 0
+	},
+	"testSuites": [
+		{
+			"name": "Level One",
+			"dealbreaker": true,
+			"label": "error",
+			"tests": [
+				{
+					"name": "Test One",
+					"endpoint": "/",
+					"description": "Lorem ipsum",
+					"success": true
+				},
+				{
+					"name": "Test Two",
+					"endpoint": "/",
+					"description": "Lorem ipsum",
+					"success": false,
+					"results": [
+						{
+							"name": "required",
+							"description": "A schema validation issue has been found",
+							"message": "Required properties [\"id\",\"name\",\"status\"] are not present",
+							"parameters": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Level Two",
+			"dealbreaker": false,
+			"label": "warning",
+			"tests": [
+				{
+					"name": "Test One",
+					"endpoint": "/",
+					"description": "Lorem ipsum",
+					"success": true
+				},
+				{
+					"name": "Test Two",
+					"endpoint": "/",
+					"description": "Lorem ipsum",
+					"success": false,
+					"results": [
+						{
+							"name": "required",
+							"description": "A schema validation issue has been found",
+							"message": "Required properties [\"id\",\"name\",\"status\"] are not present",
+							"parameters": null
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,16 @@
+.footer {
+	display: block;
+	margin-top: 4rem;
+}
+
+.bottom {
+	background: var(--theme-footer-bg);
+	color: var(--theme-footer-fg);
+	padding: 1rem 0;
+}
+
+.bottom a {
+	color: #fff !important;
+	display: block;
+	margin-bottom: 1rem;
+}
