@@ -1,1 +1,1 @@
-export {SortedAndPaginatedTable} from './SortedAndPaginatedTable'
+export { SortedAndPaginatedTable } from './SortedAndPaginatedTable'

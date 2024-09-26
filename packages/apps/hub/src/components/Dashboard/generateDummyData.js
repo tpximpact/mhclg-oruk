@@ -31,10 +31,9 @@ export const generateData = ({ numRows, failEveryNRows }) => {
 	return data
 }
 
-const padRowNum = rowNum => 	rowNum<=9 ? "0" + rowNum :rowNum
+const padRowNum = rowNum => (rowNum <= 9 ? '0' + rowNum : rowNum)
 
 export const generateDataRow = (rowNum, fail) => {
-
 	return {
 		name: {
 			value: 'Dummy service ' + padRowNum(rowNum)
@@ -67,7 +66,7 @@ export const generateDataRow = (rowNum, fail) => {
 			value: fail ? 0 : 1
 		},
 		testDate: {
-			value: '2024-08-06T18:'+padRowNum(rowNum)+':07',
+			value: '2024-08-06T18:' + padRowNum(rowNum) + ':07',
 			url: '/developers/dashboard/' + rowNum
 		}
 	}

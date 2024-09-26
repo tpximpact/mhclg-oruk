@@ -1,6 +1,5 @@
 import { SortedAndPaginatedTable } from '@/components/SortedAndPaginatedTable'
 
-
 import { generate } from '@/components/Dashboard'
 
 // TODO real data !
@@ -11,13 +10,8 @@ const data = generate({
 	failEveryNRows: 3
 })
 
-
-export const Directory = (props) => {
+export const Directory = props => {
 	const view = data.definitions.views.directory
-	
-	return <SortedAndPaginatedTable
-	view={view}
-	tableData={data}
-	{...props}
-	/>
+
+	return <SortedAndPaginatedTable view={view} tableData={data} {...props} />
 }
