@@ -55,6 +55,7 @@
 				"column": "name",
 				"order": "asc"
 			},
+			"defaultSortDirection": "asc",
 			"sortBy": ["name", "statusOverall", "schemaVersion", "testDate"],
 			"showPassingRowsOnly": false
 		},
@@ -66,7 +67,7 @@
 			},
 			"columns": ["name", "publisher", "developer", "testDate"],
 			"sortBy": ["name", "publisher", "developer", "testDate"],
-
+"defaultSortDirection": "asc",
 			"showPassingRowsOnly": true
 		}
 	}
