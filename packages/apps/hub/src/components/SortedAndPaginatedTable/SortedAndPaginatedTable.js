@@ -2,27 +2,23 @@
 
 import { useState, useEffect } from 'react'
 import { PaginatedTable } from '@/components/PaginatedTable'
-import {
-	DIRECTION,
-	TableSorting,
-	getSortingOptions,
-	getSortedRows
-} from '@/components/TableSorting'
+import { TableSorting, getSortingOptions, getSortedRows } from '@/components/TableSorting'
 
 export const SortedAndPaginatedTable = ({ currentPage, tableData, view }) => {
 	const headers = tableData.definitions.columns
-	const [sortBy, setSortBy] = useState(view.defaultSortBy.column)
-	const [sortDirection, setSortDirection] = useState(DIRECTION.ASCENDING)
+	const [sortBy, setSortBy] = useState(view.defaultSortBy)
+	const [sortDirection, setSortDirection] = useState(view.defaultSortDirection)
 	const [sortedRows, setSortedRows] = useState(tableData.data)
 	const sortingOptions = getSortingOptions(view, tableData)
 
 	const sort = () => {
 		const data = JSON.parse(JSON.stringify(tableData))
-		let newSortedRows = getSortedRows(sortBy, data)
+		let newSortedRows = getSortedRows({
+			sortColumn: sortBy,
+			data: data,
+			sortDirection: sortDirection
+		})
 
-		if (sortDirection === DIRECTION.DESCENDING) {
-			newSortedRows = newSortedRows.reverse()
-		}
 		setSortedRows(newSortedRows)
 	}
 
