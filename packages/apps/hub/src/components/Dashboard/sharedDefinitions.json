@@ -51,19 +51,16 @@
 				"schemaVersion",
 				"testDate"
 			],
-			"defaultSortDirection": "asc",
-			"sortBy": "name",
+			"sortBy": ["name", "statusOverall", "schemaVersion", "testDate"],
+			"defaultSortDirection": "ascending",
+			"defaultSortBy": "name",
 			"showPassingRowsOnly": false
 		},
 		"directory": {
 			"columns": ["name", "publisher", "comment", "developer", "service", "testDate"],
-			"defaultSortBy": {
-				"column": "name",
-				"order": "asc"
-			},
-			"columns": ["name", "publisher", "developer", "testDate"],
-			"sortBy": "name",
-			"defaultSortDirection": "asc",
+			"sortBy": ["name", "publisher", "developer", "testDate"],
+			"defaultSortDirection": "ascending",
+			"defaultSortBy": "name",
 			"showPassingRowsOnly": true
 		}
 	}

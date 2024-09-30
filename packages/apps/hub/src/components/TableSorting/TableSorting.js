@@ -4,11 +4,11 @@ export const getSortingOptions = (view, data) =>
 	view.sortBy.map(col => [col, data.definitions.columns[col].label])
 
 export const DIRECTION = {
-	ASCENDING: 'a',
-	DESCENDING: 'd'
+	ASCENDING: 'ascending',
+	DESCENDING: 'descending'
 }
 
-export const getSortedRows = (sortColumn, data) => {
+export const getSortedRows = ({ sortColumn, data, sortDirection }) => {
 	const compareRows = (a, b) => {
 		const valA = String(a[sortColumn].value).toUpperCase()
 		const valB = String(b[sortColumn].value).toUpperCase()
@@ -29,7 +29,13 @@ export const getSortedRows = (sortColumn, data) => {
 		}
 	}
 
-	return data.data.sort(compareRows)
+	let newSortedRows = data.data.sort(compareRows)
+
+	if (sortDirection === DIRECTION.DESCENDING) {
+		newSortedRows = newSortedRows.reverse()
+	}
+
+	return newSortedRows
 }
 
 export const TableSorting = ({
