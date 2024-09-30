@@ -51,11 +51,8 @@
 				"schemaVersion",
 				"testDate"
 			],
-			"defaultSortBy": {
-				"column": "name",
-				"order": "asc"
-			},
-			"sortBy": ["name", "statusOverall", "schemaVersion", "testDate"],
+			"defaultSortDirection": "asc",
+			"sortBy": "name",
 			"showPassingRowsOnly": false
 		},
 		"directory": {
@@ -65,8 +62,8 @@
 				"order": "asc"
 			},
 			"columns": ["name", "publisher", "developer", "testDate"],
-			"sortBy": ["name", "publisher", "developer", "testDate"],
-
+			"sortBy": "name",
+			"defaultSortDirection": "asc",
 			"showPassingRowsOnly": true
 		}
 	}
