@@ -1,0 +1,60 @@
+.mainHeading {
+	margin-bottom: 4rem;
+}
+
+.list {
+	text-decoration: none;
+	list-style: none;
+}
+
+.list * {
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.item {
+	margin-bottom: 2rem;
+	max-width: 60vw;
+}
+
+.itemHeading {
+	font-weight: 800;
+	display: block;
+	font-size: 1.8rem;
+}
+
+.itemDate {
+	display: block;
+	font-style: italic;
+	font-size: 1.2rem;
+}
+
+.itemBody {
+	display: block;
+}
+
+/* content page */
+
+.links {
+	display: flex;
+	margin-bottom: 2rem;
+	max-width: 50rem; /* same as MarkdownContent.solo*/
+}
+
+.blank,
+.linkedPage {
+	flex: 1;
+}
+
+.linkedPage:first-child {
+	text-align: left;
+}
+
+.linkedPage:last-child {
+	text-align: right;
+}
+
+.articleDate {
+	font-style: italic;
+	margin-bottom: 2rem;
+}

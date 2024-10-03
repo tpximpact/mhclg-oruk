@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import styles from './nav.module.css'
 import { isDeveloperSection } from '@/util/isDeveloperSection'
+import { DynamicSectionNavLink } from '@/components/DynamicSection'
 
 export const OffsiteItem = ({ label, urlPath }) => (
 	<li className={`${styles.item} ${styles.offsite}`}>
@@ -100,6 +101,7 @@ const Menu = ({ isSubmenu, items, id, className, wrapperClass, activePath, ...pr
 	return (
 		<div className={wrapperClass}>
 			<ol id={id} className={`${styles.menu} ${className}`} {...props}>
+				<DynamicSectionNavLink label='News' activePath={activePath} urlPath='/news' />
 				{items.map((item, counter) => (
 					<NavigationItem
 						key={counter}

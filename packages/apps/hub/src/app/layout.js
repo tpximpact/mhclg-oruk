@@ -24,6 +24,11 @@ export const metadata = defaultMetadata
 
 const configValueToBoolean = v => JSON.parse(v.toLowerCase())
 
+const allItems = () => {
+	let result = siteStructureWithFullPaths(getSiteItems())
+	return result
+}
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en' id='html' className='no-js'>
@@ -33,9 +38,7 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
 					<LandmarkBanner />
-					{configValueToBoolean(process.env.USE_NAV) ? (
-						<LandmarkNav items={siteStructureWithFullPaths(getSiteItems())} />
-					) : null}
+					{configValueToBoolean(process.env.USE_NAV) ? <LandmarkNav items={allItems()} /> : null}
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />

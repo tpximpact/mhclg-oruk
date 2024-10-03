@@ -43,6 +43,13 @@ export const Crumbs = ({ data }) => (
 
 const NavigationItem = ({ urlPath, label }) => (
 	<li>
-		<Link href={urlPath}>{label}</Link>
+		<Link href={urlPath}>{label.length > 0 ? label : titlecase(urlPath.split('/')[1])}</Link>
 	</li>
 )
+
+const titlecase = str => {
+	return str.replace(
+		/\w\S*/g,
+		text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+	)
+}
