@@ -1,1 +1,0 @@
-export { LandmarkBanner } from './LandmarkBanner'
