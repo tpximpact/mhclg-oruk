@@ -1,5 +1,6 @@
+export default { component: Pagination }
 import { Pagination } from './Pagination'
-
+/*
 const dummyPageChange = (baseUrl, targetPage) => {
 	alert('would request page ' + baseUrl + targetPage)
 }
@@ -32,3 +33,4 @@ export const PageTwoOfOneHundred = () => (
 		<Pagination {...defaultArgs} numPages={100} currentPage={2} />
 	</>
 )
+*/

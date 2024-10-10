@@ -1,0 +1,9 @@
+.mermaid {
+    background: #fc0;
+}
+
+.mermaid svg{
+    width: 100%;
+    background: #fcf;
+    max-width: 100% !important;
+}

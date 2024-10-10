@@ -1,6 +1,6 @@
 // TODO THIS SHOULD REPLACE ALL SIMILAR OLDER CODE
 
-import pageTree from '../../content/sitemap.json'
+import {pageTree} from '../../content/sitemap.js'
 
 const expand = (structure, parentNode) => {
 	let structureCopy = structuredClone(structure)

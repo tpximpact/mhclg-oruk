@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
-import structure from '../../content/sitemap.json'
+import {pageTree} from '../../content/sitemap.js'
 
 //import organisations from '/content/community/organisations/organisations.json'
 /*
@@ -49,7 +49,7 @@ const flatten = (a, parent) => {
 }
 
 export const flattenSite = () => {
-	return flatten(structure)
+	return flatten(pageTree)
 }
 
 export const getNamedSiteItem = name => {
@@ -57,7 +57,7 @@ export const getNamedSiteItem = name => {
 	return r
 }
 
-export const getSiteItems = () => structure
+export const getSiteItems = () => pageTree
 
 export const childNodesOfNamedSiteItem = name => {
 	const item = getNamedSiteItem(name)

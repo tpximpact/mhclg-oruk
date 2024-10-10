@@ -6,7 +6,7 @@ import { getNamedSiteItem } from '@/util/content'
 export const metadata = name => {
 	const pageData = getNamedSiteItem(name)
 	return {
-		title: pageData.label ? pageData.label : 'Open Referral UK'
+		title: (pageData && pageData.label) ? pageData.label : 'Open Referral UK'
 	}
 }
 
