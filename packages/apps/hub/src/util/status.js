@@ -1,8 +1,8 @@
 import { ICON_TYPE } from '@tpx/Icon'
 
 export const STATUS = {
-	PASS: 'passed',
-	FAIL: 'failed',
+	PASS: 'pass',
+	FAIL: 'fail',
 	OTHER: 'other'
 }
 
