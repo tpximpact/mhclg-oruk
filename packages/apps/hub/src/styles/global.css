@@ -24,6 +24,7 @@ body {
 	min-height: 100%;
 	display: grid;
 	grid-template-rows: 1fr auto;
+	font-size: 1.1875em;
 }
 
 h4 {

@@ -1,11 +1,11 @@
-import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
+import { Sitemap } from '@/components/Sitemap'
+import { getSiteItems } from '@/util/content'
+import { siteStructureWithFullPaths } from '@/util/menuing'
 
-// import { PageMargin } from '@tpx/PageMargin'
-
-export const metadata = {
-	title: 'Error: Not found (404)'
+export default function Page() {
+	return <Sitemap data={siteStructureWithFullPaths(getSiteItems())} />
 }
 
-export default async function Page() {
-	return <NamedMarkdownPage name='not-found' />
+export const metadata = {
+	title: 'ORUK Technical documentation'
 }

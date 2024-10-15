@@ -101,7 +101,7 @@ const Menu = ({ isSubmenu, items, id, className, wrapperClass, activePath, ...pr
 	return (
 		<div className={wrapperClass}>
 			<ol id={id} className={`${styles.menu} ${className}`} {...props}>
-				<DynamicSectionNavLink label='News' activePath={activePath} urlPath='/news' />
+				{/*<DynamicSectionNavLink label='News' activePath={activePath} urlPath='/news' />*/}
 				{items.map((item, counter) => (
 					<NavigationItem
 						key={counter}
