@@ -6,7 +6,8 @@ import '@/styles/global.css'
 import '@/styles/no-js.css'
 
 import { LandmarkBanner } from '@/components/LandmarkBanner'
-import { LandmarkNav } from '@/components/LandmarkNav'
+// import { LandmarkNav } from '@/components/LandmarkNav'
+import { NavigationPanel } from '@/components/NavigationPanel'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
@@ -37,8 +38,8 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
-					<LandmarkBanner />
-					{configValueToBoolean(process.env.USE_NAV) ? <LandmarkNav items={allItems()} /> : null}
+					{/*<LandmarkBanner />*/}
+					{configValueToBoolean(process.env.USE_NAV) && <NavigationPanel items={allItems()} />}
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />

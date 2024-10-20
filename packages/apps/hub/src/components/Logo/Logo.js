@@ -1,6 +1,6 @@
 import style from './Logo.module.css'
 
-export const Logo = ({ colour = '#000' }) => (
+export const Logo = ({ colour = '#000', height="80" }) => (
 	<div className={style.logo}>
 		<div className={style.hidden}>Openreferral UK</div>
 		<svg
