@@ -2,9 +2,9 @@ import styles from './Sitemap.module.css'
 import Link from 'next/link'
 import { PageMargin } from '@tpx/PageMargin'
 
-export const Sitemap = ({ data }) => (
+export const Sitemap = ({ showHeading=true, data }) => (
 	<PageMargin>
-		<h1 style={{ marginBottom: '4rem' }}>All pages on ORUK</h1>
+		{showHeading && <h1 style={{ marginBottom: '4rem' }}>All pages on ORUK</h1>}
 		<List data={data}>
 			<li>
 				<Link href={'/'}>Home</Link>
