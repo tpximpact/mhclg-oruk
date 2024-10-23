@@ -4,13 +4,13 @@
 }
 
 .bottom {
-	background: var(--theme-footer-bg);
-	color: var(--theme-footer-fg);
+	/*dbackground: var(--theme-footer-bg);
+	dcolor: var(--theme-footer-fg);*/
 	padding: 1rem 0;
 }
 
 .bottom a {
-	color: #fff !important;
+	/*dcolor: #fff !important;*/
 	display: block;
 	margin-bottom: 1rem;
 }

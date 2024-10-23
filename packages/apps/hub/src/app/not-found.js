@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function Page() {
 	return (
-	<>
-	<NamedMarkdownPage name='not-found' />
-	<Sitemap showHeading={false} data={siteStructureWithFullPaths(getSiteItems())} />
-	</>)
+		<>
+			<NamedMarkdownPage name='not-found' />
+			<Sitemap showHeading={false} data={siteStructureWithFullPaths(getSiteItems())} />
+		</>
+	)
 }
-

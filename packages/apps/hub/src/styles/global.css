@@ -1,7 +1,6 @@
 body {
 	background: var(--theme-paper);
 	color: var(--theme-ink);
-	/*font-size: 1.2em;*/
 }
 
 a,

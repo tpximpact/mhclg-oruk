@@ -1,8 +1,11 @@
 import styles from './Sitemap.module.css'
 import Link from 'next/link'
+import { PageList } from '@/components/PageList'
 import { PageMargin } from '@tpx/PageMargin'
+import { formatNodesForPageMenu } from '@/util/formatNodesForPageMenu'
+import { listDynamicSection } from '@/util/dynamicSection'
 
-export const Sitemap = ({ showHeading=true, data }) => (
+export const Sitemap = ({ showHeading = true, data }) => (
 	<PageMargin>
 		{showHeading && <h1 style={{ marginBottom: '4rem' }}>All pages on ORUK</h1>}
 		<List data={data}>
@@ -24,20 +27,20 @@ const List = ({ data, children }) => (
 
 const Node = ({ data }) => {
 	if (!data.urlPath) return
-	if (data.todo) {
-		return (
-			<li className={styles.todo}>
-				<Link href={data.urlPath}>{data.label} (todo)</Link>
-
-				{data.childNodes ? <List data={data.childNodes} /> : null}
-			</li>
-		)
-	}
 	return (
 		<li>
 			<Link href={data.urlPath}>{data.label}</Link>
-
-			{data.childNodes ? <List data={data.childNodes} /> : null}
+			{data.dynamic && (
+				<PageList
+					suppressDetails={true}
+					data={listDynamicSection({
+						rootContentFolder: data.urlPath
+					})}
+				/>
+			)}
+			{data.childNodes && (
+				<PageList suppressDetails={true} data={formatNodesForPageMenu(data.childNodes)} />
+			)}
 		</li>
 	)
 }

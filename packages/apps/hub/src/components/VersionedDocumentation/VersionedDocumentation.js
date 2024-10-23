@@ -70,7 +70,6 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 					</p>
 				) : (
 					<>
-						{' '}
 						<p style={{ fontWeight: 900, color: 'white' }}>
 							This is an archived obsolete version of the standard.
 						</p>
@@ -78,7 +77,7 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 							For new projects, we strongly recommend you to use{' '}
 							<a
 								href='#'
-								onClick={e => {
+								onClick={() => {
 									setVersion(currentVersion)
 								}}
 								style={{ fontWeight: 900, color: 'white' }}

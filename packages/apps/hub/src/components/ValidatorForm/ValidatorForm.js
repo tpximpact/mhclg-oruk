@@ -14,7 +14,9 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 					Feed URL <span aria-label='required'>(required)</span>
 					<input type='URL' defaultValue={defaultValue} name='uri' required />
 				</label>
-				<span className={styles.example}>eg: http://example.com/feed/</span>
+				<span className={styles.example}>
+					eg: https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock
+				</span>
 				<input type='hidden' name='id' value={UUID} />
 				<Button>Check</Button>
 			</form>
@@ -24,12 +26,14 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 
 const Banner = () => (
 	<div className={styles.banner}>
+		<p>We provide examples which demonstrate the different statuses available...</p>
+
 		<p>
-			NB: The back end service presently returns simulated results, by default a passing test suite.
-		</p>
-		<p>
-			To simulate a failing test, include the word <code>fail</code> somewhere in the url you are
-			testing, eg <code>http://example.com/feed/fail</code>.
+			https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock
+			<br />
+			https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail
+			<br />
+			https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/warn
 		</p>
 	</div>
 )

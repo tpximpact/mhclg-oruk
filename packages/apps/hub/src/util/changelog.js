@@ -1,3 +1,3 @@
-import data from '../../content/technical/changelog/data.json'
+import data from '../../content/developers/changelog/data.json'
 
 export const getChangelogData = () => data

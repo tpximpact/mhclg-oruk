@@ -43,7 +43,9 @@ export const Crumbs = ({ data }) => (
 
 const NavigationItem = ({ urlPath, label }) => (
 	<li>
-		<Link href={urlPath}>{label.length > 0 ? label : titlecase(urlPath.split('/')[1])}</Link>
+		<Link href={urlPath}>
+			{label.length > 0 ? label : titlecase(urlPath.split('/')[urlPath.split('/').length - 1])}
+		</Link>
 	</li>
 )
 

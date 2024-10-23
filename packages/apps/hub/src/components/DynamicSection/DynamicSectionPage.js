@@ -1,14 +1,10 @@
 'use server'
+
 import { MarkdownContent } from '@/components/NamedMarkdownPage'
 import styles from './DynamicSection.module.css'
-import { Thumbnail } from './DynamicSectionListing'
+import { PageThumbnail } from '@/components/PageThumbnail'
 
-export const DynamicSectionPage = ({
-	date,
-	// metadata,
-	content,
-	...linkedPages
-}) => {
+export const DynamicSectionPage = ({ date, content, ...linkedPages }) => {
 	return (
 		<section>
 			<MarkdownContent raw={content} />
@@ -31,7 +27,7 @@ const LinkedPageMaybe = ({ relation, data }) =>
 const LinkedPage = ({ relation, ...data }) => (
 	<div className={styles.linkedPage}>
 		<span className={styles.relation}>{relation}</span>
-		<Thumbnail {...data} slug={null} />
+		<PageThumbnail {...data} slug={null} />
 	</div>
 )
 
