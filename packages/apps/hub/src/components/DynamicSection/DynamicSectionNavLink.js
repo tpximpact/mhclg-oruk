@@ -1,4 +1,4 @@
-import { NavigationItem } from '@/components/LandmarkNav'
+import { NavigationItem } from '@/components/NavigationItem'
 
 export const DynamicSectionNavLink = ({ activePath, urlPath, label }) => (
 	<NavigationItem
