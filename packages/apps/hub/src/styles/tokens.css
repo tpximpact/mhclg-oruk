@@ -14,7 +14,7 @@
 
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-x-dark-green);
-	--theme-interaction: var(--colour-dark-blue);
+	--theme-interaction: black;
 	--theme-footer-bg: var(--colour-dark-green);
 	--theme-footer-fg: var(--colour-white);
 	--theme-header-bg: var(--colour-white);

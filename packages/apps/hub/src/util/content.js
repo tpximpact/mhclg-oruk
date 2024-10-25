@@ -2,16 +2,6 @@ import fs from 'fs'
 import { join } from 'path'
 import structure from '../../content/sitemap.json'
 
-//import organisations from '/content/community/organisations/organisations.json'
-/*
-export const getOrganisationsData = () => organisations 
-export const getOrganisationsCounts = () => ({
-	considering: 8,
-	adopting:8,
-	adopted:13
-})
-	*/
-
 const crumbtrailItem = (current, accumulator) => {
 	let found = getNamedSiteItem(current)
 	accumulator.push(found)
@@ -33,6 +23,7 @@ const flatten = (a, parent) => {
 		let items = []
 		if (parent) {
 			item.parent = parent.name
+			//console.log(parent )
 			if (!item.offsite) {
 				item.urlPath = parent.urlPath + '/' + item.urlPath
 				item.contentPath = parent.contentPath + '/' + item.contentPath
@@ -45,6 +36,7 @@ const flatten = (a, parent) => {
 		items.push(item)
 		result = result.concat(items)
 	})
+	//console.log(result)
 	return result
 }
 

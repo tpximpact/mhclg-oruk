@@ -1,12 +1,14 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { InPageMenu } from '@/components/InPageMenu'
+import { PageList } from '@/components/PageList'
+import { PageMargin } from '@tpx/PageMargin'
 import { notFound } from 'next/navigation'
 import { getNamedSiteItem } from '@/util/content'
+import { formatNodesForPageMenu } from '@/util/formatNodesForPageMenu'
 
 export const metadata = name => {
 	const pageData = getNamedSiteItem(name)
 	return {
-		title: pageData.label ? pageData.label : 'Open Referral UK'
+		title: pageData && pageData.label ? pageData.label : 'Open Referral UK'
 	}
 }
 
@@ -16,12 +18,17 @@ export const GenericPage = ({ name }) => {
 	let nodes = pageData.childNodes
 	if (nodes) {
 		nodes = nodes.map(node => getNamedSiteItem(node))
+		nodes = formatNodesForPageMenu(nodes)
 	}
 
 	return (
 		<>
 			<NamedMarkdownPage name={name} autoMenu={pageData.autoMenu} />
-			{nodes && nodes.length > 0 && <InPageMenu nodes={nodes} />}
+			{nodes && nodes.length > 0 && (
+				<PageMargin>
+					<PageList data={nodes} />
+				</PageMargin>
+			)}
 		</>
 	)
 }

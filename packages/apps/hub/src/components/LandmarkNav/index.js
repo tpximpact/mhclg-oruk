@@ -1,1 +1,1 @@
-export { LandmarkNav } from './LandmarkNav'
+export { LandmarkNav, NavigationItem } from './LandmarkNav'
