@@ -1,4 +1,9 @@
 .list {
+	margin-left: 0;
+	margin-top: 2rem;
+}
+
+.list ol {
 	margin-left: 2rem;
 	margin-top: 2rem;
 }
@@ -9,22 +14,17 @@
 }
 
 .list {
-	font-size: 2rem;
+	font-size: 1.4rem;
 }
 
 .list .list {
-	font-size: 1.5rem;
-}
-
-.list .list .list {
 	font-size: 1.2rem;
 }
 
-.todo a {
-	opacity: 0.2;
+.list .list .list {
+	font-size: 1rem;
 }
 
-.todo:before {
-	content: '🚧';
-	margin-right: 1rem;
+.list a {
+	text-decoration: underline !important;
 }

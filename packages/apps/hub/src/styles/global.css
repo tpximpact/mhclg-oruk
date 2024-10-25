@@ -1,7 +1,6 @@
 body {
 	background: var(--theme-paper);
 	color: var(--theme-ink);
-	/*font-size: 1.2em;*/
 }
 
 a,
@@ -24,6 +23,7 @@ body {
 	min-height: 100%;
 	display: grid;
 	grid-template-rows: 1fr auto;
+	font-size: 1.1875em;
 }
 
 h4 {

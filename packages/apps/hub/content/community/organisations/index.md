@@ -1,1 +1,0 @@
-# Organisations adopting the standard

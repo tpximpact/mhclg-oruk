@@ -9,8 +9,12 @@ const data = generate({
 	failEveryNRows: 3
 })
 
-export const Dashboard = props => {
+export const Dashboard = ({ result, currentPage /*,method,endpoint,currentPage*/ }) => {
 	const view = data.definitions.views.dashboard
 
-	return <SortedAndPaginatedTable view={view} tableData={data} {...props} />
+	return (
+		<>
+			<SortedAndPaginatedTable view={view} tableData={data} currentPage={currentPage} />
+		</>
+	)
 }

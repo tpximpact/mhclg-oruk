@@ -1,11 +1,17 @@
+import { Sitemap } from '@/components/Sitemap'
+import { getSiteItems } from '@/util/content'
+import { siteStructureWithFullPaths } from '@/util/menuing'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
-// import { PageMargin } from '@tpx/PageMargin'
-
 export const metadata = {
-	title: 'Error: Not found (404)'
+	title: 'Open Referral UK'
 }
 
-export default async function Page() {
-	return <NamedMarkdownPage name='not-found' />
+export default function Page() {
+	return (
+		<>
+			<NamedMarkdownPage name='not-found' />
+			<Sitemap showHeading={false} data={siteStructureWithFullPaths(getSiteItems())} />
+		</>
+	)
 }
