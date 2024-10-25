@@ -9,9 +9,10 @@ const data = generate({
 	failEveryNRows: 3
 })
 
-export const Dashboard = ({ 
+export const Dashboard = ({
 	/*result, */
-	currentPage /*,method,endpoint,currentPage*/ }) => {
+	currentPage /*,method,endpoint,currentPage*/
+}) => {
 	const view = data.definitions.views.dashboard
 
 	return (
