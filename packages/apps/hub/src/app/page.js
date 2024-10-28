@@ -1,5 +1,6 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { PageMargin } from '@tpx/PageMargin'
+import {configValueToBoolean} from '@/util/configValueToBoolean'
 
 export const metadata = {
 	title: 'Open Referral UK'
