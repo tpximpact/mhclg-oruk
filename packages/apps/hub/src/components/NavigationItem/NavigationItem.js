@@ -20,7 +20,7 @@ export const SelectedItem = ({ label, urlPath }) => (
 		<a href={urlPath}>
 			<span className={styles.inner}>{label}</span>
 		</a>
-		</li>
+	</li>
 )
 
 export const Item = ({ label, urlPath }) => (
