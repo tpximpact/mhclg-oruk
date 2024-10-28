@@ -10,6 +10,7 @@ a:visited {
 	color: var(--theme-interaction);
 	text-decoration: underline;
 	cursor: pointer;
+	font-weight:var(--link-weight);
 }
 
 .cm-theme-light * {

@@ -7,3 +7,12 @@ For documentation, please see [the wiki](https://github.com/tpximpact/mhclg-oruk
 The component storybook is [here](https://tpximpact.github.io/mhclg-oruk/).
 
 The (password protected) prototype preview is at [https://openreferraluk.netlify.app](https://openreferraluk.netlify.app)
+
+
+## TODO
+
+- Visual styling
+- Significant amounts of duplication in /util needs rationalising
+- Component storybook
+- unit test for utils
+- cypress test suite
