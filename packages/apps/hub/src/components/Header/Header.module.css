@@ -23,6 +23,7 @@
 	font-weight: 800;
 	margin: 1rem 0 0;
 	cursor: pointer;
+	color: black;
 }
 
 .right button.open {
