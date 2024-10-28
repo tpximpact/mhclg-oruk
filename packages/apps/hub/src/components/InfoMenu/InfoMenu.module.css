@@ -1,0 +1,13 @@
+.InfoMenu {
+    list-style: none; margin:0;
+    padding:0;text-indent:0;
+}
+
+.InfoMenu li {
+    list-style: none; margin:0;
+    padding:0;text-indent:0;
+    display:inline-block;
+    margin-right:1rem;
+    font-size:0.9rem;
+    font-weight:var(--link-weight);
+}

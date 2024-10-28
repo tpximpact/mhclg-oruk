@@ -16,18 +16,29 @@
 	display: flex;
 }
 
-.right button {
+.right button,
+.noJsLink  {
 	padding: 0 2rem;
 	border: 0;
-
-	font-weight: 800;
+display: block;
+font-weight:var(--link-weight);
 	margin: 1rem 0 0;
 	cursor: pointer;
 	color: black;
 }
 
+.noJsLink   {
+	margin-top: 3rem;
+	animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+
 .right button.open {
-	background: var(--colour-buff4);
+	background: #eee;
 }
 
 .right button.closed {
@@ -48,29 +59,4 @@
 
 .right button.closed span:before {
 	content: '▼ ';
-}
-
-.Menu {
-	padding: 1rem 5vw 0;
-	background: var(--colour-buff4);
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.MenuSection {
-	padding: 0 0 1rem 0;
-}
-
-.Menu ol {
-	margin: 1rem 0;
-	padding: 0;
-	text-indent: 0;
-	list-style: none;
-}
-
-.Menu li {
-	margin: 0;
-	padding: 0;
-	text-indent: 0;
-	list-style: none;
 }

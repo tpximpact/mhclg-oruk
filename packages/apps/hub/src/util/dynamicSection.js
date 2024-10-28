@@ -1,9 +1,10 @@
 // manage a section that is generated on the fly - ie news
+
 import fs from 'fs'
 import { join } from 'path'
 import * as matter from 'gray-matter'
 
-import { PATHS } from './content'
+import { PATHS } from './PATHS'
 
 export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, unslugify(slug))
