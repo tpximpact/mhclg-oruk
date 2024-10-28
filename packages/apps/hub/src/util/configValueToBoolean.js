@@ -1,0 +1,1 @@
+export const configValueToBoolean = v => JSON.parse(v.toLowerCase())
