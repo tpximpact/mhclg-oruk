@@ -1,5 +1,5 @@
 import { Sitemap } from '@/components/Sitemap'
-import { getSiteItems } from '@/util/content'
+import { getSiteItems } from '@/util/getSiteItems'
 import { siteStructureWithFullPaths } from '@/util/menuing'
 
 export default function Page() {

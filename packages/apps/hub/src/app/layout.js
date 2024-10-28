@@ -7,8 +7,6 @@ import '@/styles/no-js.css'
 
 import { listDynamicSection } from '@/util/dynamicSection'
 
-//import { LandmarkBanner } from '@/components/LandmarkBanner'
-// import { LandmarkNav } from '@/components/LandmarkNav'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -18,7 +16,7 @@ import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import { Crumbtrail } from '@/components/Crumbtrail'
 import defaultMetadata from '/content/metadata.json'
-import { getSiteItems } from '@/util/content'
+import { getSiteItems } from '@/util/getSiteItems'
 import { siteStructureWithFullPaths } from '@/util/menuing'
 
 const font = Inter({ subsets: ['latin'] })
@@ -50,6 +48,7 @@ const allItems = () => {
 }
 
 export default function RootLayout({ children }) {
+	const items = allItems()
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={`${font.className}`}>
@@ -57,8 +56,7 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
-					{/*<LandmarkBanner />*/}
-					{configValueToBoolean(process.env.USE_NAV) ? <Header items={allItems() } />:null}
+					{configValueToBoolean(process.env.USE_NAV) ? <Header items={items } />:null}
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />
@@ -69,7 +67,7 @@ export default function RootLayout({ children }) {
 						{children}
 					</LandmarkMain>
 				</div>
-				<LandmarkContentInfo showNav={configValueToBoolean(process.env.USE_NAV)} />
+				<LandmarkContentInfo items={items} showNav={configValueToBoolean(process.env.USE_NAV)} />
 				<NoJsFallback />
 			</body>
 		</html>

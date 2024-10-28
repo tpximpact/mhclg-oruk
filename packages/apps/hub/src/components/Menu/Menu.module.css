@@ -1,0 +1,39 @@
+
+.Menu {
+	padding: 1rem 5vw 0;
+	 background: #eee;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 1024px) {
+	.Menu {
+		grid-template-columns: 1fr ;
+	}
+}
+
+.MenuSection {
+	padding: 0 0 1rem 0;
+}
+
+.Menu ol {
+	margin: 1rem 0;
+	padding: 0;
+	text-indent: 0;
+	list-style: none;
+}
+
+.Menu li {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	list-style: none;
+}
+
+.Menu a {
+	font-weight:var(--link-weight);
+}
+
+.heading {
+	font-weight: 400;
+}
