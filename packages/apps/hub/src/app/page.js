@@ -17,4 +17,10 @@ export default function Home() {
 
 
 const Tools = () => 
-<PageMargin><section><h1>Open Referral UK Tools Preview</h1><p>We are developing new versions of our developer tools to accompany the revised 3.0 provile of Open Referral.</p><p>On this demomstration site, you can access work-in-progres beta versions of the tools for testing.</p><ul><li><a href="/developers/validator">Validator</a></li><li><a href="/developers/dashboard">Dashboard</a></li><li><a href="/community/directory">Directory</a></li></ul></section></PageMargin>
+<PageMargin><section><h1>Open Referral UK Tools Preview</h1><p>We are developing new versions of our developer tools to accompany the revised 3.0 provile of Open Referral.</p><p>On this demomstration site, you can access work-in-progres beta versions of the tools for testing.</p>
+<div style={{
+	margin:"4rem"
+}}>
+<ul><li><a href="/developers/validator">Validator</a></li><li><a href="/developers/dashboard">Dashboard</a></li><li><a href="/community/directory">Directory</a></li></ul>
+</div>
+</section></PageMargin>
