@@ -21,11 +21,12 @@ import defaultMetadata from '/content/metadata.json'
 import { getSiteItems } from '@/util/content'
 import { siteStructureWithFullPaths } from '@/util/menuing'
 
+import {configValueToBoolean} from '@/util/configValueToBoolean'
+
+
 const font = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
-
-const configValueToBoolean = v => JSON.parse(v.toLowerCase())
 
 const allItems = () => {
 	let result = siteStructureWithFullPaths(getSiteItems()).filter(item => item.hide != true)
