@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import styles from './VersionedDocumentation.module.css'
 import { useCookies } from 'react-cookie'
-import '@/styles/swagger.css'
 
 export const VersionedDocumentation = ({ allVersions, contentData }) => {
 	const cookieName = 'docVersion'

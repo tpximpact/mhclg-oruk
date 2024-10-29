@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import { parseMarkdown } from './markdown'
+import { PATHS } from './PATHS'
 
 const getAll = contentFolder => {
 	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
@@ -22,10 +23,6 @@ export const getVersions = folder => {
 	return [allVersions, contentData]
 }
 
-export const PATHS = {
-	contentRoot: 'content',
-	developer: 'developer'
-}
 const buildPath = contentPath => {
 	let result = join(process.cwd(), PATHS.contentRoot, contentPath)
 	return result

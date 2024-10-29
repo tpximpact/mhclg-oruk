@@ -1,6 +1,7 @@
 .footer {
 	display: block;
 	margin-top: 4rem;
+	background: #eee;
 }
 
 .bottom {
@@ -13,4 +14,8 @@
 	/*dcolor: #fff !important;*/
 	display: block;
 	margin-bottom: 1rem;
+	font-weight: var(--link-weight);
+}
+.copyright {
+	font-size: 0.9rem;
 }
