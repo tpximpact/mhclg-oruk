@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 
-import {getPath} from './getPath'
+import { getPath } from './getPath'
 
 const FILE_EXTENSION = 'md'
 

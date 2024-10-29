@@ -31,7 +31,7 @@
 
 	--theme-test-pass: --theme-test-fail: ;
 
-	--link-weight:700;
+	--link-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {

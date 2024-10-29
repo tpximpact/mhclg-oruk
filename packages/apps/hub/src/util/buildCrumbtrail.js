@@ -1,4 +1,4 @@
-import {getNamedSiteItem} from './getNamedSiteItem'
+import { getNamedSiteItem } from './getNamedSiteItem'
 
 const crumbtrailItem = (current, accumulator) => {
 	let found = getNamedSiteItem(current)

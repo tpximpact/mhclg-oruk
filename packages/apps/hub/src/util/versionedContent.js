@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import { parseMarkdown } from './markdown'
-import {PATHS} from './PATHS'
+import { PATHS } from './PATHS'
 
 const getAll = contentFolder => {
 	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
