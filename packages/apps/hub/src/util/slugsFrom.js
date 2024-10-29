@@ -1,5 +1,5 @@
-import {allFilesOfType} from './allFilesOfType'
-import {getPath} from './getPath'
+import { allFilesOfType } from './allFilesOfType'
+import { getPath } from './getPath'
 
 const FILE_EXTENSION = 'md'
 

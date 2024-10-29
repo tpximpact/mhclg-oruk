@@ -1,4 +1,4 @@
-import {getSiteItems} from './getSiteItems'
+import { getSiteItems } from './getSiteItems'
 
 export const flattenSite = () => {
 	return flatten(getSiteItems())

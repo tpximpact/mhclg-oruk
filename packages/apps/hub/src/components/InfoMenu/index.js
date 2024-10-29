@@ -1,1 +1,1 @@
-export {InfoMenu} from './InfoMenu'
+export { InfoMenu } from './InfoMenu'

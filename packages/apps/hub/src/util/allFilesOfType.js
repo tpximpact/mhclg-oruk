@@ -6,5 +6,3 @@ export const allFilesOfType = (path, fileExtension) => {
 		return result
 	}
 }
-
-

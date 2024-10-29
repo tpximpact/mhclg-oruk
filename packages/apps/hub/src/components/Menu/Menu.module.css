@@ -1,14 +1,13 @@
-
 .Menu {
 	padding: 1rem 5vw 0;
-	 background: #eee;
+	background: #eee;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
 @media only screen and (max-width: 1024px) {
 	.Menu {
-		grid-template-columns: 1fr ;
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -31,7 +30,7 @@
 }
 
 .Menu a {
-	font-weight:var(--link-weight);
+	font-weight: var(--link-weight);
 }
 
 .heading {

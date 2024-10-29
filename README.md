@@ -11,7 +11,6 @@ The (password protected) prototype preview is at [https://openreferraluk.netlify
 A bleeding-edge development version is also available for internal eyes only, and with the caveat that you will encounter bugs, unfinshed work etc... [https://openreferraluk-development.netlify.app](https://openreferraluk-development.netlify.app)
 The (password protected) prototype preview is at [https://openreferraluk.netlify.app](https://openreferraluk.netlify.app)
 
-
 ## TODO
 
 - Visual styling

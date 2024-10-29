@@ -19,8 +19,7 @@ import defaultMetadata from '/content/metadata.json'
 import { getSiteItems } from '@/util/getSiteItems'
 import { siteStructureWithFullPaths } from '@/util/menuing'
 
-import {configValueToBoolean} from '@/util/configValueToBoolean'
-
+import { configValueToBoolean } from '@/util/configValueToBoolean'
 
 const font = Inter({ subsets: ['latin'] })
 
@@ -57,7 +56,7 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
-					{configValueToBoolean(process.env.USE_NAV) ? <Header items={items } />:null}
+					{configValueToBoolean(process.env.USE_NAV) ? <Header items={items} /> : null}
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />

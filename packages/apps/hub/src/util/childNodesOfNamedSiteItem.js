@@ -1,4 +1,4 @@
-import {getNamedSiteItem} from './getNamedSiteItem'
+import { getNamedSiteItem } from './getNamedSiteItem'
 
 export const childNodesOfNamedSiteItem = name => {
 	const item = getNamedSiteItem(name)

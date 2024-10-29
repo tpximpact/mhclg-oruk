@@ -1,7 +1,7 @@
-import {allFilesOfType} from './allFilesOfType'
-import {fileNameToURL} from './fileNameToURL'
-import {fileNameToLabel} from './fileNameToLabel'
-import {getPath} from './getPath'
+import { allFilesOfType } from './allFilesOfType'
+import { fileNameToURL } from './fileNameToURL'
+import { fileNameToLabel } from './fileNameToLabel'
+import { getPath } from './getPath'
 
 const FILE_EXTENSION = 'md'
 

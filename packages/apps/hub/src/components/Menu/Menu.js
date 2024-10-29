@@ -41,7 +41,7 @@ const List = ({ data, overflow, setShowMenu }) => {
 							<a href={item.path}>{item.title} (opens in new window)</a>
 						) : (
 							<Link
-								onClick={setShowMenu ? (() => setShowMenu(false)) : null}
+								onClick={setShowMenu ? () => setShowMenu(false) : null}
 								href={'/' + item.path}
 								className={styles.thumbnail}
 							>
