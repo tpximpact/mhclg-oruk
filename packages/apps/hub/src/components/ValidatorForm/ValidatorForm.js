@@ -8,7 +8,6 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 	const UUID = uuidv4()
 	return (
 		<div className={styles.form}>
-			<Banner />
 			<form action={action}>
 				<label className={styles.label}>
 					Feed URL <span aria-label='required'>(required)</span>
@@ -23,17 +22,3 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 		</div>
 	)
 }
-
-const Banner = () => (
-	<div className={styles.banner}>
-		<p>We provide examples which demonstrate the different statuses available...</p>
-
-		<p>
-			https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock
-			<br />
-			https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail
-			<br />
-			https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/warn
-		</p>
-	</div>
-)

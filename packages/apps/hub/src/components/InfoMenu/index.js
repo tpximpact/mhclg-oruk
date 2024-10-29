@@ -1,0 +1,1 @@
+export { InfoMenu } from './InfoMenu'

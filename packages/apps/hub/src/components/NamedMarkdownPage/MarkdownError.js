@@ -1,5 +1,6 @@
 'use server'
-import { getNamedSiteItem } from '../../util/content'
+
+import { getNamedSiteItem } from '@/util/getNamedSiteItem'
 
 export const MarkdownError = ({ file }) => {
 	const pageData = getNamedSiteItem(file)

@@ -1,4 +1,5 @@
-import { readFile, getNamedSiteItem } from '../../util/content'
+import { getNamedSiteItem } from '@/util/getNamedSiteItem'
+import { readFile } from '@/util/readFile'
 import { MarkdownPage } from './MarkdownPage'
 import { PageMargin } from '@tpx/PageMargin'
 
