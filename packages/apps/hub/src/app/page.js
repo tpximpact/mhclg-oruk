@@ -23,14 +23,14 @@ const Tools = () => (
 					marginBottom: '4rem'
 				}}
 			>
-				Open Referral UK Tools Preview
+				Open Referral UK Tools (Preview)
 			</h1>
 			<p>
-				We are developing new versions of our developer tools to accompany the revised 3.0 profile
+				We are developing new versions of our technical tools to accompany the revised 3.0 profile
 				of Open Referral.
 			</p>
 			<p>
-				On this demonstration site, you can access work-in-progres beta versions of the tools for
+				On this demonstration site, you can access work-in-progress beta versions of the tools for
 				testing.
 			</p>
 			<div
