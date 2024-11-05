@@ -54,14 +54,3 @@
 		font-weight: 700;
 	}
 }
-
-/*
-.demo {
-		
-		border-style: solid;
-		border-width:4px;
-		padding:1rem;
-		border-color: color-mix(in oklch, var(--color) 90%, #000000);
-		background: color-mix(in oklch, var(--color) 10%, #ffff);
-		color: color-mix(in oklch, var(--color) 80%, #000000);
-}*/

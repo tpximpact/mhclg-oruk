@@ -33,7 +33,6 @@
 		"remark-html": "^16.0.1",
 		"remark-parse": "^11.0.0",
 		"remark-parse-frontmatter": "^1.0.3",
-		"swagger-ui-react": "^5.17.14",
 		"uuid": "^10.0.0"
 	},
 	"devDependencies": {
