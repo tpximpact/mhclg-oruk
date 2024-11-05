@@ -6,15 +6,6 @@ export const Test = ({ data, label, errorsAreFatal }) => {
 	const status = data.success ? STATUS.PASS : errorsAreFatal ? STATUS.FAIL : STATUS.OTHER
 	return (
 		<>
-		{/*<div className={styles.demo} style={{"--color": "#69ff"}}>
-				hello
-			</div>	
-			<div className={styles.demo} style={{"--color": "#ff0b00"}}>
-				hello
-			</div>	
-			<div className={styles.demo} style={{"--color": "#ffb5cb"}}>
-				hello
-			</div>	*/}
 			<div
 				className={styles.test}
 				style={{
