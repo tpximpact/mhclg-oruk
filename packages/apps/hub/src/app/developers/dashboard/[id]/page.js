@@ -1,4 +1,4 @@
-import Link from 'next/link'
+//import Link from 'next/link'
 import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { DashboardDetails } from '@/components/DashboardDetails'
 import { PageMargin } from '@tpx/PageMargin'
@@ -16,10 +16,6 @@ export default async function Page({
 }) {
 	return (
 		<PageMargin>
-			<div style={{ marginBottom: '2rem' }}>
-				<Link href='/developers/tools/dashboard'>Back to dashboard</Link>
-			</div>
-			<h1 style={{ marginBottom: '2rem' }}>Feed (details view)</h1>
 			<RemoteJSON
 				method={METHOD.GET}
 				ResultRenderComponent={DashboardDetails}
