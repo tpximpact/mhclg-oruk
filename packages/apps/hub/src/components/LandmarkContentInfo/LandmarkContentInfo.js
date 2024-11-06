@@ -3,6 +3,7 @@ import { PageMargin } from '@tpx/PageMargin'
 import Link from 'next/link'
 import { Menu } from '@/components/Menu'
 import { InfoMenu } from '@/components/InfoMenu'
+import { BannerMHCLG } from '@/components/BannerMHCLG'
 
 export const LandmarkContentInfo = ({ showNav, items }) => (
 	<footer role='contentInfo' className={styles.footer}>
@@ -25,5 +26,6 @@ export const LandmarkContentInfo = ({ showNav, items }) => (
 				<div className={styles.copyright}>Copyright © 2024 Open Referral UK</div>
 			</PageMargin>
 		</div>
+		<BannerMHCLG />
 	</footer>
 )
