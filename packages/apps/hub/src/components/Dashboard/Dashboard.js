@@ -9,14 +9,12 @@ const data = generate({
 	failEveryNRows: 3
 })
 
-export const Dashboard = ({
-	/*result, */
-	currentPage /*,method,endpoint,currentPage*/
-}) => {
+export const Dashboard = ({ result, currentPage /*,method,endpoint,currentPage*/ }) => {
 	const view = data.definitions.views.dashboard
 
 	return (
 		<>
+			{JSON.stringify(result.definitions, null, 2)}
 			<SortedAndPaginatedTable view={view} tableData={data} currentPage={currentPage} />
 		</>
 	)
