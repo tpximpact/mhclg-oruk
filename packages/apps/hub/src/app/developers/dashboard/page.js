@@ -17,9 +17,6 @@ export default async function Page({ searchParams }) {
 	//const result = generate({ numRows: 24, rowsPerPage: 10, failEveryNRows: 8 })
 	return (
 		<>
-			{
-				//JSON.stringify(posts)
-			}
 			<NamedMarkdownPage name='dashboard' />
 			<PageMargin>
 				<RemoteJSON

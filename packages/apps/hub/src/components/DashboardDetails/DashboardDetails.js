@@ -1,37 +1,37 @@
 import styles from './DashboardDetails.module.css'
-import dummyData from '../../../content/developers/dashboard/sampleResult.json'
-import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+import {
+	// STATUS,
+	getColourForStatus,
+	getIconForStatus
+} from '@/util/status'
 import Icon from '@tpx/Icon'
 
-export const DashboardDetails = () => (
-	/*{ 
-	// result 
-}*/ <div className={styles.details}>
-		<div className={styles.publisher}>
-			{/*<span className={styles.label}>{getDetailsPublisherLabel()}:</span>*/}{' '}
-			{getDetailsPublisher()}
+export const DashboardDetails = ({ result }) => {
+	result = result.result
+	return (
+		<div className={styles.details}>
+			<div className={styles.publisher}>{getDetailsPublisher(result)}</div>
+			<h1>{getDetailsTitle(result)}</h1>
+
+			<div className={styles.service}>
+				<a href={getDetailsURI(result)} target='_blank'>
+					{getDetailsURI(result)}
+				</a>
+				<em>(opens in new window)</em>
+			</div>
+
+			{result.payload.map((data, i) => (
+				<Section data={data} key={i} />
+			))}
+
+			<Validation result={result} status={getDetailsStatus(result)} />
 		</div>
-		<h1>{getDetailsTitle()}</h1>
+	)
+}
 
-		<div className={styles.service}>
-			{/*<span className={styles.label}>Endpoint:</span>*/}
-			<a href={getDetailsURI()} target='_blank'>
-				{getDetailsURI()}
-			</a>{' '}
-			<em>(opens in new window)</em>
-		</div>
+const getDetailsStatus = result => result.isValid.value
 
-		{dummyData.payload.map((data, i) => (
-			<Section data={data} key={i} />
-		))}
-
-		<Validation status={getDetailsStatus()} />
-	</div>
-)
-
-const getDetailsStatus = () => STATUS.FAIL
-
-const Validation = ({ status }) => {
+const Validation = ({ status, result }) => {
 	const colour = getColourForStatus(status, true)
 	return (
 		<section>
@@ -44,18 +44,17 @@ const Validation = ({ status }) => {
 			<Field
 				data={{
 					label: 'Last checked',
-					value: getDetailsLastTest(),
-					datatype: 'xsd:dateTime'
+					value: getDetailsLastTest(result),
+					dataType: 'xsd:dateTime'
 				}}
 			/>
 		</section>
 	)
 }
 
-const getDetailsTitle = () => dummyData.title.value
-const getDetailsURI = () => dummyData.serviceUrl.value
-const getDetailsPublisher = () => dummyData.publisher.value
-// const getDetailsPublisherLabel = () => dummyData.publisher.label
+const getDetailsTitle = result => result.title?.value
+const getDetailsURI = result => result.serviceUrl?.value
+const getDetailsPublisher = result => result.publisher?.value
 
 const Section = ({ data }) => (
 	<section className={styles.section}>
@@ -79,15 +78,13 @@ const Field = ({ data }) => {
 
 const FieldValue = ({ data }) => {
 	let result
-	switch (data.datatype) {
+	switch (data.dataType) {
 		case 'xsd:string':
 			result = <FVString data={data.value} url={data.url} />
 			break
 		case 'xsd:dateTime':
 			result = <FVDate data={data.value} />
 			break
-		default:
-			console.log(`Sorry, we are out of `)
 	}
 	return result
 }
@@ -112,4 +109,4 @@ const stringifyDateString = s => {
 
 const FVDate = ({ data }) => <FVString data={stringifyDateString(data)} />
 
-const getDetailsLastTest = () => dummyData.lastTested.value
+const getDetailsLastTest = data => data.lastTested.value
