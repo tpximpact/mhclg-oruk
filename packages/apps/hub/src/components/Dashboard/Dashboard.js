@@ -10,13 +10,16 @@ const data = generate({
 })
 
 export const Dashboard = ({
-	/*result, */
+	result, 
 	currentPage /*,method,endpoint,currentPage*/
 }) => {
 	const view = data.definitions.views.dashboard
 
 	return (
 		<>
+		{
+			JSON.stringify(result, null, 2)
+		}
 			<SortedAndPaginatedTable view={view} tableData={data} currentPage={currentPage} />
 		</>
 	)
