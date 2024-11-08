@@ -10,7 +10,10 @@ export const METHOD = {
 const ResultLoader = async ({ ResultRenderComponent, args, ...props }) => {
 	const result = await fetchResult(args)
 	return result && result.ok ? (
+		<>
 		<ResultRenderComponent result={result} {...props} />
+		
+		</> 
 	) : (
 		<Error data={result.error} />
 	)
