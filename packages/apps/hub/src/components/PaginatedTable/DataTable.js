@@ -9,10 +9,10 @@ export const DataTable = ({ columns, headers, rows }) => (
 		<Thead>
 			<Tr>
 				{columns.map(col => {
-					const valueType = headers[col].valueType
+					const dataType = headers[col].dataType
 					const header = headers[col]
 					return (
-						<Th className={getCellClassForValueType(valueType)} key={col}>
+						<Th className={getCellClassFordataType(dataType)} key={col}>
 							{header.label}
 						</Th>
 					)
@@ -24,13 +24,13 @@ export const DataTable = ({ columns, headers, rows }) => (
 			{rows.map((row, i) => (
 				<Tr key={i}>
 					{columns.map((column, j) => {
-						const valueType = headers[column].valueType
+						const dataType = headers[column].dataType
 						const Component = j === 0 ? Th : Td
 						const cellProps = j === 0 ? { column: 'false' } : {}
 						return (
-							<Component key={j} className={getCellClassForValueType(valueType)} {...cellProps}>
+							<Component key={j} className={getCellClassFordataType(dataType)} {...cellProps}>
 								<CellContent
-									valueType={valueType}
+									dataType={dataType}
 									label={headers[column].label}
 									payload={row[column]}
 								/>
@@ -78,19 +78,19 @@ const Td = ({ children, className, ...props }) => (
 	</div>
 )
 
-const getCellClassForValueType = valueType => {
+const getCellClassFordataType = dataType => {
 	let result
-	switch (valueType) {
-		case 'oruk:valueType.string':
+	switch (dataType) {
+		case 'oruk:dataType.string':
 			result = styles.string
 			break
-		case 'oruk:valueType.numeric':
+		case 'oruk:dataType.numeric':
 			result = styles.numeric
 			break
-		case 'oruk:valueType.success':
+		case 'oruk:dataType.success':
 			result = null
 			break
-		case 'oruk:valueType.dateTime':
+		case 'oruk:dataType.dateTime':
 			result = styles.date
 			break
 	}
@@ -109,7 +109,7 @@ const truncate = (str, numWords) => {
 
 const MAX_TEXT_LENGTH_WORDCOUNT = 20
 
-const CellContent = ({ valueType, label, payload }) => {
+const CellContent = ({ dataType, label, payload }) => {
 	let result
 
 	let val = payload.value
@@ -122,20 +122,20 @@ const CellContent = ({ valueType, label, payload }) => {
 	}
 
 	// TODO link the links.
-	switch (valueType) {
-		case 'oruk:valueType.markdown':
+	switch (dataType) {
+		case 'oruk:dataType.markdown':
 			result = <span className={styles.markdown}>{truncate(val, MAX_TEXT_LENGTH_WORDCOUNT)}</span>
 			break
-		case 'oruk:valueType.string':
+		case 'oruk:dataType.string':
 			result = val
 			break
-		case 'oruk:valueType.numeric':
+		case 'oruk:dataType.numeric':
 			result = val
 			break
-		case 'oruk:valueType.success':
+		case 'oruk:dataType.success':
 			result = <StatusReadout pass={val} />
 			break
-		case 'oruk:valueType.dateTime':
+		case 'oruk:dataType.dateTime':
 			result = <DisplayDate d={val} />
 			break
 	}

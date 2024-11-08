@@ -2,43 +2,43 @@
 	"columns": {
 		"comment": {
 			"label": "Description",
-			"valueType": "oruk:valueType.markdown"
+			"dataType": "oruk:dataType.markdown"
 		},
 		"developer": {
 			"label": "Developer",
-			"valueType": "oruk:valueType.string"
+			"dataType": "oruk:dataType.string"
 		},
 		"name": {
 			"label": "Name",
-			"valueType": "oruk:valueType.string"
+			"dataType": "oruk:dataType.string"
 		},
 		"publisher": {
 			"label": "Publisher",
-			"valueType": "oruk:valueType.string"
+			"dataType": "oruk:dataType.string"
 		},
 		"schemaVersion": {
 			"label": "ORUK version",
-			"valueType": "oruk:valueType.numeric"
+			"dataType": "oruk:dataType.numeric"
 		},
 		"service": {
 			"label": "Service",
-			"valueType": "oruk:valueType.string"
+			"dataType": "oruk:dataType.string"
 		},
 		"statusIsUp": {
 			"label": "Available?",
-			"valueType": "oruk:valueType.success"
+			"dataType": "oruk:dataType.success"
 		},
 		"statusIsValid": {
 			"label": "Valid?",
-			"valueType": "oruk:valueType.success"
+			"dataType": "oruk:dataType.success"
 		},
 		"statusOverall": {
 			"label": "Feed passes?",
-			"valueType": "oruk:valueType.success"
+			"dataType": "oruk:dataType.success"
 		},
 		"testDate": {
 			"label": "Last tested",
-			"valueType": "oruk:valueType.dateTime"
+			"dataType": "oruk:dataType.dateTime"
 		}
 	},
 	"views": {

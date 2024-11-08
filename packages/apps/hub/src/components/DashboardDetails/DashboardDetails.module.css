@@ -38,3 +38,52 @@
 	display: block;
 	padding: 1rem 0.05rem;
 }
+
+/* */
+
+.publisher {
+	font-size: 1.4rem;
+	display: block;
+	line-height: 3.5rem;
+}
+
+.service {
+	font-size: 1.4rem;
+	display: block;
+	line-height: 4.5rem;
+}
+
+.service a {
+	font-weight: var(--link-weight) !important;
+}
+
+.service em {
+	font-style: normal;
+	font-size: 1rem;
+}
+
+.label {
+	font-variant: small-caps;
+	text-transform: lowercase;
+	display: inline-block;
+	margin-right: 1rem;
+	font-size: 1rem;
+}
+
+.section {
+	margin: 1rem 0 4rem;
+}
+
+.field {
+	margin: 1rem 0;
+}
+
+.fv {
+	display: block;
+	font-size: 1.2rem;
+	max-width: 50vw;
+}
+
+a.fv {
+	font-weight: var(--link-weight) !important;
+}
