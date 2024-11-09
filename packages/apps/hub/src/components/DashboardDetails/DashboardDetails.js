@@ -1,4 +1,5 @@
 import styles from './DashboardDetails.module.css'
+
 import {
 	// STATUS,
 	getColourForStatus,
@@ -52,9 +53,11 @@ const Validation = ({ status, result }) => {
 	)
 }
 
+
 const getDetailsTitle = result => result.title?.value
 const getDetailsURI = result => result.serviceUrl?.value
 const getDetailsPublisher = result => result.publisher?.value
+
 
 const Section = ({ data }) => (
 	<section className={styles.section}>
@@ -78,7 +81,9 @@ const Field = ({ data }) => {
 
 const FieldValue = ({ data }) => {
 	let result
+
 	switch (data.dataType) {
+
 		case 'xsd:string':
 			result = <FVString data={data.value} url={data.url} />
 			break
@@ -110,3 +115,4 @@ const stringifyDateString = s => {
 const FVDate = ({ data }) => <FVString data={stringifyDateString(data)} />
 
 const getDetailsLastTest = data => data.lastTested.value
+

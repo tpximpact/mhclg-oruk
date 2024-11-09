@@ -19,7 +19,9 @@ export default async function Page({
 			<RemoteJSON
 				method={METHOD.GET}
 				ResultRenderComponent={DashboardDetails}
+
 				endpoint={process.env.DASHBOARD_DETAILS_ENDPOINT + '/' + params.id}
+
 				queryParams={{
 					id: params.id
 				}}
