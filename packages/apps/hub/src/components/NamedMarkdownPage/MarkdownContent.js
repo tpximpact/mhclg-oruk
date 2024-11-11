@@ -1,13 +1,19 @@
 'use server'
 import { Children, cloneElement } from 'react'
-import { marked } from 'marked'
 import parse from 'html-react-parser'
 import Columns from '@tpx/Columns'
 import styles from './Menu.module.css'
 import Link from 'next/link'
+import {parseMarkdown,extractHTML} from '@/util/markdown'
 
-export const MarkdownContent = ({ raw, autoMenu, afterLinks }) => {
-	const html = marked.parse(raw)
+export const MarkdownContent = ({ 
+	raw, 
+	autoMenu, 
+	afterLinks
+}) => {
+	const parsed = parseMarkdown(raw)
+	const html = extractHTML(parsed)
+	
 	if (autoMenu) {
 		return <MarkdownContentWithMenu html={html} afterLinks={afterLinks} />
 	}

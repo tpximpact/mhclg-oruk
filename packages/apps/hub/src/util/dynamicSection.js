@@ -2,15 +2,14 @@
 
 import fs from 'fs'
 import { join } from 'path'
-import * as matter from 'gray-matter'
-
+import {parseMarkdown, extractMetadata} from '@/util/markdown'
 import { PATHS } from './PATHS'
 
 export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, unslugify(slug))
 	const fileContents = readFile(file)
-	const parsed = matter(fileContents)
-	const metadata = parsed.data
+	const parsed = parseMarkdown(fileContents)
+	const metadata = extractMetadata(parsed)
 	const all = getAll(folder)
 	const myIndex = all.findIndex(element => slugify(element) === slug)
 	const nextIndex = myIndex + 1
@@ -43,17 +42,43 @@ const getAll = contentFolder => {
 	return result
 }
 
-const getDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)
+const getDate = (metadata, contentPath) => {
+
+	if (metadata && metadata.date) {
+		return  metadata.date 
+		}
+		return fileLastModified(contentPath)
+}
+
+const DEFAULT_PAGE_TITLE = "Open Referral UK"
+
+const getTitle = metadata => {
+	if (metadata && metadata.title){
+		return metadata.title
+	}
+	return DEFAULT_PAGE_TITLE
+}
+
+
+const DEFAULT_PAGE_SLUG = ""
+
+const getSlug = metadata => {
+	if (metadata && metadata.slug){
+		return metadata.slug
+	}
+	return DEFAULT_PAGE_SLUG
+}
 
 const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)
 	const contents = readFile(contentPath)
-	const metadata = extractMetadata(contents)
+	const parsed = parseMarkdown(contents)
+	const metadata = extractMetadata(parsed)
 	return {
-		title: metadata.title,
+		title: getTitle(metadata),
 		path: slugify(contentPath),
 		date: getDate(metadata, contentPath),
-		slug: metadata.slug
+		slug: getSlug(metadata)
 	}
 }
 
@@ -75,8 +100,6 @@ const readFile = contentPath => {
 	}
 	return null
 }
-
-const extractMetadata = contents => matter(contents).data
 
 const statFile = contentPath => {
 	try {

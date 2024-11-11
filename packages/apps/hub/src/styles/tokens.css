@@ -15,6 +15,7 @@
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-x-dark-green);
 	--theme-interaction: black;
+	--theme-link: #135286;
 	--theme-footer-bg: var(--colour-dark-green);
 	--theme-footer-fg: var(--colour-white);
 	--theme-header-bg: var(--colour-white);
@@ -31,7 +32,7 @@
 
 	--theme-test-pass: --theme-test-fail: ;
 
-	--link-weight: 400;
+	--link-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -4,16 +4,24 @@
 import styles from './Pagination.module.css'
 
 const PreviousItem = props => (
-	<Item {...props} pageNumber={props.currentPage - 1} enabled={props.currentPage !== 1}>
-		<span aria-hidden='true'>« previous</span>
-		<span className={styles.visuallyhidden}>previous set of pages</span>
+	<Item style={{width:"10rem"}} {...props} pageNumber={props.currentPage - 1} enabled={props.currentPage !== 1}>
+		{props.currentPage !== 1 ?
+		<><span aria-hidden='true'>« previous</span>
+		<span className={styles.visuallyhidden}>previous set of pages</span> 
+	</>
+	: null}
 	</Item>
 )
 
 const NextItem = props => (
-	<Item {...props} pageNumber={props.currentPage + 1} enabled={props.currentPage < props.numPages}>
-		<span className={styles.visuallyhidden}>next set of pages</span>
-		<span aria-hidden='true'>next »</span>
+	<Item style={{width:"10rem"}} {...props} pageNumber={props.currentPage + 1} enabled={props.currentPage < props.numPages}>
+		{props.currentPage < props.numPages ?
+		<><span className={styles.visuallyhidden}>next set of pages</span>
+		<span aria-hidden='true'>next »</span> 
+	</>
+	: null}
+		
+		
 	</Item>
 )
 
@@ -25,6 +33,7 @@ const NumberedItem = props => (
 )
 
 const Item = ({
+	style,
 	enabled = true,
 	children,
 	currentPage,
@@ -38,8 +47,7 @@ const Item = ({
 	}
 
 	return (
-		<li>
-			{' '}
+		<li style={style}>
 			{enabled ? (
 				<a
 					{...ariaProps}

@@ -17,7 +17,7 @@
 describe('Home', () => {
 	it('should render homepage', () => {
 		cy.visit('http://localhost:3000/')
-		cy.get('h1').contains('βeta')
+		cy.get('h1').contains('Referral')
 	})
 
 	it('should be accessible', () => {

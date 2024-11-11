@@ -7,9 +7,9 @@ a,
 a:hover,
 a:active,
 a:visited {
-	color: var(--theme-interaction);
+	color: var(--theme-link);
 	text-decoration: underline;
-	cursor: pointer;
+	cursor: pointer !important;
 	font-weight: var(--link-weight);
 }
 

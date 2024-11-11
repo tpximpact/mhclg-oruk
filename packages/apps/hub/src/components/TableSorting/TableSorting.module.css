@@ -7,6 +7,16 @@
 	--select-bg: rgba(255, 255, 255, 0.2);
 }
 
+.screenreaderOnly {
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
+  }
+
 .sorting label {
 	font-weight: bold;
 	margin-right: 2rem;
