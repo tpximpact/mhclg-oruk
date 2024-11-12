@@ -5,7 +5,7 @@ import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 export const Test = ({ data, label, errorsAreFatal }) => {
 	const status = data.success ? STATUS.PASS : errorsAreFatal ? STATUS.FAIL : STATUS.OTHER
 	return (
-		<>
+	<> 
 			<div
 				className={styles.test}
 				style={{
@@ -36,20 +36,14 @@ export const Test = ({ data, label, errorsAreFatal }) => {
 					<p>
 						Endpoint: <strong>{data.endpoint}</strong>
 					</p>
-					{data.results && data.results.length > 0 ? (
-						<Results label={label} data={data.results} />
+					{data.messages && data.messages.length > 0 ? (
+						<Results label={label} data={data.messages} />
 					) : null}
 				</div>
 			</div>
 		</>
 	)
 }
-
-/*
-	
-
-
-*/
 
 const Results = ({ data, ...props }) => (
 	<ul className={styles.results}>
