@@ -48,6 +48,7 @@
 
 .result {
 	margin-top: 1rem;
+	list-style: none;
 
 	.resultMessage {
 		display: block;
