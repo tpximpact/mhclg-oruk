@@ -45,9 +45,9 @@ const Tools = () => (
 					<li>
 						<a href='/developers/dashboard'>Dashboard</a>
 					</li>
-					{/*<li>
+					<li>
 						<a href='/community/directory'>Directory</a>
-					</li>*/}
+					</li>
 				</ul>
 			</div>
 		</section>
