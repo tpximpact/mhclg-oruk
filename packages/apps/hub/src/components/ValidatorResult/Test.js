@@ -2,6 +2,7 @@ import styles from './Test.module.css'
 import Icon from '@tpx/Icon'
 import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
 
+
 export const Test = ({ data, label, errorsAreFatal }) => {
 	const status = data.success ? STATUS.PASS : errorsAreFatal ? STATUS.FAIL : STATUS.OTHER
 	return (
@@ -55,10 +56,17 @@ const Results = ({ data, ...props }) => (
 
 const Result = ({ result, label }) => (
 	<li className={styles.result}>
-		<span className={styles.resultDescription}>
+		{/*<span className={styles.resultDescription}>
 			{capitalizeFirstLetter(label)}: {result.description} :
-		</span>
-		<span className={styles.resultMessage}>{result.message}</span>
+		</span>*/}
+		<span className={styles.resultMessage}>
+		<Icon
+					colour={getColourForStatus(STATUS.FAIL)}
+					weight='4'
+					icon={getIconForStatus(STATUS.FAIL)}
+					size='18'
+				/>&nbsp;
+		{result.message}</span>
 	</li>
 )
 
