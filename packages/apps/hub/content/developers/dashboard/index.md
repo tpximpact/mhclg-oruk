@@ -12,6 +12,6 @@ The ORUK Dashboard helps you quickly assess your service data feed's status and 
 
 **How it works**
 
-* View live data[LINK TO DIRECTORY] on whether your service feeds are available now.
-* Get real-time feedback [LINK TO VALIDATOR] on how well your service directory complies with the ORUK standard.
-* See which types of data are included in your service directory.
+* View live data[LINK TO DIRECTORY] on whether your service feeds are available now
+* Get real-time feedback [LINK TO VALIDATOR] on how well your service directory complies with the ORUK standard
+* See which types of data are included in your service directory
