@@ -14,7 +14,7 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 					<input type='URL' defaultValue={defaultValue} name='uri' placeholder="Enter URL to check" />
 				</label>
 				<span className={styles.example}>
-					eg: https://example.com/my-oruk-feed
+					The <strong>base URL</strong> of all your services, eg: https://example.com/my-oruk-feed
 				</span>
 				<input type='hidden' name='id' value={UUID} />
 				<Button>Check</Button>
