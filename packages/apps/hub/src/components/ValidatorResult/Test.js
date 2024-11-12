@@ -54,7 +54,8 @@ const Results = ({ data, ...props }) => (
 	</ul>
 )
 
-const Result = ({ result, label }) => (
+const Result = ({ result
+/*label*/ }) => (
 	<li className={styles.result}>
 		{/*<span className={styles.resultDescription}>
 			{capitalizeFirstLetter(label)}: {result.description} :
@@ -70,4 +71,4 @@ const Result = ({ result, label }) => (
 	</li>
 )
 
-const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1)
+// const capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1)
