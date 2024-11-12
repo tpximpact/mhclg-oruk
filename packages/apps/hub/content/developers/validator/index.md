@@ -1,23 +1,17 @@
-# Validate your ORUK data feed
+# Check your ORUK compliance 
 
-Use the validator to check if your service directory meets the Open Referral UK standard. It will highlight any issues and show what data types are included in your feed. Validation can take up to X minutes. 
+Use this tool to check if the data feed you're providing meets the Open Referral UK standard. 
 
-This tool checks that an online service correctly follows the standard.
+✅ Service **developers** can get feedback to debug and improve their work_.
 
-[form validation] Copy your Base URL here
+✅ Service **owners** can monitor their compliance on an ongoing basis_.
 
-[button] Validate your ORUK data 
+✅ Service **comissioners** can assure service quality. 
 
-✅ Service **developers** can use the tool _to debug and improve their work_.
+[form validation] Copy your URL here
 
-✅ Service **owners** can use the tool _to monitor their compliance on an ongoing basis_.
+[button] Check 
 
-✅ Service **comissioners** can use the tool for _quality assurance_.
-
-## Example validation reports
-
-You can explore the type of results you can expect using the validator with these examples:
+Explore the type of results you can expect to receive below. 
 
 [Pass](/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock) | [Pass - but with warnings](/developers/validator/4c305b8e-204e-4211-8670-9fd0d93b55f3?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/warn) | [Fail](/developers/validator/886de765-9e51-45e9-b4ea-5c69e4e86877?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail)
-
-## Validate a service
