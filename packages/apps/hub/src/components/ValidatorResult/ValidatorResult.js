@@ -6,7 +6,7 @@ import styles from './ValidatorResult.module.css'
 export const ValidatorResult = ({ result }) => {
 	result = result.result
 	return (
-		<div>
+	<div>
 			<Title result={result} />
 			{result.metadata && <Metadata result={result} />}
 			{result.testSuites && <Tests result={result} />}
