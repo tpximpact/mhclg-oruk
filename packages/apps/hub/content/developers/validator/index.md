@@ -8,9 +8,9 @@ Use this tool to check if the data feed you're providing meets the Open Referral
 
 ✅ Service **comissioners** can assure service quality. 
 
-[form validation] Enter URL here
+Enter URL here
 
-[button] Check 
+Check 
 
 Explore the type of results you can expect to receive. 
 
