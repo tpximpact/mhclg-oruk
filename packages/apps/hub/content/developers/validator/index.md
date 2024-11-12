@@ -1,6 +1,12 @@
-# Service validation tool
+# Validate your ORUK data feed
+
+Use the validator to check if your service directory meets the Open Referral UK standard. It will highlight any issues and show what data types are included in your feed. Validation can take up to X minutes. 
 
 This tool checks that an online service correctly follows the standard.
+
+[form validation] Copy your Base URL here
+
+[button] Validate your ORUK data 
 
 ✅ Service **developers** can use the tool _to debug and improve their work_.
 
