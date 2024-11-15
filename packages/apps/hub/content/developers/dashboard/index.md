@@ -4,7 +4,7 @@ View organisations and suppliers who have successfully implemented compliant ORU
 
 **About compliance**
 
-The ORUK Dashboard helps you quickly assess your service data feed's status and performance. It provides near real-time feedback on service availability and quality, helping you understand if the service is available now.
+The ORUK dashboard helps you quickly assess your service data feed's status and performance. It provides near real-time feedback on service availability and quality, helping you understand if the service is available now.
 
 **Your service directory health check**
 
