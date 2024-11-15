@@ -1,4 +1,4 @@
-# Open Referral UK verified feeds directory
+#Verified feeds directory
 
 Browse verified providers and join the network of trusted compliant services.
 
