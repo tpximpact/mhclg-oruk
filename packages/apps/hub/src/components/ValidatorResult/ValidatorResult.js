@@ -8,7 +8,7 @@ export const ValidatorResult = ({ result }) => {
 	return (
 	<div>
 			<Title result={result} />
-			{result.metadata && <Metadata result={result} />}
+			{/*result.metadata && <Metadata result={result} />*/}
 			{result.testSuites && <Tests result={result} />}
 			{result.counts && <Counts result={result} />}
 		</div>
