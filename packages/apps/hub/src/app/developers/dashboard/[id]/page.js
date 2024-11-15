@@ -5,7 +5,7 @@ import { PageMargin } from '@tpx/PageMargin'
 
 export async function generateMetadata() {
 	return {
-		title: `ORUK dashboard report`,
+		title: `ORUK data feed report`,
 		description: 'Detail view'
 	}
 }

@@ -4,6 +4,6 @@ Homepage content here.
 
 Of particular interest:
 
-- [Validator](/developers/validator)
-- [Dashboard](/developers/dashboard)
-- [Directory](/community/directory)
+- [Check your ORUK compliance](/developers/validator)
+- [Verified feed availability](/developers/dashboard)
+- [Verified feed directory](/community/directory)

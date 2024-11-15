@@ -14,7 +14,7 @@ export const DashboardDetails = ({ result }) => {
 			<h1>{getDetailsTitle(result)}</h1>
 
 			<div className={styles.service}>
-				<a href={getDetailsURI(result)} target='_blank'>
+				Data feed: <a href={getDetailsURI(result)} target='_blank'>
 					{getDetailsURI(result)}
 				</a>
 				<em>&nbsp;(opens in new window)</em>

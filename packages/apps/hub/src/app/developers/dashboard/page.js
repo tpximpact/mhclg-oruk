@@ -5,7 +5,7 @@ import { PageMargin } from '@tpx/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 export const metadata = {
-	title: 'ORUK dashboard'
+	title: 'ORUK verified feed availabilty'
 }
 
 export default async function Page({ searchParams }) {

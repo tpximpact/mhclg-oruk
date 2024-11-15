@@ -8,7 +8,7 @@ export const Title = ({ result }) => {
 	return (
 		<header className={styles.header}>
 			<h2 className={styles.title}>
-				<span className={styles.light}>for </span>
+				<span className={styles.light}>Data feed URL: </span>
 				<span className={styles.url}>{result.service.url}</span>
 			</h2>
 			<p className={styles.field}>

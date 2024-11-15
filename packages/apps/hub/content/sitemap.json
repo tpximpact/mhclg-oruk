@@ -33,7 +33,7 @@
 		"childNodes": [
 			{
 				"name": "directory",
-				"label": "Service Directory",
+				"label": "Verified feed directory",
 				"urlPath": "directory",
 				"contentPath": "directory"
 			},
@@ -79,14 +79,14 @@
 			},
 			{
 				"name": "validator",
-				"label": "Service Validator",
+				"label": "Check your compliance",
 				"urlPath": "validator",
 				"contentPath": "validator",
-				"teaser": "This tool checks that a specific service directory follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned Service Directory. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
+				"teaser": "This tool checks that a specific data feed follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned data feed. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
 			},
 			{
 				"name": "dashboard",
-				"label": "Data Providers",
+				"label": "Verified feed availability",
 				"urlPath": "dashboard",
 				"contentPath": "dashboard",
 				"teaser": "This tool provides near-real time status reporting for core service providers."
