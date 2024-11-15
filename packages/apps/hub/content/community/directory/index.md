@@ -1,4 +1,4 @@
-#Verified feed directory
+# Verified feed directory
 
 Browse verified providers and join the network of trusted compliant services.
 
