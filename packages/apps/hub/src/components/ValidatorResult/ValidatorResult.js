@@ -8,13 +8,14 @@ export const ValidatorResult = ({ result }) => {
 	return (
 	<div>
 			<Title result={result} />
-			{result.metadata && <Metadata result={result} />}
+			{/*result.metadata && <Metadata result={result} />*/}
 			{result.testSuites && <Tests result={result} />}
 			{result.counts && <Counts result={result} />}
 		</div>
 	)
 }
 
+/*
 const Metadata = ({ result }) => (
 	<Section title='Metadata'>
 		<ol className={styles.metadataList}>
@@ -26,6 +27,8 @@ const Metadata = ({ result }) => (
 		</ol>
 	</Section>
 )
+*/
+
 
 const Counts = ({ result }) => (
 	<Section title={'Counts'}>
