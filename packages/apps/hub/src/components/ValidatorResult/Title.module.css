@@ -1,9 +1,11 @@
 .header {
 	font-weight: 700;
-	font-size: 1.5rem;
+	
 	margin-bottom: 4rem;
 
+
 	.title {
+		font-size: 1.4rem;
 		margin-top: 0;
 		margin-bottom: 2rem;
 		margin-top: 1rem;

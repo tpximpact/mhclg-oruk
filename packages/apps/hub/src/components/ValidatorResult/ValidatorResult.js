@@ -15,6 +15,7 @@ export const ValidatorResult = ({ result }) => {
 	)
 }
 
+/*
 const Metadata = ({ result }) => (
 	<Section title='Metadata'>
 		<ol className={styles.metadataList}>
@@ -26,6 +27,8 @@ const Metadata = ({ result }) => (
 		</ol>
 	</Section>
 )
+*/
+
 
 const Counts = ({ result }) => (
 	<Section title={'Counts'}>
