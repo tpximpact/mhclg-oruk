@@ -17,7 +17,7 @@ export const DashboardDetails = ({ result }) => {
 				<a href={getDetailsURI(result)} target='_blank'>
 					{getDetailsURI(result)}
 				</a>
-				<em>(opens in new window)</em>
+				<em>&nbsp;(opens in new window)</em>
 			</div>
 
 			{result.payload.map((data, i) => (
@@ -29,7 +29,7 @@ export const DashboardDetails = ({ result }) => {
 	)
 }
 
-const getDetailsStatus = result => result.isValid.value
+const getDetailsStatus = result => result.isValid.value ? result.isValid.value.toLowerCase() : null
 
 const Validation = ({ status, result }) => {
 	const colour = getColourForStatus(status, true)
@@ -45,7 +45,7 @@ const Validation = ({ status, result }) => {
 				data={{
 					label: 'Last checked',
 					value: getDetailsLastTest(result),
-					dataType: 'xsd:dateTime'
+					dataType: 'oruk:dataType:dateTime'
 				}}
 			/>
 		</section>
@@ -79,10 +79,10 @@ const Field = ({ data }) => {
 const FieldValue = ({ data }) => {
 	let result
 	switch (data.dataType) {
-		case 'xsd:string':
+		case 'oruk:dataType:string':
 			result = <FVString data={data.value} url={data.url} />
 			break
-		case 'xsd:dateTime':
+		case 'oruk:dataType:dateTime':
 			result = <FVDate data={data.value} />
 			break
 	}
