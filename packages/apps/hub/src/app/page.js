@@ -43,10 +43,10 @@ const Tools = () => (
 						<a href='/developers/validator'>Validator</a>
 					</li>
 					<li>
-						<a href='/developers/dashboard'>Dashboard</a>
+						<a href='/developers/dashboard'>Verified feed availability</a>
 					</li>
 					<li>
-						<a href='/community/directory'>Directory</a>
+						<a href='/community/directory'>Verified feed directory</a>
 					</li>
 				</ul>
 			</div>
