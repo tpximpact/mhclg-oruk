@@ -7,18 +7,20 @@ import { Logo } from '@/components/Logo'
 import { Menu } from '@/components/Menu'
 import Link from 'next/link'
 
-export const Header = ({ items }) => {
+export const Header = ({ items,
+	enableMenu=false}) => {
 	const [showMenu, setShowMenu] = useState(false)
 
 	return (
 		<header>
-			<Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
+			<Topbar enableMenu={enableMenu}
+			showMenu={showMenu} setShowMenu={setShowMenu} />
 			{showMenu && <Menu ariaName='mainmenu' items={items} setShowMenu={setShowMenu} />}
 		</header>
 	)
 }
 
-const Topbar = ({ showMenu, setShowMenu }) => {
+const Topbar = ({ enableMenu, showMenu, setShowMenu }) => {
 	return (
 		<div className={styles.Topbar}>
 			<PageMargin>
@@ -30,7 +32,9 @@ const Topbar = ({ showMenu, setShowMenu }) => {
 					</div>
 					<div className={styles.centre}></div>
 					<div className={styles.right}>
-						<MenuOpener showMenu={showMenu} setShowMenu={setShowMenu} />
+						{
+							enableMenu && <MenuOpener showMenu={showMenu} setShowMenu={setShowMenu} />
+						}
 					</div>
 				</div>
 			</PageMargin>
