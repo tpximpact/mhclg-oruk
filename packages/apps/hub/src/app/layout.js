@@ -56,9 +56,7 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
-					<Header items={items} 
-					enableMenu={configValueToBoolean(process.env.USE_NAV)}
-					/>
+					{configValueToBoolean(process.env.USE_NAV) ? <Header items={items} /> : null}
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />
