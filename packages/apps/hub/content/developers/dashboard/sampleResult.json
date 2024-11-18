@@ -2,28 +2,28 @@
 	"publisher": {
 		"label": "Published by",
 		"value": "Borsetshire County Council",
-		"dataType": "xsd:string"
+		"datatype": "xsd:string"
 	},
 	"title": {
 		"label": "Title",
 		"value": "Borsetshire Services",
-		"dataType": "xsd:string"
+		"datatype": "xsd:string"
 	},
 	"serviceUrl": {
 		"label": "URL",
 		"value": "http://example.com/lorem/ipsum",
-		"dataType": "xsd:anyURI",
+		"datatype": "xsd:anyURI",
 		"url": "http://example.com/lorem/ipsum"
 	},
 	"isValid": {
 		"label": "Validation status",
 		"value": "fail",
-		"dataType": "xsd:string"
+		"datatype": "xsd:string"
 	},
 	"lastTested": {
 		"label": "Validation status",
 		"value": "05 Nov 3034 23:00:00 GMT",
-		"dataType": "xsd:dateTime"
+		"datatype": "xsd:dateTime"
 	},
 	"payload": [
 		{
@@ -32,18 +32,18 @@
 				{
 					"label": "Developer",
 					"value": "Acme",
-					"dataType": "xsd:string",
+					"datatype": "xsd:string",
 					"url": "https://example.com"
 				},
 				{
 					"label": "Description",
 					"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consequat eros eu vulputate luctus. Sed suscipit quam id nisi aliquam scelerisque. Sed commodo congue felis eu laoreet. Aenean auctor lacus mauris, eget interdum quam tincidunt a. Sed feugiat, dui in sodales maximus, neque nisi vulputate leo, eget venenatis mauris magna et ex. Maecenas laoreet est ut congue auctor. Morbi vitae augue vitae sapien congue maximus.",
-					"dataType": "xsd:string"
+					"datatype": "xsd:string"
 				},
 				{
 					"label": "Some date",
 					"value": "05 Nov 3034 23:00:00 GMT",
-					"dataType": "xsd:dateTime"
+					"datatype": "xsd:dateTime"
 				}
 			]
 		},
@@ -53,7 +53,7 @@
 				{
 					"label": "Some field",
 					"value": "Some value",
-					"dataType": "xsd:string"
+					"datatype": "xsd:string"
 				}
 			]
 		}
