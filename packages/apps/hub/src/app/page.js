@@ -40,7 +40,7 @@ const Tools = () => (
 			>
 				<ul>
 					<li>
-						<a href='/developers/validator'>Validator</a>
+						<a href='/developers/validator'>Check data feed compliance</a>
 					</li>
 					<li>
 						<a href='/developers/dashboard'>Verified feed availability</a>
