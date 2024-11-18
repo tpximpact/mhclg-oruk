@@ -5,7 +5,36 @@ import styles from './ValidatorForm.module.css'
 import { Button } from '@/components/Button'
 import { useState, useRef  } from 'react'
 
-export const ValidatorForm = ({ action, defaultValue }) => {
+const Heading = ({title }) =>
+<h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>{title}</h2>
+
+// TODO: load from markdown
+const Samples = () => <div>
+		<Heading title="Sample reports"/>
+		<p>For a quick preview of the results this tool reports, choose an example:</p>
+		<ol className={styles.samples}>
+		<li><Link href="/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock">Pass</Link>
+		</li><li>
+		<Link href="/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/warn">Pass - but with warnings</Link> 
+		</li>
+		<li><Link href="/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail">Fail</Link></li>
+		</ol>
+		
+	
+
+		</div>
+
+export const ValidatorForm = (props) =>
+	<Columns layout={42}>
+		<Form {...props} />
+		<Samples />
+	</Columns>
+
+ const Form = ({ 
+	title,
+	action, 
+	defaultValue 
+}) => {
 	const UUID = uuidv4()
 	const formRef = useRef(null);
 	const inputRef = useRef(null);
@@ -31,13 +60,14 @@ export const ValidatorForm = ({ action, defaultValue }) => {
 	}
 	return (
 		<div className={styles.form}>
-			<form  ref={formRef}  action={action}>
+			{title && <Heading title={title}/>}
+			<form ref={formRef} action={action}>
 				<label className={styles.label}>
 					URL
 					<input ref={inputRef} type='URL' defaultValue={defaultValue} name='uri' placeholder="Enter URL to check" />
 				</label>
 				<span className={styles.example}>
-					The <strong>base URL</strong> your ORUK data service, e.g. https://example.com/my-oruk-feed
+					The <strong>base URL</strong> the ORUK data service e.g. <br/>https://example.com/my-oruk-feed
 				</span>
 				<input type='hidden' name='id' value={UUID} />
 				<Button onClick={submit} disabled={disabled}>Check</Button>
