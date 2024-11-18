@@ -21,10 +21,9 @@ export default async function Page({
 			<RemoteJSON
 				method={METHOD.POST}
 				RetryComponent={() => (
-					<section style={{ marginTop: '2rem' }}>
-						<h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Retry validation</h2>
-						<ValidatorForm action={navigate} defaultValue={searchParams.uri} />
-					</section>
+					
+						<ValidatorForm
+					title="Re-check"	action={navigate} defaultValue={searchParams.uri} />
 				)}
 				ResultRenderComponent={ValidatorResult}
 				endpoint={process.env.VALIDATOR_ENDPOINT}
