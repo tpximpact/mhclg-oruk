@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import Columns from '@tpx/Columns'
 import { v4 as uuidv4 } from 'uuid'
 import styles from './ValidatorForm.module.css'
 import { Button } from '@/components/Button'
@@ -56,7 +58,7 @@ export const ValidatorForm = (props) =>
 		// disable the button
 		setDisabled(true)
 		// and submit the form
-		formRef.current.submit()
+		formRef.current.requestSubmit()
 	}
 	return (
 		<div className={styles.form}>
