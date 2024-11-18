@@ -12,7 +12,7 @@ const Heading = ({title }) =>
 // TODO: load from markdown
 const Samples = () => <div>
 		<Heading title="Sample reports"/>
-		<p>For a quick preview of the results this tool reports, choose:</p>
+		<p>For a quick preview of the results this tool reports, choose an example:</p>
 		<ol className={styles.samples}>
 		<li><Link href="/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock">Pass</Link>
 		</li><li>
