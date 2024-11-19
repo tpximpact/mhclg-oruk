@@ -15,7 +15,7 @@ export const Header = ({ items,
 		<header>
 			<Topbar enableMenu={enableMenu}
 			showMenu={showMenu} setShowMenu={setShowMenu} />
-			{showMenu && <Menu ariaName='mainmenu' items={items} setShowMenu={setShowMenu} />}
+			{showMenu ? <Menu ariaName='mainmenu' items={items} setShowMenu={setShowMenu} /> : null }
 		</header>
 	)
 }
@@ -33,7 +33,7 @@ const Topbar = ({ enableMenu, showMenu, setShowMenu }) => {
 					<div className={styles.centre}></div>
 					<div className={styles.right}>
 						{
-							enableMenu && <MenuOpener showMenu={showMenu} setShowMenu={setShowMenu} />
+							enableMenu ? <MenuOpener showMenu={showMenu} setShowMenu={setShowMenu} /> : null
 						}
 					</div>
 				</div>
