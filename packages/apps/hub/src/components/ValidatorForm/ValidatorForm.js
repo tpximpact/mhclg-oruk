@@ -55,10 +55,12 @@ export const ValidatorForm = (props) =>
 			e.preventDefault()
 			return false
 		}
+		
 		// disable the button
 		setDisabled(true)
 		// and submit the form
 		formRef.current.requestSubmit()
+		
 	}
 	return (
 		<div className={styles.form}>
