@@ -7,6 +7,11 @@
 	border: 0 solid;
 	box-sizing: border-box;
 }
+
+.button:disabled {
+	display: none;
+}
+
 .button {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-appearance: button;
