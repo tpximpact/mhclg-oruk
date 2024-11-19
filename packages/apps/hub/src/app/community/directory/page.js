@@ -13,7 +13,9 @@ export default async function Page({ searchParams }) {
 
 	return (
 		<>
-			<NamedMarkdownPage name='directory' />
+			<NamedMarkdownPage 
+			autoMenu={false}
+			name='directory' />
 			<PageMargin>
 				{/*<RemoteJSON
 					method={METHOD.GET}
