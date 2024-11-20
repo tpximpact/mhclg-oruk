@@ -12,7 +12,9 @@ export default async function Page({ searchParams }) {
 	
 	return (
 		<>
-			<NamedMarkdownPage name='dashboard' />
+			<NamedMarkdownPage 
+			autoMenu={false}
+			name='dashboard' />
 			<PageMargin>
 				<RemoteJSON
 					method={METHOD.GET}
