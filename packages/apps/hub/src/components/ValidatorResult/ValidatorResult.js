@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 import { Test } from './Test'
 import { Title } from './Title'
 
@@ -8,14 +8,14 @@ import styles from './ValidatorResult.module.css'
 
 export const ValidatorResult = ({ result }) => {
 	result = result.result
-	
-	// this is ugly, but the button was failing to reset page scroll behaviour 
+
+	// this is ugly, but the button was failing to reset page scroll behaviour
 	useEffect(() => {
-	window.scrollTo(0, 0);
-  }, []);
-	
+		window.scrollTo(0, 0)
+	}, [])
+
 	return (
-	<div>
+		<div>
 			<Title result={result} />
 			{/*result.metadata && <Metadata result={result} />*/}
 			{result.testSuites && <Tests result={result} />}
@@ -37,7 +37,6 @@ const Metadata = ({ result }) => (
 	</Section>
 )
 */
-
 
 const Counts = ({ result }) => (
 	<Section title={'Counts'}>
