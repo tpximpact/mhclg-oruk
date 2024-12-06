@@ -1,3 +1,0 @@
-# Site information
-
-Copy needed
