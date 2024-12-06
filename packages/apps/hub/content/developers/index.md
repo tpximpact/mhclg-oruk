@@ -1,3 +1,0 @@
-# Developer resources
-
-Copy needed
