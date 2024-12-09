@@ -1,6 +1,6 @@
 import styles from './Test.module.css'
-import Icon from '@tpx/Icon'
-import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+import Icon from '@/components/Icon'
+import { STATUS, getColourForStatus, getIconForStatus } from '@/utilities/status'
 
 export const Test = ({ data, label, errorsAreFatal }) => {
 	const status = data.success ? STATUS.PASS : errorsAreFatal ? STATUS.FAIL : STATUS.OTHER
