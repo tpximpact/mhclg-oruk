@@ -5,7 +5,7 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
-//import { listDynamicSection } from '@/util/dynamicSection'
+
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -15,18 +15,19 @@ import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import { Crumbtrail } from '@/components/Crumbtrail'
 import defaultMetadata from '/content/metadata.json'
-//import { getSiteItems } from '@/util/getSiteItems'
-//import { siteStructureWithFullPaths } from '@/util/menuing'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
+
+import { listDynamicSection } from '@/utilities/dynamicSection'
+import { getSiteItems } from '@/utilities/getSiteItems'
+import { siteStructureWithFullPaths } from '@/utilities/menuing'
 
 
 const font = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
-/*
 const allItems = () => {
 	let result = siteStructureWithFullPaths(getSiteItems()).filter(item => item.hide != true)
 	result.map(item => {
@@ -48,11 +49,9 @@ const allItems = () => {
 	})
 	return result
 }
-*/
 
 export default function RootLayout({ children }) {
-	//const items = allItems()
-	let items
+	const items = allItems()
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={`${font.className}`}>

@@ -1,7 +1,7 @@
 import {expandTree} from './expandTree'
-import pageTree from '../content/sitemap.json'
+import {getRawPageTree} from './getRawPageTree'
 
-export const sitePages = () => expandTree(pageTree, false)
+export const getExpandedPageTree = () => expandTree(getRawPageTree(), false)
 
 /*
 
