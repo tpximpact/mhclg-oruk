@@ -1,6 +1,6 @@
 import { DynamicSectionListing } from '@/components/DynamicSection'
-import { listDynamicSection } from '@/util/dynamicSection'
-import { PageMargin } from '@tpx/PageMargin'
+import { listDynamicSection } from '@/utilities/dynamicSection'
+import { PageMargin } from '@/components/PageMargin'
 
 export default function Page() {
 	return (

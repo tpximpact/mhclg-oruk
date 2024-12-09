@@ -4,7 +4,7 @@ import { MarkdownContent } from '@/components/NamedMarkdownPage'
 import styles from './DynamicSection.module.css'
 import { PageThumbnail } from '@/components/PageThumbnail'
 
-export const DynamicSectionPage = ({ date, content, ...linkedPages }) => {
+export const DynamicSectionPage = async ({ date, content, ...linkedPages }) => {
 	return (
 		<section>
 			<MarkdownContent raw={content} />
