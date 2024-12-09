@@ -1,7 +1,7 @@
 // import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { Directory } from '@/components/Directory'
 import { generate } from '@/components/Dashboard'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 export const metadata = {

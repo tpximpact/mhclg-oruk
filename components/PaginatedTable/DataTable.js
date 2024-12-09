@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import Icon, { ICON_TYPE } from '@tpx/Icon'
-import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+import Icon, { ICON_TYPE } from '@/components/Icon'
+import { STATUS, getColourForStatus, getIconForStatus } from '@/utilities/status'
 import { formatDate } from './formatDate'
 import styles from './DataTable.module.css'
 
