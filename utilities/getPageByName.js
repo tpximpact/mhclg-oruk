@@ -1,3 +1,3 @@
-import {sitePages} from './sitePages'
+import {getExpandedPageTree} from './getExpandedPageTree'
 
-export const getPageByName = name => sitePages().find(page => page.name === name)
+export const getPageByName = name => getExpandedPageTree().find(page => page.name === name)
