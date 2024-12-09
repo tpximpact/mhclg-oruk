@@ -1,7 +1,7 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 
 export default function Page() {
 	return (

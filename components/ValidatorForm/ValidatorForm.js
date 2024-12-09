@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Columns from '@tpx/Columns'
+import Columns from '@/components/Columns'
 import { v4 as uuidv4 } from 'uuid'
 import styles from './ValidatorForm.module.css'
 import { Button } from '@/components/Button'
