@@ -18,40 +18,14 @@ import defaultMetadata from '/content/metadata.json'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
-
-import { listDynamicSection } from '@/utilities/dynamicSection'
-import { getSiteItems } from '@/utilities/getSiteItems'
-import { siteStructureWithFullPaths } from '@/utilities/menuing'
-
+import {getRootLayoutItems} from '@/utilities/getRootLayoutItems'
 
 const font = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
-const allItems = () => {
-	let result = siteStructureWithFullPaths(getSiteItems()).filter(item => item.hide != true)
-	result.map(item => {
-		if (item.dynamic) {
-			let dynamicOverflow
-			let dynamicChildNodes = listDynamicSection({
-				rootContentFolder: item.urlPath
-			})
-			const count = dynamicChildNodes.length
-			const limit = 3
-			if (count > limit) {
-				dynamicChildNodes = dynamicChildNodes.slice(0, limit)
-				dynamicOverflow = count - limit
-			}
-			item.dynamicOverflow = dynamicOverflow
-			item.dynamicChildNodes = dynamicChildNodes
-			return item
-		}
-	})
-	return result
-}
-
 export default function RootLayout({ children }) {
-	const items = allItems()
+	const items = getRootLayoutItems()
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={`${font.className}`}>
