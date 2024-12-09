@@ -1,7 +1,7 @@
 import styles from './Dashboard.module.css'
 import Link from 'next/link'
-import Icon from '@tpx/Icon'
-import { STATUS, getColourForStatus, getIconForStatus } from '@/util/status'
+import Icon from '@/components/Icon'
+import { STATUS, getColourForStatus, getIconForStatus } from '@/utilities/status'
 
 const formatDate = dateString => {
 	const options = {

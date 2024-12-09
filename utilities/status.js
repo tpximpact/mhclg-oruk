@@ -1,4 +1,4 @@
-import { ICON_TYPE } from '@tpx/Icon'
+import { ICON_TYPE } from '@/components/Icon'
 
 export const STATUS = {
 	PASS: 'pass',

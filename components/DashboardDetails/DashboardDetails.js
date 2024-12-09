@@ -1,10 +1,9 @@
 import styles from './DashboardDetails.module.css'
 import {
-	// STATUS,
 	getColourForStatus,
 	getIconForStatus
-} from '@/util/status'
-import Icon from '@tpx/Icon'
+} from '@/utilities/status'
+import Icon from '@/components/Icon'
 
 export const DashboardDetails = ({ result }) => {
 	result = result.result
