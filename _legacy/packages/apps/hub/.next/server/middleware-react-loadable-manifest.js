@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/Axe/index.js -> @axe-core/react\":{\"id\":\"components/Axe/index.js -> @axe-core/react\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_axe-core_react_dist_index_mjs.js\"]},\"components/Axe/index.js -> react-dom\":{\"id\":\"components/Axe/index.js -> react-dom\",\"files\":[]}}"
