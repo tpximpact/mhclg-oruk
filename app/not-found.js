@@ -1,6 +1,6 @@
 import { Sitemap } from '@/components/Sitemap'
-import { getSiteItems } from '@/util/getSiteItems'
-import { siteStructureWithFullPaths } from '@/util/menuing'
+import { getRawPageTree } from '@/utilities/getRawPageTree'
+import { siteStructureWithFullPaths } from '@/utilities/menuing'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 export const metadata = {
@@ -11,7 +11,7 @@ export default function Page() {
 	return (
 		<>
 			<NamedMarkdownPage name='not-found' />
-			<Sitemap showHeading={false} data={siteStructureWithFullPaths(getSiteItems())} />
+			<Sitemap showHeading={false} data={siteStructureWithFullPaths(getRawPageTree())} />
 		</>
 	)
 }

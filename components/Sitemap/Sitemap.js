@@ -1,9 +1,9 @@
 import styles from './Sitemap.module.css'
 import Link from 'next/link'
 import { PageList } from '@/components/PageList'
-import { PageMargin } from '@tpx/PageMargin'
-import { formatNodesForPageMenu } from '@/util/formatNodesForPageMenu'
-import { listDynamicSection } from '@/util/dynamicSection'
+import { PageMargin } from '@/components/PageMargin'
+import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
+import { listDynamicSection } from '@/utilities/dynamicSection'
 
 export const Sitemap = ({ showHeading = true, data }) => (
 	<PageMargin>

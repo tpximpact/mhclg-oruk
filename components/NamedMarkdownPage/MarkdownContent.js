@@ -2,11 +2,11 @@
 import { Children, cloneElement } from 'react'
 import { marked } from 'marked'
 import parse from 'html-react-parser'
-import Columns from '@tpx/Columns'
+import Columns from '@/components/Columns'
 import styles from './Menu.module.css'
 import Link from 'next/link'
 
-export const MarkdownContent = ({ raw, autoMenu, afterLinks }) => {
+export  const MarkdownContent = async ({ raw, autoMenu, afterLinks }) => {
 	const html = marked.parse(raw)
 	if (autoMenu) {
 		return <MarkdownContentWithMenu html={html} afterLinks={afterLinks} />
