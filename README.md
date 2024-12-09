@@ -1,43 +1,20 @@
-# Next.js + Jest
+# Adopting OpenReferralUK
 
-This example shows how to configure Jest to work with Next.js.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e1b1ed31-6b28-4473-835a-f99717561741/deploy-status)](https://app.netlify.com/sites/openreferraluk/deploys) [![.github/workflows/storybook.yaml](https://github.com/tpximpact/mhclg-oruk/actions/workflows/storybook.yaml/badge.svg)](https://github.com/tpximpact/mhclg-oruk/actions/workflows/storybook.yaml)
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
+For documentation, please see [the wiki](https://github.com/tpximpact/mhclg-oruk/wiki)
 
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
+The component storybook is [here](https://tpximpact.github.io/mhclg-oruk/).
 
-## Deploy your own
+The (password protected) prototype preview is at [https://openreferraluk.netlify.app](https://openreferraluk.netlify.app). NB this is the stablve version and is suitable for demonstration to eg stakeholders etc
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
+A bleeding-edge development version is also available for internal eyes only, and with the caveat that you will encounter bugs, unfinshed work etc... [https://openreferraluk-development.netlify.app](https://openreferraluk-development.netlify.app)
+The (password protected) prototype preview is at [https://openreferraluk.netlify.app](https://openreferraluk.netlify.app)
 
-## How to Use
+## TODO
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
-
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
-
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
-
-## Running Tests
-
-```bash
-npm test
-```
-
-```bash
-yarn test
-```
-
-```bash
-pnpm test
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- Visual styling
+- Significant amounts of duplication in /util needs rationalising
+- Component storybook
+- unit test for utils
+- cypress test suite
