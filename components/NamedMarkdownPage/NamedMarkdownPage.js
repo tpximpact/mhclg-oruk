@@ -1,7 +1,7 @@
-import { getNamedSiteItem } from '@/util/getNamedSiteItem'
-import { readFile } from '@/util/readFile'
+import { getNamedSiteItem } from '@/utilities/getNamedSiteItem'
+import { readFile } from '@/utilities/readFile'
 import { MarkdownPage } from './MarkdownPage'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 
 export const NamedMarkdownPage = ({ name, markdownRaw, ...props }) => {
 	if (!markdownRaw) {

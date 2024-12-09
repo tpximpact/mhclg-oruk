@@ -1,7 +1,7 @@
-import { getSiteItems } from './getSiteItems'
+import { getRawPageTree } from './getRawPageTree'
 
 export const flattenSite = () => {
-	return flatten(getSiteItems())
+	return flatten(getRawPageTree())
 }
 
 const flatten = (a, parent) => {
