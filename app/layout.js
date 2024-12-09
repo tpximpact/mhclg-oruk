@@ -8,7 +8,7 @@ import '@/styles/no-js.css'
 //import { listDynamicSection } from '@/util/dynamicSection'
 import { Header } from '@/components/Header'
 //import { LandmarkMain } from '@/components/LandmarkMain'
-//import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
+import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
@@ -18,6 +18,9 @@ import defaultMetadata from '/content/metadata.json'
 //import { getSiteItems } from '@/util/getSiteItems'
 //import { siteStructureWithFullPaths } from '@/util/menuing'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
+import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
+
+
 
 const font = Inter({ subsets: ['latin'] })
 
@@ -62,7 +65,9 @@ export default function RootLayout({ children }) {
 					/>
 					{children}
 				</div>
-				{/*<LandmarkContentInfo items={items} showNav={configValueToBoolean(process.env.USE_NAV)} />*/}
+				<LandmarkContentInfo 
+					items={items}
+				infoItems={getInfoMenuItems()}	showNav={configValueToBoolean(process.env.USE_NAV)} />
 				<NoJsFallback />
 			</body>
 		</html>

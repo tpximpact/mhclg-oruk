@@ -1,8 +1,11 @@
-import { formatNodesForPageMenu } from '@/util/formatNodesForPageMenu'
+import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 import Link from 'next/link'
 import styles from './Menu.module.css'
 
 export const Menu = ({ ariaName, items, setShowMenu }) => {
+	if (!items) {
+		return
+	}
 	return (
 		<nav aria-label={ariaName} className={styles.Menu}>
 			{items.map((item, i) => (

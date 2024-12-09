@@ -1,11 +1,11 @@
 import styles from './footer.module.css'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 import Link from 'next/link'
 import { Menu } from '@/components/Menu'
 import { InfoMenu } from '@/components/InfoMenu'
 import { BannerMHCLG } from '@/components/BannerMHCLG'
 
-export const LandmarkContentInfo = ({ showNav, items }) => (
+export const LandmarkContentInfo = ({ showNav, items, infoItems }) => (
 	<footer role='contentInfo' className={styles.footer}>
 		<div className={styles.bottom}>
 			{showNav ? (
@@ -17,7 +17,7 @@ export const LandmarkContentInfo = ({ showNav, items }) => (
 							<Link href='/sitemap'>Sitemap</Link>
 						</div>
 						<div>
-							<InfoMenu />
+							<InfoMenu items={infoItems}/>
 						</div>
 					</PageMargin>
 				</>
