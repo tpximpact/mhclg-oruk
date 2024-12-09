@@ -1,6 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/developers/validator/page": "app/developers/validator/page.js",
-  "/sitemap/page": "app/sitemap/page.js",
-  "/updates/[slug]/page": "app/updates/[slug]/page.js"
-}
