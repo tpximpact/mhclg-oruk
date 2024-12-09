@@ -1,5 +1,5 @@
 import styles from './BannerMHCLG.module.css'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 
 export const BannerMHCLG = () => (
 	<aside className={styles.BannerMHCLG}>

@@ -1,15 +1,12 @@
 import styles from './InfoMenu.module.css'
-import structure from '../../../content/sitemap.json'
 import Link from 'next/link'
 
-const getInfoItems = () => {
-	const section = structure.filter(item => item.name === 'info')[0]
-	return section['childNodes']
+export const InfoMenu = ({
+items
+})	=> {
+if (!items) {
+	return
 }
-
-export const InfoMenu = () => {
-	const items = getInfoItems()
-
 	return (
 		<ol className={styles.InfoMenu}>
 			{items.map(item => (
