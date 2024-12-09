@@ -1,6 +1,6 @@
 import { DynamicSectionPage } from '@/components/DynamicSection'
-import { getDynamicPageContent } from '@/util/dynamicSection'
-import { PageMargin } from '@tpx/PageMargin'
+import { getDynamicPageContent } from '@/utilities/dynamicSection'
+import { PageMargin } from '@/components/PageMargin'
 
 const inFolder = 'updates'
 
