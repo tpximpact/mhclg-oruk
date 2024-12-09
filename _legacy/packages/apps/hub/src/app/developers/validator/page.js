@@ -8,7 +8,7 @@ export default function Page() {
 		<>
 			<NamedMarkdownPage name='validator' autoMenu={false} />
 			<PageMargin>
-				<ValidatorForm title="Check feed" action={navigate} />
+				<ValidatorForm title='Check feed' action={navigate} />
 			</PageMargin>
 		</>
 	)

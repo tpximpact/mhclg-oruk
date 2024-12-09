@@ -1,4 +1,4 @@
-import {getRawPageTree} from './getRawPageTree'
+import { getRawPageTree } from './getRawPageTree'
 
 export const getInfoMenuItems = () => {
 	const section = getRawPageTree().filter(item => item.name === 'info')[0]

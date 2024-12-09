@@ -1,5 +1,5 @@
-import {expandTree} from './expandTree'
-import {getRawPageTree} from './getRawPageTree'
+import { expandTree } from './expandTree'
+import { getRawPageTree } from './getRawPageTree'
 
 export const getExpandedPageTree = () => expandTree(getRawPageTree(), false)
 

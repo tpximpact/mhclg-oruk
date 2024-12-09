@@ -1,3 +1,3 @@
-import {getRawPageTree} from './getRawPageTree'
+import { getRawPageTree } from './getRawPageTree'
 
 export const getSiteItems = () => getRawPageTree()

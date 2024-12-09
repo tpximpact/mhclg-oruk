@@ -17,7 +17,7 @@ export const LandmarkContentInfo = ({ showNav, items, infoItems }) => (
 							<Link href='/sitemap'>Sitemap</Link>
 						</div>
 						<div>
-							<InfoMenu items={infoItems}/>
+							<InfoMenu items={infoItems} />
 						</div>
 					</PageMargin>
 				</>

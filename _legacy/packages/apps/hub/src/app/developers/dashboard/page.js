@@ -1,6 +1,5 @@
 import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
-import { Dashboard
-	} from '@/components/Dashboard'
+import { Dashboard } from '@/components/Dashboard'
 import { PageMargin } from '@tpx/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
@@ -9,12 +8,9 @@ export const metadata = {
 }
 
 export default async function Page({ searchParams }) {
-	
 	return (
 		<>
-			<NamedMarkdownPage 
-			autoMenu={false}
-			name='dashboard' />
+			<NamedMarkdownPage autoMenu={false} name='dashboard' />
 			<PageMargin>
 				<RemoteJSON
 					method={METHOD.GET}

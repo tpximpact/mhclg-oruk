@@ -6,7 +6,7 @@ import Columns from '@/components/Columns'
 import styles from './Menu.module.css'
 import Link from 'next/link'
 
-export  const MarkdownContent = async ({ raw, autoMenu, afterLinks }) => {
+export const MarkdownContent = async ({ raw, autoMenu, afterLinks }) => {
 	const html = marked.parse(raw)
 	if (autoMenu) {
 		return <MarkdownContentWithMenu html={html} afterLinks={afterLinks} />
