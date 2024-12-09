@@ -11,8 +11,8 @@ import { Header } from '@/components/Header'
 //import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
-//import { NoJsBanner } from '@/components/NoJsBanner'
-//import { NoJsFallback } from '@/components/NoJsFallback'
+import { NoJsBanner } from '@/components/NoJsBanner'
+import { NoJsFallback } from '@/components/NoJsFallback'
 //import { Crumbtrail } from '@/components/Crumbtrail'
 import defaultMetadata from '/content/metadata.json'
 //import { getSiteItems } from '@/util/getSiteItems'
@@ -49,18 +49,21 @@ const allItems = () => {
 
 export default function RootLayout({ children }) {
 	//const items = allItems()
+	let items
 	return (
 		<html lang='en' id='html' className='no-js'>
 			<body className={`${font.className}`}>
 				<div style={{ maxWidth: '100vw' }}>
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
+					<NoJsBanner />
+					<Header items={items} 
+					enableMenu={configValueToBoolean(process.env.USE_NAV)}
+					/>
 					{children}
 				</div>
-				{/*
-				<LandmarkContentInfo items={items} showNav={configValueToBoolean(process.env.USE_NAV)} />
+				{/*<LandmarkContentInfo items={items} showNav={configValueToBoolean(process.env.USE_NAV)} />*/}
 				<NoJsFallback />
-			*/}
 			</body>
 		</html>
 	)
@@ -69,10 +72,7 @@ export default function RootLayout({ children }) {
 /*
 
 					
-					<NoJsBanner />
-					<Header items={items} 
-					enableMenu={configValueToBoolean(process.env.USE_NAV)}
-					/>
+					
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />

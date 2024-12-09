@@ -1,6 +1,6 @@
 import style from './NoJsBanner.module.css'
 
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 
 export const NoJsBanner = () => (
 	<noscript>
