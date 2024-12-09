@@ -1,9 +1,9 @@
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { PageList } from '@/components/PageList'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 import { notFound } from 'next/navigation'
-import { getNamedSiteItem } from '@/util/getNamedSiteItem'
-import { formatNodesForPageMenu } from '@/util/formatNodesForPageMenu'
+import { getNamedSiteItem } from '@/utilities/getNamedSiteItem'
+import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 
 export const metadata = name => {
 	const pageData = getNamedSiteItem(name)
