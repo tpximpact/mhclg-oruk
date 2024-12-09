@@ -9,7 +9,7 @@ import '@/styles/no-js.css'
 import { Header } from '@/components/Header'
 //import { LandmarkMain } from '@/components/LandmarkMain'
 //import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
-//import { Cookies } from '@/components/Cookies'
+import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
 //import { NoJsBanner } from '@/components/NoJsBanner'
 //import { NoJsFallback } from '@/components/NoJsFallback'
@@ -54,6 +54,7 @@ export default function RootLayout({ children }) {
 			<body className={`${font.className}`}>
 				<div style={{ maxWidth: '100vw' }}>
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
+					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					{children}
 				</div>
 				{/*
@@ -67,7 +68,7 @@ export default function RootLayout({ children }) {
 
 /*
 
-					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
+					
 					<NoJsBanner />
 					<Header items={items} 
 					enableMenu={configValueToBoolean(process.env.USE_NAV)}
