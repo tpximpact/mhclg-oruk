@@ -7,13 +7,13 @@ import '@/styles/no-js.css'
 
 //import { listDynamicSection } from '@/util/dynamicSection'
 import { Header } from '@/components/Header'
-//import { LandmarkMain } from '@/components/LandmarkMain'
+import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
 import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
-//import { Crumbtrail } from '@/components/Crumbtrail'
+import { Crumbtrail } from '@/components/Crumbtrail'
 import defaultMetadata from '/content/metadata.json'
 //import { getSiteItems } from '@/util/getSiteItems'
 //import { siteStructureWithFullPaths } from '@/util/menuing'
@@ -63,21 +63,6 @@ export default function RootLayout({ children }) {
 					<Header items={items} 
 					enableMenu={configValueToBoolean(process.env.USE_NAV)}
 					/>
-					{children}
-				</div>
-				<LandmarkContentInfo 
-					items={items}
-				infoItems={getInfoMenuItems()}	showNav={configValueToBoolean(process.env.USE_NAV)} />
-				<NoJsFallback />
-			</body>
-		</html>
-	)
-}
-
-/*
-
-					
-					
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />
@@ -87,5 +72,12 @@ export default function RootLayout({ children }) {
 
 						{children}
 					</LandmarkMain>
-					
-					*/
+				</div>
+				<LandmarkContentInfo 
+					items={items}
+				infoItems={getInfoMenuItems()}	showNav={configValueToBoolean(process.env.USE_NAV)} />
+				<NoJsFallback />
+			</body>
+		</html>
+	)
+}
