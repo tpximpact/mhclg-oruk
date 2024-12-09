@@ -2,14 +2,9 @@ module.exports = {
 	env: {
 		browser: true,
 		es2021: true,
-		"jest/globals": true
+		'jest/globals': true
 	},
-	extends: [
-		'eslint:recommended',
-		'plugin:react/recommended',
-		'next/core-web-vitals',
-		'prettier'
-	],
+	extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals', 'prettier'],
 	overrides: [
 		{
 			env: {
@@ -25,7 +20,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module'
 	},
-	plugins: ['react','jest'],
+	plugins: ['react', 'jest'],
 	rules: {
 		'react/prop-types': 'off',
 		'@next/next/no-html-link-for-pages': 'off',

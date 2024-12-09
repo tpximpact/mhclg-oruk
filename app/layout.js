@@ -5,7 +5,6 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
-
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -18,7 +17,7 @@ import defaultMetadata from '/content/metadata.json'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
-import {getRootLayoutItems} from '@/utilities/getRootLayoutItems'
+import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
 
 const font = Inter({ subsets: ['latin'] })
 
@@ -33,9 +32,7 @@ export default function RootLayout({ children }) {
 					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
-					<Header items={items} 
-					enableMenu={configValueToBoolean(process.env.USE_NAV)}
-					/>
+					<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
 					<LandmarkMain>
 						{configValueToBoolean(process.env.USE_NAV) ? (
 							<Crumbtrail />
@@ -46,9 +43,11 @@ export default function RootLayout({ children }) {
 						{children}
 					</LandmarkMain>
 				</div>
-				<LandmarkContentInfo 
+				<LandmarkContentInfo
 					items={items}
-				infoItems={getInfoMenuItems()}	showNav={configValueToBoolean(process.env.USE_NAV)} />
+					infoItems={getInfoMenuItems()}
+					showNav={configValueToBoolean(process.env.USE_NAV)}
+				/>
 				<NoJsFallback />
 			</body>
 		</html>

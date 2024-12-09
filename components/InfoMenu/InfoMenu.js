@@ -1,12 +1,10 @@
 import styles from './InfoMenu.module.css'
 import Link from 'next/link'
 
-export const InfoMenu = ({
-items
-})	=> {
-if (!items) {
-	return
-}
+export const InfoMenu = ({ items }) => {
+	if (!items) {
+		return
+	}
 	return (
 		<ol className={styles.InfoMenu}>
 			{items.map(item => (

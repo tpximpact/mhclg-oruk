@@ -1,6 +1,6 @@
-import {siteStructureWithFullPaths} from './menuing'
-import {getRawPageTree} from './getRawPageTree'
-import {listDynamicSection} from './dynamicSection'
+import { siteStructureWithFullPaths } from './menuing'
+import { getRawPageTree } from './getRawPageTree'
+import { listDynamicSection } from './dynamicSection'
 
 export const getRootLayoutItems = () => {
 	let result = siteStructureWithFullPaths(getRawPageTree()).filter(item => item.hide != true)
