@@ -1,10 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import styles from './VersionedDocumentation.module.css'
-import { useCookies } from 'react-cookie'
+//import { useState, useEffect } from 'react'
+// import styles from './VersionedDocumentation.module.css'
+//import { useCookies } from 'react-cookie'
 
-export const VersionedDocumentation = ({ allVersions, contentData }) => {
+export const VersionedDocumentation = (
+	// {allVersions, contentData }
+	) => {
+	
+	return <div>TODO</div>
+	
+	/*
 	const cookieName = 'docVersion'
 	const [isClient, setIsClient] = useState(false)
 	const [cookies, setCookie] = useCookies([cookieName])
@@ -35,8 +41,11 @@ export const VersionedDocumentation = ({ allVersions, contentData }) => {
 			)}
 		</>
 	)
+	
+	*/
 }
 
+/*
 const VersionedBanner = ({ allVersions, version, setVersion }) => {
 	const currentVersion = allVersions[0]
 	const isCurrent = version === currentVersion
@@ -95,3 +104,6 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 const VersionedContent = ({ version, contentData }) => (
 	<div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
 )
+
+
+*/

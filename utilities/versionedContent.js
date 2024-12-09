@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
-import { parseMarkdown } from './markdown'
+//import { parseMarkdown } from './markdown'
 import { PATHS } from './PATHS'
 
 const getAll = contentFolder => {
@@ -15,8 +15,10 @@ export const getVersions = folder => {
 
 	files.forEach(f => {
 		let parsed = loadMarkdownFromFile(f, folder)
-		let key = parsed.frontmatter.standard_version
+		if (parsed) {
+		let key =  parsed.frontmatter.standard_version
 		contentData[key] = parsed
+	}
 	})
 	const allVersions = Object.keys(contentData).sort().reverse()
 
@@ -39,32 +41,17 @@ const readFile = contentPath => {
 	return null
 }
 
-/*
-export const getVersionedContent = (folder) =>
-     {
-let result = {}
+// TODO FIXME
+const parseMarkdowm = () => null
 
-const files = ["v1.md","v3.md"]
-
-files.forEach(
-    f =>  {
-        let parsed = loadMarkdownFromFile(f,folder)
-        let key = parsed.frontmatter.standard_version
-        result[key] = parsed
-    }
-)
-
-console.log(result)
-
-return result
-
-     }
-*/
-const loadMarkdownFromFile = (file, folder) => {
+const loadMarkdownFromFile = (
+	file, 
+	folder
+) => {
 	const f = join(folder, file)
 
 	const fileContents = readFile(f)
-	const parsed = parseMarkdown(fileContents)
-
+	const parsed = parseMarkdowm(fileContents)
+	
 	return parsed
 }

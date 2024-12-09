@@ -1,8 +1,8 @@
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
 import { VersionedDocumentation } from '@/components/VersionedDocumentation'
-import { getVersions } from '@/util/versionedContent'
+import { getVersions } from '@/utilities/versionedContent'
 export const metadata = {
 	title: 'ORUK Entity relationship diagram'
 }

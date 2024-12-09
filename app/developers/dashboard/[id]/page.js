@@ -1,7 +1,7 @@
 //import Link from 'next/link'
 import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
 import { DashboardDetails } from '@/components/DashboardDetails'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 
 export async function generateMetadata() {
 	return {

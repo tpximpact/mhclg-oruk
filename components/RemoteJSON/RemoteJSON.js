@@ -1,6 +1,6 @@
 import { headers } from 'next/headers'
-import { SuspenseIf } from '@tpx/SuspenseIf'
-import Spinner from '@tpx/Spinner'
+import { SuspenseIf } from '@/components/SuspenseIf'
+import Spinner from '@/components/Spinner'
 
 export const METHOD = {
 	POST: 1,

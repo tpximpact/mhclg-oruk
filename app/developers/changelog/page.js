@@ -1,7 +1,7 @@
 import { Changelog } from '@/components/Changelog'
-import { PageMargin } from '@tpx/PageMargin'
+import { PageMargin } from '@/components/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-import { getChangelogData } from '@/util/changelog'
+import { getChangelogData } from '@/utilities/changelog'
 
 export const metadata = {
 	title: 'ORUK changelog'
