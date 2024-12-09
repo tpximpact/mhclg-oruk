@@ -12,6 +12,8 @@
 	"dependencies": {
 		"@axe-core/react": "^4.10.1",
 		"gray-matter": "^4.0.3",
+		"html-react-parser": "^5.2.0",
+		"marked": "^15.0.3",
 		"next": "latest",
 		"react": "^18.2.0",
 		"react-cookie-consent": "^9.0.0",
