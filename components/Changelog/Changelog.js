@@ -1,5 +1,5 @@
 import styles from './Changelog.module.css'
-import Columns from '@tpx/Columns'
+import Columns from '@/components/Columns'
 
 export const Changelog = ({ versions }) => (
 	<>
