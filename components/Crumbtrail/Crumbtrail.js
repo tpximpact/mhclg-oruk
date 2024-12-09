@@ -3,8 +3,8 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import styles from './Crumbtrail.module.css'
-import { getPageWithPath } from '../../util/site'
-import { PageMargin } from '@tpx/PageMargin'
+import { getPageByPath } from '@/utilities/getPageByPath'
+import { PageMargin } from '@/components/PageMargin'
 
 export const generateCrumbs = path => {
 	if (!path) return []
@@ -12,7 +12,7 @@ export const generateCrumbs = path => {
 	const crumbs = fragments
 		.map((element, index) => {
 			const rebuiltPath = fragments.slice(0, index + 1).join('/')
-			const match = getPageWithPath(rebuiltPath)
+			const match = getPageByPath(rebuiltPath)
 			return {
 				label: match ? match.label : '',
 				urlPath: rebuiltPath
