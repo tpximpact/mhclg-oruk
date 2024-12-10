@@ -8,10 +8,11 @@ export const metadata = {
 	title: 'ORUK directory'
 }
 
-export default async function Page({ searchParams }) {
-	// const result = generate({ numRows: 24, rowsPerPage: 10, failEveryNRows: 8 })
+export default async function Page(props) {
+    const searchParams = await props.searchParams;
+    // const result = generate({ numRows: 24, rowsPerPage: 10, failEveryNRows: 8 })
 
-	return (
+    return (
 		<>
 			<NamedMarkdownPage autoMenu={false} name='directory' />
 			<PageMargin>

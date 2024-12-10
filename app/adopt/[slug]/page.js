@@ -4,9 +4,10 @@ import { PageMargin } from '@/components/PageMargin'
 
 const inFolder = 'adopt'
 
-export default async function Page({ params }) {
-	const data = getDynamicPageContent(inFolder, params.slug)
-	return (
+export default async function Page(props) {
+    const params = await props.params;
+    const data = getDynamicPageContent(inFolder, params.slug)
+    return (
 		<PageMargin>
 			<DynamicSectionPage {...data} />
 		</PageMargin>
