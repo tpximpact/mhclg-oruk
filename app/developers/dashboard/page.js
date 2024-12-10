@@ -7,8 +7,9 @@ export const metadata = {
 	title: 'ORUK verified feed availabilty'
 }
 
-export default async function Page({ searchParams }) {
-	return (
+export default async function Page(props) {
+    const searchParams = await props.searchParams;
+    return (
 		<>
 			<NamedMarkdownPage autoMenu={false} name='dashboard' />
 			<PageMargin>
