@@ -69,7 +69,10 @@ const fetchResult = async ({ endpoint, method, queryParams }) => {
 	}
 }
 
-const isInitialPageLoad = () => !!headers().get('accept')?.includes('text/html')
+const isInitialPageLoad = async () => {
+	const h = await headers()
+	return h.get('accept')?.includes('text/html')
+}
 
 export const RemoteJSON = async props => {
 	let result
@@ -80,7 +83,9 @@ export const RemoteJSON = async props => {
 		queryParams: props.queryParams
 	}
 
-	if (isInitialPageLoad()) {
+	const ipl = await isInitialPageLoad()
+	
+	if (ipl) {
 		result = await fetchResult(args)
 	}
 	return <ResultWithSuspense result={result} args={args} {...props} />
