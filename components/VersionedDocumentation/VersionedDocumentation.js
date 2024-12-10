@@ -1,16 +1,16 @@
 'use client'
 
-//import { useState, useEffect } from 'react'
-// import styles from './VersionedDocumentation.module.css'
-//import { useCookies } from 'react-cookie'
+import { useState, useEffect } from 'react'
+import styles from './VersionedDocumentation.module.css'
+import { useCookies } from 'react-cookie'
 
 export const VersionedDocumentation = (
-	// {allVersions, contentData }
+	 {allVersions, contentData }
 	) => {
 	
-	return <div>TODO</div>
+	// return <div>TODO</div>
 	
-	/*
+	
 	const cookieName = 'docVersion'
 	const [isClient, setIsClient] = useState(false)
 	const [cookies, setCookie] = useCookies([cookieName])
@@ -41,11 +41,8 @@ export const VersionedDocumentation = (
 			)}
 		</>
 	)
-	
-	*/
 }
 
-/*
 const VersionedBanner = ({ allVersions, version, setVersion }) => {
 	const currentVersion = allVersions[0]
 	const isCurrent = version === currentVersion
@@ -55,9 +52,8 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 		<div className={`${styles.box} ${colourClass}`}>
 			<div className={styles.tab}>
 				<div className={styles.version}>
-					{' '}
 					<select
-						defaultValue={version}
+						id='picker'
 						onChange={({ target: { value } }) => setVersion(value)}
 						value={version}
 					>
@@ -68,7 +64,7 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 						))}
 					</select>
 				</div>
-				<div>{isCurrent ? 'Current' : 'Legacy'} version</div>
+				<div><label htmlFor="picker">{isCurrent ? 'Current' : 'Legacy'} version</label></div>
 			</div>
 			<div className={styles.banner}>
 				<p>You can choose which version of the standard this page describes.</p>
@@ -104,6 +100,3 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 const VersionedContent = ({ version, contentData }) => (
 	<div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
 )
-
-
-*/

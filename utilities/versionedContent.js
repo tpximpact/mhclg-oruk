@@ -2,6 +2,7 @@ import fs from 'fs'
 import { join } from 'path'
 //import { parseMarkdown } from './markdown'
 import { PATHS } from './PATHS'
+import * as matter from 'gray-matter'
 
 const getAll = contentFolder => {
 	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
@@ -41,8 +42,19 @@ const readFile = contentPath => {
 	return null
 }
 
-// TODO FIXME
-const parseMarkdowm = () => null
+const parseMarkdowm = (fileContents)	=> {
+	const parsed = matter(fileContents)
+	if (parsed && !parsed.isEmpty) {
+		const content = parsed.content
+		const frontmatter = parsed.data
+		return ({
+			content: content,
+		frontmatter: frontmatter
+	})
+		
+	}
+	return null
+}
 
 const loadMarkdownFromFile = (
 	file, 
