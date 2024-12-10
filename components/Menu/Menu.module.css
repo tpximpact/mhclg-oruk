@@ -1,6 +1,16 @@
 .Menu {
+
 	padding: 1rem 5vw 0;
-	background: #eee;
+
+/* 
+
+made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%23E7EEFB&hex3=%23EEFFFE&submit=submit
+
+
+*/
+
+	background-image: linear-gradient(to right top, #fff2f9, #fcf1fa, #f8f0fb, #f3f0fc, #eeeffc, #ebf0fd, #e8f2fd, #e6f3fd, #e7f6fe, #e8f9fe, #ebfcfe, #eefffe);;
+	background: #eaeaea;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -16,7 +26,7 @@
 }
 
 .Menu ol {
-	margin: 1rem 0;
+	margin: 0.5rem 0;
 	padding: 0;
 	text-indent: 0;
 	list-style: none;
@@ -34,5 +44,5 @@
 }
 
 .heading {
-	font-weight: 400;
+	font-weight: 900;
 }
