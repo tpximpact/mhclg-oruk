@@ -11,8 +11,8 @@ export async function generateMetadata() {
 }
 
 export default async function Page(props) {
-    const params = await props.params;
-    return (
+	const params = await props.params
+	return (
 		<PageMargin>
 			<RemoteJSON
 				method={METHOD.GET}

@@ -84,7 +84,7 @@ export const RemoteJSON = async props => {
 	}
 
 	const ipl = await isInitialPageLoad()
-	
+
 	if (ipl) {
 		result = await fetchResult(args)
 	}

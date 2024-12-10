@@ -17,9 +17,9 @@ export const getVersions = folder => {
 	files.forEach(f => {
 		let parsed = loadMarkdownFromFile(f, folder)
 		if (parsed) {
-		let key =  parsed.frontmatter.standard_version
-		contentData[key] = parsed
-	}
+			let key = parsed.frontmatter.standard_version
+			contentData[key] = parsed
+		}
 	})
 	const allVersions = Object.keys(contentData).sort().reverse()
 
@@ -42,28 +42,24 @@ const readFile = contentPath => {
 	return null
 }
 
-const parseMarkdowm = (fileContents)	=> {
+const parseMarkdowm = fileContents => {
 	const parsed = matter(fileContents)
 	if (parsed && !parsed.isEmpty) {
 		const content = parsed.content
 		const frontmatter = parsed.data
-		return ({
+		return {
 			content: content,
-		frontmatter: frontmatter
-	})
-		
+			frontmatter: frontmatter
+		}
 	}
 	return null
 }
 
-const loadMarkdownFromFile = (
-	file, 
-	folder
-) => {
+const loadMarkdownFromFile = (file, folder) => {
 	const f = join(folder, file)
 
 	const fileContents = readFile(f)
 	const parsed = parseMarkdowm(fileContents)
-	
+
 	return parsed
 }

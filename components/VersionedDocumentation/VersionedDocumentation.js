@@ -4,13 +4,9 @@ import { useState, useEffect } from 'react'
 import styles from './VersionedDocumentation.module.css'
 import { useCookies } from 'react-cookie'
 
-export const VersionedDocumentation = (
-	 {allVersions, contentData }
-	) => {
-	
+export const VersionedDocumentation = ({ allVersions, contentData }) => {
 	// return <div>TODO</div>
-	
-	
+
 	const cookieName = 'docVersion'
 	const [isClient, setIsClient] = useState(false)
 	const [cookies, setCookie] = useCookies([cookieName])
@@ -64,7 +60,9 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 						))}
 					</select>
 				</div>
-				<div><label htmlFor="picker">{isCurrent ? 'Current' : 'Legacy'} version</label></div>
+				<div>
+					<label htmlFor='picker'>{isCurrent ? 'Current' : 'Legacy'} version</label>
+				</div>
 			</div>
 			<div className={styles.banner}>
 				<p>You can choose which version of the standard this page describes.</p>

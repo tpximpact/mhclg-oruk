@@ -9,10 +9,10 @@ export const metadata = {
 }
 
 export default async function Page(props) {
-    const searchParams = await props.searchParams;
-    // const result = generate({ numRows: 24, rowsPerPage: 10, failEveryNRows: 8 })
+	const searchParams = await props.searchParams
+	// const result = generate({ numRows: 24, rowsPerPage: 10, failEveryNRows: 8 })
 
-    return (
+	return (
 		<>
 			<NamedMarkdownPage autoMenu={false} name='directory' />
 			<PageMargin>
@@ -22,7 +22,7 @@ export default async function Page(props) {
 					endpoint={process.env.DASHBOARD_ENDPOINT}
 					currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
 				/>
-			{/*	<Directory
+				{/*	<Directory
 					result={result}
 					currentPage={searchParams.page ? parseInt(searchParams.page) : 1}
 				/> */}
