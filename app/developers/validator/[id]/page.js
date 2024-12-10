@@ -5,16 +5,16 @@ import { navigate } from '@/actions/validate'
 import { PageMargin } from '@/components/PageMargin'
 
 export async function generateMetadata(props) {
-    const params = await props.params;
-    return {
+	const params = await props.params
+	return {
 		title: `ORUK validation report: ${params.uri}`,
 		description: 'Report of compliance of the Openreferral feed at ${params.uri}'
 	}
 }
 
 export default async function Page(props) {
-    const searchParams = await props.searchParams;
-    return (
+	const searchParams = await props.searchParams
+	return (
 		<PageMargin>
 			<ValidatorResultPageTitle />
 			<RemoteJSON

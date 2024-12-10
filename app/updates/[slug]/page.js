@@ -5,9 +5,9 @@ import { PageMargin } from '@/components/PageMargin'
 const inFolder = 'updates'
 
 export default async function Page(props) {
-    const params = await props.params;
-    const data = getDynamicPageContent(inFolder, params.slug)
-    return (
+	const params = await props.params
+	const data = getDynamicPageContent(inFolder, params.slug)
+	return (
 		<PageMargin>
 			<DynamicSectionPage {...data} />
 		</PageMargin>
