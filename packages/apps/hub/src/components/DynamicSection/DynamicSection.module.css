@@ -1,0 +1,29 @@
+.mainHeading {
+	margin-bottom: 4rem;
+}
+
+/* content page */
+
+.links {
+	display: flex;
+	margin-bottom: 2rem;
+	max-width: 50rem; /* same as MarkdownContent.solo*/
+}
+
+.blank,
+.linkedPage {
+	flex: 1;
+}
+
+.linkedPage:first-child {
+	text-align: left;
+}
+
+.linkedPage:last-child {
+	text-align: right;
+}
+
+.articleDate {
+	font-style: italic;
+	margin-bottom: 2rem;
+}
