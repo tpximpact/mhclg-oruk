@@ -1,0 +1,21 @@
+.thumbnail,
+.thumbnail * {
+	text-decoration: none;
+	font-weight: normal;
+}
+.itemHeading {
+	font-weight: 800;
+	display: block;
+	font-size: 1.2rem;
+}
+
+.itemDate {
+	display: block;
+	font-style: italic;
+	font-size: 1.2rem;
+}
+
+.itemBody {
+	display: block;
+	
+}
