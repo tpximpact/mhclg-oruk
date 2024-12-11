@@ -25,7 +25,7 @@ const Topbar = ({ enableMenu, showMenu, setShowMenu }) => {
 				<div className={styles.content}>
 					<div className={styles.left}>
 						<Link href='/'>
-							<Logo animate={false} colour={'var(----colour-dark-green)'} />
+							<Logo animate={false}  />
 						</Link>
 					</div>
 					<div className={styles.centre}></div>

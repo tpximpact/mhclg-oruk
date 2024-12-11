@@ -53,7 +53,7 @@ const List = ({ data, overflow, setShowMenu }) => {
 						)}
 					</li>
 				))}
-			{overflow && <li>...plus {overflow} more </li>}
+			{overflow && <li className={styles.overflow}>...plus {overflow} more </li>}
 		</ol>
 	)
 }

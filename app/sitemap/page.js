@@ -3,7 +3,7 @@ import { getRawPageTree } from '@/utilities/getRawPageTree'
 import { siteStructureWithFullPaths } from '@/utilities/menuing'
 
 export default function Page() {
-	return <Sitemap showHeading={false} data={siteStructureWithFullPaths(getRawPageTree())} />
+	return (<Sitemap showHeading={true} data={siteStructureWithFullPaths(getRawPageTree())} />)
 }
 
 export const metadata = {

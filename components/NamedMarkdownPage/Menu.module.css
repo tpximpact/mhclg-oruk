@@ -13,6 +13,8 @@
 	list-style: none;
 }
 
+
+
 .content h1,
 .content h2,
 .content h3,
@@ -41,4 +43,28 @@
 
 .content li {
 	margin-bottom: 1rem;
+}
+
+.content li li {
+	list-style-type: circle;
+}
+
+.content li:has(ul) {
+	list-style-type: none;
+}
+
+.content blockquote {
+	background: #efefef;
+	padding: 1rem 1rem ;
+	border-left: 8px solid #dfdfdf;
+	margin-bottom: 2rem;
+	font-style: italic;
+	font-weight:600;
+	hanging-punctuation: first last;
+}
+
+.content blockquote p{
+	margin: 0;
+	padding: 0;
+	
 }
