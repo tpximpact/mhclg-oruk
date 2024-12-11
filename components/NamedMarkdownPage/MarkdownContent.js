@@ -51,7 +51,12 @@ const MarkdownContentWithMenu = ({ html, afterLinks }) => {
 
 	return (
 		<section>
-			<Columns layout='24'>
+			<Columns layout='42'>
+
+				<div className={styles.content}>
+					{modifiedNodes}
+					{afterLinks && <Afterlinks data={afterLinks} />}
+				</div>
 				<div>
 					<h4 className={styles.onthispage} style={{ fontWeight: 300 }}>
 						On this page
@@ -63,10 +68,6 @@ const MarkdownContentWithMenu = ({ html, afterLinks }) => {
 							</li>
 						))}
 					</ol>
-				</div>
-				<div className={styles.content}>
-					{modifiedNodes}
-					{afterLinks && <Afterlinks data={afterLinks} />}
 				</div>
 			</Columns>
 		</section>

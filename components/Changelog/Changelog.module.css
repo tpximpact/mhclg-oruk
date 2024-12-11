@@ -9,7 +9,7 @@
 .field {
 	margin: 1rem 0;
 	padding: 1rem 2rem;
-	background: var(--colour-buff3);
+	background: #fff;
 }
 
 .field .fieldTitle {

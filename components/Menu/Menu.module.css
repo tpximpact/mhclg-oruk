@@ -13,11 +13,14 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 	background: #eaeaea;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	column-gap: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 @media only screen and (max-width: 1024px) {
 	.Menu {
 		grid-template-columns: 1fr;
+		
 	}
 }
 
@@ -37,6 +40,9 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 	padding: 0;
 	text-indent: 0;
 	list-style: none;
+	/* outdent first line */
+	text-indent: -1rem; 
+	padding-left: 1rem; 
 }
 
 .Menu a {
@@ -45,4 +51,10 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 
 .heading {
 	font-weight: 900;
+}
+
+
+.overflow {
+	margin-top: 1rem;
+	font-size:16px;
 }

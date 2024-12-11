@@ -66,13 +66,13 @@
 			},
 			{
 				"name": "entities",
-				"label": "Entities",
+				"label": "Entity relation doagram",
 				"urlPath": "entities",
 				"contentPath": "entities"
 			},
 			{
 				"name": "changelog",
-				"label": "Changes",
+				"label": "Changes in OR-UK 3.0",
 				"urlPath": "changelog",
 				"contentPath": "changelog",
 				"autoMenu": false
@@ -106,6 +106,13 @@
 				"label": "Accessibility statement",
 				"urlPath": "accessibility",
 				"contentPath": "accessibility",
+				"autoMenu": true
+			},
+			{
+				"name": "sustainability",
+				"label": "Sustainability policy",
+				"urlPath": "sustainability",
+				"contentPath": "sustainability",
 				"autoMenu": true
 			},
 			{
