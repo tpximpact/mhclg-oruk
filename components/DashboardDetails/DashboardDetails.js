@@ -1,5 +1,6 @@
 import styles from './DashboardDetails.module.css'
-import { getColourForStatus, getIconForStatus } from '@/utilities/status'
+import { getColourForStatus } from '@/utilities/getColourForStatus'
+import { getIconForStatus } from '@/utilities/getIconForStatus'
 import Icon from '@/components/Icon'
 
 export const DashboardDetails = ({ result }) => {
