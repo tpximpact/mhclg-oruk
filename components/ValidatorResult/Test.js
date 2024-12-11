@@ -1,7 +1,9 @@
 import styles from './Test.module.css'
 
 import Icon from '@/components/Icon'
-import { STATUS, getColourForStatus, getIconForStatus } from '@/utilities/status'
+import { STATUS } from '@/utilities/status'
+import { getColourForStatus } from '@/utilities/getColourForStatus'
+import { getIconForStatus } from '@/utilities/getIconForStatus'
 
 export const Test = ({ data, label, errorsAreFatal }) => {
 	const status = data.success ? STATUS.PASS : errorsAreFatal ? STATUS.FAIL : STATUS.OTHER

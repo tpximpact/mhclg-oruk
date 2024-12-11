@@ -1,6 +1,8 @@
 import styles from './Title.module.css'
 import Icon from '@/components/Icon'
-import { getColourForStatus, getIconForStatus, resultToStatus } from '@/utilities/status'
+import { resultToStatus } from '@/utilities/resultToStatus'
+import { getColourForStatus } from '@/utilities/getColourForStatus'
+import { getIconForStatus } from '@/utilities/getIconForStatus'
 
 export const Title = ({ result }) => {
 	const status = resultToStatus(result)
