@@ -5,14 +5,17 @@ import Link from 'next/link'
 import { InfoMenu } from '@/components/InfoMenu'
 import { BannerMHCLG } from '@/components/BannerMHCLG'
 
-export const LandmarkContentInfo = ({ showNav, 
-	//items, 
-	infoItems }) => (
+export const LandmarkContentInfo = ({
+	showNav,
+	//items,
+	infoItems
+}) => (
 	<footer role='contentInfo' className={styles.footer}>
-			<BannerMHCLG />
+		<BannerMHCLG />
 		<div className={styles.bottom}>
 			{showNav ? (
-				<>{/*
+				<>
+					{/*
 					<Menu ariaName='footermenu' items={items} />
 */}
 					<PageMargin>
@@ -29,6 +32,5 @@ export const LandmarkContentInfo = ({ showNav,
 				<div className={styles.copyright}>Copyright © 2024 Open Referral UK</div>
 			</PageMargin>
 		</div>
-	
 	</footer>
 )

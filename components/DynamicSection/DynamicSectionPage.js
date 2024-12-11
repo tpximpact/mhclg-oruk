@@ -10,9 +10,9 @@ export const DynamicSectionPage = async ({ date, content, ...linkedPages }) => {
 	return (
 		<section>
 			<MarkdownContent autoMenu={true} raw={content} />
-			<Columns layout="42">
-			<div className={styles.articleDate}>Updated:{date}</div>
-			<div></div>
+			<Columns layout='42'>
+				<div className={styles.articleDate}>Updated:{date}</div>
+				<div></div>
 			</Columns>
 			<Links {...linkedPages} />
 		</section>
