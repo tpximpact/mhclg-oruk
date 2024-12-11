@@ -52,7 +52,6 @@ const MarkdownContentWithMenu = ({ html, afterLinks }) => {
 	return (
 		<section>
 			<Columns layout='42'>
-
 				<div className={styles.content}>
 					{modifiedNodes}
 					{afterLinks && <Afterlinks data={afterLinks} />}

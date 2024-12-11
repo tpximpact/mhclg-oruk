@@ -25,7 +25,7 @@ const Topbar = ({ enableMenu, showMenu, setShowMenu }) => {
 				<div className={styles.content}>
 					<div className={styles.left}>
 						<Link href='/'>
-							<Logo animate={false}  />
+							<Logo animate={false} />
 						</Link>
 					</div>
 					<div className={styles.centre}></div>
@@ -49,13 +49,13 @@ const MenuOpener = ({ showMenu, setShowMenu }) => {
 				{showMenu ? (
 					<button className={styles.open} onClick={() => setShowMenu(false)}>
 						<div>
-						<span>Menu</span>
+							<span>Menu</span>
 						</div>
 					</button>
 				) : (
 					<button className={styles.closed} onClick={() => setShowMenu(true)}>
 						<div>
-						<span>Menu</span>
+							<span>Menu</span>
 						</div>
 					</button>
 				)}
