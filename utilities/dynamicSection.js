@@ -13,34 +13,27 @@ export const getDynamicPageContent = (folder, slug) => {
 	const metadata = parsed.data
 	const all = getAll(folder)
 	const myIndex = all.findIndex(element => slugify(element) === slug)
-	const nextIndex = myIndex + 1
-	const previousIndex = myIndex - 1
 	return {
 		date: getDate(metadata, file),
 		metadata: metadata,
 		content: parsed.content,
-		next: buildLinkedItem(nextIndex, all, folder),
-		previous: buildLinkedItem(previousIndex, all, folder)
+		next: buildLinkedItem(myIndex + 1, all, folder),
+		previous: buildLinkedItem(myIndex - 1, all, folder)
 	}
 }
 
 const buildLinkedItem = (index, allFiles, folder) => {
-	if (index > allFiles.length - 1 || index < 0) return null
+	if (index < 0 || index >= allFiles.length) return null
 	const fileName = allFiles[index]
-	const result = fileThumbnail(folder, fileName)
-	return result
+	return fileThumbnail(folder, fileName)
 }
 
 const slugify = fileName => fileName.split('.')[0]
-const unslugify = name => name + '.md'
+const unslugify = name => `${name}.md`
 
 const getAll = contentFolder => {
 	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
-	let result = fs.readdirSync(dir).filter(
-		// needed for developing on a mac :-(
-		f => f !== '.DS_Store'
-	)
-	return result
+	return fs.readdirSync(dir).filter(f => f !== '.DS_Store')
 }
 
 const getDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)
@@ -59,21 +52,17 @@ const fileThumbnail = (rootContentFolder, file) => {
 
 export const listDynamicSection = ({ rootContentFolder }) => {
 	const filenames = getAll(rootContentFolder)
-
-	let result = filenames.map(f => fileThumbnail(rootContentFolder, f))
-
-	return result
+	return filenames.map(f => fileThumbnail(rootContentFolder, f))
 }
 
 const readFile = contentPath => {
 	try {
 		const path = buildPath(contentPath)
-		const data = fs.readFileSync(path, 'utf8')
-		return data
+		return fs.readFileSync(path, 'utf8')
 	} catch (err) {
 		console.error(err)
+		return null
 	}
-	return null
 }
 
 const extractMetadata = contents => matter(contents).data
@@ -81,12 +70,11 @@ const extractMetadata = contents => matter(contents).data
 const statFile = contentPath => {
 	try {
 		const path = buildPath(contentPath)
-		const data = fs.statSync(path)
-		return data
+		return fs.statSync(path)
 	} catch (err) {
 		console.error(err)
+		return null
 	}
-	return null
 }
 
 const fileLastModified = contentPath => {
