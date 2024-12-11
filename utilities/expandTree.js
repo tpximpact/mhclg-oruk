@@ -1,20 +1,18 @@
 export const expandTree = (structure, parentNode) => {
-	let structureCopy = structuredClone(structure)
-	let expanded = []
-	structureCopy.forEach(item => {
-		if (parentNode) {
-			item.parentNodeName = parentNode.name
-			if (!item.offsite) {
-				item.urlPath = parentNode.urlPath + '/' + item.urlPath
-			}
+	return structure.reduce((acc, node) => {
+	  const updatedNode = { ...node };
+  
+	  if (parentNode) {
+		updatedNode.parentNodeName = parentNode.name;
+		if (!node.offsite) {
+		  updatedNode.urlPath = `${parentNode.urlPath}/${node.urlPath}`;
 		}
-		if (item.childNodes) {
-			// recursiveky process children
-			let children = expandTree(item.childNodes, item)
-			expanded = expanded.concat(children)
-		}
-		delete item.childNodes
-		expanded.push(item)
-	})
-	return expanded
-}
+	  }
+  
+	  if (node.childNodes) {
+		acc.push(...expandTree(node.childNodes, updatedNode));
+	  }
+  
+	  return [...acc, { ...updatedNode, childNodes: undefined }];
+	}, []);
+  };
