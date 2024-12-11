@@ -8,34 +8,12 @@ export const STATUS = {
 
 export const resultToStatus = data => (data.service.isValid === true ? STATUS.PASS : STATUS.FAIL)
 
-export const getColourForStatus = status => {
-	let colour
-	switch (status) {
-		case STATUS.PASS:
-			colour = '#00AC1B'
-			break
-		case STATUS.FAIL:
-			colour = '#FF3300'
-			break
-		case STATUS.OTHER:
-		default:
-			colour = '#fa0'
-	}
-	return colour
+const STATUS_PROPERTIES = {
+	[STATUS.PASS]: { colour: '#00AC1B', icon: ICON_TYPE.OK },
+	[STATUS.FAIL]: { colour: '#FF3300', icon: ICON_TYPE.X },
+	[STATUS.OTHER]: { colour: '#fa0', icon: ICON_TYPE.WARN }
 }
 
-export const getIconForStatus = status => {
-	let icon
-	switch (status) {
-		case STATUS.PASS:
-			icon = ICON_TYPE.OK
-			break
-		case STATUS.FAIL:
-			icon = ICON_TYPE.X
-			break
-		case STATUS.OTHER:
-		default:
-			icon = ICON_TYPE.WARN
-	}
-	return icon
-}
+export const getColourForStatus = status => STATUS_PROPERTIES[status]?.colour || STATUS_PROPERTIES[STATUS.OTHER].colour
+
+export const getIconForStatus = status => STATUS_PROPERTIES[status]?.icon || STATUS_PROPERTIES[STATUS.OTHER].icon
