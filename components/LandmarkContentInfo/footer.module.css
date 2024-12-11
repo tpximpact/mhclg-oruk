@@ -1,0 +1,21 @@
+.footer {
+	display: block;
+	margin-top: 0;
+	/*background: #eee;*/
+}
+
+.bottom {
+	/*dbackground: var(--theme-footer-bg);
+	dcolor: var(--theme-footer-fg);*/
+	padding: 0 0 1rem 0;
+}
+
+.bottom a {
+	/*dcolor: #fff !important;*/
+	display: block;
+	margin-bottom: 1rem;
+	font-weight: var(--link-weight);
+}
+.copyright {
+	font-size: 0.9rem;
+}
