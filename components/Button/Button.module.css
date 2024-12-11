@@ -14,43 +14,43 @@
 	padding: 0.8rem 3rem;
 	position: relative;
 	text-transform: uppercase;
-  
+
 	/* Box model */
 	box-sizing: border-box;
-  
+
 	/* Remove default button styles */
 	-webkit-appearance: none;
 	background-image: none;
 	-webkit-tap-highlight-color: transparent;
-  }
-  
-  .button *,
-  .button::before,
-  .button::after {
+}
+
+.button *,
+.button::before,
+.button::after {
 	box-sizing: border-box;
 	border: 0 solid;
-  }
-  
-  .button:disabled {
+}
+
+.button:disabled {
 	opacity: 0.5;
 	cursor: default;
-  }
-  
-  .button:-moz-focusring {
+}
+
+.button:-moz-focusring {
 	outline: auto;
-  }
-  
-  .button svg {
+}
+
+.button svg {
 	display: block;
 	vertical-align: middle;
-  }
-  
-  .button [hidden] {
+}
+
+.button [hidden] {
 	display: none;
-  }
-  
-  /* Hover effect */
-  .button::before {
+}
+
+/* Hover effect */
+.button::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -61,31 +61,31 @@
 	will-change: transform;
 	z-index: -1;
 	animation: move-out 0.3s;
-  }
-  
-  .button:hover::before {
+}
+
+.button:hover::before {
 	animation: move-in 0.3s forwards;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
 	color: white;
-  }
-  
-  /* Animations */
-  @keyframes move-in {
+}
+
+/* Animations */
+@keyframes move-in {
 	0% {
-	  transform: translateX(0);
+		transform: translateX(0);
 	}
 	100% {
-	  transform: translateX(100%);
+		transform: translateX(100%);
 	}
-  }
-  
-  @keyframes move-out {
+}
+
+@keyframes move-out {
 	0% {
-	  transform: translateX(100%);
+		transform: translateX(100%);
 	}
 	100% {
-	  transform: translateX(200%);
+		transform: translateX(200%);
 	}
-  }
+}
