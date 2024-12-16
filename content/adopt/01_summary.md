@@ -1,9 +1,9 @@
 ---
-title: Adopt the standard - Part One
-slug: This story has a brief description / preview of its contents.
+title: Executive summary 
+slug: For senior managers
 ---
 
-# Part One
+# TODO: Executive summary
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas sollicitudin sapien id pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ullamcorper pulvinar sapien eu mattis. Integer consectetur, metus quis faucibus suscipit, massa lectus blandit elit, in volutpat lectus mi vitae neque. Fusce tristique urna volutpat nulla consectetur sollicitudin. Etiam interdum facilisis efficitur. Aliquam erat volutpat. Etiam nunc libero, accumsan a neque eget, porta molestie nisl.
 
