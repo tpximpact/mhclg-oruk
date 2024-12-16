@@ -65,11 +65,28 @@
 	border: 2px solid black;
 }
 
-.section h2 {
-	sborder-bottom: 1px solid black;
-	padding:1rem;
-	background: #eee;
+.endpointContainer h2 {
+	flex:1;
 	color: #000;
+}
+
+.endpointContainer .endpointRight{
+	flex: 0, 0,100px;
+	display: flex;
+}
+
+.endpointRight a{
+	flex: 1;
+	display: block;
+	margin-top: auto;
+}
+
+
+.endpointContainer {
+	border-bottom: 1px solid black;
+	padding:1rem;
+	basckground: #eee;
+	display:flex;
 }
 
 .light {
@@ -82,6 +99,7 @@
 .endpoint {
 	font-family: var(--font-mono);
 	font-size:2rem;
+	font-weight:900;
 }
 
 

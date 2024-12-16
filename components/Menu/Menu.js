@@ -2,12 +2,12 @@ import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 import Link from 'next/link'
 import styles from './Menu.module.css'
 
-export const Menu = ({ ariaName, items, setShowMenu }) => {
+export const Menu = ({ ariaName, items, setShowMenu, open }) => {
 	if (!items) {
 		return
 	}
 	return (
-		<nav aria-label={ariaName} className={styles.Menu}>
+		<nav aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open:null}`}>
 			{items.map((item, i) => (
 				<MenuSection key={i} setShowMenu={setShowMenu} data={item} />
 			))}
