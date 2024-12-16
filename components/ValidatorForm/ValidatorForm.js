@@ -35,10 +35,10 @@ const Samples = () => (
 )
 
 export const ValidatorForm = props => (
-	<Columns layout={11}>
+	<div style={{marginTop:"6rem"}}><Columns layout={42}>
 		<Form {...props} />
 		<Samples />
-	</Columns>
+	</Columns></div>
 )
 
 const Form = ({ title, action, defaultValue }) => {
