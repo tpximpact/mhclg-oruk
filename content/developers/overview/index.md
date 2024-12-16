@@ -6,9 +6,9 @@ This document gives insight into the implementation of ORUK. It offers a high le
 provide the [full technical specifications](https://github.com/OpenReferralUK/uk-profile), but it points to where details can be found.
 
 It is accompanied by additional resources on [adopting the standard](/adopt): 
-- an [executive summary](/adopt/exec) for senior managers
-- a [business case template](/adopt/template) for finance managers
-- a [project initiation document (PID) template](/adopt/pid) for project managers.
+- an [executive summary](/adopt/01_summary) for senior managers
+- a [business case template](/adopt/02_business_case) for finance managers
+- a [project initiation document (PID) template](/adopt/03_pid) for project managers.
 
 ## 1. Background 
 
