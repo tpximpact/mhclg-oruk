@@ -1,7 +1,9 @@
 .form {
+	border:1px solid red;
 }
 
 .samples {
+	border:1px solid red;
 	list-style: none;
 	margin-top: 1rem;
 }

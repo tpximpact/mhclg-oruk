@@ -19,8 +19,11 @@ const DebugWidget = () => (
 	</aside>
 )
 
-const Columns = ({ className, children, layout = '1111', debug, ...props }) => (
-	<div className={[columns.columns, columns[`layout_${layout}`], className].join(' ')} {...props}>
+const Columns = ({ className, children, layout = '1111', debug, supressTrailingSpace, ...props }) => (
+	<div className={[columns.columns, columns[`layout_${layout}`], className,
+	supressTrailingSpace ? columns.supressTrailingSpace : null
+	
+	].join(' ')} {...props}>
 		{children}
 		{debug ? <DebugWidget /> : null}
 	</div>

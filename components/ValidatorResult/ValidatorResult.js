@@ -1,81 +1,29 @@
 'use client'
 
-import { useEffect } from 'react'
-import { Test } from './Test'
+import { useEffect, useMemo } from 'react'
 import { Title } from './Title'
-
+import { Endpoint } from './Endpoint'
 import styles from './ValidatorResult.module.css'
 
-export const ValidatorResult = ({ result }) => {
-	result = result.result
+import {formatResults} from './formatResults'
 
-	// this is ugly, but the button was failing to reset page scroll behaviour
+export const ValidatorResult = ({ result }) => {
+
+	const endpoints = useMemo(() => formatResults(result.result), [result])
+
 	useEffect(() => {
 		window.scrollTo(0, 0)
 	}, [])
 
 	return (
-		<div>
-			<Title result={result} />
-			{/*result.metadata && <Metadata result={result} />*/}
-			{result.testSuites && <Tests result={result} />}
-			{result.counts && <Counts result={result} />}
+		<div className={styles.result}>
+			<Title result={result.result}/>
+			{Object.keys(endpoints).map(
+				(k,i) => <Endpoint key={i} path={k} data={endpoints[k]} />
+			)}
+			
 		</div>
 	)
 }
 
-/*
-const Metadata = ({ result }) => (
-	<Section title='Metadata'>
-		<ol className={styles.metadataList}>
-			{result.metadata.map((item, index) => (
-				<li key={index}>
-					{item.label}: <strong>{item.value}</strong>
-				</li>
-			))}
-		</ol>
-	</Section>
-)
-*/
 
-const Counts = ({ result }) => (
-	<Section title={'Counts'}>
-		<ol className={styles.countList}>
-			{Object.keys(result.counts).map(k => {
-				const count = result.counts[k]
-				return (
-					<li style={{ fontWeight: count > 0 ? '700' : '200' }} key={k}>
-						<span className={styles.description}>{k}:</span>
-						<span className={styles.count}>{count}</span>
-					</li>
-				)
-			})}
-		</ol>
-	</Section>
-)
-
-const Tests = ({ result }) => (
-	<>
-		{result.testSuites.map((suite, index) => (
-			<TestSuite key={index} data={suite} />
-		))}
-	</>
-)
-
-const TestSuite = ({ data }) => {
-	return (
-		<Section title={'Tests: ' + data.name} className={styles.testsuite}>
-			{data.description && <p style={{ marginBottom: '2rem' }}>{data.description}</p>}
-			{data.tests.map((t, i) => (
-				<Test key={i} data={t} label={data.messageLevel} errorsAreFatal={data.required} />
-			))}
-		</Section>
-	)
-}
-
-const Section = ({ children, title, className }) => (
-	<section className={`${styles.section} ${className}`}>
-		<h2>{title}</h2>
-		{children}
-	</section>
-)

@@ -1,44 +1,131 @@
-.section {
-	margin-bottom: 4rem;
-	border-bottom: 4px solid #ccc;
-	padding-bottom: 4rem;
+.result{
+	--font-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
-.section h2 {
-	margin-bottom: 2rem;
-}
-
-.testsuite {
-}
-
-.metadataList {
-	margin: 0;
-	padding: 0;
-	text-indent: 0;
-	list-style: none;
-}
-
-.metadataList li,
-.countList li {
+.header {
+	font-weight: 700;
 	margin-bottom: 1rem;
 }
 
-.countList {
-	margin: 0;
-	padding: 0;
-	text-indent: 0;
-	list-style: none;
-	max-width: 500px;
+	.title {
+		font-size: 1.6rem;
+		margin-top: 0;
+		margin-bottom: 1.8rem;
+		margin-top: 2rem;
+		color: #000;
+	}
+
+		.titleDesc {
+			font-weight: 300;
+			
+		}
+		.url {
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			-ms-word-break: break-all;
+			word-break: break-all;
+			word-break: break-word;
+			font-family: var(--font-mono);
+			letter-spacing: -1px;
+		}
+
+	.field {
+		font-weight: 700;
+		font-size: 1.6rem;
+		.fieldLabel {
+			font-weight: 300;
+		}
+	}
+
+
+
+.banner {
+	background: #fe9;
+	padding:2rem;
+	font-weight: 400;
 }
 
-.countList li {
-	display: flex;
+.banner p + p {
+	margin-top: 1rem;
 }
 
-.description {
-	flex: 1;
+.banner code {
+	font-weight: 900;
+	display: inline-block;
+	position: relative;
+	top:-1px;
+	background: rgba(255,255,255,0.5);
+	padding: 1px 9px;
+	border-radius:5px;
+	font-family: var(--font-mono);
 }
-.count {
-	flex: 0 0 100px;
-	font-size: 2rem;
+
+.section {
+	margin-bottom: 1rem;
+	border: 2px solid black;
 }
+
+.section h2 {
+	sborder-bottom: 1px solid black;
+	padding:1rem;
+	background: #eee;
+	color: #000;
+}
+
+.light {
+	font-weight:500;
+	color: #000;
+	display:block;
+	font-size:1rem;
+}
+
+.endpoint {
+	font-family: var(--font-mono);
+	font-size:2rem;
+}
+
+
+.icon {
+	background: var(--statuscolor);
+		min-height: 6rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-top: 1.5rem;
+
+		.testText {
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+		}
+
+		.testIcon {
+			flex: 1;
+		}
+	
+}
+
+.test h3 {
+		font-size: 1.4rem;
+		color: var(--colour-ink);
+		line-height:2rem;
+	}
+
+
+	.test {
+		jborder:2px solid var(--statuscolor);
+	}
+
+	.payload {
+		padding:1rem;
+	}
+
+	.message {
+		margin-left: 2rem;
+		margin-top:1rem;
+	}

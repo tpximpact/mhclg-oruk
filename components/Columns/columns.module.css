@@ -7,6 +7,11 @@
 	margin-bottom: 0.75rem;
 }
 
+.columns.supressTrailingSpace,
+.columns.supressTrailingSpace > div {
+	margin-bottom: 0 !important;
+}
+
 @media (min-width: breakpoint) {
 	.columns {
 		display: grid;

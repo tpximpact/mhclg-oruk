@@ -11,7 +11,7 @@ const Heading = ({ title }) => <h2 style={{ fontSize: '2rem', marginBottom: '2re
 
 // TODO: load from markdown
 const Samples = () => (
-	<div>
+	<div className={styles.samples}>
 		<Heading title='Sample reports' />
 		<p>For a quick preview of the results this tool reports, choose an example:</p>
 		<ol className={styles.samples}>
@@ -35,7 +35,7 @@ const Samples = () => (
 )
 
 export const ValidatorForm = props => (
-	<Columns layout={42}>
+	<Columns layout={11}>
 		<Form {...props} />
 		<Samples />
 	</Columns>
