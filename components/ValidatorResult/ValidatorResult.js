@@ -19,7 +19,7 @@ export const ValidatorResult = ({ result }) => {
 		<div className={styles.result}>
 			<Title result={result.result}/>
 			{Object.keys(endpoints).map(
-				(k,i) => <Endpoint key={i} path={k} data={endpoints[k]} />
+				(k,i) => <Endpoint rootPath={result.result.service.url} key={i} path={k} data={endpoints[k]} />
 			)}
 			
 		</div>

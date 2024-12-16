@@ -9,6 +9,9 @@ a:active,
 a:visited {
 	color: var(--theme-interaction);
 	text-decoration: underline;
+	text-decoration-color:  #00625e;
+	text-decoration-thickness:10%;
+	text-underline-position:under;
 	cursor: pointer;
 	font-weight: var(--link-weight);
 }

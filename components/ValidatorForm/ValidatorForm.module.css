@@ -1,8 +1,13 @@
 .form {
 }
 
-.samples {
+.samplesList {
 	list-style: none;
+	margin-top:1rem;
+}
+
+.samplesList li{
+	margin-top:0.5rem;
 }
 
 .submit {

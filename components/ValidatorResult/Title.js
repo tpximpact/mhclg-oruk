@@ -24,7 +24,7 @@ export const Title = ({ result }) => {
 				</span></div>
 				<div className={styles.field}><span className={styles.fieldLabel}>Profile:</span> {result.service.profile}</div>
 			</Columns>
-			{result.service.profile === "HSDS-UK1.0" &&
+			{result.service.profile === "HSDS-UK-1.0" &&
 			<Banner />
 		}
 		</header>
