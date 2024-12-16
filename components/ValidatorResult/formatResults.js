@@ -1,5 +1,6 @@
 import { STATUS } from '@/utilities/status'
 import { groupBy } from '@/utilities/groupBy'
+import { isDeepEqual } from '@/utilities/isDeepEqual'
 
 const normaliseEndpointName = (endpointName) =>
   endpointName !== "/" && endpointName.slice(-1) === "/"
@@ -43,12 +44,12 @@ export const formatResults = (input) => {
   });
   
   groupTestsByParent(result);
- // result = deDuplicateMessages(result)
+  result = deDuplicateMessages(result)
 
   return result;
 };
 
-/*
+
 const deDuplicateMessages = (input) =>{
   const result = JSON.parse(JSON.stringify(input))
   Object.keys(result).forEach(endpointKey => {
@@ -57,10 +58,9 @@ const deDuplicateMessages = (input) =>{
     Object.keys(endpoint.groups).forEach(
       groupKey => {
         const group = endpoint.groups[groupKey]
-        console.log(group)
         group.forEach(
           test => {
-            test.messages = []
+            test.messages = deduplicate(test.messages)
           }
         )
       }
@@ -69,4 +69,18 @@ const deDuplicateMessages = (input) =>{
   });
   return result
 }
-  */
+
+
+const deduplicate = (arr) => {
+  let uniques = []
+  arr.forEach(
+    item => {
+      if (!isIn(item,uniques)){
+        uniques.push(item)
+      }
+    }
+  )
+  return uniques
+}
+
+const isIn = (needle, haystack) => haystack.some(item => isDeepEqual(item, needle));
