@@ -80,6 +80,14 @@ const deduplicate = (arr) => {
       }
     }
   )
+  uniques.forEach(
+    u => {
+      const number = arr.filter(
+        member => isDeepEqual(member,u)
+      ).length
+      u.count = number
+    }
+  )
   return uniques
 }
 
