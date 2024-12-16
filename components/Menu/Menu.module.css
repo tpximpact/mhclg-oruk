@@ -50,7 +50,7 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 }
 
 .Menu li {
-	margin: 0;
+	margin: 0 0 1rem;
 	padding: 0;
 	text-indent: 0;
 	list-style: none;
