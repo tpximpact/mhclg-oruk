@@ -5,13 +5,15 @@ import parse from 'html-react-parser'
 import Columns from '@/components/Columns'
 import styles from './Menu.module.css'
 import Link from 'next/link'
+import { MarkdownError } from './MarkdownError'
 
 export const MarkdownContent = async ({ raw, autoMenu, afterLinks }) => {
 	const html = marked.parse(raw)
-	if (autoMenu) {
-		return <MarkdownContentWithMenu html={html} afterLinks={afterLinks} />
+	if (!html) {
+		return <MarkdownError />
 	}
-	return <MarkdownContentNoMenu html={html} afterLinks={afterLinks} />
+	const ContentComponent = autoMenu ? MarkdownContentWithMenu : MarkdownContentNoMenu
+	return <ContentComponent html={html} afterLinks={afterLinks} />
 }
 
 const linkify = text => {
@@ -57,9 +59,9 @@ const MarkdownContentWithMenu = ({ html, afterLinks }) => {
 					{afterLinks && <Afterlinks data={afterLinks} />}
 				</div>
 				<div>
-					<h4 className={styles.onthispage} style={{ fontWeight: 300 }}>
+					<h2 className={styles.onthispage} style={{ fontWeight: 300 }}>
 						On this page
-					</h4>
+					</h2>
 					<ol className={styles.menu}>
 						{menu.map((item, i) => (
 							<li key={i}>
