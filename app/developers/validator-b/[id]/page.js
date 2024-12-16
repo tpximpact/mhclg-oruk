@@ -17,6 +17,7 @@ export default async function Page(props) {
 	return (
 		<PageMargin>
 			<ValidatorResultPageTitle />
+			<h2>(Alternative format)</h2>
 			<RemoteJSON
 				method={METHOD.POST}
 				RetryComponent={() => (
