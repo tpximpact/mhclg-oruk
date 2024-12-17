@@ -3,19 +3,15 @@
 	--colour-black: #000;
 	--colour-white: #fff;
 	--colour-offwhite: rgb(252, 249, 245);
-	--colour-dark-green: rgb(40, 97, 79);
-	--colour-x-dark-green: rgb(42, 56, 52);
-	--colour-mint: #75BEA0; /*#5ac09e;*/
-	--colour-dark-blue: #135e75;
-
-
+	--colour-mint: #75BEA0; 
+	
 	/* Theme colours */
 	--theme-paper: var(--colour-offwhite);
-	--theme-ink: var(--colour-x-dark-green);
-	--theme-interaction: black;
-	--anchor: black;
+	--theme-ink: var(--colour-black);
+	--theme-interaction: var(--colour-mint);
+	--anchor: var(--theme-ink);
 	--anchor-underline: var(--colour-mint);
-
+	--anchor-roll-underline: var(--anchor);
 	/* Typography */
 
 	--link-weight: 400;

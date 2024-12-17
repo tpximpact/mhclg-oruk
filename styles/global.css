@@ -4,8 +4,6 @@ body {
 }
 
 a,
-a:hover,
-a:active,
 a:visited {
 	color: var(--anchor);
 	text-decoration: underline;
@@ -14,6 +12,11 @@ a:visited {
 	text-underline-position:under;
 	cursor: pointer;
 	font-weight: var(--link-weight);
+}
+
+a:hover,
+a:active {
+	text-decoration-color: var(--anchor-roll-underline);
 }
 
 .cm-theme-light * {
