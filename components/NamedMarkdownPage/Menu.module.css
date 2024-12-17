@@ -1,3 +1,4 @@
+
 .menu {
 	padding: 0;
 	margin: 1rem 0;
@@ -26,7 +27,7 @@
              "Droid Sans", 
              "Helvetica Neue", 
              Arial, sans-serif;
-	background: #fcf8ca;
+	background: var(--menu-background-highlight);
 	display: inline-block;
 	padding: 0 0.5rem;
 	font-weight: 900;
@@ -76,9 +77,9 @@
 }
 
 .content blockquote {
-	background: #efefef;
+	background: var(--menu-blockquote-background);
 	padding: 1rem 1rem;
-	border-left: 8px solid #dfdfdf;
+	border-left: 8px solid var(--menu-blockquote-border);
 	margin-bottom: 2rem;
 	font-style: italic;
 	font-weight: 600;

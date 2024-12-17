@@ -1,6 +1,4 @@
-.result{
-	--font-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-}
+
 
 .header {
 	font-weight: 700;
@@ -12,7 +10,7 @@
 		margin-top: 0;
 		margin-bottom: 1.8rem;
 		margin-top: 2rem;
-		color: #000;
+		color: var(--validatorResult-black);
 	}
 
 		.titleDesc {
@@ -40,7 +38,7 @@
 
 
 .banner {
-	background: #fe9;
+	background: var(--validatorResult-banner-background);
 	padding:2rem;
 	font-weight: 400;
 }
@@ -54,7 +52,7 @@
 	display: inline-block;
 	position: relative;
 	top:-1px;
-	background: rgba(255,255,255,0.5);
+	background: var(--validatorResult-banner-code-background);
 	padding: 1px 9px;
 	border-radius:5px;
 	font-family: var(--font-mono);
@@ -62,12 +60,12 @@
 
 .section {
 	margin-bottom: 1rem;
-	border: 2px solid black;
+	border: 2px solid var(--validatorResult-black);
 }
 
 .endpointContainer h2 {
 	flex:1;
-	color: #000;
+	color: var(--validatorResult-black);
 }
 
 .endpointContainer .endpointRight{
@@ -83,15 +81,15 @@
 
 
 .endpointContainer {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid var(--validatorResult-black);
 	padding:1rem;
-	basckground: #eee;
+	background: var(--validatorResult-background);
 	display:flex;
 }
 
 .light {
 	font-weight:500;
-	color: #000;
+	color: var(--validatorResult-black);
 	display:block;
 	font-size:1rem;
 }

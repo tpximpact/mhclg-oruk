@@ -1,3 +1,4 @@
+
 .Topbar {
 	/*background: #fc0;*/
 }
@@ -28,7 +29,7 @@
 	font-weight: var(--link-weight);
 	margin: 0 0;
 	cursor: pointer;
-	color: black;
+	color: var(--Header-button-color);
 }
 
 .noJsLink {
@@ -53,11 +54,11 @@
 
 .right button.open {
 	/*background: #EEFFFE;*/
-	background: #eaeaea;
+	background: var(--Header-background-open);
 }
 
 .right button.closed {
-	background: var(--theme-paper);
+	background: var(--Header-background-closed);
 }
 
 .right button div {
@@ -67,7 +68,7 @@
 
 .right button.open div,
 .right button:hover div {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid var(--Header-border-color);
 }
 /*
 .right button span:before {
@@ -83,10 +84,10 @@
 }*/
 
 .right button span:before {
-	border-bottom-color: #000;
+	border-bottom-color: var(--Header-border-color);
+	border-right-color: var(--Header-border-color);
 	border-bottom-style: solid;
 	border-bottom-width: 2px;
-	border-right-color: #000;
 	border-right-style: solid;
 	border-right-width: 2px;
 	content: '';

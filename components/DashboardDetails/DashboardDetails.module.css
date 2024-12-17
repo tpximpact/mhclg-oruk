@@ -1,3 +1,5 @@
+
+
 .table {
 	border-collapse: collapse;
 	width: 100%;
@@ -27,7 +29,7 @@
 
 .table thead tr {
 	border-top: 0;
-	border-bottom: 3px solid black;
+	border-bottom: 3px solid var(--dashboardDetails-border-color);
 }
 
 .table thead th {

@@ -1,5 +1,6 @@
 @value breakpoint: 1024px;
 
+
 .columns {
 	margin-bottom: 2.25rem;
 }
@@ -47,12 +48,12 @@
 
 @media (min-width: breakpoint) {
 	.debug > span {
-		background: rgba(0, 0, 0, 0.1);
-		border-left: 2px solid black;
-		border-right: 2px solid black;
+		background: var(--columns-debug-background-color);
+		border-left: 2px solid var(--columns-debug-border-color);
+		border-right: 2px solid var(--columns-debug-border-color);
 		padding-left: 0.75rem;
 		font-family: helvetica;
-		color: #000;
+		color: var(--columns-debug-color);
 	}
 }
 
