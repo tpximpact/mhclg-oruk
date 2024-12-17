@@ -8,6 +8,7 @@
 	/* Theme colours */
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-black);
+	--theme-headline: #737373;
 	--theme-interaction: var(--colour-mint);
 	--anchor: var(--theme-ink);
 	--anchor-underline: var(--colour-mint);
