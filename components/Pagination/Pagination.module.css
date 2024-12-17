@@ -1,3 +1,5 @@
+
+
 .visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -32,16 +34,16 @@
 .noAnchor {
 	display: block;
 	padding: 0.5em 1em;
-	noborder: 1px solid #000;
+	border: 1px solid var(--pagination-border-color);
 	border-radius: 0.2em;
 	notext-decoration: none;
 }
 
 .noAnchor {
-	color: #999;
+	color: var(--pagination-no-anchor-color);
 }
 
 .pagination a[aria-current='page'] {
-	background-color: #000;
-	color: #fff;
+	background-color: var(--pagination-current-bg-color);
+	color: var(--pagination-current-text-color);
 }

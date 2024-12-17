@@ -1,3 +1,5 @@
+
+
 .form {
 }
 
@@ -32,7 +34,7 @@
 	font-weight: normal;
 	padding: 5px;
 	border-radius: 0;
-	border: 1px solid black;
+	border: 1px solid var(--ValidatorForm-border-color);
 }
 
 .submit {

@@ -7,9 +7,9 @@ a,
 a:hover,
 a:active,
 a:visited {
-	color: var(--theme-interaction);
+	color: var(--anchor);
 	text-decoration: underline;
-	text-decoration-color:  #00625e;
+	text-decoration-color:  var(--anchor-underline);
 	text-decoration-thickness:10%;
 	text-underline-position:under;
 	cursor: pointer;

@@ -1,9 +1,10 @@
+
+
 .spinner {
 	display: inline-block;
 	width: 7.5rem;
 	height: 7.5rem;
-	--ui-spinner: #000;
-	--ui-spinner-alt: #000;
+
 }
 .spinner:after {
 	content: ' ';
@@ -12,8 +13,8 @@
 	height: 5rem;
 	margin: 2.5rem;
 	border-radius: 50%;
-	border: 18px solid var(--ui-spinner);
-	border-color: var(--ui-spinner) transparent var(--ui-spinner-alt) transparent;
+	border: 18px solid var(--spinner-border-color);
+	border-color: var(--spinner-border-color) transparent var(--spinner-border-color-alt) transparent;
 	animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

@@ -1,3 +1,4 @@
+
 .box {
 	border-radius: 0.5rem;
 	padding: 0.5rem;
@@ -44,26 +45,26 @@
 }
 
 .box.current {
-	border-color: #a3e635;
-	background: #d9f99d;
-	color: #1a2e05;
+	border-color: var(--VersionedDocumentation-current-border-color);
+	background: var(--VersionedDocumentation-current-background);
+	color: var(--VersionedDocumentation-current-color);
 }
 
 .box.current select {
-	border-color: #a3e635;
-	background: #d9f99d;
-	color: #1a2e05;
+	border-color: var(--VersionedDocumentation-current-border-color);
+	background: var(--VersionedDocumentation-current-background);
+	color: var(--VersionedDocumentation-current-color);
 	margin: 1rem 0;
 }
 
 .box.legacy {
-	border-color: #b91c1c;
-	background: #dc2626;
-	color: #fff;
+	border-color: var(--VersionedDocumentation-legacy-border-color);
+	background: var(--VersionedDocumentation-legacy-background);
+	color: var(--VersionedDocumentation-legacy-color);
 }
 
 .box.legacy select {
-	border-color: #b91c1c;
-	background: #dc2626;
-	color: #fff;
+	border-color: var(--VersionedDocumentation-legacy-border-color);
+	background: var(--VersionedDocumentation-legacy-background);
+	color: var(--VersionedDocumentation-legacy-color);
 }

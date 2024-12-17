@@ -34,7 +34,7 @@
 	.th {
 		font-weight: bold;
 		font-size: 1.4rem;
-		border-bottom: 1px solid gray;
+		border-bottom: 1px solid var(--dataTable-gray);
 		margin-bottom: 0.5rem;
 	}
 
@@ -96,7 +96,7 @@
 	}
 
 	.thead {
-		background: var(--theme-dashboard-header-bg);
+		background: var(--dataTable-theme-dashboard-header-bg);
 	}
 
 	.th,
@@ -105,8 +105,8 @@
 	}
 
 	.thead .tr {
-		border-top: var(--theme-dashboard-border);
-		border-bottom: var(--theme-dashboard-border);
+		border-top: var(--dataTable-theme-dashboard-border);
+		border-bottom: var(--dataTable-theme-dashboard-border);
 	}
 
 	.th {
@@ -115,11 +115,11 @@
 	}
 
 	.tr:not(:last-child) {
-		border-bottom: var(--theme-dashboard-row-divider);
+		border-bottom: var(--dataTable-theme-dashboard-row-divider);
 	}
 
 	.tr:last-child {
-		border-bottom: var(--theme-dashboard-border);
+		border-bottom: var(--dataTable-theme-dashboard-border);
 	}
 
 	.string,
