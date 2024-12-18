@@ -1,49 +1,67 @@
+/* Typography */
 :root {
-	/* Colour primities */
-	--colour-black: #000;
-	--colour-white: #fff;
-	--colour-offwhite: rgb(252, 249, 245);
-	--colour-mint: #75BEA0; 
-	
-	/* Theme colours */
-	--theme-paper: var(--colour-offwhite);
-	--theme-ink: var(--colour-black);
-	--theme-headline: #737373;
-	--theme-interaction: var(--colour-mint);
-	--anchor: var(--theme-ink);
-	--anchor-underline: var(--colour-mint);
-	--anchor-roll-underline: var(--anchor);
-	/* Typography */
-
 	--link-weight: 400;
 	--font-mono: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
 		'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
 		'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+	--datatable-border-weight-heavy:3px;
+}
 
+/* Colour */
+:root {
+	
+	/* Colour primities */
+	--colour-black: rgb(11,12,12); /* gov.uk black */
+	--colour-white: #fff;
+	--colour-offwhite: #fcf9f5;
+	--colour-mint: #75BEA0; 
+	--color-gov-blue: #1d70b8;
+	
+	--colour-grey-50: #f9fafb;
+	--colour-grey-100: #f3f4f6;
+	--colour-grey-200: #e5e7eb;
+	--colour-grey-300: #d1d5db;
+	--colour-grey-400: #9ca3af;
+	--colour-grey-500: #6b7280;
+	--colour-grey-600: #4b5563;
+	--colour-grey-700: #374151;
+	--colour-grey-800: #1f2937;
+	--colour-grey-900: #111827;
+	--colour-grey-950: #030712;
+	
+	/* Theme colours */
+	--theme-paper: var(--colour-offwhite);
+	--theme-ink: var(--colour-black);
+	--theme-headline: var(--theme-ink);
+	--theme-interaction: var(--colour-mint);
+	--theme-anchor: var(--theme-ink);
+	--theme-anchor-underline: var(--colour-mint);
+	--theme-anchor-roll-underline: var(--anchor);
+	
 	/* @/components */
 
 	--button-background-color: transparent;
-	--button-border-color: black;
-	--button-color: black;
-	--button-hover-background-color: black;
-	--button-hover-color: white;
-	--changelog-background-color: #fff;
-	--changelog-code-background-color: white;
+	--button-border-color: var(--theme-ink);
+	--button-color: var(--theme-ink);
+	--button-hover-background-color: var(--theme-ink);
+	--button-hover-color: var(--theme-paper);
+	--changelog-background-color: var(--theme-paper);
+	--changelog-code-background-color: var(--theme-paper);
 	--changelog-danger-color: red;
-	--columns-debug-background-color: rgba(0, 0, 0, 0.1);
-	--columns-debug-border-color: black;
-	--columns-debug-color: #000;
-	--crumbtrail-separator-color: rgba(0, 0, 0, 0.2);
-	--dashboard-border-color: black;
-	--dashboardDetails-border-color: black;
-	--dataTable-gray: #ccc;
-	--dataTable-theme-dashboard-border: black;
-	--dataTable-theme-dashboard-header-bg: #ddd;
-	--dataTable-theme-dashboard-row-divider: black;
+	--columns-debug-background-color: rgba(255, 0, 0, 0.1);
+	--columns-debug-border-color: red;
+	--columns-debug-color: red;
+	--crumbtrail-separator-color: var(--colour-grey-300) ;
+	--dashboard-border-color: var(--theme-ink);
+	--dashboardDetails-border-color: var(--theme-ink);
+	--dataTable-gray: red;
+	--dataTable-theme-dashboard-border: var(--theme-ink);
+	--dataTable-theme-dashboard-header-bg: var(--theme-paper) ;
+	--dataTable-theme-dashboard-row-divider: var(--theme-ink);
 	--Header-background-closed: var(--theme-paper);
-	--Header-background-open: #eaeaea;
-	--Header-border-color: #000;
-	--Header-button-color: black;
+	--Header-background-open: var(--colour-grey-200);
+	--Header-border-color: var(--colour-grey-500);
+	--Header-button-color: var(--theme-ink);
 	--HR-background: #333;
 	--HR-gradient-end: #333;
 	--HR-gradient-middle: #ccc;
@@ -55,32 +73,32 @@
 	--menu-background-highlight: #fcf8ca;
 	--menu-blockquote-background: #efefef;
 	--menu-blockquote-border: #dfdfdf;
-	--Menu-background: #eaeaea;
-	--Menu-box-shadow: rgba(0, 0, 0, 0.4);
-	--pagination-border-color: #000;
-	--pagination-current-bg-color: #000;
-	--pagination-current-text-color: #fff;
+	--Menu-background: var(--Header-background-open);
+	--Menu-box-shadow: var(--colour-grey-700);
+	--pagination-border-color: var(--theme-paper);
+	--pagination-current-bg-color: var(--theme-ink);
+	--pagination-current-text-color: var(--theme-paper);
 	--pagination-no-anchor-color: #999;
 	--spinner-border-color-alt: #ccc;
-	--spinner-border-color: #000;
-	--tableSorting-arrow-bg: rgba(0, 0, 0, 1);
+	--spinner-border-color: var(--theme-ink);
+	--tableSorting-arrow-bg: var(--theme-ink);
 	--tableSorting-arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
-	--tableSorting-border-color: black;
+	--tableSorting-border-color: var(--theme-ink);
 	--tableSorting-box-shadow: rgba(0, 0, 0, 0.2);
-	--tableSorting-color-black: black;
-	--tableSorting-option-bg: #eee;
-	--tableSorting-select-bg: rgba(255, 255, 255, 0.2);
-	--ValidatorForm-border-color: black;
-	--validatorResult-background: #fff;
+	--tableSorting-color-black: var(--theme-ink);
+	--tableSorting-option-bg: var(--colour-grey-100);
+	--tableSorting-select-bg: var(--colour-grey-50);
+	--ValidatorForm-border-color: var(--theme-ink);
+	--validatorResult-background: var(--theme-paper);
 	--validatorResult-banner-background: #fe9;
 	--validatorResult-banner-code-background: rgba(255, 255, 255, 0.5);
-	--validatorResult-black: #000;
+	--validatorResult-black: var(--theme-ink);
 	--VersionedDocumentation-current-background: #d9f99d;
 	--VersionedDocumentation-current-border-color: #a3e635;
 	--VersionedDocumentation-current-color: #1a2e05;
 	--VersionedDocumentation-legacy-background: #dc2626;
 	--VersionedDocumentation-legacy-border-color: #b91c1c;
-	--VersionedDocumentation-legacy-color: #fff;
+	--VersionedDocumentation-legacy-color: var(--theme-paper);
 }
 
 @media (prefers-color-scheme: dark) {

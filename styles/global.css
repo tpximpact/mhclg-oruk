@@ -5,9 +5,9 @@ body {
 
 a,
 a:visited {
-	color: var(--anchor);
+	color: var(--theme-anchor);
 	text-decoration: underline;
-	text-decoration-color:  var(--anchor-underline);
+	text-decoration-color:  var(--theme-anchor-underline);
 	text-decoration-thickness:10%;
 	text-underline-position:under;
 	cursor: pointer;
@@ -16,7 +16,7 @@ a:visited {
 
 a:hover,
 a:active {
-	text-decoration-color: var(--anchor-roll-underline);
+	text-decoration-color: var(--theme-anchor-roll-underline);
 }
 
 .cm-theme-light * {
