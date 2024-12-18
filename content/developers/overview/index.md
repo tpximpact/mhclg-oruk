@@ -47,7 +47,7 @@ Using the data standard will reduce the cost of collecting data, make the assura
 
 The Project Initiation Document [project initiation document (PID) template](/adopt/03_pid) provided to help council project managers, includes the diagram below. 
 
-GUY TO INSERT DIAGRAM
+![A diagram showimg quality procedures](/developers/overview/qa.png "Quality")
 
 Council's are advised to start with a simple proof of concept before scaling, given the complexity of involving stakeholders.
 The model below is derived from the PID diagram above to outline the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal
