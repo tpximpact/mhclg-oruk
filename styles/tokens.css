@@ -9,12 +9,36 @@
 
 /* Colour */
 :root {
-	/* Colour primities */
-	--colour-black: rgb(11, 12, 12); /* gov.uk black */
-	--colour-white: #fff;
+	/* GOV colours */
+	 --govuk-colour-red:	#d4351c	;
+ --govuk-colour-yellow:	#ffdd00	;
+ --govuk-colour-green:	#00703c	;
+ --govuk-colour-blue:	#1d70b8	;
+ --govuk-colour-dark-blue:	#003078	;
+ --govuk-colour-light-blue:	#5694ca	;
+ --govuk-colour-purple:	#4c2c92	;
+ --govuk-colour-black:	#0b0c0c	;
+ --govuk-colour-dark-grey:	#505a5f	;
+ --govuk-colour-mid-grey:	#b1b4b6	;
+ --govuk-colour-light-grey:	#f3f2f1	;
+ --govuk-colour-white:	#ffffff	;
+ --govuk-colour-light-purple:	#6f72af	;
+ --govuk-colour-bright-purple:	#912b88	;
+ --govuk-colour-pink:	#d53880	;
+ --govuk-colour-light-pink:	#f499be	;
+ --govuk-colour-orange:	#f47738	;
+ --govuk-colour-brown:	#b58840	;
+ --govuk-colour-light-green:	#85994b	;
+ --govuk-colour-turquoise:	#28a197;
+	
+	
+	/* our colour primities */
+	--colour-black: var(--govuk-colour-black);
+	--colour-white: var(--govuk-colour-white);
 	--colour-offwhite: #fcf9f5;
 	--colour-mint: #75bea0;
 	--color-gov-blue: #1d70b8;
+	--colour-mhclg:#00625e;
 
 	--colour-grey-50: #f9fafb;
 	--colour-grey-100: #f3f4f6;
@@ -31,7 +55,7 @@
 	/* Theme colours */
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-black);
-	--theme-headline: var(--colour-grey-500);
+	--theme-headline: var(--colour-mhclg);
 	--theme-interaction: var(--colour-mint);
 	--theme-anchor: var(--theme-ink);
 	--theme-anchor-underline: var(--colour-mint);
