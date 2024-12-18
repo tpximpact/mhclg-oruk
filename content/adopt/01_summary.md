@@ -1,5 +1,5 @@
 ---
-title: Executive summary 
+title: Executive summary
 slug: For senior managers
 ---
 

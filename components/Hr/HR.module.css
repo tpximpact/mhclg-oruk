@@ -1,10 +1,13 @@
-
-
 .hr {
 	opacity: 0.2;
 	margin-bottom: 4rem;
 	border: 0;
 	height: 3px;
 	background: var(--HR-background);
-	background-image: linear-gradient(to right, var(--HR-gradient-start), var(--HR-gradient-end), var(--HR-gradient-middle));
+	background-image: linear-gradient(
+		to right,
+		var(--HR-gradient-start),
+		var(--HR-gradient-end),
+		var(--HR-gradient-middle)
+	);
 }

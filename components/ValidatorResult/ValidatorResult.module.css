@@ -1,45 +1,40 @@
-
-
 .header {
 	font-weight: 700;
 	margin-bottom: 1rem;
 }
 
-	.title {
-		font-size: 1.6rem;
-		margin-top: 0;
-		margin-bottom: 1.8rem;
-		margin-top: 2rem;
-		color: var(--validatorResult-black);
+.title {
+	font-size: 1.6rem;
+	margin-top: 0;
+	margin-bottom: 1.8rem;
+	margin-top: 2rem;
+	color: var(--validatorResult-black);
+}
+
+.titleDesc {
+	font-weight: 300;
+}
+.url {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	font-family: var(--font-mono);
+	letter-spacing: -1px;
+}
+
+.field {
+	font-weight: 700;
+	font-size: 1.6rem;
+	.fieldLabel {
+		font-weight: 300;
 	}
-
-		.titleDesc {
-			font-weight: 300;
-			
-		}
-		.url {
-			overflow-wrap: break-word;
-			word-wrap: break-word;
-			-ms-word-break: break-all;
-			word-break: break-all;
-			word-break: break-word;
-			font-family: var(--font-mono);
-			letter-spacing: -1px;
-		}
-
-	.field {
-		font-weight: 700;
-		font-size: 1.6rem;
-		.fieldLabel {
-			font-weight: 300;
-		}
-	}
-
-
+}
 
 .banner {
 	background: var(--validatorResult-banner-background);
-	padding:2rem;
+	padding: 2rem;
 	font-weight: 400;
 }
 
@@ -51,10 +46,10 @@
 	font-weight: 900;
 	display: inline-block;
 	position: relative;
-	top:-1px;
+	top: -1px;
 	background: var(--validatorResult-banner-code-background);
 	padding: 1px 9px;
-	border-radius:5px;
+	border-radius: 5px;
 	font-family: var(--font-mono);
 }
 
@@ -64,84 +59,80 @@
 }
 
 .endpointContainer h2 {
-	flex:1;
+	flex: 1;
 	color: var(--validatorResult-black);
 }
 
-.endpointContainer .endpointRight{
-	flex: 0, 0,100px;
+.endpointContainer .endpointRight {
+	flex: 0, 0, 100px;
 	display: flex;
 }
 
-.endpointRight a{
+.endpointRight a {
 	flex: 1;
 	display: block;
 	margin-top: auto;
 }
 
-
 .endpointContainer {
 	border-bottom: 1px solid var(--validatorResult-black);
-	padding:1rem;
+	padding: 1rem;
 	background: var(--validatorResult-background);
-	display:flex;
+	display: flex;
 }
 
 .light {
-	font-weight:500;
+	font-weight: 500;
 	color: var(--validatorResult-black);
-	display:block;
-	font-size:1rem;
+	display: block;
+	font-size: 1rem;
 }
 
 .endpoint {
 	font-family: var(--font-mono);
-	font-size:2rem;
-	font-weight:900;
+	font-size: 2rem;
+	font-weight: 900;
 }
-
 
 .icon {
 	background: var(--statuscolor);
-		min-height: 6rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding-top: 1.5rem;
+	min-height: 6rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 1.5rem;
 
-		.testText {
-			clip: rect(0 0 0 0);
-			clip-path: inset(50%);
-			height: 1px;
-			overflow: hidden;
-			position: absolute;
-			white-space: nowrap;
-			width: 1px;
-		}
+	.testText {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
 
-		.testIcon {
-			flex: 1;
-		}
-	
+	.testIcon {
+		flex: 1;
+	}
 }
 
 .test h3 {
-		font-size: 1.4rem;
-		color: var(--colour-ink);
-		line-height:2rem;
-	}
+	font-size: 1.4rem;
+	color: var(--colour-ink);
+	line-height: 2rem;
+}
 
+.test {
+	jborder: 2px solid var(--statuscolor);
+}
 
-	.test {
-		jborder:2px solid var(--statuscolor);
-	}
+.payload {
+	padding: 1rem;
+}
 
-	.payload {
-		padding:1rem;
-	}
-
-	.message {
-		margin-left: 2rem;
-		margin-top:1rem;
-	}
+.message {
+	margin-left: 2rem;
+	margin-top: 1rem;
+}

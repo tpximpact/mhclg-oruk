@@ -1,5 +1,5 @@
 ---
-title: Project initiation document (PID) template 
+title: Project initiation document (PID) template
 slug: For project managers.
 ---
 

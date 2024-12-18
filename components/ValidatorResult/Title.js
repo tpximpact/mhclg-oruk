@@ -1,7 +1,6 @@
-
 import Icon from '@/components/Icon'
 import Columns from '@/components/Columns'
-import {Banner} from './Banner'
+import { Banner } from './Banner'
 import { resultToStatus } from '@/utilities/resultToStatus'
 import { getColourForStatus } from '@/utilities/getColourForStatus'
 import { getIconForStatus } from '@/utilities/getIconForStatus'
@@ -16,18 +15,19 @@ export const Title = ({ result }) => {
 				<span className={styles.titleDesc}>For the services at </span>
 				<span className={styles.url}>{result.service.url}</span>
 			</h2>
-			<Columns layout="11">
-				<div className={styles.field}><span className={styles.fieldLabel}>Overall result:</span>{' '}
-				{result.service.isValid ? 'Pass' : 'Fail'}{' '}
-				<span className={styles.overallIcon}>
-					<Icon colour={colour} weight='6' icon={getIconForStatus(status, true)} size='48' />
-				</span></div>
-				<div className={styles.field}><span className={styles.fieldLabel}>Profile:</span> {result.service.profile}</div>
+			<Columns layout='11'>
+				<div className={styles.field}>
+					<span className={styles.fieldLabel}>Overall result:</span>{' '}
+					{result.service.isValid ? 'Pass' : 'Fail'}{' '}
+					<span className={styles.overallIcon}>
+						<Icon colour={colour} weight='6' icon={getIconForStatus(status, true)} size='48' />
+					</span>
+				</div>
+				<div className={styles.field}>
+					<span className={styles.fieldLabel}>Profile:</span> {result.service.profile}
+				</div>
 			</Columns>
-			{result.service.profile === "HSDS-UK-1.0" &&
-			<Banner />
-		}
+			{result.service.profile === 'HSDS-UK-1.0' && <Banner />}
 		</header>
 	)
 }
-

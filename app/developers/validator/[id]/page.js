@@ -21,7 +21,7 @@ export default async function Page(props) {
 				method={METHOD.POST}
 				RetryComponent={() => (
 					<section style={{ marginTop: '2rem' }}>
-						<ValidatorForm action={navigate} defaultValue={searchParams.uri} title="Check again"/>
+						<ValidatorForm action={navigate} defaultValue={searchParams.uri} title='Check again' />
 					</section>
 				)}
 				ResultRenderComponent={ValidatorResult}

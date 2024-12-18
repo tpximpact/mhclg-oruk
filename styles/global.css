@@ -7,9 +7,9 @@ a,
 a:visited {
 	color: var(--theme-anchor);
 	text-decoration: underline;
-	text-decoration-color:  var(--theme-anchor-underline);
-	text-decoration-thickness:10%;
-	text-underline-position:under;
+	text-decoration-color: var(--theme-anchor-underline);
+	text-decoration-thickness: 10%;
+	text-underline-position: under;
 	cursor: pointer;
 	font-weight: var(--link-weight);
 }

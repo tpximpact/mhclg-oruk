@@ -5,10 +5,9 @@ import { Title } from './Title'
 import { Endpoint } from './Endpoint'
 import styles from './ValidatorResult.module.css'
 
-import {formatResults} from './formatResults'
+import { formatResults } from './formatResults'
 
 export const ValidatorResult = ({ result }) => {
-
 	const endpoints = useMemo(() => formatResults(result.result), [result])
 
 	useEffect(() => {
@@ -17,13 +16,10 @@ export const ValidatorResult = ({ result }) => {
 
 	return (
 		<div className={styles.result}>
-			<Title result={result.result}/>
-			{Object.keys(endpoints).map(
-				(k,i) => <Endpoint rootPath={result.result.service.url} key={i} path={k} data={endpoints[k]} />
-			)}
-			
+			<Title result={result.result} />
+			{Object.keys(endpoints).map((k, i) => (
+				<Endpoint rootPath={result.result.service.url} key={i} path={k} data={endpoints[k]} />
+			))}
 		</div>
 	)
 }
-
-

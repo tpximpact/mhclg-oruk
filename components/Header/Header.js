@@ -13,7 +13,11 @@ export const Header = ({ items, enableMenu = false }) => {
 	return (
 		<header>
 			<Topbar enableMenu={enableMenu} showMenu={showMenu} setShowMenu={setShowMenu} />
-			{showMenu ? <Menu open={true} ariaName='mainmenu' items={items} setShowMenu={setShowMenu} /> : <Menu ariaName='mainmenu' items={items} setShowMenu={setShowMenu} />}
+			{showMenu ? (
+				<Menu open={true} ariaName='mainmenu' items={items} setShowMenu={setShowMenu} />
+			) : (
+				<Menu ariaName='mainmenu' items={items} setShowMenu={setShowMenu} />
+			)}
 		</header>
 	)
 }

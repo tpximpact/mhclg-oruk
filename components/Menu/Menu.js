@@ -7,7 +7,7 @@ export const Menu = ({ ariaName, items, setShowMenu, open }) => {
 		return
 	}
 	return (
-		<nav aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open:null}`}>
+		<nav aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open : null}`}>
 			{items.map((item, i) => (
 				<MenuSection key={i} setShowMenu={setShowMenu} data={item} />
 			))}
