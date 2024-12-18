@@ -3,10 +3,23 @@ title: Project initiation document (PID) template
 slug: For project managers.
 ---
 
-# TODO: PID
+# Project Initiation Document
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas sollicitudin sapien id pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ullamcorper pulvinar sapien eu mattis. Integer consectetur, metus quis faucibus suscipit, massa lectus blandit elit, in volutpat lectus mi vitae neque. Fusce tristique urna volutpat nulla consectetur sollicitudin. Etiam interdum facilisis efficitur. Aliquam erat volutpat. Etiam nunc libero, accumsan a neque eget, porta molestie nisl.
+## Introduction
 
-Etiam mollis, nisl non gravida suscipit, nisi felis consectetur libero, nec ultricies nisl justo quis orci. Donec vitae volutpat nulla. Donec enim justo, aliquet at nibh nec, varius elementum felis. Nullam nisi eros, porttitor in fringilla eu, condimentum eget nulla. Nullam non dignissim mauris, quis feugiat dolor. In ante nisl, malesuada eget fermentum sed, cursus vitae ligula. Nunc rutrum, est at interdum convallis, dolor tortor rhoncus purus, quis lacinia diam diam id augue. Aliquam erat volutpat. Curabitur et velit rhoncus, mollis orci sit amet, volutpat mauris. Nullam varius ante nibh, id eleifend velit pretium eget. Sed pharetra tortor nec lorem commodo mattis. Duis hendrerit lacus vitae nunc vehicula volutpat. Phasellus lacus felis, facilisis hendrerit rhoncus non, luctus a purus. Morbi euismod id dui ac euismod. Aenean eu ornare sem, id fringilla nibh.
+The Ministry of Housing, Communities and Local Government (MHCLG) is supporting councils to adopt the Open Referral UK (ORUK) data standard. 
 
-Vivamus condimentum purus neque, eget iaculis nunc aliquet sed. Cras sed turpis sit amet ligula iaculis rutrum in sit amet ex. Sed auctor non lacus eu sagittis. Duis varius sed purus consequat imperdiet. Mauris turpis tellus, pretium facilisis varius in, dignissim et enim. Curabitur interdum, nibh in lobortis pharetra, mauris est porta magna, at mattis lacus est sit amet odio. Vestibulum iaculis condimentum massa id lobortis. Mauris in odio lectus.
+ORUK is the project name for UK use of the international data standard Human Services Data Standard(HSDS). Essentially this is the data fields used to describe the details about a local service to support people e.g. the name, description, venue, start time etc. A service could be a public sector service or a community service e.g. foodbank, benefit assessment.
+
+This initiative aims to improve efficiency with partners, enhance data accuracy and completeness, enable sustainable cost models, and facilitate data sharing across boundaries to better serve residents in various contexts.
+
+This document is designed for programme and project managers leading the implementation of Open Referral UK within a council area. The project scope should include collaboration with external partners, which is briefly addressed on the next page.
+
+We assume the business case has been agreed in principle and a project mandate submitted. While each council may approach this project differently, the headings in this document reflect standard elements of a PID. Rather than providing exhaustive project details, the document focuses on key considerations and ideas, offering a concise yet supportive framework to help councils create their own PID for implementing Open Referral UK.
+
+For additional resources, refer to our documents on [adopting the standard](/adopt): 
+- an [executive summary](/adopt/01_summary) for senior managers
+- a [business case template](/adopt/02_business_case) for finance managers
+- a [project initiation document (PID) template](/adopt/03_pid) for project managers.
+ 
+
