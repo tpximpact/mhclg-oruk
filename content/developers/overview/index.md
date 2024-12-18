@@ -41,7 +41,7 @@ The Project Initiation Document [project initiation document (PID) template](/ad
 
 Council's are advised to start with a simple proof of concept before scaling, given the complexity of involving stakeholders. The model below is derived from the PID diagram above to outline the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways. 
 
-TODO [A flowchart depicting the steps described below](/developers/overview/process.png "Outline")
+![A flowchart depicting the steps described below](/developers/overview/process.png "Outline")
 
 The following four sections briefly explain the steps to give context to the technical infrastructure.
 
