@@ -4,13 +4,12 @@
 
 This document gives insight into the implementation of ORUK. It offers a high level technical understanding of the proposition, benefits, issues and requirements. This document does not provide the [full technical specifications](https://github.com/OpenReferralUK/uk-profile), but it points to where details can be found.
 
-It is accompanied by additional resources on [adopting the standard](/adopt):
-
+It is accompanied by additional resources on [adopting the standard](/adopt): 
 - an [executive summary](/adopt/01_summary) for senior managers
 - a [business case template](/adopt/02_business_case) for finance managers
 - a [project initiation document (PID) template](/adopt/03_pid) for project managers.
 
-## 1. Background
+## 1. Background 
 
 Local councils currently need to collate information which describes the what, where and when of local services for supporting Adult Social Care, Families and Children with Special Educational Needs & Disabilities (SEND).
 
@@ -82,13 +81,12 @@ The main method for making the data available for reuse is to provide an API.
 Other options could be to provide CSV of the data, PDF templates presenting the data or as links to present the data but these should only really be considered when scaling the implementation.
 
 ORUK API has RESTful web services documented according to the OpenAPI standard. Key web methods are:
-
 - <code>/</code> Information about the API version (its publisher, version number and profile)
 - <code>/services</code> and <code>/services/{id}</code> List and detailed service information.
 - <code>/service_at_locations</code> and <code>/service_at_locations/{id}</code> Services
-  available at a location.
+available at a location.
 - <code>/taxonomies</code> and <code>/taxonomies/{id}</code> Taxonomies referenced by the data and
-  their details
+their details
 - </code>/taxonomy_terms</code> and <code>/taxonomy_terms/{id}</code> List of taxonomy terms and details of a specified taxonomy term
 
 Version 3.0 has nine GET web methods. See [Swagger documentation](https://docs.openreferraluk.org/en/latest/openapi.html).
@@ -106,9 +104,8 @@ You can [check your ORUK compliance](/developers/validator) to see if the data f
 The purpose of collecting, assuring and publishing the data is so that it can be used to support many different resident needs. Currently it is likely to only be used in a Directory of Services but it has the potential to be reused or integrated into many pathways and interventions and other websites e.g. primary school, charities, churches. This is likely to create further work for the technical team in integrating the data but will demonstrate the value that data standards can provide.
 
 Here are some use cases where accurate local service information is essential:
-
 - Waiting for a public sector service. ASD assessment, Social Care Financial
-  Assessment, surgery.
+Assessment, surgery.
 - Complementary support to an intervention/pathway. Hospital discharge, Benefit assessment, SEND.
 - Step down from an intervention/pathway. Child in Need, Mental Health, Physiotherapy
 - Support after missing a threshold. ASD/SEND, Carer assessment, Care Review
@@ -155,3 +152,4 @@ More detailed guidance relating to implementation can be found in our [developer
 The [Open Referral forum](https://forum.openreferral.org) is the go-to place for discussing technical and operational issues. Find out what others are saying, share insights, and ask questions.
 
 Contact the team directly at hello@openreferraluk.org.
+
