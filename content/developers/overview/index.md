@@ -20,7 +20,7 @@ information is collected by many different teams, departments and organisations 
 or easily shared across organisations. This results in data duplication, inefficiency, and reduces data quality and trust that it is accurate.
 
 A unified data standard could enable all sectors to contribute to and access a shared repository, eliminating duplication and improving data quality. This approach would increase
-efficiency and provide more accurate local service information. This document outlines an implementation of the UK Government endorsed international data standard HSDS v3.0, or
+efficiency and provide more accurate local service information. This document outlines an implementation of the UK Government endorsed international data standard HSDS v3.0, also known as 
 Open Referral, providing guidance for councils on establishing the technical infrastructure needed in their areas.
 
 Open Referral UK (ORUK) has been approved by the Central Digital and Data Office’s (CDDO) Data Standards Authority and endorsed for use across government. Open Referral UK (ORUK) is the UK's implementation of the international Human Services Data Standard 3.0 (HSDSv3.0). For more details, see the [Overview and Model](http://docs.openreferral.org/en/latest/hsds/overview.html) in the Open Referral Data Specifications 3.0.1 documentation.
