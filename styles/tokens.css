@@ -32,7 +32,7 @@
 	/* Theme colours */
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-black);
-	--theme-headline: var(--theme-ink);
+	--theme-headline: var(--colour-grey-500);
 	--theme-interaction: var(--colour-mint);
 	--theme-anchor: var(--theme-ink);
 	--theme-anchor-underline: var(--colour-mint);

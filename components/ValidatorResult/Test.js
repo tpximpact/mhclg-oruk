@@ -7,9 +7,9 @@ import Columns from '@/components/Columns'
 import {Message}from './Message'
 
 export const Test = (props) => <div className={styles.test} style={{"--statuscolor":getColourForStatus(props.data.status)}}>
-    <Columns layout="15" supressTrailingSpace>
-        <IconColumn {...props}/>
+    <Columns layout="51" supressTrailingSpace>
         <PayloadColumn {...props}/>
+		<IconColumn {...props}/>
     </Columns>
     </div>
 
