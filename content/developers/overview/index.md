@@ -70,7 +70,11 @@ The diagram below provides a high-level overview of the main entities in ORUK.
 
 ## 3.2 Assure data quality
 
-The aim of assurance is to check that the data is accurate and can be trusted by those wanting to use it. There are three main considerations.
+The aim of assurance is to check that the data is accurate and can be trusted by those wanting to use it. 
+
+**Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service. 
+
+There are three main considerations.
 
 The first is to remove duplication. If data is collected from several different sources there will be duplication. A simple semi-automated step would be to sort the collection of data using
 fields that are likely to be the same if it is the same service e.g. name, provider, venue, contact details. It would then be a manual step by an assurer to filter out duplicates.
