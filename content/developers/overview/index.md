@@ -59,7 +59,7 @@ The following four sections briefly explain the steps to give context to the tec
 
 ## 3.1 Collect & manage data
 
-This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">(see data fields here)</span>. Councils can either develop their own application or purchase
+This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">[(see data fields here)](https://docs.openreferral.org/en/latest/hsds/schema_reference.html)</span>. Councils can either develop their own application or purchase
 compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will
 have to offer a broader set of options when looking to scale this up.
 
