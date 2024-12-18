@@ -38,11 +38,11 @@ const Item = ({
 	}
 
 	return (
-		<li>
+		<li {...ariaProps}>
 			{' '}
 			{enabled ? (
-				<a
-					{...ariaProps}
+				<span><a
+					
 					href={baseUrl + pageNumber}
 					onClick={e => {
 						pageChangeFunction(baseUrl, pageNumber)
@@ -50,9 +50,9 @@ const Item = ({
 					}}
 				>
 					{children}
-				</a>
+				</a></span>
 			) : (
-				<span className={styles.noAnchor}>{children}</span>
+				<span className={styles.hide}>{children}</span>
 			)}
 		</li>
 	)
@@ -61,7 +61,7 @@ const Item = ({
 export const Pagination = props => {
 	return (
 		<nav className={styles.pagination} aria-label='pagination'>
-			<ol>
+		<ol>
 				<PreviousItem {...props} />
 
 				{[...Array(props.numPages)].map((_, i) => (
