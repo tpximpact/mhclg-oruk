@@ -4,19 +4,18 @@
 	--font-mono: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
 		'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
 		'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
-	--datatable-border-weight-heavy:3px;
+	--datatable-border-weight-heavy: 3px;
 }
 
 /* Colour */
 :root {
-	
 	/* Colour primities */
-	--colour-black: rgb(11,12,12); /* gov.uk black */
+	--colour-black: rgb(11, 12, 12); /* gov.uk black */
 	--colour-white: #fff;
 	--colour-offwhite: #fcf9f5;
-	--colour-mint: #75BEA0; 
+	--colour-mint: #75bea0;
 	--color-gov-blue: #1d70b8;
-	
+
 	--colour-grey-50: #f9fafb;
 	--colour-grey-100: #f3f4f6;
 	--colour-grey-200: #e5e7eb;
@@ -28,7 +27,7 @@
 	--colour-grey-800: #1f2937;
 	--colour-grey-900: #111827;
 	--colour-grey-950: #030712;
-	
+
 	/* Theme colours */
 	--theme-paper: var(--colour-offwhite);
 	--theme-ink: var(--colour-black);
@@ -37,7 +36,7 @@
 	--theme-anchor: var(--theme-ink);
 	--theme-anchor-underline: var(--colour-mint);
 	--theme-anchor-roll-underline: var(--anchor);
-	
+
 	/* @/components */
 
 	--button-background-color: transparent;
@@ -51,12 +50,12 @@
 	--columns-debug-background-color: rgba(255, 0, 0, 0.1);
 	--columns-debug-border-color: red;
 	--columns-debug-color: red;
-	--crumbtrail-separator-color: var(--colour-grey-300) ;
+	--crumbtrail-separator-color: var(--colour-grey-300);
 	--dashboard-border-color: var(--theme-ink);
 	--dashboardDetails-border-color: var(--theme-ink);
 	--dataTable-gray: red;
 	--dataTable-theme-dashboard-border: var(--theme-ink);
-	--dataTable-theme-dashboard-header-bg: var(--theme-paper) ;
+	--dataTable-theme-dashboard-header-bg: var(--theme-paper);
 	--dataTable-theme-dashboard-row-divider: var(--theme-ink);
 	--Header-background-closed: var(--theme-paper);
 	--Header-background-open: var(--colour-grey-200);

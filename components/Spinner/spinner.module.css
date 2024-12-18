@@ -1,10 +1,7 @@
-
-
 .spinner {
 	display: inline-block;
 	width: 7.5rem;
 	height: 7.5rem;
-
 }
 .spinner:after {
 	content: ' ';

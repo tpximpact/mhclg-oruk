@@ -114,11 +114,12 @@
 	}
 
 	.tr:not(:last-child) {
-		border-bottom: 1px solid  var(--dataTable-theme-dashboard-row-divider);
+		border-bottom: 1px solid var(--dataTable-theme-dashboard-row-divider);
 	}
 
 	.tr:last-child {
-		border-bottom: var(--datatable-border-weight-heavy) solid var(--dataTable-theme-dashboard-border);
+		border-bottom: var(--datatable-border-weight-heavy) solid
+			var(--dataTable-theme-dashboard-border);
 	}
 
 	.string,
