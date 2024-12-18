@@ -70,32 +70,32 @@ The diagram below provides a high-level overview of the main entities in ORUK.
 
 ## 3.2 Assure data quality
 
-The aim of assurance is to check that the data is accurate and can be trusted by those wanting to use it. 
+The aim of assurance is to ensure there is a master record and to check that the data is accurate and can be trusted by those wanting to use it. 
 
-**Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service. 
+**Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) (under the Service entity table highlighted in this link) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service. 
 
-There are three main considerations.
+There are **three** main considerations:
 
-The first is to remove duplication. If data is collected from several different sources there will be duplication. A simple semi-automated step would be to sort the collection of data using
+The **first** is to remove duplication. If data is collected from several different sources there will be duplication. A simple semi-automated step would be to sort the collection of data using
 fields that are likely to be the same if it is the same service e.g. name, provider, venue, contact details. It would then be a manual step by an assurer to filter out duplicates.
 
-The second is to check the data quality. This will be about:
+This may seem like extra work is created but de-duplication removes the confusion caused by a silo approach where an end-user doesn't know which version of service information is up to date.
+
+The **second** is to check the data quality. This will be about:
 - richness of data i.e. to complete all the fields that are deemed necessary,
 - accuracy i.e. to check that days and times for sessions have not changed
-- verification i.e. to ensure that an accreditation say of Ofsted is correct.
-
-If the collection adheres to the council area policy for the data then this will minimise the assurance workload.
-
-The assurer’s email address will be added to the record so that any consumer will know who is accountable and where to report any errors.
+- verification i.e. to ensure that an accreditation say of Ofsted is valid.
 
 The third is to ensure that the taxonomies are appropriately applied. It will be the taxonomies that will enable the service to be matched to a resident’s needs. See [section 4](#4._working_with_taxonomies) below.
 
+If the collection adheres to the council area policy for the data then this will minimise the assurance workload.
+The assurer’s email address will be added to the record so that any consumer will know who is accountable and where to report any errors.
 
 ### 3.3. Publish
 
 The main method for making the data available for reuse is to provide an API.
 
-Other options could be to provide CSV of the data, PDF templates presenting the data or as links to present the data but these should only be considered when scaling the
+Other options could be to provide CSV of the data, PDF templates presenting the data or as links to present the data but these should only really be considered when scaling the
 implementation.
 
 ORUK API has RESTful web services documented according to the OpenAPI standard. Key web methods are:
@@ -131,11 +131,11 @@ Assessment, surgery.
 
 ## 4. Working with Taxonomies
 
-Tagging datasets with taxonomy terms allows data to be searched and filtered for different purposes. ORUK allows most data entities to be tagged with taxonomy terms. The most common use is to tag services with service types, making it possible to extract services of types that meet specific needs.
+Tagging datasets with taxonomy terms allows data to be searched and filtered for different purposes. ORUK allows most data entities to be tagged with taxonomy terms. The most common use is to tag services with service types, making it possible to extract services of types that meet specific needs. For example, a need for financial suport could include services such as foodbanks, benefit assessments etc.
 
 Taxonomy terms allow data feed consumers to filter relevant data while ignoring the rest. For example, The Department for Education’s Family Hubs service finder can focus on data tagged with family-related service types.
 
-Organisations will likely depend on software to filter data so a common UK taxonomy would create a market for software suppliers. The ORUK structure is flexible enough to incorporate any taxonomy terms, allowing adaptation as new information types emerge (e.g., new social media channels) without altering the data structure standard.
+Organisations will likely depend on software to filter data so a common UK taxonomy would create a market for software suppliers. The ORUK structure is flexible enough to incorporate any taxonomy terms, allowing adaptation as new information types emerge (e.g. new social media channels) without altering the data structure standard.
 
 A national project with a government steering group is advancing taxonomy work to ensure it remains credible and sustainable, avoiding issues where investments are wasted on an obsolete or inconsistently applied taxonomy.
 
@@ -150,13 +150,13 @@ The Local Government Association (LGA) offers three key taxonomies that comply w
 See the LGA’s taxonomy terms, especially for service types, to categorise services, needs (which are mapped to service types), and circumstances, which can also provide a route to
 identify appropriate service types.
 
-Consistent use of taxonomies by different publishers will provide for reporting across regions and the UK as a whole. Local authorities can apply their own internal terms for specific local purposes in addition to shared taxonomy terms.
+Consistent use of taxonomies by different publishers will provide for reporting across council areas, regions and the UK as a whole. Local authorities can apply their own internal terms for specific local purposes in addition to or mapped to the shared taxonomy terms.
 
 ## 5. Collaboration with suppliers
 
 ### 5.1 Approved Feeds
 
-We’ve curated a [verified feed directory](/community/directory), listing verified publishers and software developers.
+We’ve curated a [verified feed directory](/community/directory), listing of verified publishers and software developers.
 
 ### 5.2 Compliance
 
