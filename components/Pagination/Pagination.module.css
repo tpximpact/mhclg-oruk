@@ -25,23 +25,32 @@
 }
 
 .pagination li {
-	margin: 0 0.5em;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
 }
 
-.pagination a,
-.noAnchor {
-	display: block;
-	padding: 0.5em 1em;
-	noborder: 1px solid #000;
-	border-radius: 0.2em;
-	notext-decoration: none;
+.pagination li span {
+	margin: 0 1rem;
+}
+	
+
+.pagination * {
+	font-weight: 700 !important;
 }
 
-.noAnchor {
-	color: #999;
+.pagination li .hide {
+	position: relative;
+	margin-top:-60px;
+	display:block;
 }
 
-.pagination a[aria-current='page'] {
+
+
+.pagination li[aria-current='page'] {
 	background-color: #000;
-	color: #fff;
 }
+.pagination li[aria-current='page'] * {
+	color: #fff !important;
+}
+
