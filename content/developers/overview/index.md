@@ -12,10 +12,10 @@ It is accompanied by additional resources on [adopting the standard](/adopt):
 
 ## 1. Background 
 
-Local councils currently need to collate information which describes the what, where and when of local services for supporting Adult Social Care, Families and children with Special
+Local councils currently need to collate information which describes the what, where and when of local services for supporting Adult Social Care, Families and Children with Special
 Educational Needs & Disabilities (SEND).
 
-Other sectors in the same council area—NHS, charities,Housing, Police, Fire, The Voluntary, Community, Faith and Social Enterprise—also need access to local support information. This
+Other sectors in the same council area — NHS, Charities, Housing, Police, Fire, Voluntary & Community organisations, Faith and Social Enterprises —also need access to local support information. This
 information is collected by many different teams, departments and organisations in various data formats using some software but mainly spreadsheets. The data is not pulled together
 or easily shared across organisations. This results in data duplication, inefficiency, and reduces data quality and trust that it is accurate.
 
