@@ -3,10 +3,12 @@ title: Executive summary
 slug: For senior managers
 ---
 
-# TODO: Executive summary
+# Executive summary
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas sollicitudin sapien id pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ullamcorper pulvinar sapien eu mattis. Integer consectetur, metus quis faucibus suscipit, massa lectus blandit elit, in volutpat lectus mi vitae neque. Fusce tristique urna volutpat nulla consectetur sollicitudin. Etiam interdum facilisis efficitur. Aliquam erat volutpat. Etiam nunc libero, accumsan a neque eget, porta molestie nisl.
+Giving citizens access to the services they need, no matter where they first seek help.
 
-Etiam mollis, nisl non gravida suscipit, nisi felis consectetur libero, nec ultricies nisl justo quis orci. Donec vitae volutpat nulla. Donec enim justo, aliquet at nibh nec, varius elementum felis. Nullam nisi eros, porttitor in fringilla eu, condimentum eget nulla. Nullam non dignissim mauris, quis feugiat dolor. In ante nisl, malesuada eget fermentum sed, cursus vitae ligula. Nunc rutrum, est at interdum convallis, dolor tortor rhoncus purus, quis lacinia diam diam id augue. Aliquam erat volutpat. Curabitur et velit rhoncus, mollis orci sit amet, volutpat mauris. Nullam varius ante nibh, id eleifend velit pretium eget. Sed pharetra tortor nec lorem commodo mattis. Duis hendrerit lacus vitae nunc vehicula volutpat. Phasellus lacus felis, facilisis hendrerit rhoncus non, luctus a purus. Morbi euismod id dui ac euismod. Aenean eu ornare sem, id fringilla nibh.
+*“Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.”*
 
-Vivamus condimentum purus neque, eget iaculis nunc aliquet sed. Cras sed turpis sit amet ligula iaculis rutrum in sit amet ex. Sed auctor non lacus eu sagittis. Duis varius sed purus consequat imperdiet. Mauris turpis tellus, pretium facilisis varius in, dignissim et enim. Curabitur interdum, nibh in lobortis pharetra, mauris est porta magna, at mattis lacus est sit amet odio. Vestibulum iaculis condimentum massa id lobortis. Mauris in odio lectus.
+An adult social care contact centre worker. Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes. 
+
+
