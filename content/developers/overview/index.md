@@ -45,15 +45,19 @@ Using the data standard will reduce the cost of collecting data, make the assura
 
 ## 3. Outline Implementation model
 
-The model below outlines the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal
-for broad re-use of the data in various ways. More details of this can be found in the Project Initiation Document provided to help council project managers.
+The Project Initiation Document [project initiation document (PID) template](/adopt/03_pid) provided to help council project managers, includes the diagram below. 
 
-![A flowchart depicting the steps desceibed below](/developers/overview/process.png "Outline")
+GUY TO INSERT DIAGRAM
 
-We advise starting with a simple proof of concept before scaling, given the complexity of involving stakeholders.
+Council's are advised to start with a simple proof of concept before scaling, given the complexity of involving stakeholders.
+The model below is derived from the PID diagram above to outline the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal
+for broad re-use of the data in various ways. 
 
+![A flowchart depicting the steps described below](/developers/overview/process.png "Outline")
 
-## 3.1 Collect data
+The following four sections briefly explain the steps to give context to the technical infrastructure.
+
+## 3.1 Collect & manage data
 
 This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">(see data fields here)</span>. Councils can either develop their own application or purchase
 compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will
@@ -61,10 +65,10 @@ have to offer a broader set of options when looking to scale this up.
 
 The diagram below provides a high-level overview of the main entities in ORUK.
 
-![A diagram depicting the five entities](/developers/overview/model.png "Model")
+![A diagram depicting the key five entities](/developers/overview/model.png "Model")
 
 
-## 3.2 Assure
+## 3.2 Assure data quality
 
 The aim of assurance is to check that the data is accurate and can be trusted by those wanting to use it. There are three main considerations.
 
