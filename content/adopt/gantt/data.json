@@ -114,49 +114,35 @@
 		},
 				{ 
 			"tranche":{
-				"content": "   "
+				"content": " Performance monitoring  "
 			},
 			"deliverable":{
-				"content": "   "
+				"content": "  Management report "
 			},
 			"tasks":{
-				"content": "   "
+				"content": " Define the management data that is required including evidence for business case  "
 			},
 			"effort":{
-				"content": "   "
+				"content": " Write Power BI, Tableau report using data from repository and applications  "
 			},
-			"months":[ ]
+			"months":[ 12]
 		},
 				{ 
 			"tranche":{
-				"content": "   "
+				"content": " Project close  "
 			},
 			"deliverable":{
-				"content": "   "
+				"content": " Recommendations for scaling  "
 			},
 			"tasks":{
-				"content": "   "
+				"content": " Document all lessons learned, what worked and new ideas for scaling further. Give opinion whether the business case and concept is proven.  "
 			},
 			"effort":{
-				"content": "   "
+				"content": " PM to write bullet point list under main headings of Collect, Assure and Re-use to support a further scaling of the project  "
 			},
-			"months":[ ]
-		},
-		
-				{ 
-			"tranche":{
-				"content": "   "
-			},
-			"deliverable":{
-				"content": "   "
-			},
-			"tasks":{
-				"content": "   "
-			},
-			"effort":{
-				"content": "   "
-			},
-			"months":[ ]
+			"months":[ 12]
 		}
+		
+		
 		
 ]}
