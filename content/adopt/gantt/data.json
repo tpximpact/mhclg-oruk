@@ -16,7 +16,9 @@
 	},
 	{
 		"tranche":{
-			"content":"Leadership"},
+			"content":"Leadership",
+			"hide": true
+		},
 		"deliverable":{
 			"content":"Agree the scope"},
 		"tasks":{

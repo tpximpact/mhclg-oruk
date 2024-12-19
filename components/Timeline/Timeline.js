@@ -77,5 +77,8 @@ const Content =({
 	content,
 	hide
 }) => <>
-	<span>{content}</span>
+	{
+		hide ? <span className={styles.screenreader}>{content}</span>
+		: <span>{content}</span>
+	}
 </>
