@@ -86,7 +86,7 @@ ORUK represents a transformative way for councils and their partners to think ab
 5. **Publish & re-use**  
 6. **Performance monitoring**
 
-![A diagram showing governance amd quakitt processes](/adopt/leadership.png "Leadership")
+![A diagram showing governance and quality processes](/adopt/leadership.png "Leadership")
 
 We have created an accompanying project initiation document (PID) template to help your teams understand and plan how to implement ORUK.    
 
