@@ -1,6 +1,6 @@
 import styles from './Timeline.module.css'
 import interpolate from 'color-interpolate'
-
+import { marked } from 'marked'
 const colormap = interpolate(['orange', 'red', 'purple']);
 
 export const Timeline = ({rows}) =>
@@ -76,9 +76,14 @@ const Month = ({
 const Content =({
 	content,
 	hide
-}) => <>
+}) => {
+	const html = marked.parse(content)
+	
+	return(<>
 	{
-		hide ? <span className={styles.screenreader}>{content}</span>
-		: <span>{content}</span>
+		hide ? <span 
+		dangerouslySetInnerHTML={{ __html: html }}
+		className={styles.screenreader}/>
+		: <span dangerouslySetInnerHTML={{ __html: html }}/>
 	}
-</>
+</>)}
