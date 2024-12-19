@@ -25,9 +25,7 @@ For additional resources, refer to our documents on [adopting the standard](/ado
  
 ## 1. Project overview
 
-
 **Title**: ORUK data standard adoption project 
-
 
 **Purpose**: To implement the Open Referral (ORUK) data standard, streamlining local service information and enabling better outcomes for residents and service users.
 
@@ -49,7 +47,6 @@ Achieving this vision will require strong leadership and robust digital resource
 More than 200 councils have signed up to the Local Digital Declaration, reflecting a shared commitment to improving flexibility and interoperability of software systems across the public and third sectors.
 
 Open Referral UK defines the data and interfaces needed for tools that help people find services and analyse service provision, ensuring these tools can seamlessly communicate with each other.
-
 
 ## 4. Scope
 
@@ -136,6 +133,7 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | **Infrastructure**: There is a risk that existing software won’t be compatible with Open Referral | Decisions will need to be made to allow an existing application to be amended to work with ORUK or to move to a new application. Procurement should ensure any software purchased is compatible with appropriate data standards. | MEDIUM | MEDIUM |
 | **Infrastructure**: There is a risk that the software market is not robust enough to deliver required tools | Work with suppliers to co-produce required software. | MEDIUM | MEDIUM |
 
+
 ## 10. Governance and structure
 
 The Sponsor is the local council. A representative of the council will be the project executive. This should be a member of the Senior Leadership Team and preferably someone who is on a council area (place-based) board e.g. Health & Wellbeing Board.
@@ -144,7 +142,7 @@ Ideally this project would be part of a programme overseen by an existing counci
 
 The council should appoint a project manager who will set up a project board with the data collection organisations taking a senior supplier type role and the three data consumer organisations taking a senior customer role. The project executive and manager can decide whether there is a need for a quality manager but a suggestion might be to appoint a council service commissioner.
 
-The project will follow the stage plan given at the end of this document. (Section 15\)
+The project will follow the stage plan given at the end of this document. (Section 15)
 
 ## 11. Approach and methodology
 
@@ -270,13 +268,11 @@ The ORUK website (ADD LINK) provides detailed guidance, along with the technical
 
 ### Re-use of the data
 
-There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
-
-* Waiting for a public sector service (e.g. ASD assessment, social care, surgery)  
-* Extra support alongside interventions (e.g. hospital discharge, benefit assessment, SEND)  
-* Support after an intervention (e.g. child in need, mental health, physiotherapy)  
-* Help after missing a threshold (e.g. ASD/SEND, carer assessment, care review)  
-* Self-care to reduce reliance on public services (e.g. elderly parent supported by a child, smoker trying to quit, teenager seeking youth services)
+- Waiting for a public sector service (e.g. ASD assessment, social care, surgery)  
+- Extra support alongside interventions (e.g. hospital discharge, benefit assessment, SEND)  
+- Support after an intervention (e.g. child in need, mental health, physiotherapy)  
+- Help after missing a threshold (e.g. ASD/SEND, carer assessment, care review)  
+- Self-care to reduce reliance on public services (e.g. elderly parent supported by a child, smoker trying to quit, teenager seeking youth services)
 
 These use cases can be supported through websites, apps, and AI, delivering the right information at the right time.
 
@@ -294,8 +290,8 @@ Well-structured data makes AI more effective. A chatbot that helps users find lo
 
 **Deliverables**:
 
-* A compliant API  
-* Demo of data being reused
+- A compliant API  
+- Demo of data being reused
 
 ## Performance Monitoring
 
@@ -303,7 +299,7 @@ A coordinated approach across the council will provide valuable data at a strate
 
 It’s important to showcase some of these figures from the proof of concept to help organisations see the potential impact.
 
-### **Feedback**
+### Feedback
 
 Feedback from frontline workers and citizens is vital but needs careful handling. Both groups can provide input on service and data quality.
 
@@ -321,6 +317,8 @@ This project aims to prove the concept and gather insights to recommend how to s
 
 **Deliverable:** Recommendations for scaling
 
+There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
+
 ## 12. Communication plan
 
 Communications will follow council guidelines but will ensure stakeholders stay informed through regular highlight reports, a demonstration of the collection, aggregation, and use of data, and the recommendations for further scaling.
@@ -333,21 +331,6 @@ This PID should be signed off by the project board and the council area board.
 
 The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout.
 
-## 15, Implementation Plan with timeline
+## 15. Implementation Plan with timeline
 
-The table outlines the recommended timescales, suggesting the proof of concept should be completed within 12 months to maintain the potential partners/beneficiaries interest. It focuses on deliverables and tasks, which will need full consideration by the council.
-
-| Version 1.0 |  |  |  | Showing elapsed time in months |  |  |  |  |  |  |  |  |  |  |  |
-| :---- | :---- | :---- | :---- | ----- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| **Tranche** | **Deliverable** | **Tasks** | **Expected effort** | **M1** | **M2** | **M3** | **M4** | **M5** | **M6** | **M7** | **M8** | **M9** | **M10** | **M11** | **M12** |
-| Leadership | Discovery landscape | Interviews/workshops with stakeholders to understand current processes, software and resources. | PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts |  |  |  |  |  |  |  |  |  |  |  |  |
-|  | Agree the scope | Agree who & which software will be involved in collection, aggregation and consumption.  | PM will make recommendation to project board to make a decision |  |  |  |  |  |  |  |  |  |  |  |  |
-| Collect & manage data | Process of collecting data | Map out the process to be used for collecting data into a single repository | Service provider/collector will submit their data in 1 day. Collectors will continue to work in the scope |  |  |  |  |  |  |  |  |  |  |  |  |
-| Assure data quality | Repository of trusted data | Allocate service providers to a team of assurers with guidance on how data can be trusted by consumers.  | Assurer will work on initial data for 0.5 day per service provider and then 0.25 per regular assurance |  |  |  |  |  |  |  |  |  |  |  |  |
-| Publish & re-use | Aggregating into single repository  | A database will be used to store all the collected data. De-duplication should be considered. | Automated process will need to be set up and then used throughout project |  |  |  |  |  |  |  |  |  |  |  |  |
-|  | Building the API | An API will be built and validated through ORUK validator | This could be purchasing a licence, re-using open source or building from scratch. Expected £10k costs. |  |  |  |  |  |  |  |  |  |  |  |  |
-|  | Applications showing use of collected data | The consumers will need to be able to extract appropriate data from the API and use in their process/application | New import routines, changed user interfaces. Expected costs £10k. Test against API |  |  |  |  |  |  |  |  |  |  |  |  |
-|  |  |  | Run live in private beta. Run live in public beta |  |  |  |  |  |  |  |  |  |  |  |  |
-| Performance monitoring | Management report | Define the management data that is required including evidence for business case. | Write Power BI, Tableau report using data from repository and applications |  |  |  |  |  |  |  |  |  |  |  |  |
-| Project close | Recommendations for scaling | Document all lessons learned, what worked and new ideas for scaling further. Give opinion whether the business case and concept is proven. | PM to write bullet point list under main headings of Collect, Assure and Re-use to support a further scaling of the project |  |  |  |  |  |  |  |  |  |  |  |  |
-
+The [table](/adopt/gantt) outlines the recommended timescales, suggesting the proof of concept should be completed within 12 months to maintain the potential partners/beneficiaries interest. It focuses on deliverables and tasks, which will need full consideration by the council.
