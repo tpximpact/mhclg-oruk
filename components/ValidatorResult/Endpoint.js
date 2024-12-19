@@ -15,7 +15,7 @@ export const Endpoint = ({ rootPath, path, data, linkToEndpoint = true }) => (
 				{linkToEndpoint && canLink(path) &&
 					(
 					<a href={rootPath + path + '?&page=1'} target='_blank'>
-						open
+						View (JSON)
 					</a>
 				)}
 			</div>
