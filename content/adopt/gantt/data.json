@@ -90,7 +90,7 @@
 				"content": " The consumers will need to be able to extract appropriate data from the API and use in their process/application  "
 			},
 			"effort":{
-				"content": " New import routines, changed user interfaces. Expected costs £10k. Test against API  "
+				"content": "\n- New import routines, changed user interfaces. \n- Expected costs £10k.\n- Test against API\n"
 			},
 			"months":[1,2,3,4]
 		},
@@ -108,7 +108,7 @@
 			"hide": true
 			}, 
 			"effort":{
-				"content": "  Run live in private beta. Run live in public beta "
+				"content": "\n- Run live in private beta. \n- Run live in public beta "
 			},
 			"months":[5,6,7,8,9,10,11]
 		},
