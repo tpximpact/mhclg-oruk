@@ -18,6 +18,7 @@ This document is designed for programme and project managers leading the impleme
 We assume the business case has been agreed in principle and a project mandate submitted. While each council may approach this project differently, the headings in this document reflect standard elements of a PID. Rather than providing exhaustive project details, the document focuses on key considerations and ideas, offering a concise yet supportive framework to help councils create their own PID for implementing Open Referral UK.
 
 For additional resources, refer to our documents on [adopting the standard](/adopt): 
+
 - an [executive summary](/adopt/01_summary) for senior managers
 - a [business case template](/adopt/02_business_case) for finance managers
 - a [project initiation document (PID) template](/adopt/03_pid) for project managers.
@@ -38,10 +39,10 @@ Achieving this vision will require strong leadership and robust digital resource
 
 ## 3. Objectives
 
-* Demonstrate that data can be collected more easily and efficiently by multiple sources.
-* Ensure the collected data is accurate, reliable, and trusted.
-* Enable partner organisations to effectively reuse the data.
-* Gather insights and lessons to inform scaling across the full council geographical area.
+- Demonstrate that data can be collected more easily and efficiently by multiple sources.
+- Ensure the collected data is accurate, reliable, and trusted.
+- Enable partner organisations to effectively reuse the data.
+- Gather insights and lessons to inform scaling across the full council geographical area.
 
 ### 3.1 Digital Declaration
 
@@ -59,31 +60,33 @@ The ultimate intention is to implement the ORUK model across the entire council 
 This project will focus on proving the concept, but will include partners outside of the council itself. While more could be included, the scope has been defined to meet realistic timelines and will be refined after a discovery exercise.
 
 **In scope:**
-* Collecting and validating data from at least one external partner organisation
-* Data collection and assurance focused on the three required by a council i.e. Adult Social Care, SEND/Local Offer, and Family Hubs or a particular context e.g. cost of living crisis, ho 
-* Developing a service type taxonomy
-* Building a digital infrastructure for data sharing via API
-* Ensuring at least three partner organisations consume the data
-* Producing a management report with service numbers, types, and geographic grouping
+
+- Collecting and validating data from at least one external partner organisation
+- Data collection and assurance focused on the three required by a council i.e. Adult Social Care, SEND/Local Offer, and Family Hubs or a particular context e.g. cost of living crisis, ho 
+- Developing a service type taxonomy
+- Building a digital infrastructure for data sharing via API
+- Ensuring at least three partner organisations consume the data
+- Producing a management report with service numbers, types, and geographic grouping
 
 **Out of scope:**
-* Alternative technical methods for data collection and consumption
-* Additional partners collecting or using data
-* Development of other taxonomies
+
+- Alternative technical methods for data collection and consumption
+- Additional partners collecting or using data
+- Development of other taxonomies
 
 ## 5. Stakeholders
 
 While the Transformation/Digital team is expected to be involved in implementing this project, this may not always be the case. Therefore, they are listed below, along with other key stakeholders who should be kept informed through highlight reports, deliverables, and invitations to data demos. Some may also have roles in governance.
 
-* Director of Public Health. Focused on reducing health inequalities and improving overall health
-* Director of Adult Social Care. Needs accessible service information to provide residents with information and advice relating to care and support for adults and support for carers
-* Director of Children’s Care. Aims to make SEND and Family Hubs information widely available across websites, tools, and neighbouring areas
-* Health & Wellbeing Board. Seeks comprehensive data on services available to improve health and wellbeing across the area
-* Commissioners. Need data on local service demand and availability to identify gaps and prevent reliance on statutory services.
-* Transformation / Digital Leader. Would be able to help with new process and digital infrastructure
-* Chief Executive of local infrastructure organisation. Interested in engaging infrastructure organisations for data collection, ensuring free reuse of service data for the third sector
-* Finance Director. Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking sayings from reduced enquiries as people self-serve preventing the need for formal support
-* Third sector organisations. Seek efficient promotion of services through well-organised data sharing
+- Director of Public Health. Focused on reducing health inequalities and improving overall health
+- Director of Adult Social Care. Needs accessible service information to provide residents with information and advice relating to care and support for adults and support for carers
+- Director of Children’s Care. Aims to make SEND and Family Hubs information widely available across websites, tools, and neighbouring areas
+- Health & Wellbeing Board. Seeks comprehensive data on services available to improve health and wellbeing across the area
+- Commissioners. Need data on local service demand and availability to identify gaps and prevent reliance on statutory services.
+- Transformation / Digital Leader. Would be able to help with new process and digital infrastructure
+- Chief Executive of local infrastructure organisation. Interested in engaging infrastructure organisations for data collection, ensuring free reuse of service data for the third sector
+- Finance Director. Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking sayings from reduced enquiries as people self-serve preventing the need for formal support
+- Third sector organisations. Seek efficient promotion of services through well-organised data sharing
 
 ## 6. Deliverables
 
@@ -147,13 +150,13 @@ The project will follow the stage plan given at the end of this document. (Secti
 
 The following roles are key contributors to the model, with the same organisation potentially taking on multiple roles simultaneously:
 
-* **Project Executive**. Leads the project board and governance, ensuring effective collaboration with partners. Could be a member of the H\&W Board  
-* **Local Support Services Manager**. Responsible for driving the vision and coordinating activities across the council area. This role may also be the Project Manager. This could be a new role to consider or be a programme manager from the council team.  
-* **Infrastructure Support**. Supports the promotion of the initiative and registration of service providers. This role is likely to be carried out by an organisation such as a CVS or similar community group.  
-* **Service Providers**. Organisations that offer services to the community and are central to the project’s success.  
-* **Collector**. The designated organisation or individual responsible for gathering information from service providers about their services. This may involve "self-entry" by the service provider or support by a third-party collector. The collector’s role is expected to diminish significantly over the next 2-3 years as service providers take on more responsibility for managing their own data.  
-* **Assurer**. The central role responsible for overseeing the quality of data and taxonomies, ensuring accuracy and consistency. This role is accountable to the consumer.  
-* **Consumer**. The organisation or entity that reuses the data. Consumers will report errors and make demands for data improvements.
+- **Project Executive**. Leads the project board and governance, ensuring effective collaboration with partners. Could be a member of the H\&W Board  
+- **Local Support Services Manager**. Responsible for driving the vision and coordinating activities across the council area. This role may also be the Project Manager. This could be a new role to consider or be a programme manager from the council team.  
+- **Infrastructure Support**. Supports the promotion of the initiative and registration of service providers. This role is likely to be carried out by an organisation such as a CVS or similar community group.  
+- **Service Providers**. Organisations that offer services to the community and are central to the project’s success.  
+- **Collector**. The designated organisation or individual responsible for gathering information from service providers about their services. This may involve "self-entry" by the service provider or support by a third-party collector. The collector’s role is expected to diminish significantly over the next 2-3 years as service providers take on more responsibility for managing their own data.  
+- **Assurer**. The central role responsible for overseeing the quality of data and taxonomies, ensuring accuracy and consistency. This role is accountable to the consumer.  
+- **Consumer**. The organisation or entity that reuses the data. Consumers will report errors and make demands for data improvements.
 
 There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.  
 
@@ -167,29 +170,29 @@ To kick off, it’s crucial to understand the current landscape, including who i
 
 We recommend conducting a discovery exercise to identify who is:
 
-* Collecting/maintaining local service information  
-* Storing service information in software  
-* Using service information on websites or in processes
+- Collecting/maintaining local service information  
+- Storing service information in software  
+- Using service information on websites or in processes
 
 You can capture this in a simple spreadsheet with tabs such as: **Data collected**, **Data stored**, and **Data used**, or create a visual "rich picture" for better clarity.
 
 This exercise will provide insights for the business case, stakeholder management, existing software, data fields, and help identify potential proof of concept participants, as well as any challenges or benefits in making changes.
 
-### **Finalising the scope**
+### Finalising the scope
 
 For the proof of concept, we recommend scoping for council departments that already have service directories, alongside external partners:
 
-* Special Educational Needs and Disabilities  
-* Family Hubs/Information Services  
-* Adult Care Support Services  
-* Health and Wellbeing services
+- Special Educational Needs and Disabilities  
+- Family Hubs/Information Services  
+- Adult Care Support Services  
+- Health and Wellbeing services
 
 Focus on a specific issue that leaders will engage with, ensuring it involves multiple services within a manageable geographic area. Potential issues include:
 
-* Bereavement  
-* Suicide prevention  
-* Homelessness  
-* Health and wellbeing 
+- Bereavement  
+- Suicide prevention  
+- Homelessness  
+- Health and wellbeing 
 
 Consider the stakeholders involved, as their buy-in will be influenced by credible leaders.
 
@@ -207,13 +210,13 @@ We suggest that the most effective business model would involve larger public se
 
 The following considerations are given:
 
-* the council employ a programme/project manager to drive this project forward, take responsibility and manage the inevitable moving parts  
-* the third sector is involved in the collection and should be paid for its involvement; however care should be taken to ensure they have the required skills and can provide the required outputs.  
-* the assurers should come from a variety of resources but be combined under the Council-area policy and process and managed by the programme manager  
-* the API infrastructure be provided by a single tier local council where a County council would provide the API and the districts post in the data collected in their area  
-* the data is freely available to the third sector and that a public sector organisation using the data contributes to the costs according to their usage or size of budget. A commercial organisation should be  
-* procurement policies should ensure that any application processing local service information should be compliant with ORUK  
-* performance information should be provided to the service providers, third sector and public sector to encourage better use of this infrastructure
+- the council employ a programme/project manager to drive this project forward, take responsibility and manage the inevitable moving parts  
+- the third sector is involved in the collection and should be paid for its involvement; however care should be taken to ensure they have the required skills and can provide the required outputs.  
+- the assurers should come from a variety of resources but be combined under the Council-area policy and process and managed by the programme manager  
+- the API infrastructure be provided by a single tier local council where a County council would provide the API and the districts post in the data collected in their area  
+- the data is freely available to the third sector and that a public sector organisation using the data contributes to the costs according to their usage or size of budget. A commercial organisation should be
+- procurement policies should ensure that any application processing local service information should be compliant with ORUK
+- performance information should be provided to the service providers, third sector and public sector to encourage better use of this infrastructure
 
 **Deliverable**: discovery landscape, draft business model
 
@@ -225,11 +228,11 @@ Data collection already happens across various teams and organisations including
 
 Public sector organisations and large service providers are generally equipped to upload their own service data. However, smaller providers may lack the digital capacity or resources. In these cases, the third sector, closely connected to smaller providers, may need to be commissioned to collect and maintain the data. Consider offering training in data handling to equip them with the skills to complement their understanding and relationships with service providers. They will also play a key role in promoting the model and encouraging service registration.
 
-### *Open Referral data fields
+### Open Referral data fields
 
 Current data collections must be refocused to align with the Open Referral standard, likely increasing the amount of data collected. While organisational-level data is easier for providers to manage, it can cause friction for frontline workers and citizens if service details are hard to access. Clear, complete service information is crucial, as citizens may disengage if they can’t find sufficient details on websites or forms.
 
-### **Registration of provider**
+### Registration of provider
 
 The most reliable way to collect service information is to establish a formal relationship with the service providers themselves, rather than relying on research or web scraping. While providers may have limited resources, they are likely to verify their services periodically or respond to ad hoc queries. Providers may be more inclined to register their services if they are linked to specific issues or service types, and infrastructure organisations may also want to register services within their area. This establishes a route for integrating their data into the repository.
 
