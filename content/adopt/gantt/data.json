@@ -1,0 +1,10 @@
+{
+	"rows": [{
+		"tranche":"Leadership",
+		"trancheSpan":2,
+		"deliverable":"Discovery landscape",
+		"tasks":"Interviews/workshops with stakeholders to understand current processes, software and resources.",
+		"effort":"PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts",
+		"months":[1]
+	}
+]}
