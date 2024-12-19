@@ -98,3 +98,19 @@
 	margin: 0;
 	padding: 0;
 }
+
+.content table {
+	margin-bottom: 2rem;
+}
+
+.content td {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	vertical-align: top;
+	border-bottom: 1px dotted black;
+}
+
+.content th {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	vertical-align: top;
+	border-bottom: 2px solid black;
+}
