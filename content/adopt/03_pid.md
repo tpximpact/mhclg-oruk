@@ -32,13 +32,11 @@ For additional resources, refer to our documents on [adopting the standard](/ado
 
 ## 2. Vision
 
-
 Create a single, accurate source of truth for local support services, accessible across all tools and pathways, to empower residents, families and frontline workers with the right information when they need it. This will ensure people get the help they need, reducing reliance on the public sector and breaking down outdated silos.
 
-
 Achieving this vision will require strong leadership and robust digital resources. A phased approach is recommended, starting with areas already gaining momentum, such as Adult Social Care, SEND Local Offer, and Family Information Services/Hubs. Over time, this can expand to address other critical local issues, including homelessness, foodbanks, the cost-of-living crisis, bereavement, autism assessments, or any other priorities identified locally.
-## 3. Objectives
 
+## 3. Objectives
 
 * Demonstrate that data can be collected more easily and efficiently by multiple sources.
 * Ensure the collected data is accurate, reliable, and trusted.
@@ -46,13 +44,18 @@ Achieving this vision will require strong leadership and robust digital resource
 * Gather insights and lessons to inform scaling across the full council geographical area.
 
 ### 3.1 Digital Declaration
+
 More than 200 councils have signed up to the Local Digital Declaration, reflecting a shared commitment to improving flexibility and interoperability of software systems across the public and third sectors.
+
 Open Referral UK defines the data and interfaces needed for tools that help people find services and analyse service provision, ensuring these tools can seamlessly communicate with each other.
 
 
 ## 4. Scope
+
 The ultimate intention is to implement the ORUK model across the entire council area, overcoming partner administrative boundaries. However, this project will begin on a smaller scale to refine the approach, gather evidence, and strengthen the business case for broader adoption in the future.
-** Scope overview:**
+
+### Scope overview
+
 This project will focus on proving the concept, but will include partners outside of the council itself. While more could be included, the scope has been defined to meet realistic timelines and will be refined after a discovery exercise.
 
 **In scope:**
@@ -69,7 +72,9 @@ This project will focus on proving the concept, but will include partners outsid
 * Development of other taxonomies
 
 ## 5. Stakeholders
+
 While the Transformation/Digital team is expected to be involved in implementing this project, this may not always be the case. Therefore, they are listed below, along with other key stakeholders who should be kept informed through highlight reports, deliverables, and invitations to data demos. Some may also have roles in governance.
+
 * Director of Public Health. Focused on reducing health inequalities and improving overall health
 * Director of Adult Social Care. Needs accessible service information to provide residents with information and advice relating to care and support for adults and support for carers
 * Director of Children’s Care. Aims to make SEND and Family Hubs information widely available across websites, tools, and neighbouring areas
@@ -80,7 +85,7 @@ While the Transformation/Digital team is expected to be involved in implementing
 * Finance Director. Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking sayings from reduced enquiries as people self-serve preventing the need for formal support
 * Third sector organisations. Seek efficient promotion of services through well-organised data sharing
 
-## 6\. Deliverables
+## 6. Deliverables
 
 | Tranche | Deliverable | Quality criteria |
 | :---- | :---- | :---- |
@@ -93,7 +98,7 @@ While the Transformation/Digital team is expected to be involved in implementing
 | Performance monitoring | Management report | Report showing service numbers by service type and coverage |
 | Project close | Recommendations for further scaling | Conclusions from the discovery exercise, including the data collection and aggregation processes, data consumption, and management reporting. |
 
-## 8\. Budget
+## 8. Budget
 
 These are illustrative figures only. Costs will vary based on your specific circumstances.
 
@@ -107,7 +112,7 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | Management report | Covered by existing resources |
 | **TOTAL** | **£45k** |
 
-## 9\. Risks and issues
+## 9. Risks and issues
 
 | Risk/Issue | Mitigation | Likelihood | Impact |
 | :---- | :---- | ----- | ----- |
@@ -128,7 +133,7 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | **Infrastructure**: There is a risk that existing software won’t be compatible with Open Referral | Decisions will need to be made to allow an existing application to be amended to work with ORUK or to move to a new application. Procurement should ensure any software purchased is compatible with appropriate data standards. | MEDIUM | MEDIUM |
 | **Infrastructure**: There is a risk that the software market is not robust enough to deliver required tools | Work with suppliers to co-produce required software. | MEDIUM | MEDIUM |
 
-## 10\. Governance and structure
+## 10. Governance and structure
 
 The Sponsor is the local council. A representative of the council will be the project executive. This should be a member of the Senior Leadership Team and preferably someone who is on a council area (place-based) board e.g. Health & Wellbeing Board.
 
@@ -138,7 +143,7 @@ The council should appoint a project manager who will set up a project board wit
 
 The project will follow the stage plan given at the end of this document. (Section 15\)
 
-## 11\. Approach and methodology
+## 11. Approach and methodology
 
 The following roles are key contributors to the model, with the same organisation potentially taking on multiple roles simultaneously:
 
@@ -150,13 +155,13 @@ The following roles are key contributors to the model, with the same organisatio
 * **Assurer**. The central role responsible for overseeing the quality of data and taxonomies, ensuring accuracy and consistency. This role is accountable to the consumer.  
 * **Consumer**. The organisation or entity that reuses the data. Consumers will report errors and make demands for data improvements.
 
-There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15\.  
+There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.  
 
-GUY PLEASE ADD IMAGE
+![A diagram showing governance and quality processes](/adopt/leadership.png "Leadership")
 
 ## Leadership, governance and oversight
 
-### **Discovery exercise**
+### Discovery exercise
 
 To kick off, it’s crucial to understand the current landscape, including who is involved and what tools are being used.
 
@@ -188,7 +193,7 @@ Focus on a specific issue that leaders will engage with, ensuring it involves mu
 
 Consider the stakeholders involved, as their buy-in will be influenced by credible leaders.
 
-### **Policy, software, and finance model**
+### Policy, software, and finance model
 
 While the ORUK data standards provide a framework, there are areas open to interpretation—such as data quality checks, field definitions, mandatory fields, taxonomies, and service handling. It’s essential to define a policy for accurate data management.
 
@@ -196,7 +201,7 @@ The discovery exercise will also highlight existing software. You'll need to ass
 
 There is a need to identify a finance model which will ensure any council area policy and process will be scalable and sustainable. The policy, process and finance models can collectively be known as the business model. Please consider the details of this in the Business Case and its calculator. The likely costs are given under the implementation planning framework headings. Note that the council is being asked to take responsibility and therefore will carry the financial risk whilst it will be other public and third sectors that gain more of the benefits.
 
-### **Recommended model**
+### Recommended model
 
 We suggest that the most effective business model would involve larger public sector beneficiaries contributing to the council's costs.
 
@@ -216,11 +221,11 @@ The following considerations are given:
 
 Data collection already happens across various teams and organisations including the providers themselves. This process should continue but within a federated model that better coordinates contributions into a single repository.
 
-### **Federated approach**
+### Federated approach
 
 Public sector organisations and large service providers are generally equipped to upload their own service data. However, smaller providers may lack the digital capacity or resources. In these cases, the third sector, closely connected to smaller providers, may need to be commissioned to collect and maintain the data. Consider offering training in data handling to equip them with the skills to complement their understanding and relationships with service providers. They will also play a key role in promoting the model and encouraging service registration.
 
-### **Open Referral data fields**
+### *Open Referral data fields
 
 Current data collections must be refocused to align with the Open Referral standard, likely increasing the amount of data collected. While organisational-level data is easier for providers to manage, it can cause friction for frontline workers and citizens if service details are hard to access. Clear, complete service information is crucial, as citizens may disengage if they can’t find sufficient details on websites or forms.
 
@@ -228,7 +233,7 @@ Current data collections must be refocused to align with the Open Referral stand
 
 The most reliable way to collect service information is to establish a formal relationship with the service providers themselves, rather than relying on research or web scraping. While providers may have limited resources, they are likely to verify their services periodically or respond to ad hoc queries. Providers may be more inclined to register their services if they are linked to specific issues or service types, and infrastructure organisations may also want to register services within their area. This establishes a route for integrating their data into the repository.
 
-### **Single repository (aggregation)**
+### Single repository (aggregation)
 
 Ultimately, all service information needs to be aggregated into a single repository. The ideal method would be through a POST/UPDATE API, though not all providers may have the technical capability. As a backup, provisions for spreadsheet imports and a user-friendly interface for direct data entry should be considered.
 
@@ -238,15 +243,15 @@ Ultimately, all service information needs to be aggregated into a single reposit
 
 Assurance focuses on data quality, not service quality, which can often cause confusion. It’s a resource-intensive process that is currently handled by the ‘collector,’ but it’s recommended that this responsibility be elevated to a dedicated data custodian due to the significant benefits of having accurate, well-categorised data. Software used in this process should be sending reminders at appropriate points to encourage data quality checks to keep data up to date and accurate.
 
-### **De-duplicate**
+### De-duplicate
 
 A challenge of having multiple collectors contributing to a single repository is data duplication. To reduce this, it’s helpful to align each Service Provider with their preferred collector/assurer, making it easier to spot and separate duplications from other sources. The assurer should prevent any duplicate data from being published, and a regular de-duplication exercise will be required during aggregation. Contacting the source of the duplication can help prevent wasted effort in the future.
 
-### **Data quality check**
+### Data quality check
 
 Even with direct input from service providers, data errors may still occur. The assurer should audit a sample of data to assess each collector’s confidence level. Collectors should verify their data quarterly, with a report on data quality to support improvements. Verification should be straightforward, with software enabling easy updates and a 'no change' option for existing services. Feedback on errors from frontline workers should influence the confidence level, which can be managed through assurance software, reducing oversight for higher-confidence collectors.
 
-### **Align categories**
+### Align categories
 
 Categorising services correctly is crucial for identifying appropriate services and generating meaningful management insights. While national taxonomies are being developed, existing ones (such as those from the LGA) can be used in the interim. Over-categorisation by providers is a common issue, so it’s recommended that the assurer finalise and apply taxonomies to ensure better service discoverability and data management.
 
@@ -256,11 +261,11 @@ Categorising services correctly is crucial for identifying appropriate services 
 
 The main benefit of implementing ORUK across a council is that data, once collected and verified, can be reused multiple times. The easiest way to share this data is through APIs, though simpler options like CSVs or data links should also be available for smaller organisations without technical resources.
 
-### **Building the API**
+### Building the API
 
 The ORUK website (ADD LINK) provides detailed guidance, along with the technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website.  The website also has a list of suppliers offering solutions for councils that need help.
 
-### **Re-use of the data**
+### Re-use of the data
 
 There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
 
@@ -272,15 +277,15 @@ There are many ways local service information can be reused to help citizens, fa
 
 These use cases can be supported through websites, apps, and AI, delivering the right information at the right time.
 
-### **Websites**
+### Websites
 
 Websites that help people should link to local community services that might be useful.
 
-### **Applications**
+### Applications
 
 Many existing apps could benefit from local service data. If reliable data is available, new solutions could also emerge to support people’s needs. Self-care apps and citizen accounts will gain trust as they reuse this data, potentially easing demand on public services.
 
-### **AI**
+### AI
 
 Well-structured data makes AI more effective. A chatbot that helps users find local services based on their needs is just one example. With reliable data, new AI tools can be developed quickly.
 
@@ -307,25 +312,23 @@ Data quality feedback is where frontline workers and citizens can play a key rol
 
 * Management Report
 
-### **Project Close**
+### Project Close
 
 This project aims to prove the concept and gather insights to recommend how to scale it across the council area. The listed deliverables will support this, but as the proof of concept concludes, focus should be on drawing conclusions and outlining the next steps. Scaling may require several efforts to reach the point where it becomes part of the local culture and operations. The goal is that the proof of concept demonstrates enough value to justify this effort.
 
 **Deliverable:** Recommendations for scaling
 
-## 12\. Communication plan
+## 12. Communication plan
 
 Communications will follow council guidelines but will ensure stakeholders stay informed through regular highlight reports, a demonstration of the collection, aggregation, and use of data, and the recommendations for further scaling.
 
-## 13\. Approval and sign-off
+## 13. Approval and sign-off
 
 This PID should be signed off by the project board and the council area board.
 
-## 14\. Conclusion
+## 14. Conclusion
 
 The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout.
-
-## 
 
 ## 15, Implementation Plan with timeline
 
