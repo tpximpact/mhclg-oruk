@@ -106,6 +106,10 @@
 .content td {
 	padding: 0.5rem 0.5rem 0.5rem 0;
 	vertical-align: top;
+}
+
+.content td:not(:last-child) {
+	
 	border-bottom: 1px dotted black;
 }
 
