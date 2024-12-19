@@ -1,7 +1,10 @@
 import styles from './ValidatorResult.module.css'
 import { Group } from './Group'
 
-export const Endpoint = ({ rootPath, path, data, linkToEndpoint = false }) => (
+const canLink = p => !p.includes('{id}')
+
+
+export const Endpoint = ({ rootPath, path, data, linkToEndpoint = true }) => (
 	<section className={styles.section}>
 		<div className={styles.endpointContainer}>
 			<h2>
@@ -9,8 +12,9 @@ export const Endpoint = ({ rootPath, path, data, linkToEndpoint = false }) => (
 				<span className={styles.endpoint}>{path}</span>
 			</h2>
 			<div className={styles.endpointRight}>
-				{linkToEndpoint && (
-					<a href={rootPath + path} target='_blank'>
+				{linkToEndpoint && canLink(path) &&
+					(
+					<a href={rootPath + path + '?&page=1'} target='_blank'>
 						open
 					</a>
 				)}
