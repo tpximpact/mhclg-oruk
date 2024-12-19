@@ -14,6 +14,15 @@
 }
 
 
+.content cite {
+	background: #efefef;
+	padding: 1rem 1rem;
+	border-left: 8px solid #dfdfdf;
+	margin-top: -2rem;
+	margin-bottom: 2rem;
+	display: block;
+}
+
 .content code {
 	font-family: system-ui, 
              -apple-system, BlinkMacSystemFont, 
