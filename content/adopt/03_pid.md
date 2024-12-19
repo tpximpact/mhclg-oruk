@@ -266,7 +266,7 @@ The main benefit of implementing ORUK across a council is that data, once collec
 
 The ORUK website (ADD LINK) provides detailed guidance, along with the technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website.  The website also has a list of suppliers offering solutions for councils that need help.
 
-#### 10.5 Re-use of the data
+### 10.5 Re-use of the data
 
 There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
 - Waiting for a public sector service (e.g. ASD assessment, social care, surgery)  
