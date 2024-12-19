@@ -26,7 +26,7 @@ const Gantt = () =>
 			<th colSpan="4">
 			Version: 1.0
 			</th>
-			<th colSpan="12">Month</th>
+			<th className={styles.month} colSpan="12">Month</th>
 		</tr>
 		<tr>
 			<th className = {styles.tranche}>Tranche</th>
