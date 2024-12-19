@@ -43,16 +43,15 @@ export const Timeline = ({rows}) =>
 
 const Row = ({
 	tranche,
-	trancheSpan,
 	deliverable,
 	tasks,
 	effort,
 	months
 }) => <tr>
-{tranche && <th rowSpan={trancheSpan} className = {styles.tranche}>{tranche}</th>}
-<td className = {styles.deliverable}>{deliverable}</td>
-<td className = {styles.tasks}>{tasks}</td>
-<td className = {styles.effort}>{effort}</td>
+<th className = {styles.tranche}><Content {...tranche}/></th>
+<td className = {styles.deliverable}><Content {...deliverable}/></td>
+<td className = {styles.tasks}><Content {...tasks}/></td>
+<td className = {styles.effort}><Content {...effort}/></td>
 {
 	[...Array(12).keys()].map(
 		n => <Month colour={colormap((1.0/12)*n)}
@@ -73,3 +72,10 @@ const Month = ({
 		(number+1) + ": yes" : (number+1) + ": no"
 	}</span>
 </td>
+
+const Content =({
+	content,
+	hide
+}) => <>
+	<span>{content}</span>
+</>

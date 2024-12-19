@@ -1,74 +1,123 @@
 {
 	"rows": [{
-		"tranche":"Leadership",
-		"trancheSpan":2,
-		"deliverable":"Discovery landscape",
-		"tasks":"Interviews/workshops with stakeholders to understand current processes, software and resources.",
-		"effort":"PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts",
+		"tranche":{
+			"content":"Leadership"
+		},
+		"deliverable":{
+			"content":"Discovery landscape"
+		},
+		"tasks":{
+			"content":"Interviews/workshops with stakeholders to understand current processes, software and resources."
+		},
+		"effort":{
+			"content": "PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts"
+		},
 		"months":[1]
 	},
 	{
-		"deliverable":"Agree the scope",
-		"tasks":"Agree who & which software will be involved in collection, aggregation and consumption.",
-			"effort":"PM will make recommendation to project board to make a decision",
+		"tranche":{
+			"content":"Leadership"},
+		"deliverable":{
+			"content":"Agree the scope"},
+		"tasks":{
+			"content":"Agree who & which software will be involved in collection, aggregation and consumption."},
+			"effort":{
+			"content":"PM will make recommendation to project board to make a decision"},
 			"months":[1]
 		},
 		{
 			 
-			"tranche":"Collect & manage data",
-			"deliverable":"Process of collecting data",
-			"tasks":"Map out the process to be used for collecting data into a single repository",
-			"effort":"Service provider/collector will submit their data in 1 day.Collectors will continue to work in the scope",
+			"tranche":{
+			"content":"Collect & manage data"},
+			"deliverable":{
+			"content":"Process of collecting data"},
+			"tasks":{
+			"content":"Map out the process to be used for collecting data into a single repository"},
+			"effort":{
+			"content":"Service provider/collector will submit their data in 1 day.Collectors will continue to work in the scope"},
 			"months":[2,3,4,5,6,7,8,9,10,11,12]
 		
 		},
 		{ 
-			"tranche":"Assure data quality",
-			"deliverable":"Repository of trusted data",
-			"tasks":"Allocate service providers to a team of assurers, with guidance on how data can be trusted by consumers.",
-			"effort":"Assurer will work on initial data for 0.5 day per service provider and then 0.25 per regular assurance",
+			"tranche":{
+			"content":"Assure data quality"},
+			"deliverable":{
+			"content":"Repository of trusted data"},
+			"tasks":{
+			"content":"Allocate service providers to a team of assurers, with guidance on how data can be trusted by consumers."},
+			"effort":{
+			"content":"Assurer will work on initial data for 0.5 day per service provider and then 0.25 per regular assurance"},
 			"months":[3,4,5,6,7,8,9,10,11,12]
 		},
 		{ 
-			"tranche":" ",
-			"deliverable":" ",
-			"tasks":" ",
-			"effort":" ",
-			"months":[ ]
+			"tranche":{
+			"content":"Publish & re-use"},
+			"deliverable":{
+			"content":"Aggregating into single repository"},
+			"tasks":{
+			"content":"A database will be used to store all the collected data. De-duplication should be considered"},
+			"effort":{
+			"content":"Automated process will need to be set up and then used throughout project "},
+			"months":[4,5,6,7,8,9,10,11,12]
 		},
 		{ 
-			"tranche":" ",
-			"deliverable":" ",
-			"tasks":" ",
-			"effort":" ",
+			"tranche":{
+				"content": "   "
+			},
+			"deliverable":{
+				"content": "   "
+			},
+			"tasks":{
+				"content": "   "
+			},
+			"effort":{
+				"content": "   "
+			},
 			"months":[ ]
 		},
-		{ 
-			"tranche":" ",
-			"deliverable":" ",
-			"tasks":" ",
-			"effort":" ",
+				{ 
+			"tranche":{
+				"content": "   "
+			},
+			"deliverable":{
+				"content": "   "
+			},
+			"tasks":{
+				"content": "   "
+			},
+			"effort":{
+				"content": "   "
+			},
 			"months":[ ]
 		},
-		{ 
-			"tranche":" ",
-			"deliverable":" ",
-			"tasks":" ",
-			"effort":" ",
+				{ 
+			"tranche":{
+				"content": "   "
+			},
+			"deliverable":{
+				"content": "   "
+			},
+			"tasks":{
+				"content": "   "
+			},
+			"effort":{
+				"content": "   "
+			},
 			"months":[ ]
 		},
-		{ 
-			"tranche":" ",
-			"deliverable":" ",
-			"tasks":" ",
-			"effort":" ",
-			"months":[ ]
-		},
-		{ 
-			"tranche":" ",
-			"deliverable":" ",
-			"tasks":" ",
-			"effort":" ",
+				{ 
+			"tranche":{
+				"content": "   "
+			},
+			"deliverable":{
+				"content": "   "
+			},
+			"tasks":{
+				"content": "   "
+			},
+			"effort":{
+				"content": "   "
+			},
 			"months":[ ]
 		}
 ]}
