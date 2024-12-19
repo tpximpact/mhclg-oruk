@@ -7,9 +7,8 @@ slug: For senior managers
 
 Giving citizens access to the services they need, no matter where they first seek help.
 
-*“Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.”*
-
-An adult social care contact centre worker. Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes. 
+> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.
+<cite>An adult social care contact centre worker.</cite>  Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes.
 
 [ORUK](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities) is a data standard that defines the what, where, and how of describing information about a support service.
 
@@ -83,7 +82,7 @@ ORUK represents a transformative way for councils and their partners to think ab
 5. **Publish & re-use**  
 6. **Performance monitoring**
 
-GUY TO ADD IMAGE
+![A diagram showing governance amd quakitt processes](/adopt/leadership.png "Leadership")
 
 We have created an accompanying project initiation document (PID) template to help your teams understand and plan how to implement ORUK.    
 ---
