@@ -22,7 +22,7 @@
 }
 
 .shaded {
-	background: #fc0;
+	background: var(--bg);
 }
 
 .screenreader {

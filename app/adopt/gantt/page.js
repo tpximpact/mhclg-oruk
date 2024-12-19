@@ -1,5 +1,7 @@
 import { PageMargin } from '@/components/PageMargin'
 import styles from './gantt.module.css'
+import interpolate from 'color-interpolate'
+
 
 export default function Page() {
 	return (
@@ -14,6 +16,8 @@ export default function Page() {
 export const metadata = {
 	title: 'News from ORUK'
 }
+
+const colormap = interpolate(['orange', 'red', 'purple']);
 
 const Gantt = () =>
 <table className={styles.gantt}>
@@ -53,11 +57,20 @@ const Gantt = () =>
 	effort="PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts"
 	months={[1]}
 		/>
-				<Row 
-			deliverable="2"
-	tasks="Interviews/workshops with stakeholders to understand current processes, software and resources."
-	effort="PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts"
+		<Row 
+			deliverable="Agree the scope"
+	tasks="Agree who & which software will be involved in collection, aggregation and consumption."
+	effort="PM will make recommendation to project board to make a decision"
 	months={[1]}
+		/>
+		
+			<Row 
+			tranche="Collect & manage data"
+			deliverable="Process of collecting data"
+	tasks="Map out the process to be used for collecting data into a single repository"
+	effort="Service provider/collector will submit their data in 1 day.
+Collectors will continue to work in the scope"
+	months={[2,3,4,5,6,7,8,9,10,11,12]}
 		/>
 	</tbody>
 </table>
@@ -76,15 +89,19 @@ const Row = ({
 <td className = {styles.effort}>{effort}</td>
 {
 	[...Array(12).keys()].map(
-		n => <Month key={n} number={n} shaded={months.includes(n+1)}/>
+		n => <Month colour={colormap((1.0/12)*n)}
+		key={n} number={n} shaded={months.includes(n+1)}/>
 	)
 }
 </tr>
 
 const Month = ({
 	number,
-	shaded
-}) => <td className= {shaded ? styles.shaded : null}>
+	shaded,
+	colour
+}) => <td style={{
+	"--bg": colour
+}}className= {shaded ? styles.shaded : null}>
 	<span className={styles.screenreader}>
 	{ shaded ?
 		(number+1) + ": yes" : (number+1) + ": no"
