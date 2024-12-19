@@ -268,6 +268,7 @@ The ORUK website (ADD LINK) provides detailed guidance, along with the technical
 
 #### 10.5 Re-use of the data
 
+There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
 - Waiting for a public sector service (e.g. ASD assessment, social care, surgery)  
 - Extra support alongside interventions (e.g. hospital discharge, benefit assessment, SEND)  
 - Support after an intervention (e.g. child in need, mental health, physiotherapy)  
@@ -311,8 +312,6 @@ Data quality feedback is where frontline workers and citizens can play a key rol
 This project aims to prove the concept and gather insights to recommend how to scale it across the council area. The listed deliverables will support this, but as the proof of concept concludes, focus should be on drawing conclusions and outlining the next steps. Scaling may require several efforts to reach the point where it becomes part of the local culture and operations. The goal is that the proof of concept demonstrates enough value to justify this effort.
 
 **Deliverable:** Recommendations for scaling
-
-There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
 
 ## 12. Communication plan
 
