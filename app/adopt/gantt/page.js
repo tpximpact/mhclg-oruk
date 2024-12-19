@@ -72,6 +72,14 @@ const Gantt = () =>
 Collectors will continue to work in the scope"
 	months={[2,3,4,5,6,7,8,9,10,11,12]}
 		/>
+			<Row 
+			tranche="Assure data quality"
+			deliverable="Repository of trusted data"
+	tasks="Allocate service providers to a team of assurers with guidance on how data can be trusted by consumers."
+	effort="Assurer will work on initial data for 0.5 day per service provider and then 0.25 per regular assurance"
+	months={[3,4,5,6,7,8,9,10,11,12]}
+		/>
+		
 	</tbody>
 </table>
 
@@ -101,7 +109,7 @@ const Month = ({
 	colour
 }) => <td style={{
 	"--bg": colour
-}}className= {shaded ? styles.shaded : null}>
+}}className= {shaded ? styles.shaded : styles.month}>
 	<span className={styles.screenreader}>
 	{ shaded ?
 		(number+1) + ": yes" : (number+1) + ": no"
