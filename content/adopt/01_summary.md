@@ -7,9 +7,9 @@ slug: For senior managers
 
 Giving citizens access to the services they need, no matter where they first seek help.
 
-> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.
+> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.”
 
-<cite>An adult social care contact centre worker.</cite>  Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes.
+<cite>- An adult social care contact centre worker. Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes.</cite>  
 
 [ORUK](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities) is a data standard that defines the what, where, and how of describing information about a support service.
 
@@ -21,9 +21,9 @@ Adopting ORUK enables your council to consolidate and streamline the maintenance
 
 The information that describes local services and how to access them is not available in one place and is not kept up to date so we can’t empower people to help themselves.
 
-> “Relatives and friends of vulnerable people, especially those who don’t live locally, do not currently feel empowered to help them find support”*  
+> “Relatives and friends of vulnerable people, especially those who don’t live locally, do not currently feel empowered to help them find support” 
 
-<cite>A charity worker</cite>
+<cite>- A charity worker</cite>
 
 Current community service data is often siloed, overlapping and difficult to maintain. This can lead to inefficiency, resident confusion and missed opportunities for care or prevention. In many cases, it means residents are left frustrated and without access to the resources they need. Councils need the capability to collect accurate data and make it available to relatives and friends of vulnerable people.
 
@@ -31,7 +31,7 @@ Current community service data is often siloed, overlapping and difficult to mai
 
 >“Giving people self-care information about local services when they are currently well enough to not need public services is the proactive way to reduce demand on NHS and Social Care”
 
-<cite>An ICB transformation office</cite>
+<cite>- An ICB transformation office</cite>
 
 Councils can take the lead in addressing the challenges of gathering, verifying, and sharing service information by adopting ORUK.  Working collectively to create a single, trusted repository that makes service data available across interventions, platforms, and applications. In health, this could be a meaningful lever for early prevention of chronic conditions. 
 
@@ -39,7 +39,7 @@ Councils can take the lead in addressing the challenges of gathering, verifying,
 
 >“Citizens who are engaged in the local community are less likely to need statutory services and more likely to have a better quality of life”  
 
-<cite>A government research report</cite>
+<cite>- A government research report</cite>
 
 ### Make every contact count 
 
@@ -59,9 +59,9 @@ ORUK enables councils to standardise data across departments and partners, reduc
 
 ## Value of ORUK for councils and communities
 
->“Frontline professionals e.g. social workers/prescribers spend too much of their time researching and checking information about local services, when they should have access to accurate information"”*  
+>“Frontline professionals e.g. social workers/prescribers spend too much of their time researching and checking information about local services, when they should have access to accurate information”  
 
-<cite>A GP</cite>
+<cite>- A GP</cite>
 
 ORUK has the potential to drive improvements to community health by:
 
@@ -73,9 +73,9 @@ ORUK has the potential to drive improvements to community health by:
 
 ## How to implement the standard 
 
->"When we began exploring a place-based approach with ORUK, we knew it would need stronger relationships, joint data sharing, and resources to support it. As we progress, we’re seeing early signs of how much more efficient it makes managing local service information for ourselves, residents, and partners. Ultimately, we hope it ensures reliable, up-to-date information while reducing the administrative burden on public services."*   
+>"When we began exploring a place-based approach with ORUK, we knew it would need stronger relationships, joint data sharing, and resources to support it. As we progress, we’re seeing early signs of how much more efficient it makes managing local service information for ourselves, residents, and partners. Ultimately, we hope it ensures reliable, up-to-date information while reducing the administrative burden on public services."
 
-<cite>Victoria Tomlinson, Lancashire County Council</cite>
+<cite>- Victoria Tomlinson, Lancashire County Council</cite>
 
 ORUK represents a transformative way for councils and their partners to think about local service information data. There’s no single pathway to implementation - the journey will look different for every council. But to support your adoption journey, we have identified six focus areas:
 
