@@ -5,8 +5,8 @@
 }
 
 .gantt thead tr:not(:first-child) th {
-	font-size:1.4rem;
-	border-bottom:3px solid black;
+	font-size: 1.4rem;
+	border-bottom: 3px solid black;
 }
 
 .gantt th,
@@ -16,13 +16,13 @@
 	padding: 6px 0;
 }
 
-.gantt tbody tr:not(:last-child) th, 
+.gantt tbody tr:not(:last-child) th,
 .gantt tbody tr:not(:last-child) td {
 	border-bottom: 1px solid black;
 }
 
 .gantt .month {
-	--w:30px;
+	--w: 30px;
 	width: var(--w);
 	min-width: var(--w);
 	max-width: var(--w);
@@ -33,24 +33,24 @@
 }
 
 .screenreader {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 .tranche,
 .deliverable,
 .tasks,
 .effort {
-	padding-right:1rem !important;
+	padding-right: 1rem !important;
 }
 
 td.month,
-th.month{
+th.month {
 	text-align: center;
 	border-left: 1px dotted black;
 }
