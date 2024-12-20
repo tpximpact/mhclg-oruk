@@ -13,7 +13,6 @@
 	list-style: none;
 }
 
-
 .content cite {
 	background: #efefef;
 	padding: 1rem 1rem;
@@ -112,7 +111,6 @@
 }
 
 .content td:not(:last-child) {
-	
 	border-bottom: 1px dotted black;
 }
 
