@@ -33,7 +33,12 @@ const unslugify = name => `${name}.md`
 
 const getAll = contentFolder => {
 	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
-	return fs.readdirSync(dir).filter(f => f !== '.DS_Store')
+	const dirents = fs.readdirSync(dir, { withFileTypes: true });
+	const filesNames = dirents
+    .filter(dirent => dirent.isFile())
+    .map(dirent => dirent.name)
+	.filter(f => f !== '.DS_Store')
+	return filesNames
 }
 
 const getDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)

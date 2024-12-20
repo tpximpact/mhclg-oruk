@@ -20,6 +20,7 @@
 			"@/app/*": ["app/*"],
 			"@/actions/*": ["actions/*"],
 			"@/components/*": ["components/*"],
+			"@/content/*": ["content/*"],
 			"@/pages/*": ["pages/*"],
 			"@/styles/*": ["styles/*"],
 			"@/utilities/*": ["utilities/*"]
