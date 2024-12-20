@@ -13,6 +13,16 @@
 	list-style: none;
 }
 
+
+.content cite {
+	background: #efefef;
+	padding: 1rem 1rem;
+	border-left: 8px solid #dfdfdf;
+	margin-top: -2rem;
+	margin-bottom: 2rem;
+	display: block;
+}
+
 .content code {
 	font-family:
 		system-ui,
@@ -90,4 +100,24 @@
 .content blockquote p {
 	margin: 0;
 	padding: 0;
+}
+
+.content table {
+	margin-bottom: 2rem;
+}
+
+.content td {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	vertical-align: top;
+}
+
+.content td:not(:last-child) {
+	
+	border-bottom: 1px dotted black;
+}
+
+.content th {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	vertical-align: top;
+	border-bottom: 2px solid black;
 }
