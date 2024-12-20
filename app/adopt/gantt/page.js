@@ -5,8 +5,8 @@ import config from '@/content/adopt/gantt/data.json'
 export default function Page() {
 	return (
 		<PageMargin>
-		<h1>Implementation Plan timeline</h1>
-			<Timeline rows={config.rows}/>
+			<h1>Implementation Plan timeline</h1>
+			<Timeline rows={config.rows} />
 		</PageMargin>
 	)
 }

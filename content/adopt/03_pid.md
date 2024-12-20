@@ -7,7 +7,7 @@ slug: For project managers.
 
 ## Introduction
 
-The Ministry of Housing, Communities and Local Government (MHCLG) is supporting councils to adopt the Open Referral UK (ORUK) data standard. 
+The Ministry of Housing, Communities and Local Government (MHCLG) is supporting councils to adopt the Open Referral UK (ORUK) data standard.
 
 ORUK is the project name for UK use of the international data standard Human Services Data Standard(HSDS). Essentially this is the data fields used to describe the details about a local service to support people e.g. the name, description, venue, start time etc. A service could be a public sector service or a community service e.g. foodbank, benefit assessment.
 
@@ -17,15 +17,15 @@ This document is designed for programme and project managers leading the impleme
 
 We assume the business case has been agreed in principle and a project mandate submitted. While each council may approach this project differently, the headings in this document reflect standard elements of a PID. Rather than providing exhaustive project details, the document focuses on key considerations and ideas, offering a concise yet supportive framework to help councils create their own PID for implementing Open Referral UK.
 
-For additional resources, refer to our documents on [adopting the standard](/adopt): 
+For additional resources, refer to our documents on [adopting the standard](/adopt):
 
 - an [executive summary](/adopt/01_summary) for senior managers
 - a [business case template](/adopt/02_business_case) for finance managers
 - a [project initiation document (PID) template](/adopt/03_pid) for project managers.
- 
+
 ## 1. Project overview
 
-**Title**: ORUK data standard adoption project 
+**Title**: ORUK data standard adoption project
 
 **Purpose**: To implement the Open Referral (ORUK) data standard, streamlining local service information and enabling better outcomes for residents and service users.
 
@@ -59,7 +59,7 @@ This project will focus on proving the concept, but will include partners outsid
 **In scope:**
 
 - Collecting and validating data from at least one external partner organisation
-- Data collection and assurance focused on the three required by a council i.e. Adult Social Care, SEND/Local Offer, and Family Hubs or a particular context e.g. cost of living crisis, ho 
+- Data collection and assurance focused on the three required by a council i.e. Adult Social Care, SEND/Local Offer, and Family Hubs or a particular context e.g. cost of living crisis, ho
 - Developing a service type taxonomy
 - Building a digital infrastructure for data sharing via API
 - Ensuring at least three partner organisations consume the data
@@ -87,52 +87,51 @@ While the Transformation/Digital team is expected to be involved in implementing
 
 ## 6. Deliverables
 
-| Tranche | Deliverable | Quality criteria |
-| :---- | :---- | :---- |
-| Leadership | Discovery landscape/ stakeholder mapping/ Rich picture | A clear, easy-to-read diagram illustrating the potential scale of ORUK adoption across contexts and partners involved in collecting, validating, and using local service information. |
-|  | Business model | The policy, process mapping and finance model for ensuring a sustainable future for this way of working |
-| Collect & manage data | Process of collecting data | Process diagram of how each source collected the data |
-| Assure data quality | Repository of trusted data | Database with ORUK data fields |
-| Publish & re-use | Compliant API | Compliant with ORUK validator |
-| Publish & re-use | Applications showing use of collected data | Demo of how data is used in three processes/applications |
-| Performance monitoring | Management report | Report showing service numbers by service type and coverage |
-| Project close | Recommendations for further scaling | Conclusions from the discovery exercise, including the data collection and aggregation processes, data consumption, and management reporting. |
+| Tranche                | Deliverable                                            | Quality criteria                                                                                                                                                                      |
+| :--------------------- | :----------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Leadership             | Discovery landscape/ stakeholder mapping/ Rich picture | A clear, easy-to-read diagram illustrating the potential scale of ORUK adoption across contexts and partners involved in collecting, validating, and using local service information. |
+|                        | Business model                                         | The policy, process mapping and finance model for ensuring a sustainable future for this way of working                                                                               |
+| Collect & manage data  | Process of collecting data                             | Process diagram of how each source collected the data                                                                                                                                 |
+| Assure data quality    | Repository of trusted data                             | Database with ORUK data fields                                                                                                                                                        |
+| Publish & re-use       | Compliant API                                          | Compliant with ORUK validator                                                                                                                                                         |
+| Publish & re-use       | Applications showing use of collected data             | Demo of how data is used in three processes/applications                                                                                                                              |
+| Performance monitoring | Management report                                      | Report showing service numbers by service type and coverage                                                                                                                           |
+| Project close          | Recommendations for further scaling                    | Conclusions from the discovery exercise, including the data collection and aggregation processes, data consumption, and management reporting.                                         |
 
 ## 7. Budget
 
 These are illustrative figures only. Costs will vary based on your specific circumstances.
 
-| Budget line | Amount |
-| :---- | :---- |
-| Project team | Covered by existing resources |
-| Collection of data | Covered by existing resources £10k to licence or amend existing application |
-| Aggregation of data | Covered by existing resources |
-| Building API | £20k to licence or develop an API |
-| Presentation of data | £15k to licence or amend existing application |
-| Management report | Covered by existing resources |
-| **TOTAL** | **£45k** |
+| Budget line          | Amount                                                                      |
+| :------------------- | :-------------------------------------------------------------------------- |
+| Project team         | Covered by existing resources                                               |
+| Collection of data   | Covered by existing resources £10k to licence or amend existing application |
+| Aggregation of data  | Covered by existing resources                                               |
+| Building API         | £20k to licence or develop an API                                           |
+| Presentation of data | £15k to licence or amend existing application                               |
+| Management report    | Covered by existing resources                                               |
+| **TOTAL**            | **£45k**                                                                    |
 
 ## 8. Risks and issues
 
-| Risk/Issue | Mitigation | Likelihood | Impact |
-| :---- | :---- | ----- | ----- |
-| **Leadership**: We already have Directory of Services in place so why should we complicate it with implementing Open Referral? | Managers and frontline workers often express dissatisfaction with directory information, mainly due to outdated content. ORUK offers a way to collaborate and improve directory accuracy. Leaders should be asked if they believe the current directory meets its intended purpose and needs. See benefits of ORUK | HIGH | HIGH |
-| **Leadership**: It is an effort to change an existing directory to OR and there will be little benefit gained by that existing initiative so there is a risk that nothing will happen. | There needs to be a directive from senior management who understand the wider benefits such that OR is adopted. Will the H\&W Board strongly encourage all use of local data to be aligned to ORUK | HIGH | HIGH |
-| **Infrastructure**: There is a risk that organisations won’t have the expertise to post their data to an API or consume data from an API | Infrastructure organisations could receive training to assist front-end users and explore simplifying access, such as enabling functionality that provides links to service information, which can easily be added to websites. | HIGH | HIGH |
-| **Infrastructure**: If the data is not presented effectively, there is a risk that audiences won't care whether it adheres to a data standard. | Offer a default, council-controlled presentation of the data via the council website or a branded app. This will set the standard for reusing the data on websites. In the future, if other apps gain popularity, the council may only need to publish the data, but initially, effective presentation is key. | HIGH | HIGH |
-| **Leadership:** The full benefits won’t be gained without all organisations in the council area signing up which will require strong leadership | H\&W Board’s strong encouragement of ORUK should persuade partners. Set out a clear list of benefits that can be gained by working as a whole and ensure they are aware of their role in the whole process | HIGH | HIGH |
-| **Process:** There is a risk that the data assurance is not adequately resourced or uses the appropriate skills | Robust procurement of skills and outputs when using a central team or third sector providers. Or consider the procurement of a private sector curation service. . | HIGH | HIGH |
-| **Process:** There is a risk that aggregating data sets will create duplicated data which will need extra resource to de-duplicate. | Duplication in siloed systems causes confusion for frontline workers and residents. While de-duplication requires additional resources, it should be viewed as a benefit to reduce this confusion. | HIGH | MEDIUM |
-| **Policy:** There is a risk that not all data fields are completed when collecting the data. The advantage of ORUK is that frontend applications can use the rich dataset to help people in a more personalised way. There is a risk that data is not complete and so this advantage is lost. | A council policy should define mandatory fields for the coordinated process, with non-compliant entries excluded from the repository. This could encourage providers to complete the data set, but may also discourage them, requiring a leadership decision. | HIGH | MEDIUM |
-| **Finance**: Budgets are within specific contexts (silo) and so it is difficult to identify the total current spend and to ensure this is saved in the future. | Senior management need to insist that there is only one source of data and that is re-used as many times as possible | HIGH | MEDIUM |
-| **Leadership:** Some existing collections won’t share their data as they have put a lot of effort into it. | If they are using tax payers money to collect the data then they should share it. However, the finance model should pay for resources as part of the co-ordinated model to collect/assure the data. | MEDIUM | HIGH |
-| **Culture**: Frontline workers can feel it is their job to research community services for their clients rather than trust the data provided from the repository. | Senior managers need to encourage workers to trust the single repository and so save their own research time and spend more time helping their client. | MEDIUM | HIGH |
-| **Policy:** There is a risk that every organisation will want to categorise the data in their own way, making it difficult to gain a strategic picture | There will need to be an agreed model to allow local categories to be mapped to regional or national categories to provide the appropriate management information. | MEDIUM | HIGH |
-| **Culture**: There is a risk that collectors of local service information feel an ownership of information reducing the ability to share/re-use it. | The council area has to recognise the effort put into collecting and assuring data and build this into their business model.  | MEDIUM | MEDIUM |
-| **Culture**: There is a risk that collectors of local service information feel a protection of information reducing the ability to share/re-use it. | The collection should ensure there is no personal data collected and permission for the data to be regarded as open data should be sought to ensure understanding. | MEDIUM | MEDIUM |
-| **Infrastructure**: There is a risk that existing software won’t be compatible with Open Referral | Decisions will need to be made to allow an existing application to be amended to work with ORUK or to move to a new application. Procurement should ensure any software purchased is compatible with appropriate data standards. | MEDIUM | MEDIUM |
-| **Infrastructure**: There is a risk that the software market is not robust enough to deliver required tools | Work with suppliers to co-produce required software. | MEDIUM | MEDIUM |
-
+| Risk/Issue                                                                                                                                                                                                                                                                                    | Mitigation                                                                                                                                                                                                                                                                                                         | Likelihood | Impact |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ |
+| **Leadership**: We already have Directory of Services in place so why should we complicate it with implementing Open Referral?                                                                                                                                                                | Managers and frontline workers often express dissatisfaction with directory information, mainly due to outdated content. ORUK offers a way to collaborate and improve directory accuracy. Leaders should be asked if they believe the current directory meets its intended purpose and needs. See benefits of ORUK | HIGH       | HIGH   |
+| **Leadership**: It is an effort to change an existing directory to OR and there will be little benefit gained by that existing initiative so there is a risk that nothing will happen.                                                                                                        | There needs to be a directive from senior management who understand the wider benefits such that OR is adopted. Will the H\&W Board strongly encourage all use of local data to be aligned to ORUK                                                                                                                 | HIGH       | HIGH   |
+| **Infrastructure**: There is a risk that organisations won’t have the expertise to post their data to an API or consume data from an API                                                                                                                                                      | Infrastructure organisations could receive training to assist front-end users and explore simplifying access, such as enabling functionality that provides links to service information, which can easily be added to websites.                                                                                    | HIGH       | HIGH   |
+| **Infrastructure**: If the data is not presented effectively, there is a risk that audiences won't care whether it adheres to a data standard.                                                                                                                                                | Offer a default, council-controlled presentation of the data via the council website or a branded app. This will set the standard for reusing the data on websites. In the future, if other apps gain popularity, the council may only need to publish the data, but initially, effective presentation is key.     | HIGH       | HIGH   |
+| **Leadership:** The full benefits won’t be gained without all organisations in the council area signing up which will require strong leadership                                                                                                                                               | H\&W Board’s strong encouragement of ORUK should persuade partners. Set out a clear list of benefits that can be gained by working as a whole and ensure they are aware of their role in the whole process                                                                                                         | HIGH       | HIGH   |
+| **Process:** There is a risk that the data assurance is not adequately resourced or uses the appropriate skills                                                                                                                                                                               | Robust procurement of skills and outputs when using a central team or third sector providers. Or consider the procurement of a private sector curation service. .                                                                                                                                                  | HIGH       | HIGH   |
+| **Process:** There is a risk that aggregating data sets will create duplicated data which will need extra resource to de-duplicate.                                                                                                                                                           | Duplication in siloed systems causes confusion for frontline workers and residents. While de-duplication requires additional resources, it should be viewed as a benefit to reduce this confusion.                                                                                                                 | HIGH       | MEDIUM |
+| **Policy:** There is a risk that not all data fields are completed when collecting the data. The advantage of ORUK is that frontend applications can use the rich dataset to help people in a more personalised way. There is a risk that data is not complete and so this advantage is lost. | A council policy should define mandatory fields for the coordinated process, with non-compliant entries excluded from the repository. This could encourage providers to complete the data set, but may also discourage them, requiring a leadership decision.                                                      | HIGH       | MEDIUM |
+| **Finance**: Budgets are within specific contexts (silo) and so it is difficult to identify the total current spend and to ensure this is saved in the future.                                                                                                                                | Senior management need to insist that there is only one source of data and that is re-used as many times as possible                                                                                                                                                                                               | HIGH       | MEDIUM |
+| **Leadership:** Some existing collections won’t share their data as they have put a lot of effort into it.                                                                                                                                                                                    | If they are using tax payers money to collect the data then they should share it. However, the finance model should pay for resources as part of the co-ordinated model to collect/assure the data.                                                                                                                | MEDIUM     | HIGH   |
+| **Culture**: Frontline workers can feel it is their job to research community services for their clients rather than trust the data provided from the repository.                                                                                                                             | Senior managers need to encourage workers to trust the single repository and so save their own research time and spend more time helping their client.                                                                                                                                                             | MEDIUM     | HIGH   |
+| **Policy:** There is a risk that every organisation will want to categorise the data in their own way, making it difficult to gain a strategic picture                                                                                                                                        | There will need to be an agreed model to allow local categories to be mapped to regional or national categories to provide the appropriate management information.                                                                                                                                                 | MEDIUM     | HIGH   |
+| **Culture**: There is a risk that collectors of local service information feel an ownership of information reducing the ability to share/re-use it.                                                                                                                                           | The council area has to recognise the effort put into collecting and assuring data and build this into their business model.                                                                                                                                                                                       | MEDIUM     | MEDIUM |
+| **Culture**: There is a risk that collectors of local service information feel a protection of information reducing the ability to share/re-use it.                                                                                                                                           | The collection should ensure there is no personal data collected and permission for the data to be regarded as open data should be sought to ensure understanding.                                                                                                                                                 | MEDIUM     | MEDIUM |
+| **Infrastructure**: There is a risk that existing software won’t be compatible with Open Referral                                                                                                                                                                                             | Decisions will need to be made to allow an existing application to be amended to work with ORUK or to move to a new application. Procurement should ensure any software purchased is compatible with appropriate data standards.                                                                                   | MEDIUM     | MEDIUM |
+| **Infrastructure**: There is a risk that the software market is not robust enough to deliver required tools                                                                                                                                                                                   | Work with suppliers to co-produce required software.                                                                                                                                                                                                                                                               | MEDIUM     | MEDIUM |
 
 ## 9. Governance and structure
 
@@ -148,17 +147,17 @@ The project will follow the stage plan given at the end of this document. (Secti
 
 The following roles are key contributors to the model, with the same organisation potentially taking on multiple roles simultaneously:
 
-- **Project Executive**. Leads the project board and governance, ensuring effective collaboration with partners. Could be a member of the H\&W Board  
-- **Local Support Services Manager**. Responsible for driving the vision and coordinating activities across the council area. This role may also be the Project Manager. This could be a new role to consider or be a programme manager from the council team.  
-- **Infrastructure Support**. Supports the promotion of the initiative and registration of service providers. This role is likely to be carried out by an organisation such as a CVS or similar community group.  
-- **Service Providers**. Organisations that offer services to the community and are central to the project’s success.  
-- **Collector**. The designated organisation or individual responsible for gathering information from service providers about their services. This may involve "self-entry" by the service provider or support by a third-party collector. The collector’s role is expected to diminish significantly over the next 2-3 years as service providers take on more responsibility for managing their own data.  
-- **Assurer**. The central role responsible for overseeing the quality of data and taxonomies, ensuring accuracy and consistency. This role is accountable to the consumer.  
+- **Project Executive**. Leads the project board and governance, ensuring effective collaboration with partners. Could be a member of the H\&W Board
+- **Local Support Services Manager**. Responsible for driving the vision and coordinating activities across the council area. This role may also be the Project Manager. This could be a new role to consider or be a programme manager from the council team.
+- **Infrastructure Support**. Supports the promotion of the initiative and registration of service providers. This role is likely to be carried out by an organisation such as a CVS or similar community group.
+- **Service Providers**. Organisations that offer services to the community and are central to the project’s success.
+- **Collector**. The designated organisation or individual responsible for gathering information from service providers about their services. This may involve "self-entry" by the service provider or support by a third-party collector. The collector’s role is expected to diminish significantly over the next 2-3 years as service providers take on more responsibility for managing their own data.
+- **Assurer**. The central role responsible for overseeing the quality of data and taxonomies, ensuring accuracy and consistency. This role is accountable to the consumer.
 - **Consumer**. The organisation or entity that reuses the data. Consumers will report errors and make demands for data improvements.
 
-There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.  
+There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.
 
-![A diagram showing governance and quality processes](/adopt/leadership.png "Leadership")
+![A diagram showing governance and quality processes](/adopt/leadership.png 'Leadership')
 
 ### 10.1 Leadership, governance and oversight
 
@@ -168,8 +167,8 @@ To kick off, it’s crucial to understand the current landscape, including who i
 
 We recommend conducting a discovery exercise to identify who is:
 
-- Collecting/maintaining local service information  
-- Storing service information in software  
+- Collecting/maintaining local service information
+- Storing service information in software
 - Using service information on websites or in processes
 
 You can capture this in a simple spreadsheet with tabs such as: **Data collected**, **Data stored**, and **Data used**, or create a visual "rich picture" for better clarity.
@@ -180,17 +179,17 @@ This exercise will provide insights for the business case, stakeholder managemen
 
 For the proof of concept, we recommend scoping for council departments that already have service directories, alongside external partners:
 
-- Special Educational Needs and Disabilities  
-- Family Hubs/Information Services  
-- Adult Care Support Services  
+- Special Educational Needs and Disabilities
+- Family Hubs/Information Services
+- Adult Care Support Services
 - Health and Wellbeing services
 
 Focus on a specific issue that leaders will engage with, ensuring it involves multiple services within a manageable geographic area. Potential issues include:
 
-- Bereavement  
-- Suicide prevention  
-- Homelessness  
-- Health and wellbeing 
+- Bereavement
+- Suicide prevention
+- Homelessness
+- Health and wellbeing
 
 Consider the stakeholders involved, as their buy-in will be influenced by credible leaders.
 
@@ -208,10 +207,10 @@ We suggest that the most effective business model would involve larger public se
 
 The following considerations are given:
 
-- the council employ a programme/project manager to drive this project forward, take responsibility and manage the inevitable moving parts  
-- the third sector is involved in the collection and should be paid for its involvement; however care should be taken to ensure they have the required skills and can provide the required outputs.  
-- the assurers should come from a variety of resources but be combined under the Council-area policy and process and managed by the programme manager  
-- the API infrastructure be provided by a single tier local council where a County council would provide the API and the districts post in the data collected in their area  
+- the council employ a programme/project manager to drive this project forward, take responsibility and manage the inevitable moving parts
+- the third sector is involved in the collection and should be paid for its involvement; however care should be taken to ensure they have the required skills and can provide the required outputs.
+- the assurers should come from a variety of resources but be combined under the Council-area policy and process and managed by the programme manager
+- the API infrastructure be provided by a single tier local council where a County council would provide the API and the districts post in the data collected in their area
 - the data is freely available to the third sector and that a public sector organisation using the data contributes to the costs according to their usage or size of budget. A commercial organisation should be
 - procurement policies should ensure that any application processing local service information should be compliant with ORUK
 - performance information should be provided to the service providers, third sector and public sector to encourage better use of this infrastructure
@@ -264,15 +263,16 @@ The main benefit of implementing ORUK across a council is that data, once collec
 
 #### Building the API
 
-The ORUK website (ADD LINK) provides detailed guidance, along with the technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website.  The website also has a list of suppliers offering solutions for councils that need help.
+The ORUK website (ADD LINK) provides detailed guidance, along with the technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website. The website also has a list of suppliers offering solutions for councils that need help.
 
 ### 10.5 Re-use of the data
 
 There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
-- Waiting for a public sector service (e.g. ASD assessment, social care, surgery)  
-- Extra support alongside interventions (e.g. hospital discharge, benefit assessment, SEND)  
-- Support after an intervention (e.g. child in need, mental health, physiotherapy)  
-- Help after missing a threshold (e.g. ASD/SEND, carer assessment, care review)  
+
+- Waiting for a public sector service (e.g. ASD assessment, social care, surgery)
+- Extra support alongside interventions (e.g. hospital discharge, benefit assessment, SEND)
+- Support after an intervention (e.g. child in need, mental health, physiotherapy)
+- Help after missing a threshold (e.g. ASD/SEND, carer assessment, care review)
 - Self-care to reduce reliance on public services (e.g. elderly parent supported by a child, smoker trying to quit, teenager seeking youth services)
 
 These use cases can be supported through websites, apps, and AI, delivering the right information at the right time.
