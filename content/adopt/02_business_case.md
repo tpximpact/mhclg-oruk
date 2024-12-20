@@ -1,5 +1,5 @@
 ---
-title: Business case template 
+title: Business case template
 slug: For finance managers.
 ---
 

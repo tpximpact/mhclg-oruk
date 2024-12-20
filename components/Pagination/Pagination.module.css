@@ -33,7 +33,6 @@
 .pagination li span {
 	margin: 0 1rem;
 }
-	
 
 .pagination * {
 	font-weight: 700 !important;
@@ -41,11 +40,9 @@
 
 .pagination li .hide {
 	position: relative;
-	margin-top:-60px;
-	display:block;
+	margin-top: -60px;
+	display: block;
 }
-
-
 
 .pagination li[aria-current='page'] {
 	background-color: #000;
@@ -53,4 +50,3 @@
 .pagination li[aria-current='page'] * {
 	color: #fff !important;
 }
-

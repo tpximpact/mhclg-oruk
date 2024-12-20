@@ -4,12 +4,13 @@
 
 This document gives insight into the implementation of ORUK. It offers a high level technical understanding of the proposition, benefits, issues and requirements. This document does not provide the [full technical specifications](https://github.com/OpenReferralUK/uk-profile), but it points to where details can be found.
 
-It is accompanied by additional resources on [adopting the standard](/adopt): 
+It is accompanied by additional resources on [adopting the standard](/adopt):
+
 - an [executive summary](/adopt/01_summary) for senior managers
 - a [business case template](/adopt/02_business_case) for finance managers
 - a [project initiation document (PID) template](/adopt/03_pid) for project managers.
 
-## 1. Background 
+## 1. Background
 
 Local councils currently need to collate information which describes the what, where and when of local services for supporting Adult Social Care, Families and Children with Special Educational Needs & Disabilities (SEND).
 
@@ -35,13 +36,13 @@ Using the data standard will reduce the cost of collecting data, make the assura
 
 ## 3. Outline Implementation model
 
-The Project Initiation Document [project initiation document (PID) template](/adopt/03_pid) provided to help council project managers, includes the diagram below. 
+The Project Initiation Document [project initiation document (PID) template](/adopt/03_pid) provided to help council project managers, includes the diagram below.
 
-![A diagram showimg quality procedures](/developers/overview/qa.png "Quality")
+![A diagram showimg quality procedures](/developers/overview/qa.png 'Quality')
 
-Council's are advised to start with a simple proof of concept before scaling, given the complexity of involving stakeholders. The model below is derived from the PID diagram above to outline the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways. 
+Council's are advised to start with a simple proof of concept before scaling, given the complexity of involving stakeholders. The model below is derived from the PID diagram above to outline the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways.
 
-![A flowchart depicting the steps described below](/developers/overview/process.png "Outline")
+![A flowchart depicting the steps described below](/developers/overview/process.png 'Outline')
 
 The following four sections briefly explain the steps to give context to the technical infrastructure.
 
@@ -51,13 +52,13 @@ This involves gathering the information that describes a local service using the
 
 The diagram below provides a high-level overview of the main entities in ORUK.
 
-![A diagram depicting the key five entities](/developers/overview/model.png "Model")
+![A diagram depicting the key five entities](/developers/overview/model.png 'Model')
 
 ## 3.2 Assure data quality
 
-The aim of assurance is to ensure there is a master record and to check that the data is accurate and can be trusted by those wanting to use it. 
+The aim of assurance is to ensure there is a master record and to check that the data is accurate and can be trusted by those wanting to use it.
 
-**Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) (under the Service entity table highlighted in this link) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service. 
+**Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) (under the Service entity table highlighted in this link) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service.
 
 There are **three** main considerations:
 
@@ -66,6 +67,7 @@ The **first** is to remove duplication. If data is collected from several differ
 This may seem like extra work is created but de-duplication removes the confusion caused by a silo approach where an end-user doesn't know which version of service information is up to date.
 
 The **second** is to check the data quality. This will be about:
+
 - richness of data i.e. to complete all the fields that are deemed necessary,
 - accuracy i.e. to check that days and times for sessions have not changed
 - verification i.e. to ensure that an accreditation say of Ofsted is valid.
@@ -81,12 +83,13 @@ The main method for making the data available for reuse is to provide an API.
 Other options could be to provide CSV of the data, PDF templates presenting the data or as links to present the data but these should only really be considered when scaling the implementation.
 
 ORUK API has RESTful web services documented according to the OpenAPI standard. Key web methods are:
+
 - <code>/</code> Information about the API version (its publisher, version number and profile)
 - <code>/services</code> and <code>/services/{id}</code> List and detailed service information.
 - <code>/service_at_locations</code> and <code>/service_at_locations/{id}</code> Services
-available at a location.
+  available at a location.
 - <code>/taxonomies</code> and <code>/taxonomies/{id}</code> Taxonomies referenced by the data and
-their details
+  their details
 - </code>/taxonomy_terms</code> and <code>/taxonomy_terms/{id}</code> List of taxonomy terms and details of a specified taxonomy term
 
 Version 3.0 has nine GET web methods. See [Swagger documentation](https://docs.openreferraluk.org/en/latest/openapi.html).
@@ -104,8 +107,9 @@ You can [check your ORUK compliance](/developers/validator) to see if the data f
 The purpose of collecting, assuring and publishing the data is so that it can be used to support many different resident needs. Currently it is likely to only be used in a Directory of Services but it has the potential to be reused or integrated into many pathways and interventions and other websites e.g. primary school, charities, churches. This is likely to create further work for the technical team in integrating the data but will demonstrate the value that data standards can provide.
 
 Here are some use cases where accurate local service information is essential:
+
 - Waiting for a public sector service. ASD assessment, Social Care Financial
-Assessment, surgery.
+  Assessment, surgery.
 - Complementary support to an intervention/pathway. Hospital discharge, Benefit assessment, SEND.
 - Step down from an intervention/pathway. Child in Need, Mental Health, Physiotherapy
 - Support after missing a threshold. ASD/SEND, Carer assessment, Care Review
