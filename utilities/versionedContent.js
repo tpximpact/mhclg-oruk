@@ -1,9 +1,8 @@
 import fs from 'fs';
 import { join } from 'path';
-import { PATHS } from './PATHS';
 import matter from 'gray-matter';
 import { getAllFiles } from './getAllFiles';
-import { CONTENT_ROOT } from './contentRoot';
+import { buildContentPath } from './buildContentPath'; 
 
 /**
  * Retrieves version data from Markdown files.
@@ -28,20 +27,12 @@ export const getVersions = (folder) => {
 };
 
 /**
- * Builds the full path to a content file.
- *
- * @param {string} contentPath - Relative path.
- * @returns {string} Full path.
- */
-const buildContentPath = (contentPath) => join(CONTENT_ROOT, contentPath);
-
-/**
  * Reads a file.
  *
  * @param {string} contentPath - Relative path.
  * @returns {string|null} File contents or null on error.
  */
-const readFile = (contentPath) => {
+const readContentFile= (contentPath) => {
   try {
     return fs.readFileSync(buildContentPath(contentPath), 'utf8');
   } catch (error) {
@@ -71,6 +62,6 @@ const parseMarkdown = (fileContents) => {
  * @returns {{ content: string, frontmatter: object }|null} Parsed data or null.
  */
 const loadMarkdownFromFile = (file, folder) => {
-  const fileContents = readFile(join(folder, file));
+  const fileContents = readContentFile(join(folder, file));
   return parseMarkdown(fileContents);
 };
