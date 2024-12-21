@@ -2,7 +2,6 @@
 import fs from 'fs'
 import { join } from 'path'
 import * as matter from 'gray-matter'
-import { PATHS } from './PATHS'
 import { slugify} from './slugUtils'
 import { CONTENT_ROOT } from './constants';
 
@@ -14,7 +13,7 @@ export const getDynamicPageContent = (folder, slug) => {
 	const index = allFiles.findIndex(file => slugify(file) === slug)
 
 	return {
-		date: getDate(metadata, file),
+		date: getMarkdownFileModifiedDate(metadata, file),
 		metadata,
 		content,
 		next: buildLinkedItem(index + 1, allFiles, folder),
@@ -37,7 +36,7 @@ const getAllFiles = contentFolder => {
 		.filter(f => f !== '.DS_Store')
 }
 
-const getDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)
+const getMarkdownFileModifiedDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)
 
 const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)
@@ -46,7 +45,7 @@ const fileThumbnail = (rootContentFolder, file) => {
 	return {
 		title: metadata.title,
 		path: slugify(contentPath),
-		date: getDate(metadata, contentPath),
+		date: getMarkdownFileModifiedDate(metadata, contentPath),
 		slug: metadata.slug
 	}
 }
