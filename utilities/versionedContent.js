@@ -1,8 +1,8 @@
 import { join } from 'path';
-import matter from 'gray-matter';
 import { getAllFiles } from './getAllFiles';
-import { readContentFile } from './readContentFile'; // New import
-import { parseMarkdown } from './parseMarkdown'; // New import
+import { readContentFile } from './readContentFile';
+import { parseMarkdown } from './parseMarkdown';
+import { loadMarkdownFromFile } from './loadMarkdownFromFile'; // New import
 
 /**
  * Retrieves version data from Markdown files.
@@ -24,16 +24,4 @@ export const getVersions = (folder) => {
 
   const allVersions = Object.keys(contentData).sort().reverse();
   return [allVersions, contentData];
-};
-
-/**
- * Loads and parses Markdown content from a file.
- *
- * @param {string} file - File name.
- * @param {string} folder - Folder name.
- * @returns {{ content: string, frontmatter: object }|null} Parsed data or null.
- */
-const loadMarkdownFromFile = (file, folder) => {
-  const fileContents = readContentFile(join(folder, file));
-  return parseMarkdown(fileContents);
 };
