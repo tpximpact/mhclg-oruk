@@ -4,8 +4,7 @@ import { join } from 'path'
 import * as matter from 'gray-matter'
 import { PATHS } from './PATHS'
 import { slugify} from './slugUtils'
-
-const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
+import { CONTENT_ROOT } from './constants';
 
 export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, `${slug}.md`)
