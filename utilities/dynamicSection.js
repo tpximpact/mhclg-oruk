@@ -7,7 +7,7 @@ import { CONTENT_ROOT } from './constants';
 
 export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, `${slug}.md`)
-	const fileContents = readFile(file)
+	const fileContents = readContentFile(file)
 	const { data: metadata, content } = matter(fileContents)
 	const allFiles = getAllContentFilesInFolder(folder)
 	const index = allFiles.findIndex(file => slugify(file) === slug)
@@ -40,7 +40,7 @@ const getMarkdownFileModifiedDate = (metadata, contentPath) => metadata.date || 
 
 const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)
-	const contents = readFile(contentPath)
+	const contents = readContentFile(contentPath)
 	const { data: metadata } = matter(contents)
 	return {
 		title: metadata.title,
@@ -55,7 +55,7 @@ export const listDynamicSection = ({ rootContentFolder }) => {
 	return filenames.map(f => fileThumbnail(rootContentFolder, f))
 }
 
-const readFile = contentPath => {
+const readContentFile = contentPath => {
 	try {
 		return fs.readFileSync(join(CONTENT_ROOT, contentPath), 'utf8')
 	} catch (err) {
@@ -64,9 +64,7 @@ const readFile = contentPath => {
 	}
 }
 
-const extractMetadata = contents => matter(contents).data
-
-const statFile = contentPath => {
+const statContentFile= contentPath => {
 	try {
 		return fs.statSync(join(CONTENT_ROOT, contentPath))
 	} catch (err) {
@@ -76,6 +74,6 @@ const statFile = contentPath => {
 }
 
 const fileLastModified = contentPath => {
-	const stats = statFile(contentPath)
+	const stats = statContentFile(contentPath)
 	return stats ? stats.mtime.toLocaleDateString('en-GB') : null
 }
