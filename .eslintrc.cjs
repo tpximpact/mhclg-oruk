@@ -4,7 +4,7 @@ module.exports = {
 		es2021: true,
 		'jest/globals': true
 	},
-	extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals', 'prettier'],
+	extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals', 'prettier', 'plugin:storybook/recommended'],
 	overrides: [
 		{
 			env: {
