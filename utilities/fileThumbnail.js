@@ -8,10 +8,11 @@ export const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)
 	const contents = readContentFile(contentPath)
 	const { data: metadata } = matter(contents)
-	return {
-		title: metadata.title,
-		path: slugify(contentPath),
-		date: getMarkdownFileModifiedDate(metadata, contentPath),
-		slug: metadata.slug
-	}
+	
+	const title = metadata.title
+	const path = slugify(contentPath)
+	const date = getMarkdownFileModifiedDate(metadata, contentPath)
+	const slug = metadata.slug
+	
+	return { title, path, date, slug }
 }
