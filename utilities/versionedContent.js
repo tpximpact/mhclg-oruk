@@ -2,6 +2,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 import { getAllFiles } from './getAllFiles';
 import { readContentFile } from './readContentFile'; // New import
+import { parseMarkdown } from './parseMarkdown'; // New import
 
 /**
  * Retrieves version data from Markdown files.
@@ -23,19 +24,6 @@ export const getVersions = (folder) => {
 
   const allVersions = Object.keys(contentData).sort().reverse();
   return [allVersions, contentData];
-};
-
-/**
- * Parses Markdown content.
- *
- * @param {string} fileContents - File contents.
- * @returns {{ content: string, frontmatter: object }|null} Parsed data or null.
- */
-const parseMarkdown = (fileContents) => {
-  const parsed = matter(fileContents);
-  return parsed && !parsed.isEmpty
-    ? { content: parsed.content, frontmatter: parsed.data }
-    : null;
 };
 
 /**
