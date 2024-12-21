@@ -1,10 +1,9 @@
-import { Inter } from 'next/font/google'
-
 import '@/styles/reset.css'
 import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
+import { font } from '@/utilities/font'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -13,13 +12,11 @@ import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import { Crumbtrail } from '@/components/Crumbtrail'
-import defaultMetadata from '/content/metadata.json'
+import defaultMetadata from '@/content/metadata.json'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
 import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
-
-const font = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
