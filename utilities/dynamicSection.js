@@ -3,6 +3,7 @@ import fs from 'fs'
 import { join } from 'path'
 import * as matter from 'gray-matter'
 import { PATHS } from './PATHS'
+import { slugify} from './slugUtils'
 
 const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
 
@@ -27,9 +28,6 @@ const buildLinkedItem = (index, allFiles, folder) => {
 	const fileName = allFiles[index]
 	return fileThumbnail(folder, fileName)
 }
-
-const slugify = fileName => fileName.split('.')[0]
-const unslugify = name => `${name}.md`
 
 const getAllFiles = contentFolder => {
 	const dir = join(CONTENT_ROOT, contentFolder)
