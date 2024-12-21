@@ -9,7 +9,9 @@ export const Timeline = ({ rows }) => (
 		<thead>
 			<tr>
 				<th colSpan='4'>Version: 1.0</th>
-				<th className={styles.month} colSpan='12'>Month</th>
+				<th className={styles.month} colSpan='12'>
+					Month
+				</th>
 			</tr>
 			<tr>
 				<th className={styles.tranche}>Tranche</th>
@@ -17,7 +19,9 @@ export const Timeline = ({ rows }) => (
 				<th className={styles.tasks}>Tasks</th>
 				<th className={styles.effort}>Expected effort</th>
 				{[...Array(12).keys()].map(n => (
-					<th key={n} className={styles.month}>{n + 1}</th>
+					<th key={n} className={styles.month}>
+						{n + 1}
+					</th>
 				))}
 			</tr>
 		</thead>
@@ -31,10 +35,18 @@ export const Timeline = ({ rows }) => (
 
 const Row = ({ tranche, deliverable, tasks, effort, months }) => (
 	<tr>
-		<th className={styles.tranche}><Content {...tranche} /></th>
-		<td className={styles.deliverable}><Content {...deliverable} /></td>
-		<td className={styles.tasks}><Content {...tasks} /></td>
-		<td className={styles.effort}><Content {...effort} /></td>
+		<th className={styles.tranche}>
+			<Content {...tranche} />
+		</th>
+		<td className={styles.deliverable}>
+			<Content {...deliverable} />
+		</td>
+		<td className={styles.tasks}>
+			<Content {...tasks} />
+		</td>
+		<td className={styles.effort}>
+			<Content {...effort} />
+		</td>
 		{[...Array(12).keys()].map(n => (
 			<Month key={n} number={n} shaded={months.includes(n + 1)} colour={colormap((1.0 / 12) * n)} />
 		))}
@@ -42,10 +54,7 @@ const Row = ({ tranche, deliverable, tasks, effort, months }) => (
 )
 
 const Month = ({ number, shaded, colour }) => (
-	<td
-		style={{ '--bg': colour }}
-		className={shaded ? styles.shaded : styles.month}
-	>
+	<td style={{ '--bg': colour }} className={shaded ? styles.shaded : styles.month}>
 		<span className={styles.screenreader}>
 			{number + 1}: {shaded ? 'yes' : 'no'}
 		</span>
