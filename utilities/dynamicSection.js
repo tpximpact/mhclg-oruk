@@ -9,25 +9,25 @@ export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, `${slug}.md`)
 	const fileContents = readFile(file)
 	const { data: metadata, content } = matter(fileContents)
-	const allFiles = getAllFiles(folder)
+	const allFiles = getAllContentFilesInFolder(folder)
 	const index = allFiles.findIndex(file => slugify(file) === slug)
 
 	return {
 		date: getMarkdownFileModifiedDate(metadata, file),
 		metadata,
 		content,
-		next: buildLinkedItem(index + 1, allFiles, folder),
-		previous: buildLinkedItem(index - 1, allFiles, folder)
+		next: dynamicSectionPaging(index + 1, allFiles, folder),
+		previous: dynamicSectionPaging(index - 1, allFiles, folder)
 	}
 }
 
-const buildLinkedItem = (index, allFiles, folder) => {
+const dynamicSectionPaging = (index, allFiles, folder) => {
 	if (index < 0 || index >= allFiles.length) return null
 	const fileName = allFiles[index]
 	return fileThumbnail(folder, fileName)
 }
 
-const getAllFiles = contentFolder => {
+const getAllContentFilesInFolder= contentFolder => {
 	const dir = join(CONTENT_ROOT, contentFolder)
 	const dirents = fs.readdirSync(dir, { withFileTypes: true })
 	return dirents
@@ -51,7 +51,7 @@ const fileThumbnail = (rootContentFolder, file) => {
 }
 
 export const listDynamicSection = ({ rootContentFolder }) => {
-	const filenames = getAllFiles(rootContentFolder)
+	const filenames = getAllContentFilesInFolder(rootContentFolder)
 	return filenames.map(f => fileThumbnail(rootContentFolder, f))
 }
 
