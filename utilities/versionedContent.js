@@ -1,8 +1,6 @@
-import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { getAllFiles } from './getAllFiles';
-import { buildContentPath } from './buildContentPath'; 
 import { readContentFile } from './readContentFile'; // New import
 
 /**
