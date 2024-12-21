@@ -10,6 +10,4 @@ describe('fileLastModified', () => {
 		const result = fileLastModified('path/to/file')
 		expect(result).toBe('01/01/2023')
 	})
-
-	
 })

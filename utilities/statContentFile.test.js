@@ -29,7 +29,9 @@ describe('statContentFile', () => {
 	it('should return null and log an error if the file does not exist', () => {
 		const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
 		const mockError = new Error('File not found')
-		fs.statSync.mockImplementation(() => { throw mockError })
+		fs.statSync.mockImplementation(() => {
+			throw mockError
+		})
 
 		const result = statContentFile(mockContentPath)
 		expect(result).toBeNull()
