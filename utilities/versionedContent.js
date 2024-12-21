@@ -3,6 +3,7 @@ import { join } from 'path';
 import matter from 'gray-matter';
 import { getAllFiles } from './getAllFiles';
 import { buildContentPath } from './buildContentPath'; 
+import { readContentFile } from './readContentFile'; // New import
 
 /**
  * Retrieves version data from Markdown files.
@@ -24,21 +25,6 @@ export const getVersions = (folder) => {
 
   const allVersions = Object.keys(contentData).sort().reverse();
   return [allVersions, contentData];
-};
-
-/**
- * Reads a file.
- *
- * @param {string} contentPath - Relative path.
- * @returns {string|null} File contents or null on error.
- */
-const readContentFile= (contentPath) => {
-  try {
-    return fs.readFileSync(buildContentPath(contentPath), 'utf8');
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
 };
 
 /**
