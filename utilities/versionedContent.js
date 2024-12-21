@@ -33,7 +33,7 @@ export const getVersions = (folder) => {
  * @param {string} contentPath - Relative path.
  * @returns {string} Full path.
  */
-const buildPath = (contentPath) => join(CONTENT_ROOT, contentPath);
+const buildContentPath = (contentPath) => join(CONTENT_ROOT, contentPath);
 
 /**
  * Reads a file.
@@ -43,7 +43,7 @@ const buildPath = (contentPath) => join(CONTENT_ROOT, contentPath);
  */
 const readFile = (contentPath) => {
   try {
-    return fs.readFileSync(buildPath(contentPath), 'utf8');
+    return fs.readFileSync(buildContentPath(contentPath), 'utf8');
   } catch (error) {
     console.error(error);
     return null;
