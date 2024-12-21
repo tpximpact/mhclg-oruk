@@ -1,8 +1,8 @@
 import { join } from 'path'
 import * as matter from 'gray-matter'
-import { slugify} from './slugUtils'
-import { getMarkdownFileModifiedDate } from './getMarkdownFileModifiedDate';
-import { readContentFile } from './readContentFile';
+import { slugify } from './slugUtils'
+import { getMarkdownFileModifiedDate } from './getMarkdownFileModifiedDate'
+import { readContentFile } from './readContentFile'
 
 export const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)

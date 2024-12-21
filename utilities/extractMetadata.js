@@ -1,5 +1,5 @@
-import * as matter from 'gray-matter';
+import * as matter from 'gray-matter'
 
-const extractMetadata = contents => matter(contents).data;
+const extractMetadata = contents => matter(contents).data
 
-export default extractMetadata;
+export default extractMetadata
