@@ -1,3 +1,9 @@
+/**
+ * Formats nodes for the page menu.
+ *
+ * @param {Array} nodes - The nodes to format.
+ * @returns {Array} - The formatted nodes.
+ */
 export const formatNodesForPageMenu = nodes => {
 	let result = nodes
 	/*
