@@ -1,8 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import { PATHS } from './PATHS';
-
-const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot);
+import { CONTENT_ROOT } from './contentRoot';
 
 /**
  * Retrieves all files in a content folder.

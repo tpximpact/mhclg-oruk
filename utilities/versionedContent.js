@@ -3,8 +3,7 @@ import { join } from 'path';
 import { PATHS } from './PATHS';
 import matter from 'gray-matter';
 import { getAllFiles } from './getAllFiles';
-
-const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot);
+import { CONTENT_ROOT } from './contentRoot';
 
 /**
  * Retrieves version data from Markdown files.
