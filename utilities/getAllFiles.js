@@ -1,6 +1,5 @@
 import fs from 'fs';
 import { join } from 'path';
-import { PATHS } from './PATHS';
 import { CONTENT_ROOT } from './contentRoot';
 
 /**

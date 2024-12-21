@@ -1,7 +1,4 @@
-import { join } from 'path';
 import { getAllFiles } from './getAllFiles';
-import { readContentFile } from './readContentFile';
-import { parseMarkdown } from './parseMarkdown';
 import { loadMarkdownFromFile } from './loadMarkdownFromFile'; // New import
 
 /**
