@@ -1,6 +1,11 @@
 import { expandTree } from './expandTree'
 import { getRawPageTree } from './getRawPageTree'
 
+/**
+ * Retrieves the expanded page tree.
+ *
+ * @returns {Array} - The expanded page tree.
+ */
 export const getExpandedPageTree = () => expandTree(getRawPageTree(), false)
 
 /*
