@@ -13,7 +13,7 @@ export default async function Page() {
 	return (
 		<>
 			<NamedMarkdownPage name='api' />
-			<PageMargin>
+		 	<PageMargin>
 				<VersionedDocumentation allVersions={allVersions} contentData={contentData} />
 			</PageMargin>
 		</>

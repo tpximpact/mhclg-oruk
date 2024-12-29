@@ -1,4 +1,8 @@
-import {JSONLiteral} from '@/components/JSONLiteral'
+'use client'
+import dynamic from 'next/dynamic';
+const JSONLiteral = dynamic(() => import('../JSONLiteral'))
+
+
 
 export const EntityRelationshipDiagram =  ({
 	contentData, 

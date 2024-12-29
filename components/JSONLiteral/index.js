@@ -1,1 +1,2 @@
-export { JSONLiteral } from './JSONLiteral'
+import { JSONLiteral } from './JSONLiteral'
+export default JSONLiteral

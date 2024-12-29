@@ -1,7 +1,9 @@
-import ReactJsonView from '@microlink/react-json-view'
+'use client'
 // https://github.com/microlinkhq/react-json-view
+import ReactJsonView from '@microlink/react-json-view'
+
 export const JSONLiteral = ({
-	raw
+	data
 }) => <ReactJsonView 
 name={null}
 
@@ -20,8 +22,8 @@ theme={{
                 base0B: "#fff",
                 base0C: "#fff",
                 base0D: "#fff",
-                base0E: "#fff",
-                base0F: "#fff"
+                base0E: "#f00",
+                base0F: "#f00"
             }}
-src={raw} />
+src={data} />
 		
