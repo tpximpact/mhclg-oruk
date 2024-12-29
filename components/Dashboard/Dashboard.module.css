@@ -27,7 +27,7 @@
 
 .table thead tr {
 	border-top: 0;
-	border-bottom: 3px solid black;
+	border-bottom: 3px solid var(--dashboard-border-color);
 }
 
 .table thead th {
@@ -40,5 +40,5 @@
 }
 
 .table tbody tr:not(:last-child) {
-	border-bottom: 0.5px black solid;
+	border-bottom: 0.5px var(--dashboard-border-color) solid;
 }

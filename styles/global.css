@@ -4,13 +4,19 @@ body {
 }
 
 a,
-a:hover,
-a:active,
 a:visited {
-	color: var(--theme-interaction);
+	color: var(--theme-anchor);
 	text-decoration: underline;
+	text-decoration-color: var(--theme-anchor-underline);
+	text-decoration-thickness: 10%;
+	text-underline-position: under;
 	cursor: pointer;
 	font-weight: var(--link-weight);
+}
+
+a:hover,
+a:active {
+	text-decoration-color: var(--theme-anchor-roll-underline);
 }
 
 .cm-theme-light * {
@@ -37,32 +43,32 @@ body {
 h4 {
 	font-size: 1.4rem; /*1.875rem; /* 30px */
 	line-height: 2.25rem;
-	font-weight: 700;
+	font-weight: 900;
 }
 
 h3 {
 	font-size: 1.875rem; /*2.25rem;*/
 	line-height: 2.5rem;
-	font-weight: 700;
+	font-weight: 900;
 }
 
 h2 {
 	font-size: 2.5rem; /* 48px */
 	line-height: 1;
-	font-weight: 700;
+	font-weight: 900;
 }
 
 h1 {
 	font-size: 3rem; /*3.75rem; /* 60px */
 	line-height: 1;
-	font-weight: 700;
+	font-weight: 900;
 }
 
 h1,
 h2,
 h3,
 h4 {
-	color: #737373;
+	color: var(--theme-headline);
 }
 
 .blockquote {

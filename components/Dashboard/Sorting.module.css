@@ -1,10 +1,10 @@
 /* via https://codepen.io/raubaca/pen/bGWmZje */
 
 .sorting {
-	--arrow-bg: rgba(0, 0, 0, 0.3);
-	--arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
-	--option-bg: #eee;
-	--select-bg: rgba(255, 255, 255, 0.2);
+	--arrow-bg: var(--sorting-arrow-bg);
+	--arrow-icon: var(--sorting-arrow-icon);
+	--option-bg: var(--sorting-option-bg);
+	--select-bg: var(--sorting-select-bg);
 }
 
 .sorting label {
@@ -24,9 +24,9 @@
 	background:
 		var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
 		linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
-	color: black;
+	color: var(--sorting-select-color);
 	border-radius: 0.25em;
-	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 1em 0 var(--sorting-box-shadow-color);
 	cursor: pointer;
 	/* Remove IE arrow */
 	&::-ms-expand {
