@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react'
 import styles from './VersionedDocumentation.module.css'
 import { useCookies } from 'react-cookie'
 
-export const VersionedDocumentation = ({ allVersions, contentData }) => {
+export const VersionedDocumentation = ({ 
+	allVersions, 
+	contentData,
+	DisplayComponent
+}) => {
 	// return <div>TODO</div>
 
 	const cookieName = 'docVersion'
@@ -32,7 +36,9 @@ export const VersionedDocumentation = ({ allVersions, contentData }) => {
 						setVersion={versionChoiceMade}
 						version={version}
 					/>
-					<VersionedContent suppressHydrationWarning version={version} contentData={contentData} />
+					<VersionedContent suppressHydrationWarning 
+					DisplayComponent={DisplayComponent}
+					version={version} contentData={contentData} />
 				</>
 			)}
 		</>
@@ -97,10 +103,12 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 
 const Literal = ({contentData, version}) => <div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
 
+const EntityRelationDiagram = ({contentData, version}) => <div> ERD </div>
+
 const VersionedContent = ({ 
 	version, 
 	contentData,
-	Component = Literal
+	DisplayComponent = EntityRelationDiagram
 }) => (
-	<Component version={version} contentData={contentData} />
+	<DisplayComponent version={version} contentData={contentData} />
 )
