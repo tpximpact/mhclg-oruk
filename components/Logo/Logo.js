@@ -1,6 +1,6 @@
 import style from './Logo.module.css'
 
-export const Logo = ({ animate, colour = '#737373', height = '80' }) => (
+export const Logo = ({ animate, colour = '#000', height = '80' }) => (
 	<div className={animate ? style.logo : ''}>
 		<div className={style.hidden}>Openreferral UK</div>
 		{animate || (

@@ -1,5 +1,5 @@
-import styles from './Title.module.css'
+import styles from './ValidatorResult.module.css'
 
 export const ValidatorResultPageTitle = () => (
-	<h1 className={styles.pageTitle}>Data feed compliance report</h1>
+	<h1 className={styles.pageTitle}>OpenReferral UK standard compliance report</h1>
 )
