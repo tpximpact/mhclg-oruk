@@ -9,7 +9,7 @@ export const EntityRelationshipDiagram =  ({
 	version
 }) => {
 	const data = contentData[version]
-	return (<div style={{padding:"2rem",background:"#000"}}> 
+	return (<div > 
 	<JSONLiteral 
 	
 	data={data} />
