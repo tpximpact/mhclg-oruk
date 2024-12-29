@@ -1,4 +1,6 @@
+import { join } from 'path'
 import {getAllFilesInFolder} from './getAllFilesInFolder'
+import {read} from './read'
 
 const versionedContentVersionFromFilename = filename => {
 	const name = filename.split(".")[0] + ""
@@ -10,14 +12,15 @@ export const loadVersionedJsonFiles = contentFolder =>
 	 const files = getAllFilesInFolder(contentFolder).filter(
 	 f => f.split(".")[1] === "json"
 	)
-	 let allVersions = files.map(
-	 	f => 
-			versionedContentVersionFromFilename(f)
+	let contentData = {}
+	files.forEach (file => {
+		const version = versionedContentVersionFromFilename(file)
+		const filePath = join(contentFolder, file)
+		const fileContents = read(filePath)
+		contentData[version] = JSON.parse(fileContents)
 		
-	 ).sort().reverse()
-	 let contentData = {
-		 payload: allVersions
-		}
-	 return [ allVersions,
-		 contentData]
+	})
+	
+	 
+	 return [ Object.keys(contentData).sort().reverse(),contentData]
  }

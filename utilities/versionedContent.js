@@ -4,6 +4,7 @@ import { join } from 'path'
 import { PATHS } from './PATHS'
 import * as matter from 'gray-matter'
 import {getAllFilesInFolder} from './getAllFilesInFolder'
+import {read} from './read'
 
 
 /**
@@ -28,31 +29,9 @@ export const getVersions = folder => {
 	return [allVersions, contentData]
 }
 
-/**
- * Build the full path to a content file.
- * @param {string} contentPath - The relative path to the content file.
- * @returns {string} - The full path to the content file.
- */
-const buildPath = contentPath => {
-	let result = join(process.cwd(), PATHS.contentRoot, contentPath)
-	return result
-}
 
-/**
- * Read the content of a file.
- * @param {string} contentPath - The relative path to the content file.
- * @returns {string|null} - The content of the file or null if an error occurs.
- */
-const readFile = contentPath => {
-	try {
-		const path = buildPath(contentPath)
-		const data = fs.readFileSync(path, 'utf8')
-		return data
-	} catch (err) {
-		console.error(err)
-	}
-	return null
-}
+
+
 
 /**
  * Parse the markdown content of a file.
@@ -81,7 +60,7 @@ const parseMarkdowm = fileContents => {
 const loadMarkdownFromFile = (file, folder) => {
 	const f = join(folder, file)
 
-	const fileContents = readFile(f)
+	const fileContents = read(f)
 	const parsed = parseMarkdowm(fileContents)
 
 	return parsed
