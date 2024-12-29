@@ -52,6 +52,7 @@ export const VersionedDocumentation = ({
 }
 
 const VersionedBanner = ({ allVersions, version, setVersion }) => {
+	
 	const currentVersion = allVersions[0]
 	const isCurrent = version === currentVersion
 

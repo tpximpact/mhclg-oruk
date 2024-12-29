@@ -3,16 +3,8 @@ import { join } from 'path'
 //import { parseMarkdown } from './markdown'
 import { PATHS } from './PATHS'
 import * as matter from 'gray-matter'
+import {getAllFilesInFolder} from './getAllFilesInFolder'
 
-/**
- * Get all files in a content folder.
- * @param {string} contentFolder - The folder to get files from.
- * @returns {string[]} - Array of filenames.
- */
-const getAll = contentFolder => {
-	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
-	return fs.readdirSync(dir)
-}
 
 /**
  * Get versions of content from a folder.
@@ -22,7 +14,7 @@ const getAll = contentFolder => {
 export const getVersions = folder => {
 	let contentData = {}
 
-	const files = getAll(folder).filter(f => f.startsWith('v'))
+	const files = getAllFilesInFolder(folder).filter(f => f.startsWith('v'))
 
 	files.forEach(f => {
 		let parsed = loadMarkdownFromFile(f, folder)
