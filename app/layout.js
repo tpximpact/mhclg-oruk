@@ -1,9 +1,11 @@
 import { Inter } from 'next/font/google'
 
+/*
 import '@/styles/reset.css'
 import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
+*/
 
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
