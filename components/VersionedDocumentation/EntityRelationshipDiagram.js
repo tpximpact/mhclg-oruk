@@ -1,1 +1,6 @@
-export const EntityRelationshipDiagram =  ({contentData, version}) => <div> ERD out </div>
+export const EntityRelationshipDiagram =  ({
+	contentData, 
+	version
+}) => <div> {version}
+{JSON.stringify(contentData)}
+</div>
