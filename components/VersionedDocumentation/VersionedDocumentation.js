@@ -95,6 +95,12 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 	)
 }
 
-const VersionedContent = ({ version, contentData }) => (
-	<div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
+const Literal = ({contentData, version}) => <div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
+
+const VersionedContent = ({ 
+	version, 
+	contentData,
+	Component = Literal
+}) => (
+	<Component version={version} contentData={contentData} />
 )
