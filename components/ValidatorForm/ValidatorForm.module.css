@@ -1,9 +1,13 @@
 .form {
 }
 
-.samples {
+.samplesList {
 	list-style: none;
 	margin-top: 1rem;
+}
+
+.samplesList li {
+	margin-top: 0.5rem;
 }
 
 .submit {
@@ -28,7 +32,7 @@
 	font-weight: normal;
 	padding: 5px;
 	border-radius: 0;
-	border: 1px solid black;
+	border: 1px solid var(--ValidatorForm-border-color);
 }
 
 .submit {

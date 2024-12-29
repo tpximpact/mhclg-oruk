@@ -1,9 +1,9 @@
 .button {
 	/* Base styles */
-	border: 2px solid black;
+	border: 2px solid var(--button-border-color);
 	border-radius: 99rem;
-	background-color: transparent;
-	color: black;
+	background-color: var(--button-background-color);
+	color: var(--button-color);
 	cursor: pointer;
 	font-family: inherit;
 	font-size: 100%;
@@ -57,7 +57,7 @@
 	left: -100%;
 	width: 100%;
 	height: 100%;
-	background-color: black;
+	background-color: var(--button-hover-background-color);
 	will-change: transform;
 	z-index: -1;
 	animation: move-out 0.3s;
@@ -68,7 +68,7 @@
 }
 
 .button:hover {
-	color: white;
+	color: var(--button-hover-color);
 }
 
 /* Animations */

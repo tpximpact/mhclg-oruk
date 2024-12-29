@@ -1,6 +1,6 @@
 .crumbtrail {
 	padding: 0;
-	margin: 2rem 0;
+	margin: 2rem 0 3rem;
 }
 
 .crumbtrail ol {
@@ -19,6 +19,6 @@
 .crumbtrail li:after {
 	padding: 1rem;
 	font-weight: 900;
-	color: rgba(0, 0, 0, 0.2);
+	color: var(--crumbtrail-separator-color);
 	content: '/\00a0';
 }

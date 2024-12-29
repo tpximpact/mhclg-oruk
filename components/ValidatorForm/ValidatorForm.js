@@ -9,12 +9,11 @@ import { useState, useRef } from 'react'
 
 const Heading = ({ title }) => <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>{title}</h2>
 
-// TODO: load from markdown
 const Samples = () => (
-	<div>
+	<div className={styles.samples}>
 		<Heading title='Sample reports' />
 		<p>For a quick preview of the results this tool reports, choose an example:</p>
-		<ol className={styles.samples}>
+		<ol className={styles.samplesList}>
 			<li>
 				<Link href='/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock'>
 					Pass
@@ -22,7 +21,7 @@ const Samples = () => (
 			</li>
 			<li>
 				<Link href='/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/warn'>
-					Pass - but with warnings
+					Pass (with warnings)
 				</Link>
 			</li>
 			<li>
@@ -35,10 +34,12 @@ const Samples = () => (
 )
 
 export const ValidatorForm = props => (
-	<Columns layout={42}>
-		<Form {...props} />
-		<Samples />
-	</Columns>
+	<div style={{ marginTop: '6rem' }}>
+		<Columns layout={42}>
+			<Form {...props} />
+			<Samples />
+		</Columns>
+	</div>
 )
 
 const Form = ({ title, action, defaultValue }) => {
@@ -48,24 +49,20 @@ const Form = ({ title, action, defaultValue }) => {
 	const [disabled, setDisabled] = useState(false)
 
 	const submit = e => {
-		// reportValidity() sadly always returns true if the field hasnt been edited
 		if (!inputRef.current.value.length > 0) {
-			// stop form submission if the field empty
 			e.preventDefault()
 			alert('please enter the URL of the data feed')
 			return false
 		}
 		if (!inputRef.current.reportValidity()) {
-			// stop form submission if the field isnt valid
 			e.preventDefault()
 			return false
 		}
 
-		// disable the button
 		setDisabled(true)
-		// and submit the form
 		formRef.current.requestSubmit()
 	}
+
 	return (
 		<div className={styles.form}>
 			{title && <Heading title={title} />}
