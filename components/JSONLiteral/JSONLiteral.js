@@ -6,7 +6,7 @@ export const JSONLiteral = ({
 	data
 }) => <ReactJsonView 
 name={null}
-collapsed={1}
+collapsed={2}
 collapseStringsAfterLength={48}
 enableClipboard={false}
 displayDataTypes={false}
@@ -17,12 +17,12 @@ style={{
 theme={{
 				base00: "#000",
                 base01: "#fff",
-                base02: "#666", // indent brackets - doesnt need contrast
+                base02: "#555", // indent brackets - doesnt need contrast
                 base03: "#fff",
-                base04: "#fff",
+                base04: "#999", // counts
                 base05: "#fff",
                 base06: "#fff",
-                base07: "#fff",
+                base07: "#8bb4f7", // keys
                 base08: "#fff",
                 base09: "#fff",
                 base0A: "#fff",
