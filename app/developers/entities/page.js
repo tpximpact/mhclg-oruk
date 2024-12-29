@@ -1,7 +1,9 @@
 import { PageMargin } from '@/components/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 
-import { VersionedDocumentation } from '@/components/VersionedDocumentation'
+import { 
+	VersionedDocumentation
+} from '@/components/VersionedDocumentation'
 import { getVersions } from '@/utilities/versionedContent'
 export const metadata = {
 	title: 'ORUK Entity relationship diagram'
@@ -14,7 +16,11 @@ export default function Page() {
 		<>
 			<NamedMarkdownPage name='entities' />
 			<PageMargin>
-				<VersionedDocumentation allVersions={allVersions} contentData={contentData} />
+				<VersionedDocumentation 
+				allVersions={allVersions} 
+				contentData={contentData} 
+				displayComponentName="EntityRelationshipDiagram"
+				/>
 			</PageMargin>
 		</>
 	)

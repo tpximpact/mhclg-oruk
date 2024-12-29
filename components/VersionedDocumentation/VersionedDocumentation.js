@@ -3,13 +3,19 @@
 import { useState, useEffect } from 'react'
 import styles from './VersionedDocumentation.module.css'
 import { useCookies } from 'react-cookie'
+import { EntityRelationshipDiagram } from './EntityRelationshipDiagram'
+
 
 export const VersionedDocumentation = ({ 
 	allVersions, 
 	contentData,
-	DisplayComponent
+	displayComponentName
 }) => {
-	// return <div>TODO</div>
+	let DisplayComponent = Literal
+	// work around - cant pass a componet on server unless it is marked use server and async :(
+	if (displayComponentName==="EntityRelationshipDiagram") {
+		DisplayComponent = EntityRelationshipDiagram
+	}
 
 	const cookieName = 'docVersion'
 	const [isClient, setIsClient] = useState(false)
@@ -103,12 +109,11 @@ const VersionedBanner = ({ allVersions, version, setVersion }) => {
 
 const Literal = ({contentData, version}) => <div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
 
-const EntityRelationDiagram = ({contentData, version}) => <div> ERD </div>
 
 const VersionedContent = ({ 
 	version, 
 	contentData,
-	DisplayComponent = EntityRelationDiagram
+	DisplayComponent
 }) => (
 	<DisplayComponent version={version} contentData={contentData} />
 )
