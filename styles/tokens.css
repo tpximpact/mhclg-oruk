@@ -1,37 +1,127 @@
+/* Typography */
 :root {
-	--colour-black: #000;
-	--colour-white: #fff;
-	--colour-offwhite: rgb(252, 249, 245);
-	--colour-dark-green: rgb(40, 97, 79);
-	--colour-x-dark-green: rgb(42, 56, 52);
-	--colour-mint: #5ac09e;
-	--colour-dark-blue: #135e75;
-
-	--colour-buff1: #fcf9f5;
-	--colour-buff2: #faf3ec;
-	--colour-buff3: #f7ede3;
-	--colour-buff4: #f4e8db;
-
-	--theme-paper: var(--colour-offwhite);
-	--theme-ink: var(--colour-x-dark-green);
-	--theme-interaction: black;
-	--theme-footer-bg: var(--colour-dark-green);
-	--theme-footer-fg: var(--colour-white);
-	--theme-header-bg: var(--colour-white);
-	--theme-header-fg: var(--colour-black);
-	--theme-header-dev-bg: var(--colour-dark-green);
-	--theme-header-dev-fg: var(--colour-white);
-
-	--nav-background: var(--colour-buff3);
-	--nav-highlight: #5ac09e;
-	--nav-foregroud: #000;
-	--theme-dashboard-border: 3px solid var(--colour-black);
-	--theme-dashboard-row-divider: 0.5px solid var(--colour-black);
-	--theme-dashboard-header-bg: beige;
-
-	--theme-test-pass: --theme-test-fail: ;
-
 	--link-weight: 400;
+	--font-mono: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+		'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
+		'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+	--datatable-border-weight-heavy: 3px;
+}
+
+/* Colour */
+:root {
+	/* GOV colours */
+	 --govuk-colour-red:	#d4351c	;
+ --govuk-colour-yellow:	#ffdd00	;
+ --govuk-colour-green:	#00703c	;
+ --govuk-colour-blue:	#1d70b8	;
+ --govuk-colour-dark-blue:	#003078	;
+ --govuk-colour-light-blue:	#5694ca	;
+ --govuk-colour-purple:	#4c2c92	;
+ --govuk-colour-black:	#0b0c0c	;
+ --govuk-colour-dark-grey:	#505a5f	;
+ --govuk-colour-mid-grey:	#b1b4b6	;
+ --govuk-colour-light-grey:	#f3f2f1	;
+ --govuk-colour-white:	#ffffff	;
+ --govuk-colour-light-purple:	#6f72af	;
+ --govuk-colour-bright-purple:	#912b88	;
+ --govuk-colour-pink:	#d53880	;
+ --govuk-colour-light-pink:	#f499be	;
+ --govuk-colour-orange:	#f47738	;
+ --govuk-colour-brown:	#b58840	;
+ --govuk-colour-light-green:	#85994b	;
+ --govuk-colour-turquoise:	#28a197;
+	
+	
+	/* our colour primities */
+	--colour-black: var(--govuk-colour-black);
+	--colour-white: var(--govuk-colour-white);
+	--colour-offwhite: #fcf9f5;
+	--colour-mint: #75bea0;
+	--color-gov-blue: #1d70b8;
+	--colour-mhclg:#00625e;
+
+	--colour-grey-50: #f9fafb;
+	--colour-grey-100: #f3f4f6;
+	--colour-grey-200: #e5e7eb;
+	--colour-grey-300: #d1d5db;
+	--colour-grey-400: #9ca3af;
+	--colour-grey-500: #6b7280;
+	--colour-grey-600: #4b5563;
+	--colour-grey-700: #374151;
+	--colour-grey-800: #1f2937;
+	--colour-grey-900: #111827;
+	--colour-grey-950: #030712;
+
+	/* Theme colours */
+	--theme-paper: var(--colour-offwhite);
+	--theme-ink: var(--colour-black);
+	--theme-headline: var(--colour-mhclg);
+	--theme-interaction: var(--colour-mint);
+	--theme-anchor: var(--theme-ink);
+	--theme-anchor-underline: var(--colour-mint);
+	--theme-anchor-roll-underline: var(--anchor);
+
+	/* @/components */
+
+	--button-background-color: transparent;
+	--button-border-color: var(--theme-ink);
+	--button-color: var(--theme-ink);
+	--button-hover-background-color: var(--theme-ink);
+	--button-hover-color: var(--theme-paper);
+	--changelog-background-color: var(--theme-paper);
+	--changelog-code-background-color: var(--theme-paper);
+	--changelog-danger-color: red;
+	--columns-debug-background-color: rgba(255, 0, 0, 0.1);
+	--columns-debug-border-color: red;
+	--columns-debug-color: red;
+	--crumbtrail-separator-color: var(--colour-grey-300);
+	--dashboard-border-color: var(--theme-ink);
+	--dashboardDetails-border-color: var(--theme-ink);
+	--dataTable-gray: red;
+	--dataTable-theme-dashboard-border: var(--theme-ink);
+	--dataTable-theme-dashboard-header-bg: var(--theme-paper);
+	--dataTable-theme-dashboard-row-divider: var(--theme-ink);
+	--Header-background-closed: var(--theme-paper);
+	--Header-background-open: var(--colour-grey-200);
+	--Header-border-color: var(--colour-grey-500);
+	--Header-button-color: var(--theme-ink);
+	--HR-background: #333;
+	--HR-gradient-end: #333;
+	--HR-gradient-middle: #ccc;
+	--HR-gradient-start: #ccc;
+	--Logo-gradient-color1: #ee7752;
+	--Logo-gradient-color2: #e73c7e;
+	--Logo-gradient-color3: #23a6d5;
+	--Logo-gradient-color4: #23d5ab;
+	--menu-background-highlight: #fcf8ca;
+	--menu-blockquote-background: #efefef;
+	--menu-blockquote-border: #dfdfdf;
+	--Menu-background: var(--Header-background-open);
+	--Menu-box-shadow: var(--colour-grey-700);
+	--pagination-border-color: var(--theme-paper);
+	--pagination-current-bg-color: var(--theme-ink);
+	--pagination-current-text-color: var(--theme-paper);
+	--pagination-no-anchor-color: #999;
+	--spinner-border-color-alt: #ccc;
+	--spinner-border-color: var(--theme-ink);
+	--tableSorting-arrow-bg: var(--theme-ink);
+	--tableSorting-arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+	--tableSorting-border-color: var(--theme-ink);
+	--tableSorting-box-shadow: rgba(0, 0, 0, 0.2);
+	--tableSorting-color-black: var(--theme-ink);
+	--tableSorting-option-bg: var(--colour-grey-100);
+	--tableSorting-select-bg: var(--colour-grey-50);
+	--ValidatorForm-border-color: var(--theme-ink);
+	--validatorResult-background: var(--theme-paper);
+	--validatorResult-banner-background: #fe9;
+	--validatorResult-banner-code-background: rgba(255, 255, 255, 0.5);
+	--validatorResult-black: var(--theme-ink);
+	--VersionedDocumentation-current-background: #d9f99d;
+	--VersionedDocumentation-current-border-color: #a3e635;
+	--VersionedDocumentation-current-color: #1a2e05;
+	--VersionedDocumentation-legacy-background: #dc2626;
+	--VersionedDocumentation-legacy-border-color: #b91c1c;
+	--VersionedDocumentation-legacy-color: var(--theme-paper);
 }
 
 @media (prefers-color-scheme: dark) {
