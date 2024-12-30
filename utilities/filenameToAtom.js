@@ -1,0 +1,1 @@
+export const filenameToAtom = (f,index) => f.split(".")[index]

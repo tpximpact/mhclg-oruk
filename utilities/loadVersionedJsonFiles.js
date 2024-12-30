@@ -16,6 +16,7 @@ export const loadVersionedJsonFiles = contentFolder =>
 	files.forEach (file => {
 		const version = versionedContentVersionFromFilename(file)
 		const filePath = join(contentFolder, file)
+	
 		const fileContents = read(filePath)
 		contentData[version] = JSON.parse(fileContents)
 		
