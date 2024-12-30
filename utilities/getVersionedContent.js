@@ -1,5 +1,5 @@
 import { join } from 'path'
-import {getAllFilesInFolder} from './getAllFilesInFolder'
+import {getAllFilesInFolderWithExtension} from './getAllFilesInFolderWithExtension'
 import {filenameToExtension} from './filenameToExtension'
 import {filenameToName} from './filenameToName'
 import {read} from './read'
@@ -9,15 +9,13 @@ export const getVersionedContent = ({
 	contentFolder,
 	schemaFolder
 }) => {
+	let result = {}
 	// prepare markdown files
-	const markdownFiles = getAllFilesInFolder(contentFolder).filter(
-	 f => filenameToExtension(f) === "md" && filenameToName(f) !== "index"
+	const markdownFiles = getAllFilesInFolderWithExtension(contentFolder,"md").filter(
+	 f => filenameToName(f) !== "index"
 	)
 	// get all versions of schema
-	const schemaFiles = getAllFilesInFolder(schemaFolder).filter(
-	 f => filenameToExtension(f) === "json"
-	)
-	let data = {}
+	const schemaFiles = getAllFilesInFolderWithExtension(schemaFolder,"json")
 	schemaFiles.forEach (file => {
 		// load json
 		const name = filenameToName(file)
@@ -34,13 +32,12 @@ export const getVersionedContent = ({
 			textContent = parsed.content
 		}
 		// store
-		data[version] = {
+		result[version] = {
 			// schema: JSON.parse(fileContents),
 			textContent: textContent
 		}
 		
 	})
 	
-	//for eaxh one see if we have accopanying markdown
-	return data
+	return result
 }
