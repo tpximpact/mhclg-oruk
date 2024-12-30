@@ -46,16 +46,18 @@ export const VersionedDocumentation = ({
 	return (
 		<PageMargin>
 			{isClient && (
-				<VersionedBanner
+				<><VersionedBanner
 						suppressHydrationWarning
 						allVersions={allVersions}
 						setVersion={versionChoiceMade}
 						version={version}
 					/>
-			)}
-			<ContentView 
+					<ContentView 
 			DisplayComponent={DisplayComponent}
 			data={content[version]}/>
+					</>
+			)}
+			
 		</PageMargin>
 	)
 }
