@@ -1,6 +1,6 @@
 'use server'
 import { Children, cloneElement } from 'react'
-import { marked } from 'marked'
+	import { marked } from 'marked'
 import parse from 'html-react-parser'
 import Columns from '@/components/Columns'
 import styles from './Menu.module.css'

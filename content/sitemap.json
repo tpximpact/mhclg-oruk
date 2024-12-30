@@ -67,15 +67,21 @@
 			},
 			{
 				"name": "api",
-				"label": "API",
+				"label": "Reference: API",
 				"urlPath": "api",
 				"contentPath": "api"
 			},
 			{
 				"name": "entities",
-				"label": "Entity relation doagram",
+				"label": "Reference: Data structures",
 				"urlPath": "entities",
 				"contentPath": "entities"
+			},
+			{
+				"name": "specs",
+				"label": "Reference: The specification",
+				"urlPath": "specs",
+				"contentPath": "specs"
 			},
 			{
 				"name": "changelog",

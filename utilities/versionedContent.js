@@ -1,6 +1,6 @@
 //import fs from 'fs'
 import { join } from 'path'
-//import { parseMarkdown } from './markdown'
+import { marked } from 'marked'
 //import { PATHS } from './PATHS'
 import * as matter from 'gray-matter'
 import {getAllFilesInFolder} from './getAllFilesInFolder'
@@ -21,7 +21,7 @@ export const getVersions = folder => {
 		let parsed = loadMarkdownFromFile(f, folder)
 		if (parsed) {
 			let key = parsed.frontmatter.standard_version
-			contentData[key] = parsed
+			contentData[key] = parsed.content
 		}
 	})
 	const allVersions = Object.keys(contentData).sort().reverse()
@@ -41,7 +41,7 @@ export const getVersions = folder => {
 const parseMarkdowm = fileContents => {
 	const parsed = matter(fileContents)
 	if (parsed && !parsed.isEmpty) {
-		const content = parsed.content
+		const content = marked.parse(parsed.content)
 		const frontmatter = parsed.data
 		return {
 			content: content,

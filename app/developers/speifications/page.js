@@ -9,11 +9,11 @@ export const metadata = {
 }
 
 export default function Page() {
-	const [allVersions, contentData] = loadVersionedJsonFiles('../content/developers/schemas')
+	const [allVersions, contentData] = loadVersionedJsonFiles('../content/developers/specifications')
 
 	return (
 		<>
-			<NamedMarkdownPage name='entities' />
+			<NamedMarkdownPage name='specifications' />
 			
 				<VersionedDocumentation 
 				allVersions={allVersions} 

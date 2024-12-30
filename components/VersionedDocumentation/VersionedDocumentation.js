@@ -1,9 +1,11 @@
 'use client'
 
+import {VersionedBanner} from './VersionedBanner'
+import {VersionedMarkdownContent} from './VersionedMarkdownContent'
 import { useState, useEffect } from 'react'
-import styles from './VersionedDocumentation.module.css'
 import { useCookies } from 'react-cookie'
 import { EntityRelationshipDiagram } from './EntityRelationshipDiagram'
+import { PageMargin } from '@/components/PageMargin'
 
 
 export const VersionedDocumentation = ({ 
@@ -11,7 +13,7 @@ export const VersionedDocumentation = ({
 	contentData,
 	displayComponentName
 }) => {
-	let DisplayComponent = Literal
+	let DisplayComponent
 	// work around - cant pass a componet on server unless it is marked use server and async :(
 	if (displayComponentName==="EntityRelationshipDiagram") {
 		DisplayComponent = EntityRelationshipDiagram
@@ -33,7 +35,7 @@ export const VersionedDocumentation = ({
 	}
 
 	return (
-		<>
+		<PageMargin>
 			{isClient && (
 				<>
 					<VersionedBanner
@@ -42,73 +44,22 @@ export const VersionedDocumentation = ({
 						setVersion={versionChoiceMade}
 						version={version}
 					/>
-					<VersionedContent suppressHydrationWarning 
-					DisplayComponent={DisplayComponent}
-					version={version} contentData={contentData} />
+					{contentData && version && contentData[version]
+						? <VersionedMarkdownContent 
+					suppressHydrationWarning 
+					html={contentData[version]}/>
+				: null
+					
+				}
 				</>
 			)}
-		</>
+		</PageMargin>
 	)
 }
 
-const VersionedBanner = ({ allVersions, version, setVersion }) => {
-	
-	const currentVersion = allVersions[0]
-	const isCurrent = version === currentVersion
 
-	const colourClass = isCurrent ? styles.current : styles.legacy
-	return (
-		<div className={`${styles.box} ${colourClass}`}>
-			<div className={styles.tab}>
-				<div className={styles.version}>
-					<select
-						id='picker'
-						onChange={({ target: { value } }) => setVersion(value)}
-						value={version}
-					>
-						{allVersions.map(value => (
-							<option key={value} value={value}>
-								{value}
-							</option>
-						))}
-					</select>
-				</div>
-				<div>
-					<label htmlFor='picker'>{isCurrent ? 'Current' : 'Legacy'} version</label>
-				</div>
-			</div>
-			<div className={styles.banner}>
-				<p>You can choose which version of the standard this page describes.</p>
-				{isCurrent ? (
-					<p style={{ fontWeight: 900 }}>
-						This is the latest version of the standard and is recommended for all users.
-					</p>
-				) : (
-					<>
-						<p style={{ fontWeight: 900, color: 'white' }}>
-							This is an archived obsolete version of the standard.
-						</p>
-						<p>
-							For new projects, we strongly recommend you to use{' '}
-							<a
-								href='#'
-								onClick={() => {
-									setVersion(currentVersion)
-								}}
-								style={{ fontWeight: 900, color: 'white' }}
-							>
-								the latest version{' '}
-							</a>
-							instead
-						</p>
-					</>
-				)}
-			</div>
-		</div>
-	)
-}
 
-const Literal = ({contentData, version}) => <div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
+
 
 
 const VersionedContent = ({ 
