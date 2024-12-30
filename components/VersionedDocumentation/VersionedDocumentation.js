@@ -1,22 +1,31 @@
 'use client'
 
 import {VersionedBanner} from './VersionedBanner'
-import {VersionedMarkdownContent} from './VersionedMarkdownContent'
+import {MarkdownContent} from './MarkdownContent'
 import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
-import { EntityRelationshipDiagram } from './EntityRelationshipDiagram'
+import { RenderAPI } from './RenderAPI'
+import { RenderDB } from './RenderDB'
+import { RenderSpecification } from './RenderSpecification'
 import { PageMargin } from '@/components/PageMargin'
 
-
 export const VersionedDocumentation = ({ 
-	allVersions, 
-	contentData,
+	content,
 	displayComponentName
 }) => {
+	const allVersions= Object.keys(content).sort().reverse()
+	
+	
 	let DisplayComponent
 	// work around - cant pass a componet on server unless it is marked use server and async :(
-	if (displayComponentName==="EntityRelationshipDiagram") {
-		DisplayComponent = EntityRelationshipDiagram
+	if (displayComponentName==="RenderAPI") {
+		DisplayComponent = RenderAPI
+	}
+	if (displayComponentName==="RenderDB") {
+		DisplayComponent = RenderDB
+	}
+	if (displayComponentName==="RenderSpecification") {
+		DisplayComponent = RenderSpecification
 	}
 
 	const cookieName = 'docVersion'
@@ -37,35 +46,29 @@ export const VersionedDocumentation = ({
 	return (
 		<PageMargin>
 			{isClient && (
-				<>
-					<VersionedBanner
+				<VersionedBanner
 						suppressHydrationWarning
 						allVersions={allVersions}
 						setVersion={versionChoiceMade}
 						version={version}
 					/>
-					{contentData && version && contentData[version]
-						? <VersionedMarkdownContent 
-					suppressHydrationWarning 
-					html={contentData[version]}/>
-				: null
-					
-				}
-				</>
 			)}
+			<ContentView 
+			DisplayComponent={DisplayComponent}
+			data={content[version]}/>
 		</PageMargin>
 	)
 }
 
-
-
-
-
-
-const VersionedContent = ({ 
-	version, 
-	contentData,
+const ContentView = ({
+	data, 
 	DisplayComponent
-}) => (
-	<DisplayComponent version={version} contentData={contentData} />
-)
+}) => <>
+	<MarkdownContent 
+		suppressHydrationWarning 
+		html={data.textContent}/>
+{DisplayComponent && <DisplayComponent data={data.schema}/>}
+	</>
+
+
+	

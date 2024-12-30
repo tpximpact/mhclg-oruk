@@ -3,21 +3,24 @@ import { VersionedDocumentation } from '@/components/VersionedDocumentation'
 import { getVersionedContent } from '@/utilities/getVersionedContent'
 
 export const metadata = {
-	title: 'ORUK API'
+	title: 'ORUK Specification'
 }
 
 export default async function Page() {
 	const content =getVersionedContent({
-		contentFolder: '../content/developers/api',
+		contentFolder: '../content/developers/specifications',
 		schemaFolder: '../content/developers/specifications'
 	})
 	
 	return (
 		<>
-			<NamedMarkdownPage name='api' />
-		 	<VersionedDocumentation 
-			displayComponentName="RenderAPI"
+			<NamedMarkdownPage name='specifications' />
+		 	<VersionedDocumentation 	displayComponentName="RenderSpecification"
 			content={content} />
 		</>
 	)
 }
+
+
+
+

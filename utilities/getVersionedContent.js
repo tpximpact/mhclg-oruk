@@ -1,6 +1,5 @@
 import { join } from 'path'
 import {getAllFilesInFolderWithExtension} from './getAllFilesInFolderWithExtension'
-import {filenameToExtension} from './filenameToExtension'
 import {filenameToName} from './filenameToName'
 import {read} from './read'
 import {parseMarkdown} from './parseMarkdown'
@@ -33,7 +32,7 @@ export const getVersionedContent = ({
 		}
 		// store
 		result[version] = {
-			// schema: JSON.parse(fileContents),
+			schema: JSON.parse(schemaContents),
 			textContent: textContent
 		}
 		

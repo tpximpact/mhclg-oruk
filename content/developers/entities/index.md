@@ -1,1 +1,1 @@
-# Entity Relationship Diagram
+# Data structures

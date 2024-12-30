@@ -78,10 +78,10 @@
 				"contentPath": "entities"
 			},
 			{
-				"name": "specs",
+				"name": "specifications",
 				"label": "Reference: The specification",
-				"urlPath": "specs",
-				"contentPath": "specs"
+				"urlPath": "specifications",
+				"contentPath": "specifications"
 			},
 			{
 				"name": "changelog",
