@@ -24,23 +24,22 @@ zoom: false
 */
 import styles from "./RenderAPI.module.css";
 
+const Item = ({name, content}) => <div className={styles.property}>
+<dt>{name}</dt>
+<dd>{content}</dd>
+</div>
+
 // Helper function to render a property
 const Property = ({ name, data, references }) => {
   if (typeof data === "string") {
     return (
-      <div className={styles.property}>
-        <dt>{name}</dt>
-        <dd>{data}</dd>
-      </div>
+      <Item name={name} content={data}/>
     );
   }
 
   if (typeof data === "boolean") {
     return (
-      <div className={styles.property}>
-        <dt>{name}</dt>
-        <dd>{data ? ": true" : ": false"}</dd>
-      </div>
+		<Item name={name} content={data ? ": true" : ": false"}/>
     );
   }
 
@@ -65,10 +64,7 @@ const Property = ({ name, data, references }) => {
   }
 
   return (
-    <div className={styles.property}>
-      <dt>{name}</dt>
-      <dd>{content}</dd>
-    </div>
+    <Item name={name} content={content}/>
   );
 };
 
