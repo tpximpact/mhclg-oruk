@@ -27,10 +27,22 @@ import styles from "./RenderAPI.module.css"
 
 const Property = ({name, data}) => {
 	if (typeof(data) === "string") {
-		return data
+		return <div className={styles.property}>
+
+		<dt>{name}</dt>
+		<dd>{data} </dd>
+	  
+		  </div>
 	}
 	if (typeof(data) === "boolean") {
-		return data ? ": true" : ": false"
+		return 
+		<div className={styles.property}>
+
+  <dt>{name}</dt>
+  <dd>{data ? ": true" : ": false"} </dd>
+
+	</div>
+		
 	}
 	let content
 	if (Array.isArray(data)){
