@@ -22,99 +22,129 @@ zoom: false
 }
 
 */
+import styles from "./RenderAPI.module.css";
 
-import styles from "./RenderAPI.module.css"
+// Helper function to render a property
+const Property = ({ name, data, references }) => {
+  if (typeof data === "string") {
+    return (
+      <div className={styles.property}>
+        <dt>{name}</dt>
+        <dd>{data}</dd>
+      </div>
+    );
+  }
 
-const Property = ({name, data, references}) => {
-	if (typeof(data) === "string") {
-		return <div className={styles.property}>
+  if (typeof data === "boolean") {
+    return (
+      <div className={styles.property}>
+        <dt>{name}</dt>
+        <dd>{data ? ": true" : ": false"}</dd>
+      </div>
+    );
+  }
 
-		<dt>{name}</dt>
-		<dd>{data} </dd>
-	  
-		  </div>
-	}
-	if (typeof(data) === "boolean") {
-		return 
-		<div className={styles.property}>
+  // Render array or object
+  let content;
+  if (Array.isArray(data)) {
+    if (typeof data[0] === "object") {
+      content = (
+        <>
+          {data.map((d, i) => (
+            <List key={i} data={d} references={references} />
+          ))}
+        </>
+      );
+    } else {
+      content = data.join(", ");
+    }
+  } else if (typeof data === "object") {
+    content = <List data={data} references={references} />;
+  } else {
+    content = data;
+  }
 
-  <dt>{name}</dt>
-  <dd>{data ? ": true" : ": false"} </dd>
+  return (
+    <div className={styles.property}>
+      <dt>{name}</dt>
+      <dd>{content}</dd>
+    </div>
+  );
+};
 
-	</div>
-		
-	}
-	let content
-	if (Array.isArray(data)){
-		content = data.join(", ")
-	}
-	if (Array.isArray(data)){
-		if(typeof(data[0] === 'object')) {
-			content = <>{data.map(
-				(d,i) => <List key={i} data={d} references={references}/>
-			)}</>
-		} else {
-			content = data.join(", ")
-		}
-	} else {
-		 if (typeof(data) === 'object'){
-			content = <List data={data} references={references}/>
-		} else {
-			content = data
-		}
-	}
-	return(<div className={styles.property}>
+// Render a reference
+const Reference = ({ data, references }) => {
+  const referent = data.split("/").slice(-1);
+  return (
+    <Property
+      name={referent}
+      data={"(instance)"}
+      references={references}
+    />
+  );
+};
 
-  <dt>{name}</dt>
-  <dd>{content} </dd>
+// Render a list
+const List = ({ data, references }) => (
+  <dl>
+    {typeof data === "string" ? (
+      data
+    ) : (
+      Object.keys(data).map((k, i) =>
+        k === "$ref" ? (
+          <Reference key={i} data={data[k]} references={references} />
+        ) : (
+          <Property
+            key={i}
+            name={k}
+            data={data[k]}
+            references={references}
+          />
+        )
+      )
+    )}
+  </dl>
+);
 
-	</div>)}
+// Render a method
+const Method = ({ methodName, data, references }) => (
+  <div className={styles.method}>
+    <h3>{methodName}</h3>
+    <List data={data} references={references} />
+  </div>
+);
 
-const Reference = ({data,references}) => {
-	const referent = data.split('/').slice(-1);
-return(<Property name={referent} data={"(instance)"}
-	
-	/*data={references[referent]}*/ references={references} />)
-}
+// Render a path
+const Path = ({ pathName, data, references }) => (
+  <div className={styles.path}>
+    <h2>{pathName}</h2>
+    {Object.keys(data).map((k) => (
+      <Method
+        key={k}
+        methodName={k}
+        data={data[k]}
+        references={references}
+      />
+    ))}
+  </div>
+);
 
-const List = ({data, references}) => <dl>
-	{
-		typeof(data) ==="string" ?
-data
-		:
-		<>{Object.keys(data).map(
-			(k,i) => k === "$ref" ? 
-			<Reference key={i} data={data[k]} references={references}/>
-			: <Property key={i} name={k} data={data[k]} references={references}/>	
-		)}</>
-	}
-	
-</dl>
-
-const Method = ({methodName,data, references}) => <div className={styles.method}>
-<h3>{methodName}</h3>
-<List data={data} references={references}/>
-	</div>
-
-const Path = ({pathName,data,references}) => <div className={styles.path}>
-	<h2>{pathName}</h2>
-		{
-		Object.keys(data).map(
-			k => <Method key={k} methodName={k} data={data[k]} references={references}/>
-			)
-		}
-	</div>
-
-export const RenderAPI = ({data}) => {
-	const paths = data.paths
-	return (
-		<div>
-		{
-			Object.keys(data.paths).map(
-				k => <Path key={k} pathName={k} data={data.paths[k]} references={data.components.schemas}/>
-			)
-		}
-	<code><pre>{JSON.stringify(data.paths, undefined, 2)}</pre></code> 
-	</div>
-	)
-}
+// Main RenderAPI component
+export const RenderAPI = ({ data }) => {
+  const paths = data.paths;
+  return (
+    <div>
+      {Object.keys(paths).map((k) => (
+        <Path
+          key={k}
+          pathName={k}
+          data={paths[k]}
+          references={data.components.schemas}
+        />
+      ))}
+      <code>
+        <pre>{JSON.stringify(data.paths, undefined, 2)}</pre>
+      </code>
+    </div>
+  );
+};
