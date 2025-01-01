@@ -3,33 +3,62 @@
 const TEXT_COLOUR = "#1d71b8"
 const HEADER_BG_COLOUR = "#1d71b8"
 const HEADER_FG_COLOUR = "#ffffff"
+const ROW_BG_COLOUR = "#fafafa"
+
+function wrapString(text, maxLength) {
+    const words = text.split(' ');
+    const lines = [];
+    let currentLine = '';
+  
+    for (const word of words) {
+      if (currentLine.length + word.length + 1 <= maxLength) {
+        currentLine += (currentLine ? ' ' : '') + word;
+      } else {
+        lines.push(currentLine);
+        currentLine = word;
+      }
+    }
+  
+    if (currentLine) lines.push(currentLine);
+    return lines;
+  }
 
 const tableOne = {
     name:"wang",
     rows:[
         {
             name:"id",
-            type:"int"
+            datatype:"int",
+            description:"This is a description."
         },
         {
             name:"name",
-            type:"varchar"
+            datatype:"varchar",
+            description:"This is a prettty darn long description. which will need to wrap"
         },
         {
             name:"last_update",
-            type:"timestamp"
+            datatype:"timestamp",
+            description:"This is a description."
         },
     ]
 }
 
 
+const description = text => {
+
+    const allLines = wrapString(text,30)
+    return  allLines.map(line => `<TR><TD COLSPAN="2" ALIGN="LEFT"><FONT COLOR="#888888">${line}</FONT></TD>}</TR>`).join(' ')
+}
+
 const row = data =>  `<TR>
-<TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
+<TD ALIGN="LEFT" PORT="f1" BGCOLOR="${ROW_BG_COLOUR}">
     <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
-            <TD ALIGN="LEFT"><B>id</B></TD>
-            <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
+            <TD ALIGN="LEFT"><B>${data.name}</B></TD>
+            <TD ALIGN="RIGHT"><I>${data.datatype}</I></TD>
         </TR>
+        ${description(data.description)}
     </TABLE>
 </TD>
 </TR>`
@@ -38,10 +67,8 @@ const table = data => `
     "${data.name}" [
         id="${data.name}";
         label=<<TABLE BORDER="2" COLOR="${TEXT_COLOUR}" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-        <TR><TD PORT="f0" BGCOLOR="${HEADER_BG_COLOUR}"><FONT COLOR="${HEADER_FG_COLOUR}"><B>     ${data.name}     </B></FONT></TD></TR>
-        ${data.rows.map(
-            rowData => row(rowData)
-        ).join(" ")}
+        <TR><TD PORT="f0" BGCOLOR="${HEADER_BG_COLOUR}"><FONT COLOR="${HEADER_FG_COLOUR}"><B>                    ${data.name}                  </B></FONT></TD></TR>
+        ${data.rows.map(rowData => row(rowData)).join(" ")}
     </TABLE>>];
     `
 
