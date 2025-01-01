@@ -160,3 +160,45 @@ ${connection({
 }
 
 
+
+
+
+export const jsonSchemaToDotB = (data) => {
+    data = Object.assign(data,{})
+    const components = data.components
+    const schemas = components.schemas
+    const keys = Object.keys(schemas)
+    const objects = []
+
+    const processCandidate = (candidate,key) => {
+        if (candidate.type === "object") {
+            const candidateCopy = Object.assign(candidate,{})
+            candidateCopy.title=key
+            if (candidateCopy.properties) {
+                const propertyKeys = Object.keys(candidateCopy.properties)
+                propertyKeys.forEach(
+                    pKey => {
+                        const property = candidateCopy.properties[pKey]
+                        const found = processCandidate(property,pKey)
+                        if (found) {
+                            delete(candidateCopy.properties[pKey])
+                        }
+                    }
+                )
+            }
+            delete(candidateCopy.required)
+            objects.push(candidateCopy)
+            return true
+        }
+        return false
+    }
+
+   keys.forEach(
+    key => {
+        const candidate = schemas[key]
+        processCandidate(candidate,key)
+    }
+   )
+    
+    return objects
+}
