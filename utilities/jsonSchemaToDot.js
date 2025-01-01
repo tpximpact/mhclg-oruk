@@ -2,8 +2,8 @@
 
 import {wrapString} from './wrapString'
 
-const TEXT_COLOUR = "#1d71b8"
-const HEADER_BG_COLOUR = "#1d71b8"
+const TEXT_COLOUR = "#000000"
+const HEADER_BG_COLOUR = "#000000"
 const HEADER_FG_COLOUR = "#ffffff"
 const ROW_BG_COLOUR = "#fafafa"
 const DESCRIPTION_FG_COLOUR = "#777777"
@@ -94,13 +94,13 @@ const connection = ({
     fromPort, 
     toTable, 
     toPort
-}) =>  `"${fromTable}":${fromPort}:e -> "${toTable}":${toPort}:w [dir=forward, penwidth=3, color="#000"]`
+}) =>  `"${fromTable}":f${fromPort}:e -> "${toTable}":f${toPort}:w [dir=forward, penwidth=3, color="#000"]`
 
 const CONFIG = `
       rankdir=LR;
-      graph [fontname="helvetica", fontsize=32, fontcolor="#29235c", bgcolor="transparent"];
-      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#29235c"];
-      edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
+      graph [fontname="helvetica", fontsize=32, fontcolor="#000", bgcolor="transparent"];
+      node [penwidth=0, margin=0, fontname="helvetica", fontsize=32, fontcolor="#000"];
+      edge [fontname="helvetica", fontsize=32, fontcolor="#000000", color="#000000"];
 `
 
 
@@ -112,9 +112,9 @@ ${tables.map(t=>table(t)).join(' ' )}
 
 ${connection({
     fromTable:"chung", 
-    fromPort:"f3",
+    fromPort:3,
     toTable:"wang",
-    toPort:"f1"
+    toPort:1
 })}
       
     }
