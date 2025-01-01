@@ -1,30 +1,12 @@
 // dot is based on https://github.com/softwaretechnik-berlin/dbml-renderer/tree/master/examples
 
+import {wrapString} from './wrapString'
+
 const TEXT_COLOUR = "#1d71b8"
 const HEADER_BG_COLOUR = "#1d71b8"
 const HEADER_FG_COLOUR = "#ffffff"
 const ROW_BG_COLOUR = "#fafafa"
-
-function wrapString(text, maxLength) {
-    // Remove leading/trailing whitespace and split on one or more whitespace characters
-    const words = text.trim().split(/\s+/);
-    
-    const lines = [];
-    let currentLine = '';
-    
-    for (const word of words) {
-      // Check if adding the word would exceed the maxLength
-      if (currentLine.length + word.length + 1 <= maxLength) {
-        currentLine += (currentLine ? ' ' : '') + word;
-      } else {
-        lines.push(currentLine);
-        currentLine = word;
-      }
-    }
-    
-    if (currentLine) lines.push(currentLine);
-    return lines;
-  }
+const DESCRIPTION_FG_COLOUR = "#fafafa"
 
 const tableOne = {
     name:"wang",
@@ -49,9 +31,8 @@ const tableOne = {
 
 
 const description = text => {
-
     const allLines = wrapString(text,30)
-    return  allLines.map(line => `<TR><TD COLSPAN="2" ALIGN="LEFT"><FONT COLOR="#888888">${line}</FONT></TD>}</TR>`).join(' ')
+    return  allLines.map(line => `<TR><TD COLSPAN="2" ALIGN="LEFT"><FONT COLOR="${DESCRIPTION_FG_COLOUR}">${line}</FONT></TD>}</TR>`).join(' ')
 }
 
 const row = data =>  `<TR>
@@ -74,38 +55,6 @@ const table = data => `
         ${data.rows.map(rowData => row(rowData)).join(" ")}
     </TABLE>>];
     `
-
-
-
-/*
-
-        <TR>
-            <TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
-                <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-                    <TR>
-                        <TD ALIGN="LEFT"><B>id</B></TD>
-                        <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
-                    </TR>
-                </TABLE>
-            </TD>
-        </TR>
-<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">name    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">last_update    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-*/
 
 const connection = ({
     fromTable, 
