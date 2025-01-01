@@ -6,7 +6,7 @@ const TEXT_COLOUR = "#1d71b8"
 const HEADER_BG_COLOUR = "#1d71b8"
 const HEADER_FG_COLOUR = "#ffffff"
 const ROW_BG_COLOUR = "#fafafa"
-const DESCRIPTION_FG_COLOUR = "#fafafa"
+const DESCRIPTION_FG_COLOUR = "#777777"
 
 const tableOne = {
     name:"wang",
@@ -21,6 +21,7 @@ const tableOne = {
             datatype:"varchar",
             description:"This is a prettty darn long description. which will need to wrap"
         },
+
         {
             name:"last_update",
             datatype:"timestamp",
@@ -29,20 +30,52 @@ const tableOne = {
     ]
 }
 
+const tableTwo = {
+    name:"chung",
+    rows:[
+        {
+            name:"id",
+            datatype:"int",
+            description:"This is a description."
+        },
+        {
+            name:"name",
+            datatype:"varchar",
+            description:"This is a prettty darn long description. which will need to wrap"
+        },
+        {
+            name:"wang_id",
+            datatype:"int"
+        },
+        {
+            name:"title",
+            datatype:"varchar",
+            description:"This is short"
+        },
+        {
+            name:"last_update",
+            datatype:"timestamp",
+            description:"This is a description."
+        },
+    ]
+}
+
+const tables = [tableOne, tableTwo]
+
 
 const description = text => {
     const allLines = wrapString(text,30)
     return  allLines.map(line => `<TR><TD COLSPAN="2" ALIGN="LEFT"><FONT COLOR="${DESCRIPTION_FG_COLOUR}">${line}</FONT></TD>}</TR>`).join(' ')
 }
 
-const row = data =>  `<TR>
-<TD ALIGN="LEFT" PORT="f1" BGCOLOR="${ROW_BG_COLOUR}">
+const row = (data,n) =>  `<TR>
+<TD ALIGN="LEFT" PORT="f${n}" BGCOLOR="${ROW_BG_COLOUR}">
     <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
         <TR>
             <TD ALIGN="LEFT"><B>${data.name}</B></TD>
             <TD ALIGN="RIGHT"><I>${data.datatype}</I></TD>
         </TR>
-        ${description(data.description)}
+        ${data.description && description(data.description)}
     </TABLE>
 </TD>
 </TR>`
@@ -52,7 +85,7 @@ const table = data => `
         id="${data.name}";
         label=<<TABLE BORDER="2" COLOR="${TEXT_COLOUR}" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
         <TR><TD PORT="f0" BGCOLOR="${HEADER_BG_COLOUR}"><FONT COLOR="${HEADER_FG_COLOUR}"><B>                    ${data.name}                  </B></FONT></TD></TR>
-        ${data.rows.map(rowData => row(rowData)).join(" ")}
+        ${data.rows.map((rowData,n) => row(rowData,n+1)).join(" ")}
     </TABLE>>];
     `
 
@@ -70,86 +103,18 @@ const CONFIG = `
       edge [fontname="helvetica", fontsize=32, fontcolor="#29235c", color="#29235c"];
 `
 
-const CATEGORY = `
-    "category" 
-    [
-        id="category";
-        label=<
-        <TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-        <TR>
-            <TD PORT="f0" BGCOLOR="#1d71b8">
-                <FONT COLOR="#ffffff"><B>category</B></FONT>
-            </TD>
-        </TR>
-        <TR>
-            <TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
-                <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-                    <TR>
-                        <TD ALIGN="LEFT"><B>id</B></TD>
-                        <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
-                    </TR>
-                </TABLE>
-            </TD>
-        </TR>
-<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">name    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>varchar</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">last_update    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-    </TABLE>
-    >];
-`
 
 export const jsonSchemaToDot = schema => {
     let dot = `
 digraph dbml {
       ${CONFIG}
-${table(tableOne)}
-${CATEGORY}
-"film_category" [id="film_category";label=<<TABLE BORDER="2" COLOR="#29235c" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10">
-      <TR><TD PORT="f0" BGCOLOR="#1d71b8"><FONT COLOR="#ffffff"><B>       film_category       </B></FONT></TD></TR>
-<TR><TD ALIGN="LEFT" PORT="f1" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT"><B>id</B>    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="LEFT" PORT="f2" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">category_id    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>int</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-<TR><TD ALIGN="LEFT" PORT="f3" BGCOLOR="#e7e2dd">
-      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
-        <TR>
-          <TD ALIGN="LEFT">last_update    </TD>
-          <TD ALIGN="RIGHT"><FONT><I>timestamp</I></FONT></TD>
-        </TR>
-      </TABLE>
-    </TD></TR>
-    </TABLE>>];
+${tables.map(t=>table(t)).join(' ' )}
 
 ${connection({
-    fromTable:"category", 
-    fromPort:"f1",
-    toTable:"film_category",
-    toPort:"f2"
+    fromTable:"chung", 
+    fromPort:"f3",
+    toTable:"wang",
+    toPort:"f1"
 })}
       
     }
