@@ -86,7 +86,7 @@ const List = ({ data, references }) => (
     {typeof data === "string" ? (
       data
     ) : (
-      Object.keys(data).map((k, i) =>
+      Object.keys(data).sort().map((k, i) =>
         k === "$ref" ? (
           <Reference key={i} data={data[k]} references={references} />
         ) : (
@@ -114,7 +114,7 @@ const Method = ({ methodName, data, references }) => (
 const Path = ({ pathName, data, references }) => (
   <div className={styles.path}>
     <h2>{pathName}</h2>
-    {Object.keys(data).map((k) => (
+    {Object.keys(data).sort().map((k) => (
       <Method
         key={k}
         methodName={k}
@@ -130,7 +130,7 @@ export const RenderAPI = ({ data }) => {
   const paths = data.paths;
   return (
     <div>
-      {Object.keys(paths).map((k) => (
+      {Object.keys(paths).sort().map((k) => (
         <Path
           key={k}
           pathName={k}
@@ -138,9 +138,9 @@ export const RenderAPI = ({ data }) => {
           references={data.components.schemas}
         />
       ))}
-      <code>
+      {/*<code>
         <pre>{JSON.stringify(data.paths, undefined, 2)}</pre>
-      </code>
+      </code>*/}
     </div>
   );
 };
