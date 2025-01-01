@@ -60,7 +60,26 @@ const tableTwo = {
     ]
 }
 
-const tables = [tableOne, tableTwo]
+const tableThree = {
+    name:"everybody",
+    rows:[
+        {
+            name:"id",
+            datatype:"int",
+            description:"This is a description."
+        },
+        {
+            name:"wang_id",
+            datatype:"int"
+        },
+        {
+            name:"chung_id",
+            datatype:"int"
+        }
+    ]
+}
+
+const tables = [tableOne, tableTwo, tableThree]
 
 
 const description = text => {
@@ -117,6 +136,21 @@ ${connection({
     toPort:1
 })}
       
+
+${connection({
+    fromTable:"everybody", 
+    fromPort:2,
+    toTable:"wang",
+    toPort:1
+})}
+
+${connection({
+    fromTable:"everybody", 
+    fromPort:3,
+    toTable:"chung",
+    toPort:1
+})}
+
     }
 `     
 
