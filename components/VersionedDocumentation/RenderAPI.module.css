@@ -14,3 +14,28 @@
     margin-bottom:1rem;
     padding:1rem 2rem;
 }
+
+.method h3 {
+    margin-bottom:1rem;
+}
+
+.method dl dl{
+    margin-left: 2rem;
+}
+
+.method dt {
+    font-weight: bold;
+    display: inline;
+}
+
+.method dt:after {
+    content: ": ";
+}
+
+.method dd {
+    display: inline;
+}
+
+.property {
+    margin-bottom:1rem;
+}
