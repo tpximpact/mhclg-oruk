@@ -6,11 +6,14 @@ const HEADER_FG_COLOUR = "#ffffff"
 const ROW_BG_COLOUR = "#fafafa"
 
 function wrapString(text, maxLength) {
-    const words = text.split(' ');
+    // Remove leading/trailing whitespace and split on one or more whitespace characters
+    const words = text.trim().split(/\s+/);
+    
     const lines = [];
     let currentLine = '';
-  
+    
     for (const word of words) {
+      // Check if adding the word would exceed the maxLength
       if (currentLine.length + word.length + 1 <= maxLength) {
         currentLine += (currentLine ? ' ' : '') + word;
       } else {
@@ -18,7 +21,7 @@ function wrapString(text, maxLength) {
         currentLine = word;
       }
     }
-  
+    
     if (currentLine) lines.push(currentLine);
     return lines;
   }
