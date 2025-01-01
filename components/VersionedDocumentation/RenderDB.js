@@ -23,7 +23,7 @@ zoom: false
 
 */
 
-import styles from "./RenderAPI.module.css"
+// import styles from "./RenderAPI.module.css"
 
 export const RenderDB = ({data}) =>
 <div>
