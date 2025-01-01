@@ -70,9 +70,15 @@ const Property = ({name, data}) => {
 
 	</div>)}
 
+const Reference = ({data}) => <div>
+	reference
+</div>
+
 const List = ({data}) => <dl>
 	{Object.keys(data).map(
-		k => <Property key={k} name={k} data={data[k]} />	
+		(k,i) => k === "$ref" ? 
+		<Reference key={i} data={data[k]} />
+		: <Property key={i} name={k} data={data[k]} />	
 	)}
 </dl>
 
