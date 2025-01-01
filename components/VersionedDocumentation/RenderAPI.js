@@ -78,11 +78,17 @@ return(<Property name={referent} data={"(instance)"}
 }
 
 const List = ({data, references}) => <dl>
-	{Object.keys(data).map(
-		(k,i) => k === "$ref" ? 
-		<Reference key={i} data={data[k]} references={references}/>
-		: <Property key={i} name={k} data={data[k]} references={references}/>	
-	)}
+	{
+		typeof(data) ==="string" ?
+data
+		:
+		<>{Object.keys(data).map(
+			(k,i) => k === "$ref" ? 
+			<Reference key={i} data={data[k]} references={references}/>
+			: <Property key={i} name={k} data={data[k]} references={references}/>	
+		)}</>
+	}
+	
 </dl>
 
 const Method = ({methodName,data, references}) => <div className={styles.method}>
