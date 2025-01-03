@@ -4,7 +4,8 @@ import {filenameToName} from '@/utilities/filenameToName'
 
 export const Property = ({
 	data,
-	required
+	required,
+	allSchemas
 }) =>
 <div className={styles.Property}>
 	<div className={styles.heading}>
@@ -17,7 +18,9 @@ export const Property = ({
 		<div className={styles.description}>{data.description}
 		</div>
 		
-		<Datatype data={data} />
+		<Datatype data={data} allSchemas={
+			allSchemas
+		}/>
 		
 		
 		</div>
@@ -46,7 +49,8 @@ const Badges = ({
 const isUnique = data => data.constraints && data.constraints.unique
 
 const Datatype = ({
-	data
+	data,
+	allSchemas
 }) => {
 	let type, format
 	if (data.type) {
@@ -56,6 +60,16 @@ const Datatype = ({
 		} else {
 			type= data.type
 		format=data.format
+		// KLUDGE - if this is a uuid it might be a foreign key
+		if (format === "uuid"){
+			const model = propertyNameToModel(data.name)
+			if (model && allSchemas.includes(model)) {
+				let modelData = {}
+				modelData["$ref"]=model
+				format= <> uuid <span className={styles.of}>of</span> <LinkedReference data={modelData}/></>
+			}
+		}
+		
 		}
 	} else { 
 		if (data["$ref"]) {
@@ -77,3 +91,13 @@ const LinkedReference = ({data}) => <a href={`#${toAnchorName(data["$ref"])}` }
 		className={styles.modelLink}>{toAnchorName(data["$ref"])}</a>
 
 const toAnchorName = reference => filenameToName(reference)
+
+const propertyNameToModel = name => {
+	let model
+	if (name) {
+	 	if (name.endsWith('_id')) {
+			model = name.replace("_id","")
+		}
+	}
+	return model
+}

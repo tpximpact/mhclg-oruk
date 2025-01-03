@@ -5,18 +5,23 @@ import styles from './DataModel.module.css'
 	
 export const DataModel = ({ 
 	definition
-}) => (
-<Columns layout="31">
+}) => {
+	const allSchemas = definition.schemas.map(
+	schema => schema.name
+	)
+return(<Columns layout="31">
 	<div className={styles.DataModel}>
 		{
 			definition.schemas.map(
-				(schema,i) => <Schema key={i} data={schema}/>
+				(schema,i) => <Schema key={i} data={schema}
+				allSchemas={allSchemas}
+				/>
 			)
 		}
 	</div>
 	<div className={styles.Menu}>
-	menu
+menu
 	</div>
-</Columns>
+</Columns>)
 
-)
+}

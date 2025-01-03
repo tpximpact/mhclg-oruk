@@ -1,7 +1,8 @@
 import styles from './Schema.module.css'
 import {Property} from './Property'
 export const Schema = ({
-	data
+	data,
+	allSchemas
 }) => <div id={data.name} className={styles.Schema}>
 <div className={styles.name}>{data.name}</div>
 <div className={styles.description}>{data.description}</div>
@@ -11,6 +12,7 @@ export const Schema = ({
 			(pk, i)  => <Property 
 			key={i} 
 			data={data.properties[pk]}
+			allSchemas={allSchemas}
 			required={
 				isRequiredBySchema(pk,data)
 			}
