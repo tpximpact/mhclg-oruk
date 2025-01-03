@@ -3,7 +3,7 @@ import styles from './DataModel.module.css'
 	import Columns from '@/components/Columns'
 	import {InPageMenu} from '@/components/InPageMenu'
 	
-export const DataModel = ({ 
+export const DataModel= ({ 
 	definition
 }) => {
 	const allSchemas = definition.schemas.map(
@@ -31,3 +31,5 @@ return(<Columns layout="31">
 </Columns>)
 
 }
+
+

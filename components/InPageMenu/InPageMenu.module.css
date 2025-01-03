@@ -1,5 +1,6 @@
 .InPageMenu {
-	
+	position: fixed;
+	width: 100%;
 }
 
 .menu {
