@@ -156,4 +156,3 @@ More detailed guidance relating to implementation can be found in our [developer
 The [Open Referral forum](https://forum.openreferral.org) is the go-to place for discussing technical and operational issues. Find out what others are saying, share insights, and ask questions.
 
 Contact the team directly at hello@openreferraluk.org.
-

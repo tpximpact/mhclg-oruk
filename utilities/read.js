@@ -1,5 +1,5 @@
 import fs from 'fs'
-import {buildPath} from './buildPath'
+import { buildPath } from './buildPath'
 /**
  * Read the content of a file.
  * @param {string} contentPath - The relative path to the content file.

@@ -1,5 +1,3 @@
+import { filenameToAtom } from './filenameToAtom'
 
-
-import {filenameToAtom} from './filenameToAtom'
-
-export const filenameToName = f => filenameToAtom(f,0) 
+export const filenameToName = f => filenameToAtom(f, 0)

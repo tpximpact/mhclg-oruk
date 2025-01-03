@@ -1,23 +1,19 @@
 .Schema {
 	margin: 0 0 2rem;
-	
+
 	.name {
-	font-size: 1.6rem;
-	font-weight: bold;
-}
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
 
-.description {
-	font-style: italic;
-}
+	.description {
+		font-style: italic;
+	}
 
-
-
-.properties {
-	margin-top: 1rem;
-	
+	.properties {
+		margin-top: 1rem;
+	}
+	.propertiesList {
+		border: 1px solid black;
+	}
 }
-.propertiesList {
-	border: 1px solid black;
-}
-}
-

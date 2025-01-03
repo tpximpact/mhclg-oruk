@@ -1,16 +1,15 @@
 .component {
-    margin-top:2rem;
-    margin-bottom:4rem;
-    border:3px solid black;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	border: 3px solid black;
 }
-    .component   h2 {
-        border-bottom:1px solid black;
-        padding:1rem 2rem;
-    }
-
+.component h2 {
+	border-bottom: 1px solid black;
+	padding: 1rem 2rem;
+}
 
 .schema {
-    margin-top:1rem;
-    margin-bottom:1rem;
-    padding:1rem 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem 2rem;
 }

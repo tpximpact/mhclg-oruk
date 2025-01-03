@@ -1,40 +1,37 @@
 .Property {
 	margin: 0;
-	display: flex; 
-	
+	display: flex;
 
-	
 	.heading {
 		padding: 1rem;
 
-	flex: 0 0 25vw;
-	
-	.name {
-	font-family: var(--font-mono);
-		 font-weight: 900;
-		}
- 
-}
+		flex: 0 0 25vw;
 
-.fields {
-	flex: 1;
-	padding: 1rem;
-	
-	.title {
-		font-weight: bold;
+		.name {
+			font-family: var(--font-mono);
+			font-weight: 900;
+		}
 	}
-	
-	.description {
-		padding-bottom: 1rem;
+
+	.fields {
+		flex: 1;
+		padding: 1rem;
+
+		.title {
+			font-weight: bold;
+		}
+
+		.description {
+			padding-bottom: 1rem;
+		}
 	}
-}
 }
 
 .example {
 	display: block;
-	font-size:0.8rem;
+	font-size: 0.8rem;
 	font-weight: normal;
-	margin-top:0.5rem;
+	margin-top: 0.5rem;
 }
 
 .example code {
@@ -48,16 +45,14 @@
 	font-style: italic;
 }
 
-.badges{
-	 display:inline;
-	
-	
- }
- 
- .of {
-	 font-style: normal;
-	 font-weight: normal;
-	}
+.badges {
+	display: inline;
+}
+
+.of {
+	font-style: normal;
+	font-weight: normal;
+}
 
 .Property:not(:last-child) {
 	border-bottom: 1px solid #999;

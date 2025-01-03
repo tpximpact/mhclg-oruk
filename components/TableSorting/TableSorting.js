@@ -51,7 +51,7 @@ export const TableSorting = ({
 			<label htmlFor='sortBy'>Sort by... </label>
 
 			<select
-			id="sortBy"
+				id='sortBy'
 				defaultValue={selectedValue}
 				onChange={({ target: { value } }) => onValueChange(value)}
 				{...rest}
@@ -65,7 +65,7 @@ export const TableSorting = ({
 			<label htmlFor='sortDir'>Sort direction </label>
 
 			<select
-				id="sortDir"
+				id='sortDir'
 				defaultValue={selectedDirection}
 				onChange={({ target: { value } }) => onDirectionChange(value)}
 				{...rest}

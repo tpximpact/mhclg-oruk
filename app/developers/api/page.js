@@ -7,17 +7,15 @@ export const metadata = {
 }
 
 export default async function Page() {
-	const content =getVersionedContent({
+	const content = getVersionedContent({
 		contentFolder: '../content/developers/api',
 		schemaFolder: '../content/developers/specifications'
 	})
-	
+
 	return (
 		<>
 			<NamedMarkdownPage name='api' />
-		 	<VersionedDocumentation 
-			displayComponentName="RenderAPI"
-			content={content} />
+			<VersionedDocumentation displayComponentName='RenderAPI' content={content} />
 		</>
 	)
 }

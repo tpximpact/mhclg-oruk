@@ -7,21 +7,15 @@ export const metadata = {
 }
 
 export default async function Page() {
-	const content =getVersionedContent({
+	const content = getVersionedContent({
 		contentFolder: '../content/developers/entities',
 		schemaFolder: '../content/developers/specifications'
 	})
-	
+
 	return (
 		<>
 			<NamedMarkdownPage name='entities' />
-		 	<VersionedDocumentation 
-			displayComponentName="RenderDB"
-			content={content} />
+			<VersionedDocumentation displayComponentName='RenderDB' content={content} />
 		</>
 	)
 }
-
-
-
-

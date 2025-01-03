@@ -10,22 +10,18 @@ export const metadata = {
 
 export default async function Page() {
 	const def = getDataModel()
-	
+
 	return (
-	<PageMargin>
-	<DataModel definition={def}>
-		<h1>Data model</h1>
-	</DataModel>
-	</PageMargin>
+		<PageMargin>
+			<DataModel definition={def}>
+				<h1>Data model</h1>
+			</DataModel>
+		</PageMargin>
 	)
 }
 
-const getDataModel = () => {return(
-	{
-		schemas: [
-			ATTRIBUTE,
-			TAXONOMY,
-			TAXONOMY_TERM
-		]
+const getDataModel = () => {
+	return {
+		schemas: [ATTRIBUTE, TAXONOMY, TAXONOMY_TERM]
 	}
-)}
+}

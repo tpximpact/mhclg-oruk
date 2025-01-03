@@ -1,12 +1,12 @@
 .Badge {
 	padding: 4px 8px;
 	font-size: 0.8rem;
-  text-align: center;
-  border-radius: 1rem;
-  display:inline-block;
- 
-	 top: -4px;
-	 position:relative;
+	text-align: center;
+	border-radius: 1rem;
+	display: inline-block;
+
+	top: -4px;
+	position: relative;
 }
 
 .Badge + .Badge {
