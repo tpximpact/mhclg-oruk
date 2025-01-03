@@ -1,22 +1,22 @@
 import { DataModel } from '@/components/DataModel'
-import ATTRIBUTE from './attribute'
+import ATTRIBUTE from './attribute.json'
 
 export const metadata = {
 	title: 'ORUK data model'
 }
 
 export default async function Page() {
-	const definiton = getDataModel()
+	const def = getDataModel()
 	
 	return (
-	<DataModel definiton={definition} />
+	<DataModel definition={def} />
 	)
 }
 
-const getDataModel = () => (
+const getDataModel = () => {return(
 	{
 		schemas: [
-			ATTRIBUTE
+			
 		]
 	}
-)
+)}
