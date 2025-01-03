@@ -1,5 +1,6 @@
 import { DataModel } from '@/components/DataModel'
 import ATTRIBUTE from './attribute.json'
+import TAXONOMY from './taxonomy.json'
 import { PageMargin } from '@/components/PageMargin'
 
 export const metadata = {
@@ -19,7 +20,8 @@ export default async function Page() {
 const getDataModel = () => {return(
 	{
 		schemas: [
-			ATTRIBUTE
+			ATTRIBUTE,
+			TAXONOMY
 		]
 	}
 )}

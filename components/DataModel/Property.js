@@ -2,7 +2,8 @@ import styles from './Property.module.css'
 import {Badge} from './Badge'
 
 export const Property = ({
-	data
+	data,
+	required
 }) =>
 <div className={styles.Property}>
 	<div className={styles.heading}>
@@ -10,7 +11,7 @@ export const Property = ({
 		
 	</div>
 	<div className={styles.fields}>
-		<div className={styles.title}>{data.title} <Badges data={data}/></div>
+		<div className={styles.title}>{data.title} <Badges required={required} data={data}/></div>
 		
 		<div className={styles.description}>{data.description}
 		</div>
@@ -23,12 +24,13 @@ export const Property = ({
 </div>
 
 const Badges = ({
-	data
+	data,
+	required
 })  => <div className={styles.badges}> 
-		<Badge 
+		{required ? <Badge 
 		colour="black"
 		background="#fecdd3"
-		label="required"/>
+		label="required"/> : null}
 		
 		{
 			isUnique(data) ? 
@@ -41,5 +43,4 @@ const Badges = ({
 		}
 		</div>
 
-const isRequired = data => data.required
 const isUnique = data => data.constraints && data.constraints.unique
