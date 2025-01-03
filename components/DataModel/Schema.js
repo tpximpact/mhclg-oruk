@@ -6,8 +6,24 @@ export const Schema = ({
 }) => <div id={data.name} className={styles.Schema}>
 <div className={styles.name}>{data.name}</div>
 <div className={styles.description}>{data.description}</div>
+
+  <Properties data={data}
+	allSchemas={allSchemas}/>
+
+
+
+</div>
+
+const Properties = ({
+	data,
+	allSchemas
+}) => 
+
 <div className={styles.properties}>
-	{
+	<details>
+  <summary>Properties</summary>
+<div className={styles.propertiesList}>
+  {
 		Object.keys(data.properties).map(
 			(pk, i)  => <Property 
 			key={i} 
@@ -18,8 +34,7 @@ export const Schema = ({
 			}
 			/>
 		)
-	}
-</div>
+	}</div></details>
 </div>
 
 const isRequiredBySchema = (key,schema) => {
