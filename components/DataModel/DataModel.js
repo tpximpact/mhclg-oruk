@@ -27,7 +27,7 @@ return(<Columns layout="31">
 		}
 	</div>
 	<div className={styles.Menu}>
-<InPageMenu title="Classes:" items={menuItems}/>
+<InPageMenu title="Classes" items={menuItems}/>
 	</div>
 </Columns>)
 
