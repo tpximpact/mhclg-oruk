@@ -4,7 +4,7 @@ import Columns from '@/components/Columns'
 import { InPageMenu } from '@/components/InPageMenu'
 
 export const DataModel = ({ definition, children }) => {
-	const allSchemas = definition.schemas.map(schema => schema.name)
+	const allSchemas = Object.keys(definition.schemas).sort().map(key => definition.schemas[key].name)
 	const menuItems = allSchemas.map(item => ({
 		title: item,
 		target: item
@@ -13,8 +13,8 @@ export const DataModel = ({ definition, children }) => {
 		<Columns layout='31'>
 			<div className={styles.DataModel}>
 				{children}
-				{definition.schemas.map((schema, i) => (
-					<Schema key={i} data={schema} allSchemas={allSchemas} />
+				{Object.keys(definition.schemas).sort().map(key => (
+					<Schema key={key} data={definition.schemas[key]} allSchemas={allSchemas} />
 				))}
 			</div>
 			<div className={styles.Menu}>
