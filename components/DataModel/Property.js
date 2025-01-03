@@ -1,5 +1,6 @@
 import styles from './Property.module.css'
 import {Badge} from './Badge'
+import {filenameToName} from '@/utilities/filenameToName'
 
 export const Property = ({
 	data,
@@ -16,10 +17,9 @@ export const Property = ({
 		<div className={styles.description}>{data.description}
 		</div>
 		
-		<div className={styles.type}>{data.type}{data.format ? ": " : null} {data.format}
-		{data.example &&
-			<span className={styles.example}>e.g.: <code>{data.example}</code></span>}
-		</div>
+		<Datatype data={data} />
+		
+		
 		</div>
 </div>
 
@@ -44,3 +44,36 @@ const Badges = ({
 		</div>
 
 const isUnique = data => data.constraints && data.constraints.unique
+
+const Datatype = ({
+	data
+}) => {
+	let type, format
+	if (data.type) {
+		if (data.type==="array" || data.items) {
+			type="array"
+			format = <> <span className={styles.of}>of</span> <LinkedReference data={data.items}/></>
+		} else {
+			type= data.type
+		format=data.format
+		}
+	} else { 
+		if (data["$ref"]) {
+			type="object"
+		format = <LinkedReference data={data}/>
+		}
+	}
+	
+	
+	return <div className={styles.type}>
+	{type}
+	{format ? ": " : null} {format}
+	{data.example &&
+			<span className={styles.example}>e.g.: <code>{data.example}</code></span>}
+	</div>
+}
+
+const LinkedReference = ({data}) => <a href={`#${toAnchorName(data["$ref"])}` }
+		className={styles.modelLink}>{toAnchorName(data["$ref"])}</a>
+
+const toAnchorName = reference => filenameToName(reference)

@@ -1,1 +1,1 @@
-export const filenameToAtom = (f,index) => f.split(".")[index]
+export const filenameToAtom = (f,index) => typeof(f) === 'string' ? f.split(".")[index] : null
