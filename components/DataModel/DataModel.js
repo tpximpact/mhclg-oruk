@@ -4,7 +4,7 @@ import styles from './DataModel.module.css'
 	import {InPageMenu} from '@/components/InPageMenu'
 	
 export const DataModel= ({ 
-	definition
+	definition,children
 }) => {
 	const allSchemas = definition.schemas.map(
 	schema => schema.name
@@ -17,6 +17,7 @@ export const DataModel= ({
 	)
 return(<Columns layout="31">
 	<div className={styles.DataModel}>
+	{children}
 		{
 			definition.schemas.map(
 				(schema,i) => <Schema key={i} data={schema}
@@ -26,7 +27,7 @@ return(<Columns layout="31">
 		}
 	</div>
 	<div className={styles.Menu}>
-<InPageMenu items={menuItems}/>
+<InPageMenu title="Classes:" items={menuItems}/>
 	</div>
 </Columns>)
 

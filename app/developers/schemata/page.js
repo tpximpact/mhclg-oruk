@@ -13,7 +13,9 @@ export default async function Page() {
 	
 	return (
 	<PageMargin>
-	<DataModel definition={def} />
+	<DataModel definition={def}>
+		<h1>Data model</h1>
+	</DataModel>
 	</PageMargin>
 	)
 }

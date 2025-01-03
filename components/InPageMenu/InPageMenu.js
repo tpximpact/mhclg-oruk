@@ -1,7 +1,8 @@
 import styles from './InPageMenu.module.css'
 
-export const InPageMenu = ({ items }) => (
+export const InPageMenu = ({ title,items }) => (
 <div className={styles.InPageMenu}>
+<div className={styles.title}>{title}</div>
 <ol className={styles.menu}>
 {
 	items.map(
