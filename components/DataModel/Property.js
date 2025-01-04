@@ -29,9 +29,11 @@ const Badges = ({ data, required }) => (
 
 const isUnique = data => data.constraints && data.constraints.unique
 
+const OfCopula =  () => <span className={styles.of}>of</span>
+
 const getType = (data) => {
     if (data.type === 'array' || data.items) return 'array';
-    if (data.$ref) return 'object';
+    if (data.$ref) return 'object'; // FIXME is this behaviour correct? Should it be an array?
     return data.type;
   };
   
@@ -40,7 +42,7 @@ const getFormat = ({type,data,allSchemas}) => {
 
 	switch (type) {
 		case 'array':
-			format = <><span className={styles.of}>of</span> <LinkedReference data={data.items} /></>
+			format = <><OfCopula /> <LinkedReference data={data.items} /></>
     		break;
 		case 'object':
     		format = <LinkedReference data={data} />
@@ -52,7 +54,7 @@ const getFormat = ({type,data,allSchemas}) => {
 				if (model && allSchemas.includes(model)) {
 					let modelData = {}
 					modelData['$ref'] = model
-					linked = <><span className={styles.of}>of</span> <LinkedReference data={modelData} /></>
+					linked = <><OfCopula /> <LinkedReference data={modelData} /></>
 				}
 				format = <>uuid {linked}</>
 			} else {
