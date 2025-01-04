@@ -29,46 +29,50 @@ const Badges = ({ data, required }) => (
 
 const isUnique = data => data.constraints && data.constraints.unique
 
-const Datatype = ({ data, allSchemas }) => {
-	let type, format
-	if (data.type) {
-		if (data.type === 'array' || data.items) {
-			type = 'array'
-			format = (
-				<>
-					{' '}
-					<span className={styles.of}>of</span> <LinkedReference data={data.items} />
-				</>
-			)
-		} else {
-			type = data.type
-			format = data.format
-			// KLUDGE - if this is a uuid it might be a foreign key
-			if (format === 'uuid') {
+const getType = (data) => {
+    if (data.type === 'array' || data.items) return 'array';
+    if (data.$ref) return 'object';
+    return data.type;
+  };
+  
+const getFormat = ({type,data,allSchemas}) => {
+    let format
+
+	switch (type) {
+		case 'array':
+			format = <><span className={styles.of}>of</span> <LinkedReference data={data.items} /></>
+    		break;
+		case 'object':
+    		format = <LinkedReference data={data} />
+    		break;
+		case 'string':
+			if (data.format === 'uuid') {
 				const model = propertyNameToModel(data.name)
+				let linked
 				if (model && allSchemas.includes(model)) {
 					let modelData = {}
 					modelData['$ref'] = model
-					format = (
-						<>
-							{' '}
-							uuid <span className={styles.of}>of</span> <LinkedReference data={modelData} />
-						</>
-					)
+					linked = <><span className={styles.of}>of</span> <LinkedReference data={modelData} /></>
 				}
+				format = <>uuid {linked}</>
+			} else {
+				format = data.format
 			}
-		}
-	} else {
-		if (data['$ref']) {
-			type = 'object'
-			format = <LinkedReference data={data} />
-		}
+			break;
+  	default:
+    	format = data.format
 	}
+	return format && <>: {format}</>
+  };
 
+const Datatype = ({ data, allSchemas }) => {
+	const type = getType(data)
+	const format = getFormat({type,data,allSchemas})
+	
 	return (
 		<div className={styles.type}>
 			{type}
-			{format ? ': ' : null} {format}
+			{format}
 			{data.example && (
 				<span className={styles.example}>
 					e.g.: <code>{data.example}</code>
@@ -86,12 +90,7 @@ const LinkedReference = ({ data }) => (
 
 const toAnchorName = reference => filenameToName(reference)
 
-const propertyNameToModel = name => {
-	let model
-	if (name) {
-		if (name.endsWith('_id')) {
-			model = name.replace('_id', '')
-		}
-	}
-	return model
+const propertyNameToModel = (name) => {
+  const suffix = '_id'
+	return name && name.endsWith(suffix) ? name.replace(suffix, '') : null;
 }
