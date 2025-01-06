@@ -1,42 +1,26 @@
-import { DataModel } from '@/components/DataModel'
+import {getAllContentVersions}from '@/utilities/getAllContentVersions'
 import { PageMargin } from '@/components/PageMargin'
+import { VersionedDocumentation } from '@/components/VersionedDocumentation'
+import {loadMarkdownContent}from '@/utilities/loadMarkdownContent'
 
 export const metadata = {
 	title: 'ORUK data model'
 }
 
 export default async function Page() {
-	const def = getDataModel()
+	const allVersionsContent = loadMarkdownContent("index.md","/developers/schemata")
+	const data = getAllContentVersions({
+		contentFolder: "/developers/schemata",
+		specificationFolder: "./specifications"
+	})
 
 	return (
-		<PageMargin>
-			<DataModel definition={def}>
-				<h1>Data model</h1>
-			</DataModel>
-		</PageMargin>
+		<PageMargin >
+			<VersionedDocumentation 
+				allVersionsContent = {allVersionsContent}
+				displayComponentName='DataModel' 
+				data={data} 
+	/>
+			</PageMargin >
 	)
-}
-
-const getDataModel = () => {
-	return {
-		schemas: loadJson()
-	}
-}
-
-// see https://stackoverflow.com/questions/40532230/how-can-i-automatically-load-all-json-files-from-a-given-directory-in-webpack/40552911#40552911
-
-function getFileNameOnly(filePath) {
-  return filePath.split('/').pop().split('.').shift();
-}
-
-// ALL THE JSON!
-function loadJson() {
-  const requireContext = require.context('@/specifications/3.0/schemata', false, /\.json$/);
-  const json = {};
-  requireContext.keys().forEach((key) => {
-    const obj = requireContext(key);
-    const simpleKey = getFileNameOnly(key);
-    json[simpleKey] = obj;
-  });
-  return json;
 }

@@ -16,4 +16,8 @@
 	.propertiesList {
 		border: 1px solid black;
 	}
+
+	.properties summary {
+		cursor: pointer;
+	}
 }

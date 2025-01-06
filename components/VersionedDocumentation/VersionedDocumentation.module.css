@@ -1,59 +1,56 @@
 .box {
-	border-radius: 0.5rem;
-	padding: 0.5rem;
-	margin-bottom: 2rem;
-	display: flex;
+	border: 1px solid black;
+	margin-bottom:4rem;
 }
 
-.box .tab {
-	flex: 0 0 100px;
-	display: flex;
-	flex-direction: column;
-	font-weight: 900;
+.box > div {
+	margin-bottom: 0 !important;
+}
+
+.box >div > div:first-child {
 	padding: 1rem;
-	font-size: 1.5rem;
 }
 
-.box .tab div {
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	line-height: 1;
+.box > div > div:last-child {
+	padding: 1rem;
 }
 
-.box .tab .version {
-	font-weight: 900;
-	font-size: 4rem;
-	letter-spacing: -20px;
-	padding: 0;
-}
-
-.box .banner {
-	flex: 1;
-	padding: 1.5rem 3rem;
-	font-size: 1.4rem;
-}
-
-.box .banner p:not(:last-child) {
-	margin-bottom: 1rem;
+.box label {
+	display:block;
+	clip: rect(0 0 0 0); 
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
 }
 
 .box select {
-	margin: 0 0 1rem;
-	font-size: 3rem;
+	width: 100%;
+	font-weight:900;
+	font-size:1rem;
+	
+}
+
+.box p {
+	font-size: 1rem;
 }
 
 .box.current {
+	/*
 	border-color: var(--VersionedDocumentation-current-border-color);
 	background: var(--VersionedDocumentation-current-background);
 	color: var(--VersionedDocumentation-current-color);
+	*/
 }
 
 .box.current select {
+	/*
 	border-color: var(--VersionedDocumentation-current-border-color);
 	background: var(--VersionedDocumentation-current-background);
 	color: var(--VersionedDocumentation-current-color);
-	margin: 1rem 0;
+	*/
 }
 
 .box.legacy {

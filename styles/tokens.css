@@ -96,7 +96,7 @@
 	--menu-blockquote-background: #efefef;
 	--menu-blockquote-border: #dfdfdf;
 	--Menu-background: var(--Header-background-open);
-	--Menu-box-shadow: var(--colour-grey-700);
+	--Menu-box-shadow: var(--colour-grey-300);
 	--pagination-border-color: var(--theme-paper);
 	--pagination-current-bg-color: var(--theme-ink);
 	--pagination-current-text-color: var(--theme-paper);
@@ -115,12 +115,14 @@
 	--validatorResult-banner-background: #fe9;
 	--validatorResult-banner-code-background: rgba(255, 255, 255, 0.5);
 	--validatorResult-black: var(--theme-ink);
+	/*
 	--VersionedDocumentation-current-background: #d9f99d;
 	--VersionedDocumentation-current-border-color: #a3e635;
 	--VersionedDocumentation-current-color: #1a2e05;
-	--VersionedDocumentation-legacy-background: #dc2626;
-	--VersionedDocumentation-legacy-border-color: #b91c1c;
-	--VersionedDocumentation-legacy-color: var(--theme-paper);
+	*/
+	--VersionedDocumentation-legacy-background: #fecaca;
+	--VersionedDocumentation-legacy-border-color: #dc2626;
+	--VersionedDocumentation-legacy-color: black;
 }
 
 @media (prefers-color-scheme: dark) {

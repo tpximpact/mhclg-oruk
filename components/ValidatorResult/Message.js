@@ -18,8 +18,14 @@ export const Message = ({ data }) => (
 			/>
 			&nbsp;{data.message} {data.count && data.count > 1 ? `(x${data.count} occurences)` : null}
 		</p>
-		<p>
+		{data.parameters && <p>
 			<code>{data.parameters}</code>
-		</p>
+		</p>}
+		{data.schemaPath && <p>Error in:
+			<code> {data.schemaPath}</code>
+		</p>}
+		{data.path && <p>Error at:
+			<code> {data.path}</code>
+		</p>}
 	</div>
 )

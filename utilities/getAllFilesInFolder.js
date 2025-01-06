@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
-import { PATHS } from './PATHS'
+//import { PATHS } from './PATHS'
 
 /**
  * Get all files in a content folder.
@@ -8,6 +8,6 @@ import { PATHS } from './PATHS'
  * @returns {string[]} - Array of filenames.
  */
 export const getAllFilesInFolder = contentFolder => {
-	const dir = join(process.cwd(), PATHS.contentRoot, contentFolder)
+	const dir = join(process.cwd(), contentFolder)
 	return fs.readdirSync(dir)
 }

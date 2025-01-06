@@ -1,1 +1,0 @@
-# Reference: The ORUK Specification

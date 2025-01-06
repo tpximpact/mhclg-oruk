@@ -1,8 +1,8 @@
 import styles from './Schema.module.css'
 import { Property } from './Property'
-export const Schema = ({ data, allSchemas }) => (
-	<div id={data.name} className={styles.Schema}>
-		<div className={styles.name}>{data.name}</div>
+export const Schema = ({ parentKeyName, data, allSchemas }) => (
+	<div id={data.name || parentKeyName} className={styles.Schema}>
+		<div className={styles.name}>{data.name || parentKeyName}</div>
 		<div className={styles.description}>{data.description}</div>
 
 		<Properties data={data} allSchemas={allSchemas} />
@@ -17,6 +17,7 @@ const Properties = ({ data, allSchemas }) => (
 				{Object.keys(data.properties).map((pk, i) => (
 					<Property
 						key={i}
+						parentKeyName={pk}
 						data={data.properties[pk]}
 						allSchemas={allSchemas}
 						required={isRequiredBySchema(pk, data)}

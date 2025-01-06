@@ -66,16 +66,30 @@
 				"contentPath": "overview"
 			},
 			{
+				"name": "validator",
+				"label": "Check your compliance",
+				"urlPath": "validator",
+				"contentPath": "validator",
+				"teaser": "This tool checks that a specific data feed follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned data feed. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
+			},
+			{
+				"name": "dashboard",
+				"label": "Verified feed availability",
+				"urlPath": "dashboard",
+				"contentPath": "dashboard",
+				"teaser": "This tool provides near-real time status reporting for core service providers."
+			},
+			{
 				"name": "api",
 				"label": "Reference: API",
 				"urlPath": "api",
 				"contentPath": "api"
 			},
 			{
-				"name": "entities",
-				"label": "Reference: Data structures",
-				"urlPath": "entities",
-				"contentPath": "entities"
+				"name": "schemata",
+				"label": "Reference: Data model",
+				"urlPath": "schemata",
+				"contentPath": "schemata"
 			},
 			{
 				"name": "specifications",
@@ -89,20 +103,6 @@
 				"urlPath": "changelog",
 				"contentPath": "changelog",
 				"autoMenu": false
-			},
-			{
-				"name": "validator",
-				"label": "Check your compliance",
-				"urlPath": "validator",
-				"contentPath": "validator",
-				"teaser": "This tool checks that a specific data feed follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned data feed. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
-			},
-			{
-				"name": "dashboard",
-				"label": "Verified feed availability",
-				"urlPath": "dashboard",
-				"contentPath": "dashboard",
-				"teaser": "This tool provides near-real time status reporting for core service providers."
 			}
 		]
 	},

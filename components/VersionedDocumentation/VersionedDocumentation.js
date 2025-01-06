@@ -4,24 +4,28 @@ import { VersionedBanner } from './VersionedBanner'
 import { MarkdownContent } from './MarkdownContent'
 import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
-import { RenderAPI } from './RenderAPI'
-import { RenderDB } from './RenderDB'
-import { RenderSpecification } from './RenderSpecification'
-import { PageMargin } from '@/components/PageMargin'
+import {DataModel} from '@/components/DataModel'
+import {APIModel} from '@/components/APIModel'
+import {OpenAPIModel} from '@/components/OpenAPIModel'
 
-export const VersionedDocumentation = ({ content, displayComponentName }) => {
-	const allVersions = Object.keys(content).sort().reverse()
+export const VersionedDocumentation = ({ 
+	allVersionsContent,
+	data, 
+	displayComponentName
+}) => {
+
+	const allVersions = Object.keys(data).sort().reverse()
 
 	let DisplayComponent
 	// work around - cant pass a componet on server unless it is marked use server and async :(
-	if (displayComponentName === 'RenderAPI') {
-		DisplayComponent = RenderAPI
+	if (displayComponentName === 'APIModel') {
+		DisplayComponent = APIModel
 	}
-	if (displayComponentName === 'RenderDB') {
-		DisplayComponent = RenderDB
+	if (displayComponentName === 'DataModel') {
+		DisplayComponent = DataModel
 	}
-	if (displayComponentName === 'RenderSpecification') {
-		DisplayComponent = RenderSpecification
+	if (displayComponentName === 'OpenAPIModel') {
+		DisplayComponent = OpenAPIModel
 	}
 
 	const cookieName = 'docVersion'
@@ -39,8 +43,12 @@ export const VersionedDocumentation = ({ content, displayComponentName }) => {
 		setVersion(v)
 	}
 
+	// if the markdwon content contains the placeholder, "$version, replace it with the selected version"
+	const insertVersionIntoSharedContent = (shared) =>
+		shared.replace("$version","(v" + version+")")
+
 	return (
-		<PageMargin>
+		<>
 			{isClient && (
 				<>
 					<VersionedBanner
@@ -49,16 +57,20 @@ export const VersionedDocumentation = ({ content, displayComponentName }) => {
 						setVersion={versionChoiceMade}
 						version={version}
 					/>
-					<ContentView DisplayComponent={DisplayComponent} data={content[version]} />
+					<ContentView
+						allVersionsContent ={insertVersionIntoSharedContent(allVersionsContent)}
+						DisplayComponent={DisplayComponent} 
+						data={data[version]}
+					/>
 				</>
 			)}
-		</PageMargin>
+		</>
 	)
 }
 
-const ContentView = ({ data, DisplayComponent }) => (
+const ContentView = ({ allVersionsContent, data, DisplayComponent }) => (
 	<>
 		<MarkdownContent suppressHydrationWarning html={data.textContent} />
-		{DisplayComponent && <DisplayComponent data={data.schema} />}
+		{DisplayComponent && <DisplayComponent allVersionsContent={allVersionsContent} data={data} />}
 	</>
 )

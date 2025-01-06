@@ -2,10 +2,10 @@ import styles from './Property.module.css'
 import { Badge } from './Badge'
 import { filenameToName } from '@/utilities/filenameToName'
 
-export const Property = ({ data, required, allSchemas }) => (
+export const Property = ({ parentKeyName, data, required, allSchemas }) => (
 	<div className={styles.Property}>
 		<div className={styles.heading}>
-			<span className={styles.name}>{data.name}</span>
+			<span className={styles.name}>{data.name || parentKeyName}</span>
 		</div>
 		<div className={styles.fields}>
 			<div className={styles.title}>
@@ -15,9 +15,27 @@ export const Property = ({ data, required, allSchemas }) => (
 			<div className={styles.description}>{data.description}</div>
 
 			<Datatype data={data} allSchemas={allSchemas} />
+			<Length data={data}/>
+			<Pattern data={data}/>
 		</div>
 	</div>
 )
+
+const Pattern = ({data}) => {
+	if (data.pattern) {
+		return <div className={styles.pattern}>Pattern: <code>{data.pattern}</code></div>
+	}
+	return null
+}
+
+const Length = ({data}) => {
+	if (data.maxLength || data.minLength) {
+		return <div>
+Length {data.minLength && <>minimum: {data.minLength}</>} {data.maxLength && <>maximum: {data.maxLength}</>}
+			</div>
+	}
+	return null
+}
 
 const Badges = ({ data, required }) => (
 	<div className={styles.badges}>
@@ -57,7 +75,9 @@ const getFormat = ({type,data,allSchemas}) => {
 					linked = <><OfCopula /> <LinkedReference data={modelData} /></>
 				}
 				format = <>uuid {linked}</>
-			} else {
+			} else if (data.enum) {
+				format = <code style={{fontStyle: "normal"}}>{data.enum.join(" | ")}</code>
+			} else 	{
 				format = data.format
 			}
 			break;
