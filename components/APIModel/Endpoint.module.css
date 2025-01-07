@@ -1,0 +1,10 @@
+.Endpoint {
+    margin-bottom: 2rem;
+    border:1px solid black;
+}
+
+.Endpoint .path{
+    font-weight:900;
+    font-size:2rem;
+    margin-bottom: 2rem;
+}
