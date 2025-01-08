@@ -1,5 +1,5 @@
 import styles from './Property.module.css'
-import { Badge } from './Badge'
+import { Badge } from '@/components/Badge'
 import { filenameToName } from '@/utilities/filenameToName'
 
 export const Property = ({ parentKeyName, data, required, allSchemas }) => (

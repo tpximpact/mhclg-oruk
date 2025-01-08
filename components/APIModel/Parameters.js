@@ -1,4 +1,8 @@
-import {DocumentationFeatureSection} from '@/components/Documentation'
+import {
+	DocumentationFeatureSection,
+	DocumentationLineItem
+} from '@/components/Documentation'
+import { BadgeRequired, BadgeInPath } from '@/components/Badge'
 import styles from './Parameters.module.css'
 
 export const Parameters = ({
@@ -7,8 +11,49 @@ export const Parameters = ({
    return( <DocumentationFeatureSection 
    				title="Parameters"
    			>
-       <pre>
-    {JSON.stringify(data,null,2)}
-            </pre>
+			{
+				data.map(
+				(p,i) => <Parameter key={i} data={p}/>
+			)
+			}
     </DocumentationFeatureSection>)
 }
+
+const propertyInPath = data => data["in"] && data["in"] === "path"
+const propertyRequired = data => data.required
+
+
+const Badges = ({data}) => <span style={{
+	display: "inline-block"
+}} className={styles.Badges}>
+{ propertyInPath(data) &&
+	<BadgeInPath />
+}
+{propertyRequired(data) &&
+	<BadgeRequired />
+}
+</span>
+
+const Parameter = ({
+	data
+}) => {
+	if (data.$ref) {
+		
+	}
+	
+	return (
+	<DocumentationLineItem 
+title={data.name}
+
+> 
+<Badges data={data}/> 
+{data.description && <div className={styles.description}>
+{data.description}
+</div>}
+{data.schema && <Schema data={data.schema} />}
+</DocumentationLineItem>)
+}
+
+const Schema = ({data}) => <div className={styles.schema}>
+<span className={styles.type}>{data.type}</span>
+</div>
