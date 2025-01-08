@@ -4,7 +4,8 @@ import {Responses} from './Responses'
 import {DocumentationFeature} from '@/components/Documentation'
 export const Path = ({
     data,
-    path
+    path,
+	parametersReferences
 }) => {
 	// for oruk we have only GET calls, so we can make this simplifying assumption
 	if (data.get) {
@@ -20,7 +21,9 @@ export const Path = ({
 		description= {data.summary}
 	>
 		{data.parameters &&
-			<Parameters data={data.parameters}/>}
+			<Parameters 
+			parametersReferences={parametersReferences}
+			data={data.parameters}/>}
 	   <Responses data={data.responses}/>
        
 	</DocumentationFeature>

@@ -6,14 +6,17 @@ import { BadgeRequired, BadgeInPath } from '@/components/Badge'
 import styles from './Parameters.module.css'
 
 export const Parameters = ({
-    data
+    data,
+	parametersReferences
 }) => {
    return( <DocumentationFeatureSection 
    				title="Parameters"
    			>
 			{
 				data.map(
-				(p,i) => <Parameter key={i} data={p}/>
+				(p,i) => <Parameter 
+				parametersReferences={parametersReferences}
+				key={i} data={p}/>
 			)
 			}
     </DocumentationFeatureSection>)
@@ -36,10 +39,14 @@ const Badges = ({data}) =>
 </span>
 
 const Parameter = ({
-	data
+	data,
+	parametersReferences
 }) => {
 	if (data.$ref) {
-		
+		const name = data.$ref.replace("#/components/parameters/","")
+		if (parametersReferences[name]) {
+			data = parametersReferences[name]
+		}
 	}
 	
 	return (

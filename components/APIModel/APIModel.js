@@ -18,7 +18,7 @@ export const APIModel = ({
 			return(item)
 		}
 	)
-	
+	const parametersReferences = data.rootSpec.parsed.components.parameters
 return (
 	<DocumentationPage
 		contentForAllVersions={allVersionsContent}
@@ -29,9 +29,12 @@ return (
 		<div className={styles.APIModel}>
 			{
 				Object.keys(endpoints).map(
-					key => <Path key={key} path={key} data={endpoints[key]} />
+					key => <Path key={key} path={key} 
+					parametersReferences={parametersReferences}
+					data={endpoints[key]} />
 				)
 			}
 		</div>
+		
 	</DocumentationPage>
 		)}
