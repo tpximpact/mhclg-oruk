@@ -1,5 +1,8 @@
 import styles from './Property.module.css'
-import { Badge } from '@/components/Badge'
+import { 
+	BadgeUnique,
+	BadgeRequired
+} from '@/components/Badge'
 import { filenameToName } from '@/utilities/filenameToName'
 
 export const Property = ({ parentKeyName, data, required, allSchemas }) => (
@@ -39,9 +42,9 @@ Length {data.minLength && <>minimum: {data.minLength}</>} {data.maxLength && <>m
 
 const Badges = ({ data, required }) => (
 	<div className={styles.badges}>
-		{required ? <Badge colour='black' background='#fecdd3' label='required' /> : null}
+		{required ? <BadgeRequired/> : null}
 
-		{isUnique(data) ? <Badge colour='black' background='#e9d5ff' label='unique' /> : null}
+		{isUnique(data) ? <BadgeUnique /> : null}
 	</div>
 )
 

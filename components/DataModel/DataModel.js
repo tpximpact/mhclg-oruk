@@ -1,8 +1,7 @@
 import styles from './DataModel.module.css'
+import {DocumentationPage} from '@/components/Documentation'
 import { Schema } from './Schema'
-import Columns from '@/components/Columns'
-import { InPageMenu } from '@/components/InPageMenu'
-import {ContentHTML } from '@/components/ContentHTML'
+
 export const DataModel = ({ 
 	allVersionsContent,
 	data
@@ -15,15 +14,13 @@ export const DataModel = ({
 		target: item
 	}))
 	return (
-		<>
-		<div className={styles.allVersionsContent}>
-		<ContentHTML html={allVersionsContent} />
-		</div>
-		<div className={styles.thisVersionContent}>
-		<ContentHTML html={data.htmlContent} />
-		</div>
-		<Columns layout='31'>
-			<div className={styles.DataModel}>
+	<DocumentationPage
+		contentForAllVersions={allVersionsContent}
+		contentForThisVersion={data.htmlContent}
+		menuItems={menuItems}
+		menuTitle="Classes"
+	>
+		<div className={styles.DataModel}>
 			
 				{keys.map(key => (
 					<Schema 
@@ -33,11 +30,4 @@ export const DataModel = ({
 						allSchemas={allSchemas} />
 				))}
 			</div>
-			<div className={styles.Menu}>
-				<InPageMenu title='Classes' items={menuItems} />
-			</div>
-		</Columns>
-		</>
-	)
-}
-
+	</DocumentationPage>)}
