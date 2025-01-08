@@ -2,9 +2,10 @@ import styles from './Schema.module.css'
 import { Property } from './Property'
 export const Schema = ({ parentKeyName, data, allSchemas }) => (
 	<div id={data.name || parentKeyName} className={styles.Schema}>
-		<div className={styles.name}>{data.name || parentKeyName}</div>
+		<header>
+	<div className={styles.name}>{data.name || parentKeyName}</div>
 		<div className={styles.description}>{data.description}</div>
-
+</header>
 		<Properties data={data} allSchemas={allSchemas} />
 	</div>
 )

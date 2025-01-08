@@ -1,6 +1,5 @@
 import styles from './Parameters.module.css'
 
-
 export const Parameters = ({
     data
 }) => {
