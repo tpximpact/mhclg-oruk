@@ -1,0 +1,13 @@
+.DocumentationFeatureSection {
+	+ .DocumentationFeatureSection {
+		margin-top:1rem;
+	}
+	
+	.Box{
+		border: 1px solid black;
+	}
+	
+	& h3 {
+		font-size:1.2rem !important;
+	}
+}

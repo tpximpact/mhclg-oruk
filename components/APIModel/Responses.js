@@ -1,13 +1,14 @@
+import {DocumentationFeatureSection} from '@/components/Documentation'
 import styles from './Responses.module.css'
-
 
 export const Responses = ({
     data
 }) => {
-   return( <div className={styles.Responses}>
-       Responses:
-        <pre>
+   return( <DocumentationFeatureSection 
+   				title="Responses"
+   			>
+       <pre>
     {JSON.stringify(data,null,2)}
             </pre>
-    </div>)
+    </DocumentationFeatureSection>)
 }

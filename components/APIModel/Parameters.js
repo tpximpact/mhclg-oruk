@@ -1,12 +1,14 @@
+import {DocumentationFeatureSection} from '@/components/Documentation'
 import styles from './Parameters.module.css'
 
 export const Parameters = ({
     data
 }) => {
-   return( <div className={styles.Parameters}>
-       Parameters:
-        <pre>
+   return( <DocumentationFeatureSection 
+   				title="Parameters"
+   			>
+       <pre>
     {JSON.stringify(data,null,2)}
             </pre>
-    </div>)
+    </DocumentationFeatureSection>)
 }

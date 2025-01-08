@@ -23,6 +23,9 @@ export const DocumentationPage = ({
 		}
 			</div>
 			<div className={styles.Menu}>
-				<InPageMenu title='Paths' items={menuItems} />
+				<InPageMenu title={
+					menuTitle
+					}
+					items={menuItems} />
 			</div>
 		</Columns>

@@ -1,4 +1,4 @@
-import styles from './Path.module.css'
+//import styles from './Path.module.css'
 import {Parameters} from './Parameters'
 import {Responses} from './Responses'
 import {DocumentationFeature} from '@/components/Documentation'
@@ -19,7 +19,8 @@ export const Path = ({
 		name={path}
 		description= {data.summary}
 	>
-		 <Parameters data={data.parameters}/>
+		{data.parameters &&
+			<Parameters data={data.parameters}/>}
 	   <Responses data={data.responses}/>
        
 	</DocumentationFeature>
