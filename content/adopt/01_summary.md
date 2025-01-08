@@ -11,7 +11,7 @@ Giving citizens access to the services they need, no matter where they first see
 
 <cite>- An adult social care contact centre worker. Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes.</cite>
 
-[ORUK](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities) is a data standard that defines the what, where, and how of describing information about a support service.
+[ORUK](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities) is a data standard that defines the 'what, where, and how' information about a support service.
 
 ## Executive summary
 
