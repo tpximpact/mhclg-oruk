@@ -1,5 +1,7 @@
 import styles from './Badge.module.css'
 
+
+// 200 tints from tailwind
 const COLOURS = {
 	REQUIRED: {
 		colour:'black',
@@ -11,7 +13,7 @@ const COLOURS = {
 	},
 	IN_PATH : {
 		colour:'black',
-		background:'#e9d5ff'
+		background:'#bfdbfe'
 	}
 }
 

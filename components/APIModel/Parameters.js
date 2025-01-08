@@ -23,7 +23,8 @@ const propertyInPath = data => data["in"] && data["in"] === "path"
 const propertyRequired = data => data.required
 
 
-const Badges = ({data}) => <span style={{
+const Badges = ({data}) => 
+ (propertyInPath(data)  || propertyRequired(data)) && <span style={{
 	display: "inline-block"
 }} className={styles.Badges}>
 { propertyInPath(data) &&
