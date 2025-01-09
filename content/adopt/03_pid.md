@@ -52,7 +52,7 @@ Open Referral UK defines the data and interfaces needed for tools that help peop
 
 The ultimate intention is to implement the ORUK model across the entire council area, overcoming partner administrative boundaries. However, this project will begin on a smaller scale to refine the approach, gather evidence, and strengthen the business case for broader adoption in the future.
 
-### Scope overview
+### 4.1 Scope overview
 
 This project will focus on proving the concept, but will include partners outside of the council itself. While more could be included, the scope has been defined to meet realistic timelines and will be refined after a discovery exercise.
 
