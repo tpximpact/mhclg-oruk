@@ -1,13 +1,13 @@
 .box {
 	border: 1px solid black;
-	margin-bottom:4rem;
+	margin-bottom: 4rem;
 }
 
 .box > div {
 	margin-bottom: 0 !important;
 }
 
-.box >div > div:first-child {
+.box > div > div:first-child {
 	padding: 1rem;
 }
 
@@ -16,20 +16,20 @@
 }
 
 .box label {
-	display:block;
-	clip: rect(0 0 0 0); 
+	display: block;
+	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
 	overflow: hidden;
 	position: absolute;
-	white-space: nowrap; 
+	white-space: nowrap;
 	width: 1px;
 }
 
 .box select {
 	width: 100%;
-	font-weight:900;
-	font-size:1rem;
+	font-weight: 900;
+	font-size: 1rem;
 	color: black;
 }
 

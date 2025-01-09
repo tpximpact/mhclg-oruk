@@ -4,16 +4,11 @@ import { VersionedBanner } from './VersionedBanner'
 import { MarkdownContent } from './MarkdownContent'
 import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
-import {DataModel} from '@/components/DataModel'
-import {APIModel} from '@/components/APIModel'
-import {OpenAPIModel} from '@/components/OpenAPIModel'
+import { DataModel } from '@/components/DataModel'
+import { APIModel } from '@/components/APIModel'
+import { OpenAPIModel } from '@/components/OpenAPIModel'
 
-export const VersionedDocumentation = ({ 
-	allVersionsContent,
-	data, 
-	displayComponentName
-}) => {
-
+export const VersionedDocumentation = ({ allVersionsContent, data, displayComponentName }) => {
 	const allVersions = Object.keys(data).sort().reverse()
 
 	let DisplayComponent
@@ -44,8 +39,7 @@ export const VersionedDocumentation = ({
 	}
 
 	// if the markdwon content contains the placeholder, "$version, replace it with the selected version"
-	const insertVersionIntoSharedContent = (shared) =>
-		shared.replace("$version","(v" + version+")")
+	const insertVersionIntoSharedContent = shared => shared.replace('$version', '(v' + version + ')')
 
 	return (
 		<>
@@ -58,8 +52,8 @@ export const VersionedDocumentation = ({
 						version={version}
 					/>
 					<ContentView
-						allVersionsContent ={insertVersionIntoSharedContent(allVersionsContent)}
-						DisplayComponent={DisplayComponent} 
+						allVersionsContent={insertVersionIntoSharedContent(allVersionsContent)}
+						DisplayComponent={DisplayComponent}
 						data={data[version]}
 					/>
 				</>
