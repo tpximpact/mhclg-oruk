@@ -3,7 +3,10 @@
 const nextConfig = {
 	experimental: {
 		serverComponentsHmrCache: false // defaults to true
-	}
+	},
+	images: {
+    disableStaticImages: true,
+  }
 }
 
 module.exports = nextConfig
