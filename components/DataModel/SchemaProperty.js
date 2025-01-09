@@ -1,11 +1,12 @@
-import styles from './Property.module.css'
+import styles from './SchemaProperty.module.css'
 import {DocumentationLineItem} from '@/components/Documentation'
 import { BadgeUnique, BadgeRequired } from '@/components/Badge'
 import { filenameToName } from '@/utilities/filenameToName'
 
-export const Property = ({ parentKeyName, data, required, allSchemas }) => (
+
+export const SchemaProperty = ({ parentKeyName, data, required, allSchemas }) => (
 <DocumentationLineItem title={data.name || parentKeyName}>
-	<div className={styles.title}>
+<div className={styles.title}>
 				{data.title} <Badges required={required} data={data} />
 			</div>
 

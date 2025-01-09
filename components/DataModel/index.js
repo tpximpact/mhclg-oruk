@@ -1,3 +1,3 @@
 export { DataModel } from './DataModel'
-export { SchemaProperties } from './Schema'
+export { SchemaProperty } from './SchemaProperty'
 export { getAllSchemas } from './getAllSchemas'
