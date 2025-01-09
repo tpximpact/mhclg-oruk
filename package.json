@@ -11,7 +11,9 @@
 	},
 	"dependencies": {
 		"@axe-core/react": "^4.10.1",
+		"@microlink/react-json-view": "^1.24.0",
 		"color-interpolate": "^1.0.5",
+		"graphviz-react": "^1.2.5",
 		"gray-matter": "^4.0.3",
 		"html-react-parser": "^5.2.0",
 		"marked": "^15.0.3",

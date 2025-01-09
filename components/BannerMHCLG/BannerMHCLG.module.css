@@ -4,6 +4,11 @@
 	color: rgb(11, 12, 12);
 }
 
+.inner {
+	border-top: 1px solid black;
+	padding-top: 4rem;
+}
+
 .supported {
 	margin-bottom: 1rem;
 	font-size: 0.9rem;

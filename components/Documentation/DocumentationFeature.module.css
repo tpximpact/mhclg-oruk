@@ -1,0 +1,17 @@
+.DocumentationFeature {
+	margin: 0 0 4rem;
+
+	.name {
+		font-size: 1.6rem;
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+
+	.description {
+		font-style: italic;
+	}
+	
+	& details {
+		margin-top: 1rem;
+	}
+}

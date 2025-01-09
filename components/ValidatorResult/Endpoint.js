@@ -3,7 +3,6 @@ import { Group } from './Group'
 
 const canLink = p => !p.includes('{id}')
 
-
 export const Endpoint = ({ rootPath, path, data, linkToEndpoint = true }) => (
 	<section className={styles.section}>
 		<div className={styles.endpointContainer}>
@@ -12,8 +11,7 @@ export const Endpoint = ({ rootPath, path, data, linkToEndpoint = true }) => (
 				<span className={styles.endpoint}>{path}</span>
 			</h2>
 			<div className={styles.endpointRight}>
-				{linkToEndpoint && canLink(path) &&
-					(
+				{linkToEndpoint && canLink(path) && (
 					<a href={rootPath + path + '?&page=1'} target='_blank'>
 						View (JSON)
 					</a>
