@@ -44,7 +44,7 @@ Achieving this vision will require strong leadership and robust digital resource
 
 ### 3.1 Digital Declaration
 
-More than 200 councils have signed up to the Local Digital Declaration, reflecting a shared commitment to improving flexibility and interoperability of software systems across the public and third sectors.
+More than 200 councils have signed up to the [Local Digital Declaration](https://www.localdigital.gov.uk/about-the-declaration/declaration/), reflecting a shared commitment to improving flexibility and interoperability of software systems across the public and third sectors.
 
 Open Referral UK defines the data and interfaces needed for tools that help people find services and analyse service provision, ensuring these tools can seamlessly communicate with each other.
 
