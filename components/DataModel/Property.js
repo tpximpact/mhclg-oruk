@@ -1,15 +1,11 @@
 import styles from './Property.module.css'
-//import {DocumentationLineItem} from '@/components/Documentation'
+import {DocumentationLineItem} from '@/components/Documentation'
 import { BadgeUnique, BadgeRequired } from '@/components/Badge'
 import { filenameToName } from '@/utilities/filenameToName'
 
 export const Property = ({ parentKeyName, data, required, allSchemas }) => (
-	<div className={styles.Property}>
-		<div className={styles.heading}>
-			<span className={styles.name}>{data.name || parentKeyName}</span>
-		</div>
-		<div className={styles.fields}>
-			<div className={styles.title}>
+<DocumentationLineItem title={data.name || parentKeyName}>
+	<div className={styles.title}>
 				{data.title} <Badges required={required} data={data} />
 			</div>
 
@@ -18,8 +14,7 @@ export const Property = ({ parentKeyName, data, required, allSchemas }) => (
 			<Datatype data={data} allSchemas={allSchemas} />
 			<Length data={data} />
 			<Pattern data={data} />
-		</div>
-	</div>
+</DocumentationLineItem>
 )
 
 const Pattern = ({ data }) => {
