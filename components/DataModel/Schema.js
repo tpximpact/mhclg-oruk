@@ -2,7 +2,7 @@ import { DocumentationFeatureSection } from '@/components/Documentation'
 
 import { DocumentationFeature } from '@/components/Documentation'
 //import styles from './Schema.module.css'
-import { Property } from './Property'
+import { SchemaProperty } from './SchemaProperty'
 
 export const Schema = ({ parentKeyName, data, allSchemas }) => (
 	<DocumentationFeature name={data.name || parentKeyName} description={data.description}>
@@ -12,8 +12,9 @@ export const Schema = ({ parentKeyName, data, allSchemas }) => (
 
 export const SchemaProperties = ({ data, allSchemas }) => (
 	<DocumentationFeatureSection title='Schema'>
-		{Object.keys(data.properties).map((pk, i) => (
-			<Property
+	
+		{data.properties && Object.keys(data.properties).map((pk, i) => (
+			<SchemaProperty
 				key={i}
 				parentKeyName={pk}
 				data={data.properties[pk]}

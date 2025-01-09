@@ -1,22 +1,43 @@
-/*import {
-	getAllSchemas,
-SchemaProperties
-} from '@/components/DataModel'*/
+import {
+	getAllSchemas, SchemaProperty
+} from '@/components/DataModel'
 import { DocumentationFeatureSection } from '@/components/Documentation'
-//import styles from './Responses.module.css'
+import {filenameToName} from '@/utilities/filenameToName'
+
 
 export const Responses = ({
-	data
-	//allData
+	data,
+	allData
 }) => {
-	//const allSchemas = getAllSchemas(allData)
+	const allSchemas = getAllSchemas(allData.schemata)
 	data = data['200']
-	const schema = data.content['application/json']
+	let schema = data.content["application/json"].schema
+	let description = data.description
+	if (schema.$ref) {
+		const modelFile = schema.$ref.split("/").pop()
+		const model = filenameToName(modelFile)
+		description = <>{`${description} An instance of the class `}
+		<a href={"/developers/schemata#"+model}>{model}</a>
+		</>
+		if (allSchemas.includes(model)) {
+			schema= allData.schemata[model]
+		}
+	}
+	
+	
 	return (
-		<DocumentationFeatureSection title='Response' description={data.description}>
-			{/*<SchemaProperties data={data} allSchemas={allSchemas} />*/}
-
-			<pre>{JSON.stringify(schema, null, 2)}</pre>
+		<DocumentationFeatureSection title='Response' description={description}>
+		
+		
+			{schema.properties && Object.keys(schema.properties).map((pk, i) => (
+			<SchemaProperty
+				key={i}
+				parentKeyName={pk}
+				data={schema.properties[pk]}
+				allSchemas={allSchemas}
+				required={false}
+			/>
+		))}
 		</DocumentationFeatureSection>
 	)
 }

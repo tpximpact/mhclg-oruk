@@ -2,7 +2,7 @@
 import { Parameters } from './Parameters'
 import { Responses } from './Responses'
 import { DocumentationFeature } from '@/components/Documentation'
-export const Path = ({ data, path, parametersReferences }) => {
+export const Path = ({ data, path, parametersReferences, allData }) => {
 	// for oruk we have only GET calls, so we can make this simplifying assumption
 	if (data.get) {
 		const paramaters = data.parameters
@@ -16,7 +16,9 @@ export const Path = ({ data, path, parametersReferences }) => {
 			{data.parameters && (
 				<Parameters parametersReferences={parametersReferences} data={data.parameters} />
 			)}
-			<Responses data={data.responses} />
+			<Responses 
+			allData={allData}
+			data={data.responses} />
 		</DocumentationFeature>
 	)
 }

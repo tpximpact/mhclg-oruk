@@ -25,7 +25,9 @@ export const APIModel = ({ allVersionsContent, data }) => {
 					<Path
 						key={key}
 						path={key}
-						parametersReferences={parametersReferences}
+					allData={
+					data
+				}	parametersReferences={parametersReferences}
 						data={endpoints[key]}
 					/>
 				))}
