@@ -1,11 +1,32 @@
 'use client'
 
+import { VersionedBanner } from './VersionedBanner'
+import { MarkdownContent } from './MarkdownContent'
 import { useState, useEffect } from 'react'
-import styles from './VersionedDocumentation.module.css'
 import { useCookies } from 'react-cookie'
+import {DataModel} from '@/components/DataModel'
+import {APIModel} from '@/components/APIModel'
+import {OpenAPIModel} from '@/components/OpenAPIModel'
 
-export const VersionedDocumentation = ({ allVersions, contentData }) => {
-	// return <div>TODO</div>
+export const VersionedDocumentation = ({ 
+	allVersionsContent,
+	data, 
+	displayComponentName
+}) => {
+
+	const allVersions = Object.keys(data).sort().reverse()
+
+	let DisplayComponent
+	// work around - cant pass a componet on server unless it is marked use server and async :(
+	if (displayComponentName === 'APIModel') {
+		DisplayComponent = APIModel
+	}
+	if (displayComponentName === 'DataModel') {
+		DisplayComponent = DataModel
+	}
+	if (displayComponentName === 'OpenAPIModel') {
+		DisplayComponent = OpenAPIModel
+	}
 
 	const cookieName = 'docVersion'
 	const [isClient, setIsClient] = useState(false)
@@ -22,6 +43,10 @@ export const VersionedDocumentation = ({ allVersions, contentData }) => {
 		setVersion(v)
 	}
 
+	// if the markdwon content contains the placeholder, "$version, replace it with the selected version"
+	const insertVersionIntoSharedContent = (shared) =>
+		shared.replace("$version","(v" + version+")")
+
 	return (
 		<>
 			{isClient && (
@@ -32,75 +57,20 @@ export const VersionedDocumentation = ({ allVersions, contentData }) => {
 						setVersion={versionChoiceMade}
 						version={version}
 					/>
-					<VersionedContent suppressHydrationWarning version={version} contentData={contentData} />
+					<ContentView
+						allVersionsContent ={insertVersionIntoSharedContent(allVersionsContent)}
+						DisplayComponent={DisplayComponent} 
+						data={data[version]}
+					/>
 				</>
 			)}
 		</>
 	)
 }
 
-const VersionedBanner = ({ allVersions, version, setVersion }) => {
-	const currentVersion = allVersions[0]
-	const isCurrent = version === currentVersion
-
-	const colourClass = isCurrent ? styles.current : styles.legacy
-	return (
-		<div className={`${styles.box} ${colourClass}`}>
-			<div className={styles.tab}>
-				<div className={styles.version}>
-					<select
-						id='picker'
-						onChange={({ target: { value } }) => setVersion(value)}
-						value={version}
-					>
-						{allVersions.map(value => (
-							<option key={value} value={value}>
-								{value}
-							</option>
-						))}
-					</select>
-				</div>
-				<div>
-					<label htmlFor='picker'>{isCurrent ? 'Current' : 'Legacy'} version</label>
-				</div>
-			</div>
-			<div className={styles.banner}>
-				<p>You can choose which version of the standard this page describes.</p>
-				{isCurrent ? (
-					<p style={{ fontWeight: 900 }}>
-						This is the latest version of the standard and is recommended for all users.
-					</p>
-				) : (
-					<>
-						<p style={{ fontWeight: 900, color: 'white' }}>
-							This is an archived obsolete version of the standard.
-						</p>
-						<p>
-							For new projects, we strongly recommend you to use{' '}
-							<a
-								href='#'
-								onClick={() => {
-									setVersion(currentVersion)
-								}}
-								style={{ fontWeight: 900, color: 'white' }}
-							>
-								the latest version{' '}
-							</a>
-							instead
-						</p>
-					</>
-				)}
-			</div>
-		</div>
-	)
-}
-
-const Literal = ({contentData, version}) => <div dangerouslySetInnerHTML={{ __html: contentData[version].content }} />
-
-const VersionedContent = ({ 
-	version, 
-	contentData,
-	Component = Literal
-}) => (
-	<Component version={version} contentData={contentData} />
+const ContentView = ({ allVersionsContent, data, DisplayComponent }) => (
+	<>
+		<MarkdownContent suppressHydrationWarning html={data.textContent} />
+		{DisplayComponent && <DisplayComponent allVersionsContent={allVersionsContent} data={data} />}
+	</>
 )

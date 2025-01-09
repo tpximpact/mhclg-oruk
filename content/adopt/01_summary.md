@@ -3,7 +3,7 @@ title: Executive summary
 slug: For senior managers
 ---
 
-# **Empowering local communities through Open Referral UK**
+# Empowering local communities through Open Referral UK
 
 Giving citizens access to the services they need, no matter where they first seek help.
 

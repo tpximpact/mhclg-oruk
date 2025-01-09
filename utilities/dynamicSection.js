@@ -29,7 +29,7 @@ const buildLinkedItem = (index, allFiles, folder) => {
 }
 
 const slugify = fileName => fileName.split('.')[0]
-const unslugify = name => `${name}.md`
+// const unslugify = name => `${name}.md`
 
 const getAllFiles = contentFolder => {
 	const dir = join(CONTENT_ROOT, contentFolder)
@@ -68,7 +68,7 @@ const readFile = contentPath => {
 	}
 }
 
-const extractMetadata = contents => matter(contents).data
+// const extractMetadata = contents => matter(contents).data
 
 const statFile = contentPath => {
 	try {

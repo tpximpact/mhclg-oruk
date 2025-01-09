@@ -1,21 +1,26 @@
+import {getAllContentVersions}from '@/utilities/getAllContentVersions'
 import { PageMargin } from '@/components/PageMargin'
-import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
-
 import { VersionedDocumentation } from '@/components/VersionedDocumentation'
-import { getVersions } from '@/utilities/versionedContent'
+import {loadMarkdownContent}from '@/utilities/loadMarkdownContent'
+
 export const metadata = {
-	title: 'ORUK Swagger'
+	title: 'ORUK API'
 }
 
 export default async function Page() {
-	const [allVersions, contentData] = getVersions('../content/developers/api')
+	const allVersionsContent = loadMarkdownContent("index.md","/developers/api")
+	const data = getAllContentVersions({
+		contentFolder: "/developers/api",
+		specificationFolder: "./specifications"
+	})
 
 	return (
-		<>
-			<NamedMarkdownPage name='api' />
-			<PageMargin>
-				<VersionedDocumentation allVersions={allVersions} contentData={contentData} />
-			</PageMargin>
-		</>
+		<PageMargin >
+			<VersionedDocumentation 
+				allVersionsContent = {allVersionsContent}
+				displayComponentName='APIModel' 
+				data={data} 
+	/>
+			</PageMargin >
 	)
 }
