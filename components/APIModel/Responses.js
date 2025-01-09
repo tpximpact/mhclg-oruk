@@ -1,14 +1,14 @@
-import {
+/*import {
 	getAllSchemas,
 SchemaProperties
-} from '@/components/DataModel'
+} from '@/components/DataModel'*/
 import {DocumentationFeatureSection} from '@/components/Documentation'
-import styles from './Responses.module.css'
+//import styles from './Responses.module.css'
 
 
 export const Responses = ({
     data,
-	allData
+	//allData
 }) => {
 	//const allSchemas = getAllSchemas(allData)
 	data = data["200"]

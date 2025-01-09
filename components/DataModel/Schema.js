@@ -1,10 +1,9 @@
 import {
-	DocumentationFeatureSection,
-	DocumentationLineItem
+	DocumentationFeatureSection
 } from '@/components/Documentation'
 
 import {DocumentationFeature} from '@/components/Documentation'
-import styles from './Schema.module.css'
+//import styles from './Schema.module.css'
 import { Property } from './Property'
 
 export const Schema = ({ parentKeyName, data, allSchemas }) => 
