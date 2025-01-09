@@ -1,6 +1,1 @@
-export {
-	Badge,
-	BadgeRequired,
-	BadgeUnique,
-	BadgeInPath
-} from './Badge'
+export { Badge, BadgeRequired, BadgeUnique, BadgeInPath } from './Badge'

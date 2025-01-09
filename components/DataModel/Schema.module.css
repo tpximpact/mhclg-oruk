@@ -1,12 +1,10 @@
+.properties {
+	margin-top: 1rem;
+}
+.propertiesList {
+	border: 1px solid black;
+}
 
-	.properties {
-		margin-top: 1rem;
-	}
-	.propertiesList {
-		border: 1px solid black;
-	}
-
-	.properties summary {
-		cursor: pointer;
-	}
-
+.properties summary {
+	cursor: pointer;
+}

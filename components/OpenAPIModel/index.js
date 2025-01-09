@@ -1,1 +1,1 @@
-export {OpenAPIModel} from './OpenAPIModel'
+export { OpenAPIModel } from './OpenAPIModel'

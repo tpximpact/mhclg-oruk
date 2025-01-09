@@ -1,1 +1,1 @@
-export {APIModel} from './APIModel'
+export { APIModel } from './APIModel'

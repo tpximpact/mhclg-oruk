@@ -1,4 +1,4 @@
-.DocumentationLineItem{
+.DocumentationLineItem {
 	margin: 0;
 	display: flex;
 
@@ -15,7 +15,7 @@
 
 	.fields {
 		flex: 1;
-		padding: 1rem ;
+		padding: 1rem;
 	}
 }
 
