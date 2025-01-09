@@ -255,7 +255,7 @@ Even with direct input from service providers, data errors may still occur. The 
 
 Categorising services correctly is crucial for identifying appropriate services and generating meaningful management insights. While national taxonomies are being developed, existing ones (such as those from the LGA) can be used in the interim. Over-categorisation by providers is a common issue, so it’s recommended that the assurer finalise and apply taxonomies to ensure better service discoverability and data management.
 
-**Deliverables**: repository of trusted data.
+**Deliverable**: repository of trusted data.
 
 ### 10.4 Publish & Reuse
 
@@ -305,7 +305,7 @@ Service quality feedback can be tricky, as negative comments may relate to facto
 
 Data quality feedback is where frontline workers and citizens can play a key role. Make it easy for them to report errors directly to the assurer for verification and correction. A policy to correct any reported errors within 48 hours would help maintain data accuracy. This is one of the key advantages of a single repository over multiple systems, which can create confusion when data isn’t updated consistently.
 
-**Deliverables:** Management Report
+**Deliverable:** Management Report
 
 ## 11. Project Close
 
