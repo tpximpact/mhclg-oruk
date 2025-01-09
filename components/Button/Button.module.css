@@ -1,91 +1,14 @@
 .button {
-	/* Base styles */
-	border: 2px solid var(--button-border-color);
-	border-radius: 99rem;
-	background-color: var(--button-background-color);
-	color: var(--button-color);
-	cursor: pointer;
-	font-family: inherit;
-	font-size: 100%;
-	font-weight: 900;
-	line-height: 1.5;
-	margin: 2rem 0 0;
-	overflow: hidden;
-	padding: 0.8rem 3rem;
-	position: relative;
-	text-transform: uppercase;
-
-	/* Box model */
-	box-sizing: border-box;
-
-	/* Remove default button styles */
-	-webkit-appearance: none;
-	background-image: none;
-	-webkit-tap-highlight-color: transparent;
+	color: black;
+	border: 3px solid black;
+	background: white;
+	padding: 0.5rem 2rem;
+	margin: 1rem 0;
 }
 
-.button *,
-.button::before,
-.button::after {
-	box-sizing: border-box;
-	border: 0 solid;
-}
-
-.button:disabled {
-	opacity: 0.5;
-	cursor: default;
-}
-
-.button:-moz-focusring {
-	outline: auto;
-}
-
-.button svg {
-	display: block;
-	vertical-align: middle;
-}
-
-.button [hidden] {
-	display: none;
-}
-
-/* Hover effect */
-.button::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	background-color: var(--button-hover-background-color);
-	will-change: transform;
-	z-index: -1;
-	animation: move-out 0.3s;
-}
-
-.button:hover::before {
-	animation: move-in 0.3s forwards;
-}
-
-.button:hover {
-	color: var(--button-hover-color);
-}
-
-/* Animations */
-@keyframes move-in {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(100%);
-	}
-}
-
-@keyframes move-out {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(200%);
-	}
+.button:disabled,
+.button[disabled]{
+  	color: #aaa;
+	border: 3px solid #aaa;
+	background: #eee;
 }
