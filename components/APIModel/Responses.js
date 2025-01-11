@@ -36,6 +36,7 @@ export const Responses = ({
 				data={schema.properties[pk]}
 				allSchemas={allSchemas}
 				required={false}
+				useFullPath={true}
 			/>
 		))}
 		</DocumentationFeatureSection>
