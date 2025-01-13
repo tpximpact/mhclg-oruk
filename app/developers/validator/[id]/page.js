@@ -3,6 +3,7 @@ import { ValidatorResult, ValidatorResultPageTitle } from '@/components/Validato
 import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
 import { PageMargin } from '@/components/PageMargin'
+import { Suspense } from 'react';
 
 export async function generateMetadata(props) {
 	const params = await props.params
@@ -17,7 +18,9 @@ export default async function Page(props) {
 	return (
 		<PageMargin>
 			<ValidatorResultPageTitle />
-			<RemoteJSON
+			<Suspense >
+ 
+<RemoteJSON
 				method={METHOD.POST}
 				RetryComponent={() => (
 					<section style={{ marginTop: '2rem' }}>
@@ -29,7 +32,7 @@ export default async function Page(props) {
 				queryParams={{
 					serviceUrl: searchParams.uri
 				}}
-			/>
+			/></Suspense >
 		</PageMargin>
 	)
 }
