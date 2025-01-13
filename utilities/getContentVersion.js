@@ -34,7 +34,7 @@ export const getContentVersion = ({ contentFolder, specificationFolderPath }) =>
 			})
 		}
 	} catch (e) {
-		console.log('nope: ' + fullPath)
+		// console.log('nope: ' + fullPath)
 	}
 	// HACK: in case the Pages object is present among schemata, remove it
 	delete schemata.Page
