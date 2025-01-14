@@ -9,6 +9,12 @@ export default function Page() {
 	return (
 		<PageMargin>
 		{JSON.stringify(s)}
+		<p>{s.mtime.toLocaleDateString()}</p>
+		<p>{s.mtime.toLocaleDateString('en')}</p>
+		<p>{s.mtime.toLocaleDateString('en-GB')}</p>
+		<p>{s.atime.toLocaleDateString()}</p>
+		<p>{s.atime.toLocaleDateString('en')}</p>
+		<p>{s.atime.toLocaleDateString('en-GB')}</p>
 		</PageMargin>
 	)
 }
