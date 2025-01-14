@@ -16,9 +16,7 @@ export const Path = ({ data, path, parametersReferences, allData }) => {
 			{data.parameters && (
 				<Parameters parametersReferences={parametersReferences} data={data.parameters} />
 			)}
-			<Responses 
-			allData={allData}
-			data={data.responses} />
+			<Responses allData={allData} data={data.responses} />
 		</DocumentationFeature>
 	)
 }

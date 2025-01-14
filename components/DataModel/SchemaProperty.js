@@ -1,26 +1,20 @@
 import styles from './SchemaProperty.module.css'
-import {DocumentationLineItem} from '@/components/Documentation'
+import { DocumentationLineItem } from '@/components/Documentation'
 import { BadgeUnique, BadgeRequired } from '@/components/Badge'
 import { filenameToName } from '@/utilities/filenameToName'
 
+export const SchemaProperty = ({ parentKeyName, data, required, allSchemas, useFullPath }) => (
+	<DocumentationLineItem title={data.name || parentKeyName}>
+		<div className={styles.title}>
+			{data.title} <Badges required={required} data={data} />
+		</div>
 
-export const SchemaProperty = ({ 
-	parentKeyName, 
-	data, 
-	required, 
-	allSchemas,
-	useFullPath }) => (
-<DocumentationLineItem title={data.name || parentKeyName}>
-<div className={styles.title}>
-				{data.title} <Badges required={required} data={data} />
-			</div>
+		<div className={styles.description}>{data.description}</div>
 
-			<div className={styles.description}>{data.description}</div>
-
-			<Datatype data={data} allSchemas={allSchemas} useFullPath={useFullPath}/>
-			<Length data={data} />
-			<Pattern data={data} />
-</DocumentationLineItem>
+		<Datatype data={data} allSchemas={allSchemas} useFullPath={useFullPath} />
+		<Length data={data} />
+		<Pattern data={data} />
+	</DocumentationLineItem>
 )
 
 const Pattern = ({ data }) => {
@@ -56,7 +50,9 @@ const Badges = ({ data, required }) => (
 
 const isUnique = data => data.constraints && data.constraints.unique
 
-const OfCopula = ({useInstances}) => <span className={styles.of}>{useInstances && " of instances "}of</span>
+const OfCopula = ({ useInstances }) => (
+	<span className={styles.of}>{useInstances && ' of instances '}of</span>
+)
 
 const getType = data => {
 	if (data.type === 'array' || data.items) return 'array'
@@ -64,25 +60,20 @@ const getType = data => {
 	return data.type
 }
 
-const getFormat = ({ 
-	type, 
-	data, 
-	allSchemas,
-	useFullPath
-}) => {
+const getFormat = ({ type, data, allSchemas, useFullPath }) => {
 	let format
 
 	switch (type) {
 		case 'array':
-
 			format = (
-				<> 
-					<OfCopula useInstances={true}/> <LinkedReference data={data.items} useFullPath={useFullPath}/>
+				<>
+					<OfCopula useInstances={true} />{' '}
+					<LinkedReference data={data.items} useFullPath={useFullPath} />
 				</>
 			)
 			break
 		case 'object':
-			format = <LinkedReference data={data}  useFullPath={useFullPath}/>
+			format = <LinkedReference data={data} useFullPath={useFullPath} />
 			break
 		case 'string':
 			if (data.format === 'uuid') {
@@ -93,7 +84,7 @@ const getFormat = ({
 					modelData['$ref'] = model
 					linked = (
 						<>
-							<OfCopula /> <LinkedReference data={modelData}  useFullPath={useFullPath}/>
+							<OfCopula /> <LinkedReference data={modelData} useFullPath={useFullPath} />
 						</>
 					)
 				}
@@ -112,7 +103,7 @@ const getFormat = ({
 
 const Datatype = ({ data, allSchemas, useFullPath }) => {
 	const type = getType(data)
-	const format = getFormat({ type, data, allSchemas,  useFullPath })
+	const format = getFormat({ type, data, allSchemas, useFullPath })
 
 	return (
 		<div className={styles.type}>
@@ -127,26 +118,24 @@ const Datatype = ({ data, allSchemas, useFullPath }) => {
 	)
 }
 
-const LinkedReference = ({ 
-	data,
-useFullPath
-}) => {
+const LinkedReference = ({ data, useFullPath }) => {
 	let target = `#${toAnchorName(data['$ref'])}`
 	if (useFullPath) {
-		target = "/developers/schemata" + target
+		target = '/developers/schemata' + target
 	}
 	return (
-	<a href={target} className={styles.modelLink}>
-		{toAnchorName(data['$ref'])}
-	</a>
-)}
+		<a href={target} className={styles.modelLink}>
+			{toAnchorName(data['$ref'])}
+		</a>
+	)
+}
 
 const toAnchorName = reference => {
 	// if there's a full path, get rid of it
-	if(reference.includes("/")) {
-		reference = reference.split("/").pop()
+	if (reference.includes('/')) {
+		reference = reference.split('/').pop()
 	}
-	
+
 	return filenameToName(reference)
 }
 
