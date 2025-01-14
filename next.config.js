@@ -5,8 +5,8 @@ const nextConfig = {
 		serverComponentsHmrCache: false // defaults to true
 	},
 	images: {
-    disableStaticImages: true,
-  }
+		disableStaticImages: true
+	}
 }
 
 module.exports = nextConfig

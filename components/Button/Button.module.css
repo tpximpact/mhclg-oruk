@@ -7,8 +7,8 @@
 }
 
 .button:disabled,
-.button[disabled]{
-  	color: #aaa;
+.button[disabled] {
+	color: #aaa;
 	border: 3px solid #aaa;
 	background: #eee;
 }
