@@ -81,5 +81,7 @@ const statFile = contentPath => {
 
 const fileLastModified = contentPath => {
 	const stats = statFile(contentPath)
-	return stats ? stats.mtime.toLocaleDateString() : null // this is the right formst for netlify... locally en-GB is right
+	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null 
+	console.log (t + " " + contentPath)
+	console.log (JSON.stringify(stats.mtime)) 
 }
