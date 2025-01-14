@@ -1,6 +1,6 @@
 # Adopting OpenReferralUK
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e1b1ed31-6b28-4473-835a-f99717561741/deploy-status)](https://app.netlify.com/sites/openreferraluk/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1e1bfc09-eda6-4764-bf6a-63a643627e05/deploy-status)](https://app.netlify.com/sites/or-uk/deploys)
 
 For documentation, please see [the wiki](https://github.com/tpximpact/mhclg-oruk/wiki)
 
