@@ -44,10 +44,10 @@ Example business model
 
 This unlocks several benefits:
 
-- Improved outcomes as residents receive accurate, timely information: accessing the right help at the right time.
-- Better resident experience. Increased trust in online information and reduced frustration in accessing services.
-- More effective signposting: staff can refer to a broader range of services, improving efficiency.
-- A joined-up front door to services. Reusing data across organisations enhances the resident experience.
+- Improved outcomes as residents receive accurate, timely information: accessing the right help at the right time
+- Better resident experience. Increased trust in online information and reduced frustration in accessing services
+- More effective signposting: staff can refer to a broader range of services, improving efficiency
+- A joined-up front door to services. Reusing data across organisations enhances the resident experience
 
 ## 3. The power of sharing a common standard
 
