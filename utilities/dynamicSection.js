@@ -84,4 +84,5 @@ const fileLastModified = contentPath => {
 	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null 
 	console.log (t + " " + contentPath)
 	console.log (JSON.stringify(stats.mtime)) 
+	return t
 }
