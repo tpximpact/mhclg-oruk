@@ -6,12 +6,11 @@ import { PageThumbnail } from '@/components/PageThumbnail'
 
 // import Columns from '@/components/Columns'
 
-export const DynamicSectionPage = async ({ 
-	//date, 
-	content, 
-	...linkedPages 
+export const DynamicSectionPage = async ({
+	//date,
+	content,
+	...linkedPages
 }) => {
-
 	return (
 		<section>
 			<MarkdownContent autoMenu={true} raw={content} />

@@ -2,10 +2,7 @@ import styles from './APIModel.module.css'
 import { Path } from './Path'
 import { DocumentationPage } from '@/components/Documentation'
 
-export const APIModel = ({ 
-	allVersionsContent, 
-	data 
-}) => {
+export const APIModel = ({ allVersionsContent, data }) => {
 	const endpoints = data.rootSpec.parsed.paths
 	const menuItems = Object.keys(endpoints).map(key => {
 		// const ep = endpoints[key]

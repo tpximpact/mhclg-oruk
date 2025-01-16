@@ -1,5 +1,3 @@
-
-
 .title {
 	font-size: 1.6rem;
 	margin-top: 0;
@@ -50,11 +48,6 @@
 	font-family: var(--font-mono);
 }
 
-
-
-
-
-
 .icon {
 	background: var(--statuscolor);
 	min-height: 6rem;
@@ -89,15 +82,10 @@
 	jborder: 2px solid var(--statuscolor);
 }
 
-
-
 .message {
 	margin-left: 2rem;
 	margin-top: 1rem;
 }
-
-
-
 
 .section {
 	margin-bottom: 1rem;
@@ -118,23 +106,22 @@
 			color: var(--validatorResult-black);
 			display: block;
 			font-size: 1rem;
-			margin-bottom:0.8rem;
+			margin-bottom: 0.8rem;
 		}
 	}
 
 	.endpointContainerRight {
 		flex: 1;
-		text-align:right;
+		text-align: right;
 	}
 }
-
 
 .tabs {
 	& button {
 		appearance: none;
 		padding: 1rem 3rem;
 		background: transparent;
-		border:0;
+		border: 0;
 		border-bottom: 4px transparent solid;
 		margin: 0 2rem 0 0;
 		cursor: pointer;
@@ -142,7 +129,7 @@
 	}
 
 	& button.activeTab {
-		border-bottom:4px solid black;
+		border-bottom: 4px solid black;
 	}
 }
 
@@ -156,7 +143,7 @@
 	color: rgb(11, 12, 12);
 	cursor: pointer;
 	display: inline;
-	font-family: Inter, "Inter Fallback";
+	font-family: Inter, 'Inter Fallback';
 	font-size: 19px;
 	font-style: normal;
 	font-weight: 700;
