@@ -23,16 +23,16 @@ export const Message = ({ data }) => (
 				<code>{data.parameters}</code>
 			</p>
 		)}
-		{data.schemaPath && (
+		{data.errorIn && (
 			<p>
 				Error in:
-				<code> {data.schemaPath}</code>
+				<code> {data.errorIn}</code>
 			</p>
 		)}
-		{data.path && (
+		{data.errorAt && (
 			<p>
 				Error at:
-				<code> {data.path}</code>
+				<code> {data.errorAt}</code>
 			</p>
 		)}
 	</div>

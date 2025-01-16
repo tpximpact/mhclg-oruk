@@ -4,6 +4,7 @@ import { ValidatorForm } from '@/components/ValidatorForm'
 import { navigate } from '@/actions/validate'
 import { PageMargin } from '@/components/PageMargin'
 import { Suspense } from 'react'
+import { getAllContentVersions } from '@/utilities/getAllContentVersions'
 
 export async function generateMetadata(props) {
 	const params = await props.params
@@ -15,6 +16,11 @@ export async function generateMetadata(props) {
 
 export default async function Page(props) {
 	const searchParams = await props.searchParams
+	const apiData = getAllContentVersions({
+		contentFolder: '/developers/api',
+		specificationFolder: './specifications'
+	})
+
 	return (
 		<PageMargin>
 			<ValidatorResultPageTitle />
@@ -35,6 +41,7 @@ export default async function Page(props) {
 					queryParams={{
 						serviceUrl: searchParams.uri
 					}}
+					apiData= {apiData}
 				/>
 			</Suspense>
 		</PageMargin>
