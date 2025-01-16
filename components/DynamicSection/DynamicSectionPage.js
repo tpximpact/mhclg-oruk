@@ -4,22 +4,21 @@ import { MarkdownContent } from '@/components/NamedMarkdownPage'
 import styles from './DynamicSection.module.css'
 import { PageThumbnail } from '@/components/PageThumbnail'
 
-import Columns from '@/components/Columns'
+// import Columns from '@/components/Columns'
 
 export const DynamicSectionPage = async ({ 
-	date, 
+	//date, 
 	content, 
 	...linkedPages 
 }) => {
 
 	return (
 		<section>
-			{typeof(date)} {date}
 			<MarkdownContent autoMenu={true} raw={content} />
-			<Columns layout='42'>
+			{/*<Columns layout='42'>
 				<div className={styles.articleDate}>Updated:{date}</div>
 				<div></div>
-			</Columns>
+			</Columns>*/}
 			<Links {...linkedPages} />
 		</section>
 	)
