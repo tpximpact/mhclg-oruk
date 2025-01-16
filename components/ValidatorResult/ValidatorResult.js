@@ -8,9 +8,7 @@ import styles from './ValidatorResult.module.css'
 
 import { formatResults } from './formatResults'
 
-export const ValidatorResult = ({ 
-	result,
-apiData }) => {
+export const ValidatorResult = ({ result, apiData }) => {
 	const endpoints = useMemo(() => formatResults(result.result), [result])
 
 	useEffect(() => {
@@ -21,13 +19,13 @@ apiData }) => {
 		<div className={styles.result}>
 			<Title result={result.result} />
 			{Object.keys(endpoints).map((k, i) => (
-				<Endpoint 
-				profile={result.result.service.profile}
-				rootPath={result.result.service.url} 
-				key={i} 
-				path={k} 
-				data={endpoints[k]} 
-				apiData={apiData}
+				<Endpoint
+					profile={result.result.service.profile}
+					rootPath={result.result.service.url}
+					key={i}
+					path={k}
+					data={endpoints[k]}
+					apiData={apiData}
 				/>
 			))}
 		</div>

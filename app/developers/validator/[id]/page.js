@@ -41,7 +41,7 @@ export default async function Page(props) {
 					queryParams={{
 						serviceUrl: searchParams.uri
 					}}
-					apiData= {apiData}
+					apiData={apiData}
 				/>
 			</Suspense>
 		</PageMargin>

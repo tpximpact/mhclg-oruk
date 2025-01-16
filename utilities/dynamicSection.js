@@ -1,4 +1,3 @@
-
 // manage a section that is generated on the fly - ie news
 import fs from 'fs'
 import { join } from 'path'
@@ -81,13 +80,13 @@ const statFile = contentPath => {
 }
 
 const fileLastModified = contentPath => {
-	console.log("fileLastModifed called on " + contentPath )
+	console.log('fileLastModifed called on ' + contentPath)
 	const stats = statFile(contentPath)
-	console.log(JSON.stringify(stats,null,2))
-	const t = stats ? stats.mtime.toLocaleDateString('en-GB'): null 
-	if (t === "01/01/1980") {
-		console.log("ERRORROROROROROR")
+	console.log(JSON.stringify(stats, null, 2))
+	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null
+	if (t === '01/01/1980') {
+		console.log('ERRORROROROROROR')
 	}
-	console.log (stats.mtime + " => " + t)
+	console.log(stats.mtime + ' => ' + t)
 	return t
 }
