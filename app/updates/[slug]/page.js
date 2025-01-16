@@ -1,3 +1,5 @@
+'use server'
+
 import { DynamicSectionPage } from '@/components/DynamicSection'
 import { getDynamicPageContent } from '@/utilities/dynamicSection'
 import { PageMargin } from '@/components/PageMargin'
