@@ -3,6 +3,7 @@
 import { useEffect, useMemo } from 'react'
 import { Title } from './Title'
 import { Endpoint } from './Endpoint'
+
 import styles from './ValidatorResult.module.css'
 
 import { formatResults } from './formatResults'
