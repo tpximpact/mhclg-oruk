@@ -73,6 +73,7 @@ const DocsTab = ({apiData, path}) => {
 	
 
 return <Path
+twirledOpen
 hidePathTitle={true}
 path={path}
 allData={apiData}
