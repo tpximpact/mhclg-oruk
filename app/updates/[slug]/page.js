@@ -7,9 +7,6 @@ const inFolder = 'updates'
 export default async function Page(props) {
 	const params = await props.params
 	const data = getDynamicPageContent(inFolder, params.slug)
-	console.log("page")
-	console.log(data)
-	console.log("/page")
 	return (
 		<PageMargin>
 			<DynamicSectionPage {...data} />
