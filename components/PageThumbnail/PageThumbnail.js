@@ -30,7 +30,7 @@ const Payload = ({ title, date, slug, suppressDetails, offsite }) => (
 		{!suppressDetails && (
 			<>
 				{slug && <span className={styles.itemBody}>{slug}</span>}
-				{date && <span className={styles.itemDate}>{date}</span>}
+				{/*date && <span className={styles.itemDate}>{date}</span>*/}
 			</>
 		)}
 	</span>
