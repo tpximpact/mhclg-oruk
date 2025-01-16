@@ -49,7 +49,7 @@ const fileThumbnail = (rootContentFolder, file) => {
 	return {
 		title: metadata.title,
 		path: slugify(contentPath),
-		date: getDate(metadata, contentPath),
+		//date: getDate(metadata, contentPath),
 		slug: metadata.slug
 	}
 }
@@ -80,6 +80,9 @@ const statFile = contentPath => {
 }
 
 const fileLastModified = contentPath => {
+	console.log("fileLastModifed called on " + contentPath )
 	const stats = statFile(contentPath)
-	return stats ? stats.mtime.toLocaleDateString('en') : null // this is the right formst for netlify... locally en-GB is right
+	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null 
+	console.log (stats.mtime + " => " + t)
+	return t
 }
