@@ -17,7 +17,7 @@ A community to help you [https://openreferraluk.org/](https://openreferraluk.org
 
 ## 1. The problem
 
-> “We were investing in the website as a whole. We did an audit and the directories we had were the worst performing with poor user experience. We got the service teams onboard to tackle the problem centrally.” 
+> “We were investing in the website as a whole. We did an audit and the directories we had were the worst performing with poor user experience. We got the service teams onboard to tackle the problem centrally.”
 
 <cite>Head of user experience, council adopter</cite>
 
@@ -35,12 +35,10 @@ Additionally, millions of visits to council websites and other directories seek 
 
 <cite>- Council adopter</cite>
 
-
 Data that is collected, assured, and reused can break the negative cycle. Coordinating service teams to use the same data (via the ORUK data standard and implementing assurance will streamline how the organisation manages and shares community data.
 
 Example business model
-![Business model](/adopt/example_business_model.png "Example business model")
-
+![Business model](/adopt/example_business_model.png 'Example business model')
 
 This unlocks several benefits:
 
@@ -51,10 +49,9 @@ This unlocks several benefits:
 
 ## 3. The power of sharing a common standard
 
-> “People with serious mental illness struggle to find the information they need online. The NHS found that it was an important resource, but there were lots of local directories and it needed a better approach across them all.” 
+> “People with serious mental illness struggle to find the information they need online. The NHS found that it was an important resource, but there were lots of local directories and it needed a better approach across them all.”
 
 <cite>Community Action Network</cite>
-
 
 When councils, Integrated Care Boards, and charities use the same standard (e.g. ORUK), they can easily share data and the data management costs, leading to:
 
@@ -69,7 +66,7 @@ ORUK helps organisations create and maintain data that is more trusted, reusable
 
 ## 4. The benefits of using ORUK
 
-> “We selected ORUK because we want to future proof our system and get the benefits once others have adopted. The guidance was good, and the Open API means we can push data elsewhere.” 
+> “We selected ORUK because we want to future proof our system and get the benefits once others have adopted. The guidance was good, and the Open API means we can push data elsewhere.”
 
 <cite>Head of community, Council adopter</cite>
 
@@ -83,11 +80,11 @@ It also offers a range of additional benefits:
 
 ## 5. What’s the impact?
 
-> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.” – 
+> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.” –
 
 <cite>Adult Social Care worker in council using tool developed with ORUK standard</cite>
 
-### Improved referrals to universal services 
+### Improved referrals to universal services
 
 ORUK adopters aim to improve resident outcomes by connecting residents more effectively to universal services. In 2023/24, 2.1 million adult social care requests were made, with 600k (29%) signposted to universal services and 590k (28%) receiving no service. Millions more requests come from SEND and Children’s care each year.
 
@@ -135,16 +132,15 @@ While cost savings can't be attributed to this ORUK directly, improving communit
 
 ### 3) Divert demand away from the council
 
-> “We wanted to find a way to work better with the voluntary and community sectors. We wanted better prevention, and to help shift away demand from council services…we have Adult Social Care workers, health professionals, and community workers using it.” 
+> “We wanted to find a way to work better with the voluntary and community sectors. We wanted better prevention, and to help shift away demand from council services…we have Adult Social Care workers, health professionals, and community workers using it.”
 
 <cite>Council adopter</cite>
-
 
 By better utilising community services, demand on overstretched council services can be reduced
 
 ### 4) Help inform the commissioning of services and improve management information
 
-> “Front door staff and social prescribers find a huge benefit, and commissioners can see what is happening across the country. If there is a geographical gap” 
+> “Front door staff and social prescribers find a huge benefit, and commissioners can see what is happening across the country. If there is a geographical gap”
 
 <cite>Community Action Network</cite>
 
@@ -152,7 +148,7 @@ Collecting data across the area will help service teams identify gaps in service
 
 ### 5) Allow for bespoke tools can be built on top of the data
 
-> “Our anti-poverty team is looking to reuse the data in some way... AI could also be a hook to get people involved in the future.” 
+> “Our anti-poverty team is looking to reuse the data in some way... AI could also be a hook to get people involved in the future.”
 
 <cite>Council adopter</cite>
 
@@ -170,7 +166,6 @@ These savings are not necessarily ‘cashable’, but reduced duplication and ef
 <h4>Savings estimate</h4>
 <p>We have estimated that the following (example Council data in brackets)</p>
 
-
 <h5>Social workers (front door staff)</h5>
 <p>
 10% of all social workers (16)<br/>
@@ -178,7 +173,6 @@ These savings are not necessarily ‘cashable’, but reduced duplication and ef
 Fully loaded cost for employee (£51.8k)<br/>
 Total cost (£120.8k)
 </p>
-
 
 <h5>Community worker</h5>
 <p>
@@ -210,7 +204,6 @@ Service teams often use different tools to store and manage community service da
 #### Estimated savings
 
 The estimated the cost involved for a typical upper-tier council.
-
 
 <table style="width:90vw;">
    <thead>
@@ -299,9 +292,7 @@ The cost of implementation depends on your chosen business model. We have heard 
 
 Example business model
 
-![Business model](/adopt/leadership.PNG "Example business model")
-
-
+![Business model](/adopt/leadership.PNG 'Example business model')
 
 Guidance on making these decisions is available in the accompanying [project initiation document](/adopt/03_pid). These will be offset by what is currently spent across your service teams.
 
