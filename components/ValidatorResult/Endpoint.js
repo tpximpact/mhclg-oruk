@@ -69,14 +69,16 @@ const ResponseTab = ({
 	}
 
 	const fetchData = async () => {
+		src = "https://dummyjson.com/quotes"
 		try {
 		  const response = await fetch(src);
 		  if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
 		  }
 		  const data = await response.json();
-		  setResponse(data)
+		  
 		  setStatusSuccess()
+		  setResponse(data)
 		} catch (error) {
 			setStatusError()
 			setResponse('Failed to fetch data:' + error)
@@ -98,10 +100,8 @@ return(<div>
 	status === RESPONSE_STATUS.PENDING && <><Spinner /></>
 }
 {
-	status === RESPONSE_STATUS.SUCCESS && <div>
-		{
-response
-		}
+	status === RESPONSE_STATUS.SUCCESS && <div style={{marginTop: "1rem"}}>
+<JSONLiteral data={response} />
 		</div>
 }
 </div>)
@@ -117,7 +117,7 @@ const Error = ({message}) => <div
 		padding: "2rem",
 		fontWeight: "900"
 	}}
->Error: Failed to load JSON. {message}</div>
+>Error: Failed to load JSON. {message} <span style={{fontWeight: 300}}><br />(This may be a Cross Origin Resource Sharing error - try loading the API in a new window instead)</span></div>
 
 const DocsTab = ({apiData, path}) => {
 	const endpoints = apiData.rootSpec.parsed.paths
