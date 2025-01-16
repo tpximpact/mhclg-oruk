@@ -1,3 +1,4 @@
+
 // manage a section that is generated on the fly - ie news
 import fs from 'fs'
 import { join } from 'path'
@@ -82,7 +83,7 @@ const statFile = contentPath => {
 const fileLastModified = contentPath => {
 	console.log("fileLastModifed called on " + contentPath )
 	const stats = statFile(contentPath)
-	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null 
+	const t = stats ? stats.mtime.toLocaleDateString('en-GB')+ "r" : null 
 	console.log (stats.mtime + " => " + t)
 	return t
 }
