@@ -81,8 +81,8 @@ const statFile = contentPath => {
 
 const fileLastModified = contentPath => {
 	const stats = statFile(contentPath)
-	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null 
-	console.log (t + " " + contentPath)
-	console.log (JSON.stringify(stats.mtime)) 
+	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null
+	console.log(t + ' ' + contentPath)
+	console.log(JSON.stringify(stats.mtime))
 	return t
 }
