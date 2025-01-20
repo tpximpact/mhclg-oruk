@@ -39,18 +39,20 @@ async function updateFrontMatter(filePath, options = {}) {
 
     // Read file contents
     const fileContent = await fs.readFile(filePath, 'utf8');
-
+let frontMatter, content
     // Parse front matter
     const frontMatterRegex = /^---\n(.*?)\n---\n/s;
     const match = fileContent.match(frontMatterRegex);
     if (!match) {
-      throw new Error('No front matter found in the file.');
-    }
+      frontMatter = {}
+	  content = fileContent
+    } else {
     const frontMatterYaml = match[1];
-    const content = fileContent.replace(frontMatterRegex, '');
+    content = fileContent.replace(frontMatterRegex, '');
 
     // Load front matter YAML
-    const frontMatter = jsYaml.load(frontMatterYaml);
+    frontMatter = jsYaml.load(frontMatterYaml);
+	
 
     // Check if date property exists and is current
     const currentDate = new Date();
@@ -66,7 +68,7 @@ async function updateFrontMatter(filePath, options = {}) {
         return;
       }
     }
-
+}
     // Update date property
     frontMatter[dateProperty] = date;
 

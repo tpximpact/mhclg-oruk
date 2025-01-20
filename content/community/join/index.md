@@ -1,3 +1,6 @@
+---
+modified: '2025-01-20T11:11:23.369Z'
+---
 # Keep informed
 
 Stay up to date on the latest news from the community and developments to the standard via our newsletter. We aim to publish once a month.
