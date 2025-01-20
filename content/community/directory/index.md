@@ -1,3 +1,6 @@
+---
+modified: '2025-01-20T11:11:23.369Z'
+---
 # Verified feed directory
 
 Browse verified providers and join the network of trusted compliant services.
