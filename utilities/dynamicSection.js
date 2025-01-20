@@ -40,7 +40,10 @@ const getAllFiles = contentFolder => {
 		.filter(f => f !== '.DS_Store')
 }
 
-const getDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)
+const getDate = (metadata, contentPath) => {
+	const d = metadata.modified || fileLastModified(contentPath)
+	return d.toLocaleDateString('en-GB')
+}
 
 const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)
@@ -81,6 +84,5 @@ const statFile = contentPath => {
 
 const fileLastModified = contentPath => {
 	const stats = statFile(contentPath)
-	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null
-	return t
+	return stats.mtime
 }
