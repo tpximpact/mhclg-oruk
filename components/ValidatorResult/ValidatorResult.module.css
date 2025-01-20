@@ -1,8 +1,3 @@
-.header {
-	font-weight: 700;
-	margin-bottom: 1rem;
-}
-
 .title {
 	font-size: 1.6rem;
 	margin-top: 0;
@@ -53,47 +48,6 @@
 	font-family: var(--font-mono);
 }
 
-.section {
-	margin-bottom: 1rem;
-	border: 2px solid var(--validatorResult-black);
-}
-
-.endpointContainer h2 {
-	flex: 1;
-	color: var(--validatorResult-black);
-}
-
-.endpointContainer .endpointRight {
-	flex: 0, 0, 100px;
-	display: flex;
-}
-
-.endpointRight a {
-	flex: 1;
-	display: block;
-	margin-top: auto;
-}
-
-.endpointContainer {
-	border-bottom: 1px solid var(--validatorResult-black);
-	padding: 1rem;
-	background: var(--validatorResult-background);
-	display: flex;
-}
-
-.light {
-	font-weight: 500;
-	color: var(--validatorResult-black);
-	display: block;
-	font-size: 1rem;
-}
-
-.endpoint {
-	font-family: var(--font-mono);
-	font-size: 2rem;
-	font-weight: 900;
-}
-
 .icon {
 	background: var(--statuscolor);
 	min-height: 6rem;
@@ -128,11 +82,89 @@
 	jborder: 2px solid var(--statuscolor);
 }
 
-.payload {
-	padding: 1rem;
-}
-
 .message {
 	margin-left: 2rem;
 	margin-top: 1rem;
+}
+
+.section {
+	margin-bottom: 1rem;
+	border: 2px solid var(--validatorResult-black);
+}
+
+.endpointContainer {
+	padding: 1rem;
+	background: var(--validatorResult-background);
+	display: flex;
+	justify-content: space-between;
+
+	.endpointContainerLeft {
+		flex: 0 0 40%;
+
+		.light {
+			font-weight: 500;
+			color: var(--validatorResult-black);
+			display: block;
+			font-size: 1rem;
+			margin-bottom: 0.8rem;
+		}
+	}
+
+	.endpointContainerRight {
+		flex: 1;
+		text-align: right;
+	}
+}
+
+.tabs {
+	& button {
+		appearance: none;
+		padding: 1rem 3rem;
+		background: transparent;
+		border: 0;
+		border-bottom: 4px transparent solid;
+		margin: 0 2rem 0 0;
+		cursor: pointer;
+		text-align: left;
+	}
+
+	& button.activeTab {
+		border-bottom: 4px solid black;
+	}
+}
+
+.tabContent {
+	padding: 1rem;
+}
+
+.buttonLink {
+	border: 0;
+	box-sizing: border-box;
+	color: rgb(11, 12, 12);
+	cursor: pointer;
+	display: inline;
+	font-family: Inter, 'Inter Fallback';
+	font-size: 19px;
+	font-style: normal;
+	font-weight: 700;
+	height: auto;
+	line-height: 28.5px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	overflow-wrap: break-word;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	text-align: start;
+	text-decoration: underline;
+	text-decoration-color: rgb(117, 190, 160);
+	text-decoration-line: underline;
+	text-decoration-thickness: 10%;
+	text-underline-position: under;
+	width: auto;
+	-webkit-font-smoothing: antialiased;
+	background: transparent;
 }

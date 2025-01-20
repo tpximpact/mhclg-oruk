@@ -22,7 +22,13 @@ const OffsiteThumbnail = ({ path, suppressDetails, ...props }) => (
 	</a>
 )
 
-const Payload = ({ title, date, slug, suppressDetails, offsite }) => (
+const Payload = ({
+	title,
+	//date,
+	slug,
+	suppressDetails,
+	offsite
+}) => (
 	<span>
 		<span className={styles.itemHeading}>
 			{title} {offsite && '⤤'}
@@ -30,7 +36,7 @@ const Payload = ({ title, date, slug, suppressDetails, offsite }) => (
 		{!suppressDetails && (
 			<>
 				{slug && <span className={styles.itemBody}>{slug}</span>}
-				{date && <span className={styles.itemDate}>{date}</span>}
+				{/*date && <span className={styles.itemDate}>{date}</span>*/}
 			</>
 		)}
 	</span>
