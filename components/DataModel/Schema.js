@@ -12,16 +12,16 @@ export const Schema = ({ parentKeyName, data, allSchemas }) => (
 
 export const SchemaProperties = ({ data, allSchemas }) => (
 	<DocumentationFeatureSection title='Schema'>
-	
-		{data.properties && Object.keys(data.properties).map((pk, i) => (
-			<SchemaProperty
-				key={i}
-				parentKeyName={pk}
-				data={data.properties[pk]}
-				allSchemas={allSchemas}
-				required={isRequiredBySchema(pk, data)}
-			/>
-		))}
+		{data.properties &&
+			Object.keys(data.properties).map((pk, i) => (
+				<SchemaProperty
+					key={i}
+					parentKeyName={pk}
+					data={data.properties[pk]}
+					allSchemas={allSchemas}
+					required={isRequiredBySchema(pk, data)}
+				/>
+			))}
 	</DocumentationFeatureSection>
 )
 
