@@ -80,16 +80,7 @@ const statFile = contentPath => {
 }
 
 const fileLastModified = contentPath => {
-	console.log('fileLastModifed called on ' + contentPath)
 	const stats = statFile(contentPath)
 	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null
-	console.log(t + ' ' + contentPath)
-	console.log(JSON.stringify(stats.mtime))
-	console.log(JSON.stringify(stats, null, 2))
-	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null
-	if (t === '01/01/1980') {
-		console.log('ERRORROROROROROR')
-	}
-	console.log(stats.mtime + ' => ' + t)
 	return t
 }
