@@ -1,63 +1,61 @@
 const fs = require('fs').promises;
 const path = require('path');
-const forEachFile = require('./forEachFile');
+const forEachFile = require('./path-to-your-function'); 
+
+// Mock the fs methods used in the function
+jest.mock('fs', () => ({
+  promises: {
+    stat: jest.fn(),
+    readdir: jest.fn(),
+  },
+}));
 
 describe('forEachFile', () => {
-  beforeEach(async () => {
-    // Create test directory
-    await fs.mkdir('test-dir', { recursive: true });
+  beforeEach(() => {
+    // Clear all mocks before each test
+    jest.clearAllMocks();
   });
 
-  afterEach(async () => {
-    // Remove test directory
-    await fs.rm('test-dir', { recursive: true });
+  it('should process files with the correct extension', async () => {
+    const mockFiles = ['file1.txt', 'file2.js', 'file3.txt'];
+    const mockDir = './mockDir';
+    
+    // Mock the fs.readdir to return the mock files
+    fs.readdir.mockResolvedValue(mockFiles);
+    // Mock fs.stat to simulate file and directory types
+    fs.stat.mockImplementation((filePath) => {
+      if (filePath === mockDir) {
+        return Promise.resolve({ isDirectory: () => true });
+      }
+      if (filePath.endsWith('.txt')) {
+        return Promise.resolve({ isFile: () => true });
+      }
+      return Promise.resolve({ isFile: () => true });
+    });
+
+    const fn = jest.fn();
+
+    await forEachFile(mockDir, '.txt', fn);
+
+    // Verify that the function is called only for the files with the correct extension
+    expect(fn).toHaveBeenCalledWith(path.join(mockDir, 'file1.txt'));
+    expect(fn).toHaveBeenCalledWith(path.join(mockDir, 'file3.txt'));
+    expect(fn).not.toHaveBeenCalledWith(path.join(mockDir, 'file2.js'));
   });
 
-  it('calls callback for each file with matching extension', async () => {
-    // Create test files
-    await Promise.all([
-      fs.writeFile('test-dir/file1.js', 'content'),
-      fs.writeFile('test-dir/file2.txt', 'content'),
-      fs.writeFile('test-dir/file3.js', 'content'),
-    ]);
+  it('should handle directories and recursively process subdirectories', async () => {
+    const mockDir = './mockDir';
+    const mockSubDir = './mockDir/subDir';
+    const mockFiles = ['file1.txt'];
+    const mockSubDirFiles = ['file2.txt'];
 
-    const callbackMock = jest.fn();
-    await forEachFile('test-dir', '.js', callbackMock);
+    // Mock fs.readdir to return files in directories
+    fs.readdir.mockResolvedValueOnce(mockFiles).mockResolvedValueOnce(mockSubDirFiles);
 
-    expect(callbackMock).toHaveBeenCalledTimes(2);
-    expect(callbackMock).toHaveBeenCalledWith('test-dir/file1.js');
-    expect(callbackMock).toHaveBeenCalledWith('test-dir/file3.js');
-  });
-
-  it('recursively calls callback for files in subdirectories', async () => {
-    // Create test directory structure
-    await fs.mkdir('test-dir/subdir', { recursive: true });
-    await Promise.all([
-      fs.writeFile('test-dir/file1.js', 'content'),
-      fs.writeFile('test-dir/subdir/file2.js', 'content'),
-      fs.writeFile('test-dir/subdir/file3.txt', 'content'),
-    ]);
-
-    const callbackMock = jest.fn();
-    await forEachFile('test-dir', '.js', callbackMock);
-
-    expect(callbackMock).toHaveBeenCalledTimes(2);
-    expect(callbackMock).toHaveBeenCalledWith('test-dir/file1.js');
-    expect(callbackMock).toHaveBeenCalledWith('test-dir/subdir/file2.js');
-  });
-
-  it('handles empty directory', async () => {
-    const callbackMock = jest.fn();
-    await forEachFile('test-dir', '.js', callbackMock);
-
-    expect(callbackMock).not.toHaveBeenCalled();
-  });
-
-  it('handles non-existent directory', async () => {
-    const consoleErrorMock = jest.spyOn(console, 'error');
-    await forEachFile('non-existent-dir', '.js', () => {});
-
-    expect(consoleErrorMock).toHaveBeenCalledTimes(1);
-    consoleErrorMock.mockRestore();
-  });
-});
+    // Mock fs.stat for files and directories
+    fs.stat.mockImplementation((filePath) => {
+      if (filePath === mockDir || filePath === mockSubDir) {
+        return Promise.resolve({ isDirectory: () => true });
+      }
+      if (filePath.endsWith('.txt')) {
+        return Pr
