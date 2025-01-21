@@ -73,7 +73,7 @@ This project will focus on proving the concept, but will include partners outsid
 - Development of other taxonomies
 
 ## 5. Benefits
-ORUK has created a separate business case document for councils to start up an implementation project. This can be found here. (link)
+ORUK has created a separate business case document for councils to start up an implementation project. This can be found [here](/adopt/02_business_case)
 
 The following outlines the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate date.
 
