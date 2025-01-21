@@ -41,8 +41,9 @@ const getAllFiles = contentFolder => {
 }
 
 const getDate = (metadata, contentPath) => {
-	const d = metadata.modified || fileLastModified(contentPath)
-	return d.toLocaleDateString('en-GB')
+	const raw = metadata.modified ||  fileLastModified(contentPath)
+	const date = new Date(raw)
+	return date.toLocaleDateString('en-GB')
 }
 
 const fileThumbnail = (rootContentFolder, file) => {
@@ -83,6 +84,7 @@ const statFile = contentPath => {
 }
 
 const fileLastModified = contentPath => {
+	// NB mtime will be default if the file has been theough git - which is why we bake them into metadata
 	const stats = statFile(contentPath)
 	return stats.mtime
 }
