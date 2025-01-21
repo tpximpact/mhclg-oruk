@@ -72,7 +72,17 @@ This project will focus on proving the concept, but will include partners outsid
 - Additional partners collecting or using data
 - Development of other taxonomies
 
-## 5. Stakeholders
+## 5. Benefits
+ORUK has created a separate business case document for councils to start up an implementation project. This can be found here. (link)
+
+The following outlines the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate date.
+
+- Aggregating data from various sources will provide efficiency savings for those currently managing their own service directories through reducing duplication of effort and focussing assurance on a single data repository.
+- ORUK's rich data set will help people find the right service and decide to attend without needing further information.
+Structured accurate data will improve the results of AI and enable integration of the data directly into frontline pathways, interventions, processes and applications rather than creating yet another service directory. 
+- This will give access to support for patients awaiting surgery, assessments, or post-treatment support; or to support an existing intervention or where a threshold has been missed. It also empowers self-care, helping prevent crises and reducing reliance on statutory services.
+
+## 6. Stakeholders
 
 While the Transformation/Digital team is expected to be involved in implementing this project, this may not always be the case. Therefore, they are listed below, along with other key stakeholders who should be kept informed through highlight reports, deliverables, and invitations to data demos. Some may also have roles in governance.
 
@@ -86,7 +96,7 @@ While the Transformation/Digital team is expected to be involved in implementing
 - Finance Director. Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking sayings from reduced enquiries as people self-serve preventing the need for formal support
 - Third sector organisations. Seek efficient promotion of services through well-organised data sharing
 
-## 6. Deliverables
+## 7. Deliverables
 
 | Tranche                | Deliverable                                            | Quality criteria                                                                                                                                                                      |
 | :--------------------- | :----------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -99,7 +109,7 @@ While the Transformation/Digital team is expected to be involved in implementing
 | Performance monitoring | Management report                                      | Report showing service numbers by service type and coverage                                                                                                                           |
 | Project close          | Recommendations for further scaling                    | Conclusions from the discovery exercise, including the data collection and aggregation processes, data consumption, and management reporting.                                         |
 
-## 7. Budget
+## 8. Budget
 
 These are illustrative figures only. Costs will vary based on your specific circumstances.
 
@@ -113,7 +123,7 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | Management report    | Covered by existing resources                                               |
 | **TOTAL**            | **£45k**                                                                    |
 
-## 8. Risks and issues
+## 9. Risks and issues
 
 | Risk/Issue                                                                                                                                                                                                                                                                                    | Mitigation                                                                                                                                                                                                                                                                                                         | Likelihood | Impact |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ |
@@ -134,7 +144,7 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | **Infrastructure**: There is a risk that existing software won’t be compatible with Open Referral                                                                                                                                                                                             | Decisions will need to be made to allow an existing application to be amended to work with ORUK or to move to a new application. Procurement should ensure any software purchased is compatible with appropriate data standards.                                                                                   | MEDIUM     | MEDIUM |
 | **Infrastructure**: There is a risk that the software market is not robust enough to deliver required tools                                                                                                                                                                                   | Work with suppliers to co-produce required software.                                                                                                                                                                                                                                                               | MEDIUM     | MEDIUM |
 
-## 9. Governance and structure
+## 10. Governance and structure
 
 The Sponsor is the local council. A representative of the council will be the project executive. This should be a member of the Senior Leadership Team and preferably someone who is on a council area (place-based) board e.g. Health & Wellbeing Board.
 
@@ -144,7 +154,7 @@ The council should appoint a project manager who will set up a project board wit
 
 The project will follow the stage plan given at the end of this document. (Section 15)
 
-## 10. Approach and methodology
+## 11. Approach and methodology
 
 The following roles are key contributors to the model, with the same organisation potentially taking on multiple roles simultaneously:
 
@@ -160,7 +170,7 @@ There is no fixed blueprint for implementing this data standard, but the followi
 
 ![A diagram showing governance and quality processes](/adopt/leadership.png 'Leadership')
 
-### 10.1 Leadership, governance and oversight
+### 11.1 Leadership, governance and oversight
 
 #### Discovery exercise
 
@@ -218,7 +228,7 @@ The following considerations are given:
 
 **Deliverable**: discovery landscape, draft business model
 
-### 10.2 Collect & Manage
+### 11.2 Collect & Manage
 
 Data collection already happens across various teams and organisations including the providers themselves. This process should continue but within a federated model that better coordinates contributions into a single repository.
 
@@ -240,7 +250,7 @@ Ultimately, all service information needs to be aggregated into a single reposit
 
 **Deliverable**: collection process map (for business model)
 
-### 10.3 Assure Data Quality
+### 11.3 Assure Data Quality
 
 Assurance focuses on data quality, not service quality, which can often cause confusion. It’s a resource-intensive process that is currently handled by the ‘collector,’ but it’s recommended that this responsibility be elevated to a dedicated data custodian due to the significant benefits of having accurate, well-categorised data. Software used in this process should be sending reminders at appropriate points to encourage data quality checks to keep data up to date and accurate.
 
@@ -258,7 +268,7 @@ Categorising services correctly is crucial for identifying appropriate services 
 
 **Deliverable**: repository of trusted data.
 
-### 10.4 Publish & Reuse
+### 11.4 Publish & Reuse
 
 The main benefit of implementing ORUK across a council is that data, once collected and verified, can be reused multiple times. The easiest way to share this data is through APIs, though simpler options like CSVs or data links should also be available for smaller organisations without technical resources.
 
@@ -266,7 +276,7 @@ The main benefit of implementing ORUK across a council is that data, once collec
 
 The ORUK website (ADD LINK) provides detailed guidance, along with the technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website. The website also has a list of suppliers offering solutions for councils that need help.
 
-### 10.5 Re-use of the data
+### 11.5 Re-use of the data
 
 There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
 
@@ -292,7 +302,7 @@ Well-structured data makes AI more effective. A chatbot that helps users find lo
 
 **Deliverables**: A compliant API, Demo of data being reused
 
-### 10.6 Performance Monitoring
+### 11.6 Performance Monitoring
 
 A coordinated approach across the council will provide valuable data at a strategic level, including reports on service gaps, demand by area, number of providers, and feedback from frontline workers and citizens. This data will give commissioners and policymakers better insights to support community resilience, prevention, and early help.
 
@@ -308,24 +318,24 @@ Data quality feedback is where frontline workers and citizens can play a key rol
 
 **Deliverable:** Management Report
 
-## 11. Project Close
+## 12. Project Close
 
 This project aims to prove the concept and gather insights to recommend how to scale it across the council area. The listed deliverables will support this, but as the proof of concept concludes, focus should be on drawing conclusions and outlining the next steps. Scaling may require several efforts to reach the point where it becomes part of the local culture and operations. The goal is that the proof of concept demonstrates enough value to justify this effort.
 
 **Deliverable:** Recommendations for scaling
 
-## 12. Communication plan
+## 13. Communication plan
 
 Communications will follow council guidelines but will ensure stakeholders stay informed through regular highlight reports, a demonstration of the collection, aggregation, and use of data, and the recommendations for further scaling.
 
-## 13. Approval and sign-off
+## 14. Approval and sign-off
 
 This PID should be signed off by the project board and the council area board.
 
-## 14. Conclusion
+## 15. Conclusion
 
 The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout.
 
-## 15. Implementation Plan with timeline
+## 16. Implementation Plan with timeline
 
 The [table](/adopt/gantt) outlines the recommended timescales, suggesting the proof of concept should be completed within 12 months to maintain the potential partners/beneficiaries interest. It focuses on deliverables and tasks, which will need full consideration by the council.
