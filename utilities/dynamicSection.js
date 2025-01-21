@@ -2,6 +2,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import * as matter from 'gray-matter'
+import { parseMarkdown } from '@/utilities/parseMarkdown'
 import { PATHS } from './PATHS'
 
 const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
@@ -9,14 +10,14 @@ const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
 export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, `${slug}.md`)
 	const fileContents = readFile(file)
-	const { data: metadata, content } = matter(fileContents)
+	const { frontmatter, content } = parseMarkdown(fileContents)
 	const allFiles = getAllFiles(folder)
 	const index = allFiles.findIndex(file => slugify(file) === slug)
 
 	return {
-		date: getDate(metadata, file),
-		metadata,
-		content,
+		date: getDate(frontmatter, file),
+		metadata: frontmatter,
+		html: content,
 		next: buildLinkedItem(index + 1, allFiles, folder),
 		previous: buildLinkedItem(index - 1, allFiles, folder)
 	}
