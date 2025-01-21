@@ -1,17 +1,13 @@
 'use server'
 import { Children, cloneElement } from 'react'
-import { marked } from 'marked'
+
 import parse from 'html-react-parser'
 import Columns from '@/components/Columns'
 import styles from './Menu.module.css'
 import Link from 'next/link'
-import { MarkdownError } from './MarkdownError'
+//import { MarkdownError } from './MarkdownError'
 
-export const MarkdownContent = async ({ raw, autoMenu, afterLinks }) => {
-	const html = marked.parse(raw)
-	if (!html) {
-		return <MarkdownError />
-	}
+export const MarkdownContent = async ({ html, autoMenu, afterLinks }) => {
 	const ContentComponent = autoMenu ? MarkdownContentWithMenu : MarkdownContentNoMenu
 	return <ContentComponent html={html} afterLinks={afterLinks} />
 }
