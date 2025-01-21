@@ -75,7 +75,7 @@ This project will focus on proving the concept, but will include partners outsid
 ## 5. Benefits
 ORUK has created a separate business case document for councils to start up an implementation project. This can be found [here](/adopt/02_business_case)
 
-The following outlines the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate date.
+The following 3 bullet points outline the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate date.
 
 - Aggregating data from various sources will provide efficiency savings for those currently managing their own service directories through reducing duplication of effort and focussing assurance on a single data repository.
 - ORUK's rich data set will help people find the right service and decide to attend without needing further information.
