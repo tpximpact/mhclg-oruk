@@ -1,6 +1,7 @@
 ---
 modified: '2025-01-20T11:11:23.665Z'
 ---
+
 # Verified feed availability
 
 View organisations and suppliers who have successfully implemented compliant ORUK data feeds. This resource provides assurance that your peers are using trusted, interoperable standards, putting you in good company.

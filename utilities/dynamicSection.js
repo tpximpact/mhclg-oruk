@@ -41,7 +41,7 @@ const getAllFiles = contentFolder => {
 }
 
 const getDate = (metadata, contentPath) => {
-	const raw = metadata.modified ||  fileLastModified(contentPath)
+	const raw = metadata.modified || fileLastModified(contentPath)
 	const date = new Date(raw)
 	return date.toLocaleDateString('en-GB')
 }

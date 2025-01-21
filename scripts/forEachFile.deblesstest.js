@@ -1,4 +1,4 @@
-const fs = require('fs').promises;
+/*const fs = require('fs').promises;
 const path = require('path');
 const forEachFile = require('./path-to-your-function'); 
 
@@ -59,3 +59,4 @@ describe('forEachFile', () => {
       }
       if (filePath.endsWith('.txt')) {
         return Pr
+*/

@@ -73,13 +73,14 @@ This project will focus on proving the concept, but will include partners outsid
 - Development of other taxonomies
 
 ## 5. Benefits
+
 ORUK has created a separate business case document for councils to start up an implementation project. This can be found [here](/adopt/02_business_case)
 
 The following 3 bullet points outline the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate date.
 
 - Aggregating data from various sources will provide efficiency savings for those currently managing their own service directories through reducing duplication of effort and focussing assurance on a single data repository.
 - ORUK's rich data set will help people find the right service and decide to attend without needing further information.
-Structured accurate data will improve the results of AI and enable integration of the data directly into frontline pathways, interventions, processes and applications rather than creating yet another service directory. 
+  Structured accurate data will improve the results of AI and enable integration of the data directly into frontline pathways, interventions, processes and applications rather than creating yet another service directory.
 - This will give access to support for patients awaiting surgery, assessments, or post-treatment support; or to support an existing intervention or where a threshold has been missed. It also empowers self-care, helping prevent crises and reducing reliance on statutory services.
 
 ## 6. Stakeholders
