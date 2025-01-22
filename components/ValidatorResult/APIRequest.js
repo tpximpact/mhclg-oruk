@@ -44,8 +44,11 @@ export const APIRequest = ({ src }) => {
 
 	return (
 		<div>
-			
-			<ParametersWidget dispatchRequest={dispatchRequest} status={status} baseURL={src} />
+			<ParametersWidget 
+			dispatchRequest={dispatchRequest} 
+			status={status} 
+			baseURL={src}
+			initialIDValue="someID" />
 			<Result status={status} response={response} />
 			
 		</div>
@@ -89,8 +92,14 @@ const ParametersWidgetRoot = ({ baseURL, status, dispatchRequest }) => (
 	</div>
 )
 
-const ParametersWidgetID = ({ baseURL, status, dispatchRequest, initalIDValue }) => {
-	const [idValue, setIdValue] = initalIDValue
+const ParametersWidgetID = ({ 
+	baseURL, 
+	status, 
+	dispatchRequest,
+	 initialIDValue
+	 }) => {
+	
+	const [idValue, setIdValue] = useState(initialIDValue)
 	const handleIdValueChange = event => {
 		setIdValue(event.target.value)
 	}
@@ -101,8 +110,8 @@ const ParametersWidgetID = ({ baseURL, status, dispatchRequest, initalIDValue })
 			<Columns layout='11'>
 				<div>
 					<label>
-						<span className={styles.words}>ID:</span>
-						<input value={idValue} onChange={handleIdValueChange} />
+						<span className={styles.words}>id: </span>
+						<input length={100} value={idValue} onChange={handleIdValueChange} />
 					</label>
 				</div>
 				<div></div>

@@ -7,7 +7,6 @@ import { Path } from '@/components/APIModel'
 
 import { APIRequest } from './APIRequest'
 
-// const canLink = p => !p.includes('{id}')
 
 export const TabsMenu = ({ tabData, activeTab, setActiveTab }) => (
 	<div className={styles.tabs}>
@@ -60,7 +59,6 @@ export const Endpoint = ({
 	rootPath,
 	path,
 	data,
-	/*	linkToEndpoint = true, */
 	apiData,
 	profile
 }) => {
@@ -73,7 +71,7 @@ export const Endpoint = ({
 		{
 			id: 'Tab 2',
 			title: 'API Request',
-			content: <APIRequest src={rootPath + path} />
+			content: <APIRequest src={rootPath} />
 		},
 		{
 			id: 'Tab 3',
@@ -86,7 +84,6 @@ export const Endpoint = ({
 
 	return (
 		<section className={styles.section}>
-
 			<header className={styles.endpointContainer}>
 				<div className={styles.endpointContainerLeft}>
 					<h2>
