@@ -26,6 +26,7 @@ export const APIRequest = ({ src }) => {
 		console.log('requesting ' + q)
 		fetchData(q)
 	}
+
 	const fetchData = async q => {
 		try {
 			const response = await fetch(q)
@@ -65,7 +66,47 @@ const Result = ({ status, response }) => (
 const buildPaginationQueryString = ({ baseURL, pageNumber, perPage }) =>
 	`${baseURL}/?&page=${pageNumber}&per_page=${perPage}`
 
-const ParametersWidget = ({ baseURL, status, dispatchRequest }) => {
+const ParametersWidget = (props) => {
+    let C = ParametersWidgetPaged 
+
+    if (props.baseURL.endsWith("{id}")){
+        C = ParametersWidgetID
+    }
+
+    if (props.baseURL.endsWith("/")){
+        C = ParametersWidgetRoot
+    }
+
+    return <C {...props}/>
+}
+
+const ParametersWidgetRoot = ({
+    baseURL, 
+    status, 
+    dispatchRequest
+}) => <div><MakeRequest
+dispatchRequest={dispatchRequest}
+status={status}
+query={baseURL}
+/>
+</div>
+
+const ParametersWidgetID = ({
+    baseURL, 
+    status, 
+    dispatchRequest
+}) => <div><MakeRequest
+dispatchRequest={dispatchRequest}
+status={status}
+query={baseURL}
+/>
+</div>
+
+const ParametersWidgetPaged = ({ 
+    baseURL, 
+    status, 
+    dispatchRequest
+}) => {
 	const [pageNumber, setPageNumber] = useState(1)
 	const [perPage, setPerPage] = useState(10)
 
