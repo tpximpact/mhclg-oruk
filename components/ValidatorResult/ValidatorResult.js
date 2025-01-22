@@ -8,8 +8,16 @@ import styles from './ValidatorResult.module.css'
 
 import { formatResults } from './formatResults'
 
-export const ValidatorResult = ({ result, apiData }) => {
-	const endpoints = useMemo(() => formatResults(result.result), [result])
+import exampleData from './example.json'
+
+export const ValidatorResult = ({ 
+	result, 
+	apiData
+}) => {
+	result = exampleData // for development only
+
+	
+	const endpoints = useMemo(() => formatResults(result), [result])
 
 	useEffect(() => {
 		window.scrollTo(0, 0)
@@ -17,11 +25,12 @@ export const ValidatorResult = ({ result, apiData }) => {
 
 	return (
 		<div className={styles.result}>
-			<Title result={result.result} />
+			<Title result={result} />
 			{Object.keys(endpoints).map((k, i) => (
 				<Endpoint
-					profile={result.result.service.profile}
-					rootPath={result.result.service.url}
+
+					profile={result.service.profile}
+					rootPath={result.service.url}
 					key={i}
 					path={k}
 					data={endpoints[k]}

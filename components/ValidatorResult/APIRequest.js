@@ -44,8 +44,10 @@ export const APIRequest = ({ src }) => {
 
 	return (
 		<div>
+			
 			<ParametersWidget dispatchRequest={dispatchRequest} status={status} baseURL={src} />
 			<Result status={status} response={response} />
+			
 		</div>
 	)
 }
@@ -65,47 +67,59 @@ const Result = ({ status, response }) => (
 const buildPaginationQueryString = ({ baseURL, pageNumber, perPage }) =>
 	`${baseURL}/?&page=${pageNumber}&per_page=${perPage}`
 
-const ParametersWidget = (props) => {
-    let C = ParametersWidgetPaged 
+const buildIDQueryString = ({ baseURL, idValue }) => `${baseURL}/${idValue}`
 
-    if (props.baseURL.endsWith("{id}")){
-        C = ParametersWidgetID
-    }
+const ParametersWidget = props => {
+	let C = ParametersWidgetPaged
 
-    if (props.baseURL.endsWith("/")){
-        C = ParametersWidgetRoot
-    }
+	if (props.baseURL.endsWith('{id}')) {
+		C = ParametersWidgetID
+	}
 
-    return <C {...props}/>
+	if (props.baseURL.endsWith('/')) {
+		C = ParametersWidgetRoot
+	}
+
+	return <C {...props} />
 }
 
-const ParametersWidgetRoot = ({
-    baseURL, 
-    status, 
-    dispatchRequest
-}) => <div><MakeRequest
-dispatchRequest={dispatchRequest}
-status={status}
-query={baseURL}
-/>
-</div>
+const ParametersWidgetRoot = ({ baseURL, status, dispatchRequest }) => (
+	<div>
+		<MakeRequest dispatchRequest={dispatchRequest} status={status} query={baseURL} />
+	</div>
+)
 
-const ParametersWidgetID = ({
-    baseURL, 
-    status, 
-    dispatchRequest
-}) => <div><MakeRequest
-dispatchRequest={dispatchRequest}
-status={status}
-query={baseURL}
-/>
-</div>
+const ParametersWidgetID = ({ baseURL, status, dispatchRequest, initalIDValue }) => {
+	const [idValue, setIdValue] = initalIDValue
+	const handleIdValueChange = event => {
+		setIdValue(event.target.value)
+	}
 
-const ParametersWidgetPaged = ({ 
-    baseURL, 
-    status, 
-    dispatchRequest
-}) => {
+	return (
+		<div>
+			<h3>Parameters</h3>
+			<Columns layout='11'>
+				<div>
+					<label>
+						<span className={styles.words}>ID:</span>
+						<input value={idValue} onChange={handleIdValueChange} />
+					</label>
+				</div>
+				<div></div>
+			</Columns>
+			<MakeRequest
+				dispatchRequest={dispatchRequest}
+				status={status}
+				query={buildIDQueryString({
+					baseURL: baseURL,
+					idValue: idValue
+				})}
+			/>
+		</div>
+	)
+}
+
+const ParametersWidgetPaged = ({ baseURL, status, dispatchRequest }) => {
 	const [pageNumber, setPageNumber] = useState(1)
 	const [perPage, setPerPage] = useState(10)
 
@@ -147,7 +161,7 @@ const ParametersWidgetPaged = ({
 					pageNumber: pageNumber,
 					perPage: perPage
 				})}
-			/>
+			/> 
 		</div>
 	)
 }
