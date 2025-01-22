@@ -1,0 +1,63 @@
+.form {
+	padding: 1rem;
+	background: #eee;
+
+	& label {
+		display: block;
+		margin-bottom: 1rem;
+
+		.words {
+			display: block;
+		}
+
+		& input {
+			font-size: 1.4rem;
+			width: 5rem;
+			padding: 5px;
+		}
+
+		& select {
+			appearance: none;
+			padding: 5px;
+			font-size: 20px;
+		}
+	}
+
+	.query {
+		font-size: 1.2rem;
+		margin-top: 1rem;
+		font-weight: 900;
+	}
+
+	.buttonLink {
+		border: 0;
+		box-sizing: border-box;
+		color: rgb(11, 12, 12);
+		cursor: pointer;
+		display: inline;
+		font-family: Inter, 'Inter Fallback';
+		font-size: 19px;
+		font-style: normal;
+		font-weight: 700;
+		height: auto;
+		line-height: 28.5px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		overflow-wrap: break-word;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 0px;
+		text-align: start;
+		text-decoration: underline;
+		text-decoration-color: rgb(117, 190, 160);
+		text-decoration-line: underline;
+		text-decoration-thickness: 10%;
+		text-underline-position: under;
+		width: auto;
+		-webkit-font-smoothing: antialiased;
+		background: transparent;
+	}
+}

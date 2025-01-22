@@ -1,15 +1,11 @@
 'use client'
 
-import {
-	useState
-	/*, useEffect */
-} from 'react'
+import { useState } from 'react'
 import styles from './ValidatorResult.module.css'
 import { Group } from './Group'
-// import { Suspense } from 'react'
-import JSONLiteral from '@/components/JSONLiteral'
-import Spinner from '@/components/Spinner'
 import { Path } from '@/components/APIModel'
+
+import { APIRequest } from './APIRequest'
 
 // const canLink = p => !p.includes('{id}')
 
@@ -36,105 +32,6 @@ const ValidationTab = ({ groups }) => (
 		{Object.keys(groups).map((k, i) => (
 			<Group key={i} path={k} data={groups[k]} />
 		))}
-	</div>
-)
-
-const RESPONSE_STATUS = {
-	INITIAL: 'initial',
-	PENDING: 'pending',
-	SUCCESS: 'success',
-	ERROR: 'error'
-}
-
-const ResponseTab = ({ src }) => {
-	const [status, setStatus] = useState(RESPONSE_STATUS.INIITIAL)
-	const [response, setResponse] = useState(null)
-
-	const setStatusPending = () => setStatus(RESPONSE_STATUS.PENDING)
-	const setStatusSuccess = () => setStatus(RESPONSE_STATUS.SUCCESS)
-	const setStatusError = () => setStatus(RESPONSE_STATUS.ERROR)
-
-	const dispatchRequest = e => {
-		setStatusPending()
-		console.log('requesting ' + e)
-		fetchData()
-	}
-
-	const fetchData = async () => {
-		src = 'https://dummyjson.com/quotes'
-		try {
-			const response = await fetch(src)
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`)
-			}
-			const data = await response.json()
-
-			setStatusSuccess()
-			setResponse(data)
-		} catch (error) {
-			setStatusError()
-			setResponse('Failed to fetch data:' + error)
-		}
-	}
-
-	return (
-		<div>
-			Load the API response from <code>{src}</code>
-			<a href={src} target='_blank'>
-				in a new window
-			</a>
-			{status === RESPONSE_STATUS.INIITIAL && (
-				<>
-					&nbsp;or&nbsp;
-					<button onClick={e => dispatchRequest(e)} className={styles.buttonLink}>
-						inline below
-					</button>
-					.
-				</>
-			)}
-			{status === RESPONSE_STATUS.ERROR && (
-				<>
-					&nbsp;or&nbsp;
-					<button onClick={e => dispatchRequest(e)} className={styles.buttonLink}>
-						retry inline load
-					</button>
-					.
-					<div>
-						<Error message={response} />
-					</div>
-				</>
-			)}
-			{status === RESPONSE_STATUS.PENDING && (
-				<>
-					<Spinner />
-				</>
-			)}
-			{status === RESPONSE_STATUS.SUCCESS && (
-				<div style={{ marginTop: '1rem' }}>
-					<JSONLiteral data={response} />
-				</div>
-			)}
-		</div>
-	)
-}
-
-const Error = ({ message }) => (
-	<div
-		style={{
-			marginTop: '1rem',
-			borderColor: 'var(--VersionedDocumentation-legacy-border-color)',
-			background: 'var(--VersionedDocumentation-legacy-background)',
-			color: 'var(--VersionedDocumentation-legacy-color)',
-			padding: '2rem',
-			fontWeight: '900'
-		}}
-	>
-		Error: Failed to load JSON. {message}{' '}
-		<span style={{ fontWeight: 300 }}>
-			<br />
-			(This may be a Cross Origin Resource Sharing error - try loading the API in a new window
-			instead)
-		</span>
 	</div>
 )
 
@@ -175,8 +72,8 @@ export const Endpoint = ({
 		{ id: 'Tab 1', title: 'Validation', content: <ValidationTab groups={data.groups} /> },
 		{
 			id: 'Tab 2',
-			title: 'API Response',
-			content: <ResponseTab src={rootPath + path + '?&page=1/'} />
+			title: 'API Request',
+			content: <APIRequest src={rootPath + path} />
 		},
 		{
 			id: 'Tab 3',
