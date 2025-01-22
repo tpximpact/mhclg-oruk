@@ -5,6 +5,7 @@ import { getColourForStatus } from '@/utilities/getColourForStatus'
 import { getIconForStatus } from '@/utilities/getIconForStatus'
 import Columns from '@/components/Columns'
 import { Message } from './Message'
+// import { Debug } from '@/utilities/Debug'
 
 export const Test = props => (
 	<div className={styles.test} style={{ '--statuscolor': getColourForStatus(props.data.status) }}>

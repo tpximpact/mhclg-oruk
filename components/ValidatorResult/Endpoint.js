@@ -82,8 +82,11 @@ export const Endpoint = ({
 		}
 	]
 
+	path = path.replace(rootPath,"")
+
 	return (
 		<section className={styles.section}>
+
 			<header className={styles.endpointContainer}>
 				<div className={styles.endpointContainerLeft}>
 					<h2>
