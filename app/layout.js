@@ -5,6 +5,7 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
+import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
 import { NoWarranty } from '@/components/NoWarranty'
 import { LandmarkMain } from '@/components/LandmarkMain'
@@ -24,7 +25,20 @@ const font = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
+const Wrap = ({ children }) => (
+	<html lang='en' id='html' className='no-js'>
+		<body className={`${font.className}`}>{children}</body>
+	</html>
+)
+
 export default function RootLayout({ children }) {
+	if (configValueToBoolean(process.env.SHOW_MAINTENANCE)) {
+		return (
+			<Wrap>
+				<Maintenance />
+			</Wrap>
+		)
+	}
 	const items = getRootLayoutItems()
 	return (
 		<html lang='en' id='html' className='no-js'>
