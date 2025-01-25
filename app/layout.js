@@ -5,6 +5,7 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
+import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -23,33 +24,44 @@ const font = Inter({ subsets: ['latin'] })
 
 export const metadata = defaultMetadata
 
+const Wrap = ({ children }) => (
+	<html lang='en' id='html' className='no-js'>
+		<body className={`${font.className}`}>{children}</body>
+	</html>
+)
+
 export default function RootLayout({ children }) {
+	if (configValueToBoolean(process.env.SHOW_MAINTENANCE)) {
+		return (
+			<Wrap>
+				<Maintenance />
+			</Wrap>
+		)
+	}
 	const items = getRootLayoutItems()
 	return (
-		<html lang='en' id='html' className='no-js'>
-			<body className={`${font.className}`}>
-				<div style={{ maxWidth: '100vw' }}>
-					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
-					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
-					<NoJsBanner />
-					<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
-					<LandmarkMain>
-						{configValueToBoolean(process.env.USE_NAV) ? (
-							<Crumbtrail />
-						) : (
-							<div style={{ height: '4rem' }}></div>
-						)}
+		<Wrap>
+			<div style={{ maxWidth: '100vw' }}>
+				{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
+				{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
+				<NoJsBanner />
+				<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
+				<LandmarkMain>
+					{configValueToBoolean(process.env.USE_NAV) ? (
+						<Crumbtrail />
+					) : (
+						<div style={{ height: '4rem' }}></div>
+					)}
 
-						{children}
-					</LandmarkMain>
-				</div>
-				<LandmarkContentInfo
-					items={items}
-					infoItems={getInfoMenuItems()}
-					showNav={configValueToBoolean(process.env.USE_NAV)}
-				/>
-				<NoJsFallback />
-			</body>
-		</html>
+					{children}
+				</LandmarkMain>
+			</div>
+			<LandmarkContentInfo
+				items={items}
+				infoItems={getInfoMenuItems()}
+				showNav={configValueToBoolean(process.env.USE_NAV)}
+			/>
+			<NoJsFallback />
+		</Wrap>
 	)
 }
