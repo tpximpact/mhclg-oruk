@@ -76,7 +76,7 @@ The Open Referral UK data standard helps to achieve all the benefits laid out ab
 It also offers a range of additional benefits:
 
 - Support from a growing community: You’ll join a network of users who share tips and tools to help implement the standard
-- Endorsed by the government: ORUK is [backed by the Central Digital and Data Office](example_business_model.png), ensuring it’s a future-proof investment
+- Endorsed by the government: ORUK is [backed by the Central Digital and Data Office](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities), ensuring it’s a future-proof investment
 - Easier data management: ORUK helps separate the back-end data from the front-end user experience, making it easier to update and display information across different platforms
 
 ## 5. What’s the impact?
@@ -200,7 +200,7 @@ Realistic time savings between 5-20% (£24.4k-£97.5k)
 
 #### Software savings
 
-Service teams often use different tools to store and manage community service data, requiring multiple licences or efforts by different internal teams. Consolidating these can reduce costs and achieve annual savings. These estimates were calculated in a previous project by Snook, which can be found here.
+Service teams often use different tools to store and manage community service data, requiring multiple licences or efforts by different internal teams. Consolidating these can reduce costs and achieve annual savings. [These estimates were calculated in a previous project by Snook](https://opencommunity.org.uk/discovery-phase-complete-report-available/).
 
 #### Estimated savings
 
