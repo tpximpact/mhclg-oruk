@@ -1,6 +1,6 @@
 import { PageMargin } from '@/components/PageMargin'
 import { Timeline } from '@/components/Timeline'
-import config from '/content/adopt/gantt/data.json'
+import config from '@/content/adopt/gantt/data.json'
 
 export default function Page() {
 	return (

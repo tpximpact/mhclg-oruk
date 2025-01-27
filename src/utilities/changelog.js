@@ -1,4 +1,4 @@
-import data from '/content/developers/changelog/data.json'
+import data from '../content/developers/changelog/data.json'
 
 /**
  * Retrieves the changelog data.
