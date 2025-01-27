@@ -7,7 +7,6 @@ import { Path } from '@/components/APIModel'
 
 import { APIRequest } from './APIRequest'
 
-
 export const TabsMenu = ({ tabData, activeTab, setActiveTab }) => (
 	<div className={styles.tabs}>
 		{tabData.map(tab => (
@@ -55,13 +54,7 @@ const profileNameToVersionNumber = name => {
 	return atoms.reverse().shift()
 }
 
-export const Endpoint = ({
-	rootPath,
-	path,
-	data,
-	apiData,
-	profile
-}) => {
+export const Endpoint = ({ rootPath, path, data, apiData, profile }) => {
 	const profileVersion = profileNameToVersionNumber(profile)
 
 	const [activeTab, setActiveTab] = useState('Tab 1')
@@ -80,7 +73,7 @@ export const Endpoint = ({
 		}
 	]
 
-	path = path.replace(rootPath,"")
+	path = path.replace(rootPath, '')
 
 	return (
 		<section className={styles.section}>

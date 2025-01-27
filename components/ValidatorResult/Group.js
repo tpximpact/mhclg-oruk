@@ -3,11 +3,8 @@ import { Test } from './Test'
 
 export const Group = ({ data }) => (
 	<div className={styles.group}>
-		
-		{
-		data.map((test, i) => (
+		{data.map((test, i) => (
 			<Test key={i} data={test} />
-		))
-			}
+		))}
 	</div>
 )

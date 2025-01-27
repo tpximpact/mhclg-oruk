@@ -10,13 +10,9 @@ import { formatResults } from './formatResults'
 
 import exampleData from './example.json'
 
-export const ValidatorResult = ({ 
-	result, 
-	apiData
-}) => {
+export const ValidatorResult = ({ result, apiData }) => {
 	result = exampleData // for development only
 
-	
 	const endpoints = useMemo(() => formatResults(result), [result])
 
 	useEffect(() => {
@@ -28,7 +24,6 @@ export const ValidatorResult = ({
 			<Title result={result} />
 			{Object.keys(endpoints).map((k, i) => (
 				<Endpoint
-
 					profile={result.service.profile}
 					rootPath={result.service.url}
 					key={i}

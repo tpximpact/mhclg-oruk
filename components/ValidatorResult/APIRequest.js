@@ -23,7 +23,7 @@ export const APIRequest = ({ src }) => {
 
 	const dispatchRequest = q => {
 		setStatusPending()
-		console.log('requesting ' + q)
+		//console.log('requesting ' + q)
 		fetchData(q)
 	}
 	const fetchData = async q => {
@@ -44,13 +44,13 @@ export const APIRequest = ({ src }) => {
 
 	return (
 		<div>
-			<ParametersWidget 
-			dispatchRequest={dispatchRequest} 
-			status={status} 
-			baseURL={src}
-			initialIDValue="someID" />
+			<ParametersWidget
+				dispatchRequest={dispatchRequest}
+				status={status}
+				baseURL={src}
+				initialIDValue='someID'
+			/>
 			<Result status={status} response={response} />
-			
 		</div>
 	)
 }
@@ -92,13 +92,7 @@ const ParametersWidgetRoot = ({ baseURL, status, dispatchRequest }) => (
 	</div>
 )
 
-const ParametersWidgetID = ({ 
-	baseURL, 
-	status, 
-	dispatchRequest,
-	 initialIDValue
-	 }) => {
-	
+const ParametersWidgetID = ({ baseURL, status, dispatchRequest, initialIDValue }) => {
 	const [idValue, setIdValue] = useState(initialIDValue)
 	const handleIdValueChange = event => {
 		setIdValue(event.target.value)
@@ -170,7 +164,7 @@ const ParametersWidgetPaged = ({ baseURL, status, dispatchRequest }) => {
 					pageNumber: pageNumber,
 					perPage: perPage
 				})}
-			/> 
+			/>
 		</div>
 	)
 }
