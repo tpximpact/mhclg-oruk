@@ -1,3 +1,4 @@
+
 import { Inter } from 'next/font/google'
 
 import '@/styles/reset.css'
@@ -5,9 +6,9 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
+import { headers } from "next/headers";
 import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
-import { NoWarranty } from '@/components/NoWarranty'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
@@ -31,8 +32,20 @@ const Wrap = ({ children }) => (
 	</html>
 )
 
-export default function RootLayout({ children }) {
-	if (configValueToBoolean(process.env.SHOW_MAINTENANCE)) {
+const pathShouldOverrideMaintenance = (currentPath) => {
+	const ALLOWED_PATHS = ["/developers/validator"];
+	  
+		return ALLOWED_PATHS.some((pathToAllow) => currentPath.includes(pathToAllow));
+	  
+}
+
+export default async function RootLayout({ children }) {
+
+	const headerList = await headers();
+  const pathname = headerList.get("x-current-path");
+	// console.log ("--> " + pathname)
+
+	if (configValueToBoolean(process.env.SHOW_MAINTENANCE) && ! pathShouldOverrideMaintenance(pathname)) {
 		return (
 			<Wrap>
 				<Maintenance />
@@ -41,32 +54,28 @@ export default function RootLayout({ children }) {
 	}
 	const items = getRootLayoutItems()
 	return (
-		<html lang='en' id='html' className='no-js'>
-			<body className={`${font.className}`}>
-				<div style={{ maxWidth: '100vw' }}>
-					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
+		<Wrap>
+			<div style={{ maxWidth: '100vw' }}>
+				{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
+				{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
+				<NoJsBanner />
+				<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
+				<LandmarkMain>
+					{configValueToBoolean(process.env.USE_NAV) ? (
+						<Crumbtrail />
+					) : (
+						<div style={{ height: '4rem' }}></div>
+					)}
 
-					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
-					<NoJsBanner />
-					<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
-					<LandmarkMain>
-						{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
-						{configValueToBoolean(process.env.USE_NAV) ? (
-							<Crumbtrail />
-						) : (
-							<div style={{ height: '4rem' }}></div>
-						)}
-
-						{children}
-					</LandmarkMain>
-				</div>
-				<LandmarkContentInfo
-					items={items}
-					infoItems={getInfoMenuItems()}
-					showNav={configValueToBoolean(process.env.USE_NAV)}
-				/>
-				<NoJsFallback />
-			</body>
-		</html>
+					{children}
+				</LandmarkMain>
+			</div>
+			<LandmarkContentInfo
+				items={items}
+				infoItems={getInfoMenuItems()}
+				showNav={configValueToBoolean(process.env.USE_NAV)}
+			/>
+			<NoJsFallback />
+		</Wrap>
 	)
 }
