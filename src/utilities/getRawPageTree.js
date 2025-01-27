@@ -1,4 +1,4 @@
-import pageTree from '../content/sitemap.json'
+import pageTree from '../../content/sitemap.json'
 
 /**
  * Retrieves the raw page tree from the sitemap.
