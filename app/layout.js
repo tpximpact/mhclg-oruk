@@ -33,6 +33,9 @@ const Wrap = ({ children }) => (
 )
 
 const pathShouldOverrideMaintenance = (currentPath) => {
+	if (!currentPath) {
+		return false
+	}
 	const ALLOWED_PATHS = ["/developers/validator"];
 	  
 		return ALLOWED_PATHS.some((pathToAllow) => currentPath.includes(pathToAllow));
