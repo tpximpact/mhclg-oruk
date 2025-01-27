@@ -17,14 +17,14 @@
 		"baseUrl": ".",
 		"types": ["@testing-library/jest-dom"],
 		"paths": {
-			"@/app/*": ["src/app/*"],
-			"@/actions/*": ["src/actions/*"],
-			"@/components/*": ["src/components/*"],
-			"@/content/*": ["src/content/*"],
-			"@/pages/*": ["src/pages/*"],
-			"@/specifications/*": ["src/specifications/*"],
-			"@/styles/*": ["src/styles/*"],
-			"@/utilities/*": ["src/utilities/*"]
+			"@/app/*": ["app/*"],
+			"@/actions/*": ["actions/*"],
+			"@/components/*": ["components/*"],
+			"@/content/*": ["content/*"],
+			"@/pages/*": ["pages/*"],
+			"@/specifications/*": ["specifications/*"],
+			"@/styles/*": ["styles/*"],
+			"@/utilities/*": ["utilities/*"]
 		},
 		"plugins": [
 			{

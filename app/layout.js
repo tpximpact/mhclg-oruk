@@ -1,3 +1,4 @@
+
 import { Inter } from 'next/font/google'
 
 import '@/styles/reset.css'
@@ -5,7 +6,7 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
-import { headers } from 'next/headers'
+import { headers } from "next/headers";
 import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
@@ -31,24 +32,23 @@ const Wrap = ({ children }) => (
 	</html>
 )
 
-const pathShouldOverrideMaintenance = currentPath => {
+const pathShouldOverrideMaintenance = (currentPath) => {
 	if (!currentPath) {
 		return false
 	}
-	const ALLOWED_PATHS = ['/developers/validator']
-
-	return ALLOWED_PATHS.some(pathToAllow => currentPath.includes(pathToAllow))
+	const ALLOWED_PATHS = ["/developers/validator"];
+	  
+		return ALLOWED_PATHS.some((pathToAllow) => currentPath.includes(pathToAllow));
+	  
 }
 
 export default async function RootLayout({ children }) {
-	const headerList = await headers()
-	const pathname = headerList.get('x-current-path')
+
+	const headerList = await headers();
+  const pathname = headerList.get("x-current-path");
 	// console.log ("--> " + pathname)
 
-	if (
-		configValueToBoolean(process.env.SHOW_MAINTENANCE) &&
-		!pathShouldOverrideMaintenance(pathname)
-	) {
+	if (configValueToBoolean(process.env.SHOW_MAINTENANCE) && ! pathShouldOverrideMaintenance(pathname)) {
 		return (
 			<Wrap>
 				<Maintenance />

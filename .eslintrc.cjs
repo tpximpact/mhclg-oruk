@@ -29,7 +29,7 @@ module.exports = {
 		'import/no-anonymous-default-export': 'off',
 		'@next/next/no-img-element': 'off',
 		'react-hooks/exhaustive-deps': 'off',
-		'no-console': 'error'
+		'no-console':"error"
 	},
 
 	settings: {
