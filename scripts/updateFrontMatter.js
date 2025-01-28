@@ -1,6 +1,8 @@
-const fs = require('fs').promises;
-const jsYaml = require('js-yaml');
-const path = require('path');
+/* eslint no-console: 'off' */
+
+const fs = require('fs').promises
+const jsYaml = require('js-yaml')
+const path = require('path')
 
 /**
  * Updates the YAML front matter in a Markdown file with the file's modified date.
@@ -14,80 +16,76 @@ const path = require('path');
  * @returns {Promise<void>}
  */
 async function updateFrontMatter(filePath, options = {}) {
-  const {
-    force = false,
-    dateProperty = 'modified',
-    dateFormat = 'ISO',
-    dryRun = false,
-  } = options;
+	const { force = false, dateProperty = 'modified', dateFormat = 'ISO', dryRun = false } = options
 
-  try {
-    // Get file stats
-    const stats = await fs.stat(filePath);
-    let date;
+	try {
+		// Get file stats
+		const stats = await fs.stat(filePath)
+		let date
 
-    switch (dateFormat) {
-      case 'ISO':
-        date = new Date(stats.mtimeMs).toISOString();
-        break;
-      case 'RFC2822':
-        date = new Date(stats.mtimeMs).toUTCString();
-        break;
-      default:
-        date = new Date(stats.mtimeMs).toLocaleString(dateFormat);
-    }
+		switch (dateFormat) {
+			case 'ISO':
+				date = new Date(stats.mtimeMs).toISOString()
+				break
+			case 'RFC2822':
+				date = new Date(stats.mtimeMs).toUTCString()
+				break
+			default:
+				date = new Date(stats.mtimeMs).toLocaleString(dateFormat)
+		}
 
-    // Read file contents
-    const fileContent = await fs.readFile(filePath, 'utf8');
+		// Read file contents
+		const fileContent = await fs.readFile(filePath, 'utf8')
+		let frontMatter, content
+		// Parse front matter
+		const frontMatterRegex = /^---\n(.*?)\n---\n/s
+		const match = fileContent.match(frontMatterRegex)
+		if (!match) {
+			frontMatter = {}
+			content = fileContent
+		} else {
+			const frontMatterYaml = match[1]
+			content = fileContent.replace(frontMatterRegex, '')
 
-    // Parse front matter
-    const frontMatterRegex = /^---\n(.*?)\n---\n/s;
-    const match = fileContent.match(frontMatterRegex);
-    if (!match) {
-      throw new Error('No front matter found in the file.');
-    }
-    const frontMatterYaml = match[1];
-    const content = fileContent.replace(frontMatterRegex, '');
+			// Load front matter YAML
+			frontMatter = jsYaml.load(frontMatterYaml)
 
-    // Load front matter YAML
-    const frontMatter = jsYaml.load(frontMatterYaml);
+			// Check if date property exists and is current
+			const currentDate = new Date()
+			const existingDate = frontMatter[dateProperty]
+			if (existingDate && !force) {
+				const existingDateObject = new Date(existingDate)
+				if (
+					existingDateObject.getFullYear() === currentDate.getFullYear() &&
+					existingDateObject.getMonth() + 1 === currentDate.getMonth() + 1 &&
+					existingDateObject.getDate() === currentDate.getDate()
+				) {
+					console.log(`Front matter for ${path.basename(filePath)} is up-to-date.`)
+					return
+				}
+			}
+		}
+		// Update date property
+		frontMatter[dateProperty] = date
 
-    // Check if date property exists and is current
-    const currentDate = new Date();
-    const existingDate = frontMatter[dateProperty];
-    if (existingDate && !force) {
-      const existingDateObject = new Date(existingDate);
-      if (
-        existingDateObject.getFullYear() === currentDate.getFullYear() &&
-        existingDateObject.getMonth() + 1 === currentDate.getMonth() + 1 &&
-        existingDateObject.getDate() === currentDate.getDate()
-      ) {
-        console.log(`Front matter for ${path.basename(filePath)} is up-to-date.`);
-        return;
-      }
-    }
+		// Dump updated front matter YAML
+		const updatedFrontMatterYaml = jsYaml.dump(frontMatter)
 
-    // Update date property
-    frontMatter[dateProperty] = date;
+		// Update file contents
+		const updatedFileContent = `---\n${updatedFrontMatterYaml}---\n${content}`
 
-    // Dump updated front matter YAML
-    const updatedFrontMatterYaml = jsYaml.dump(frontMatter);
-
-    // Update file contents
-    const updatedFileContent = `---\n${updatedFrontMatterYaml}---\n${content}`;
-
-    if (dryRun) {
-      console.log(`Dry run: Front matter update for ${path.basename(filePath)}:`);
-      console.log(updatedFileContent);
-    } else {
-      // Write updated file contents
-      await fs.writeFile(filePath, updatedFileContent);
-      console.log(`Front matter updated successfully for ${path.basename(filePath)}`);
-    }
-  } catch (error) {
-    console.error(`Error updating front matter: ${error.message}`);
-    throw error;
-  }
+		if (dryRun) {
+			console.log(`Dry run: Front matter update for ${path.basename(filePath)}:`)
+			console.log(updatedFileContent)
+		} else {
+			// Write updated file contents
+			await fs.writeFile(filePath, updatedFileContent)
+			console.log(`Front matter updated successfully for ${path.basename(filePath)}`)
+		}
+	} catch (error) {
+		console.error(`Error updating front matter: ${error.message}`)
+		throw error
+	}
 }
 
-module.exports = updateFrontMatter;
+module.exports = updateFrontMatter

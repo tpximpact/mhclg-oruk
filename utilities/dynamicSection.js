@@ -2,6 +2,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import * as matter from 'gray-matter'
+import { parseMarkdown } from '@/utilities/parseMarkdown'
 import { PATHS } from './PATHS'
 
 const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
@@ -9,14 +10,14 @@ const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
 export const getDynamicPageContent = (folder, slug) => {
 	const file = join(folder, `${slug}.md`)
 	const fileContents = readFile(file)
-	const { data: metadata, content } = matter(fileContents)
+	const { frontmatter, content } = parseMarkdown(fileContents)
 	const allFiles = getAllFiles(folder)
 	const index = allFiles.findIndex(file => slugify(file) === slug)
 
 	return {
-		date: getDate(metadata, file),
-		metadata,
-		content,
+		date: getDate(frontmatter, file),
+		metadata: frontmatter,
+		html: content,
 		next: buildLinkedItem(index + 1, allFiles, folder),
 		previous: buildLinkedItem(index - 1, allFiles, folder)
 	}
@@ -40,7 +41,11 @@ const getAllFiles = contentFolder => {
 		.filter(f => f !== '.DS_Store')
 }
 
-const getDate = (metadata, contentPath) => metadata.date || fileLastModified(contentPath)
+const getDate = (metadata, contentPath) => {
+	const raw = metadata.modified || fileLastModified(contentPath)
+	const date = new Date(raw)
+	return date.toLocaleDateString('en-GB')
+}
 
 const fileThumbnail = (rootContentFolder, file) => {
 	const contentPath = join(rootContentFolder, file)
@@ -49,7 +54,7 @@ const fileThumbnail = (rootContentFolder, file) => {
 	return {
 		title: metadata.title,
 		path: slugify(contentPath),
-		date: getDate(metadata, contentPath),
+		//date: getDate(metadata, contentPath),
 		slug: metadata.slug
 	}
 }
@@ -63,6 +68,7 @@ const readFile = contentPath => {
 	try {
 		return fs.readFileSync(join(CONTENT_ROOT, contentPath), 'utf8')
 	} catch (err) {
+		// eslint-disable-next-line no-console
 		console.error(err)
 		return null
 	}
@@ -74,15 +80,14 @@ const statFile = contentPath => {
 	try {
 		return fs.statSync(join(CONTENT_ROOT, contentPath))
 	} catch (err) {
+		// eslint-disable-next-line no-console
 		console.error(err)
 		return null
 	}
 }
 
 const fileLastModified = contentPath => {
+	// NB mtime will be default if the file has been theough git - which is why we bake them into metadata
 	const stats = statFile(contentPath)
-	const t = stats ? stats.mtime.toLocaleDateString('en-GB') : null
-	console.log(t + ' ' + contentPath)
-	console.log(JSON.stringify(stats.mtime))
-	return t
+	return stats.mtime
 }

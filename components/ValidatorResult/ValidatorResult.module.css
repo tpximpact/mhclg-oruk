@@ -1,8 +1,3 @@
-.header {
-	font-weight: 700;
-	margin-bottom: 1rem;
-}
-
 .title {
 	font-size: 1.6rem;
 	margin-top: 0;
@@ -36,6 +31,7 @@
 	background: var(--validatorResult-banner-background);
 	padding: 2rem;
 	font-weight: 400;
+	margin-bottom: 1rem;
 }
 
 .banner p + p {
@@ -51,47 +47,6 @@
 	padding: 1px 9px;
 	border-radius: 5px;
 	font-family: var(--font-mono);
-}
-
-.section {
-	margin-bottom: 1rem;
-	border: 2px solid var(--validatorResult-black);
-}
-
-.endpointContainer h2 {
-	flex: 1;
-	color: var(--validatorResult-black);
-}
-
-.endpointContainer .endpointRight {
-	flex: 0, 0, 100px;
-	display: flex;
-}
-
-.endpointRight a {
-	flex: 1;
-	display: block;
-	margin-top: auto;
-}
-
-.endpointContainer {
-	border-bottom: 1px solid var(--validatorResult-black);
-	padding: 1rem;
-	background: var(--validatorResult-background);
-	display: flex;
-}
-
-.light {
-	font-weight: 500;
-	color: var(--validatorResult-black);
-	display: block;
-	font-size: 1rem;
-}
-
-.endpoint {
-	font-family: var(--font-mono);
-	font-size: 2rem;
-	font-weight: 900;
 }
 
 .icon {
@@ -128,11 +83,58 @@
 	jborder: 2px solid var(--statuscolor);
 }
 
-.payload {
-	padding: 1rem;
-}
-
 .message {
 	margin-left: 2rem;
 	margin-top: 1rem;
+}
+
+.section {
+	margin-bottom: 1rem;
+	border: 2px solid var(--validatorResult-black);
+}
+
+.endpointContainer {
+	padding: 1rem;
+	background: var(--validatorResult-background);
+	display: flex;
+	justify-content: space-between;
+
+	.endpointContainerLeft {
+		flex: 0 0 350px;
+
+		.light {
+			font-weight: 500;
+			color: var(--validatorResult-black);
+			display: block;
+			font-size: 1rem;
+			margin-bottom: 0.8rem;
+		}
+	}
+
+	.endpointContainerRight {
+		flex: 1;
+		text-align: right;
+	}
+}
+
+.tabs {
+	& button {
+		appearance: none;
+		padding: 1rem 1rem;
+		background: transparent;
+		border: 0;
+		border-bottom: 4px transparent solid;
+		margin: 0 2rem 0 0;
+		cursor: pointer;
+		text-align: left;
+		color: black;
+	}
+
+	& button.activeTab {
+		border-bottom: 4px solid black;
+	}
+}
+
+.tabContent {
+	padding: 1rem;
 }
