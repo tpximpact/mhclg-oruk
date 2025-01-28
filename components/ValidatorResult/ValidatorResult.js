@@ -14,9 +14,9 @@ export const ValidatorResult = ({
 	result, 
 	apiData
 }) => {
-	result = exampleData // for development only
+	result = result.result
+	// result = exampleData // for development only
 
-	
 	const endpoints = useMemo(() => formatResults(result), [result])
 
 	useEffect(() => {
@@ -25,6 +25,9 @@ export const ValidatorResult = ({
 
 	return (
 		<div className={styles.result}>
+		{
+			
+		}
 			<Title result={result} />
 			{Object.keys(endpoints).map((k, i) => (
 				<Endpoint
