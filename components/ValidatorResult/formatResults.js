@@ -14,8 +14,6 @@ const processTest = (suite, test) => {
 const stripSharedPath = (str, sharedPath) => str.replace(sharedPath, "")
 
 const addTestToResult = (result, test,sharedPath ) => {
-	console.log(sharedPath )
-	console.log(test.endpoint)
 	const endpointRaw =  stripSharedPath(test.endpoint,sharedPath)
 	const endpointName = normaliseEndpointName(endpointRaw)
 	if (!result[endpointName]) {
@@ -34,6 +32,7 @@ const groupTestsByParent = result => {
 
 export const formatResults = input => {
 	let result = {}
+	
 	const sharedPath = input.service.url
 	input.testSuites.forEach(suite => {
 		suite.tests.forEach(test => {

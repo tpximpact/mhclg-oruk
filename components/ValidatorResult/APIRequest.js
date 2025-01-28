@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import styles from './APIRequest.module.css'
 import Columns from '@/components/Columns'
-import JSONLiteral from '@/components/JSONLiteral'
+//import JSONLiteral from '@/components/JSONLiteral'
 import Spinner from '@/components/Spinner'
 
 const RESPONSE_STATUS = {
@@ -59,11 +59,11 @@ const Result = ({ status, response }) => (
 	<div>
 		{status === RESPONSE_STATUS.ERROR && <Error message={response} />}
 		{status === RESPONSE_STATUS.PENDING && <Spinner />}
-		{status === RESPONSE_STATUS.SUCCESS && (
+		{/*status === RESPONSE_STATUS.SUCCESS && (
 			<div style={{ marginTop: '1rem' }}>
 				<JSONLiteral data={response} />
 			</div>
-		)}
+		)*/}
 	</div>
 )
 

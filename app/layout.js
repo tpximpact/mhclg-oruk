@@ -32,13 +32,6 @@ const Wrap = ({ children }) => (
 )
 
 export default function RootLayout({ children }) {
-	if (configValueToBoolean(process.env.SHOW_MAINTENANCE)) {
-		return (
-			<Wrap>
-				<Maintenance />
-			</Wrap>
-		)
-	}
 	const items = getRootLayoutItems()
 	return (
 		<html lang='en' id='html' className='no-js'>
