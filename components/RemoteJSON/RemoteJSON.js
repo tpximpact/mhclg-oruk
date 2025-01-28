@@ -49,7 +49,7 @@ const fetchResult = async ({ endpoint, method, queryParams }) => {
 
 		if (response.ok) {
 			const result = await response.json()
-			console.log(JSON.stringify(result, null, 2))
+			//console.log(JSON.stringify(result, null, 2))
 			return {
 				ok: true,
 				endpoint: endpoint,

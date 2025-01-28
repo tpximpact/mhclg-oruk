@@ -8,7 +8,7 @@ import styles from './ValidatorResult.module.css'
 
 import { formatResults } from './formatResults'
 
-import exampleData from './example.json'
+//import exampleData from './example.json'
 
 export const ValidatorResult = ({ 
 	result, 
@@ -17,6 +17,8 @@ export const ValidatorResult = ({
 	result = result.result
 	// result = exampleData // for development only
 
+	//console.log(JSON.stringify(result, null, 2))
+	
 	const endpoints = useMemo(() => formatResults(result), [result])
 
 	useEffect(() => {
@@ -25,13 +27,9 @@ export const ValidatorResult = ({
 
 	return (
 		<div className={styles.result}>
-		{
-			
-		}
 			<Title result={result} />
 			{Object.keys(endpoints).map((k, i) => (
 				<Endpoint
-
 					profile={result.service.profile}
 					rootPath={result.service.url}
 					key={i}
