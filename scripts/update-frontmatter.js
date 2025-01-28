@@ -1,3 +1,5 @@
+/* eslint no-console: 'off' */
+
 const forEachFile = require('./forEachFile')
 const updateFrontMatter = require('./updateFrontMatter')
 

@@ -1,3 +1,5 @@
+/* eslint no-console: 'off' */
+
 const fs = require('fs').promises
 const jsYaml = require('js-yaml')
 const path = require('path')
