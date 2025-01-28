@@ -1,3 +1,15 @@
-const updateFrontMatter = require('./updateFrontMatter');
+/* eslint no-console: 'off' */
 
-updateFrontMatter('./content/updates/1001.md');
+const forEachFile = require('./forEachFile')
+const updateFrontMatter = require('./updateFrontMatter')
+
+async function handleFile(filePath) {
+	updateFrontMatter(
+		filePath
+		/*{
+	  dryRun: true
+	}*/
+	)
+}
+
+forEachFile('./content', '.md', handleFile).catch(err => console.error('Error:', err))
