@@ -55,6 +55,19 @@ const profileNameToVersionNumber = name => {
 	return atoms.reverse().shift()
 }
 
+const getExampleId = data => {
+	let id
+	const defaultGroup = data.groups[Object.keys(data.groups)[0]]
+	
+	if (defaultGroup) {
+		const defaultItem = defaultGroup[0]
+		if (defaultItem) {
+		id = defaultItem.id
+	}
+	}
+	return id
+}
+
 export const Endpoint = ({
 	rootPath,
 	path,
@@ -63,7 +76,7 @@ export const Endpoint = ({
 	profile
 }) => {
 	const profileVersion = profileNameToVersionNumber(profile)
-
+	const exampleId = getExampleId(data)
 	const [activeTab, setActiveTab] = useState('Tab 1')
 
 	const tabs = [
@@ -71,7 +84,10 @@ export const Endpoint = ({
 		{
 			id: 'Tab 2',
 			title: 'API Request',
-			content: <APIRequest src={rootPath} />
+			content: <APIRequest 
+			apiPath ={path}
+			exampleId={exampleId}
+			src={rootPath} />
 		},
 		{
 			id: 'Tab 3',
@@ -83,7 +99,7 @@ export const Endpoint = ({
 	path = path.replace(rootPath,"")
 
 	return (
-		<section className={styles.section}>
+	<section className={styles.section}>
 			<header className={styles.endpointContainer}>
 				<div className={styles.endpointContainerLeft}>
 					<h2>
