@@ -72,7 +72,7 @@ export const getNamedSiteItem = (name, structure) =>
  * @returns {Object} - The site item with the specified path.
  */
 export const getPathedSiteItem = (path, structure) => {
-	console.log(reallyFlatten(structure))
+	//console.log(reallyFlatten(structure))
 	return flatten(structure).filter(item => item.urlPath === path)[0]
 }
 
@@ -81,6 +81,7 @@ export const getPathedSiteItem = (path, structure) => {
  * @param {Object[]} arr - The array to flatten.
  * @returns {Object[]} - The flattened array.
  */
+/*
 const reallyFlatten = (
 	arr
 	//, parent
@@ -95,7 +96,7 @@ const reallyFlatten = (
 	})
 	return result
 }
-
+*/
 /**
  * Flatten an array of site items with their parent.
  * @param {Object[]} a - The array to flatten.

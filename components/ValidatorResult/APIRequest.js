@@ -18,9 +18,10 @@ export const APIRequest = ({
 	exampleId,
 	apiPath
 }) => {
+	
 	const [status, setStatus] = useState(RESPONSE_STATUS.INIITIAL)
 	const [response, setResponse] = useState(null)
-
+	
 	const setStatusPending = () => setStatus(RESPONSE_STATUS.PENDING)
 	const setStatusSuccess = () => setStatus(RESPONSE_STATUS.SUCCESS)
 	const setStatusError = () => setStatus(RESPONSE_STATUS.ERROR)
@@ -188,7 +189,11 @@ const ParametersWidgetPaged = ({ baseURL, path, status, dispatchRequest }) => {
 	)
 }
 
-const MakeRequest = ({ query, status, dispatchRequest }) => (
+const MakeRequest = ({ 
+	query, 
+	//status, 
+	//dispatchRequest
+}) => (
 	<div>
 		<h3>Request</h3>
 
@@ -221,11 +226,12 @@ const MakeRequest = ({ query, status, dispatchRequest }) => (
 	</div>
 )
 
+/*
 const Button = ({ dispatchRequest, text, q }) => (
 	<button onClick={() => dispatchRequest(q)} className={styles.buttonLink}>
 		{text}
 	</button>
-)
+)*/
 
 const Error = ({ message }) => (
 	<div
