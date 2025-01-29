@@ -7,7 +7,7 @@ import '@/styles/global.css'
 import '@/styles/no-js.css'
 
 import { NoWarranty } from '@/components/NoWarranty' 
-import { headers } from "next/headers";
+// import { headers } from "next/headers";
 // import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
