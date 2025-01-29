@@ -8,7 +8,7 @@ import '@/styles/no-js.css'
 
 import { NoWarranty } from '@/components/NoWarranty' 
 import { headers } from "next/headers";
-import { Maintenance } from '@/components/Maintenance'
+// import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -49,13 +49,7 @@ export default async function RootLayout({ children }) {
   const pathname = headerList.get("x-current-path");
 	// console.log ("--> " + pathname)
 
-	if (configValueToBoolean(process.env.SHOW_MAINTENANCE) && ! pathShouldOverrideMaintenance(pathname)) {
-		return (
-			<Wrap>
-				<Maintenance />
-			</Wrap>
-		)
-	}
+	
 	const items = getRootLayoutItems()
 	return (
 		<Wrap>
