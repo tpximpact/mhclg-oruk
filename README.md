@@ -1,14 +1,9 @@
 # Adopting OpenReferralUK
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1e1bfc09-eda6-4764-bf6a-63a643627e05/deploy-status)](https://app.netlify.com/sites/or-uk/deploys)
-
 For documentation, please see [the wiki](https://github.com/tpximpact/mhclg-oruk/wiki)
 
-The component storybook is [here](https://tpximpact.github.io/mhclg-oruk/).
+Two preview sites are available : 
 
-The (password protected) prototype preview is at [https://or-uk.netlify.app](https://or-uk.netlify.app). NB this is the stablve version and is suitable for demonstration to eg stakeholders etc
+[https://openreferraluk.netlify.app](https://openreferraluk.netlify.app) is the stable main branch and is suitable for distribution to clients etc [![Netlify Status](https://api.netlify.com/api/v1/badges/e1b1ed31-6b28-4473-835a-f99717561741/deploy-status)](https://app.netlify.com/sites/openreferraluk/deploys)
 
-## TODO
-
-- Component storybook?
-- unit test for utils
+[https://openreferraluk-development.netlify.app](https://openreferraluk-development.netlify.app) is the development branch and is indicative of our current work in progress. It is likely to be unreliable.

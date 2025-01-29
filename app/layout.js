@@ -6,6 +6,7 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
+import { NoWarranty } from '@/components/NoWarranty' 
 import { headers } from "next/headers";
 import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
@@ -64,11 +65,13 @@ export default async function RootLayout({ children }) {
 				<NoJsBanner />
 				<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
 				<LandmarkMain>
-					{configValueToBoolean(process.env.USE_NAV) ? (
-						<Crumbtrail />
-					) : (
-						<div style={{ height: '4rem' }}></div>
-					)}
+					{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
+						{configValueToBoolean(process.env.USE_NAV) ? (
+							<Crumbtrail />
+						) : (
+							<div style={{ height: '4rem' }}></div>
+						)}
+
 
 					{children}
 				</LandmarkMain>
