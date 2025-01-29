@@ -33,6 +33,7 @@ const Wrap = ({ children }) => (
 	</html>
 )
 
+/*
 const pathShouldOverrideMaintenance = (currentPath) => {
 	if (!currentPath) {
 		return false
@@ -42,11 +43,12 @@ const pathShouldOverrideMaintenance = (currentPath) => {
 		return ALLOWED_PATHS.some((pathToAllow) => currentPath.includes(pathToAllow));
 	  
 }
+*/
 
 export default async function RootLayout({ children }) {
 
 	const headerList = await headers();
-  const pathname = headerList.get("x-current-path");
+  	// const pathname = headerList.get("x-current-path");
 	// console.log ("--> " + pathname)
 
 	
