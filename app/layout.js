@@ -47,7 +47,7 @@ const pathShouldOverrideMaintenance = (currentPath) => {
 
 export default async function RootLayout({ children }) {
 
-	const headerList = await headers();
+	// const headerList = await headers();
   	// const pathname = headerList.get("x-current-path");
 	// console.log ("--> " + pathname)
 
