@@ -12,6 +12,13 @@
 		"hide": true
 	},
 	{
+		"name": "about",
+		"label": "About",
+		"contentPath": "/about",
+		"urlPath": "about",
+		"dynamic": true
+	},
+	{
 		"name": "updates",
 		"label": "Updates",
 		"contentPath": "/updates",
