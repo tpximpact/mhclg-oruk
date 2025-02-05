@@ -20,7 +20,7 @@
 	},
 	{
 		"name": "adopt",
-		"label": "Adopt the standard",
+		"label": "Adopt the standard in a council",
 		"contentPath": "/adopt",
 		"urlPath": "adopt",
 		"dynamic": true
