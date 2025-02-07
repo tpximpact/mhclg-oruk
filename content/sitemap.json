@@ -19,17 +19,17 @@
 		"dynamic": true
 	},
 	{
-		"name": "updates",
-		"label": "Updates",
-		"contentPath": "/updates",
-		"urlPath": "updates",
-		"dynamic": true
-	},
-	{
 		"name": "adopt",
 		"label": "Adopt the standard in a council",
 		"contentPath": "/adopt",
 		"urlPath": "adopt",
+		"dynamic": true
+	},
+	{
+		"name": "updates",
+		"label": "Case studies",
+		"contentPath": "/updates",
+		"urlPath": "updates",
 		"dynamic": true
 	},
 	{
