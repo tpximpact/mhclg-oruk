@@ -1,7 +1,7 @@
 ---
 title: Executive summary
-slug: For senior managers
-modified: '2025-01-20T11:11:20.092Z'
+slug: For senior managers.
+modified: '2025-02-10'
 ---
 
 # Empowering local communities through Open Referral UK
