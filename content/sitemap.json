@@ -68,7 +68,7 @@
 			{
 				"name": "overview",
 				"label": "Technical overview to implementing Open Referral UK",
-				"teaser": "Start here: A comprehensive introduction to ORUK for tchnical implementers",
+				"teaser": "Start here: A comprehensive introduction to ORUK for technical implementers aimed mainly at councils but relevant to most publishers and consumers of ORUK data.",
 				"urlPath": "overview",
 				"contentPath": "overview"
 			},
@@ -91,24 +91,28 @@
 				"label": "Reference: API",
 				"urlPath": "api",
 				"contentPath": "api"
+				"teaser": "The API queries and responses required to comply with the ORUK API specification."
 			},
 			{
 				"name": "schemata",
 				"label": "Reference: Data model",
 				"urlPath": "schemata",
 				"contentPath": "schemata"
+				"teaser": "Details of the entities and their fields/properties that make up the ORUK data specification."
 			},
 			{
 				"name": "specifications",
 				"label": "Reference: The specification",
 				"urlPath": "specifications",
 				"contentPath": "specifications"
+				"teaser": "The data specification expressed in JavaScript Object Notation (JSON)."
 			},
 			{
 				"name": "changelog",
 				"label": "Changes in OR-UK 3.0",
 				"urlPath": "changelog",
 				"contentPath": "changelog",
+				"teaser": "Changes between the initial version of ORUK and version 3.0.",
 				"autoMenu": false
 			}
 		]
