@@ -132,7 +132,7 @@ const LinkedReference = ({ data, useFullPath }) => {
 
 const toAnchorName = reference => {
 	// if there's a full path, get rid of it
-	if (reference.includes('/')) {
+	if (reference && reference.includes('/')) {
 		reference = reference.split('/').pop()
 	}
 
