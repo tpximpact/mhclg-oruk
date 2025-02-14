@@ -53,7 +53,7 @@ export const createMessage = async (
     return fromErrorToFormState(error);
   }
 
-  revalidatePath('/');
+  revalidatePath('/developers/register');
 
   return toFormState('SUCCESS', 'Message created');
 };
