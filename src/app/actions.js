@@ -37,6 +37,7 @@ export const createMessage = async (
   formState,
   formData
 ) => {
+	/*
   await new Promise((resolve) => setTimeout(resolve, 250));
 
   try {
@@ -52,6 +53,43 @@ export const createMessage = async (
   } catch (error) {
     return fromErrorToFormState(error);
   }
+  
+  */
+  
+  try {
+    const data = createMessageSchema.parse({
+      title: formData.get('title'),
+      text: formData.get('text'),
+    });
+  } catch (error) {
+    return fromErrorToFormState(error);
+  }
+  
+  try {
+	  const rawResponse = await fetch('https://httpbin.org/post',
+	  {
+		  method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({a: 1, b: 'Textual content'})
+	
+  });
+  const content = await rawResponse.json();
+	 
+ messages.push({
+      id: crypto.randomUUID(),
+      title: formData.get('title'),
+	  text: JSON.stringify(content)
+    });
+ 
+  
+  } catch (error) {
+    return toFormState('Error', 'Error');
+  }
+  
+  
 
   revalidatePath('/developers/register');
 
