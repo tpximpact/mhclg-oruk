@@ -5,3 +5,9 @@
 .Field {
 margin: 0 0 1rem;
 }
+
+.Error {
+	color: red;
+	font-weight: 900;
+	display: block;
+}

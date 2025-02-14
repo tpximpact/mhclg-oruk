@@ -7,8 +7,8 @@ import {
   toFormState,
 } from '@/utilities/to-form-state';
 
-let messages = [
-  {
+let messages = []
+  /*{
     id: crypto.randomUUID(),
     text: 'First Message',
   },
@@ -20,7 +20,7 @@ let messages = [
     id: crypto.randomUUID(),
     text: 'Third Message',
   },
-];
+];*/
 
 export const getMessages = async () => {
   await new Promise((resolve) => setTimeout(resolve, 250));
