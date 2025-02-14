@@ -55,5 +55,5 @@ export const createMessage = async (
 
   revalidatePath('/developers/register');
 
-  return toFormState('SUCCESS', 'Message created');
+  return toFormState('SUCCESS', 'Registration requested');
 };

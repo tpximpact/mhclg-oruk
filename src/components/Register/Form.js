@@ -1,5 +1,6 @@
 'use client';
 
+import styles from './Register.module.css'
 import { useActionState } from 'react';
 import { createMessage } from '@/app/actions';
 import { SubmitButton } from './SubmitButton';
@@ -21,16 +22,18 @@ export const Form = () => {
     <form
       action={action}
       ref={formRef}
-      className="flex flex-col gap-y-2"
+      className={styles.Form}
     >
+	<div className={styles.Field}>
       <label htmlFor="title">Title</label>
-      <input id="title" name="title" className="border-2" />
+      <input id="title" name="title" />
       <FieldError formState={formState} name="title" />
-
+</div>
+<div className={styles.Field}>
       <label htmlFor="text">Text</label>
-      <textarea id="text" name="text" className="border-2" />
+      <textarea id="text" name="text" />
       <FieldError formState={formState} name="text" />
-
+</div>
       <SubmitButton label="Create" loading="Creating ..." />
 
       {noScriptFallback}
