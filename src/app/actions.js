@@ -43,11 +43,14 @@ export const createMessage = async (
   formState,
   formData
 ) => {
-	
-  let data
+	const URL = "https://oruk-api-2a920f51d6bb.herokuapp.com/api/dashboard/submit"
+	// const URL = 'https://httpbin.org/post'
+  let data, values
+  
+  
   
   try {
-    data = createMessageSchema.parse({
+	  values = {
       name: formData.get('name'),
 	publisher: formData.get('publisher'),
 	publisherUrl: formData.get('publisherUrl'),
@@ -56,13 +59,14 @@ export const createMessage = async (
 	developerUrl: formData.get('developerUrl'),
 	serviceUrl: formData.get('serviceUrl'),
 	contactEmail: formData.get('contactEmail')
-    });
+    }
+    data = createMessageSchema.parse(values);
   } catch (error) {
-    return fromErrorToFormState(error);
+    return fromErrorToFormState(error,values);
   }
   
   try {
-	  const rawResponse = await fetch('https://httpbin.org/post',
+	  const rawResponse = await fetch(URL,
 	  {
 		  method: 'POST',
     headers: {

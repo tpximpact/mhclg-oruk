@@ -14,24 +14,34 @@ const TextField = ({
 	label,
 	note,
 	formState
-}) => <div className={styles.Field}>
+}) => {
+	const v = formState?.formData?.[id] ?? '';
+	
+	return(<div className={styles.Field}>
       <label htmlFor={id}>{label}</label>
-      <input id={id} name={id}/>
+      <input id={id} name={id} defaultValue={v}/>
       <FieldError formState={formState} name={id} />
 	  {note ? <span className={styles.Note}>{note}</span>: null}
-</div>
+</div>)}
 
 const TextArea = ({
 	id,
 	label,
 	note,
 	formState
-}) => <div className={styles.Field}>
+}) => {
+const v = formState?.formData?.[id] ?? '';
+	
+	
+	
+	return (<div className={styles.Field}>
       <label htmlFor={id}>{label}</label>
-      <textarea rows="4" cols="50" id={id} name={id}/>
+      <textarea rows="4" cols="50" id={id} name={id}
+	  defaultValue={v}
+	  />
       <FieldError formState={formState} name={id} />
 	  {note ? <span className={styles.Note}>{note}</span>: null}
-</div>
+</div>)}
 
 
 export const Form = () => {
