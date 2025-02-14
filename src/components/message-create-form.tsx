@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useFormState } from 'react-dom';
 import { createMessage } from '@/app/actions';
 import { SubmitButton } from './submit-button';
 import { EMPTY_FORM_STATE } from '@/utilities/to-form-state';
@@ -9,7 +9,7 @@ import { FieldError } from './field-error';
 import { useFormReset } from '@/hooks/use-form-reset';
 
 const MessageCreateForm = () => {
-  const [formState, action] = useActionState(
+  const [formState, action] = useFormState(
     createMessage,
     EMPTY_FORM_STATE
   );

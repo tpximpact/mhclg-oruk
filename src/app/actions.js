@@ -8,12 +8,7 @@ import {
   toFormState,
 } from '@/utilities/to-form-state';
 
-type Message = {
-  id: string;
-  text: string;
-};
-
-let messages: Message[] = [
+let messages = [
   {
     id: crypto.randomUUID(),
     text: 'First Message',
@@ -28,7 +23,7 @@ let messages: Message[] = [
   },
 ];
 
-export const getMessages = async (): Promise<Message[]> => {
+export const getMessages = async () => {
   await new Promise((resolve) => setTimeout(resolve, 250));
 
   return Promise.resolve(messages);
@@ -40,8 +35,8 @@ const createMessageSchema = z.object({
 });
 
 export const createMessage = async (
-  formState: FormState,
-  formData: FormData
+  formState,
+  formData
 ) => {
   await new Promise((resolve) => setTimeout(resolve, 250));
 
