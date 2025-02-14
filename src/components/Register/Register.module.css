@@ -2,8 +2,32 @@
 	/* */
 }
 
+.Form fieldset {
+	border: 0;
+	padding-bottom: 1rem;
+}
+
+.Form h3 {
+	margin-bottom:1rem;
+}
+
 .Field {
 margin: 0 0 1rem;
+}
+
+.Field input {
+	width: 50%;
+	padding: 0.5rem;
+	border-radius: 0;
+}
+
+.Field label {
+	font-weight: 900;
+	display: block;
+}
+
+.Field .Note {
+	font-style: italic;
 }
 
 .Error {

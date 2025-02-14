@@ -9,6 +9,19 @@ import { useToastMessage } from '@/hooks/use-toast-message';
 import { FieldError } from './FieldError';
 import { useFormReset } from '@/hooks/use-form-reset';
 
+const TextField = ({
+	id,
+	label,
+	note,
+	formState
+}) => <div className={styles.Field}>
+      <label htmlFor={id}>{label}</label>
+      <input id={id} name={id}/>
+      <FieldError formState={formState} name={id} />
+	  {note ? <span className={styles.Note}>{note}</span>: null}
+</div>
+
+
 export const Form = () => {
   const [formState, action] = useActionState(
     createMessage,
@@ -24,17 +37,32 @@ export const Form = () => {
       ref={formRef}
       className={styles.Form}
     >
-	<div className={styles.Field}>
-      <label htmlFor="title">Title</label>
-      <input id="title" name="title" />
-      <FieldError formState={formState} name="title" />
-</div>
-<div className={styles.Field}>
-      <label htmlFor="text">Text</label>
-      <textarea id="text" name="text" />
-      <FieldError formState={formState} name="text" />
-</div>
-      <SubmitButton label="Create" loading="Creating ..." />
+	
+	
+	
+	
+	<fieldset>
+	<h3>Your Service</h3>
+	<TextField id="name" label="Name" note="The name of your service. e.g. Countyshire Activity" formState={formState}/>
+	<TextField id="description" label="Description" note="A brief description of your service" formState={formState}/>
+	<TextField id="serviceUrl" label="URL" note="e.g. https:/example.com/my/oruk/api" formState={formState}/>
+</fieldset>
+	
+<fieldset>
+<h3>Service Publisher</h3>
+	<TextField id="publisher" label="Publisher Name" formState={formState}/>
+	<TextField id="publisherUrl" label="Publisher URL" formState={formState}/>
+	<TextField id="contactEmail" label="Contact email" formState={formState}/>
+	</fieldset>
+	
+	<fieldset>
+	<h3>Service Developer</h3>
+	<TextField id="developer" label="Developer name" formState={formState}/>
+	<TextField id="developerUrl" label="Developer url" formState={formState}/>
+	</fieldset>
+	
+	
+      <SubmitButton label="Register" loading="Registering ..." />
 
       {noScriptFallback}
     </form>

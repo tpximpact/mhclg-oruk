@@ -29,38 +29,33 @@ export const getMessages = async () => {
 };
 
 const createMessageSchema = z.object({
-  title: z.string().min(1).max(191),
-  text: z.string().min(1).max(191),
+	name: z.string().min(1).max(191),
+	publisher: z.string().min(1).max(191),
+	publisherUrl: z.string().min(1).max(191),
+	description: z.string().min(1).max(1024),
+	developer: z.string().min(1).max(191),
+	developerUrl: z.string().min(1).max(191),
+	serviceUrl: z.string().min(1).max(191),
+	contactEmail: z.string().min(1).max(191)
 });
 
 export const createMessage = async (
   formState,
   formData
 ) => {
-	/*
-  await new Promise((resolve) => setTimeout(resolve, 250));
-
-  try {
-    const data = createMessageSchema.parse({
-      title: formData.get('title'),
-      text: formData.get('text'),
-    });
-
-    messages.push({
-      id: crypto.randomUUID(),
-      ...data,
-    });
-  } catch (error) {
-    return fromErrorToFormState(error);
-  }
-  
-  */
+	
   let data
   
   try {
     data = createMessageSchema.parse({
-      title: formData.get('title'),
-      text: formData.get('text'),
+      name: formData.get('name'),
+	publisher: formData.get('publisher'),
+	publisherUrl: formData.get('publisherUrl'),
+	description: formData.get('description'),
+	developer: formData.get('developer'),
+	developerUrl: formData.get('developerUrl'),
+	serviceUrl: formData.get('serviceUrl'),
+	contactEmail: formData.get('contactEmail')
     });
   } catch (error) {
     return fromErrorToFormState(error);
@@ -81,7 +76,7 @@ export const createMessage = async (
 	 
  messages.push({
       id: crypto.randomUUID(),
-      title: formData.get('title'),
+      title: formData.get('name'),
 	  text: JSON.stringify(content)
     });
  
