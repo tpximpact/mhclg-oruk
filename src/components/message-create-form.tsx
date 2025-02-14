@@ -1,15 +1,15 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { createMessage } from '@/app/actions';
 import { SubmitButton } from './submit-button';
-import { EMPTY_FORM_STATE } from '@/utils/to-form-state';
+import { EMPTY_FORM_STATE } from '@/utilities/to-form-state';
 import { useToastMessage } from '@/hooks/use-toast-message';
 import { FieldError } from './field-error';
 import { useFormReset } from '@/hooks/use-form-reset';
 
 const MessageCreateForm = () => {
-  const [formState, action] = useFormState(
+  const [formState, action] = useActionState(
     createMessage,
     EMPTY_FORM_STATE
   );

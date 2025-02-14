@@ -6,7 +6,7 @@ import {
   FormState,
   fromErrorToFormState,
   toFormState,
-} from '@/utils/to-form-state';
+} from '@/utilities/to-form-state';
 
 type Message = {
   id: string;
