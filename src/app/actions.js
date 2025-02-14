@@ -55,9 +55,10 @@ export const createMessage = async (
   }
   
   */
+  let data
   
   try {
-    const data = createMessageSchema.parse({
+    data = createMessageSchema.parse({
       title: formData.get('title'),
       text: formData.get('text'),
     });
@@ -73,7 +74,7 @@ export const createMessage = async (
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({a: 1, b: 'Textual content'})
+    body: JSON.stringify(data)
 	
   });
   const content = await rawResponse.json();
