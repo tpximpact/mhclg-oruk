@@ -21,6 +21,18 @@ const TextField = ({
 	  {note ? <span className={styles.Note}>{note}</span>: null}
 </div>
 
+const TextArea = ({
+	id,
+	label,
+	note,
+	formState
+}) => <div className={styles.Field}>
+      <label htmlFor={id}>{label}</label>
+      <textarea rows="4" cols="50" id={id} name={id}/>
+      <FieldError formState={formState} name={id} />
+	  {note ? <span className={styles.Note}>{note}</span>: null}
+</div>
+
 
 export const Form = () => {
   const [formState, action] = useActionState(
@@ -44,7 +56,7 @@ export const Form = () => {
 	<fieldset>
 	<h3>Your Service</h3>
 	<TextField id="name" label="Name" note="The name of your service. e.g. Countyshire Activity" formState={formState}/>
-	<TextField id="description" label="Description" note="A brief description of your service" formState={formState}/>
+	<TextArea id="description" label="Description" note="A brief description of your service" formState={formState}/>
 	<TextField id="serviceUrl" label="URL" note="e.g. https:/example.com/my/oruk/api" formState={formState}/>
 </fieldset>
 	

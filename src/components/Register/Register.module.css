@@ -15,7 +15,8 @@
 margin: 0 0 1rem;
 }
 
-.Field input {
+.Field input,
+.Field textarea {
 	width: 50%;
 	padding: 0.5rem;
 	border-radius: 0;
