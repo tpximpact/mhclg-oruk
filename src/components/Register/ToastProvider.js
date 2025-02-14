@@ -2,13 +2,13 @@
 
 import { Toaster } from 'react-hot-toast';
 
-export default function ToastProvider({
+export const ToastProvider = ({
   children,
-}) {
+}) => {
   return (
     <>
       {children}
       <Toaster />
     </>
-  );
+  )
 }

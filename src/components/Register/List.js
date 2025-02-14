@@ -1,6 +1,6 @@
 import { getMessages } from '@/app/actions';
 
-const MessageList = async () => {
+export const List = async () => {
   const messages = await getMessages();
 
   return (
@@ -11,5 +11,3 @@ const MessageList = async () => {
     </ul>
   );
 };
-
-export { MessageList };

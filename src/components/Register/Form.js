@@ -1,50 +1,39 @@
-"use client"
+'use client';
 
-import { useActionState } from "react";
-import { signUp } from "@/actions/register";
+import { useActionState } from 'react';
+import { createMessage } from '@/app/actions';
+import { SubmitButton } from './SubmitButton';
+import { EMPTY_FORM_STATE } from '@/utilities/to-form-state';
+import { useToastMessage } from '@/hooks/use-toast-message';
+import { FieldError } from './FieldError';
+import { useFormReset } from '@/hooks/use-form-reset';
 
-export const  Form = () => {
-	const DEFAULT_STATE = {
-		username:"",
-		password:"",
-		errors: null
-	}
-	const [state, action, isPending] = useActionState(signUp, DEFAULT_STATE);
+export const Form = () => {
+  const [formState, action] = useActionState(
+    createMessage,
+    EMPTY_FORM_STATE
+  );
 
-	if (isPending) {
-		return <div>wait</div>
-	}
+  const noScriptFallback = useToastMessage(formState);
+  const formRef = useFormReset(formState);
+
   return (
- <form action={action}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          defaultValue={state.username}
-          required
-        />
-        {state.errors?.username && (
-          <p className="text-sm text-red-500">{state.errors.username}</p>
-        )}
-      </div>
+    <form
+      action={action}
+      ref={formRef}
+      className="flex flex-col gap-y-2"
+    >
+      <label htmlFor="title">Title</label>
+      <input id="title" name="title" className="border-2" />
+      <FieldError formState={formState} name="title" />
 
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="text"
-          id="password"
-          name="password"
-          defaultValue={state.password}
-        />
-        {state.errors?.password && (
-          <p className="text-sm text-red-500">{state.errors.password}</p>
-        )}
-      </div>
-      <input type="submit" value="Sign Up" />
+      <label htmlFor="text">Text</label>
+      <textarea id="text" name="text" className="border-2" />
+      <FieldError formState={formState} name="text" />
+
+      <SubmitButton label="Create" loading="Creating ..." />
+
+      {noScriptFallback}
     </form>
-  )
-  
-
-}
+  );
+};
