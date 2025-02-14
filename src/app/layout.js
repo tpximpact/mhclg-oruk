@@ -32,17 +32,6 @@ const Wrap = ({ children }) => (
 	</html>
 )
 
-/*
-const pathShouldOverrideMaintenance = (currentPath) => {
-	if (!currentPath) {
-		return false
-	}
-	const ALLOWED_PATHS = ["/developers/validator"];
-	  
-		return ALLOWED_PATHS.some((pathToAllow) => currentPath.includes(pathToAllow));
-	  
-}
-*/
 
 export default async function RootLayout({ children }) {
 	// const headerList = await headers();
