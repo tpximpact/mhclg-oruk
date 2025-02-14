@@ -1,37 +1,31 @@
 import { ZodError } from 'zod';
 
-export type FormState = {
-  status: 'UNSET' | 'SUCCESS' | 'ERROR';
-  message: string;
-  fieldErrors: Record<string, string[] | undefined>;
-  timestamp: number;
-};
 
-export const EMPTY_FORM_STATE: FormState = {
-  status: 'UNSET' as const,
+export const EMPTY_FORM_STATE = {
+  status: 'UNSET',
   message: '',
   fieldErrors: {},
   timestamp: Date.now(),
 };
 
-export const fromErrorToFormState = (error: unknown) => {
+export const fromErrorToFormState = (error) => {
   if (error instanceof ZodError) {
     return {
-      status: 'ERROR' as const,
+      status: 'ERROR',
       message: '',
       fieldErrors: error.flatten().fieldErrors,
       timestamp: Date.now(),
     };
   } else if (error instanceof Error) {
     return {
-      status: 'ERROR' as const,
+      status: 'ERROR',
       message: error.message,
       fieldErrors: {},
       timestamp: Date.now(),
     };
   } else {
     return {
-      status: 'ERROR' as const,
+      status: 'ERROR' ,
       message: 'An unknown error occurred',
       fieldErrors: {},
       timestamp: Date.now(),
@@ -40,9 +34,9 @@ export const fromErrorToFormState = (error: unknown) => {
 };
 
 export const toFormState = (
-  status: FormState['status'],
-  message: string
-): FormState => {
+  status,
+  message
+) => {
   return {
     status,
     message,

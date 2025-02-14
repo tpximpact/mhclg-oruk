@@ -2,12 +2,8 @@
 
 import { useFormStatus } from 'react-dom';
 
-type SubmitButtonProps = {
-  label: string;
-  loading: React.ReactNode;
-};
 
-const SubmitButton = ({ label, loading }: SubmitButtonProps) => {
+const SubmitButton = ({ label, loading }) => {
   const { pending } = useFormStatus();
 
   return (

@@ -1,8 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import { FormState } from '@/utilities/to-form-state';
 
-const useToastMessage = (formState: FormState) => {
+const useToastMessage = (formState) => {
   const prevTimestamp = useRef(formState.timestamp);
 
   const showToast =
