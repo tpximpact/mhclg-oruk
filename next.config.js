@@ -2,7 +2,7 @@
 
 const nextConfig = {
 	experimental: {
-		serverComponentsHmrCache: false // defaults to true
+		// serverComponentsHmrCache: false // defaults to true
 	},
 	images: {
 		disableStaticImages: true
