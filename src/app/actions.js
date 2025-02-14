@@ -3,7 +3,6 @@
 import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
 import {
-  FormState,
   fromErrorToFormState,
   toFormState,
 } from '@/utilities/to-form-state';
