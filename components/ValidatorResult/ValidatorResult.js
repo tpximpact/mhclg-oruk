@@ -10,15 +10,12 @@ import { formatResults } from './formatResults'
 
 //import exampleData from './example.json'
 
-export const ValidatorResult = ({ 
-	result, 
-	apiData
-}) => {
+export const ValidatorResult = ({ result, apiData }) => {
 	result = result.result
 	// result = exampleData // for development only
 
 	//console.log(JSON.stringify(result, null, 2))
-	
+
 	const endpoints = useMemo(() => formatResults(result), [result])
 
 	useEffect(() => {

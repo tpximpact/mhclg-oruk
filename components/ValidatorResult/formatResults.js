@@ -11,10 +11,10 @@ const processTest = (suite, test) => {
 	return test
 }
 
-const stripSharedPath = (str, sharedPath) => str.replace(sharedPath, "")
+const stripSharedPath = (str, sharedPath) => str.replace(sharedPath, '')
 
-const addTestToResult = (result, test,sharedPath ) => {
-	const endpointRaw =  stripSharedPath(test.endpoint,sharedPath)
+const addTestToResult = (result, test, sharedPath) => {
+	const endpointRaw = stripSharedPath(test.endpoint, sharedPath)
 	const endpointName = normaliseEndpointName(endpointRaw)
 	if (!result[endpointName]) {
 		result[endpointName] = { tests: [] }
@@ -32,12 +32,12 @@ const groupTestsByParent = result => {
 
 export const formatResults = input => {
 	let result = {}
-	
+
 	const sharedPath = input.service.url
 	input.testSuites.forEach(suite => {
 		suite.tests.forEach(test => {
 			const processedTest = processTest(suite, test)
-			addTestToResult(result, processedTest,sharedPath )
+			addTestToResult(result, processedTest, sharedPath)
 		})
 	})
 

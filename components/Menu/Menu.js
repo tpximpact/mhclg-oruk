@@ -37,13 +37,13 @@ const MenuSection = ({ data, setShowMenu }) => {
 const getSectionRoot = data => {
 	if (data && Array.isArray(data)) {
 		const components = data[0].path.split('/')
-		return "/" + components[0]
+		return '/' + components[0]
 	}
 	return false
 }
 
 const List = ({ data, overflow, setShowMenu }) => {
-	const sectionRoot = overflow? getSectionRoot(data) : false
+	const sectionRoot = overflow ? getSectionRoot(data) : false
 	return (
 		<ol>
 			{data &&
@@ -62,7 +62,11 @@ const List = ({ data, overflow, setShowMenu }) => {
 						)}
 					</li>
 				))}
-			{overflow && <li className={styles.overflow}>...plus <Link href={sectionRoot}>{overflow} more</Link></li>}
+			{overflow && (
+				<li className={styles.overflow}>
+					...plus <Link href={sectionRoot}>{overflow} more</Link>
+				</li>
+			)}
 		</ol>
 	)
 }

@@ -1,4 +1,3 @@
-
 import { Inter } from 'next/font/google'
 
 import '@/styles/reset.css'
@@ -6,7 +5,7 @@ import '@/styles/tokens.css'
 import '@/styles/global.css'
 import '@/styles/no-js.css'
 
-import { NoWarranty } from '@/components/NoWarranty' 
+import { NoWarranty } from '@/components/NoWarranty'
 // import { headers } from "next/headers";
 // import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
@@ -46,12 +45,10 @@ const pathShouldOverrideMaintenance = (currentPath) => {
 */
 
 export default async function RootLayout({ children }) {
-
 	// const headerList = await headers();
-  	// const pathname = headerList.get("x-current-path");
+	// const pathname = headerList.get("x-current-path");
 	// console.log ("--> " + pathname)
 
-	
 	const items = getRootLayoutItems()
 	return (
 		<Wrap>
@@ -62,12 +59,11 @@ export default async function RootLayout({ children }) {
 				<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
 				<LandmarkMain>
 					{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
-						{configValueToBoolean(process.env.USE_NAV) ? (
-							<Crumbtrail />
-						) : (
-							<div style={{ height: '4rem' }}></div>
-						)}
-
+					{configValueToBoolean(process.env.USE_NAV) ? (
+						<Crumbtrail />
+					) : (
+						<div style={{ height: '4rem' }}></div>
+					)}
 
 					{children}
 				</LandmarkMain>

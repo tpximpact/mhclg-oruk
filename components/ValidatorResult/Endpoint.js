@@ -7,7 +7,6 @@ import { Path } from '@/components/APIModel'
 
 import { APIRequest } from './APIRequest'
 
-
 export const TabsMenu = ({ tabData, activeTab, setActiveTab }) => (
 	<div className={styles.tabs}>
 		{tabData.map(tab => (
@@ -58,23 +57,17 @@ const profileNameToVersionNumber = name => {
 const getExampleId = data => {
 	let id
 	const defaultGroup = data.groups[Object.keys(data.groups)[0]]
-	
+
 	if (defaultGroup) {
 		const defaultItem = defaultGroup[0]
 		if (defaultItem) {
-		id = defaultItem.id
-	}
+			id = defaultItem.id
+		}
 	}
 	return id
 }
 
-export const Endpoint = ({
-	rootPath,
-	path,
-	data,
-	apiData,
-	profile
-}) => {
+export const Endpoint = ({ rootPath, path, data, apiData, profile }) => {
 	const profileVersion = profileNameToVersionNumber(profile)
 	const exampleId = getExampleId(data)
 	const [activeTab, setActiveTab] = useState('Tab 1')
@@ -84,10 +77,7 @@ export const Endpoint = ({
 		{
 			id: 'Tab 2',
 			title: 'API Request',
-			content: <APIRequest 
-			apiPath ={path}
-			exampleId={exampleId}
-			src={rootPath} />
+			content: <APIRequest apiPath={path} exampleId={exampleId} src={rootPath} />
 		},
 		{
 			id: 'Tab 3',
@@ -96,10 +86,10 @@ export const Endpoint = ({
 		}
 	]
 
-	path = path.replace(rootPath,"")
+	path = path.replace(rootPath, '')
 
 	return (
-	<section className={styles.section}>
+		<section className={styles.section}>
 			<header className={styles.endpointContainer}>
 				<div className={styles.endpointContainerLeft}>
 					<h2>

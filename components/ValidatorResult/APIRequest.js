@@ -13,15 +13,10 @@ const RESPONSE_STATUS = {
 	ERROR: 'error'
 }
 
-export const APIRequest = ({ 
-	src,
-	exampleId,
-	apiPath
-}) => {
-	
+export const APIRequest = ({ src, exampleId, apiPath }) => {
 	const [status, setStatus] = useState(RESPONSE_STATUS.INIITIAL)
 	const [response, setResponse] = useState(null)
-	
+
 	const setStatusPending = () => setStatus(RESPONSE_STATUS.PENDING)
 	const setStatusSuccess = () => setStatus(RESPONSE_STATUS.SUCCESS)
 	const setStatusError = () => setStatus(RESPONSE_STATUS.ERROR)
@@ -49,14 +44,14 @@ export const APIRequest = ({
 
 	return (
 		<div>
-			<ParametersWidget 
-			path = {apiPath}
-			dispatchRequest={dispatchRequest} 
-			status={status} 
-			baseURL={src}
-			initialIDValue={exampleId} />
+			<ParametersWidget
+				path={apiPath}
+				dispatchRequest={dispatchRequest}
+				status={status}
+				baseURL={src}
+				initialIDValue={exampleId}
+			/>
 			<Result status={status} response={response} />
-			
 		</div>
 	)
 }
@@ -76,9 +71,10 @@ const Result = ({ status, response }) => (
 const buildPaginationQueryString = ({ baseURL, path, pageNumber, perPage }) =>
 	`${baseURL}${path}?&page=${pageNumber}&per_page=${perPage}`
 
-const buildIDQueryString = ({ baseURL, path, idValue }) => `${baseURL}${path.replace('{id}','')}${idValue}`
+const buildIDQueryString = ({ baseURL, path, idValue }) =>
+	`${baseURL}${path.replace('{id}', '')}${idValue}`
 
-const buildRootQueryString = ({ baseURL, path }) => `${baseURL}${path}` 
+const buildRootQueryString = ({ baseURL, path }) => `${baseURL}${path}`
 
 const ParametersWidget = props => {
 	let C = ParametersWidgetPaged
@@ -87,7 +83,7 @@ const ParametersWidget = props => {
 		C = ParametersWidgetID
 	}
 
-	if (props.path === ('/')) {
+	if (props.path === '/') {
 		C = ParametersWidgetRoot
 	}
 
@@ -96,21 +92,18 @@ const ParametersWidget = props => {
 
 const ParametersWidgetRoot = ({ baseURL, path, status, dispatchRequest }) => (
 	<div>
-		<MakeRequest dispatchRequest={dispatchRequest} status={status} query={buildRootQueryString({
-					baseURL: baseURL,
-					path: path
-				})} />
+		<MakeRequest
+			dispatchRequest={dispatchRequest}
+			status={status}
+			query={buildRootQueryString({
+				baseURL: baseURL,
+				path: path
+			})}
+		/>
 	</div>
 )
 
-const ParametersWidgetID = ({ 
-	baseURL, 
-	path,
-	status, 
-	dispatchRequest,
-	 initialIDValue
-	 }) => {
-	
+const ParametersWidgetID = ({ baseURL, path, status, dispatchRequest, initialIDValue }) => {
 	const [idValue, setIdValue] = useState(initialIDValue)
 	const handleIdValueChange = event => {
 		setIdValue(event.target.value)
@@ -184,14 +177,14 @@ const ParametersWidgetPaged = ({ baseURL, path, status, dispatchRequest }) => {
 					pageNumber: pageNumber,
 					perPage: perPage
 				})}
-			/> 
+			/>
 		</div>
 	)
 }
 
-const MakeRequest = ({ 
-	query, 
-	//status, 
+const MakeRequest = ({
+	query
+	//status,
 	//dispatchRequest
 }) => (
 	<div>
@@ -203,7 +196,6 @@ const MakeRequest = ({
 			<a href={query} target='_blank'>
 				in a new window
 			</a>
-			
 			{/*
 				
 				remove pending fix to json component loading

@@ -1,255 +1,255 @@
 {
-    "service": {
-      "url": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail",
-      "isValid": false,
-      "profile": "HSDS-UK-3.0",
-      "profileReason": "Could not read standard version from '/' endpoint defaulting to HSDS-UK-3.0"
-    },
-    "metadata": [],
-    "testSuites": [
-      {
-        "name": "Level 1 Compliance - Basic checks",
-        "description": "Will validate the required basic endpoints. Validation will fail if it does not pass all these checks.",
-        "messageLevel": "error",
-        "required": true,
-        "success": false,
-        "tests": [
-          {
-            "name": "API meta info - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/",
-            "description": "Does the base endpoint return meta information about the API, and does it adhere to the schema",
-            "success": false,
-            "messages": [
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'docs-openreferraluk-org/en/latest/openapi30.json' does not validate against format 'uri'.",
-                "errorIn": "#/properties/openapi_url",
-                "errorAt": "openapi_url, line 3, position 67"
-              },
-              {
-                "name": "Required",
-                "description": "Schema validation issue",
-                "message": "Required properties are missing from object: profile.",
-                "errorIn": "#",
-                "errorAt": ", line 1, position 1"
-              }
-            ]
-          },
-          {
-            "name": "Services list - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/services",
-            "description": "Does the services list endpoint return a paginated list of services in the correct schema",
-            "success": false,
-            "messages": [
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'example_counselling' does not validate against format 'uri'.",
-                "errorIn": "#/properties/contents/items/properties/url",
-                "errorAt": "contents[0].url, line 13, position 34"
-              },
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'email-example_com' does not validate against format 'email'.",
-                "errorIn": "#/properties/contents/items/properties/email",
-                "errorAt": "contents[0].email, line 14, position 34"
-              },
-              {
-                "name": "Required",
-                "description": "Schema validation issue",
-                "message": "Required properties are missing from object: name.",
-                "errorIn": "#/properties/contents/items",
-                "errorAt": "contents[0], line 10, position 5"
-              },
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'example_counselling' does not validate against format 'uri'.",
-                "errorIn": "#/properties/contents/items/properties/url",
-                "errorAt": "contents[1].url, line 38, position 34"
-              },
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'email-example_com' does not validate against format 'email'.",
-                "errorIn": "#/properties/contents/items/properties/email",
-                "errorAt": "contents[1].email, line 39, position 34"
-              },
-              {
-                "name": "Required",
-                "description": "Schema validation issue",
-                "message": "Required properties are missing from object: name.",
-                "errorIn": "#/properties/contents/items",
-                "errorAt": "contents[1], line 35, position 5"
-              },
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'example_counselling' does not validate against format 'uri'.",
-                "errorIn": "#/properties/contents/items/properties/url",
-                "errorAt": "contents[2].url, line 63, position 34"
-              },
-              {
-                "name": "Type",
-                "description": "Schema validation issue",
-                "message": "Invalid type. Expected String but got Boolean.",
-                "errorIn": "#/properties/contents/items/properties/email",
-                "errorAt": "contents[2].email, line 64, position 20"
-              },
-              {
-                "name": "Required",
-                "description": "Schema validation issue",
-                "message": "Required properties are missing from object: name.",
-                "errorIn": "#/properties/contents/items",
-                "errorAt": "contents[2], line 60, position 5"
-              },
-              {
-                "name": "Type",
-                "description": "Schema validation issue",
-                "message": "Invalid type. Expected String but got Integer.",
-                "errorIn": "#/properties/contents/items/properties/email",
-                "errorAt": "contents[3].email, line 88, position 20"
-              },
-              {
-                "name": "Required",
-                "description": "Schema validation issue",
-                "message": "Required properties are missing from object: name.",
-                "errorIn": "#/properties/contents/items",
-                "errorAt": "contents[3], line 85, position 5"
-              },
-              {
-                "name": "Item count",
-                "description": "Does the number of items returned match the 'size' value in the response",
-                "message": "The value of 'size' is 1 when 4 item(s) were returned in the response content",
-                "parameters": { "perPage": "1", "page": "1" },
-                "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/services?perPage=1&page=1"
-              }
-            ]
-          },
-          {
-            "name": "Service by id - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/services/",
-            "id": "ac148810-d857-441c-9679-408f346de14b",
-            "description": "Does the service by id endpoint return a fully nested service in the correct schema",
-            "success": false,
-            "messages": [
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'example/counselling' does not validate against format 'uri'.",
-                "errorIn": "#/properties/url",
-                "errorAt": "url, line 4, position 30"
-              },
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'email-example_com' does not validate against format 'email'.",
-                "errorIn": "#/properties/email",
-                "errorAt": "email, line 5, position 30"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Level 2 Compliance - Extended checks",
-        "description": "Will validate all other endpoints. Validation will not fail if it does not pass all these checks.",
-        "messageLevel": "warning",
-        "required": false,
-        "success": false,
-        "tests": [
-          {
-            "name": "Taxonomies list - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomies",
-            "description": "Does the taxonomies list endpoint return a paginated list of taxonomies in the correct schema",
-            "success": true,
-            "messages": []
-          },
-          {
-            "name": "Taxonomy by id - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomies/",
-            "id": "5c4d79d7-cc55-470e-9f1f-8cad074e4892",
-            "description": "Does the taxonomy by id endpoint return the full information of a taxonomy in the correct schema",
-            "success": true,
-            "messages": []
-          },
-          {
-            "name": "Taxonomy terms list - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomy_terms",
-            "description": "Does the taxonomy terms list endpoint return a paginated list of taxonomy terms in the correct schema",
-            "success": true,
-            "messages": []
-          },
-          {
-            "name": "Taxonomy terms list - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomy_terms/",
-            "id": "0bc248fa-dc27-4650-9ba4-8f1a24ef16a2",
-            "description": "Does the taxonomy term by id endpoint return the full information of a taxonomy term in the correct schema",
-            "success": false,
-            "messages": [
-              {
-                "name": "Format",
-                "description": "Schema validation issue",
-                "message": "String 'example_com' does not validate against format 'uri'.",
-                "errorIn": "#/properties/term_uri",
-                "errorAt": "term_uri, line 6, position 27"
-              },
-              {
-                "name": "Required",
-                "description": "Schema validation issue",
-                "message": "Required properties are missing from object: description.",
-                "errorIn": "#",
-                "errorAt": ", line 1, position 1"
-              }
-            ]
-          },
-          {
-            "name": "Service at location list - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations",
-            "description": "Does the service at location list endpoint return a paginated list of services at locations in the correct schema",
-            "success": false,
-            "messages": [
-              {
-                "name": "Items per page",
-                "description": "Is the number of items returned per page correct",
-                "message": "The value of 'size' is 1 when 4 item(s) were requested in the 'per_page' parameter",
-                "parameters": { "perPage": "4", "page": "1" },
-                "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=1"
-              },
-              {
-                "name": "Items per page",
-                "description": "Is the number of items returned per page correct",
-                "message": "The value of 'size' is 1 when 4 item(s) were requested in the 'per_page' parameter",
-                "parameters": { "perPage": "4", "page": "2" },
-                "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=2"
-              },
-              {
-                "name": "First page flag",
-                "description": "Is the 'first_page' flag returned correctly",
-                "message": "The value of 'first_page' is True when the page number is 2",
-                "parameters": { "perPage": "4", "page": "2" },
-                "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=2"
-              },
-              {
-                "name": "First page flag",
-                "description": "Is the 'first_page' flag returned correctly",
-                "message": "The value of 'first_page' is True when the page number is 3",
-                "parameters": { "perPage": "4", "page": "3" },
-                "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=3"
-              }
-            ]
-          },
-          {
-            "name": "Service at location by id - API & schema validation",
-            "endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations/",
-            "id": "e94c9f38-1e8f-4564-91d4-d53501ab1765",
-            "description": "Does the service at location by id endpoint return the full information of a service at location in the correct schema",
-            "success": true,
-            "messages": []
-          }
-        ]
-      }
-    ]
-  }
+	"service": {
+		"url": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail",
+		"isValid": false,
+		"profile": "HSDS-UK-3.0",
+		"profileReason": "Could not read standard version from '/' endpoint defaulting to HSDS-UK-3.0"
+	},
+	"metadata": [],
+	"testSuites": [
+		{
+			"name": "Level 1 Compliance - Basic checks",
+			"description": "Will validate the required basic endpoints. Validation will fail if it does not pass all these checks.",
+			"messageLevel": "error",
+			"required": true,
+			"success": false,
+			"tests": [
+				{
+					"name": "API meta info - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/",
+					"description": "Does the base endpoint return meta information about the API, and does it adhere to the schema",
+					"success": false,
+					"messages": [
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'docs-openreferraluk-org/en/latest/openapi30.json' does not validate against format 'uri'.",
+							"errorIn": "#/properties/openapi_url",
+							"errorAt": "openapi_url, line 3, position 67"
+						},
+						{
+							"name": "Required",
+							"description": "Schema validation issue",
+							"message": "Required properties are missing from object: profile.",
+							"errorIn": "#",
+							"errorAt": ", line 1, position 1"
+						}
+					]
+				},
+				{
+					"name": "Services list - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/services",
+					"description": "Does the services list endpoint return a paginated list of services in the correct schema",
+					"success": false,
+					"messages": [
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'example_counselling' does not validate against format 'uri'.",
+							"errorIn": "#/properties/contents/items/properties/url",
+							"errorAt": "contents[0].url, line 13, position 34"
+						},
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'email-example_com' does not validate against format 'email'.",
+							"errorIn": "#/properties/contents/items/properties/email",
+							"errorAt": "contents[0].email, line 14, position 34"
+						},
+						{
+							"name": "Required",
+							"description": "Schema validation issue",
+							"message": "Required properties are missing from object: name.",
+							"errorIn": "#/properties/contents/items",
+							"errorAt": "contents[0], line 10, position 5"
+						},
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'example_counselling' does not validate against format 'uri'.",
+							"errorIn": "#/properties/contents/items/properties/url",
+							"errorAt": "contents[1].url, line 38, position 34"
+						},
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'email-example_com' does not validate against format 'email'.",
+							"errorIn": "#/properties/contents/items/properties/email",
+							"errorAt": "contents[1].email, line 39, position 34"
+						},
+						{
+							"name": "Required",
+							"description": "Schema validation issue",
+							"message": "Required properties are missing from object: name.",
+							"errorIn": "#/properties/contents/items",
+							"errorAt": "contents[1], line 35, position 5"
+						},
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'example_counselling' does not validate against format 'uri'.",
+							"errorIn": "#/properties/contents/items/properties/url",
+							"errorAt": "contents[2].url, line 63, position 34"
+						},
+						{
+							"name": "Type",
+							"description": "Schema validation issue",
+							"message": "Invalid type. Expected String but got Boolean.",
+							"errorIn": "#/properties/contents/items/properties/email",
+							"errorAt": "contents[2].email, line 64, position 20"
+						},
+						{
+							"name": "Required",
+							"description": "Schema validation issue",
+							"message": "Required properties are missing from object: name.",
+							"errorIn": "#/properties/contents/items",
+							"errorAt": "contents[2], line 60, position 5"
+						},
+						{
+							"name": "Type",
+							"description": "Schema validation issue",
+							"message": "Invalid type. Expected String but got Integer.",
+							"errorIn": "#/properties/contents/items/properties/email",
+							"errorAt": "contents[3].email, line 88, position 20"
+						},
+						{
+							"name": "Required",
+							"description": "Schema validation issue",
+							"message": "Required properties are missing from object: name.",
+							"errorIn": "#/properties/contents/items",
+							"errorAt": "contents[3], line 85, position 5"
+						},
+						{
+							"name": "Item count",
+							"description": "Does the number of items returned match the 'size' value in the response",
+							"message": "The value of 'size' is 1 when 4 item(s) were returned in the response content",
+							"parameters": { "perPage": "1", "page": "1" },
+							"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/services?perPage=1&page=1"
+						}
+					]
+				},
+				{
+					"name": "Service by id - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/services/",
+					"id": "ac148810-d857-441c-9679-408f346de14b",
+					"description": "Does the service by id endpoint return a fully nested service in the correct schema",
+					"success": false,
+					"messages": [
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'example/counselling' does not validate against format 'uri'.",
+							"errorIn": "#/properties/url",
+							"errorAt": "url, line 4, position 30"
+						},
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'email-example_com' does not validate against format 'email'.",
+							"errorIn": "#/properties/email",
+							"errorAt": "email, line 5, position 30"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Level 2 Compliance - Extended checks",
+			"description": "Will validate all other endpoints. Validation will not fail if it does not pass all these checks.",
+			"messageLevel": "warning",
+			"required": false,
+			"success": false,
+			"tests": [
+				{
+					"name": "Taxonomies list - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomies",
+					"description": "Does the taxonomies list endpoint return a paginated list of taxonomies in the correct schema",
+					"success": true,
+					"messages": []
+				},
+				{
+					"name": "Taxonomy by id - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomies/",
+					"id": "5c4d79d7-cc55-470e-9f1f-8cad074e4892",
+					"description": "Does the taxonomy by id endpoint return the full information of a taxonomy in the correct schema",
+					"success": true,
+					"messages": []
+				},
+				{
+					"name": "Taxonomy terms list - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomy_terms",
+					"description": "Does the taxonomy terms list endpoint return a paginated list of taxonomy terms in the correct schema",
+					"success": true,
+					"messages": []
+				},
+				{
+					"name": "Taxonomy terms list - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/taxonomy_terms/",
+					"id": "0bc248fa-dc27-4650-9ba4-8f1a24ef16a2",
+					"description": "Does the taxonomy term by id endpoint return the full information of a taxonomy term in the correct schema",
+					"success": false,
+					"messages": [
+						{
+							"name": "Format",
+							"description": "Schema validation issue",
+							"message": "String 'example_com' does not validate against format 'uri'.",
+							"errorIn": "#/properties/term_uri",
+							"errorAt": "term_uri, line 6, position 27"
+						},
+						{
+							"name": "Required",
+							"description": "Schema validation issue",
+							"message": "Required properties are missing from object: description.",
+							"errorIn": "#",
+							"errorAt": ", line 1, position 1"
+						}
+					]
+				},
+				{
+					"name": "Service at location list - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations",
+					"description": "Does the service at location list endpoint return a paginated list of services at locations in the correct schema",
+					"success": false,
+					"messages": [
+						{
+							"name": "Items per page",
+							"description": "Is the number of items returned per page correct",
+							"message": "The value of 'size' is 1 when 4 item(s) were requested in the 'per_page' parameter",
+							"parameters": { "perPage": "4", "page": "1" },
+							"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=1"
+						},
+						{
+							"name": "Items per page",
+							"description": "Is the number of items returned per page correct",
+							"message": "The value of 'size' is 1 when 4 item(s) were requested in the 'per_page' parameter",
+							"parameters": { "perPage": "4", "page": "2" },
+							"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=2"
+						},
+						{
+							"name": "First page flag",
+							"description": "Is the 'first_page' flag returned correctly",
+							"message": "The value of 'first_page' is True when the page number is 2",
+							"parameters": { "perPage": "4", "page": "2" },
+							"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=2"
+						},
+						{
+							"name": "First page flag",
+							"description": "Is the 'first_page' flag returned correctly",
+							"message": "The value of 'first_page' is True when the page number is 3",
+							"parameters": { "perPage": "4", "page": "3" },
+							"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations?perPage=4&page=3"
+						}
+					]
+				},
+				{
+					"name": "Service at location by id - API & schema validation",
+					"endpoint": "https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock/fail/service_at_locations/",
+					"id": "e94c9f38-1e8f-4564-91d4-d53501ab1765",
+					"description": "Does the service at location by id endpoint return the full information of a service at location in the correct schema",
+					"success": true,
+					"messages": []
+				}
+			]
+		}
+	]
+}
