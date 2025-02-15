@@ -43,6 +43,11 @@ const v = formState?.formData?.[id] ?? '';
 	  {note ? <span className={styles.Note}>{note}</span>: null}
 </div>)}
 
+const Success = () => <div>
+	<h3>Registration request submitted</h3>
+	<p style={{margin:"2rem 0"}}><strong>What happens next</strong>: Our team will review your feed. This is a human-moderated process and may take up to 28 days. When the review process is complete, we will send an email to the contact email address supplied.</p>
+	</div>
+
 
 export const Form = () => {
   const [formState, action] = useActionState(
@@ -52,8 +57,12 @@ export const Form = () => {
 
   const noScriptFallback = useToastMessage(formState);
   const formRef = useFormReset(formState);
+if (formState.status==="SUCCESS") {
+	return <Success  />
+}
 
   return (
+
     <form
       action={action}
       ref={formRef}

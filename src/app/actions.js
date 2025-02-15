@@ -7,7 +7,7 @@ import {
   toFormState,
 } from '@/utilities/to-form-state';
 
-let messages = []
+let messages = null
   /*{
     id: crypto.randomUUID(),
     text: 'First Message',
@@ -77,6 +77,9 @@ export const createMessage = async (
   });
   const content = await rawResponse.json();
 	 
+  if (!messages) {
+    messages = []
+  }
  messages.push({
       id: crypto.randomUUID(),
       title: formData.get('name'),
