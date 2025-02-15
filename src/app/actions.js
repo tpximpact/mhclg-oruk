@@ -43,8 +43,7 @@ export const createMessage = async (
   formState,
   formData
 ) => {
-	const URL = "https://oruk-api-2a920f51d6bb.herokuapp.com/api/dashboard/submit"
-	// const URL = 'https://httpbin.org/post'
+	const URL = process.env.REGISTER_ENDPOINT
   let data, values
   
   

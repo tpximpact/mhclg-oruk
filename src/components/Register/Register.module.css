@@ -20,6 +20,7 @@ margin: 0 0 1rem;
 	width: 50%;
 	padding: 0.5rem;
 	border-radius: 0;
+	border:1px solid black;
 }
 
 .Field label {
@@ -35,4 +36,12 @@ margin: 0 0 1rem;
 	color: red;
 	font-weight: 900;
 	display: block;
+}
+
+.SubmitButton{
+	padding:0.5rem 1rem;
+	border: 1px solid black !important;
+	background:white;
+	font-weight:900;
+	cursor: pointer;
 }
