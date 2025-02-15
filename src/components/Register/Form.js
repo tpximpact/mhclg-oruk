@@ -35,7 +35,8 @@ const TextArea = ({ id, label, note, formState }) => {
 	)
 }
 
-const Success = () => (
+const Success = ({link}) => {
+	return (
 	<div>
 		<h3>Registration request submitted</h3>
 		<p style={{ margin: '2rem 0' }}>
@@ -43,8 +44,17 @@ const Success = () => (
 			process and may take up to 28 days. When the review process is complete, we will send an email
 			to the contact email address supplied.
 		</p>
+		<p>
+				Our review process is open and transparent. If you would like to track the progress of your
+				reqest, you can do so at{' '}
+				<a href={link} target='_blank'>
+					{link}
+				</a>
+				.
+			</p>
 	</div>
 )
+}
 
 export const Form = () => {
 	const [formState, action] = useActionState(createMessage, EMPTY_FORM_STATE)
@@ -52,7 +62,7 @@ export const Form = () => {
 	const noScriptFallback = useToastMessage(formState)
 	const formRef = useFormReset(formState)
 	if (formState.status === 'SUCCESS') {
-		return <Success />
+		return <Success link={formState.updateLink}/>
 	}
 
 	return (

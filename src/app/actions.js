@@ -4,27 +4,6 @@ import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 import { fromErrorToFormState, toFormState } from '@/utilities/to-form-state'
 
-let messages = null
-/*{
-    id: crypto.randomUUID(),
-    text: 'First Message',
-  },
-  {
-    id: crypto.randomUUID(),
-    text: 'Second Message',
-  },
-  {
-    id: crypto.randomUUID(),
-    text: 'Third Message',
-  },
-];*/
-
-export const getMessages = async () => {
-	await new Promise(resolve => setTimeout(resolve, 250))
-
-	return Promise.resolve(messages)
-}
-
 const createMessageSchema = z.object({
 	name: z.string().min(1).max(191),
 	publisher: z.string().min(1).max(191),
@@ -38,7 +17,7 @@ const createMessageSchema = z.object({
 
 export const createMessage = async (formState, formData) => {
 	const URL = process.env.REGISTER_ENDPOINT
-	let data, values
+	let data, values, updateLink
 
 	try {
 		values = {
@@ -66,20 +45,14 @@ export const createMessage = async (formState, formData) => {
 			body: JSON.stringify(data)
 		})
 		const content = await rawResponse.json()
-
-		if (!messages) {
-			messages = []
-		}
-		messages.push({
-			id: crypto.randomUUID(),
-			title: formData.get('name'),
-			text: JSON.stringify(content)
-		})
+		updateLink = content.updateLink
 	} catch (error) {
 		return toFormState('Error', 'Error')
 	}
 
 	revalidatePath('/developers/register')
 
-	return toFormState('SUCCESS', 'Registration requested')
+	let result = toFormState('SUCCESS', 'Registration requested')
+	result.updateLink = updateLink
+	return result
 }
