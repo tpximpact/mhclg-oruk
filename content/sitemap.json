@@ -80,6 +80,13 @@
 				"teaser": "This tool provides near-real time status reporting for core service providers."
 			},
 			{
+				"name": "register",
+				"label": "Register your feed",
+				"urlPath": "register",
+				"contentPath": "register",
+				"teaser": "Add your feed to our directory."
+			},
+			{
 				"name": "api",
 				"label": "Reference: API",
 				"urlPath": "api",
