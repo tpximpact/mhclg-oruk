@@ -1,22 +1,19 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react'
 
-const useFormReset = (formState) => {
-  const formRef = useRef(null);
-  const prevTimestamp = useRef(formState.timestamp);
+const useFormReset = formState => {
+	const formRef = useRef(null)
+	const prevTimestamp = useRef(formState.timestamp)
 
-  useEffect(() => {
-    if (!formRef.current) return;
-    if (
-      formState.status === 'SUCCESS' &&
-      formState.timestamp !== prevTimestamp.current
-    ) {
-      formRef.current.reset();
+	useEffect(() => {
+		if (!formRef.current) return
+		if (formState.status === 'SUCCESS' && formState.timestamp !== prevTimestamp.current) {
+			formRef.current.reset()
 
-      prevTimestamp.current = formState.timestamp;
-    }
-  }, [formState.status, formState.timestamp]);
+			prevTimestamp.current = formState.timestamp
+		}
+	}, [formState.status, formState.timestamp])
 
-  return formRef;
-};
+	return formRef
+}
 
-export { useFormReset };
+export { useFormReset }

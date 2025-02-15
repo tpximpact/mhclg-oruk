@@ -32,7 +32,6 @@ const Wrap = ({ children }) => (
 	</html>
 )
 
-
 export default async function RootLayout({ children }) {
 	// const headerList = await headers();
 	// const pathname = headerList.get("x-current-path");

@@ -8,11 +8,11 @@
 }
 
 .Form h3 {
-	margin-bottom:1rem;
+	margin-bottom: 1rem;
 }
 
 .Field {
-margin: 0 0 1rem;
+	margin: 0 0 1rem;
 }
 
 .Field input,
@@ -20,7 +20,7 @@ margin: 0 0 1rem;
 	width: 50%;
 	padding: 0.5rem;
 	border-radius: 0;
-	border:1px solid black;
+	border: 1px solid black;
 }
 
 .Field label {
@@ -38,10 +38,10 @@ margin: 0 0 1rem;
 	display: block;
 }
 
-.SubmitButton{
-	padding:0.5rem 1rem;
+.SubmitButton {
+	padding: 0.5rem 1rem;
 	border: 1px solid black !important;
-	background:white;
-	font-weight:900;
+	background: white;
+	font-weight: 900;
 	cursor: pointer;
 }
