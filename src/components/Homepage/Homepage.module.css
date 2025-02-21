@@ -32,9 +32,7 @@
 	margin-top: 1rem;
 }
 
-.content {
-	max-width: 50vw;
-}
+
 
 .hero,
 .conclusion {
@@ -70,9 +68,15 @@
 }
 
 
+
+
+
 @value breakpoint: 1024px;
 
 @media (max-width: breakpoint) {
+
+
+
     .Logo {
         display: none;
     }

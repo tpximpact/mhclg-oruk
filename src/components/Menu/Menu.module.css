@@ -6,7 +6,7 @@
 	font-size: 16px;
 }
 .Menu.open {
-	max-height: 900px;
+	max-height: 1500px;
 }
 
 .Menu {
@@ -50,6 +50,10 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 	.Menu {
 		grid-template-columns: 1fr;
 	}
+
+	.Menu li {
+		margin: 0 0 1rem;
+	}
 }
 
 .MenuSection {
@@ -64,7 +68,7 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 }
 
 .Menu li {
-	margin: 0 0 1rem;
+	margin: 0 0 0.5rem;
 	padding: 0;
 	text-indent: 0;
 	list-style: none;
