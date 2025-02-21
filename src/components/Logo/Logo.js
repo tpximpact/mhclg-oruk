@@ -1,12 +1,12 @@
 import style from './Logo.module.css'
 
-export const Logo = ({ animate, colour = '#000', height = '80' }) => (
+export const Logo = ({ animate, colour = '#000', height = '80', width = '200'}) => (
 	<div className={animate ? style.logo : ''}>
 		<div className={style.hidden}>Openreferral UK</div>
 		{animate || (
 			<svg
 				fill={colour}
-				width='200'
+				width={width}
 				height={height}
 				viewBox='0 0 200 80'
 				xmlns='http://www.w3.org/2000/svg'
