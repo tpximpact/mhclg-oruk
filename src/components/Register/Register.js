@@ -6,7 +6,6 @@ export const Register = () => (
 	<PageMargin>
 		<div className={styles.Register}>
 			<Form />
-		
 		</div>
 	</PageMargin>
 )
