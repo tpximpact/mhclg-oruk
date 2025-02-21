@@ -1,0 +1,54 @@
+{
+	"hero": {
+		"headline": "Open Referral UK makes it easy to publish, find and use community services data",
+		"content_md": "Open Referral UK (ORUK) is an open data standard that provides a consistent way to publish and describe information. This makes it easier for people to find what they need and supports connected local services."
+	},
+	"boxes": [
+		{
+			"headline": "Why ORUK?",
+			"content_md": "Discover the benefits of adopting this data standard.",
+			"link": {
+				"text": "Learn more about ORUK",
+				"href": "/about"
+			}
+		},
+		{
+			"headline": "ORUK success stories",
+			"content_md": "Browse testimonials of organisations who have implemented the standard.",
+			"link": {
+				"text": "Explore ORUK case studies",
+				"href": "/updates"
+			}
+		},
+		{
+			"headline": "Developer resources",
+			"content_md": "Practical tools and guides to support technical implementation of the ORUK standard.",
+			"link": {
+				"text": "Access resources",
+				"href": "/developers"
+			}
+		},
+		{
+			"headline": "Resources for councils",
+			"content_md": "Templates and guides to support local councils to adopt the ORUK standard.",
+			"link": {
+				"text": "Explore council resources",
+				"href": "/adopt"
+			}
+		},
+		{
+			"headline": "Community",
+			"content_md": "Explore the different ways you can get involved.",
+			"link": {
+				"text": "Join the ORUK community ",
+				"href": "/community"
+			}
+		}
+	],
+	"conclusion": {
+		"headline": "The benefits of ORUK",
+		"content_md": "Adopting the Open Referral UK standard for community services data offers these benefits to your organisation, area, and service users:",
+		"left_col_md": "<ul><li>Easy to access, accurate and local information on services.</li><li>Collaborate and share knowledge with local authorities, organisations, and stakeholders.</li><li>Save money and resources by capturing data once, giving frontline workers and advocates easy access to essential information.</li></ul>",
+		"right_col_md": "<ul><li>Avoid duplicating information and creating new directories from scratch.</li><li>Provide users with services they need through a holistic, cross-organisation approach rather than working in silos.</li></ul>"
+	}
+}

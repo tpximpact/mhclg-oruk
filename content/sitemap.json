@@ -26,6 +26,13 @@
 		"dynamic": true
 	},
 	{
+		"name": "about",
+		"label": "About ORUK",
+		"contentPath": "/about",
+		"urlPath": "about",
+		"dynamic": true
+	},
+	{
 		"name": "community",
 		"label": "Community",
 		"contentPath": "/community",
