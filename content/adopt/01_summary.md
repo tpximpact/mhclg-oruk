@@ -87,7 +87,7 @@ ORUK represents a transformative way for councils and their partners to think ab
 5. **Publish & re-use**
 6. **Performance monitoring**
 
-<img style="min-width:90vw;" src="/planning_framework.png" alt="A diagram showing governance and quality processes" />
+<img style="min-width:90vw;" src="/business_model.svg" alt="A diagram showing business model" />
 
 We have created an accompanying project initiation document (PID) template to help your teams understand and plan how to implement ORUK.
 
