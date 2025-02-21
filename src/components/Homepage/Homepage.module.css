@@ -68,3 +68,22 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
+
+@value breakpoint: 1024px;
+
+@media (max-width: breakpoint) {
+    .Logo {
+        display: none;
+    }
+
+    .box {
+        flex: 0 0 100%;
+    }
+
+    .box:nth-child(odd),
+    .box:nth-child(even) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
