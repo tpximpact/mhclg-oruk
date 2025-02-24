@@ -13,7 +13,7 @@ ORUK is important for efficient sharing of services data across Government and c
 * debt advice in relation to tax and benefits
 * community groups to reduce social isolation
 
-The Ministry of Housing, Communities and Local Government (MHCLG) runs the Cross Government Steering Group for ORUK to encourage collaboration between local government and other sectors, following these [Terms of Reference](../../public/steering/ORUK%20Steering%20Group%20-%20Terms%20of%20Reference.pdf). As of March 2025, the Group includes members from the following organisations:
+The Ministry of Housing, Communities and Local Government (MHCLG) runs the Cross Government Steering Group for ORUK to encourage collaboration between local government and other sectors, following these [Terms of Reference](/steering/ORUK%20Steering%20Group%20-%20Terms%20of%20Reference.pdf). As of March 2025, the Group includes members from the following organisations:
 * MHCLG
 * NHS standards
 * Department for Education
