@@ -1,7 +1,7 @@
 ---
 title: Executive summary
 slug: For senior managers.
-modified: '2025-02-10'
+modified: '2025-02-25'
 ---
 
 # Empowering local communities through Open Referral UK
@@ -12,7 +12,7 @@ Giving citizens access to the services they need, no matter where they first see
 
 <cite>- An adult social care contact centre worker. Just one example of how Open Referral UK (ORUK) is transforming citizen outcomes.</cite>
 
-[ORUK](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities) is a data standard that defines the 'what, where, and how' information about a support service.
+[ORUK](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities) is a data standard supported by the Ministry of Housing, Communities & Local Government. It defines the what, where, and how of describing information about a support service.
 
 ## Executive summary
 
@@ -32,15 +32,11 @@ Current community service data is often siloed, overlapping and difficult to mai
 
 > “Giving people self-care information about local services when they are currently well enough to not need public services is the proactive way to reduce demand on NHS and Social Care”
 
-<cite>- An ICB transformation office</cite>
+<cite>- An ICB transformation officer</cite>
 
-Councils can take the lead in addressing the challenges of gathering, verifying, and sharing service information by adopting ORUK. Working collectively to create a single, trusted repository that makes service data available across interventions, platforms, and applications. In health, this could be a meaningful lever for early prevention of chronic conditions.
+Councils can take the lead in addressing the challenges of gathering, verifying, and sharing service information by adopting ORUK.  Working collectively to create a single, trusted repository that makes service data available across interventions, platforms, and applications. In health, this could be a meaningful lever for early prevention of chronic conditions.
 
 ## What are the key benefits of adopting ORUK?
-
-> “Citizens who are engaged in the local community are less likely to need statutory services and more likely to have a better quality of life”
-
-<cite>- A government research report</cite>
 
 ### Make every contact count
 
@@ -48,7 +44,7 @@ Better prevention becomes possible when every citizen-facing worker has access t
 
 ### Trusted data, accessible to all
 
-ORUK includes information on when the data was last verified and who performed the check. This builds trust by ensuring accountability for data accuracy and providing a clear indication of how current the information is. Additionally, it identifies a point of contact for reporting any necessary updates or corrections.
+The ORUK website includes information on when the data was last verified and who performed the check. This builds trust by ensuring accountability for data accuracy and providing a clear indication of how current the information is. Additionally, it identifies a point of contact for reporting any necessary updates or corrections.
 
 ### Data reuse across platforms
 
@@ -87,13 +83,14 @@ ORUK represents a transformative way for councils and their partners to think ab
 5. **Publish & re-use**
 6. **Performance monitoring**
 
-![A diagram showing governance and quality processes](/adopt/leadership.png 'Leadership')
+We have created an accompanying ORUK Project initiation document (PID) to help your teams understand and plan how to implement ORUK.
 
-We have created an accompanying project initiation document (PID) template to help your teams understand and plan how to implement ORUK.
+![A diagram showing governance and quality processes](/adopt/leadership.png 'Leadership')
+<cite>-Figure 1: A framework for managing and ensuring the quality of ORUK data</cite>
 
 ## Next steps to get started
 
 1. **Review**. Assess your current directory costs and explore the ORUK business case for a better understanding of why you should adopt.
 2. **Assess**. Work with your digital teams to expand ORUK data use across platforms.
 3. **Learn more**. Visit [www.openreferraluk.org](http://www.openreferraluk.org/) and access implementation resources.
-4. **Stay Informed.** Sign up for updates about events, technical insights, supplier engagement and future funding opportunities.
+4. **Stay Informed.** Look out for updates about events, technical insights, supplier engagement and future funding opportunities.
