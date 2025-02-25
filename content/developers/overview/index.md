@@ -6,29 +6,27 @@ modified: '2025-01-20T11:11:23.815Z'
 
 ## Introduction
 
-This document gives insight into the implementation of ORUK. It offers a high level technical understanding of the proposition, benefits, issues and requirements. This document does not provide the [full technical specifications](https://github.com/OpenReferralUK/uk-profile), but it points to where details can be found.
+This document gives insight into the implementation of Open Referral UK (ORUK), a data standard supported by the Ministry of Housing, Communities & Local Government. It offers a high level technical understanding of the proposition, benefits, issues and requirements. This document does not provide the [full technical specifications](https://github.com/OpenReferralUK/uk-profile), but it points to where details can be found.
 
-It is accompanied by additional resources on [adopting the standard](/adopt):
+It is accompanied by an [ORUK Executive summary](/adopt/01_summary) for senior managers, an [ORUK Business case](/adopt/02_business_case) for finance managers and an [ORUK project initiation document (PID)](/adopt/03_pid) for project managers.
 
-- an [executive summary](/adopt/01_summary) for senior managers
-- a [business case template](/adopt/02_business_case) for finance managers
-- a [project initiation document (PID) template](/adopt/03_pid) for project managers.
+## 1. Background on ORUK
 
-## 1. Background
+Local councils currently need to collate information which describes the what, where and when of local services for supporting Adult Social Care, Families and children with Special Educational Needs & Disabilities (SEND). 
 
-Local councils currently need to collate information which describes the what, where and when of local services for supporting Adult Social Care, Families and Children with Special Educational Needs & Disabilities (SEND).
+Other sectors in the same council area—NHS, charities,Housing, Police, Fire, The Voluntary, Community, Faith and Social Enterprise—also need access to local support information. This information is collected by many different teams, departments and organisations in various data formats using some software but mainly spreadsheets. The data is not pulled together or easily shared across organisations. This results in data duplication, inefficiency, and reduces data quality and trust that it is accurate.
 
-Other sectors in the same council area — NHS, Charities, Housing, Police, Fire, Voluntary & Community organisations, Faith and Social Enterprises —also need access to local support information. This information is collected by many different teams, departments and organisations in various data formats using some software but mainly spreadsheets. The data is not pulled together or easily shared across organisations. This results in data duplication, inefficiency, and reduces data quality and trust that it is accurate.
+A unified data standard could enable all sectors to contribute to and access a shared repository, eliminating duplication and improving data quality. This approach would increase efficiency and provide more accurate local service information. This document outlines an implementation of the UK Government endorsed international data standard HSDS v3.0, or Open Referral, providing guidance for councils on establishing the technical infrastructure needed in their areas.
 
-A unified data standard could enable all sectors to contribute to and access a shared repository, eliminating duplication and improving data quality. This approach would increase efficiency and provide more accurate local service information. This document outlines an implementation of the UK Government endorsed international data standard HSDS v3.0, also known as Open Referral, providing guidance for councils on establishing the technical infrastructure needed in their areas.
+Open Referral UK (ORUK) has been approved by the Central Digital and Data Office’s (CDDO) Data Standards Authority and endorsed for use across government.
 
-Open Referral UK (ORUK) has been approved by the Central Digital and Data Office’s (CDDO) Data Standards Authority and endorsed for use across government. Open Referral UK (ORUK) is the UK's implementation of the international Human Services Data Standard 3.0 (HSDSv3.0). For more details, see the [Overview and Model](http://docs.openreferral.org/en/latest/hsds/overview.html) in the Open Referral Data Specifications 3.0.1 documentation.
+ORUK is the UK's implementation of the international Human Services Data Standard 3.0 (HSDSv3.0). For more details, see the [Overview and Model](http://docs.openreferral.org/en/latest/hsds/overview.html) in the Open Referral Data Specifications 3.0.1 documentation.
 
-To learn more about ORUK's application and potential cost savings for councils, visit Ministry of Housing, Communities and Local Government’s (MHCLG’s) blog post on [Driving Adoption of Open Referral UK](https://mhclgdigital.blog.gov.uk/2024/03/06/driving-adoption-of-open-referral-uk-to-deliver-millions-in-annual-savings-for-councils/).
+To learn more about ORUK's application and potential cost savings for councils, visit Ministry of Housing, Communities & Local Government’s (MHCLG’s) blog post on [Driving Adoption of Open Referral UK](https://mhclgdigital.blog.gov.uk/2024/03/06/driving-adoption-of-open-referral-uk-to-deliver-millions-in-annual-savings-for-councils/).
 
 ## 2. The case for data standards
 
-There is a clear need for greater interoperability across public and third-sector organisations, as they often engage with the same citizens without necessarily being aware of it. While the General Data Protection Regulation (GDPR) and the Data protection Act (DPA) regulate personal data re-use, it is technology—not policy—that sometimes limits data sharing across organisations.
+There is a clear need for greater interoperability across public and third-sector organisations, as they often engage with the same citizens without necessarily being aware of it. While the General Data Protection Regulation (GDPR) and the Data Protection Act (DPA) regulate personal data re-use, it is technology—not policy—that sometimes limits data sharing across organisations.
 
 This can happen when data is too closely linked to a specific application or process, making it difficult to extract. Data standards enable the decoupling of data from the application. Such an approach lets users select the applications they prefer and switch more easily if needed. It also allows data to be sent to other applications that understand the same format.
 
@@ -40,17 +38,11 @@ Using the data standard will reduce the cost of collecting data, make the assura
 
 ## 3. Outline Implementation model
 
-The Project Initiation Document [project initiation document (PID) template](/adopt/03_pid) provided to help council project managers, includes the diagram below.
-
-![A diagram showimg quality procedures](/developers/overview/qa.png 'Quality')
-
-Council's are advised to start with a simple proof of concept before scaling, given the complexity of involving stakeholders. The model below is derived from the PID diagram above to outline the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways.
+The model below outlines the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways. More details of this can be found in the [ORUK Project initiation document](/adopt/03_pid) provided to help council project managers. We advise starting with a simple proof of concept before scaling, given the complexity of involving stakeholders.
 
 ![A flowchart depicting the steps described below](/developers/overview/process.png 'Outline')
 
-The following four sections briefly explain the steps to give context to the technical infrastructure.
-
-## 3.1 Collect & manage data
+### 3.1 Collect & manage data
 
 This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">[(see data fields here)](https://docs.openreferral.org/en/latest/hsds/schema_reference.html)</span>. Councils can either develop their own application or purchase compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will have to offer a broader set of options when looking to scale this up.
 
@@ -58,15 +50,15 @@ The diagram below provides a high-level overview of the main entities in ORUK.
 
 ![A diagram depicting the key five entities](/developers/overview/model.png 'Model')
 
-## 3.2 Assure data quality
+### 3.2 Assure data quality
 
 The aim of assurance is to ensure there is a master record and to check that the data is accurate and can be trusted by those wanting to use it.
 
 **Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) (under the Service entity table highlighted in this link) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service.
 
-There are **three** main considerations:
+There are three main considerations:
 
-The **first** is to remove duplication. If data is collected from several different sources there will be duplication. A simple semi-automated step would be to sort the collection of data using fields that are likely to be the same if it is the same service e.g. name, provider, venue, contact details. It would then be a manual step by an assurer to filter out duplicates.
+The first is to remove duplication. If data is collected from several different sources there will be duplication. A simple semi-automated step would be to sort the collection of data using fields that are likely to be the same if it is the same service e.g. name, provider, venue, contact details. It would then be a manual step by an assurer to filter out duplicates.
 
 This may seem like extra work is created but de-duplication removes the confusion caused by a silo approach where an end-user doesn't know which version of service information is up to date.
 
