@@ -6,15 +6,11 @@ modified: '2025-01-20T11:11:20.092Z'
 
 # Building stronger communities: the business case for adopting the Open Referral UK standard
 
-Open Referral UK helps councils connect residents to community services more effectively by enabling richer and more accurate sets of service information.
+Open Referral UK (ORUK), supported by the Ministry of Housing, Communities & Local Government, helps councils connect residents to community services more effectively by enabling richer and more accurate sets of service information.
 
 This supports better outcomes, greater efficiency, and improved signposting by professionals. Below, you'll find a business case with real-world examples, case studies, potential savings, a cost-benefit summary, and useful tools.
 
-A calculator to estimate your own potential benefits- Benefits case- Open Referral v4.1.
-
-A guide to help your teams implement ORUK [Project Initiation Document being released in January 2025].
-
-A community to help you [https://openreferraluk.org/](https://openreferraluk.org/)
+A calculator to estimate your own potential benefits is available on the [ORUK website](https://openreferraluk.org/) where you'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support. 
 
 ## 1. The problem
 
@@ -22,7 +18,7 @@ A community to help you [https://openreferraluk.org/](https://openreferraluk.org
 
 <cite>Head of user experience, council adopter</cite>
 
-There is significant citizen demand for support from councils, with 2 million requests annually for Adult Social Care, plus millions more across SEND, Children’s social care, and other services.
+There is significant citizen demand for support from councils, with 2 million requests annually for Adult Social Care, plus millions more across SEND, Children’s social care, and other services. 
 
 Over 60% of these requests lead to signposting to universal and community services, or no service at all. For an individual council this can be upwards of 10k requests per year that are currently being addressed suboptimally as access to accurate local service information doesn’t exist.
 
@@ -43,10 +39,10 @@ Example business model
 
 This unlocks several benefits:
 
-- Improved outcomes as residents receive accurate, timely information: accessing the right help at the right time
-- Better resident experience. Increased trust in online information and reduced frustration in accessing services
-- More effective signposting: staff can refer to a broader range of services, improving efficiency
-- A joined-up front door to services. Reusing data across organisations enhances the resident experience
+1. Improved outcomes as residents receive accurate, timely information: accessing the right help at the right time
+2. Better resident experience. Increased trust in online information and reduced frustration in accessing services
+3. More effective signposting: staff can refer to a broader range of services, improving efficiency
+4. A joined-up front door to services. Reusing data across organisations enhances the resident experience
 
 ## 3. The power of sharing a common standard
 
@@ -76,12 +72,12 @@ The Open Referral UK data standard helps to achieve all the benefits laid out ab
 It also offers a range of additional benefits:
 
 - Support from a growing community: You’ll join a network of users who share tips and tools to help implement the standard
-- Endorsed by the government: ORUK is [backed by the Central Digital and Data Office](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities), ensuring it’s a future-proof investment
+- [Endorsed by the government](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities): ORUK is backed by the Central Digital and Data Office ensuring it’s a future-proof investment
 - Easier data management: ORUK helps separate the back-end data from the front-end user experience, making it easier to update and display information across different platforms
 
 ## 5. What’s the impact?
 
-> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.” –
+> “Lots of people in the council have been crying out for a system like this, and there it is, virtually fully formed and ready to use on a plate. It will revolutionise how social care functions as a mediator between people in need and the community support on their doorstep.”
 
 <cite>Adult Social Care worker in council using tool developed with ORUK standard</cite>
 
@@ -91,15 +87,15 @@ ORUK adopters aim to improve resident outcomes by connecting residents more effe
 
 Improving referral processes can:
 
-### 1) Increase the chances of people finding the appropriate and accurate information at the right time.
+### 5.1 Increase the chances of people finding the appropriate and accurate information at the right time.
 
 #### What could that look like?
 
-Example scenario: A social worker visits a family to support her client. She is the mother of a child with autism who doesn’t qualify for formal support, but is struggling. She asks for other avenues to help cope. This is outside of the adult social care worker’s expertise, and the contacts she had no longer work at the organisation. The events on the council website are out of date, so there was limited support that she could offer.
+In this example scenario a social worker visits a family to support her client. She is the mother of a child with autism who doesn’t qualify for formal support, but is struggling. She asks for other avenues to help cope. This is outside of the adult social care worker’s expertise, and the contacts she had no longer work at the organisation. The events on the council website are out of date, so there was limited support that she could offer.
 
-With reliable and accurate information, a service finder tool could be used to provide social workers and other community professionals with this information. Using the same back end information, a self-service directory on the website with the same data can be published to help people in need of support.
+With reliable and accurate information, a service finder tool could be used to provide social workers and other community professionals with this information. Using the same back end information, a self-service directory on the website with the same data can be published to help people in need of support. 
 
-In our example authority, the Adult Social Care, Children’s social care, and SEND teams receive 16.5k support requests annually. Of these, 4.4k (27%) result in signposting to universal services, presenting an opportunity for better referrals.
+**In our example authority,** the Adult Social Care, Children’s social care, and SEND teams receive 16.5k support requests annually. Of these, 4.4k (27%) result in signposting to universal services, presenting an opportunity for better referrals.
 
 4.1k (25%) receive no service, highlighting the potential for early intervention to prevent crises. Many more will call in to the customer contact centre and not be registered in these statistics.
 
@@ -125,29 +121,29 @@ In our example authority, the Adult Social Care, Children’s social care, and S
    </tbody>
 </table>
 
-### 2) Delay or reduce spending on services.
+### 5.2 Delay or reduce spending on services
 
 The hypothesis behind social prescribing and community based support is that addressing requests for help early can prevent situations evolving into crises.
 
 While cost savings can't be attributed to this ORUK directly, improving community referrals for just 10% of residents in our example council—over 850 people annually—could generate meaningful savings. ORUK helps to enable the work done at Place level and help organisations support frontline workers with better data.
 
-### 3) Divert demand away from the council
+### 5.3 Divert demand away from the council
 
 > “We wanted to find a way to work better with the voluntary and community sectors. We wanted better prevention, and to help shift away demand from council services…we have Adult Social Care workers, health professionals, and community workers using it.”
 
 <cite>Council adopter</cite>
 
-By better utilising community services, demand on overstretched council services can be reduced
+By better utilising community services, demand on overstretched council services can be reduced.
 
-### 4) Help inform the commissioning of services and improve management information
+### 5.4 Help inform the commissioning of services and improve management information
 
-> “Front door staff and social prescribers find a huge benefit, and commissioners can see what is happening across the country. If there is a geographical gap”
+> “Front door staff and social prescribers find a huge benefit, and commissioners can see what is happening across the country if there is a geographical gap”
 
 <cite>Community Action Network</cite>
 
 Collecting data across the area will help service teams identify gaps in service that need to be addressed.
 
-### 5) Allow for bespoke tools can be built on top of the data
+### 5.5 Allow for bespoke tools can be built on top of the data
 
 > “Our anti-poverty team is looking to reuse the data in some way... AI could also be a hook to get people involved in the future.”
 
@@ -157,11 +153,11 @@ A solid foundation means you can develop specialised tools and front-end platfor
 
 #### Staff efficiencies
 
-We know that many council workers make referrals to community services as part of their role. They spend time and effort finding services, or maintaining their own lists. A better approach would save time for these workers.
+We know that many council workers make referrals to community services as part of their role. They spend time and effort finding services, or maintaining their own lists. A better approach would save time for these workers. 
 
-The more services and organisations (ICBs, charities, other LAs) that reuse and consume the same data, the greater these cost efficiencies scale.
+The more services and organisations (integrated care boards, charities, other local authorities) that reuse and consume the same data, the greater these cost efficiencies scale.
 
-These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity.
+These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity. 
 
 <div style="padding: 1rem; background: #eee; margin: 1rem 0;">
 <h4>Savings estimate</h4>
@@ -204,7 +200,7 @@ Service teams often use different tools to store and manage community service da
 
 #### Estimated savings
 
-The estimated the cost involved for a typical upper-tier council.
+The estimated cost involved for a typical upper-tier council.
 
 <table style="width:90vw;">
    <thead>
@@ -289,13 +285,13 @@ They estimate a saving of **£6.1k** per year, but initial feedback from partner
 
 ## 6. What’s the cost?
 
-The cost of implementation depends on your chosen business model. We have heard different ways in which councils and voluntary organisations have approached implementing ORUK within a broader business model, but the broader methodology is outlined in the diagram below.
+The cost of implementation depends on your chosen business model. We have heard different ways in which councils and voluntary organisations have approached implementing ORUK within a broader business model, but the broader methodology is outlined in the diagram below. 
 
 Example business model
 
 ![Business model](/adopt/leadership.PNG 'Example business model')
 
-Guidance on making these decisions is available in the accompanying [project initiation document](/adopt/03_pid). These will be offset by what is currently spent across your service teams.
+Guidance on making these decisions is available in the accompanying [ORUK project initiation document](/adopt/03_pid). These will be offset by what is currently spent across your service teams.
 
 This investment is to help introduce a modern approach to help eliminate the manual work being done in spreadsheets and PDFs currently.
 
