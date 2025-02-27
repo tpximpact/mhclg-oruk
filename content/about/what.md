@@ -1,7 +1,7 @@
 ---
 title: What is Open Referral UK?
 slug: For all what want to know more
-modified: '2025-02-05'
+modified: '2025-02-27'
 ---
 
 # What is Open Referral UK?
@@ -27,3 +27,5 @@ Open data standards are:
 - supported by the market to demonstrate the independence of platforms, applications and vendors
 - released for use with a royalty free licence which is irrevocable unless there is a breach of conditions
 - compatible with both open source and proprietary licensed solutions
+
+To find out more, watch our short [What is Open Referral UK?](https://youtu.be/dn1ryloOLvk) explainer video.
