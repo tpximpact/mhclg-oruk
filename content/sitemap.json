@@ -126,12 +126,19 @@
 	},
 	{
 		"name": "info",
-		"label": "Information",
+		"label": "Site Information",
 		"urlPath": "info",
 		"contentPath": "/info",
 		"hide": true,
 		"autoMenu": false,
 		"childNodes": [
+			{
+				"name": "contact",
+				"label": "Contact us",
+				"urlPath": "contact",
+				"contentPath": "contact",
+				"autoMenu": true
+			},
 			{
 				"name": "accessibility",
 				"label": "Accessibility statement",

@@ -6,7 +6,7 @@ export default function Page() {
 	return (
 		<PageMargin>
 			<DynamicSectionListing
-				mainHeading='Adopt the standard'
+				mainHeading='Adopt the standard in a council'
 				data={listDynamicSection({
 					rootContentFolder: 'adopt'
 				})}
