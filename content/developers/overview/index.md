@@ -1,5 +1,5 @@
 ---
-modified: '2025-01-20T11:11:23.815Z'
+modified: '2025-02-2025'
 ---
 
 # Technical overview to implementing Open Referral UK
@@ -143,7 +143,7 @@ We’ve curated a [verified feed directory](/community/directory), available on 
 
 Software specifications and associated contractual requirements (made explicit in invitations to tender) should state that databases must be accompanied by an API that complies with the ORUK standard. This can be done on the [Check your ORUK compliance tool](/developers/validator) section of the ORUK website.
 
-Maintaining a ‘pass’ result against continual testing, viewable on the [verified feed dashboard](/developers/dashboard), should be a condition of software acceptance.
+Maintaining a ‘pass’ result against continual testing, viewable on the [verified feed availability page](/developers/dashboard), should be a condition of software acceptance.
 
 ## 6. Technical Support
 
