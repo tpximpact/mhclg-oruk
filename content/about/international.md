@@ -1,7 +1,7 @@
 ---
 title: International Open Referral data standard
 slug: The standard's roots and associations
-modified: '2025-02-05'
+modified: '2025-02-27'
 ---
 
 # International Open Referral data standard
@@ -13,8 +13,6 @@ The specific focus of the Open Referral data standard was to set up a standard f
 The international standard is described at the [Open Referral website](https://openreferral.org/).
 
 Examples of US programmes using the standard to structure their service information:
-
-_Check with Laura if we should include these here, in the case study pages or not at all._
 
 - [North Carolina](https://www.unitedwaync.org/) Department of Health and Human Services implemented an interoperable resource directory to match clients to health care providers, community-based organisations, and public services
 - [District of Columbia Primary Care Association](http://dcpca.org/) is using Open Referral to help understand how to build infrastructure that supports coordinated screening, referral and tracking across a range of health, human, and social services
