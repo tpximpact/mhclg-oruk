@@ -19,10 +19,10 @@
 		"dynamic": true
 	},
 	{
-		"name": "updates",
+		"name": "case-studies",
 		"label": "Case studies",
-		"contentPath": "/updates",
-		"urlPath": "updates",
+		"contentPath": "/case-studies",
+		"urlPath": "case-studies",
 		"dynamic": true
 	},
 	{

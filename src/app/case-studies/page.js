@@ -6,9 +6,9 @@ export default function Page() {
 	return (
 		<PageMargin>
 			<DynamicSectionListing
-				mainHeading='Updates'
+				mainHeading='Case studies'
 				data={listDynamicSection({
-					rootContentFolder: 'updates'
+					rootContentFolder: 'case-studies'
 				})}
 			/>
 		</PageMargin>
@@ -16,5 +16,5 @@ export default function Page() {
 }
 
 export const metadata = {
-	title: 'News from ORUK'
+	title: 'Case studies'
 }
