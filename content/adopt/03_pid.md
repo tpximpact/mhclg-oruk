@@ -4,25 +4,21 @@ slug: For project managers.
 modified: '2025-01-20T11:11:20.094Z'
 ---
 
-# Project Initiation Document
+# Open Referral UK Project Initiation Document
 
 ## Introduction
 
 The Ministry of Housing, Communities and Local Government (MHCLG) is supporting councils to adopt the Open Referral UK (ORUK) data standard.
 
-ORUK is the project name for UK use of the international data standard Human Services Data Standard(HSDS). Essentially this is the data fields used to describe the details about a local service to support people e.g. the name, description, venue, start time etc. A service could be a public sector service or a community service e.g. foodbank, benefit assessment.
+ORUK is the project name for UK use of the international data standard Human Services Data Standard (HSDS). Essentially this is the data fields used to describe the details about a local service to support people e.g. the name, description, venue, start time etc. A service could be a public sector service or a community service e.g. foodbank, benefit assessment.
 
 This initiative aims to improve efficiency with partners, enhance data accuracy and completeness, enable sustainable cost models, and facilitate data sharing across boundaries to better serve residents in various contexts.
 
 This document is designed for programme and project managers leading the implementation of Open Referral UK within a council area. The project scope should include collaboration with external partners, which is briefly addressed on the next page.
 
-We assume the business case has been agreed in principle and a project mandate submitted. While each council may approach this project differently, the headings in this document reflect standard elements of a PID. Rather than providing exhaustive project details, the document focuses on key considerations and ideas, offering a concise yet supportive framework to help councils create their own PID for implementing Open Referral UK.
+We assume the business case has been agreed in principle and a project mandate submitted. While each council may approach this project differently, the headings in this document reflect standard elements of a project initiation document (PID). Rather than providing exhaustive project details, the document focuses on key considerations and ideas, offering a concise yet supportive framework to help councils create their own PID for implementing Open Referral UK.
 
-For additional resources, refer to our documents on [adopting the standard](/adopt):
-
-- an [executive summary](/adopt/01_summary) for senior managers
-- a [business case template](/adopt/02_business_case) for finance managers
-- a [project initiation document (PID) template](/adopt/03_pid) for project managers.
+For additional resources, refer to our ORUK Executive summary, ORUK Business case and ORUK Technical overview documents.
 
 ## 1. Project overview
 
@@ -53,14 +49,14 @@ Open Referral UK defines the data and interfaces needed for tools that help peop
 
 The ultimate intention is to implement the ORUK model across the entire council area, overcoming partner administrative boundaries. However, this project will begin on a smaller scale to refine the approach, gather evidence, and strengthen the business case for broader adoption in the future.
 
-### 4.1 Scope overview
+### Scope overview
 
 This project will focus on proving the concept, but will include partners outside of the council itself. While more could be included, the scope has been defined to meet realistic timelines and will be refined after a discovery exercise.
 
 **In scope:**
 
 - Collecting and validating data from at least one external partner organisation
-- Data collection and assurance focused on the three required by a council i.e. Adult Social Care, SEND/Local Offer, and Family Hubs or a particular context e.g. cost of living crisis, ho
+- Data collection and assurance focused on the three required by a council i.e. Adult Social Care, SEND/Local Offer, and Family Hubs or a particular context e.g. cost of living crisis
 - Developing a service type taxonomy
 - Building a digital infrastructure for data sharing via API
 - Ensuring at least three partner organisations consume the data
@@ -74,28 +70,26 @@ This project will focus on proving the concept, but will include partners outsid
 
 ## 5. Benefits
 
-ORUK has created a separate business case document for councils to start up an implementation project. This can be found [here](/adopt/02_business_case)
-
-The following 3 bullet points outline the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate date.
+We have prepared a separate ORUK Business case document for councils looking to start up an implementation project. The following outlines the key capabilities and benefits that implementing ORUK is expected to deliver. The bigger benefits will be realised when citizens and frontline workers consume the accurate data.
 
 - Aggregating data from various sources will provide efficiency savings for those currently managing their own service directories through reducing duplication of effort and focussing assurance on a single data repository.
 - ORUK's rich data set will help people find the right service and decide to attend without needing further information.
-  Structured accurate data will improve the results of AI and enable integration of the data directly into frontline pathways, interventions, processes and applications rather than creating yet another service directory.
-- This will give access to support for patients awaiting surgery, assessments, or post-treatment support; or to support an existing intervention or where a threshold has been missed. It also empowers self-care, helping prevent crises and reducing reliance on statutory services.
+- Structured accurate data will improve the results of AI and enable integration of the data directly into frontline pathways, interventions, processes and applications rather than creating yet another service directory.
+  - This will give access to support for patients awaiting surgery, assessments, or post-treatment support; or to support an existing intervention or where a threshold has been missed. It also empowers self-care, helping prevent crises and reducing reliance on statutory services.
 
 ## 6. Stakeholders
 
 While the Transformation/Digital team is expected to be involved in implementing this project, this may not always be the case. Therefore, they are listed below, along with other key stakeholders who should be kept informed through highlight reports, deliverables, and invitations to data demos. Some may also have roles in governance.
 
-- Director of Public Health. Focused on reducing health inequalities and improving overall health
-- Director of Adult Social Care. Needs accessible service information to provide residents with information and advice relating to care and support for adults and support for carers
-- Director of Children’s Care. Aims to make SEND and Family Hubs information widely available across websites, tools, and neighbouring areas
-- Health & Wellbeing Board. Seeks comprehensive data on services available to improve health and wellbeing across the area
-- Commissioners. Need data on local service demand and availability to identify gaps and prevent reliance on statutory services.
-- Transformation / Digital Leader. Would be able to help with new process and digital infrastructure
-- Chief Executive of local infrastructure organisation. Interested in engaging infrastructure organisations for data collection, ensuring free reuse of service data for the third sector
-- Finance Director. Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking sayings from reduced enquiries as people self-serve preventing the need for formal support
-- Third sector organisations. Seek efficient promotion of services through well-organised data sharing
+- **Director of Public Health.** Focused on reducing health inequalities and improving overall health
+- **Director of Adult Social Care.** Needs accessible service information to provide residents with information and advice relating to care and support for adults and support for carers
+- **Director of Children’s Care.** Aims to make SEND and Family Hubs information widely available across websites, tools, and neighbouring areas
+- **Health & Wellbeing Board.** Seeks comprehensive data on services available to improve health and wellbeing across the area
+- **Commissioners.** Need data on local service demand and availability to identify gaps and prevent reliance on statutory services
+- **Transformation / Digital Leader.** Would be able to help with new process and digital infrastructure
+- **Chief Executive of local infrastructure organisation.**  Interested in engaging infrastructure organisations for data collection, ensuring free reuse of service data for the third sector
+- **Finance Director.** Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking savings from reduced enquiries as people self-serve preventing the need for formal support
+- **Third sector organisations.** Seek efficient promotion of services through well-organised data sharing
 
 ## 7. Deliverables
 
@@ -117,10 +111,10 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | Budget line          | Amount                                                                      |
 | :------------------- | :-------------------------------------------------------------------------- |
 | Project team         | Covered by existing resources                                               |
-| Collection of data   | Covered by existing resources £10k to licence or amend existing application |
+| Collection of data   | Covered by existing resources plus £10k to amend existing application or towards licence |
 | Aggregation of data  | Covered by existing resources                                               |
-| Building API         | £20k to licence or develop an API                                           |
-| Presentation of data | £15k to licence or amend existing application                               |
+| Building API         | £20k to develop an API or towards licence costs                             |
+| Presentation of data | £15k to amend existing application or towards licences                      |
 | Management report    | Covered by existing resources                                               |
 | **TOTAL**            | **£45k**                                                                    |
 
@@ -129,7 +123,7 @@ These are illustrative figures only. Costs will vary based on your specific circ
 | Risk/Issue                                                                                                                                                                                                                                                                                    | Mitigation                                                                                                                                                                                                                                                                                                         | Likelihood | Impact |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ |
 | **Leadership**: We already have Directory of Services in place so why should we complicate it with implementing Open Referral?                                                                                                                                                                | Managers and frontline workers often express dissatisfaction with directory information, mainly due to outdated content. ORUK offers a way to collaborate and improve directory accuracy. Leaders should be asked if they believe the current directory meets its intended purpose and needs. See benefits of ORUK | HIGH       | HIGH   |
-| **Leadership**: It is an effort to change an existing directory to OR and there will be little benefit gained by that existing initiative so there is a risk that nothing will happen.                                                                                                        | There needs to be a directive from senior management who understand the wider benefits such that OR is adopted. Will the H\&W Board strongly encourage all use of local data to be aligned to ORUK                                                                                                                 | HIGH       | HIGH   |
+| **Leadership**: It is an effort to change an existing directory to OR and there will be little benefit gained by that existing initiative so there is a risk that nothing will happen.                                                                                                        | There needs to be a directive from senior management who understand the wider benefits such that ORUK is adopted. Will the H\&W Board strongly encourage all use of local data to be aligned to ORUK                                                                                                                 | HIGH       | HIGH   |
 | **Infrastructure**: There is a risk that organisations won’t have the expertise to post their data to an API or consume data from an API                                                                                                                                                      | Infrastructure organisations could receive training to assist front-end users and explore simplifying access, such as enabling functionality that provides links to service information, which can easily be added to websites.                                                                                    | HIGH       | HIGH   |
 | **Infrastructure**: If the data is not presented effectively, there is a risk that audiences won't care whether it adheres to a data standard.                                                                                                                                                | Offer a default, council-controlled presentation of the data via the council website or a branded app. This will set the standard for reusing the data on websites. In the future, if other apps gain popularity, the council may only need to publish the data, but initially, effective presentation is key.     | HIGH       | HIGH   |
 | **Leadership:** The full benefits won’t be gained without all organisations in the council area signing up which will require strong leadership                                                                                                                                               | H\&W Board’s strong encouragement of ORUK should persuade partners. Set out a clear list of benefits that can be gained by working as a whole and ensure they are aware of their role in the whole process                                                                                                         | HIGH       | HIGH   |
@@ -171,7 +165,7 @@ There is no fixed blueprint for implementing this data standard, but the followi
 
 <img style="min-width:90vw;" src="/planning_framework.svg " alt="planning framework" />
 
-### 11.1 Leadership, governance and oversight
+### Leadership, governance and oversight
 
 #### Discovery exercise
 
@@ -211,7 +205,7 @@ While the ORUK data standards provide a framework, there are areas open to inter
 
 The discovery exercise will also highlight existing software. You'll need to assess whether these systems can align with the ORUK data set and support the compliant API. A decision will then be made about continuing with current software or introducing new solutions.
 
-There is a need to identify a finance model which will ensure any council area policy and process will be scalable and sustainable. The policy, process and finance models can collectively be known as the business model. Please consider the details of this in the Business Case and its calculator. The likely costs are given under the implementation planning framework headings. Note that the council is being asked to take responsibility and therefore will carry the financial risk whilst it will be other public and third sectors that gain more of the benefits.
+There is a need to identify a finance model which will ensure any council area policy and process will be scalable and sustainable. The policy, process and finance models can collectively be known as the business model. Likely costs are given in the ORUK Business case document under the implementation planning framework headings. Note that the council is being asked to take responsibility and therefore will carry the financial risk whilst it will be other public and third sectors that gain more of the benefits.
 
 #### Recommended model
 
@@ -220,16 +214,16 @@ We suggest that the most effective business model would involve larger public se
 The following considerations are given:
 
 - the council employ a programme/project manager to drive this project forward, take responsibility and manage the inevitable moving parts
-- the third sector is involved in the collection and should be paid for its involvement; however care should be taken to ensure they have the required skills and can provide the required outputs.
-- the assurers should come from a variety of resources but be combined under the Council-area policy and process and managed by the programme manager
-- the API infrastructure be provided by a single tier local council where a County council would provide the API and the districts post in the data collected in their area
-- the data is freely available to the third sector and that a public sector organisation using the data contributes to the costs according to their usage or size of budget. A commercial organisation should be
+- the third sector is involved in the collection and should be paid for its involvement; however care should be taken to ensure they have the required skills and can provide the required outputs
+- the assurers should come from a variety of resources but be combined under the council area policy and process and managed by the programme manager
+- the API infrastructure will be provided by a single tier local council where a County council would provide the API and the districts post in the data collected in their area
+- the data is freely available to the third sector and that a public sector organisation using the data contributes to the costs according to their usage or size of budget.
 - procurement policies should ensure that any application processing local service information should be compliant with ORUK
 - performance information should be provided to the service providers, third sector and public sector to encourage better use of this infrastructure
 
 **Deliverable**: discovery landscape, draft business model
 
-### 11.2 Collect & Manage
+### Collect & Manage
 
 Data collection already happens across various teams and organisations including the providers themselves. This process should continue but within a federated model that better coordinates contributions into a single repository.
 
@@ -239,7 +233,7 @@ Public sector organisations and large service providers are generally equipped t
 
 #### Open Referral data fields
 
-Current data collections must be refocused to align with the Open Referral standard, likely increasing the amount of data collected. While organisational-level data is easier for providers to manage, it can cause friction for frontline workers and citizens if service details are hard to access. Clear, complete service information is crucial, as citizens may disengage if they can’t find sufficient details on websites or forms.
+Current data collections must be refocused to align with the standard, likely increasing the amount of data collected. While organisational-level data is easier for providers to manage, it can cause friction for frontline workers and citizens if service details are hard to access. Clear, complete service information is crucial, as citizens may disengage if they can’t find sufficient details on websites or forms.
 
 #### Registration of provider
 
@@ -251,13 +245,13 @@ Ultimately, all service information needs to be aggregated into a single reposit
 
 **Deliverable**: collection process map (for business model)
 
-### 11.3 Assure Data Quality
+### Assure Data Quality
 
 Assurance focuses on data quality, not service quality, which can often cause confusion. It’s a resource-intensive process that is currently handled by the ‘collector,’ but it’s recommended that this responsibility be elevated to a dedicated data custodian due to the significant benefits of having accurate, well-categorised data. Software used in this process should be sending reminders at appropriate points to encourage data quality checks to keep data up to date and accurate.
 
 #### De-duplicate
 
-A challenge of having multiple collectors contributing to a single repository is data duplication. To reduce this, it’s helpful to align each Service Provider with their preferred collector/assurer, making it easier to spot and separate duplications from other sources. The assurer should prevent any duplicate data from being published, and a regular de-duplication exercise will be required during aggregation. Contacting the source of the duplication can help prevent wasted effort in the future.
+A challenge of having multiple collectors contributing to a single repository is data duplication. To reduce this, it’s helpful to align each service rovider with their preferred collector/assurer, making it easier to spot and separate duplications from other sources. The assurer should prevent any duplicate data from being published, and a regular de-duplication exercise will be required during aggregation. Contacting the source of the duplication can help prevent wasted effort in the future.
 
 #### Data quality check
 
@@ -265,19 +259,19 @@ Even with direct input from service providers, data errors may still occur. The 
 
 #### Align categories
 
-Categorising services correctly is crucial for identifying appropriate services and generating meaningful management insights. While national taxonomies are being developed, existing ones (such as those from the LGA) can be used in the interim. Over-categorisation by providers is a common issue, so it’s recommended that the assurer finalise and apply taxonomies to ensure better service discoverability and data management.
+Categorising services correctly is crucial for identifying appropriate services and generating meaningful management insights. While national taxonomies are being developed, existing ones (such as those from the Local Government Association) can be used in the interim. Over-categorisation by providers is a common issue, so it’s recommended that the assurer finalise and apply taxonomies to ensure better service discoverability and data management.
 
-**Deliverable**: repository of trusted data.
+**Deliverable**: repository of trusted data
 
-### 11.4 Publish & Reuse
+### Publish & Reuse
 
 The main benefit of implementing ORUK across a council is that data, once collected and verified, can be reused multiple times. The easiest way to share this data is through APIs, though simpler options like CSVs or data links should also be available for smaller organisations without technical resources.
 
 #### Building the API
 
-The ORUK website (ADD LINK) provides detailed guidance, along with the technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website. The website also has a list of suppliers offering solutions for councils that need help.
+The ORUK website (ADD LINK) provides detailed guidance, along with the ORUK Technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website.  
 
-### 11.5 Re-use of the data
+### Re-use of the data
 
 There are many ways local service information can be reused to help citizens, families, and frontline workers. To gain momentum, examples of data reuse should be shown during the proof of concept. Some key use cases include:
 
@@ -303,7 +297,7 @@ Well-structured data makes AI more effective. A chatbot that helps users find lo
 
 **Deliverables**: A compliant API, Demo of data being reused
 
-### 11.6 Performance Monitoring
+### Performance Monitoring
 
 A coordinated approach across the council will provide valuable data at a strategic level, including reports on service gaps, demand by area, number of providers, and feedback from frontline workers and citizens. This data will give commissioners and policymakers better insights to support community resilience, prevention, and early help.
 
@@ -335,8 +329,8 @@ This PID should be signed off by the project board and the council area board.
 
 ## 15. Conclusion
 
-The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout.
+The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout. 
 
 ## 16. Implementation Plan with timeline
 
-The [table](/adopt/gantt) outlines the recommended timescales, suggesting the proof of concept should be completed within 12 months to maintain the potential partners/beneficiaries interest. It focuses on deliverables and tasks, which will need full consideration by the council.
+The [table](/adopt/gantt) outlines recommended timescales, suggesting the proof of concept should be completed within 12 months to maintain the potential partners/beneficiaries interest. It focuses on deliverables and tasks, which will need full consideration by the council.
