@@ -15,5 +15,5 @@ export default async function Page(props) {
 }
 
 export const metadata = {
-	title: 'ORUK Update'
+	title: 'Adopt ORUK'
 }

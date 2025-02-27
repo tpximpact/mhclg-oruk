@@ -2,7 +2,7 @@ import { DynamicSectionPage } from '@/components/DynamicSection'
 import { getDynamicPageContent } from '@/utilities/dynamicSection'
 import { PageMargin } from '@/components/PageMargin'
 
-const inFolder = 'updates'
+const inFolder = 'case-studies'
 
 export default async function Page(props) {
 	const params = await props.params
@@ -15,5 +15,5 @@ export default async function Page(props) {
 }
 
 export const metadata = {
-	title: 'ORUK Update'
+	title: 'ORUK Case study'
 }
