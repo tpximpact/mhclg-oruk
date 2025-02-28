@@ -10,7 +10,7 @@ Our project is very much about technology bringing people and organisations toge
 
 ## Compliance with Web Content Accessibility Guidelines (WCAG 2.2)
 
-We believe this website meets all criteria for Level AA of the Web Content Accessibility Guidelines (WCAG 2.2), globally recognized as the state of the art, and mandated by UK government practice.
+We believe this website meets all criteria for Level AA of the Web Content Accessibility Guidelines (WCAG 2.2), globally recognised as the state of the art, and mandated by UK government best practice.
 
 ## Continuous Testing
 
@@ -22,7 +22,7 @@ Accessibility isn't a destination, it's a journey. We believe in continually cha
 
 As a community ORUK believes that inclusivity is essential to building a stronger and more connected world. Your feedback is vital in helping us make sure that everyone can access and benefit from our content.
 
-Thank you for helping us make the web a more inclusive space for all!
+Thank you for helping us make ORUK a more inclusive space for all!
 
 ## Preparation of this accessibility statement
 
