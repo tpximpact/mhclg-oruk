@@ -41,12 +41,14 @@
 			{
 				"name": "directory",
 				"label": "Verified feed directory",
+				"teaser": "View and browse verified providers of API feeds",
 				"urlPath": "directory",
 				"contentPath": "directory"
 			},
 			{
 				"name": "join",
 				"label": "Join our community",
+				"teaser": "Register to receive news and updates",
 				"urlPath": "join",
 				"contentPath": "join",
 				"autoMenu": false
@@ -54,6 +56,7 @@
 			{
 				"name": "forum",
 				"label": "Forum",
+				"teaser": "Ask questions and exchange ideas",
 				"urlPath": "https://forum.openreferral.org",
 				"offsite": true
 			}
