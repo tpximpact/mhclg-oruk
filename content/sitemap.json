@@ -12,6 +12,13 @@
 		"hide": true
 	},
 	{
+		"name": "about",
+		"label": "About ORUK",
+		"contentPath": "/about",
+		"urlPath": "about",
+		"dynamic": true
+	},
+	{
 		"name": "adopt",
 		"label": "Adopt the standard in a council",
 		"contentPath": "/adopt",
@@ -23,13 +30,6 @@
 		"label": "Case studies",
 		"contentPath": "/case-studies",
 		"urlPath": "case-studies",
-		"dynamic": true
-	},
-	{
-		"name": "about",
-		"label": "About ORUK",
-		"contentPath": "/about",
-		"urlPath": "about",
 		"dynamic": true
 	},
 	{
@@ -126,19 +126,12 @@
 	},
 	{
 		"name": "info",
-		"label": "Site Information",
+		"label": "Site information",
 		"urlPath": "info",
 		"contentPath": "/info",
 		"hide": true,
 		"autoMenu": false,
 		"childNodes": [
-			{
-				"name": "contact",
-				"label": "Contact us",
-				"urlPath": "contact",
-				"contentPath": "contact",
-				"autoMenu": true
-			},
 			{
 				"name": "accessibility",
 				"label": "Accessibility statement",
@@ -165,6 +158,13 @@
 				"label": "Terms and conditions",
 				"urlPath": "terms",
 				"contentPath": "terms",
+				"autoMenu": true
+			},
+			{
+				"name": "contact",
+				"label": "Contact us",
+				"urlPath": "contact",
+				"contentPath": "contact",
 				"autoMenu": true
 			}
 		]
