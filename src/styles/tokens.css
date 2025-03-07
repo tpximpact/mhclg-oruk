@@ -38,6 +38,7 @@
 	--colour-mint: #75bea0;
 	--color-gov-blue: #1d70b8;
 	--colour-mhclg: #00625e;
+	--colour-tusk: #FCFBF2;
 
 	--colour-grey-50: #f9fafb;
 	--colour-grey-100: #f3f4f6;
@@ -81,22 +82,34 @@
 	--dataTable-theme-dashboard-header-bg: var(--theme-paper);
 	--dataTable-theme-dashboard-row-divider: var(--theme-ink);
 	--Header-background-closed: var(--theme-paper);
-	--Header-background-open: var(--colour-grey-200);
+	--Header-background-open:#F7F2E7;
 	--Header-border-color: var(--colour-grey-500);
 	--Header-button-color: var(--theme-ink);
 	--HR-background: #333;
 	--HR-gradient-end: #333;
 	--HR-gradient-middle: #ccc;
 	--HR-gradient-start: #ccc;
+
+	/*
 	--Logo-gradient-color1: #ee7752;
 	--Logo-gradient-color2: #e73c7e;
 	--Logo-gradient-color3: #23a6d5;
 	--Logo-gradient-color4: #23d5ab;
-	--menu-background-highlight: #fcf8ca;
-	--menu-blockquote-background: #efefef;
+	--menu-background-highlight: #f00;
+	*/
+
+
+	--Logo-gradient-color1: var(--colour-mhclg);
+	--Logo-gradient-color2: var(--govuk-colour-turquoise);
+	--Logo-gradient-color3: #23a6d5;
+	--Logo-gradient-color4: var(--HR-gradient-start);
+
+
+	--menu-blockquote-background: #FFFBF3;
 	--menu-blockquote-border: #dfdfdf;
-	--Menu-background: var(--Header-background-open);
-	--Menu-box-shadow: var(--colour-grey-300);
+	--Menu-background: #FFFBF3;
+	--Menu-box-shadow: #EDE4D3;
+
 	--pagination-border-color: var(--theme-paper);
 	--pagination-current-bg-color: var(--theme-ink);
 	--pagination-current-text-color: var(--theme-paper);

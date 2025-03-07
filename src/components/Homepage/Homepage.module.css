@@ -18,6 +18,7 @@
 	flex: 0 0 50%;
     padding:2rem 0;
 	margin-bottom: 2rem;
+    
 }
 
 .box:nth-child(odd) {
@@ -37,19 +38,39 @@
 .hero,
 .conclusion {
 	padding: 2rem;
-	border: 4px solid var(--colour-mhclg);
     border-radius:2rem;
+    height: 90vh;
 }
 
+.conclusion {
+	border: 4px solid var(--colour-mhclg);
+    height: auto;
+}
+
+
+.hero {
+    color: black;
+    background:#FCF2E3;
+    background:url(/0_0.jpeg);
+    background-position: 10% 40%;
+
+}
 
 .hero,
 .hero h3 {
-    color: white;
-    background:var(--colour-mhclg);
+    color: black;
+    display: inline-flex; /* keep the background color wrapped tight */
+    padding:5px;font-size:20px;background-color:#FCF2E3;color:#000;
+
+
 }
 
 .hero .content {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+ 
+        display: inline-flex; /* keep the background color wrapped tight */
+        padding:5px;font-size:20px;background-color:#FCF2E3;color:#000;
+  
 }
 
 .content ul {
@@ -67,9 +88,24 @@
     background-size: 100% 100%;
 }
 
-
-
-
+.paddedmultiline { 
+    line-height: 1.4; 
+    padding: 10px 0; 
+    border-left: 20px solid var(--colour-mhclg);
+    width: 400px;
+    margin: 20px auto;
+  }
+  .paddedmultiline h1 { 
+    background-color: var(--colour-mhclg);
+    padding: 4px 0;
+    color: #fff; 
+    display: inline;
+    margin: 0; 
+  }
+  .paddedmultiline h1 strong { 
+    position: relative;
+    left: -10px; 
+  }
 
 @value breakpoint: 1024px;
 
@@ -91,27 +127,3 @@
         padding-right: 0;
     }
 }
-
-/*
-
-.box:nth-child(1){
-    background-image: url('/about.png')
-}
-
-.box:nth-child(2){
-    background-image: url('/case_stidies.png')
-}
-
-.box:nth-child(3){
-    background-image: url('/developers.png')
-}
-
-.box:nth-child(4){
-    background-image: url('/adopt.png')
-}
-
-.box:nth-child(5){
-    background-image: url('/community.png')
-}
-
-*/
