@@ -1,5 +1,5 @@
 ---
-title: Business case template
+title: Business case
 slug: For finance managers.
 modified: '2025-01-20T11:11:20.092Z'
 ---
