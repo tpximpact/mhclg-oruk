@@ -48,7 +48,7 @@ This involves gathering the information that describes a local service using the
 
 The diagram below provides a high-level overview of the main entities in ORUK.
 
-![A diagram depicting the key five entities](/developers/overview/model.png 'Model')
+![A diagram depicting the key five entities](/entities.svg 'Model')
 
 ### 3.2 Assure data quality
 
