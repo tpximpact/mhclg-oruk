@@ -12,6 +12,13 @@
 		"hide": true
 	},
 	{
+		"name": "about",
+		"label": "About ORUK",
+		"contentPath": "/about",
+		"urlPath": "about",
+		"dynamic": true
+	},
+	{
 		"name": "adopt",
 		"label": "Adopt the standard in a council",
 		"contentPath": "/adopt",
@@ -19,10 +26,10 @@
 		"dynamic": true
 	},
 	{
-		"name": "updates",
+		"name": "case-studies",
 		"label": "Case studies",
-		"contentPath": "/updates",
-		"urlPath": "updates",
+		"contentPath": "/case-studies",
+		"urlPath": "case-studies",
 		"dynamic": true
 	},
 	{
@@ -33,13 +40,15 @@
 		"childNodes": [
 			{
 				"name": "directory",
-				"label": "Verified feed directory",
+				"label": "Verified feed directory.",
+				"teaser": "View and browse verified providers of API feeds.",
 				"urlPath": "directory",
 				"contentPath": "directory"
 			},
 			{
 				"name": "join",
 				"label": "Join our community",
+				"teaser": "Register to receive news and updates.",
 				"urlPath": "join",
 				"contentPath": "join",
 				"autoMenu": false
@@ -47,6 +56,7 @@
 			{
 				"name": "forum",
 				"label": "Forum",
+				"teaser": "Ask questions and exchange ideas.",
 				"urlPath": "https://forum.openreferral.org",
 				"offsite": true
 			}
@@ -80,6 +90,13 @@
 				"teaser": "This tool provides near-real time status reporting for core service providers."
 			},
 			{
+				"name": "register",
+				"label": "Register your feed",
+				"urlPath": "register",
+				"contentPath": "register",
+				"teaser": "Add your feed to our directory."
+			},
+			{
 				"name": "api",
 				"label": "Reference: API",
 				"urlPath": "api",
@@ -102,7 +119,7 @@
 			},
 			{
 				"name": "changelog",
-				"label": "Changes in OR-UK 3.0",
+				"label": "Changes in version 3.0",
 				"urlPath": "changelog",
 				"contentPath": "changelog",
 				"teaser": "Changes between the initial version of ORUK and version 3.0.",
@@ -112,7 +129,7 @@
 	},
 	{
 		"name": "info",
-		"label": "Information",
+		"label": "Site information",
 		"urlPath": "info",
 		"contentPath": "/info",
 		"hide": true,
@@ -144,6 +161,13 @@
 				"label": "Terms and conditions",
 				"urlPath": "terms",
 				"contentPath": "terms",
+				"autoMenu": true
+			},
+			{
+				"name": "contact",
+				"label": "Contact us",
+				"urlPath": "contact",
+				"contentPath": "contact",
 				"autoMenu": true
 			}
 		]

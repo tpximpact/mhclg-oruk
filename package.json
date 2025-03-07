@@ -13,18 +13,21 @@
 	"dependencies": {
 		"@axe-core/react": "^4.10.1",
 		"@microlink/react-json-view": "^1.24.0",
+		"@types/react-dom": "^19.0.3",
 		"color-interpolate": "^1.0.5",
 		"graphviz-react": "^1.2.5",
 		"gray-matter": "^4.0.3",
 		"html-react-parser": "^5.2.0",
 		"marked": "^15.0.3",
 		"next": "latest",
-		"react": "^18.2.0",
+		"react": "^19.0.0",
 		"react-cookie": "^7.2.2",
 		"react-cookie-consent": "^9.0.0",
-		"react-dom": "^18.2.0",
+		"react-dom": "^19.0.0",
+		"react-hot-toast": "^2.5.1",
 		"server-only": "^0.0.1",
-		"uuid": "^11.0.3"
+		"uuid": "^11.0.3",
+		"zod": "^3.24.2"
 	},
 	"devDependencies": {
 		"@testing-library/dom": "^10.4.0",
