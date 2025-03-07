@@ -1,5 +1,5 @@
 ---
-title: Business case template
+title: Business case
 slug: For finance managers.
 modified: '2025-01-20T11:11:20.092Z'
 ---
@@ -35,7 +35,8 @@ Additionally, millions of visits to council websites and other directories seek 
 Data that is collected, assured, and reused can break the negative cycle. Coordinating service teams to use the same data (via the ORUK data standard and implementing assurance will streamline how the organisation manages and shares community data.
 
 Example business model
-![Business model](/adopt/example_business_model.png 'Example business model')
+
+<img style="min-width:90vw;" src="/business_model.PNG " alt="Business model" />
 
 This unlocks several benefits:
 
@@ -289,7 +290,7 @@ The cost of implementation depends on your chosen business model. We have heard 
 
 Example business model
 
-![Business model](/adopt/leadership.PNG 'Example business model')
+<img style="min-width:90vw;" src="/planning_framework.svg " alt="planning framework" />
 
 Guidance on making these decisions is available in the accompanying [ORUK project initiation document](/adopt/03_pid). These will be offset by what is currently spent across your service teams.
 

@@ -1,0 +1,47 @@
+.Register {
+	/* */
+}
+
+.Form fieldset {
+	border: 0;
+	padding-bottom: 1rem;
+}
+
+.Form h3 {
+	margin-bottom: 1rem;
+}
+
+.Field {
+	margin: 0 0 1rem;
+}
+
+.Field input,
+.Field textarea {
+	width: 50%;
+	padding: 0.5rem;
+	border-radius: 0;
+	border: 1px solid black;
+}
+
+.Field label {
+	font-weight: 900;
+	display: block;
+}
+
+.Field .Note {
+	font-style: italic;
+}
+
+.Error {
+	color: red;
+	font-weight: 900;
+	display: block;
+}
+
+.SubmitButton {
+	padding: 0.5rem 1rem;
+	border: 1px solid black !important;
+	background: white;
+	font-weight: 900;
+	cursor: pointer;
+}

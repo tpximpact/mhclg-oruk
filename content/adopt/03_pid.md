@@ -1,5 +1,5 @@
 ---
-title: Project initiation document (PID) template
+title: Project initiation document (PID)
 slug: For project managers.
 modified: '2025-01-20T11:11:20.094Z'
 ---
@@ -163,7 +163,7 @@ The following roles are key contributors to the model, with the same organisatio
 
 There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.
 
-![A diagram showing governance and quality processes](/adopt/leadership.png 'Leadership')
+<img style="min-width:90vw;" src="/planning_framework.svg " alt="planning framework" />
 
 ### Leadership, governance and oversight
 
