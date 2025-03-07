@@ -4,6 +4,7 @@
 	padding: 0;
 	text-indent: 0;
 	display: flex;
+	flex-wrap:wrap;
 	max-width:90vw;
 }
 
