@@ -1,6 +1,6 @@
 ---
 title: What is Open Referral UK?
-slug: For all what want to know more
+slug: For all who want to know more
 modified: '2025-02-27'
 ---
 
