@@ -18,5 +18,5 @@ export default function Page() {
 }
 
 export const metadata = {
-	title: 'News from ORUK'
+	title: 'About from ORUK'
 }
