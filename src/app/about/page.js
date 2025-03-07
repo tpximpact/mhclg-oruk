@@ -8,7 +8,7 @@ export default function Page() {
 	return (
 		<PageMargin>
 			<DynamicSectionListing
-				mainHeading='About'
+				mainHeading='About ORUK'
 				data={listDynamicSection({
 					rootContentFolder: 'about'
 				})}
