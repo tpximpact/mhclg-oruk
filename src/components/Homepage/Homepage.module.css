@@ -59,18 +59,11 @@
 .hero,
 .hero h3 {
     color: black;
-    display: inline-flex; /* keep the background color wrapped tight */
-    padding:5px;font-size:20px;background-color:#FCF2E3;color:#000;
-
-
 }
 
 .hero .content {
-    font-size: 1.3rem;
- 
-        display: inline-flex; /* keep the background color wrapped tight */
-        padding:5px;font-size:20px;background-color:#FCF2E3;color:#000;
-  
+background-color:#FCF2E3;color:#000;
+
 }
 
 .content ul {

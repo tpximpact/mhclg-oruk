@@ -39,7 +39,17 @@ const Hero = ({ headline, content_md }) => (
 			</div>
 		</Columns>
 		</div>
-		<div style={{paddingTop: "20rem", marginRight:"2rem"}}><Bodycopy pad={true} md={content_md} /></div>
+		<div>
+		<Columns layout={11}>
+
+			<div >
+				
+				
+			</div>
+			<div style={{ marginRight:"2rem"}}><Bodycopy pad={true} md={content_md} /></div>
+		</Columns>
+		</div>
+		
 	</section>
 )
 
