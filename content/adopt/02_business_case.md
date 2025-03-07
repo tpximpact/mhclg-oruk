@@ -100,7 +100,8 @@ With reliable and accurate information, a service finder tool could be used to p
 
 4.1k (25%) receive no service, highlighting the potential for early intervention to prevent crises. Many more will call in to the customer contact centre and not be registered in these statistics.
 
-<table style="width:90vw;">
+<div class="scrollingTableWrapper">
+<table >
    <thead>
       <tr>
          <th></th>
@@ -121,6 +122,7 @@ With reliable and accurate information, a service finder tool could be used to p
       </tr>
    </tbody>
 </table>
+</div>
 
 ### 5.2 Delay or reduce spending on services
 
@@ -203,7 +205,8 @@ Service teams often use different tools to store and manage community service da
 
 The estimated cost involved for a typical upper-tier council.
 
-<table style="width:90vw;">
+<div class="scrollingTableWrapper">
+<table>
    <thead>
       <tr>
          <th>Metric</th>
@@ -280,7 +283,7 @@ The estimated cost involved for a typical upper-tier council.
                 <td style="text-align: right;"">£30,500</td>
       </tr>
    </tbody>
-</table>
+</table></div>
 
 They estimate a saving of **£6.1k** per year, but initial feedback from partners suggest this could equate to **>£30k**
 
