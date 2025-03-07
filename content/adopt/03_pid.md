@@ -1,5 +1,5 @@
 ---
-title: Project initiation document (PID) template
+title: Project initiation document (PID)
 slug: For project managers.
 modified: '2025-01-20T11:11:20.094Z'
 ---
