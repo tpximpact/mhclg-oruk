@@ -94,5 +94,5 @@ We have created an accompanying ORUK Project initiation document (PID) to help y
 
 1. **Review**. Assess your current directory costs and explore the ORUK business case for a better understanding of why you should adopt.
 2. **Assess**. Work with your digital teams to expand ORUK data use across platforms.
-3. **Learn more**. Visit [www.openreferraluk.org](http://www.openreferraluk.org/) and access implementation resources.
+3. **Learn more**. Use this site to access implementation resources.
 4. **Stay Informed.** Look out for updates about events, technical insights, supplier engagement and future funding opportunities.
