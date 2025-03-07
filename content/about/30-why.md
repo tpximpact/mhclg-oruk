@@ -1,6 +1,6 @@
 ---
 title: Why adopt the standard?
-slug: For anyone wanting to publish or consume services data
+slug: For anyone wanting to publish or consume services data.
 modified: '2025-02-05'
 ---
 

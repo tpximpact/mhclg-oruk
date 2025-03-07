@@ -1,6 +1,6 @@
 ---
 title: International Open Referral data standard
-slug: The standard's roots and associations
+slug: The standard's roots and associations.
 modified: '2025-02-27'
 ---
 

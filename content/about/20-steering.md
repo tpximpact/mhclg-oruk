@@ -1,6 +1,6 @@
 ---
 title: Government and community involvement
-slug: For Steering Group members and transparency
+slug: For Steering Group members and transparency.
 modified: '2025-02-24'
 ---
 
