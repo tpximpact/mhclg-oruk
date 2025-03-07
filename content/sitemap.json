@@ -119,7 +119,7 @@
 			},
 			{
 				"name": "changelog",
-				"label": "Changes in OR-UK 3.0",
+				"label": "Changes in version 3.0",
 				"urlPath": "changelog",
 				"contentPath": "changelog",
 				"teaser": "Changes between the initial version of ORUK and version 3.0.",
