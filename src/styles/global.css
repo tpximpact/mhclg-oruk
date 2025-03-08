@@ -85,3 +85,10 @@ h4 {
 		font-size: 1.2rem;
 	}
 }
+
+
+.scrollingTableWrapper {
+	min-width:90vw; 
+	overflow-x: scroll;
+  overflow-y: hidden;
+}
