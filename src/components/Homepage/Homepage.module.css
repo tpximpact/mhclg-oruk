@@ -41,6 +41,9 @@
     border-radius:2rem;
 }
 
+.hero {
+	padding-bottom: 1rem;
+}
 
 .hero,
 .hero h3 {
@@ -64,7 +67,8 @@
 .Logo {
     background: url(/logo.svg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 75% 75%;
+	background-position: center;
 }
 
 
