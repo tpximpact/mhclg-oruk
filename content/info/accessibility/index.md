@@ -6,24 +6,55 @@ modified: '2025-02-28T11:11:24.344Z'
 
 This statement applies to content published on the [https://openreferraluk.org](/) domain.
 
-Our project is very much about technology bringing people and organisations together, so accesibilty is core to everything we do.
+This website is run by TPXimpact on behalf of MHCLG. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+- Change colours, contrast levels and fonts using browser or device settings
+- Navigate most of the website using just a keyboard
 
-## Compliance with Web Content Accessibility Guidelines (WCAG 2.2)
+We’ve also made the website text as simple as possible to understand.
 
-We believe this website meets all criteria for Level AA of the Web Content Accessibility Guidelines (WCAG 2.2), globally recognised as the state of the art, and mandated by UK government best practice.
+AbilityNet has advice on making your device easier to use if you have a disability.
 
-## Continuous Testing
+## How accessible this website is
 
-We recognize the importance of automated accessibility checking tools in ensuring the accessibility of our website. That's why we continuously test our website using the Axe accessibility testing platform. Every component has been undercontinuous test from the moment it first landed on the page. However, we understand that accessibility goes beyond just automated tools, which is why we made it a priority to integrate accessibility considerations into every design decision we have made.
+We know some parts of this website are not fully accessible:
+- The site hasn’t been tested with assistive software users yet
 
-## Ongoing Commitment
+We will update the statement when issues are fixed or when we expect them to be fixed. 
 
-Accessibility isn't a destination, it's a journey. We believe in continually challenging ourselves with the latest best practice and the most up to date techniques... but we're also aware that accesibility also invloves trade offs. If you feel there's areas where we could up our game, we would love to hear from you/ ==. If you have any questions, concerns, or suggestions regarding the accessibility of our site, or if you encounter any barriers, please don't hesitate to contact our Accessibility Manager at [Contact Information].
+## Feedback and contact information
 
-As a community ORUK believes that inclusivity is essential to building a stronger and more connected world. Your feedback is vital in helping us make sure that everyone can access and benefit from our content.
+If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact us:
+Email: [hello@openreferral.org.uk]
+If you need information on this website in a different format, such as accessible PDF, please contact us using the information above. 
 
-Thank you for helping us make ORUK a more inclusive space for all!
+We’ll consider your request and get back to you in 20 working days. 
+
+## Enforcement procedure
+The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, [contact the Equality Advisory and Support Service (EASS)](https://www.equalityadvisoryservice.com/)
+
+## Technical information about this website’s accessibility
+Open Referral UK is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
+
+### Compliance status
+Thia website has been developed against the Web Content Accessibility Guidelines (WCAG) 2.2 AA standard.This website is partially compliant with the [https://www.w3.org/TR/WCAG22/#requirements-for-wcag-2-2](Web Content Accessibility Guidelines version 2.2 AA) standard, due to the non-compliances listed below.
+
+## Non-accessible content
+1.4.4 Resize Text Level AA: On mobile view there is one table that is not responsive and text spills off the screen.
+
+We understand the importance of making our site accessible to all users, however at this time we have not conducted formal testing with assistive technologies such as screen readers.
+
+### Content developed and published by third parties
+The forum is a third-party tool and may not meet accessibility standards. A public audit has been published by the Teaching Systems Lab at MIT. Please contact [hello@openreferral.uk](/) if you wish to request accessible alternatives to content on the forum.
+
+The Open Referral UK website is not able to guarantee the accessibility of third-party content that is neither funded nor developed by, nor under the control of Open Referral UK.
+
+### Disproportionate burden
+### Content that’s not within the scope of the accessibility regulations
+
+## What we’re doing to improve accessibility
+We are reviewing content that fails to meet the Web Content Accessibility Guidelines version 2.1 AA standard and will update this page when issues are fixed.
 
 ## Preparation of this accessibility statement
 
-This statement was prepared on 28 Feb 2025. 
+This statement was prepared on 28 Feb 2025. It was last reviewed on 6 March 2025.
+This website was last tested on 6 March 2025 against the WCAG 2.2 AA standard. The test was carried out by members of the ORUK project team using automated testing tools and keyboard navigation on most pages of the site. We also recognise the importance of automated accessibility checking tools and continuously test our website using the Axe accessibility testing platform.
