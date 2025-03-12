@@ -24,7 +24,7 @@ We will update the statement when issues are fixed or when we expect them to be 
 ## Feedback and contact information
 
 If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact us:
-Email: [hello@openreferral.org.uk]
+Email: hello@openreferral.org.uk
 If you need information on this website in a different format, such as accessible PDF, please contact us using the information above. 
 
 We’ll consider your request and get back to you in 20 working days. 
@@ -44,7 +44,7 @@ Thia website has been developed against the Web Content Accessibility Guidelines
 We understand the importance of making our site accessible to all users, however at this time we have not conducted formal testing with assistive technologies such as screen readers.
 
 ### Content developed and published by third parties
-The forum is a third-party tool and may not meet accessibility standards. A public audit has been published by the Teaching Systems Lab at MIT. Please contact [hello@openreferral.uk](/) if you wish to request accessible alternatives to content on the forum.
+The forum is a third-party tool and may not meet accessibility standards. A public audit has been published by the Teaching Systems Lab at MIT. Please contact hello@openreferral.uk if you wish to request accessible alternatives to content on the forum.
 
 The Open Referral UK website is not able to guarantee the accessibility of third-party content that is neither funded nor developed by, nor under the control of Open Referral UK.
 
