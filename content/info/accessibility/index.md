@@ -24,7 +24,7 @@ We will update the statement when issues are fixed or when we expect them to be 
 ## Feedback and contact information
 
 If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact us:
-Email: hello@openreferral.org.uk
+Email: hello@openreferraluk.org
 If you need information on this website in a different format, such as accessible PDF, please contact us using the information above. 
 
 We’ll consider your request and get back to you in 20 working days. 
@@ -36,7 +36,7 @@ The Equality and Human Rights Commission (EHRC) is responsible for enforcing the
 Open Referral UK is committed to making its website accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
 
 ### Compliance status
-Thia website has been developed against the Web Content Accessibility Guidelines (WCAG) 2.2 AA standard.This website is partially compliant with the [https://www.w3.org/TR/WCAG22/#requirements-for-wcag-2-2](Web Content Accessibility Guidelines version 2.2 AA) standard, due to the non-compliances listed below.
+Thia website has been developed against the Web Content Accessibility Guidelines (WCAG) 2.2 AA standard.This website is partially compliant with the [Web Content Accessibility Guidelines version 2.2 AA](https://www.w3.org/TR/WCAG22/#requirements-for-wcag-2-2) standard, due to the non-compliances listed below.
 
 ## Non-accessible content
 1.4.4 Resize Text Level AA: On mobile view there is one table that is not responsive and text spills off the screen.
@@ -44,15 +44,18 @@ Thia website has been developed against the Web Content Accessibility Guidelines
 We understand the importance of making our site accessible to all users, however at this time we have not conducted formal testing with assistive technologies such as screen readers.
 
 ### Content developed and published by third parties
-The forum is a third-party tool and may not meet accessibility standards. A public audit has been published by the Teaching Systems Lab at MIT. Please contact hello@openreferral.uk if you wish to request accessible alternatives to content on the forum.
+The forum is a third-party tool and may not meet accessibility standards. A public audit has been published by the Teaching Systems Lab at MIT. Please contact hello@openreferraluk.org if you wish to request accessible alternatives to content on the forum.
 
 The Open Referral UK website is not able to guarantee the accessibility of third-party content that is neither funded nor developed by, nor under the control of Open Referral UK.
 
 ### Disproportionate burden
+None
+
 ### Content that’s not within the scope of the accessibility regulations
+None
 
 ## What we’re doing to improve accessibility
-We are reviewing content that fails to meet the Web Content Accessibility Guidelines version 2.1 AA standard and will update this page when issues are fixed.
+We are reviewing content that fails to meet the Web Content Accessibility Guidelines version 2.2 AA standard and will update this page when issues are fixed.
 
 ## Preparation of this accessibility statement
 
