@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+	"e2e": "npx playwright test",
     "upd": "node './scripts/update-frontmatter.js'",
     "dev": "next dev",
     "build": "next build",
