@@ -78,7 +78,8 @@ background-color:#FCF2E3;color:#000;
 .Logo {
     background: url(/logo.svg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 75% 75%;
+	background-position: center;
 }
 
 .paddedmultiline { 
