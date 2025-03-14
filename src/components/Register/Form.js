@@ -91,15 +91,15 @@ export const Form = () => {
 
 			<fieldset>
 				<h3>Service Publisher</h3>
-				<TextField id='publisher' label='Publisher Name' formState={formState} />
-				<TextField id='publisherUrl' label='Publisher URL' formState={formState} />
-				<TextField id='contactEmail' label='Contact email' formState={formState} />
+				<TextField id='publisher' label='Publisher organisation name' formState={formState} />
+				<TextField id='publisherUrl' label='Publisher organisation URL' formState={formState} />
+				<TextField id='contactEmail' label='Publisher organisation  email address' formState={formState} />
 			</fieldset>
 
 			<fieldset>
 				<h3>Service Developer</h3>
-				<TextField id='developer' label='Developer name' formState={formState} />
-				<TextField id='developerUrl' label='Developer url' formState={formState} />
+				<TextField id='developer' label='Developer organisation name' formState={formState} />
+				<TextField id='developerUrl' label='Developer organisation URL' formState={formState} />
 			</fieldset>
 
 			<SubmitButton label='Register' loading='Registering ...' />
