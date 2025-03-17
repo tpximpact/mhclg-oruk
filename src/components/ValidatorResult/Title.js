@@ -13,12 +13,14 @@ export const Title = ({ result }) => {
 		<header className={styles.header}>
 			<h2 className={styles.title}>
 				<span className={styles.titleDesc}>For the services at </span>
-				<span className={styles.url}>{result.service.url}</span>
+				<span id='serviceURL' className={styles.url}>
+					{result.service.url}
+				</span>
 			</h2>
 			<Columns layout='11'>
 				<div className={styles.field}>
 					<span className={styles.fieldLabel}>Overall result:</span>{' '}
-					{result.service.isValid ? 'Pass' : 'Fail'}{' '}
+					<span id='overallResult'>{result.service.isValid ? 'Pass' : 'Fail'}</span>
 					<span className={styles.overallIcon}>
 						<Icon colour={colour} weight='6' icon={getIconForStatus(status, true)} size='48' />
 					</span>

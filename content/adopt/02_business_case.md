@@ -10,7 +10,7 @@ Open Referral UK (ORUK), supported by the Ministry of Housing, Communities & Loc
 
 This supports better outcomes, greater efficiency, and improved signposting by professionals. Below, you'll find a business case with real-world examples, case studies, potential savings, a cost-benefit summary, and useful tools.
 
-A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. You'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support. 
+A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. You'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support.
 
 ## 1. The problem
 
@@ -18,7 +18,7 @@ A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. 
 
 <cite>Head of user experience, council adopter</cite>
 
-There is significant citizen demand for support from councils, with 2 million requests annually for Adult Social Care, plus millions more across SEND, Children’s social care, and other services. 
+There is significant citizen demand for support from councils, with 2 million requests annually for Adult Social Care, plus millions more across SEND, Children’s social care, and other services.
 
 Over 60% of these requests lead to signposting to universal and community services, or no service at all. For an individual council this can be upwards of 10k requests per year that are currently being addressed suboptimally as access to accurate local service information doesn’t exist.
 
@@ -94,7 +94,7 @@ Improving referral processes can:
 
 In this example scenario a social worker visits a family to support her client. She is the mother of a child with autism who doesn’t qualify for formal support, but is struggling. She asks for other avenues to help cope. This is outside of the adult social care worker’s expertise, and the contacts she had no longer work at the organisation. The events on the council website are out of date, so there was limited support that she could offer.
 
-With reliable and accurate information, a service finder tool could be used to provide social workers and other community professionals with this information. Using the same back end information, a self-service directory on the website with the same data can be published to help people in need of support. 
+With reliable and accurate information, a service finder tool could be used to provide social workers and other community professionals with this information. Using the same back end information, a self-service directory on the website with the same data can be published to help people in need of support.
 
 **In our example authority,** the Adult Social Care, Children’s social care, and SEND teams receive 16.5k support requests annually. Of these, 4.4k (27%) result in signposting to universal services, presenting an opportunity for better referrals.
 
@@ -156,11 +156,11 @@ A solid foundation means you can develop specialised tools and front-end platfor
 
 #### Staff efficiencies
 
-We know that many council workers make referrals to community services as part of their role. They spend time and effort finding services, or maintaining their own lists. A better approach would save time for these workers. 
+We know that many council workers make referrals to community services as part of their role. They spend time and effort finding services, or maintaining their own lists. A better approach would save time for these workers.
 
 The more services and organisations (integrated care boards, charities, other local authorities) that reuse and consume the same data, the greater these cost efficiencies scale.
 
-These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity. 
+These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity.
 
 <div style="padding: 1rem; background: #eee; margin: 1rem 0;">
 <h4>Savings estimate</h4>
@@ -289,7 +289,7 @@ They estimate a saving of **£6.1k** per year, but initial feedback from partner
 
 ## 6. What’s the cost?
 
-The cost of implementation depends on your chosen business model. We have heard different ways in which councils and voluntary organisations have approached implementing ORUK within a broader business model, but the broader methodology is outlined in the diagram below. 
+The cost of implementation depends on your chosen business model. We have heard different ways in which councils and voluntary organisations have approached implementing ORUK within a broader business model, but the broader methodology is outlined in the diagram below.
 
 Example business model
 

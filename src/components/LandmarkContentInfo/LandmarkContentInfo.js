@@ -10,7 +10,7 @@ export const LandmarkContentInfo = ({
 	//items,
 	infoItems
 }) => (
-	<footer role='contentInfo' className={styles.footer}>
+	<footer id='pageFooter' role='contentInfo' className={styles.footer}>
 		<BannerMHCLG />
 		<div className={styles.bottom}>
 			{showNav ? (

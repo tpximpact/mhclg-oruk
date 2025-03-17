@@ -93,7 +93,11 @@ export const Form = () => {
 				<h3>Service Publisher</h3>
 				<TextField id='publisher' label='Publisher organisation name' formState={formState} />
 				<TextField id='publisherUrl' label='Publisher organisation URL' formState={formState} />
-				<TextField id='contactEmail' label='Publisher organisation  email address' formState={formState} />
+				<TextField
+					id='contactEmail'
+					label='Publisher organisation  email address'
+					formState={formState}
+				/>
 			</fieldset>
 
 			<fieldset>

@@ -31,11 +31,10 @@ const Hyperlink = ({ href, text }) => (
 const Hero = ({ headline, content_md }) => (
 	<section className={styles.hero}>
 		<Headline text={headline} />
-        <Columns layout={11}>
-        <Bodycopy md={content_md} />
-        <div className={styles.Logo} />
+		<Columns layout={11}>
+			<Bodycopy md={content_md} />
+			<div className={styles.Logo} />
 		</Columns>
-		
 	</section>
 )
 

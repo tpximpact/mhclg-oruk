@@ -2,8 +2,6 @@ import { DynamicSectionListing } from '@/components/DynamicSection'
 import { listDynamicSection } from '@/utilities/dynamicSection'
 import { PageMargin } from '@/components/PageMargin'
 
-
-
 export default function Page() {
 	return (
 		<PageMargin>
