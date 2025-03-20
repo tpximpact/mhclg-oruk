@@ -5,7 +5,7 @@ modified: '2025-02-27'
 ---
 
 # Contact us
-If you're adopting the standard, or interested in using the standard and finding out more, you can:
+If you're adopting the standard, are interested in using the standard or just want to find out more, you can:
 
 * ask questions and join the discussion on the [community forum](https://forum.openreferraluk.org/)
 * [sign up for our newsletter](https://openreferraluk.us1.list-manage.com/subscribe?u=9cdac16b200ed03ca1159653a&id=00056900bd)
