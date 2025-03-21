@@ -1,0 +1,24 @@
+The legacy ORUK website was distrubuted accross several platforms, and hence made extensive use of subdomains.
+
+The new site brings most of this functionality together under a single project, but it is desirable that the legacy subdomains continue to be supported for compatibilty with, e.g. existing bookmarks, links etc.
+
+This could be achieved in several ways - perhaps the easiest might be to redirect those subdomains to paths on the new site.
+
+Current Vercel docs for this csn be found at https://vercel.com/docs/domains/working-with-domains/add-a-domain
+
+The domains are
+
+https://openreferraluk.org -> should update A record to point to vercel IP (presumably?)
+
+https://developers.openreferraluk.org -> /developers
+
+https://validator.openreferraluk.org -> /developers/validator
+
+https://forum.openreferral.org -> NO CHANGE
+
+
+
+
+
+
+ 
