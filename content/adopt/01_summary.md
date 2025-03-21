@@ -58,7 +58,7 @@ ORUK enables councils to standardise data across departments and partners, reduc
 
 > “Frontline professionals e.g. social workers/prescribers spend too much of their time researching and checking information about local services, when they should have access to accurate information”
 
-<cite>- A GP</cite>
+<cite>- A G.P.</cite>
 
 ORUK has the potential to drive improvements to community health by:
 
