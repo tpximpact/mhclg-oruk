@@ -14,6 +14,8 @@ https://developers.openreferraluk.org -> /developers
 
 https://validator.openreferraluk.org -> /developers/validator
 
+https://docs.openreferraluk.org -> developers/specifications (this one isn's as clear cut as the others. could equally point at developers/api)
+
 https://forum.openreferral.org -> NO CHANGE
 
 
