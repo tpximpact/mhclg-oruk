@@ -6,15 +6,15 @@ modified: '2025-01-20T11:11:24.344Z'
 
 OpenReferralUK.org (or www.OpenReferralUK.org) is provided by TPXimpact Limited (TPX) on behalf of stakeholders in the [Local Digital](https://localdigital.gov.uk/) community of organisations.
 
-TPXimpact Limited is the Data Controller. A Data Controller determines how and why personal data is processed.
+**TPXimpact Limited** is the Data Controller. A Data Controller determines how and why personal data is processed.
 
 ## What data we collect
 
 The personal data we collect from you includes:
 
-If you contact us to ask questions, queries or leave feedback: your email address
-When you sign up to our mailing list alerts: your email address and subscription preferences
-When you open our emails and click on links on the website: your Internet Protocol (IP) address, and details of which version of web browser you used, information on how you use the site, using [cookies](https://www.gov.uk/support/cookies) and page tagging techniques
+- If you contact us to ask questions, queries or leave feedback: your email address
+- When you sign up to our mailing list alerts: your email address and subscription preferences
+- When you open our emails and click on links on the website: your Internet Protocol (IP) address, and details of which version of web browser you used, information on how you use the site, using [cookies](https://www.gov.uk/support/cookies) and page tagging techniques
 
 ## Cookies
 
@@ -36,6 +36,7 @@ We collect personal data in order to:
 The legal basis for processing personal data in relation to site security is our legitimate interests, and the legitimate interests of our users, in ensuring the security and integrity of OpenReferralUK.org.
 
 Our lawful basis for collecting or using personal information is: 
+
 - **Consent:** you have given clear consent for us to process your personal data for a specific purpose. All of your data protection rights may apply. 
 
 ### What we do with your data
@@ -53,10 +54,14 @@ We will share your data if we are required to do so by law - for example, by cou
 ## How long we keep your data
 
 We will only retain your personal data for as long as:
-it is needed for the purposes set out in this document
-the law requires us to
+- it is needed for the purposes set out in this document
+- the law requires us to
 
-We will keep your email data until you unsubscribe. We will keep your feedback data for 2 years. We will delete access log data after 120 days.
+We will keep your email data: until you unsubscribe. 
+
+We will keep your feedback data: for 2 years. 
+
+We will delete access log data: after 120 days.
 
 ## Children's privacy protection
 
@@ -77,17 +82,25 @@ We also make sure that any third parties that we deal with keep all personal dat
 ## Your rights
 
 Under UK data protection law, we must have a ‘lawful basis’ for collecting and using your personal information. There is a list of possible lawful bases in the UK GDPR. You can find out more about lawful bases on the ICO’s website.
+
 Which lawful basis we rely on may affect your data protection rights which are in brief set out below. You can find out more about your data protection rights and the exemptions which may apply on the ICO’s website:
 
 **Your right of access** - You have the right to ask us for copies of your personal information. You can request other information such as details about where we get personal information from and who we share personal information with. There are some exemptions which means you may not receive all the information you ask for. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#roa)
+
 **Your right to rectification** - You have the right to ask us to correct or delete personal information you think is inaccurate or incomplete. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtr)
+
 **Your right to erasure** - You have the right to ask us to delete your personal information. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rte)
+
 **Your right to restriction of processing** - You have the right to ask us to limit how we can use your personal information. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtrop)
+
 **Your right to object to processing** - You have the right to object to the processing of your personal data. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rto)
+
 **Your right to data portability** - You have the right to ask that we transfer the personal information you gave us to another organisation, or to you. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtdp)
+
 **Your right to withdraw consent** – As we have  used consent as our lawful basis you have the right to withdraw your consent at any time. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtwc)
 
 If you make a request, we must respond to you without undue delay and in any event **within one month.**
+
 To make a data protection rights request, please contact us using the contact details at the bottom of this Privacy Notice.
 
 ## Links to other websites
