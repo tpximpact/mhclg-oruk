@@ -18,6 +18,10 @@ https://docs.openreferraluk.org -> developers/specifications (this one isn's as 
 
 https://forum.openreferral.org -> NO CHANGE
 
+https://exporter.openreferraluk.org -> this tool has been removed. Best behaviour would be to redirect to / but perhaps with a 410?
+
+https://tools.openreferraluk.org -> this is 404 at the moment. perhaps should redirect to /developers
+
 
 
 
