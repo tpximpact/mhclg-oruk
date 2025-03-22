@@ -87,7 +87,7 @@ While the Transformation/Digital team is expected to be involved in implementing
 - **Health & Wellbeing Board.** Seeks comprehensive data on services available to improve health and wellbeing across the area
 - **Commissioners.** Need data on local service demand and availability to identify gaps and prevent reliance on statutory services
 - **Transformation / Digital Leader.** Would be able to help with new process and digital infrastructure
-- **Chief Executive of local infrastructure organisation.**  Interested in engaging infrastructure organisations for data collection, ensuring free reuse of service data for the third sector
+- **Chief Executive of local infrastructure organisation.** Interested in engaging infrastructure organisations for data collection, ensuring free reuse of service data for the third sector
 - **Finance Director.** Aims to reduce current costs for service data collection and establish a sustainable cost-sharing model. Seeking savings from reduced enquiries as people self-serve preventing the need for formal support
 - **Third sector organisations.** Seek efficient promotion of services through well-organised data sharing
 
@@ -249,7 +249,7 @@ The main benefit of implementing ORUK across a council is that data, once collec
 
 #### Building the API
 
-The ORUK website (ADD LINK) provides detailed guidance, along with the ORUK Technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website.  
+The ORUK website (ADD LINK) provides detailed guidance, along with the ORUK Technical overview document. Each upper-tier council should aim to implement an ORUK-compliant API. These can be validated on the website.
 
 ### Re-use of the data
 
@@ -309,7 +309,7 @@ This PID should be signed off by the project board and the council area board.
 
 ## 15. Conclusion
 
-The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout. 
+The PID is a dynamic document that may be updated as the project progresses. It provides clear guidance and acts as a reference for all involved, ensuring alignment throughout.
 
 ## 16. Implementation Plan with timeline
 

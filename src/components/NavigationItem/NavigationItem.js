@@ -2,13 +2,7 @@ import Link from 'next/link'
 
 import styles from './NavigationItem.module.css'
 
-export const NavigationItem = ({ 
-	todo, 
-	hide, 
-	selected, 
-	offsite, 
-	...props
-}) => {
+export const NavigationItem = ({ todo, hide, selected, offsite, ...props }) => {
 	if (hide) return
 
 	if (offsite) {

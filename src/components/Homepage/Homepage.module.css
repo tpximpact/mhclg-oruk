@@ -16,7 +16,7 @@
 
 .box {
 	flex: 0 0 50%;
-    padding:2rem 0;
+	padding: 2rem 0;
 	margin-bottom: 2rem;
     
 }
@@ -26,14 +26,12 @@
 }
 
 .box:nth-child(even) {
-    padding-left: 3rem;
+	padding-left: 3rem;
 }
 
 .link {
 	margin-top: 1rem;
 }
-
-
 
 .hero,
 .conclusion {
@@ -67,18 +65,18 @@ background-color:#FCF2E3;color:#000;
 }
 
 .content ul {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .content li {
-    margin-top: 1rem;
-    list-style-position: inside;
+	margin-top: 1rem;
+	list-style-position: inside;
 }
 
 .Logo {
-    background: url(/logo.svg);
-    background-repeat: no-repeat;
-    background-size: 75% 75%;
+	background: url(/logo.svg);
+	background-repeat: no-repeat;
+	background-size: 75% 75%;
 	background-position: center;
 }
 
@@ -104,20 +102,17 @@ background-color:#FCF2E3;color:#000;
 @value breakpoint: 1024px;
 
 @media (max-width: breakpoint) {
+	.Logo {
+		display: none;
+	}
 
+	.box {
+		flex: 0 0 100%;
+	}
 
-
-    .Logo {
-        display: none;
-    }
-
-    .box {
-        flex: 0 0 100%;
-    }
-
-    .box:nth-child(odd),
-    .box:nth-child(even) {
-        padding-left: 0;
-        padding-right: 0;
-    }
+	.box:nth-child(odd),
+	.box:nth-child(even) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }

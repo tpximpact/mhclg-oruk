@@ -10,7 +10,7 @@ Open Referral UK (ORUK), supported by the Ministry of Housing, Communities & Loc
 
 This supports better outcomes, greater efficiency, and improved signposting by professionals. Below, you'll find a business case with real-world examples, case studies, potential savings, a cost-benefit summary, and useful tools.
 
-A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. You'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support. 
+A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. You'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support.
 
 ## 1. The problem
 
@@ -18,7 +18,7 @@ A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. 
 
 <cite>Head of user experience, council adopter</cite>
 
-There is significant citizen demand for support from councils, with 2 million requests annually for Adult Social Care, plus millions more across SEND, Children’s social care, and other services. 
+There is significant citizen demand for support from councils, with 2 million requests annually for Adult Social Care, plus millions more across SEND, Children’s social care, and other services.
 
 Over 60% of these requests lead to signposting to universal and community services, or no service at all. For an individual council this can be upwards of 10k requests per year that are currently being addressed suboptimally as access to accurate local service information doesn’t exist.
 
@@ -94,14 +94,14 @@ Improving referral processes can:
 
 In this example scenario a social worker visits a family to support her client. She is the mother of a child with autism who doesn’t qualify for formal support, but is struggling. She asks for other avenues to help cope. This is outside of the adult social care worker’s expertise, and the contacts she had no longer work at the organisation. The events on the council website are out of date, so there was limited support that she could offer.
 
-With reliable and accurate information, a service finder tool could be used to provide social workers and other community professionals with this information. Using the same back end information, a self-service directory on the website with the same data can be published to help people in need of support. 
+With reliable and accurate information, a service finder tool could be used to provide social workers and other community professionals with this information. Using the same back end information, a self-service directory on the website with the same data can be published to help people in need of support.
 
 **In our example authority,** the Adult Social Care, Children’s social care, and SEND teams receive 16.5k support requests annually. Of these, 4.4k (27%) result in signposting to universal services, presenting an opportunity for better referrals.
 
 4.1k (25%) receive no service, highlighting the potential for early intervention to prevent crises. Many more will call in to the customer contact centre and not be registered in these statistics.
 
 <div class="scrollingTableWrapper">
-<table >
+<table>
    <thead>
       <tr>
          <th></th>
@@ -156,11 +156,11 @@ A solid foundation means you can develop specialised tools and front-end platfor
 
 #### Staff efficiencies
 
-We know that many council workers make referrals to community services as part of their role. They spend time and effort finding services, or maintaining their own lists. A better approach would save time for these workers. 
+We know that many council workers make referrals to community services as part of their role. They spend time and effort finding services, or maintaining their own lists. A better approach would save time for these workers.
 
 The more services and organisations (integrated care boards, charities, other local authorities) that reuse and consume the same data, the greater these cost efficiencies scale.
 
-These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity. 
+These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity.
 
 <div style="padding: 1rem; background: #eee; margin: 1rem 0;">
 <h4>Savings estimate</h4>
@@ -226,7 +226,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">2</td>
               <td style="text-align: right;">1</td>
                <td style="text-align: right;">2</td>
-                <td style="font-weight:900; text-align: right;"">40</td>
+                <td style="font-weight:900; text-align: right;">40</td>
       </tr>
 <tr style="background: #eee;">
          <th>Cost per product</th>
@@ -235,7 +235,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">£750</td>
               <td style="text-align: right;">£7,000</td>
                <td style="text-align: right;">£25,000</td>
-                <td style="text-align: right;"">n/a</td>
+                <td style="text-align: right;">n/a</td>
       </tr>
 <tr>
          <th>Annual cost</th>
@@ -244,7 +244,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">£1,500</td>
               <td style="text-align: right;">£7,000</td>
                <td style="text-align: right;">£50,000</td>
-                <td style="font-weight:900; text-align: right;"">£61,000</td>
+                <td style="font-weight:900; text-align: right;">£61,000</td>
       </tr>
 <tr>
          <th>Estimated saving % (low)</th>
@@ -253,7 +253,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">10%</td>
               <td style="text-align: right;">10%</td>
                <td style="text-align: right;">10%</td>
-                <td style="text-align: right;"">10%</td>
+                <td style="text-align: right;">10%</td>
       </tr>
 <tr style="background: #bae6fd; font-weight:900; ">
          <th>Total saving (low)</th>
@@ -262,7 +262,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">£150</td>
               <td style="text-align: right;">£700</td>
                <td style="text-align: right;">£5,00</td>
-                <td style="text-align: right;"">£6,100</td>
+                <td style="text-align: right;">£6,100</td>
       </tr>
 <tr>
          <th>Estimated saving % (high)</th>
@@ -271,7 +271,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">50%</td>
               <td style="text-align: right;">50%</td>
                <td style="text-align: right;">50%</td>
-                <td style="text-align: right;"">50%</td>
+                <td style="text-align: right;">50%</td>
       </tr>
 <tr style="background: #bae6fd; font-weight:900; ">
          <th>Total saving (high)</th>
@@ -280,7 +280,7 @@ The estimated cost involved for a typical upper-tier council.
              <td style="text-align: right;">£750</td>
               <td style="text-align: right;">£3,500</td>
                <td style="text-align: right;">£25,00</td>
-                <td style="text-align: right;"">£30,500</td>
+                <td style="text-align: right;">£30,500</td>
       </tr>
    </tbody>
 </table></div>
@@ -289,7 +289,7 @@ They estimate a saving of **£6.1k** per year, but initial feedback from partner
 
 ## 6. What’s the cost?
 
-The cost of implementation depends on your chosen business model. We have heard different ways in which councils and voluntary organisations have approached implementing ORUK within a broader business model, but the broader methodology is outlined in the diagram below. 
+The cost of implementation depends on your chosen business model. We have heard different ways in which councils and voluntary organisations have approached implementing ORUK within a broader business model, but the broader methodology is outlined in the diagram below.
 
 Example business model
 
@@ -315,71 +315,3 @@ This investment is to help introduce a modern approach to help eliminate the man
 - Ongoing assurance: 1-1.5 FTE 7. Build your business case
 
 We have developed an [ORUK template business case](/adopt/business_case.pdf) to help get you started.
-
-<!--
-Business case
-
-1. Links to strategic ambitions
-   Establishing the strategic case for this project is crucial, especially its impact on services. Engage service owners (e.g., Adult Social Care, SEND) to understand current processes and identify key issues.
-   Do staff have the necessary information for effective referrals?
-   Are residents receiving the support they need?
-   What are the major challenges?
-   How many requests for help result in signposting or no services?
-   How is this information currently provided, and what is the cost?
-2. Benefits and impact
-   Improved community service referrals
-   We receive [xk] requests for support from residents each year. [xk] of these requests results in signposting to universal services, whilst [xk] results in no services being provided.
-
-Adult social care
-Children's social care
-SEND
-Other services
-Total
-Total requests
-
-Universal services
-
-No service provided
-
-Spending on software
-Across these services, we are spending [£k] per year on licences for directory products, spread across numerous service areas and products. Consolidating these will reduce the total cost. This may be offset depending on any licence costs for the new business model. Utilising a shared back end for these products will make it easier to keep the data up to date.
-Service area
-Products used
-Annual cost
-Estimated saving
-
-Total
-
-Operational efficiencies- Use the calculator [link] to estimate this
-General social workers
-Low
-High
-Estimated time savings (days)
-
-Estimated time savings (£)
-
-Front door social workers
-Low
-High
-Estimated time savings (days)
-
-Estimated time savings (£)
-
-Community workers
-Low
-High
-Estimated time savings (days)
-
-Estimated time savings (£)
-
-Total efficiencies
-Low
-High
-Estimated time savings (days)
-
-Estimated time savings (£)
-
-3. Business model
-   Using the PID [Link], collaborate with service teams to decide on a business model and desired "to-be" state.
-   Engage with the ORUK community (https://openreferraluk.org/) for feedback, then develop an implementation plan and obtain cost estimates from suppliers. Use this to complete your business case.
--->
