@@ -10,7 +10,9 @@ export const wrapString = (text, maxLength) => {
 		if (currentLine.length + word.length + 1 <= maxLength) {
 			currentLine += (currentLine ? ' ' : '') + word
 		} else {
-			lines.push(currentLine)
+			if (currentLine !== '') {
+				lines.push(currentLine)
+			}
 			currentLine = word
 		}
 	}

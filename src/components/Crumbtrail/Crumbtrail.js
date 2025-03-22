@@ -13,15 +13,15 @@ export const generateCrumbs = path => {
 		.map((element, index) => {
 			const rebuiltPath = fragments.slice(0, index + 1).join('/')
 			const match = getPageByPath(rebuiltPath)
-			let label = (match ? match.label : '')
-			
+			let label = match ? match.label : ''
+
 			return {
 				label: label,
 				urlPath: rebuiltPath
 			}
 		})
 		.slice(1)
-		return crumbs
+	return crumbs
 }
 
 export const Crumbtrail = () => {
@@ -34,7 +34,6 @@ export const Empty = () => <div style={{ marginTop: '6rem' }}></div>
 
 export const Crumbs = ({ data }) => (
 	<PageMargin>
-
 		<nav className={styles.crumbtrail}>
 			<ol>
 				<NavigationItem urlPath='/' label='Home' />
@@ -47,7 +46,9 @@ export const Crumbs = ({ data }) => (
 const NavigationItem = ({ urlPath, label }) => (
 	<li>
 		<Link href={urlPath}>
-			{label.length > 0 ? label : titlecase(urlPath.split('/')[urlPath.split('/').length - 1]).replace("-"," ")}
+			{label.length > 0
+				? label
+				: titlecase(urlPath.split('/')[urlPath.split('/').length - 1]).replace('-', ' ')}
 		</Link>
 	</li>
 )

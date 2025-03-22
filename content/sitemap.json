@@ -3,7 +3,8 @@
 		"name": "home",
 		"label": "home",
 		"contentPath": "/home",
-		"hide": true
+		"hide": true,
+		"e2eTestLookFor": "Referral"
 	},
 	{
 		"name": "not-found",

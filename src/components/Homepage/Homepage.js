@@ -14,12 +14,22 @@ export const Homepage = ({ data }) => (
 	</PageMargin>
 )
 
-const Headline = ({ text }) => <h3>{text}</h3>
+const Headline = ({ text }) => (
+	<h3>
+		<strong>{text}</strong>
+	</h3>
+)
 
-const Bodycopy = ({ md }) => {
+const Bodycopy = ({ md, pad }) => {
 	const parsed = parseMarkdown(md)
 	const html = parsed.content
-	return <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />
+	return (
+		<div
+			style={{ padding: pad ? '2rem' : 0, fontWeight: '700' }}
+			className={styles.content}
+			dangerouslySetInnerHTML={{ __html: html }}
+		/>
+	)
 }
 
 const Hyperlink = ({ href, text }) => (
@@ -30,14 +40,27 @@ const Hyperlink = ({ href, text }) => (
 
 const Hero = ({ headline, content_md }) => (
 	<section className={styles.hero}>
-		<Headline text={headline} />
-        <Columns layout={11}>
-        <Bodycopy md={content_md} />
-        <div className={styles.Logo} />
-		</Columns>
-		
+		<div>
+			<Columns layout={11}>
+				<div className={styles.paddedmultiline}>
+					<h1>
+						<strong>{headline}</strong>
+					</h1>
+				</div>
+			</Columns>
+		</div>
+		<div>
+			<Columns layout={11}>
+				<div></div>
+				<div style={{ marginRight: '2rem' }}>
+					<Bodycopy pad={true} md={content_md} />
+				</div>
+			</Columns>
+		</div>
 	</section>
 )
+
+/**/
 
 const Boxes = ({ data }) => (
 	<section className={styles.boxes}>

@@ -86,9 +86,8 @@ h4 {
 	}
 }
 
-
 .scrollingTableWrapper {
-	min-width:90vw; 
+	min-width: 90vw;
 	overflow-x: scroll;
-  overflow-y: hidden;
+	overflow-y: hidden;
 }

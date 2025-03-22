@@ -29,10 +29,10 @@ const buildLinkedItem = (index, allFiles, folder) => {
 	return fileThumbnail(folder, fileName)
 }
 
-const slugify = fileName => fileName.split('.')[0]
+export const slugify = fileName => fileName.split('.')[0]
 // const unslugify = name => `${name}.md`
 
-const getAllFiles = contentFolder => {
+export const getAllFiles = contentFolder => {
 	const dir = join(CONTENT_ROOT, contentFolder)
 	const dirents = fs.readdirSync(dir, { withFileTypes: true })
 	return dirents

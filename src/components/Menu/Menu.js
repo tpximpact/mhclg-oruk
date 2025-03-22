@@ -57,7 +57,7 @@ const List = ({ data, overflow, setShowMenu }) => {
 								href={'/' + item.path}
 								className={styles.thumbnail}
 							>
-								{item.title ?item.title : "e"}
+								{item.title ? item.title : 'e'}
 							</Link>
 						)}
 					</li>
