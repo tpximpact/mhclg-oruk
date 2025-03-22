@@ -1,37 +1,37 @@
 import styles from './Timeline.module.css'
 import interpolate from 'color-interpolate'
-import {parseMarkdown } from '@/utilities/parseMarkdown'
+import { parseMarkdown } from '@/utilities/parseMarkdown'
 
 const colormap = interpolate(['orange', 'red', 'purple'])
 
 export const Timeline = ({ rows }) => (
-	<div className="scrollingTableWrapper">
-	<table className={styles.gantt}>
-		<thead>
-			<tr>
-				<th colSpan='4'>Version: 1.0</th>
-				<th className={styles.month} colSpan='12'>
-					Month
-				</th>
-			</tr>
-			<tr>
-				<th className={styles.tranche}>Tranche</th>
-				<th className={styles.deliverable}>Deliverable</th>
-				<th className={styles.tasks}>Tasks</th>
-				<th className={styles.effort}>Expected effort</th>
-				{[...Array(12).keys()].map(n => (
-					<th key={n} className={styles.month}>
-						{n + 1}
+	<div className='scrollingTableWrapper'>
+		<table className={styles.gantt}>
+			<thead>
+				<tr>
+					<th colSpan='4'>Version: 1.0</th>
+					<th className={styles.month} colSpan='12'>
+						Month
 					</th>
+				</tr>
+				<tr>
+					<th className={styles.tranche}>Tranche</th>
+					<th className={styles.deliverable}>Deliverable</th>
+					<th className={styles.tasks}>Tasks</th>
+					<th className={styles.effort}>Expected effort</th>
+					{[...Array(12).keys()].map(n => (
+						<th key={n} className={styles.month}>
+							{n + 1}
+						</th>
+					))}
+				</tr>
+			</thead>
+			<tbody>
+				{rows.map((r, i) => (
+					<Row key={i} {...r} />
 				))}
-			</tr>
-		</thead>
-		<tbody>
-			{rows.map((r, i) => (
-				<Row key={i} {...r} />
-			))}
-		</tbody>
-	</table>
+			</tbody>
+		</table>
 	</div>
 )
 

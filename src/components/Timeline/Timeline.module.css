@@ -1,11 +1,11 @@
 @value breakpoint: 1024px;
 
 @media (min-width: breakpoint) {
-.gantt {
-	width: 100%;
-	margin-top: 2rem;
-	border-collapse: collapse;
-}
+	.gantt {
+		width: 100%;
+		margin-top: 2rem;
+		border-collapse: collapse;
+	}
 }
 
 .gantt thead tr:not(:first-child) th {
