@@ -1,7 +1,7 @@
 ---
 title: What is Open Referral UK?
 slug: For all who want to know more.
-modified: '2025-02-27'
+modified: '2025-03-22T02:04:54.042Z'
 ---
 
 # What is Open Referral UK?
