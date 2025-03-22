@@ -1,5 +1,5 @@
-import { flattenSite } from '../src/utilities/flattenSite'
-import { slugify } from '../src/utilities/dynamicSection'
+import { flattenSite } from '../utilities/flattenSite'
+import { slugify } from '../utilities/dynamicSection'
 import fs from 'fs'
 import { join } from 'path'
 const { test, expect } = require('@playwright/test')
