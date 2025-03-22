@@ -1,7 +1,7 @@
 ---
 title: Business case
 slug: For finance managers.
-modified: '2025-01-20T11:11:20.092Z'
+modified: '2025-03-22T02:04:54.043Z'
 ---
 
 # Building stronger communities: the business case for adopting the Open Referral UK standard

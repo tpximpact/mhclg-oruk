@@ -1,7 +1,7 @@
 ---
 title: International Open Referral data standard
 slug: The standard's roots and associations.
-modified: '2025-02-27'
+modified: '2025-03-22T02:04:54.043Z'
 ---
 
 # International Open Referral data standard

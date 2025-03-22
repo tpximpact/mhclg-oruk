@@ -1,7 +1,7 @@
 ---
 title: Why adopt the standard?
 slug: For anyone wanting to publish or consume services data.
-modified: '2025-02-05'
+modified: '2025-03-22T02:04:54.042Z'
 ---
 
 # Why adopt the standard?
