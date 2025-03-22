@@ -34,7 +34,7 @@ Current community service data is often siloed, overlapping and difficult to mai
 
 <cite>- An ICB transformation officer</cite>
 
-Councils can take the lead in addressing the challenges of gathering, verifying, and sharing service information by adopting ORUK.  Working collectively to create a single, trusted repository that makes service data available across interventions, platforms, and applications. In health, this could be a meaningful lever for early prevention of chronic conditions.
+Councils can take the lead in addressing the challenges of gathering, verifying, and sharing service information by adopting ORUK. Working collectively to create a single, trusted repository that makes service data available across interventions, platforms, and applications. In health, this could be a meaningful lever for early prevention of chronic conditions.
 
 ## What are the key benefits of adopting ORUK?
 
@@ -82,7 +82,6 @@ ORUK represents a transformative way for councils and their partners to think ab
 4. **Data quality assurance**
 5. **Publish & re-use**
 6. **Performance monitoring**
-
 
 <img style="min-width:90vw;" src="/business_model.svg" alt="A diagram showing business model" />
 

@@ -39,12 +39,10 @@
 }
 
 .SubmitButton {
-	/*
 	padding: 0.5rem 1rem;
 	border: 1px solid black !important;
-	background: white;
+	background: var(--colour-mhclg);
 	font-weight: 900;
-	*/
+	color: #fff;
 	cursor: pointer;
-	
 }
