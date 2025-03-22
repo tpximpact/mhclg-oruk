@@ -1,10 +1,11 @@
 import styles from './Timeline.module.css'
 import interpolate from 'color-interpolate'
-import { marked } from 'marked'
+import {parseMarkdown } from '@/utilities/parseMarkdown'
 
 const colormap = interpolate(['orange', 'red', 'purple'])
 
 export const Timeline = ({ rows }) => (
+	<div className="scrollingTableWrapper">
 	<table className={styles.gantt}>
 		<thead>
 			<tr>
@@ -31,6 +32,7 @@ export const Timeline = ({ rows }) => (
 			))}
 		</tbody>
 	</table>
+	</div>
 )
 
 const Row = ({ tranche, deliverable, tasks, effort, months }) => (
@@ -62,7 +64,7 @@ const Month = ({ number, shaded, colour }) => (
 )
 
 const Content = ({ content, hide }) => {
-	const html = marked.parse(content)
+	const html = parseMarkdown(content).content
 	return (
 		<span
 			dangerouslySetInnerHTML={{ __html: html }}
