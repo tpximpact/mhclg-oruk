@@ -150,6 +150,6 @@ If any of these terms and conditions are held to be invalid, unenforceable or il
 
 ## Changes to these terms and conditions
 
-Please check these terms and conditions regularly. We can update them at any time without notice. 
+Please check these terms and conditions regularly. We can update them at any time without notice.
 
 You agree to any changes if you continue to use Open Referral UK after the terms and conditions have been updated.

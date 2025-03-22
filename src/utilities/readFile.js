@@ -5,7 +5,6 @@ import { getPath } from './getPath'
 
 const FILE_EXTENSION = 'md'
 
-
 export const readFile = ({ slug = 'index', folder }) => {
 	const file = `${slug}.${FILE_EXTENSION}`
 	const path = getPath(folder)

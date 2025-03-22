@@ -1,4 +1,3 @@
-
 export const formatNodesForPageMenu = nodes => {
 	let result = nodes
 	/*

@@ -38,7 +38,7 @@
 	--colour-mint: #75bea0;
 	--color-gov-blue: #1d70b8;
 	--colour-mhclg: #00625e;
-	--colour-tusk: #FCFBF2;
+	--colour-tusk: #fcfbf2;
 
 	--colour-grey-50: #f9fafb;
 	--colour-grey-100: #f3f4f6;
@@ -82,7 +82,7 @@
 	--dataTable-theme-dashboard-header-bg: var(--theme-paper);
 	--dataTable-theme-dashboard-row-divider: var(--theme-ink);
 	--Header-background-closed: var(--theme-paper);
-	--Header-background-open:#F7F2E7;
+	--Header-background-open: #f7f2e7;
 	--Header-border-color: var(--colour-grey-500);
 	--Header-button-color: var(--theme-ink);
 	--HR-background: #333;
@@ -98,17 +98,15 @@
 	--menu-background-highlight: #f00;
 	*/
 
-
 	--Logo-gradient-color1: var(--colour-mhclg);
 	--Logo-gradient-color2: var(--govuk-colour-turquoise);
 	--Logo-gradient-color3: #23a6d5;
 	--Logo-gradient-color4: var(--HR-gradient-start);
 
-
-	--menu-blockquote-background: #FFFBF3;
+	--menu-blockquote-background: #fffbf3;
 	--menu-blockquote-border: #dfdfdf;
-	--Menu-background: #FFFBF3;
-	--Menu-box-shadow: #EDE4D3;
+	--Menu-background: #fffbf3;
+	--Menu-box-shadow: #ede4d3;
 
 	--pagination-border-color: var(--theme-paper);
 	--pagination-current-bg-color: var(--theme-ink);

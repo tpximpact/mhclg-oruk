@@ -35,9 +35,9 @@ We collect personal data in order to:
 
 The legal basis for processing personal data in relation to site security is our legitimate interests, and the legitimate interests of our users, in ensuring the security and integrity of OpenReferralUK.org.
 
-Our lawful basis for collecting or using personal information is: 
+Our lawful basis for collecting or using personal information is:
 
-- **Consent:** you have given clear consent for us to process your personal data for a specific purpose. All of your data protection rights may apply. 
+- **Consent:** you have given clear consent for us to process your personal data for a specific purpose. All of your data protection rights may apply.
 
 ### What we do with your data
 
@@ -54,12 +54,13 @@ We will share your data if we are required to do so by law - for example, by cou
 ## How long we keep your data
 
 We will only retain your personal data for as long as:
+
 - it is needed for the purposes set out in this document
 - the law requires us to
 
-We will keep your email data: until you unsubscribe. 
+We will keep your email data: until you unsubscribe.
 
-We will keep your feedback data: for 2 years. 
+We will keep your feedback data: for 2 years.
 
 We will delete access log data: after 120 days.
 
@@ -97,7 +98,7 @@ Which lawful basis we rely on may affect your data protection rights which are i
 
 **Your right to data portability** - You have the right to ask that we transfer the personal information you gave us to another organisation, or to you. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtdp)
 
-**Your right to withdraw consent** – As we have  used consent as our lawful basis you have the right to withdraw your consent at any time. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtwc)
+**Your right to withdraw consent** – As we have used consent as our lawful basis you have the right to withdraw your consent at any time. [You can read more about this right here.](https://ico.org.uk/for-organisations/advice-for-small-organisations/create-your-own-privacy-notice/your-data-protection-rights/#rtwc)
 
 If you make a request, we must respond to you without undue delay and in any event **within one month.**
 
