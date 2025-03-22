@@ -57,4 +57,17 @@ describe('getSiteItems', () => {
     expect(getRawPageTree).toHaveBeenCalledTimes(1)
     expect(getRawPageTree).toHaveBeenCalledWith()
   })
+
+  test('should propagate errors from getRawPageTree', () => {
+    // Mock getRawPageTree to throw an error
+    const error = new Error('Failed to get page tree')
+    getRawPageTree.mockImplementation(() => {
+      throw error
+    })
+
+    // Verify that the error is propagated
+    expect(() => getSiteItems()).toThrow('Failed to get page tree')
+    expect(getRawPageTree).toHaveBeenCalledTimes(1)
+    expect(getRawPageTree).toHaveBeenCalledWith()
+  })
 }) 

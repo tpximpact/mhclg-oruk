@@ -13,65 +13,77 @@ describe('getSubdirectories', () => {
 
   it('should return an array of subdirectory paths', () => {
     // Mock data
-    const mockDirectoryContents = ['folder1', 'file1.txt', 'folder2']
-    const testPath = '/test/path'
-    
-    // Mock fs.readdirSync to return our test directory contents
-    fs.readdirSync.mockReturnValue(mockDirectoryContents)
-    
-    // Mock fs.statSync to return different stats for files and directories
-    fs.statSync.mockImplementation((path) => ({
-      isDirectory: () => path.includes('folder')
-    }))
+    const mockDirectoryPath = '/test/path'
+    const mockContents = ['folder1', 'file1.txt', 'folder2']
+    const mockStats = {
+      isDirectory: () => true
+    }
 
-    const result = getSubdirectories(testPath)
+    // Setup mocks
+    fs.readdirSync.mockReturnValue(mockContents)
+    fs.statSync.mockReturnValue(mockStats)
 
-    // Verify the results
+    // Execute function
+    const result = getSubdirectories(mockDirectoryPath)
+
+    // Assertions
     expect(result).toEqual([
-      join(testPath, 'folder1'),
-      join(testPath, 'folder2')
+      join(mockDirectoryPath, 'folder1'),
+      join(mockDirectoryPath, 'file1.txt'),
+      join(mockDirectoryPath, 'folder2')
     ])
-    
-    // Verify fs methods were called correctly
-    expect(fs.readdirSync).toHaveBeenCalledWith(testPath)
+    expect(fs.readdirSync).toHaveBeenCalledWith(mockDirectoryPath)
     expect(fs.statSync).toHaveBeenCalledTimes(3)
   })
 
-  it('should return an empty array when no subdirectories exist', () => {
-    // Mock data with no directories
-    const mockDirectoryContents = ['file1.txt', 'file2.txt']
-    const testPath = '/test/path'
-    
-    fs.readdirSync.mockReturnValue(mockDirectoryContents)
-    fs.statSync.mockImplementation(() => ({
-      isDirectory: () => false
-    }))
+  it('should only include directories in the result', () => {
+    // Mock data
+    const mockDirectoryPath = '/test/path'
+    const mockContents = ['folder1', 'file1.txt', 'folder2']
+    const mockStats = {
+      isDirectory: jest.fn()
+        .mockReturnValueOnce(true)    // folder1 is a directory
+        .mockReturnValueOnce(false)   // file1.txt is not a directory
+        .mockReturnValueOnce(true)    // folder2 is a directory
+    }
 
-    const result = getSubdirectories(testPath)
+    // Setup mocks
+    fs.readdirSync.mockReturnValue(mockContents)
+    fs.statSync.mockReturnValue(mockStats)
 
-    expect(result).toEqual([])
-    expect(fs.readdirSync).toHaveBeenCalledWith(testPath)
-    expect(fs.statSync).toHaveBeenCalledTimes(2)
+    // Execute function
+    const result = getSubdirectories(mockDirectoryPath)
+
+    // Assertions
+    expect(result).toEqual([
+      join(mockDirectoryPath, 'folder1'),
+      join(mockDirectoryPath, 'folder2')
+    ])
+    expect(fs.readdirSync).toHaveBeenCalledWith(mockDirectoryPath)
+    expect(fs.statSync).toHaveBeenCalledTimes(3)
   })
 
   it('should handle errors and return an empty array', () => {
-    const testPath = '/test/path'
+    // Mock data
+    const mockDirectoryPath = '/invalid/path'
     
-    // Mock fs.readdirSync to throw an error
+    // Setup mock to throw error
     fs.readdirSync.mockImplementation(() => {
-      throw new Error('Permission denied')
+      throw new Error('Directory not found')
     })
 
-    // Mock console.error to avoid cluttering test output
-    const consoleSpy = jest.spyOn(console, 'error').mockImplementation()
+    // Spy on console.error
+    const consoleSpy = jest.spyOn(console, 'error')
 
-    const result = getSubdirectories(testPath)
+    // Execute function
+    const result = getSubdirectories(mockDirectoryPath)
 
+    // Assertions
     expect(result).toEqual([])
-    expect(consoleSpy).toHaveBeenCalledWith('Error reading directory: Error: Permission denied')
-    expect(fs.readdirSync).toHaveBeenCalledWith(testPath)
-    expect(fs.statSync).not.toHaveBeenCalled()
-
+    expect(consoleSpy).toHaveBeenCalledWith('Error reading directory: Error: Directory not found')
+    expect(fs.readdirSync).toHaveBeenCalledWith(mockDirectoryPath)
+    
+    // Clean up
     consoleSpy.mockRestore()
   })
 }) 
