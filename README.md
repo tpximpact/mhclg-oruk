@@ -9,3 +9,6 @@ Two preview sites are available :
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ea091e05-9994-4acb-874a-59bfe6138262/deploy-status)](https://app.netlify.com/sites/openreferraluk-development/deploys)
 [https://openreferraluk-development.netlify.app](https://openreferraluk-development.netlify.app) is the development branch and is indicative of our current work in progress. It is likely to be unreliable. [admin](https://app.netlify.com/sites/openreferraluk-development/overview)
+
+We are also trialing deployment to Vercel
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/mhclg-oruk)

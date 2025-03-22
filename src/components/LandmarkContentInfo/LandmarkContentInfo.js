@@ -29,7 +29,7 @@ export const LandmarkContentInfo = ({
 				</>
 			) : null}
 			<PageMargin>
-				<div className={styles.copyright}>Copyright © 2024 Open Referral UK</div>
+				<div className={styles.copyright}>Copyright © 2024-5 Open Referral UK. This site is released under the <a href="https://github.com/tpximpact/mhclg-oruk/blob/main/LICENSE">Creative Commons Attribution-ShareAlike 4.0 International Public License</a>.</div>
 			</PageMargin>
 		</div>
 	</footer>
