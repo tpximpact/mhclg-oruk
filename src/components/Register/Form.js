@@ -38,7 +38,7 @@ const TextArea = ({ id, label, note, formState }) => {
 const Success = ({ link }) => {
 	return (
 		<div>
-			<h3>Registration request submitted</h3>
+			<h3 id="success">Registration request submitted</h3>
 			<p style={{ margin: '2rem 0' }}>
 				<strong>What happens next</strong>: Our team will review your feed. This is a
 				human-moderated process and may take up to 28 days. When the review process is complete, we
@@ -106,7 +106,7 @@ export const Form = () => {
 				<TextField id='developerUrl' label='Developer organisation URL' formState={formState} />
 			</fieldset>
 
-			<SubmitButton label='Register' loading='Registering ...' />
+			<SubmitButton id="register" label='Register' loading='Registering ...' />
 
 			{noScriptFallback}
 		</form>
