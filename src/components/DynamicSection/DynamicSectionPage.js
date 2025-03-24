@@ -1,13 +1,24 @@
 'use server'
 
+import Icon, { ICON_TYPE}  from '@/components/Icon'
 import { MarkdownContent } from '@/components/NamedMarkdownPage'
 import styles from './DynamicSection.module.css'
 import { PageThumbnail } from '@/components/PageThumbnail'
 import Columns from '@/components/Columns'
 
-export const DynamicSectionPage = async ({ date, html, ...linkedPages }) => {
+const PDFBanner = ({pdf}) => <div className={styles.pdfbanner}><Icon
+				colour="#000"
+				weight='2'
+				icon={ICON_TYPE.INFO}
+				size='28'
+			/>
+For convenience, this document is also <a href={pdf}> available as a downloadable pdf</a></div>
+
+export const DynamicSectionPage = async ({ metadata, date, html, ...linkedPages }) => {
+	const pdf = metadata.pdf
 	return (
-		<section>
+	<section>
+			{pdf && <PDFBanner pdf={pdf} />}
 			<MarkdownContent autoMenu={true} html={html} />
 			{date && (
 				<Columns layout='42'>
