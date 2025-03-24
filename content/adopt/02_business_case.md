@@ -10,7 +10,7 @@ Open Referral UK (ORUK), supported by the Ministry of Housing, Communities & Loc
 
 This supports better outcomes, greater efficiency, and improved signposting by professionals. Below, you'll find a business case with real-world examples, case studies, potential savings, a cost-benefit summary, and useful tools.
 
-A [calculator](/ORUK_BCC) to estimate your own potential benefits is available. You'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support.
+A downloadable spreadsheet [calculator](/adopt/04_benefits_calculator) to estimate your own potential benefits is available. You'll also find a [project initiation document](/adopt/03_pid) to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support.
 
 ## 1. The problem
 
