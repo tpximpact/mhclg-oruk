@@ -8,6 +8,8 @@ modified: '2025-03-22T02:04:54.043Z'
 
 To help you build and document your [business case](/adopt/02_business_case) for adopting the ORUK standard, our team has created a spreadsheet tool to help calculate the benefits.
 
+![screenshot](/adopt/calculator.png "Benefits calculator")
+
 The tool can be downloaded for
 
 - [Microsoft Excel](/adopt/calculator.xslx)
