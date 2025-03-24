@@ -12,9 +12,8 @@ OpenReferralUK.org (or www.OpenReferralUK.org) is provided by TPXimpact Limited 
 
 The personal data we collect from you includes:
 
-- If you contact us to ask questions, queries or leave feedback: your email address
-- When you sign up to our mailing list alerts: your email address and subscription preferences
-- When you open our emails and click on links on the website: your Internet Protocol (IP) address, and details of which version of web browser you used, information on how you use the site, using [cookies](https://www.gov.uk/support/cookies) and page tagging techniques
+- Contact information (I.e. email address) when you contact us to ask questions, queries or leave feedback or sign up to our mailing list alerts (including subscription preferences)
+- Your Internet Protocol (IP) address, and details of which version of web browser you used when accessing the site
 
 ## Cookies
 
@@ -72,7 +71,7 @@ Our services are not designed for, or intentionally targeted at, children 13 yea
 
 We design, build and run our systems to make sure that your data is as safe as possible at all stages, both while it’s processed and when it’s stored.
 
-All personal data is stored in the UK or the European Economic Area (EEA).
+Where possible, personal data is stored in the UK or the European Economic Area (EEA), however, one of our systems has primary processing facilities in the United States.
 
 ## How we protect your data and keep it secure
 
