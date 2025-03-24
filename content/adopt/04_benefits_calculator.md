@@ -14,5 +14,5 @@ The tool can be downloaded for
 
 - [Microsoft Excel (.xlsx) 375k download](/adopt/ORUK-business-case-calculator.xlsx)
 
-To help further, we also provide a [project initiation document](/adopt/03_pid) tmeplate to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support.
+To help further, we also provide a [project initiation document](/adopt/03_pid) template to help your teams implement ORUK and a [community forum](https://forum.openreferral.org/) where you can ask questions and find support.
 
