@@ -16,4 +16,4 @@ Developers can track and manage the compliance of their service data feeds with 
 
 If you would like your site to be listed here, we invite you to [register](/developers/register). 
 
-You can request to remove your information at any time by emailing infogov@tpximpact.com. This will stop your data feed from appearing on this page.
+At any time, you can request removal of your information by emailing infogov@tpximpact.com. This will stop your data feed from appearing on this page.
