@@ -4,7 +4,7 @@ The new site brings most of this functionality together under a single project, 
 
 This could be achieved in several ways - perhaps the easiest might be to redirect those subdomains to paths on the new site.
 
-Current Vercel docs for this csn be found at https://vercel.com/docs/domains/working-with-domains/add-a-domain
+Current Vercel docs for this can be found at https://vercel.com/docs/domains/working-with-domains/add-a-domain
 
 In particular, https://vercel.com/docs/getting-started-with-vercel/use-existing is likely to be relevant.
 
