@@ -6,8 +6,6 @@ import '@/styles/global.css'
 import '@/styles/no-js.css'
 
 import { NoWarranty } from '@/components/NoWarranty'
-// import { headers } from "next/headers";
-// import { Maintenance } from '@/components/Maintenance'
 import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
@@ -16,7 +14,6 @@ import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import { Crumbtrail } from '@/components/Crumbtrail'
-import defaultMetadata from '/content/metadata.json'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
@@ -24,7 +21,26 @@ import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
 
 const font = Inter({ subsets: ['latin'] })
 
-export const metadata = defaultMetadata
+export const metadata = {
+	generator: 'Next.js',
+	applicationName: 'Open Referral UK',
+	referrer: 'origin-when-cross-origin',
+	keywords: ['open referral', 'ORUK', 'OR-UK'],
+	creator: 'Open Referral UK',
+	publisher: 'Open Referral UK',
+	metadataBase: new URL('https://openreferraluk.org'),
+	alternates: {
+		canonical: '/'
+	},
+	openGraph: {
+		title: 'Open Referral UK',
+		description: 'The React Framework for the Web',
+		url: 'https://openreferraluk.org',
+		siteName: 'Open Referral UK',
+		locale: 'en_GB',
+		type: 'website'
+	}
+}
 
 const Wrap = ({ children }) => (
 	<html lang='en' id='html' className='no-js'>
