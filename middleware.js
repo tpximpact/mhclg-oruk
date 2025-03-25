@@ -4,7 +4,7 @@
 import { NextResponse } from 'next/server'
 
 export function middleware(request) {
-	const hostname = req.headers.get('host') || ''
+	const hostname = request.headers.get('host') || ''
 	if (hostname.startsWith('validator.openreferraluk.org')) {
     	return NextResponse.redirect(new URL('/developers/validator', req.url))
   	}
