@@ -1,6 +1,7 @@
 'use client'
 
 import CookieConsent from 'react-cookie-consent'
+import Link from 'next/link'
 
 const DEFAULT_COOKIE_NAME = 'orukCookieConsent'
 
@@ -16,6 +17,6 @@ export const Cookies = ({ name = DEFAULT_COOKIE_NAME }) => (
 		contentClasses='cookie-content'
 		expires={150}
 	>
-		By using our site, you acknowledge that you have read and understand our Cookie Policy.
+		By using our site, you acknowledge that you have read and understand our <Link href="/info/privacy">Cookie Policy</Link>.
 	</CookieConsent>
 )
