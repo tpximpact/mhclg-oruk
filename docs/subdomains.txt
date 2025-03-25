@@ -24,7 +24,7 @@ https://exporter.openreferraluk.org -> this tool has been removed. Best behaviou
 
 https://tools.openreferraluk.org -> this is 404 at the moment. perhaps should redirect to /developers
 
-
+https://forum.openreferraluk.org -> redirected to https://forum.openreferral.org WE MAY HAVE TO LOSE THIS (Mike)
 
 
 
