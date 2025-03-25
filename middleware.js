@@ -4,8 +4,12 @@
 import { NextResponse } from 'next/server'
 
 export function middleware(request) {
+	const hostname = req.headers.get('host') || ''
+	if (hostname.startsWith('validator.openreferraluk.org')) {
+    	return NextResponse.redirect(new URL('/developers/validator', req.url))
+  	}
+	
 	const p = request.nextUrl.pathname
-	//console.log("Current path:", p);
 	const headers = new Headers(request.headers)
 	headers.set('x-current-path', p)
 	return NextResponse.next({ headers })
