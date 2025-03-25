@@ -5,9 +5,8 @@ import { NextResponse } from 'next/server'
 
 export function middleware(request) {
 	const url = new URL(request.url);
-	console.log("h " + url.hostname)
 	if (url.hostname === 'validator.openreferraluk.org') {
-		return NextResponse.redirect(new URL('/developers/validator', request.url));
+		return NextResponse.redirect(new URL('/developers/validator', 'https://openreferraluk.org'));
 	}
 	
 	const p = request.nextUrl.pathname
