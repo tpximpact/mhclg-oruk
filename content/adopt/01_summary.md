@@ -86,6 +86,7 @@ ORUK represents a transformative way for councils and their partners to think ab
 
 <img style="min-width:90vw; margin-bottom:4rem" src="/business_model.svg" alt="A diagram showing business model" />
 
+
 <cite>-Figure 1: A framework for managing and ensuring the quality of ORUK data</cite>
 
 We have created an accompanying ORUK Project initiation document (PID) to help your teams understand and plan how to implement ORUK.
