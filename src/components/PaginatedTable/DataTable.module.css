@@ -34,20 +34,13 @@
 	.th {
 		font-weight: bold;
 		font-size: 1.4rem;
-		border-bottom: 1px solid var(--dataTable-gray);
+		border-bottom: 2px solid black;
 		margin-bottom: 0.5rem;
 	}
 
-	.td {
-		display: flex;
-	}
-
-	.td > span {
-		flex: 0 0 30%;
-	}
-
-	.td > span:last-child {
-		flex: 0 0 70%;
+	.label {
+		display: block;
+		margin-top: 1rem;
 		font-weight: bold;
 	}
 
@@ -57,6 +50,12 @@
 
 	.markdown {
 		font-weight: normal;
+		display: block;
+	}
+	
+	.td a {
+		font-weight: normal;
+		text-decoration: none;
 	}
 }
 

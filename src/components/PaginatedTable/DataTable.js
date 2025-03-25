@@ -123,7 +123,6 @@ const CellContent = ({ dataType, label, payload }) => {
 		val = <span className={styles.url}>{target}</span>
 	}
 
-	// TODO link the links.
 	switch (dataType) {
 		case 'oruk:dataType.markdown':
 			result = <span className={styles.markdown}>{truncate(val, MAX_TEXT_LENGTH_WORDCOUNT)}</span>
