@@ -37,7 +37,7 @@ Data that is collected, assured, and reused can break the negative cycle. Coordi
 
 Example business model
 
-<img style="min-width:90vw;" src="/business_model.PNG " alt="Business model" />
+<img style="min-width:90vw; margin-bottom:2rem" src="/business_model.svg " alt="Business model" />
 
 This unlocks several benefits:
 
