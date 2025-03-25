@@ -40,21 +40,21 @@ Using the data standard will reduce the cost of collecting data, make the assura
 
 The model below outlines the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways. More details of this can be found in the [ORUK Project initiation document](/adopt/03_pid) provided to help council project managers. We advise starting with a simple proof of concept before scaling, given the complexity of involving stakeholders.
 
-![A flowchart depicting the steps described below](/implementation_model.svg 'Outline')
+<img style="min-width:90vw; margin-bottom:2rem" src="/implementation_model.svg" alt="A flowchart depicting the steps described below" />
 
 ### 3.1 Collect & manage data
 
-This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">[(see data fields here)](https://docs.openreferral.org/en/latest/hsds/schema_reference.html)</span>. Councils can either develop their own application or purchase compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will have to offer a broader set of options when looking to scale this up.
+This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">[(see data fields here)](/developers/schemata)</span>. Councils can either develop their own application or purchase compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will have to offer a broader set of options when looking to scale this up.
 
 The diagram below provides a high-level overview of the main entities in ORUK.
 
-![A diagram depicting the key five entities](/entities.svg 'Model')
+<img style="min-width:90vw; margin-bottom:2rem" src="/entities.svg" alt="A diagram depicting the key five entities" />
 
 ### 3.2 Assure data quality
 
 The aim of assurance is to ensure there is a master record and to check that the data is accurate and can be trusted by those wanting to use it.
 
-**Note**, ORUK includes an [accreditations field](https://docs.openreferral.org/en/latest/hsds/schema_reference.html?highlight=accreditation) (under the Service entity table highlighted in this link) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service.
+**Note**, ORUK includes an [accreditations field](/developers/schemata) (under the Service entity table) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service.
 
 There are three main considerations:
 
@@ -88,7 +88,7 @@ ORUK API has RESTful web services documented according to the OpenAPI standard. 
   their details
 - </code>/taxonomy_terms</code> and <code>/taxonomy_terms/{id}</code> List of taxonomy terms and details of a specified taxonomy term
 
-Version 3.0 has nine GET web methods. See the [API page](/developers/api) and [Swagger documentation](https://api.porism.com/ServiceDirectoryService/swagger-ui/index.html).
+Version 3.0 has nine GET web methods. See the [API page](/developers/api) and [Swagger documentation](https://docs.openreferral.org/en/latest/openapi.html).
 
 #### Custom APIs
 
