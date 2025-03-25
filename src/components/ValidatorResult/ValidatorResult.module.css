@@ -79,10 +79,6 @@
 	line-height: 2rem;
 }
 
-.test {
-	jborder: 2px solid var(--statuscolor);
-}
-
 .message {
 	margin-left: 2rem;
 	margin-top: 1rem;
@@ -96,7 +92,7 @@
 .endpointContainer {
 	padding: 1rem;
 	background: var(--validatorResult-background);
-	display: flex;
+	.display: flex;
 	justify-content: space-between;
 
 	.endpointContainerLeft {
@@ -137,4 +133,30 @@
 
 .tabContent {
 	padding: 1rem;
+}
+
+
+/* MOBILE */
+@media only screen and (max-width: 1024px) {
+.tabs {
+	& button {
+		font-family: 0.9rem;
+		padding: 1rem 0.4rem;
+		margin: 0;
+	}
+	
+}
+
+.endpointContainer {
+	display: block;
+
+	.endpointContainerRight {
+		text-align: left;
+	}
+}
+
+.test .icon {
+	margin-top: 1rem;
+}
+
 }
