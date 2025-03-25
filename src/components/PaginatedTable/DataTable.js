@@ -143,10 +143,7 @@ const CellContent = ({ dataType, label, payload }) => {
 	const str = (
 		<>
 			<span className={styles.label}>{label}</span>
-			<span>{
-				 (typeof result === 'string') &&
-				 result.startsWith('http') ? "[view]" : result
-			}</span>
+			<span>{typeof result === 'string' && result.startsWith('http') ? '[view]' : result}</span>
 		</>
 	)
 	if (target) {

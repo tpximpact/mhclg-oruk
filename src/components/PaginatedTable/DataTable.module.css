@@ -52,7 +52,7 @@
 		font-weight: normal;
 		display: block;
 	}
-	
+
 	.td a {
 		font-weight: normal;
 		text-decoration: none;
@@ -80,7 +80,7 @@
 		margin: 2rem 0;
 		font-size: 0.9rem;
 	}
-	
+
 	.thead {
 		display: table-header-group;
 	}
@@ -88,7 +88,7 @@
 		display: table-row-group;
 	}
 	.th {
-		display: table-cell;	
+		display: table-cell;
 	}
 	.td {
 		display: table-cell;
@@ -133,13 +133,9 @@
 		text-align: right;
 	}
 
-
-	.td a
-	{
-	
-
+	.td a {
 		overflow-wrap: break-word;
-	word-wrap: break-word;
-	word-break: break-word;
+		word-wrap: break-word;
+		word-break: break-word;
 	}
 }
