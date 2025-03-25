@@ -88,7 +88,7 @@ ORUK API has RESTful web services documented according to the OpenAPI standard. 
   their details
 - </code>/taxonomy_terms</code> and <code>/taxonomy_terms/{id}</code> List of taxonomy terms and details of a specified taxonomy term
 
-Version 3.0 has nine GET web methods. See [Swagger documentation](https://docs.openreferraluk.org/en/latest/openapi.html).
+Version 3.0 has nine GET web methods. See the [API page](/developers/api) and [Swagger documentation](https://api.porism.com/ServiceDirectoryService/swagger-ui/index.html).
 
 #### Custom APIs
 
