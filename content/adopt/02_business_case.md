@@ -294,7 +294,7 @@ The cost of implementation depends on your chosen business model. We have heard 
 
 Example business model
 
-<img style="min-width:90vw;" src="/planning_framework.svg " alt="planning framework" />
+<img style="min-width:90vw; margin-bottom:2rem;" src="/planning_framework.svg " alt="planning framework" />
 
 Guidance on making these decisions is available in the accompanying [ORUK project initiation document](/adopt/03_pid). These will be offset by what is currently spent across your service teams.
 
