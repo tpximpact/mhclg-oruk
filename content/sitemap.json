@@ -41,7 +41,7 @@
 		"childNodes": [
 			{
 				"name": "directory",
-				"label": "Verified feed directory.",
+				"label": "Verified feed directory",
 				"teaser": "View and browse verified providers of API feeds.",
 				"urlPath": "directory",
 				"contentPath": "directory"
