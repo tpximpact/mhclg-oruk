@@ -1,6 +1,7 @@
 ---
 title: Project initiation document (PID)
 slug: For project managers.
+pdf: /pdf/ORUK_Project_initiation_document.pdf
 modified: '2025-03-22T02:04:54.043Z'
 ---
 
@@ -143,7 +144,7 @@ The following roles are key contributors to the model, with the same organisatio
 
 There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.
 
-<img style="min-width:90vw;" src="/planning_framework.svg " alt="planning framework" />
+<img style="min-width:90vw; margin-bottom: 2rem;" src="/planning_framework.svg " alt="planning framework" />
 
 ### Leadership, governance and oversight
 

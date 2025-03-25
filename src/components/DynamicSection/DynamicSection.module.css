@@ -1,12 +1,14 @@
 .pdfbanner {
 	margin-bottom: 4rem;
 	background: lemonchiffon;
-	padding: 2rem;
+	padding: 1rem 2rem;
 	border-radius: 2rem;
 }
 
 .pdfbanner svg {
-	margin-right: 1rem;
+	margin-right: 0.5rem;
+	top:-0.2rem;
+	position: relative;
 }
 
 .mainHeading {
