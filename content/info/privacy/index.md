@@ -71,7 +71,7 @@ Our services are not designed for, or intentionally targeted at, children 13 yea
 
 We design, build and run our systems to make sure that your data is as safe as possible at all stages, both while it’s processed and when it’s stored.
 
-Where possible, personal data is stored in the UK or the European Economic Area (EEA), however, one of our systems has primary processing facilities in the United States.
+Where possible, personal data is stored in the UK or the European Economic Area (EEA).
 
 ## How we protect your data and keep it secure
 
