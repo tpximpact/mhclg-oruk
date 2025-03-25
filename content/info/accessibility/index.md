@@ -21,15 +21,15 @@ We know some parts of this website are not fully accessible:
 
 - The site hasn’t been tested with assistive software users yet
 
-We will update the statement when issues are fixed or when we expect them to be fixed. 
+We will update the statement when issues are fixed or when we expect them to be fixed.
 
 ## Feedback and contact information
 
 If you find any problems not listed on this page or think we’re not meeting accessibility requirements, contact us at hello@openreferraluk.org
 
-If you need information on this website in a different format, such as accessible PDF, please contact us using the information above. 
+If you need information on this website in a different format, such as accessible PDF, please contact us using the information above.
 
-We’ll consider your request and get back to you in 20 working days. 
+We’ll consider your request and get back to you in 20 working days.
 
 ## Enforcement procedure
 

@@ -11,10 +11,5 @@ import { SortedAndPaginatedTable } from '@/components/SortedAndPaginatedTable'
 export const Directory = ({ result, currentPage }) => {
 	const view = result.result.definitions.views.directory
 
-	
-	return <SortedAndPaginatedTable 
-	view={view}
-	tableData={result.result} 
-	currentPage={currentPage} 
-	/>
+	return <SortedAndPaginatedTable view={view} tableData={result.result} currentPage={currentPage} />
 }

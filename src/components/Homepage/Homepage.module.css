@@ -77,13 +77,12 @@
 	background-position: center;
 }
 
-
 .paddedmultiline h1 strong {
 	position: relative;
 	left: -10px;
 }
 
-	.paddedmultiline {
+.paddedmultiline {
 	line-height: 1.4;
 	padding: 10px 0;
 	border-left: 20px solid var(--colour-mhclg);
@@ -114,16 +113,14 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-	
-	.paddedmultiline {
-	line-height: 1;
-	width: 300px;
-	margin: 20px auto;
-}
-.paddedmultiline h1 {
-	padding: 7px 0;
-	font-size: 1.5rem;
-}
 
-	
+	.paddedmultiline {
+		line-height: 1;
+		width: 300px;
+		margin: 20px auto;
+	}
+	.paddedmultiline h1 {
+		padding: 7px 0;
+		font-size: 1.5rem;
+	}
 }

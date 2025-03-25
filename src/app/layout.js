@@ -34,7 +34,8 @@ export const metadata = {
 	},
 	openGraph: {
 		title: 'Open Referral UK',
-		description: 'The open data standard which makes it easy to publish, find and use community services data',
+		description:
+			'The open data standard which makes it easy to publish, find and use community services data',
 		url: 'https://openreferraluk.org',
 		siteName: 'Open Referral UK',
 		locale: 'en_GB',

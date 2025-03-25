@@ -7,10 +7,12 @@ export const metadata = {
 }
 
 export default async function Page() {
-	return <>
-	<PageMargin>
-	<PDFBanner pdf="/pdf/ORUK_Technical_overview.pdf" />
-	</PageMargin>
-	<NamedMarkdownPage name='overview' />
-	</>
+	return (
+		<>
+			<PageMargin>
+				<PDFBanner pdf='/pdf/ORUK_Technical_overview.pdf' />
+			</PageMargin>
+			<NamedMarkdownPage name='overview' />
+		</>
+	)
 }
