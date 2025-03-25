@@ -6,13 +6,13 @@ import styles from './DynamicSection.module.css'
 import { PageThumbnail } from '@/components/PageThumbnail'
 import Columns from '@/components/Columns'
 
-const PDFBanner = ({pdf}) => <div className={styles.pdfbanner}><Icon
+export const PDFBanner = async ({pdf}) => <div className={styles.pdfbanner}><Icon
 				colour="#000"
 				weight='2'
 				icon={ICON_TYPE.INFO}
-				size='28'
+				size='21'
 			/>
-For convenience, this document is also <a href={pdf}> available as a downloadable pdf</a></div>
+For your convenience, this document is also <a href={pdf}> available as a downloadable pdf</a></div>
 
 export const DynamicSectionPage = async ({ metadata, date, html, ...linkedPages }) => {
 	const pdf = metadata.pdf

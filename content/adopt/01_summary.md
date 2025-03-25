@@ -1,6 +1,7 @@
 ---
 title: Executive summary
 slug: For senior managers.
+pdf: /pdf/ORUK_Executive_summary.pdf
 modified: '2025-03-22T02:04:54.043Z'
 ---
 
@@ -83,7 +84,7 @@ ORUK represents a transformative way for councils and their partners to think ab
 5. **Publish & re-use**
 6. **Performance monitoring**
 
-<img style="min-width:90vw;" src="/business_model.svg" alt="A diagram showing business model" />
+<img style="min-width:90vw; margin-bottom:4rem" src="/business_model.svg" alt="A diagram showing business model" />
 
 <cite>-Figure 1: A framework for managing and ensuring the quality of ORUK data</cite>
 

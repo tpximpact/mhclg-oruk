@@ -1,6 +1,7 @@
 ---
 title: Business case
 slug: For finance managers.
+pdf: /pdf/ORUK_Business_case.pdf
 modified: '2025-03-22T02:04:54.043Z'
 ---
 
@@ -314,4 +315,4 @@ This investment is to help introduce a modern approach to help eliminate the man
 - Data transformation: 1-3 weeks
 - Ongoing assurance: 1-1.5 FTE 7. Build your business case
 
-We have developed an [ORUK template business case](/adopt/business_case.pdf) to help get you started.
+We have developed an [ORUK template business case](/pdf/business_case_template.pdf) to help get you started.
