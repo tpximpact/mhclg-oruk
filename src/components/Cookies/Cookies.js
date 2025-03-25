@@ -17,6 +17,6 @@ export const Cookies = ({ name = DEFAULT_COOKIE_NAME }) => (
 		contentClasses='cookie-content'
 		expires={150}
 	>
-		By using our site, you acknowledge that you have read and understand our <Link href="/info/privacy">Cookie Policy</Link>.
+		By using our site, you acknowledge that you have read and understand our <Link href="/info/privacy"><span style={{color: "white"}}>Cookie Policy</span></Link>
 	</CookieConsent>
 )
