@@ -9,7 +9,7 @@ import Columns from '@/components/Columns'
 export const PDFBanner = async ({ pdf }) => (
 	<div className={styles.pdfbanner}>
 		<Icon colour='#000' weight='2' icon={ICON_TYPE.INFO} size='21' />
-		For your convenience, this document is also <a href={pdf}> available as a downloadable pdf</a>
+		For your convenience, this document is also <a href={pdf}> available as a downloadable pdf</a> (right click to download).
 	</div>
 )
 
