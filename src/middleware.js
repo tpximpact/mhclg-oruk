@@ -5,7 +5,7 @@ const redirects = {
   'developers.openreferraluk.org': '/developers',
   'docs.openreferraluk.org': '/developers/api',
   'taxonomy.openreferraluk.org': '/developers/overview',
-  'schema': '/developers/schemata'
+  'schema.openreferraluk.org': '/developers/schemata'
 };
 
 export function middleware(request) {
