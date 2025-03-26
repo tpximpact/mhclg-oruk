@@ -3,7 +3,9 @@ import { NextResponse } from 'next/server'
 const redirects = {
   'validator.openreferraluk.org': '/developers/validator',
   'developers.openreferraluk.org': '/developers',
-  'docs.openreferraluk.org': '/developers/api'
+  'docs.openreferraluk.org': '/developers/api',
+  'taxonomy.openreferraluk.org': '/developers/overview',
+  'schema': '/developers/schemata'
 };
 
 export function middleware(request) {
