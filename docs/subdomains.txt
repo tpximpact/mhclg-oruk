@@ -2,31 +2,18 @@ The legacy ORUK website was distrubuted accross several platforms, and hence mad
 
 The new site brings most of this functionality together under a single project, but it is desirable that the legacy subdomains continue to be supported for compatibilty with, e.g. existing bookmarks, links etc.
 
-This could be achieved in several ways - perhaps the easiest might be to redirect those subdomains to paths on the new site.
-
-Current Vercel docs for this can be found at https://vercel.com/docs/domains/working-with-domains/add-a-domain
-
-In particular, https://vercel.com/docs/getting-started-with-vercel/use-existing is likely to be relevant.
-
-The domains are
-
-https://openreferraluk.org -> should update A record to point to vercel IP (presumably?)
+We have impleemted this by using a wildcard rule in Vercel to direct *.openreferraluk.org to our site plus a Next.js middleware which catches the followimg legacy subdomains
 
 https://developers.openreferraluk.org -> /developers
 
 https://validator.openreferraluk.org -> /developers/validator
 
-https://docs.openreferraluk.org -> developers/specifications (this one isn's as clear cut as the others. could equally point at developers/api)
+https://docs.openreferraluk.org -> developers/api
 
-https://forum.openreferral.org -> NO CHANGE
+https://forum.openreferraluk.org -> forum.openreferral.org
 
-https://exporter.openreferraluk.org -> this tool has been removed. Best behaviour would be to redirect to / but perhaps with a 410?
+The following legacy subdomains have been retired
 
-https://tools.openreferraluk.org -> this is 404 at the moment. perhaps should redirect to /developers
+https://exporter.openreferraluk.org -> this tool has been removed
+https://tools.openreferraluk.org -> was already 404
 
-https://forum.openreferraluk.org -> redirected to https://forum.openreferral.org WE MAY HAVE TO LOSE THIS (Mike)
-
-
-
-
- 
