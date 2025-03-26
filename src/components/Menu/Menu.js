@@ -64,7 +64,7 @@ const List = ({ data, overflow, setShowMenu }) => {
 				))}
 			{overflow && (
 				<li className={styles.overflow}>
-					...plus <Link href={sectionRoot}>{overflow} more</Link>
+					...plus <Link href={sectionRoot}>{overflow} more (show all)</Link>
 				</li>
 			)}
 		</ol>
