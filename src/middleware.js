@@ -13,9 +13,9 @@ export function middleware(request) {
 		return NextResponse.redirect(new URL('/', 'https://forum.openreferral.org'))
 	}
 	
-	const redirectPath = redirects[url.hostname];
-	if (redirectPath) {
-		return NextResponse.redirect(targetUrl);
+	const targetPath = redirects[url.hostname];
+	if (targetPath) {
+		return NextResponse.redirect(new URL(targetPath, 'https://forum.openreferral.org'))
 	}
 
 	// see https://www.propelauth.com/post/getting-url-in-next-server-components
