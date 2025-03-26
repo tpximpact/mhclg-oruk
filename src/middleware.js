@@ -15,7 +15,7 @@ export function middleware(request) {
 	
 	const targetPath = redirects[url.hostname];
 	if (targetPath) {
-		return NextResponse.redirect(new URL(targetPath, 'openreferraluk.org'))
+		return NextResponse.redirect(new URL(targetPath, 'https://openreferraluk.org'))
 	}
 
 	// see https://www.propelauth.com/post/getting-url-in-next-server-components
