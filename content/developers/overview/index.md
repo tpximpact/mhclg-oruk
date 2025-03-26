@@ -41,6 +41,7 @@ Using the data standard will reduce the cost of collecting data, make the assura
 The model below outlines the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways. More details of this can be found in the [ORUK Project initiation document](/adopt/03_pid) provided to help council project managers. We advise starting with a simple proof of concept before scaling, given the complexity of involving stakeholders.
 
 <img style="min-width:90vw; margin-bottom:2rem" src="/implementation_model.svg" alt="A flowchart depicting the steps described below" />
+*Figure 1: Data flow process from collection to re-use*
 
 ### 3.1 Collect & manage data
 
@@ -49,18 +50,19 @@ This involves gathering the information that describes a local service using the
 The diagram below provides a high-level overview of the main entities in ORUK.
 
 <img style="min-width:90vw; margin-bottom:2rem" src="/entities.svg" alt="A diagram depicting the key five entities" />
+*Figure 2: Overview of the main ORUK entities*
 
 ### 3.2 Assure data quality
 
 The aim of assurance is to ensure there is a master record and to check that the data is accurate and can be trusted by those wanting to use it.
 
-**Note**, ORUK includes an [accreditations field](/developers/schemata) (under the Service entity table) to record service quality e.g. Ofsted, CQC but assurance is only concerneed with the data describing the service rather than the quality of the service.
+**Note**, ORUK includes an [accreditations field](/developers/schemata) (under the Service entity table) to record service quality e.g. Ofsted, CQC but assurance is only concerned with the data describing the service rather than the quality of the service.
 
 There are three main considerations:
 
 The first is to remove duplication. If data is collected from several different sources there will be duplication. A simple semi-automated step would be to sort the collection of data using fields that are likely to be the same if it is the same service e.g. name, provider, venue, contact details. It would then be a manual step by an assurer to filter out duplicates.
 
-The **second** is to check the data quality. This will be about:
+The second is to check the data quality. This will be about:
 
 - richness of data i.e. to complete all the fields that are deemed necessary,
 - accuracy i.e. to check that days and times for sessions have not changed
