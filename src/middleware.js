@@ -1,14 +1,24 @@
-// see https://www.propelauth.com/post/getting-url-in-next-server-components
-//
-
 import { NextResponse } from 'next/server'
 
+const redirects = {
+  'validator.openreferraluk.org': '/developers/validator',
+  'developers.openreferraluk.org': '/developers',
+  'docs.openreferraluk.org': '/developers/api'
+};
+
 export function middleware(request) {
-	const url = new URL(request.url)
-	if (url.hostname === 'validator.openreferraluk.org') {
-		return NextResponse.redirect(new URL('/developers/validator', 'https://openreferraluk.org'))
+	const url = new URL(request.url);
+	
+	if (url.hostname === 'forum.openreferraluk.org') {
+		return NextResponse.redirect(new URL('/', 'https://forum.openreferral.org'))
+	}
+	
+	const redirectPath = redirects[url.hostname];
+	if (redirectPath) {
+		return NextResponse.redirect(targetUrl);
 	}
 
+	// see https://www.propelauth.com/post/getting-url-in-next-server-components
 	const p = request.nextUrl.pathname
 	const headers = new Headers(request.headers)
 	headers.set('x-current-path', p)
