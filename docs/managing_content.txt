@@ -1,0 +1,141 @@
+INTRODUCTION
+
+A central requirement of our brief was easy portability to a future caretaker organisation. However we also wanted the website content to be easy to update without code skills. To the extent that the former presupposes the fewest possible services and the latter requires as a minimum, access control and an editing interface, these requirements are potentially divergent.
+
+Our solution was to leverage git, github.com, and Vercel - all integral to the project for other reasons - as our content management platform.
+
+- Git provides (among many other features): version control, history, audit logs, branching, and conflict resolution.
+
+- Github provides: online editing interface, access control, authentication, teams and permissions.
+
+- Vercel provides: continuous deployment, rollback, deployment history, branch and commit previews.
+
+Together these provide a robust, flexible, powerful and highly reconfigurable content management solution with zero additional hosting costs or requirements. However the enormous flexibility and customisation potential can also be somewhat daunting, so this document will provide an outline of the simplest possible editing scenario - the one presently in use. It is important to bear in mind however, that this barely scratches the surface of what is possible. As both git and github are extremely well-adopted and widely understood, any future owner, developer or caretaker shoild be able to configure additional functionality as required.
+
+In what follows, we describe some simple editing workflows, but the full power and flexibilty of git and github are available, and in general, the more the team knows about each, the more optiins become available.
+
+Users can be enrolled and given authoring permissions using the regular github interface. At time of writing, this can be found at  https://github.com/tpximpact/mhclg-oruk/settings/access. With access, authors may use all the usual git techniques to edit content.
+
+HOW TO EDIT CONTENT: "EASY" LEVEL
+
+With zero requirements for git skills or specialist software of any kind, content can be edited online, in-browser using github's regular file editing interface.
+
+1) Open the repository https://github.com/tpximpact/mhclg-oruk in your preferred browser
+
+2) Navigate to the file you wish to edit using the file browser. By default you'll be editing the main branch so your changes will be published as soon as they are saved - if you'd prefer to make a draft, you'll need to read up on how to make and edit branches. 
+
+3) Once you've located the file you'd like to update - let's say e.g. https://github.com/tpximpact/mhclg-oruk/blob/main/content/about/10-what.md - all you need do is click the small pencil icon in the top right toolbar, and you will be in a text editor.
+
+4) Our content is formatted using Markdown. More on that below. You can preview your work in progress by toggling betwen the 'edit' and 'preview' tabs.
+
+5) Once you're happy, click the green button too right, 'commit changes' and enter a description of what you changed (which will help you if you need to consult thr edit history for any reason).
+
+6) You're done.
+
+Note that should you wish to create a new file, this too is easy. Navigate to the folder where you want your file to live and choose 'Add file' from the menu top right.
+
+HOW TO EDIT CONTENT: "STILL EASY" LEVEL
+
+If you have more changes to make, and particularly if you would like to make a batch of changes and draft them prior to publication, an easy way to do this is by downloading the Github Desktop application. 
+
+This is a GUI app which makes more of the functionality of git available, while still requiring only a basic level of technical knowledge. 
+
+A download and documentation can be found at https://github.com/apps/desktop. 
+
+Note that similar apps exist for mobile platforms too. Working Copy (https://workingcopy.app) for iOS is highly recommended.
+
+The workflow on an app is
+
+1) Clone the repository - ie make a local working copy.
+
+2) Make your edits using your favorite text or markdown editor (VSCode is excellent for more technical users / Macdown is a good entry- level option https://macdown.uranusjr.com)
+
+3) Commit your edits
+
+4) Push your edits to github
+
+HOW TO EDIT CONTENT: POWER USERS
+
+It's git. Use it however you'd use git!
+
+FORMATTING CONTENT
+
+To format content, we use the widely-known Markdown language. Many online references and tutorials exist, for example, https://www.markdownguide.org/basic-syntax/
+
+There are several dialects of Markdown - you may see, for example 'github flavoured markdown' or 'extended markdown'. We do not use these extended dialects - you should use only the basic core language.
+
+HTML is allowed in markdown files - and we have had to use it in places to get the best results for tables, citations and images - but as a rule of thumb, if you CAN do it in Markdown, this is the better option.
+
+PAGE METADATA
+
+Each Markdown file can also include a header which contains descriptive metadata. This uses another standard format, again, well documented online, YAML. This is known as 'YAML frontmatter'.
+
+An example would be this 
+
+---
+title: What is Open Referral UK?
+slug: For all who want to know more.
+modified: '2025-03-22T02:04:54.042Z'
+---
+
+'title' is used on index pages (see below) to provide a title; 'slug' is the brief description of content which appears on the same page. 
+
+The modified date can be adjusted manually, but can also be automatically updated (see below).
+
+CONTENT AND SITE STRUCTURE
+
+The editable content of the site lives in the folder /content.
+
+It's important to understand that there are three sorts of pages on the website: 
+
+- auto generated index pages eg https://openreferraluk.org/about which list secrion content. 
+
+- basic content pages eg https://openreferraluk.org/about/10-what
+
+- special pages with individual bespoke behaviour (eg the validator, the homepage, or api documentation)
+
+INDEX PAGES
+
+These list the content of the sections. The listing of contents is automatically generated, but bodycopy appearing above the list can be edited in /myfolder/index.md
+
+BASIC CONTENT PAGES / DYNAMIC SECTIONS
+
+Some sections of the website contain only content pages (eg 'about', 'adopt' and 'case-studies'). These sections are known in the code as 'dynamic sections'.
+
+Any markdown file you create in the folder of a dynamic section will make a new page on the website. 
+
+The filename you use will determine both the url of the page and the sort order in ehich it will appear on the index page. A useful technique here is to use a numeric prefix eg 10-my-new-story.md
+
+SPECIAL PAGES
+
+Some sections of the website contain pages which have special functionality (e.g. developers, info, community) which is defined in code.
+
+Some content on these pages - most usually the main body copy - is editable in the same way by editing a markdown document, but some page content may depend on a json document or may be hard-coded into the page. 
+
+Creating new pages in these special sections requires a developer. It's easy, but a few lines of code will be required. This is mot intended as a content-editor level task (not least because in almost all cases it would involve writing some new functionality for the site).
+
+HOME PAGE
+
+The home page is more complicated so content is defined - and can be edited - in a json file, 
+https://github.com/tpximpact/mhclg-oruk/blob/main/content/home/index.json
+
+JSON is just as easy to edit as markdown, but some additional care is required, as it is possible to introduce syntax errors which will prevent the content working as intended. An editor with syntax colouring is very helpful here, but there are also online JSON validators which will allow you to double check your work.
+
+Note that while it may be possible to change the layout of the homepage by editing the json, this is not an intended use case, and is not recommended. Structural changes are better done in code.
+
+SITE STRUCTURE
+
+The overall structure of the site is defined in 
+https://github.com/tpximpact/mhclg-oruk/blob/main/content/sitemap.json
+
+It is possible to use this file quite radically to restructure the site - for instance you could make new dynamic sections (subject to also making an equivalent change in /src/app) but this sort of advanced work is best considered a developer task. Editing this file on a routine basis is not required and should be restricted to maintaining section names etc. It is possible to cause significant breakage by ambitious editing of this file - caveat emptor!
+
+ORUK SPECIFICATIONS
+
+There is one further - niche - tranche of designed-editable content: versions of the ORUK specification.
+
+As future versions of the specification are an unknown quantity, the site can not be guaranteed to acommodate any possible future revision... but we have done everything possible to make this as seamless as it can be.
+
+New specification documents can be uploaded to /src/specifications and should automatically propagate through to the developer documentation pages. In practice, this will require manual checking - it cannot be automated as defects may be visual - and may require modification of the existing api and schemata pages if the structure has changed significantly.
+
+Note that the changelog page is NOT automatically generated. This must be makntained manually by editing https://github.com/tpximpact/mhclg-oruk/blob/main/content/developers/changelog/data.json. In the event that future versions of the specification are issued containing substantive changes, this page may require an overhaul - for evident reasons this is hard to anticipate.
