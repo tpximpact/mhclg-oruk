@@ -25,7 +25,7 @@ const Bodycopy = ({ md, pad }) => {
 	const html = parsed.content
 	return (
 		<div
-			style={{ padding: pad ? '2rem' : 0, fontWeight: '700' }}
+			style={{ padding: pad ? '2rem' : 0, fontWeight: '500' }}
 			className={styles.content}
 			dangerouslySetInnerHTML={{ __html: html }}
 		/>
