@@ -12,6 +12,10 @@ https://docs.openreferraluk.org -> developers/api
 
 https://forum.openreferraluk.org -> forum.openreferral.org
 
+taxonomy.openreferraluk.org -> /developers/overview
+
+schema.openreferraluk.org -> /developers/schemata
+
 The following legacy subdomains have been retired
 
 https://exporter.openreferraluk.org -> this tool has been removed
