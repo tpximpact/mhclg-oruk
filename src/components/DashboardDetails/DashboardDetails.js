@@ -26,7 +26,7 @@ export const DashboardDetails = ({ result }) => {
 
 		
 			<div>
-				<h2>The Data</h2>
+				<h2>Feed Data</h2>
 				<Field
 				data={{
 					label: 'Feed URL',
