@@ -7,11 +7,18 @@
 		"e2eTestLookFor": "Referral"
 	},
 	{
+		"name": "results",
+		"label": "validator result",
+		"contentPath": "/developers/validator/results",
+		"hide": true
+	},
+	{
 		"name": "not-found",
 		"label": "404",
 		"contentPath": "/not-found",
 		"hide": true
 	},
+
 	{
 		"name": "about",
 		"label": "About ORUK",
@@ -83,13 +90,7 @@
 				"contentPath": "validator",
 				"teaser": "This tool checks that a specific data feed follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned data feed. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
 			},
-			{
-				"name": "results",
-				"label": "Understand your validator results",
-				"urlPath": "validator",
-				"contentPath": "validator/results",
-				"teaser": "This tool checks that a specific data feed follows the standard. It shows any issues as well as statistics on what types of data is included in the scanned data feed. This helps Councils move to the standard. This tool also helps establish trust as it ensures that a Service Directory follows the standard."
-			},
+
 			{
 				"name": "dashboard",
 				"label": "Verified feed availability",
