@@ -1,10 +1,10 @@
 ---
-title: What is Open Referral UK?
+title: Introducing Open Referral UK
 slug: For all who want to know more.
 modified: '2025-03-22T02:04:54.042Z'
 ---
 
-# What is Open Referral UK?
+# Introducing Open Referral UK
 
 Open Referral UK data is a standard that gives a consistent way of recording and sharing information about services.
 
