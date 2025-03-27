@@ -23,31 +23,33 @@ export default async function Page(props) {
 	})
 
 	return (
-        <>
-            <PageMargin>
-                <ValidatorResultPageTitle />
-                <Suspense>
-                    <RemoteJSON
-                        method={METHOD.POST}
-                        RetryComponent={() => (
-                            <section style={{ marginTop: '2rem' }}>
-                                <ValidatorForm
-                                    action={navigate}
-                                    defaultValue={searchParams.uri}
-                                    title='Check again'
-                                />
-                            </section>
-                        )}
-                        ResultRenderComponent={ValidatorResult}
-                        endpoint={process.env.VALIDATOR_ENDPOINT}
-                        queryParams={{
-                            serviceUrl: searchParams.uri
-                        }}
-                        apiData={apiData}
-                    />
-                </Suspense>
-            </PageMargin>
-            <NamedMarkdownPage name='results' autoMenu={false} />
-        </>
+		<>
+			<PageMargin>
+				<ValidatorResultPageTitle />
+				<Suspense>
+					<RemoteJSON
+						method={METHOD.POST}
+						RetryComponent={() => (
+							<div style={{ paddingTop: '2rem' }}>
+								<NamedMarkdownPage noMargin={true} name='results' autoMenu={false} />
+								<section style={{ marginTop: '2rem' }}>
+									<ValidatorForm
+										action={navigate}
+										defaultValue={searchParams.uri}
+										title='Check again'
+									/>
+								</section>
+							</div>
+						)}
+						ResultRenderComponent={ValidatorResult}
+						endpoint={process.env.VALIDATOR_ENDPOINT}
+						queryParams={{
+							serviceUrl: searchParams.uri
+						}}
+						apiData={apiData}
+					/>
+				</Suspense>
+			</PageMargin>
+		</>
 	)
 }
