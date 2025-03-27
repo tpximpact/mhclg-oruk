@@ -36,7 +36,7 @@ export const DashboardDetails = ({ result }) => {
 			/>
 			<div style={{background: "lemonchiffon", padding: "1rem", borderRadius:"0.5rem"}}>
 			Note: Open Referral feeds are <em>machine readable</em>, and are not designed for human readers or for display in a web browser. <a href={getDetailsURI(result)} target='_blank'>
-					I understand: open the data in a new window
+					I understand: open the raw data in a new window
 				</a>
 			</div>
 			
