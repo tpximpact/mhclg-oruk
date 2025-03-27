@@ -13,7 +13,7 @@ export const DashboardDetails = ({ result }) => {
 			<div className={styles.service}>
 				Data feed:{' '}
 				<a href={getDetailsURI(result)} target='_blank'>
-					{getDetailsURI(result)}
+					{getDetailsURIValue(result)}
 				</a>
 				<em>&nbsp;(opens in new window)</em>
 			</div>
@@ -52,7 +52,8 @@ const Validation = ({ status, result }) => {
 }
 
 const getDetailsTitle = result => result.title?.value
-const getDetailsURI = result => result.serviceUrl?.value
+const getDetailsURI = result => result.serviceUrl?.url
+const getDetailsURIValue = result => result.serviceUrl?.value
 const getDetailsPublisher = result => result.publisher?.value
 
 const Section = ({ data }) => (
