@@ -1,10 +1,10 @@
 ---
-title: Why adopt the standard?
+title: Benefits of Open Referral UK
 slug: For anyone wanting to publish or consume services data.
 modified: '2025-03-22T02:04:54.042Z'
 ---
 
-# Why adopt the standard?
+# Benefits of Open Referral UK
 
 ## The data problem
 
