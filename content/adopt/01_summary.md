@@ -84,7 +84,7 @@ ORUK represents a transformative way for councils and their partners to think ab
 5. **Publish & re-use**
 6. **Performance monitoring**
 
-<img style="min-width:90vw; margin-bottom:4rem" src="/business_model.svg" alt="A diagram showing business model" />
+<img style="margin-bottom:4rem" src="/business_model.svg" alt="A diagram showing business model" />
 
 <cite>-Figure 1: A framework for managing and ensuring the quality of ORUK data</cite>
 

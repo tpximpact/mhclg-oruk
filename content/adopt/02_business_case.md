@@ -37,7 +37,7 @@ Data that is collected, assured, and reused can break the negative cycle. Coordi
 
 Example business model
 
-<img style="min-width:90vw; margin-bottom:2rem" src="/business_model.svg " alt="Business model" />
+<img style="margin-bottom:2rem" src="/business_model.svg " alt="Business model" />
 
 This unlocks several benefits:
 
@@ -294,7 +294,7 @@ The cost of implementation depends on your chosen business model. We have heard 
 
 Example business model
 
-<img style="min-width:90vw; margin-bottom:2rem;" src="/planning_framework.svg " alt="planning framework" />
+<img style="margin-bottom:2rem;" src="/planning_framework.svg " alt="planning framework" />
 
 Guidance on making these decisions is available in the accompanying [ORUK project initiation document](/adopt/03_pid). These will be offset by what is currently spent across your service teams.
 
