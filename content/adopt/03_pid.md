@@ -144,7 +144,7 @@ The following roles are key contributors to the model, with the same organisatio
 
 There is no fixed blueprint for implementing this data standard, but the following diagram provides a framework for planning. A brief explanation of the steps is outlined below, with a detailed implementation plan in section 15.
 
-<img style="min-width:90vw; margin-bottom: 2rem;" src="/planning_framework.svg " alt="planning framework" />
+<img style="margin-bottom: 2rem;" src="/planning_framework.svg " alt="planning framework" />
 
 ### Leadership, governance and oversight
 

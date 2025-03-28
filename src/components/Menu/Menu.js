@@ -1,17 +1,22 @@
 import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 import Link from 'next/link'
 import styles from './Menu.module.css'
+import { PageMargin } from '../PageMargin'
 
 export const Menu = ({ ariaName, items, setShowMenu, open }) => {
 	if (!items) {
 		return
 	}
 	return (
-		<nav aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open : null}`}>
+		<div aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open : null}`} >
+			<PageMargin>
+				<div className={styles.Innermenu}>
 			{items.map((item, i) => (
 				<MenuSection key={i} setShowMenu={setShowMenu} data={item} />
 			))}
-		</nav>
+			</div>
+			</PageMargin>
+		</div>
 	)
 }
 
