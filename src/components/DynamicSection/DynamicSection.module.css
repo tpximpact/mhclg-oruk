@@ -1,6 +1,6 @@
 .pdfbanner {
 	margin-bottom: 4rem;
-	background: lemonchiffon;
+	background: var(--pdfbanner);
 	padding: 1rem 2rem;
 	border-radius: 0.5rem;
 }

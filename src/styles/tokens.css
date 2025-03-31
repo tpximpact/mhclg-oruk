@@ -63,14 +63,16 @@
 
 	/* @/components */
 
-	--button-background-color: transparent;
+	--button-background-color: var(--theme-paper);
 	--button-border-color: var(--theme-ink);
 	--button-color: var(--theme-ink);
-	--button-hover-background-color: var(--theme-ink);
-	--button-hover-color: var(--theme-paper);
+	--button-disabled-background-color: #eee;
+	--button-disabled-border-color: #aaa;
+	--button-disabled-color: #aaa;
+
 	--changelog-background-color: var(--theme-paper);
 	--changelog-code-background-color: var(--theme-paper);
-	--changelog-danger-color: red;
+	--changelog-danger-color: #900;
 	--columns-debug-background-color: rgba(255, 0, 0, 0.1);
 	--columns-debug-border-color: red;
 	--columns-debug-color: red;
@@ -81,6 +83,7 @@
 	--dataTable-theme-dashboard-border: var(--theme-ink);
 	--dataTable-theme-dashboard-header-bg: var(--theme-paper);
 	--dataTable-theme-dashboard-row-divider: var(--theme-ink);
+	--documentation-border: #999;
 	--Header-background-closed: var(--theme-paper);
 	--Header-background-open: #f7f2e7;
 	--Header-border-color: var(--colour-grey-500);
@@ -89,14 +92,6 @@
 	--HR-gradient-end: #333;
 	--HR-gradient-middle: #ccc;
 	--HR-gradient-start: #ccc;
-
-	/*
-	--Logo-gradient-color1: #ee7752;
-	--Logo-gradient-color2: #e73c7e;
-	--Logo-gradient-color3: #23a6d5;
-	--Logo-gradient-color4: #23d5ab;
-	--menu-background-highlight: #f00;
-	*/
 
 	--Logo-gradient-color1: var(--colour-mhclg);
 	--Logo-gradient-color2: var(--govuk-colour-turquoise);
@@ -126,14 +121,14 @@
 	--validatorResult-banner-background: #fe9;
 	--validatorResult-banner-code-background: rgba(255, 255, 255, 0.5);
 	--validatorResult-black: var(--theme-ink);
-	/*
-	--VersionedDocumentation-current-background: #d9f99d;
-	--VersionedDocumentation-current-border-color: #a3e635;
-	--VersionedDocumentation-current-color: #1a2e05;
-	*/
+	--pdfbanner: lemonchiffon;
 	--VersionedDocumentation-legacy-background: #fecaca;
 	--VersionedDocumentation-legacy-border-color: #dc2626;
 	--VersionedDocumentation-legacy-color: black;
+
+	--BannerMHCLG-ink: var(--colour-ink);
+	--Home-hero-bg:#fcf2e3;
+	--Home-hero-fg:var(--theme-ink)
 }
 
 @media (prefers-color-scheme: dark) {

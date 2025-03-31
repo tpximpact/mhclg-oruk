@@ -24,16 +24,6 @@
 	}
 }
 
-/*
-.column {
-	margin-bottom: 1.5rem;
-
-	@media (min-width: breakpoint) {
-		grid-row: 1;
-	}
-}
-*/
-
 .debug {
 	display: none;
 	@media (min-width: breakpoint) {
