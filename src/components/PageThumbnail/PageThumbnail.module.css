@@ -5,7 +5,7 @@
 }
 
 .itemHeading {
-	/* TODO - this shoildnt need repearing here - investigate */
+	/* TODO - this shouldnt need repearing here - investigate */
 	color: var(--theme-anchor);
 	text-decoration: underline;
 	text-decoration-color: var(--theme-anchor-underline);

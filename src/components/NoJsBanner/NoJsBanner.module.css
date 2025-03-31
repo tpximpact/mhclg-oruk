@@ -1,10 +1,6 @@
 .banner {
-	background-color: #dc2626;
-	color: white;
-	/*position: absolute;
-	left: 0;
-	right: 0;
-	top: 0px;*/
+	background-color: var(--NoJsBanner-bg);
+	color: var(--NoJsBanner-fg);
 	padding: 1rem 0px;
 	font-weight: 600;
 	font-size: 1rem;
@@ -14,5 +10,5 @@
 .offsite:link,
 .offsite:visited,
 .offsite:active {
-	color: white !important;
+	color: var(--NoJsBanner-fg) !important;
 }
