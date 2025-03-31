@@ -7,7 +7,6 @@ export const DashboardDetails = ({ result }) => {
 	result = result.result
 	return (
 		<div className={styles.details}>
-			
 			<h1>{getDetailsTitle(result)}</h1>
 			<Field
 				data={{
@@ -19,28 +18,27 @@ export const DashboardDetails = ({ result }) => {
 
 			<Validation result={result} status={getDetailsStatus(result)} />
 
-
 			{result.payload.map((data, i) => (
 				<Section data={data} key={i} />
 			))}
 
-		
 			<div>
 				<h2>Feed Data</h2>
 				<Field
-				data={{
-					label: 'Feed URL',
-					value: getDetailsURIValue(result),
-					dataType: 'oruk:dataType:string'
-				}}
-			/>
-			<div style={{background: "lemonchiffon", padding: "1rem", borderRadius:"0.5rem"}}>
-			Note: Open Referral feeds are <em>machine readable</em>, and are not designed for human readers or for display in a web browser. <a href={getDetailsURI(result)} target='_blank'>
-					I understand: open the raw data in a new window
-				</a>
-			</div>
-			
+					data={{
+						label: 'Feed URL',
+						value: getDetailsURIValue(result),
+						dataType: 'oruk:dataType:string'
+					}}
+				/>
+				<div style={{ background: 'lemonchiffon', padding: '1rem', borderRadius: '0.5rem' }}>
+					Note: Open Referral feeds are <em>machine readable</em>, and are not designed for human
+					readers or for display in a web browser.{' '}
+					<a href={getDetailsURI(result)} target='_blank'>
+						I understand: open the raw data in a new window
+					</a>
 				</div>
+			</div>
 		</div>
 	)
 }
@@ -51,7 +49,7 @@ const getDetailsStatus = result =>
 const Validation = ({ status, result }) => {
 	const colour = getColourForStatus(status, true)
 	return (
-		<section style={{marginTop:"4rem"}}>
+		<section style={{ marginTop: '4rem' }}>
 			<SectionHeading>
 				Validation status:{' '}
 				<Icon colour={colour} weight='4' icon={getIconForStatus(status, true)} size='48' />{' '}
@@ -75,14 +73,16 @@ const getDetailsURIValue = result => result.serviceUrl?.value
 const getDetailsPublisher = result => result.publisher?.value
 
 const Section = ({ data }) => (
-	<>{data.fields.length > 1 ? 
-	<section style={{marginTop: "4rem"}} className={styles.section}>
-		<SectionHeading>{data.label}</SectionHeading>
-		{data.fields.map((field, i) => (
-			<Field data={field} key={i} />
-		))}
-	</section>
-	: null}</>
+	<>
+		{data.fields.length > 1 ? (
+			<section style={{ marginTop: '4rem' }} className={styles.section}>
+				<SectionHeading>{data.label}</SectionHeading>
+				{data.fields.map((field, i) => (
+					<Field data={field} key={i} />
+				))}
+			</section>
+		) : null}
+	</>
 )
 
 const SectionHeading = ({ children }) => <h2>{children}</h2>

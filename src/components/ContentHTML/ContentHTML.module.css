@@ -61,7 +61,7 @@
 }
 
 .content td:not(:last-child) {
-	border-bottom: 1px dotted var(--theme-ink)
+	border-bottom: 1px dotted var(--theme-ink);
 }
 
 .content th {

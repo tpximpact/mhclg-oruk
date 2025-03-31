@@ -127,10 +127,10 @@
 	--VersionedDocumentation-legacy-color: black;
 
 	--BannerMHCLG-ink: var(--colour-ink);
-	--Home-hero-bg:#fcf2e3;
-	--Home-hero-fg:var(--theme-ink);
-	--NoJsBanner-bg:#dc2626;
-	--NoJsBanner-fg:white;
+	--Home-hero-bg: #fcf2e3;
+	--Home-hero-fg: var(--theme-ink);
+	--NoJsBanner-bg: #dc2626;
+	--NoJsBanner-fg: white;
 	--registerFieldError: red;
 }
 

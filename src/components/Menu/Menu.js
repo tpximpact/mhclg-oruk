@@ -8,13 +8,13 @@ export const Menu = ({ ariaName, items, setShowMenu, open }) => {
 		return
 	}
 	return (
-		<div aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open : null}`} >
+		<div aria-label={ariaName} className={`${styles.Menu} ${open ? styles.open : null}`}>
 			<PageMargin>
 				<div className={styles.Innermenu}>
-			{items.map((item, i) => (
-				<MenuSection key={i} setShowMenu={setShowMenu} data={item} />
-			))}
-			</div>
+					{items.map((item, i) => (
+						<MenuSection key={i} setShowMenu={setShowMenu} data={item} />
+					))}
+				</div>
 			</PageMargin>
 		</div>
 	)
