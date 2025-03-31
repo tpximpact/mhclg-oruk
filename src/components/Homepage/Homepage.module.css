@@ -45,20 +45,20 @@
 }
 
 .hero {
-	color: black;
-	background: #fcf2e3;
+	color: var(--Home-hero-fg);
+	background: var(--Home-hero-bg);
 	background: url(/0_0.jpeg);
 	background-position: 10% 40%;
 }
 
 .hero,
 .hero h3 {
-	color: black;
+	color: var(--theme-ink);
 }
 
 .hero .content {
-	background-color: #fcf2e3;
-	color: #000;
+	background-color: var(--Home-hero-bg);
+	color: var(--Home-hero-fg);
 }
 
 .content ul {

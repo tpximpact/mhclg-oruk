@@ -50,7 +50,7 @@
 }
 
 .danger {
-	color: #900;
+	color: var(--changelog-danger-color);
 }
 
 .attributes {
