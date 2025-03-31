@@ -2,6 +2,8 @@ import { siteStructureWithFullPaths } from './menuing'
 import { getRawPageTree } from './getRawPageTree'
 import { listDynamicSection } from './dynamicSection'
 
+const DYNAMIC_SECTION_ITEMCOUNT_LIMIT = 4
+
 export const getRootLayoutItems = () => {
 	let result = siteStructureWithFullPaths(getRawPageTree()).filter(item => item.hide != true)
 	result.map(item => {
@@ -11,7 +13,7 @@ export const getRootLayoutItems = () => {
 				rootContentFolder: item.urlPath
 			})
 			const count = dynamicChildNodes.length
-			const limit = 3
+			const limit = DYNAMIC_SECTION_ITEMCOUNT_LIMIT
 			if (count > limit) {
 				dynamicChildNodes = dynamicChildNodes.slice(0, limit)
 				dynamicOverflow = count - limit
