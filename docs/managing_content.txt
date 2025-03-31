@@ -130,6 +130,8 @@ https://github.com/tpximpact/mhclg-oruk/blob/main/content/sitemap.json
 
 It is possible to use this file quite radically to restructure the site - for instance you could make new dynamic sections (subject to also making an equivalent change in /src/app) but this sort of advanced work is best considered a developer task. Editing this file on a routine basis is not required and should be restricted to maintaining section names etc. It is possible to cause significant breakage by ambitious editing of this file - caveat emptor!
 
+Note that this file also controls the order in which secrions will appear in the page top menu and site map.
+
 ORUK SPECIFICATIONS
 
 There is one further - niche - tranche of designed-editable content: versions of the ORUK specification.
