@@ -262,7 +262,7 @@ The estimated cost involved for a typical upper-tier council.
             <td style="text-align: right;">£250</td>
              <td style="text-align: right;">£150</td>
               <td style="text-align: right;">£700</td>
-               <td style="text-align: right;">£5,00</td>
+               <td style="text-align: right;">£5,000</td>
                 <td style="text-align: right;">£6,100</td>
       </tr>
 <tr>
@@ -280,7 +280,7 @@ The estimated cost involved for a typical upper-tier council.
             <td style="text-align: right;">£1,250</td>
              <td style="text-align: right;">£750</td>
               <td style="text-align: right;">£3,500</td>
-               <td style="text-align: right;">£25,00</td>
+               <td style="text-align: right;">£25,000</td>
                 <td style="text-align: right;">£30,500</td>
       </tr>
    </tbody>
