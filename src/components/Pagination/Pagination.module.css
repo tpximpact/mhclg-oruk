@@ -45,8 +45,8 @@
 }
 
 .pagination li[aria-current='page'] {
-	background-color: #000;
+	background-color: var(theme-ink);
 }
 .pagination li[aria-current='page'] * {
-	color: #fff !important;
+	color: var(theme-paper) !important;
 }

@@ -1,5 +1,5 @@
 .box {
-	border: 1px solid black;
+	border: 1px solid var(--theme-ink);
 	margin-bottom: 4rem;
 }
 
@@ -30,7 +30,7 @@
 	width: 100%;
 	font-weight: 900;
 	font-size: 1rem;
-	color: black;
+	color: var(--theme-ink);
 }
 
 .box p {
