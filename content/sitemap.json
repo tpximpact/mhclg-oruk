@@ -34,13 +34,6 @@
 		"dynamic": true
 	},
 	{
-		"name": "case-studies",
-		"label": "Case studies",
-		"contentPath": "/case-studies",
-		"urlPath": "case-studies",
-		"dynamic": true
-	},
-	{
 		"name": "community",
 		"label": "Community",
 		"contentPath": "/community",
@@ -135,6 +128,13 @@
 				"autoMenu": false
 			}
 		]
+	},
+	{
+		"name": "case-studies",
+		"label": "Case studies",
+		"contentPath": "/case-studies",
+		"urlPath": "case-studies",
+		"dynamic": true
 	},
 	{
 		"name": "info",
