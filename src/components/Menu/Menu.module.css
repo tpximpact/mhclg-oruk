@@ -48,12 +48,11 @@ made with https://mycolor.space/gradient3?ori=to+right+top&hex=%23FFF2F9&hex2=%2
 }
 
 @media only screen and (max-width: 1024px) {
-	.Menu {
+	.Innermenu {
 		grid-template-columns: 1fr;
-	
 	}
 
-	.Menu li {
+	.Innermenu li {
 		margin: 0 0 1rem;
 		
 	}
