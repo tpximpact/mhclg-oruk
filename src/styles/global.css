@@ -73,7 +73,7 @@ h4 {
 
 .blockquote {
 	margin-bottom: 2rem;
-	background: #fff;
+	background: var(--blockquote-bg);
 	padding: 2rem;
 	border-left: solid var(--colour-mint) 5px;
 	font-size: 1.4rem;

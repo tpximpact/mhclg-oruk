@@ -40,6 +40,13 @@
 	--colour-mhclg: #00625e;
 	--colour-tusk: #fcfbf2;
 
+	/* see https://convertingcolors.com/hex-color-00625E.html */
+	--colour-mhclg-dark: #004A46;
+	--colour-mhclg-xdark: #003330;
+	--colour-mhclg-xxdark: #001F1B;
+	--colour-mhclg-light: #7ECCC6;
+	--colour-mhclg-xlight: #9AE8E2;
+
 	--colour-grey-50: #f9fafb;
 	--colour-grey-100: #f3f4f6;
 	--colour-grey-200: #e5e7eb;
@@ -63,6 +70,7 @@
 
 	/* @/components */
 
+	--blockquote-bg: white;
 	--button-background-color: var(--theme-paper);
 	--button-border-color: var(--theme-ink);
 	--button-color: var(--theme-ink);
@@ -135,6 +143,25 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	:root[color-mode='user'] {
+	/* see also /Users/gjh/GitHub/mhclg-oruk/src/components/BannerMHCLG/BannerMHCLG.module.css */
+	:root  {
+
+		--theme-paper: var(--colour-mhclg-xdark);
+		--theme-ink: var(--colour-offwhite);
+		--theme-headline: var(--theme-ink);
+		--theme-anchor-underline: var(--colour-mint);
+		--theme-anchor-roll-underline: var(--theme-ink);
+		--Header-background-closed: var(--theme-paper);
+		--Header-background-open:var(--colour-mhclg-xxdark);
+		--Header-button-color: var(--theme-ink);
+		--Home-hero-fg: black;
+		--pdfbanner: var(--colour-mhclg-xxdark);
+		--blockquote-bg: var(--colour-mhclg-xxdark);
+		--menu-blockquote-background: var(--colour-mhclg-xxdark);
+		--menu-blockquote-border: var(--colour-mhclg);
+	}
+
+	html * a {
+		color: var(--theme-anchor) !important;
 	}
 }

@@ -1,14 +1,14 @@
 import style from './Logo.module.css'
 
-export const Logo = ({ animate, colour = '#000', height = '80', width = '200' }) => (
+export const Logo = ({ animate,  height = '80', width = '200' }) => (
 	<div className={animate ? style.logo : ''}>
 		<div className={style.hidden}>Openreferral UK</div>
 		{animate || (
 			<svg
-				fill={colour}
 				width={width}
 				height={height}
 				viewBox='0 0 200 80'
+				className={style.logographic}
 				xmlns='http://www.w3.org/2000/svg'
 			>
 				<path d='M27.2248 17.873C33.2202 17.873 37.6009 22.3096 37.6009 27.9958C37.6009 33.8224 33.2202 38.3714 27.2248 38.3714C21.2294 38.3714 16.8486 33.8224 16.8486 27.9958C16.8486 22.3237 21.2434 17.873 27.2248 17.873ZM27.2248 33.9488C30.1874 33.9488 32.5743 31.3935 32.5743 28.0099C32.5743 24.7666 30.1874 22.3237 27.2248 22.3237C24.2622 22.3237 21.8752 24.7666 21.8752 28.0099C21.8752 31.3935 24.2622 33.9488 27.2248 33.9488Z' />
