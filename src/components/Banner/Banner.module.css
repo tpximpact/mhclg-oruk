@@ -1,0 +1,10 @@
+.Banner {
+	margin-bottom: 4rem;
+
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	font-size: 1.2rem;
+	position: relative;
+	background: var(--Bannerbg);
+	border: 2px solid var(--Bannerborder);
+}

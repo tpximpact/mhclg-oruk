@@ -1,15 +1,4 @@
-.pdfbanner {
-	margin-bottom: 4rem;
-	background: var(--pdfbanner);
-	padding: 1rem 2rem;
-	border-radius: 0.5rem;
-}
 
-.pdfbanner svg {
-	margin-right: 0.5rem;
-	top: -0.2rem;
-	position: relative;
-}
 
 .mainHeading {
 	margin-bottom: 4rem;
