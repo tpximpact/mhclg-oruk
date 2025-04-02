@@ -18,7 +18,7 @@ export default function Page() {
 		<Banner>
 		<span style={{
 			fontWeight: 700
-		}}>We have reorganised our website recently so the content you're looking for may have been moved to a different location. Please use the site map below or return to the <a href='/'>home page.</a></span>
+		}}>We have reorganised our website recently so the content for which you are looking for may have been moved to a different location. Please use the site map below or return to the <a href='/'>home page.</a></span>
 		</Banner>
 		</PageMargin>
 			<Sitemap showHeading={false} data={siteStructureWithFullPaths(getRawPageTree())} />
