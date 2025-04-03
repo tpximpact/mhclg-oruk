@@ -163,7 +163,7 @@ The more services and organisations (integrated care boards, charities, other lo
 
 These savings are not necessarily ‘cashable’, but reduced duplication and efforts can help free up time for staff, improving productivity.
 
-<div style="padding: 1rem; background: #eee; margin: 1rem 0;">
+<div style="padding: 1rem; background: #eee; color:#000; margin: 1rem 0;">
 <h4>Savings estimate</h4>
 <p>We have estimated that the following (example Council data in brackets)</p>
 
@@ -220,7 +220,7 @@ The estimated cost involved for a typical upper-tier council.
       </tr>
    </thead>
    <tbody>
-<tr style="background: #eee;">
+<tr style="background: #eee;color:#000;">
          <th>No of products used</th>
           <td style="text-align: right;">30</td>
             <td style="text-align: right;">5</td>
@@ -229,7 +229,7 @@ The estimated cost involved for a typical upper-tier council.
                <td style="text-align: right;">2</td>
                 <td style="font-weight:900; text-align: right;">40</td>
       </tr>
-<tr style="background: #eee;">
+<tr style="background: #eee; color:#000;">
          <th>Cost per product</th>
           <td style="text-align: right;">£0</td>
             <td style="text-align: right;">£500</td>
@@ -256,7 +256,7 @@ The estimated cost involved for a typical upper-tier council.
                <td style="text-align: right;">10%</td>
                 <td style="text-align: right;">10%</td>
       </tr>
-<tr style="background: #bae6fd; font-weight:900; ">
+<tr style="background: #bae6fd; color:#000; font-weight:900; ">
          <th>Total saving (low)</th>
           <td style="text-align: right;">£0</td>
             <td style="text-align: right;">£250</td>
@@ -274,7 +274,7 @@ The estimated cost involved for a typical upper-tier council.
                <td style="text-align: right;">50%</td>
                 <td style="text-align: right;">50%</td>
       </tr>
-<tr style="background: #bae6fd; font-weight:900; ">
+<tr style="background: #bae6fd; color:#000; font-weight:900; ">
          <th>Total saving (high)</th>
           <td style="text-align: right;">£0</td>
             <td style="text-align: right;">£1,250</td>
