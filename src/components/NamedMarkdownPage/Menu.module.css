@@ -112,11 +112,16 @@
 }
 
 .content td:not(:last-child) {
-	border-bottom: 1px dotted black;
+	border-bottom: 1px dotted var(--theme-ink);
 }
 
 .content th {
 	padding: 0.5rem 0.5rem 0.5rem 0;
 	vertical-align: top;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid var(--theme-ink);
+}
+
+.content cite {
+	background: transparent;
+	border: 0;
 }
