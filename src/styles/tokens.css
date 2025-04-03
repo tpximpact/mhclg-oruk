@@ -151,7 +151,6 @@
 @media (prefers-color-scheme: dark) {
 	/* see also /Users/gjh/GitHub/mhclg-oruk/src/components/BannerMHCLG/BannerMHCLG.module.css */
 	
-	/*
 	
 	:root {
 		--theme-paper: var(--colour-mhclg-xdark);
@@ -178,5 +177,5 @@
 		color: var(--theme-anchor) !important;
 	}
 	
-	*/
+
 }

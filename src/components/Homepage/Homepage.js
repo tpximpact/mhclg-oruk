@@ -15,9 +15,9 @@ export const Homepage = ({ data }) => (
 )
 
 const Headline = ({ text }) => (
-	<h3>
+	<h2>
 		<strong>{text}</strong>
-	</h3>
+	</h2>
 )
 
 const Bodycopy = ({ md, pad }) => {
