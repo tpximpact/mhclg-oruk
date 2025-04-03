@@ -8,7 +8,7 @@
 	width: 1px;
 }
 
- svg.logographic {
+svg.logographic {
 	fill: var(--theme-ink);
 }
 

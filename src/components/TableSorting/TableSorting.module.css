@@ -7,8 +7,6 @@
 	--select-bg: var(--tableSorting-select-bg);
 }
 
-
-
 .sorting label {
 	font-weight: bold;
 	margin-right: 2rem;
@@ -52,10 +50,9 @@
 }
 
 @media only screen and (min-width: 1024px) {
-.widget {
-	display: inline-block;
-	margin-right: 1rem;
-	margin-bottom: 0;
-}
-
+	.widget {
+		display: inline-block;
+		margin-right: 1rem;
+		margin-bottom: 0;
+	}
 }

@@ -42,7 +42,7 @@ The model below outlines the anticipated framework for implementing ORUK - data 
 
 <img style="margin-bottom:2rem" src="/implementation_model.svg" alt="A flowchart depicting the steps described below" />
 
-*Figure 1: Data flow process from collection to re-use*
+_Figure 1: Data flow process from collection to re-use_
 
 ### 3.1 Collect & manage data
 
@@ -52,7 +52,7 @@ The diagram below provides a high-level overview of the main entities in ORUK.
 
 <img style="margin-bottom:2rem" src="/entities.svg" alt="A diagram depicting the key five entities" />
 
-*Figure 2: Overview of the main ORUK entities*
+_Figure 2: Overview of the main ORUK entities_
 
 ### 3.2 Assure data quality
 

@@ -4,8 +4,7 @@ import { join } from 'path'
 import * as matter from 'gray-matter'
 import { parseMarkdown } from '@/utilities/parseMarkdown'
 import { PATHS } from './PATHS'
-import { notFound } from 'next/navigation';
-
+import { notFound } from 'next/navigation'
 
 const CONTENT_ROOT = join(process.cwd(), PATHS.contentRoot)
 

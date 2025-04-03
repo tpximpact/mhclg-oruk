@@ -5,24 +5,30 @@ import { MarkdownContent } from '@/components/NamedMarkdownPage'
 import styles from './DynamicSection.module.css'
 import { PageThumbnail } from '@/components/PageThumbnail'
 import Columns from '@/components/Columns'
-import {Banner} from '@/components/Banner'
+import { Banner } from '@/components/Banner'
 
 export const PDFBanner = async ({ pdf }) => (
 	<Banner>
-	<Icon weight='2' 
-	style={{
-		display: "inline-block",
-		marginRight: "1rem",
-	top: "-0.2rem",
-	position: "relative"
-	}}
-	icon={ICON_TYPE.INFO} size='21' />
-		<span> For your convenience, this document is also <a href={pdf}>
+		<Icon
+			weight='2'
+			style={{
+				display: 'inline-block',
+				marginRight: '1rem',
+				top: '-0.2rem',
+				position: 'relative'
+			}}
+			icon={ICON_TYPE.INFO}
+			size='21'
+		/>
+		<span>
 			{' '}
-			available as a downloadable pdf
-		</a>{' '}
-		(right click on desktop / press and hold on mobile to download).
-		</span></Banner>
+			For your convenience, this document is also <a href={pdf}>
+				{' '}
+				available as a downloadable pdf
+			</a>{' '}
+			(right click on desktop / press and hold on mobile to download).
+		</span>
+	</Banner>
 )
 
 export const DynamicSectionPage = async ({ metadata, date, html, ...linkedPages }) => {
