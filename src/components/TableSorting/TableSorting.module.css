@@ -23,7 +23,7 @@
 	background:
 		var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
 		linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
-	color: var(--tableSorting-color-black);
+	color: var(--tableSorting-color-fg);
 	border-radius: 0.25em;
 	border: 1px solid var(--tableSorting-border-color);
 	/*box-shadow: 0 0 0.5rem 0 var(--tableSorting-box-shadow);*/
@@ -42,4 +42,17 @@
 .sorting option {
 	color: inherit;
 	background-color: var(--tableSorting-option-bg);
+}
+
+.widget {
+	display: block;
+	margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+	.widget {
+		display: inline-block;
+		margin-right: 1rem;
+		margin-bottom: 0;
+	}
 }
