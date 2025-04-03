@@ -129,7 +129,8 @@
 	--validatorResult-banner-background: #fe9;
 	--validatorResult-banner-code-background: rgba(255, 255, 255, 0.5);
 	--validatorResult-black: var(--theme-ink);
-	--pdfbanner: lemonchiffon;
+	--Bannerbg: #fef3c7;
+	--Bannerborder: #fde68a;
 	--VersionedDocumentation-legacy-background: #fecaca;
 	--VersionedDocumentation-legacy-border-color: #dc2626;
 	--VersionedDocumentation-legacy-color: black;
