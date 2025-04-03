@@ -48,34 +48,34 @@ export const TableSorting = ({
 }) => {
 	return (
 		<div className={sort.sorting}>
-		<div className={sort.widget}>
-			<label htmlFor='sortBy'>Sort by... </label>
+			<div className={sort.widget}>
+				<label htmlFor='sortBy'>Sort by... </label>
 
-			<select
-				id='sortBy'
-				defaultValue={selectedValue}
-				onChange={({ target: { value } }) => onValueChange(value)}
-				{...rest}
-			>
-				{values.map(([value, text]) => (
-					<option key={value} value={value}>
-						{text}
-					</option>
-				))}
-			</select>
+				<select
+					id='sortBy'
+					defaultValue={selectedValue}
+					onChange={({ target: { value } }) => onValueChange(value)}
+					{...rest}
+				>
+					{values.map(([value, text]) => (
+						<option key={value} value={value}>
+							{text}
+						</option>
+					))}
+				</select>
 			</div>
 			<div className={sort.widget}>
-			<label htmlFor='sortDir'>Sort direction </label>
+				<label htmlFor='sortDir'>Sort direction </label>
 
-			<select
-				id='sortDir'
-				defaultValue={selectedDirection}
-				onChange={({ target: { value } }) => onDirectionChange(value)}
-				{...rest}
-			>
-				<option value={DIRECTION.ASCENDING}>Ascending</option>
-				<option value={DIRECTION.DESCENDING}>Descending</option>
-			</select>
+				<select
+					id='sortDir'
+					defaultValue={selectedDirection}
+					onChange={({ target: { value } }) => onDirectionChange(value)}
+					{...rest}
+				>
+					<option value={DIRECTION.ASCENDING}>Ascending</option>
+					<option value={DIRECTION.DESCENDING}>Descending</option>
+				</select>
 			</div>
 		</div>
 	)
