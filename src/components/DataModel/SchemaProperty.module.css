@@ -36,7 +36,8 @@
 
 .example code {
 	font-style: normal;
-	background: #eee;
+	background: var(--Schema-property-eg-bg);
+	color: var(--Schema-property-eg-fg);
 	padding: 1px 5px;
 }
 

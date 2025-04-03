@@ -30,7 +30,7 @@
 	width: 100%;
 	font-weight: 900;
 	font-size: 1rem;
-	color: var(--theme-ink);
+	color: var(--versioned-document-picker-fg);
 }
 
 .box p {
@@ -57,6 +57,10 @@
 	border-color: var(--VersionedDocumentation-legacy-border-color);
 	background: var(--VersionedDocumentation-legacy-background);
 	color: var(--VersionedDocumentation-legacy-color);
+}
+
+.box.legacy a {
+	color: var(--VersionedDocumentation-legacy-color) !important;
 }
 
 .box.legacy select {

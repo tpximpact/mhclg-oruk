@@ -1,6 +1,6 @@
 .form {
 	padding: 1rem;
-	background: #eee;
+	background: var(--Validator-result-form-bg);
 
 	& label {
 		display: block;

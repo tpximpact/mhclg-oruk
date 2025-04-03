@@ -41,16 +41,18 @@ Using the data standard will reduce the cost of collecting data, make the assura
 The model below outlines the anticipated framework for implementing ORUK - data collection, a common data assurance process, an API for sharing/extracting data, and a goal for broad re-use of the data in various ways. More details of this can be found in the [ORUK Project initiation document](/adopt/03_pid) provided to help council project managers. We advise starting with a simple proof of concept before scaling, given the complexity of involving stakeholders.
 
 <img style="margin-bottom:2rem" src="/implementation_model.svg" alt="A flowchart depicting the steps described below" />
-*Figure 1: Data flow process from collection to re-use*
+
+_Figure 1: Data flow process from collection to re-use_
 
 ### 3.1 Collect & manage data
 
-This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800; color:#f00">[(see data fields here)](/developers/schemata)</span>. Councils can either develop their own application or purchase compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will have to offer a broader set of options when looking to scale this up.
+This involves gathering the information that describes a local service using the data standard ORUK <span style="font-weight: 800">[(see data fields here)](/developers/schemata)</span>. Councils can either develop their own application or purchase compliant software from suppliers listed by ORUK. There are various methods to collect data but the council should identify whichever is the easiest to prove the concept. Councils will have to offer a broader set of options when looking to scale this up.
 
 The diagram below provides a high-level overview of the main entities in ORUK.
 
 <img style="margin-bottom:2rem" src="/entities.svg" alt="A diagram depicting the key five entities" />
-*Figure 2: Overview of the main ORUK entities*
+
+_Figure 2: Overview of the main ORUK entities_
 
 ### 3.2 Assure data quality
 

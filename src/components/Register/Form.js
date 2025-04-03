@@ -68,7 +68,7 @@ export const Form = () => {
 	return (
 		<form action={action} ref={formRef} className={styles.Form}>
 			<fieldset>
-				<h3>Your Service</h3>
+				<h2>Your Service</h2>
 				<TextField
 					id='name'
 					label='Name'
@@ -90,7 +90,7 @@ export const Form = () => {
 			</fieldset>
 
 			<fieldset>
-				<h3>Service Publisher</h3>
+				<h2>Service Publisher</h2>
 				<TextField id='publisher' label='Publisher organisation name' formState={formState} />
 				<TextField id='publisherUrl' label='Publisher organisation URL' formState={formState} />
 				<TextField
@@ -101,7 +101,7 @@ export const Form = () => {
 			</fieldset>
 
 			<fieldset>
-				<h3>Service Developer</h3>
+				<h2>Service Developer</h2>
 				<TextField id='developer' label='Developer organisation name' formState={formState} />
 				<TextField id='developerUrl' label='Developer organisation URL' formState={formState} />
 			</fieldset>

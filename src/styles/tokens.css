@@ -41,11 +41,11 @@
 	--colour-tusk: #fcfbf2;
 
 	/* see https://convertingcolors.com/hex-color-00625E.html */
-	--colour-mhclg-dark: #004A46;
+	--colour-mhclg-dark: #004a46;
 	--colour-mhclg-xdark: #003330;
-	--colour-mhclg-xxdark: #001F1B;
-	--colour-mhclg-light: #7ECCC6;
-	--colour-mhclg-xlight: #9AE8E2;
+	--colour-mhclg-xxdark: #001f1b;
+	--colour-mhclg-light: #7eccc6;
+	--colour-mhclg-xlight: #9ae8e2;
 
 	--colour-grey-50: #f9fafb;
 	--colour-grey-100: #f3f4f6;
@@ -121,9 +121,10 @@
 	--tableSorting-arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
 	--tableSorting-border-color: var(--theme-ink);
 	--tableSorting-box-shadow: rgba(0, 0, 0, 0.2);
-	--tableSorting-color-black: var(--theme-ink);
+	--tableSorting-color-fg: var(--theme-ink);
 	--tableSorting-option-bg: var(--colour-grey-100);
 	--tableSorting-select-bg: var(--colour-grey-50);
+	--tableSorting-select-fg: var(--theme-ink);
 	--ValidatorForm-border-color: var(--theme-ink);
 	--validatorResult-background: var(--theme-paper);
 	--validatorResult-banner-background: #fe9;
@@ -131,6 +132,7 @@
 	--validatorResult-black: var(--theme-ink);
 	--Bannerbg: #fef3c7;
 	--Bannerborder: #fde68a;
+	--Bannerfg: black;
 	--VersionedDocumentation-legacy-background: #fecaca;
 	--VersionedDocumentation-legacy-border-color: #dc2626;
 	--VersionedDocumentation-legacy-color: black;
@@ -141,25 +143,32 @@
 	--NoJsBanner-bg: #dc2626;
 	--NoJsBanner-fg: white;
 	--registerFieldError: red;
+	--Schema-property-eg-bg: var(--Bannerbg);
+	--Schema-property-eg-fg: black;
+	--Validator-result-form-bg: #eee;
 }
 
-@media (prefersp-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	/* see also /Users/gjh/GitHub/mhclg-oruk/src/components/BannerMHCLG/BannerMHCLG.module.css */
-	:root  {
-
+	:root {
 		--theme-paper: var(--colour-mhclg-xdark);
 		--theme-ink: var(--colour-offwhite);
 		--theme-headline: var(--theme-ink);
 		--theme-anchor-underline: var(--colour-mint);
 		--theme-anchor-roll-underline: var(--theme-ink);
 		--Header-background-closed: var(--theme-paper);
-		--Header-background-open:var(--colour-mhclg-xxdark);
+		--Header-background-open: var(--colour-mhclg-xxdark);
 		--Header-button-color: var(--theme-ink);
 		--Home-hero-fg: black;
-		--pdfbanner: var(--colour-mhclg-xxdark);
 		--blockquote-bg: var(--colour-mhclg-xxdark);
 		--menu-blockquote-background: var(--colour-mhclg-xxdark);
 		--menu-blockquote-border: var(--colour-mhclg);
+		--tableSorting-color-fg: var(--theme-paper);
+		--tableSorting-arrow-bg: var(--colour-mhclg);
+		--versioned-document-picker-fg: var(--theme-paper);
+		--Schema-property-eg-bg: var(--colour-mhclg-xxdark);
+		--Schema-property-eg-fg: white;
+		--Validator-result-form-bg: var(--colour-mhclg-xxdark);
 	}
 
 	html * a {

@@ -7,7 +7,7 @@
 	padding-bottom: 1rem;
 }
 
-.Form h3 {
+.Form h2 {
 	margin-bottom: 1rem;
 }
 
@@ -24,8 +24,8 @@
 }
 
 .Field label {
-	font-weight: 900;
 	display: block;
+	margin-bottom: 0.5rem;
 }
 
 .Field .Note {
@@ -41,8 +41,8 @@
 .SubmitButton {
 	padding: 0.5rem 1rem;
 	border: 1px solid var(--theme-ink) !important;
-	background: var(--colour-mhclg);
+	background: transparent;
 	font-weight: 900;
-	color: var(theme-paper);
+	color: var(--theme-ink);
 	cursor: pointer;
 }
