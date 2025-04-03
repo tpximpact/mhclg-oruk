@@ -75,7 +75,7 @@
 
 .test h3 {
 	font-size: 1.4rem;
-	color: var(--colour-ink);
+	color: var(--theme-ink);
 	line-height: 2rem;
 }
 
@@ -123,11 +123,11 @@
 		margin: 0 2rem 0 0;
 		cursor: pointer;
 		text-align: left;
-		color: black;
+		color: var(--theme-ink);
 	}
 
 	& button.activeTab {
-		border-bottom: 4px solid black;
+		border-bottom: 4px solid var(--theme-ink);
 	}
 }
 

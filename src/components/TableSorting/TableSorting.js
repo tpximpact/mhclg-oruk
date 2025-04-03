@@ -48,6 +48,7 @@ export const TableSorting = ({
 }) => {
 	return (
 		<div className={sort.sorting}>
+		<div className={sort.widget}>
 			<label htmlFor='sortBy'>Sort by... </label>
 
 			<select
@@ -62,6 +63,8 @@ export const TableSorting = ({
 					</option>
 				))}
 			</select>
+			</div>
+			<div className={sort.widget}>
 			<label htmlFor='sortDir'>Sort direction </label>
 
 			<select
@@ -73,6 +76,7 @@ export const TableSorting = ({
 				<option value={DIRECTION.ASCENDING}>Ascending</option>
 				<option value={DIRECTION.DESCENDING}>Descending</option>
 			</select>
+			</div>
 		</div>
 	)
 }

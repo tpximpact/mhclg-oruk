@@ -145,6 +145,7 @@
 	--registerFieldError: red;
 	--Schema-property-eg-bg: var(--Bannerbg);
 	--Schema-property-eg-fg: black;
+	--Validator-result-form-bg:#eee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -168,6 +169,7 @@
 	--versioned-document-picker-fg: var(--theme-paper);
 	--Schema-property-eg-bg: var(--colour-mhclg-xxdark);
 	--Schema-property-eg-fg: white;
+	--Validator-result-form-bg: var(--colour-mhclg-xxdark);
 	}
 
 	html * a {

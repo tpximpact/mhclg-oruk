@@ -7,6 +7,8 @@
 	--select-bg: var(--tableSorting-select-bg);
 }
 
+
+
 .sorting label {
 	font-weight: bold;
 	margin-right: 2rem;
@@ -42,4 +44,18 @@
 .sorting option {
 	color: inherit;
 	background-color: var(--tableSorting-option-bg);
+}
+
+.widget {
+	display: block;
+	margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+.widget {
+	display: inline-block;
+	margin-right: 1rem;
+	margin-bottom: 0;
+}
+
 }
