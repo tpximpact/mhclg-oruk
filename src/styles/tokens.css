@@ -121,9 +121,10 @@
 	--tableSorting-arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
 	--tableSorting-border-color: var(--theme-ink);
 	--tableSorting-box-shadow: rgba(0, 0, 0, 0.2);
-	--tableSorting-color-black: var(--theme-ink);
+	--tableSorting-color-fg: var(--theme-ink);
 	--tableSorting-option-bg: var(--colour-grey-100);
 	--tableSorting-select-bg: var(--colour-grey-50);
+	--tableSorting-select-fg: var(--theme-ink);
 	--ValidatorForm-border-color: var(--theme-ink);
 	--validatorResult-background: var(--theme-paper);
 	--validatorResult-banner-background: #fe9;
@@ -131,6 +132,7 @@
 	--validatorResult-black: var(--theme-ink);
 	--Bannerbg: #fef3c7;
 	--Bannerborder: #fde68a;
+	--Bannerfg: black;
 	--VersionedDocumentation-legacy-background: #fecaca;
 	--VersionedDocumentation-legacy-border-color: #dc2626;
 	--VersionedDocumentation-legacy-color: black;
@@ -141,6 +143,8 @@
 	--NoJsBanner-bg: #dc2626;
 	--NoJsBanner-fg: white;
 	--registerFieldError: red;
+	--Schema-property-eg-bg: var(--Bannerbg);
+	--Schema-property-eg-fg: black;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -156,10 +160,14 @@
 		--Header-background-open:var(--colour-mhclg-xxdark);
 		--Header-button-color: var(--theme-ink);
 		--Home-hero-fg: black;
-		--pdfbanner: var(--colour-mhclg-xxdark);
 		--blockquote-bg: var(--colour-mhclg-xxdark);
 		--menu-blockquote-background: var(--colour-mhclg-xxdark);
 		--menu-blockquote-border: var(--colour-mhclg);
+		--tableSorting-color-fg: var(--theme-paper);
+	--tableSorting-arrow-bg: var(--colour-mhclg);
+	--versioned-document-picker-fg: var(--theme-paper);
+	--Schema-property-eg-bg: var(--colour-mhclg-xxdark);
+	--Schema-property-eg-fg: white;
 	}
 
 	html * a {

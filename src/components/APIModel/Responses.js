@@ -22,7 +22,7 @@ export const Responses = ({ data, allData }) => {
 	}
 
 	return (
-		<DocumentationFeatureSection title='Response' description={description}>
+		<DocumentationFeatureSection title='Response' description={description}>			
 			{schema.properties &&
 				Object.keys(schema.properties).map((pk, i) => (
 					<SchemaProperty

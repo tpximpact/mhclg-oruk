@@ -46,7 +46,7 @@ const Parameter = ({ data, parametersReferences }) => {
 }
 
 const Schema = ({ data }) => (
-	<div className={styles.schema}>
+	<div className={styles.schema}>	
 		<span className={styles.type}>{data.type}</span>
 	</div>
 )
