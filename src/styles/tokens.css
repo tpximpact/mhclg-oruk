@@ -151,7 +151,9 @@
 @media (prefers-color-scheme: dark) {
 	/* see also /Users/gjh/GitHub/mhclg-oruk/src/components/BannerMHCLG/BannerMHCLG.module.css */
 	
-	/*
+	/* 
+	
+	UNCOMMENT TO ENABLE DARK MODE 
 	
 	:root {
 		--theme-paper: var(--colour-mhclg-xdark);
