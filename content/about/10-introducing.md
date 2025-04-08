@@ -18,7 +18,7 @@ The Open Referral UK data standard is an open standard. This means the documenta
 
 # Defining open data standards
 
-A data standard is like a language for data. Just as language has rules such as grammar and spelling, a data standard has rules and guidelines for using information. Adopting a data standard leads to consistent information and a better shared understanding. The [Central Digital and Data Office (CDDO) has formally endorsed Open Referral UK (ORUK)](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities), recognising its value in standardising service data across sectors.
+A data standard is like a language for data. Just as language has rules such as grammar and spelling, a data standard has rules and guidelines for using information. Adopting a data standard leads to consistent information and a better shared understanding. In 2022, the [Central Digital and Data Office (CDDO) has formally endorsed Open Referral UK (ORUK)](https://www.gov.uk/government/publications/open-standards-for-government/record-and-share-information-about-public-services-in-local-authorities), recognising its value in standardising service data across sectors.
 
 Open data standards are:
 
