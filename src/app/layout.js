@@ -19,6 +19,8 @@ import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
 import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
 
+import { Analytics } from '@vercel/analytics/next';
+
 const font = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -45,7 +47,10 @@ export const metadata = {
 
 const Wrap = ({ children }) => (
 	<html lang='en' id='html' className='no-js'>
-		<body className={`${font.className}`}>{children}</body>
+		<body className={`${font.className}`}>
+            {children}
+            <Analytics />
+        </body>
 	</html>
 )
 
