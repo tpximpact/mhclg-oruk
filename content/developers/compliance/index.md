@@ -26,14 +26,14 @@ Private or confidential information should be excluded from open feeds but may b
 
 ### 1.2 Comply with the API specification
 
-The API feed should provide endpoints (also known as “web methods”) that conform to [the API specification](https://openreferraluk.org/developers/api).
+The API feed should provide endpoints (also known as “web methods”) that conform to [the API specification](/developers/api).
 
 There are nine endpoints all of which query (that is “GET”) data. We expect the endpoints to:
 * be named according to the specification
 * use the same query parameters many of which are optional
 * provide responses in the JSON format given by the specification
 
-The [Data model](https://openreferraluk.org/developers/schemata) page provides a “Schema” for each entity (e.g. [service](https://openreferraluk.org/developers/schemata#service)). Within the schema, fields which must be populated are shown as “Required”. So for a service, just these fields must be populated:
+The [Data model](/developers/schemata) page provides a “Schema” for each entity (e.g. [service](/developers/schemata#service)). Within the schema, fields which must be populated are shown as “Required”. So for a service, just these fields must be populated:
 * id
 * organization_id - linking to the organisation * providing the service
 * name
@@ -48,13 +48,13 @@ Three of the nine endpoints are most important. These are:
 * GET /services - giving a paginated list of services
 * GET /services/{id} - giving full details of a single service
 
-[The tool to check compliance](https://openreferraluk.org/developers/validator) will consider a feed to “pass” if these three endpoints comply. It will simply “warn” if other endpoints don’t exist or comply. The “Sample reports” on that page show what complies. Take a look at the text at the bottom of the samples (e.g. for [Pass](https://openreferraluk.org/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock)) for more details.
+[The tool to check compliance](/developers/validator) will consider a feed to “pass” if these three endpoints comply. It will simply “warn” if other endpoints don’t exist or comply. The “Sample reports” on that page show what complies. Take a look at the text at the bottom of the samples (e.g. for [Pass](/developers/validator/edcf9d03-47dd-4c46-833b-e9831d505c72?uri=https://oruk-api-2a920f51d6bb.herokuapp.com/api/mock)) for more details.
 
 ## 3. Going beyond basic compliance
 
 As data feeds mature and are made more useful they should be extended to:
 * increase the number of API endpoints supported
 * populate optional data entities and fields
-* instigate routine checks on data quality. The [service](https://openreferraluk.org/developers/schemata#service) entity has an “assured_date” field which we recommend should be populated with a date less than three months old for each service.
+* instigate routine checks on data quality. The [service](/developers/schemata#service) entity has an “assured_date” field which we recommend should be populated with a date less than three months old for each service.
 
-See the [Technical overview to implementing Open Referral UK](https://openreferraluk.org/developers/overview) for more information.
+See the [Technical overview to implementing Open Referral UK](/developers/overview) for more information.
