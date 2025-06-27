@@ -120,6 +120,13 @@
 				"teaser": "The data specification expressed in JavaScript Object Notation (JSON)."
 			},
 			{
+				"name": "compliance",
+				"label": "Compliance criteria",
+				"urlPath": "compliance",
+				"contentPath": "compliance",
+				"teaser": "The data specification expressed in JavaScript Object Notation (JSON)."
+			},
+			{
 				"name": "changelog",
 				"label": "Changes in version 3.0",
 				"urlPath": "changelog",
