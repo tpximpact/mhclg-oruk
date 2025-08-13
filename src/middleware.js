@@ -1,26 +1,29 @@
 import { NextResponse } from 'next/server'
-
-const redirects = {
-	'validator.openreferraluk.org': '/developers/validator',
-	'developers.openreferraluk.org': '/developers',
-	'docs.openreferraluk.org': '/developers/api',
-	'taxonomy.openreferraluk.org': '/developers/overview',
-	'schema.openreferraluk.org': '/developers/schemata'
-}
+import redirects from './redirects.json'
 
 export function middleware(request) {
 	const url = new URL(request.url)
+	const hostname = url.hostname
+	const pathname = url.pathname
+	const origin = url.origin
 
-	if (url.hostname === 'forum.openreferraluk.org') {
-		return NextResponse.redirect(new URL('/', 'https://forum.openreferral.org'))
-	}
+	// Hostname based redirect
+	const targetPath = redirects[hostname]
 
-	const targetPath = redirects[url.hostname]
 	if (targetPath) {
-		return NextResponse.redirect(new URL(targetPath, 'https://openreferraluk.org'))
+		const isAbsolute = targetPath.startsWith('http')
+		const redirectUrl = isAbsolute
+			? new URL(targetPath)
+			: new URL(targetPath, origin)
+		return NextResponse.redirect(redirectUrl)
 	}
 
-	// TH next bit splices the current path in to the headers.
+	// Path-based redirect
+	if (redirects.paths && redirects.paths[pathname]) {
+		return NextResponse.redirect(new URL(redirects.paths[pathname], origin))
+	}
+
+	// THe next bit splices the current path in to the headers.
 	// see https://www.propelauth.com/post/getting-url-in-next-server-components
 
 	// There's a known bug in middlewares which manipulate headers which causes useActionState to fail.
@@ -28,12 +31,12 @@ export function middleware(request) {
 	const p = request.nextUrl.pathname
 	let headers = new Headers(request.headers)
 	headers.set('x-current-path', p)
-	const response = NextResponse.next({
+
+	return NextResponse.next({
 		request: {
 			headers: headers
 		}
 	})
-	return response
 }
 
 export const config = {
