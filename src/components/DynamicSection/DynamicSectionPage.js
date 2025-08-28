@@ -31,24 +31,28 @@ export const PDFBanner = async ({ pdf }) => (
 	</Banner>
 )
 
+export const ArticleDateComponent = async ({ date }) => (
+	date && (
+		<Columns layout='42'>
+			<div className={styles.articleDate}>Updated:{date}</div>
+			<div></div>
+		</Columns>
+	)
+)
+
 export const DynamicSectionPage = async ({ metadata, date, html, ...linkedPages }) => {
 	const pdf = metadata.pdf
 	return (
 		<section>
 			{pdf && <PDFBanner pdf={pdf} />}
 			<MarkdownContent autoMenu={true} html={html} />
-			{date && (
-				<Columns layout='42'>
-					<div className={styles.articleDate}>Updated:{date}</div>
-					<div></div>
-				</Columns>
-			)}
+			<ArticleDateComponent date={date} />
 			<Links {...linkedPages} />
 		</section>
 	)
 }
 
-const Links = ({ previous, next }) => (
+export const Links = async ({ previous, next }) => (
 	<div className={styles.links}>
 		<LinkedPageMaybe relation='previous' data={previous} />
 		<div className={styles.spacer}></div>
