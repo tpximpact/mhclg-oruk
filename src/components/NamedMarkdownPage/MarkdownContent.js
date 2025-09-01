@@ -18,7 +18,13 @@ const linkify = text => {
 	return arr.join('_')
 }
 
-const MarkdownContentNoMenu = ({ html, afterLinks }) => (
+export const MarkdownComponent = async ({ html}) => {
+	return <div 
+	className={`${styles.content} ${styles.solo}`} 
+	dangerouslySetInnerHTML={{ __html: html }} />
+}
+
+export const MarkdownContentNoMenu = async ({ html, afterLinks }) => (
 	<>
 		<section
 			className={`${styles.content} ${styles.solo}`}
@@ -28,7 +34,7 @@ const MarkdownContentNoMenu = ({ html, afterLinks }) => (
 	</>
 )
 
-const MarkdownContentWithMenu = ({ html, afterLinks }) => {
+export const MarkdownContentWithMenu = async ({ html, afterLinks }) => {
 	const nodes = parse(html)
 	const menu = []
 	const arrayChildren = Children.toArray(nodes)
