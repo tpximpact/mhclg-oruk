@@ -1,11 +1,3 @@
----
-title: Frame 6
----
-
-# Automate updates to improve data quality
-
-Check that data is up to date, complete and reliable for your use case. 
-
 # Description
 
 Having compliant data allows for tools to be created to automate quality checks, updates and highlight issues to data stewards.
@@ -25,22 +17,3 @@ Example AAdd an example showing where this has been put in practice so far.  
 # Get started
 
 If this use case is relevant to your organisation, follow this step by step guide to adoption.
-
-# Benefits
-
-- Understand how suitable and reliable a data feed is
-- An objective way to assess how well data is being maintained
-
-# Outcomes
-
-- Continuous improvement of data
-
-# next
-
-Combine local data to create new regional and national services
-
-# previous
-
-Reuse data to help professionals support people
-
-

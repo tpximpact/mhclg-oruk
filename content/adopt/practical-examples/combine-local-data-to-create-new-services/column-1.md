@@ -1,11 +1,3 @@
----
-title: Frame 7
----
-
-# Combine local data to create new regional and national services
-
-Consolidate data from multiple local sources into a single, reusable dataset.
-
 # Description
 
 Use an aggregator to combine data from multiple publishers, such as local authorities, so it can be reused on a larger scale. 
@@ -27,25 +19,3 @@ Lancashire and South Cumbria ICBThey are merging services data from councils, he
 # Get started
 
 If this use case is relevant to your organisation, follow this step by step guide to adoption.
-
-# Benefits
-
-- Creates a single, high-quality record for each service, maintained in one place
-- Reduces the number of service records each publisher maintains
-- Highlights services that might otherwise be overlooked for professionals and clients
-- Allows users in an area to discover services beyond their local authority
-
-# Outcomes
-
-- Reduced duplication of effort to maintain data
-- Better use of data gathered, leading to better quality checking
-- Improved visibility exposure of local services
-- Allows new services to be designed and built using data that is currently a burden to collect and update
-
-# next
-
-Keep local data accurate using national sources
-
-# previous
-
-Automate updates to improve data quality

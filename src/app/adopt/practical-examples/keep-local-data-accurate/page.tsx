@@ -2,21 +2,20 @@ import Columns from '@/components/Columns'
 import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownContent'
 import { getMarkdownData } from '@/utilities/markdown'
 import Image from 'next/image'
-import logo from '../repurpose-data-to-meet-different-user-needs.webp'
+import logo from '../practical-examples.webp'
 import { ArticleDateComponent, Links } from '@/components/DynamicSection/DynamicSectionPage'
 import { MarkdownComponentFromFile } from '@/components/MarkdownComponentFromFile'
 
 export const metadata = {
-	title: 'Practical Examples - Repurpose Data to Meet Different User Needs',
+	title: 'Practical Examples - Keep Local Data Accurate',
 	description:
-		'Example of how to repurpose data to meet different user needs using the Open Referral UK standard.'
+		'Example of how to keep local data accurate using the Open Referral UK standard.'
 }
 
+const contentFilePath = 'adopt/practical-examples/keep-local-data-accurate'
+
 export default async function Page() {
-	const { data, content } = await getMarkdownData(
-		'adopt/practical-examples',
-		'repurpose-data-to-meet-different-user-needs'
-	)
+	const { data, content } = await getMarkdownData(contentFilePath, 'page-content')
 
 	return (
 		<>
@@ -29,7 +28,7 @@ export default async function Page() {
 				>
 					<MarkdownComponent html={content} />
 					<div>
-						<Image src={logo} alt='Repurpose data to meet different user needs' width={200} />
+						<Image src={logo} alt={metadata.title} width={200} />
 					</div>
 				</Columns>
 			</section>
@@ -40,14 +39,8 @@ export default async function Page() {
 					debug={undefined}
 					supressTrailingSpace={undefined}
 				>
-					<MarkdownComponentFromFile
-						filePath='adopt/practical-examples'
-						fileName='repurpose-data-to-meet-different-user-needs-column-1'
-					/>
-					<MarkdownComponentFromFile
-						filePath='adopt/practical-examples'
-						fileName='repurpose-data-to-meet-different-user-needs-column-2'
-					/>
+					<MarkdownComponentFromFile filePath={contentFilePath} fileName='column-1' />
+					<MarkdownComponentFromFile filePath={contentFilePath} fileName='column-2' />
 				</Columns>
 			</section>
 			<section>
