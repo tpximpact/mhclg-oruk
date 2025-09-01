@@ -3,10 +3,11 @@ title: Practical Examples - Adopt
 modified: '2025-08-26'
 links: {
     next: {
-        title: 'Repurpose data to meet different user needs',
-        path: 'adopt/practical-examples/repurpose-data-to-meet-different-user-needs'
+        title: 'Repurpose data to meet different needs',
+        path: 'adopt/practical-examples/repurpose-data-to-meet-different-needs'
     }
 }
+image: 'practical-examples.png'
 ---
 
 # Practical ORUK use cases
@@ -26,7 +27,8 @@ These examples are designed to inspire you, show you where ORUK can fit within y
 4. Combine local data to create new regional and national services
 5. Keep local data accurate using national sources 
 6. Use combined data sets to plan and commission services
-<br></br>
+<br />
+
 # Get started
 
 If these use cases are relevant to your organisation, follow this step by step guide to adoption.
