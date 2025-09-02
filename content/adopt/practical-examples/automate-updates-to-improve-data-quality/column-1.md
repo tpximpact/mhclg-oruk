@@ -12,8 +12,9 @@ Automated checks could include:
 
 # Examples
 
-Example AAdd an example showing where this has been put in practice so far.  
+[Example A]
+Add an example showing where this has been put in practice so far.  
 
 # Get started
 
-If this use case is relevant to your organisation, follow this step by step guide to adoption.
+If this use case is relevant to your organisation, follow this [step by step guide to adoption](/adopt/practical-examples/how-to-get-started).

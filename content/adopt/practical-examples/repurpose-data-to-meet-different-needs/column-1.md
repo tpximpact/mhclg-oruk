@@ -10,4 +10,4 @@ This application can become smarter over time. By integrating with AI, it can le
 
 # Get started
 
-If this use case is relevant to your organisation, follow this step by step guide to adoption.
+If this use case is relevant to your organisation, follow this [step by step guide to adoption](/adopt/practical-examples/how-to-get-started).

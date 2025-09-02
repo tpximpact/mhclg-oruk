@@ -12,9 +12,9 @@ Longer term, these statistics can be cross-referenced with metrics in an area to
 
 # Examples
 
-- SAVVI circular model for service improvement to address vulnerabilities
-- For example, households assessed as threatened with homelessness.
+- [SAVVI circular model](https://images.app.goo.gl/zwpWQ27nUaxgyJoz9) for service improvement to address vulnerabilities
+- For example, [households assessed as threatened with homelessness](https://webservices.esd.org.uk/data.html?metricType=14486&area=AllLaInCountry_England&period=latest%3A5&rowGrouping=area&ApplicationKey=FXePiAAPgtzzXOkWbzNgQWAyRIrfaMYJcxDiPttj&Signature=mSLuy3aOcd9y6RY1MTUCAbrUm/c=).
 
 # Get started
 
-If this use case is relevant to your organisation, follow this step by step guide to adoption.
+If this use case is relevant to your organisation, follow this [step by step guide to adoption](/adopt/practical-examples/how-to-get-started).
