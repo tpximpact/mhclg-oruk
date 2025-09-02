@@ -1,4 +1,4 @@
-# Benefits
+## Benefits
 
 - Reduce data maintenance costs by recording data once and reusing it on multiple platforms
 - Improve accuracy and reliability - when data is reused, it’s checked and updated more often
@@ -6,7 +6,7 @@
 - Widens user reach - flexible data allows users to find information in diverse ways
 - Responsive to machine learning, improving relevance and responsiveness over time
 
-# Outcomes
+## Outcomes
 
 - Lower data maintenance costs
 - Better quality data

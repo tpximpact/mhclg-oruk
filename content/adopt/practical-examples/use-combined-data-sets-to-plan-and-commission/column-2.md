@@ -1,4 +1,4 @@
-# Benefits
+## Benefits
 
 - Understand demand for services
 - Improve services provided, based on evidence
@@ -6,6 +6,6 @@
 - Highlight where funding is needed for high-demand services
 - Enables the comparison of public, community and private services
 
-# Outcomes
+## Outcomes
 
 - Providing services based on what people need

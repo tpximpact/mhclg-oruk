@@ -1,4 +1,4 @@
-# Description
+## Description
 
 The same data can be reused in many places, making your service information more flexible and powerful. You can consume a single API feed of services and apply filters to create audience-specific views.
 
@@ -8,6 +8,6 @@ For example, the same data that powers your directory website could seamlessly i
 
 This application can become smarter over time. By integrating with AI, it can learn from past queries and user feedback. This learning capability helps the system refine and give better answers, improving the user experience over time.
 
-# Get started
+## Get started
 
-If this use case is relevant to your organisation, follow this step by step guide to adoption.
+If this use case is relevant to your organisation, follow this [step by step guide to adoption](/adopt/practical-examples/how-to-get-started).

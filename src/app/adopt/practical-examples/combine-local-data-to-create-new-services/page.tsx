@@ -1,10 +1,5 @@
-import Columns from '@/components/Columns'
-import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownContent'
-import { getMarkdownData } from '@/utilities/markdown'
-import Image from 'next/image'
-import logo from '../practical-examples.webp'
-import { ArticleDateComponent, Links } from '@/components/DynamicSection/DynamicSectionPage'
-import { MarkdownComponentFromFile } from '@/components/MarkdownComponentFromFile'
+import image from '../practical-examples.webp'
+import PageWithTwoColumnsAndImage from '@/components/PageWithTwoColumnsAndImage'
 
 export const metadata = {
 	title: 'Practical Examples - Combine Local Data to Create New Services',
@@ -15,38 +10,11 @@ export const metadata = {
 const contentFilePath = 'adopt/practical-examples/combine-local-data-to-create-new-services'
 
 export default async function Page() {
-	const { data, content } = await getMarkdownData(contentFilePath, 'page-content')
-
 	return (
-		<>
-			<section>
-				<Columns
-					layout='42'
-					className={undefined}
-					debug={undefined}
-					supressTrailingSpace={undefined}
-				>
-					<MarkdownComponent html={content} />
-					<div>
-						<Image src={logo} alt={metadata.title} width={200} />
-					</div>
-				</Columns>
-			</section>
-			<section>
-				<Columns
-					layout='11'
-					className={undefined}
-					debug={undefined}
-					supressTrailingSpace={undefined}
-				>
-					<MarkdownComponentFromFile filePath={contentFilePath} fileName='column-1' />
-					<MarkdownComponentFromFile filePath={contentFilePath} fileName='column-2' />
-				</Columns>
-			</section>
-			<section>
-				<ArticleDateComponent date={data.modified} />
-				<Links {...data.links} />
-			</section>
-		</>
+		<PageWithTwoColumnsAndImage
+			metadata={metadata}
+			contentFilePath={contentFilePath}
+			image={image}
+		/>
 	)
 }
