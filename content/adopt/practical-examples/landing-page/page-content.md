@@ -15,11 +15,11 @@ image: 'practical-examples.png'
 Explore possible applications and ways you can benefit from sharing data in a standardised way.
 
 
-# Ways you can use ORUK data standards
+## Ways you can use ORUK data standards
 
 These examples are designed to inspire you, show you where ORUK can fit within your organisation, help you demonstrate the benefits to decision-makers, and strengthen your business cases for adoption.
 
-# Use cases
+## Use cases
 
 2. [Reuse data to help professionals support people](/adopt/practical-examples/reuse-data-to-help-professionals-support-people)
 1. [Repurpose data to meet different user needs](/adopt/practical-examples/repurpose-data-to-meet-different-needs)
@@ -29,6 +29,6 @@ These examples are designed to inspire you, show you where ORUK can fit within y
 6. [Use combined data sets to plan and commission services](/adopt/practical-examples/use-combined-data-sets-to-plan-and-commission)
 <br />
 
-# Get started
+## Get started
 
 If these use cases are relevant to your organisation, follow this [step by step guide to adoption](/adopt/practical-examples/how-to-get-started).

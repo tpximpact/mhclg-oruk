@@ -4,6 +4,12 @@ import { ArticleDateComponent, Links } from './DynamicSection/DynamicSectionPage
 import { MarkdownComponentFromFile } from './MarkdownComponentFromFile'
 import { MarkdownComponent } from './NamedMarkdownPage/MarkdownContent'
 import Image, { StaticImageData } from 'next/image'
+import { CSSProperties } from 'react'
+
+const headerStyle: CSSProperties = {
+	minHeight: 250,
+	marginBottom: 48
+}
 
 export default async function PageWithTwoColumnsAndImage({
 	metadata,
@@ -18,7 +24,7 @@ export default async function PageWithTwoColumnsAndImage({
 
 	return (
 		<>
-			<section>
+			<section style={headerStyle}>
 				<Columns
 					layout='42'
 					className={undefined}

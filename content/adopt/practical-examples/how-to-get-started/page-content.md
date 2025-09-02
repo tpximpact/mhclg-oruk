@@ -18,7 +18,7 @@ image: 'how-to-get-started.png'
 
 A step by step guide to adopting the ORUK standard.
 
-# Adopting ORUK: step by step 
+## Adopting ORUK: step by step 
 
 - Read a [summary of the ORUK data standards](/about/10-introducing)
 - Explore our [catalogue of use cases](/case-studies) to see how ORUK improves efficiency and targeting services
