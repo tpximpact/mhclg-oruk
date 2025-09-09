@@ -1,5 +1,5 @@
-import image from './use-cases.webp'
 import PageWithSingleColumnAndImage from '@/components/PageWithSingleColumnAndImage'
+import image from './use-cases.webp'
 import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
 
@@ -20,8 +20,8 @@ export default async function Page() {
 
 	return (
 		<PageWithSingleColumnAndImage
-			metadata={metadata}
-			contentFilePath={contentFilePath}
+			metadata={data}
+			content={content}
 			image={image}
 		/>
 	)

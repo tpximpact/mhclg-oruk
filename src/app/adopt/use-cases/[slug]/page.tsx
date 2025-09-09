@@ -4,12 +4,11 @@ import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
 import PageWithTwoColumnsAndImage from '@/components/PageWithTwoColumnsAndImage'
 import { Metadata, ResolvingMetadata } from 'next'
-import { metadata } from '../page'
 
 const contentFilePath = 'adopt/use-cases'
 
 export async function generateStaticParams() {
-	return [
+	const slugs = [
 		'reuse-data-one-source-many-places',
 		'empower-professionals-to-support-people',
 		'automated-checks-to-improve-data-quality',
@@ -17,7 +16,9 @@ export async function generateStaticParams() {
 		'keep-local-data-accurate-using-national-sources',
 		'use-combined-data-to-plan-and-commission-services',
 		'how-to-adopt-the-oruk-standard'
-	].map((slug) => ({ slug }))
+	];
+
+	return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params, parent }: { params: Promise<{ slug: string }>,parent: ResolvingMetadata }): Promise<Metadata> {
@@ -49,16 +50,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 	if (data.layout === '2-columns') {
 		return (
 			<PageWithTwoColumnsAndImage
-				metadata={metadata}
-				contentFilePath={markdownFilePath}
+				metadata={data}
+				content={content}
 				image={image}
+				markdownFilePath={markdownFilePath}
 			/>
 		)
 	} else if (data.layout === '1-column') {
 		return (
 			<PageWithSingleColumnAndImage
-				metadata={metadata}
-				contentFilePath={markdownFilePath}
+				metadata={data}
+				content={content}
 				image={image}
 			/>
 		)
