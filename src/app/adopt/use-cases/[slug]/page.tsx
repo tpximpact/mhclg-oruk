@@ -3,7 +3,7 @@ import PageWithSingleColumnAndImage from '@/components/PageWithSingleColumnAndIm
 import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
 import PageWithTwoColumnsAndImage from '@/components/PageWithTwoColumnsAndImage'
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata, type ResolvingMetadata } from 'next'
 
 const contentFilePath = 'adopt/use-cases'
 
@@ -16,14 +16,22 @@ export async function generateStaticParams() {
 		'keep-local-data-accurate-using-national-sources',
 		'use-combined-data-to-plan-and-commission-services',
 		'how-to-adopt-the-oruk-standard'
-	];
+	]
 
-	return slugs.map((slug) => ({ slug }));
+	return slugs.map(slug => ({ slug }))
 }
 
-export async function generateMetadata({ params, parent }: { params: Promise<{ slug: string }>,parent: ResolvingMetadata }): Promise<Metadata> {
+type Props = {
+	params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata
+): Promise<Metadata> {
 	const { slug } = await params
-	const markdownFilePath = `${contentFilePath}/${slug}`;
+
+	const markdownFilePath = `${contentFilePath}/${slug}`
 	const { data } = await getMarkdownData(markdownFilePath, 'page-content')
 
 	if (!data) {
@@ -31,18 +39,18 @@ export async function generateMetadata({ params, parent }: { params: Promise<{ s
 	}
 
 	const parentMetadata = await parent
-	
+
 	return {
 		title: data.title || parentMetadata.title,
-		description: data.description || parentMetadata.description,
+		description: data.description || parentMetadata.description
 	}
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
 	const { slug } = await params
-	const markdownFilePath = `${contentFilePath}/${slug}`;
+	const markdownFilePath = `${contentFilePath}/${slug}`
 	const { data, content } = await getMarkdownData(markdownFilePath, 'page-content')
-	
+
 	if (!data || !content) {
 		return notFound()
 	}
@@ -57,13 +65,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 			/>
 		)
 	} else if (data.layout === '1-column') {
-		return (
-			<PageWithSingleColumnAndImage
-				metadata={data}
-				content={content}
-				image={image}
-			/>
-		)
+		return <PageWithSingleColumnAndImage metadata={data} content={content} image={image} />
 	}
 
 	return notFound()
