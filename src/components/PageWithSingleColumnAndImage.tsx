@@ -1,4 +1,4 @@
-import { getMarkdownData } from '@/utilities/markdown'
+import { MarkdownMetadata } from '@/utilities/markdown'
 import Columns from './Columns'
 import { ArticleDateComponent, Links } from './DynamicSection/DynamicSectionPage'
 import { MarkdownComponent } from './NamedMarkdownPage/MarkdownContent'
@@ -11,15 +11,13 @@ const headerStyle: CSSProperties = {
 }
 export default async function PageWithSingleColumnAndImage({
 	metadata,
-	contentFilePath,
+	content,
 	image
 }: {
-	metadata: { title: string; description: string }
-	contentFilePath: string
+	metadata: MarkdownMetadata
+	content: string
 	image: StaticImageData
 }) {
-	const { data, content } = await getMarkdownData(contentFilePath, 'page-content')
-
 	return (
 		<>
 			<section style={headerStyle}>
@@ -36,8 +34,8 @@ export default async function PageWithSingleColumnAndImage({
 				</Columns>
 			</section>
 			<section>
-				<ArticleDateComponent date={data.modified} />
-				<Links {...data.links} />
+				<ArticleDateComponent date={metadata.modified} />
+				<Links {...metadata.links} />
 			</section>
 		</>
 	)
