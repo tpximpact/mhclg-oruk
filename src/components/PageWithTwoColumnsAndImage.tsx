@@ -1,4 +1,4 @@
-import { getMarkdownData } from '@/utilities/markdown'
+import { MarkdownMetadata } from '@/utilities/markdown'
 import Columns from './Columns'
 import { ArticleDateComponent, Links } from './DynamicSection/DynamicSectionPage'
 import { MarkdownComponentFromFile } from './MarkdownComponentFromFile'
@@ -13,14 +13,15 @@ const headerStyle: CSSProperties = {
 
 export default async function PageWithTwoColumnsAndImage({
 	metadata,
-	contentFilePath,
+	content,
+	markdownFilePath,
 	image
 }: {
-	metadata: { title: string; description: string }
-	contentFilePath: string
+	metadata: MarkdownMetadata
+	content: string
 	image: StaticImageData
+	markdownFilePath: string
 }) {
-	const { data, content } = await getMarkdownData(contentFilePath, 'page-content')
 
 	return (
 		<>
@@ -44,13 +45,13 @@ export default async function PageWithTwoColumnsAndImage({
 					debug={undefined}
 					supressTrailingSpace={undefined}
 				>
-					<MarkdownComponentFromFile filePath={contentFilePath} fileName='column-1' />
-					<MarkdownComponentFromFile filePath={contentFilePath} fileName='column-2' />
+					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='column-1' />
+					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='column-2' />
 				</Columns>
 			</section>
 			<section>
-				<ArticleDateComponent date={data.modified} />
-				<Links {...data.links} />
+				<ArticleDateComponent date={metadata.modified} />
+				<Links {...metadata.links} />
 			</section>
 		</>
 	)
