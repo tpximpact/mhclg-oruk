@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/use-combined-data-to-plan-and-commission-services'
     }
 }
-image: 'keep-local-data-accurate.png'
+image: 'keep-local-hero.svg'
 ---
 
 # Keep local data accurate using national sources

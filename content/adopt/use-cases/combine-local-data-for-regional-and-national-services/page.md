@@ -1,5 +1,5 @@
 ---
-title: Combine local data for regional and national services
+title: Combine local data to create new regional and national services
 description: Consolidate data from multiple local sources into a single, reusable dataset.
 modified: '2025-08-26'
 layout: '2-columns'
@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/keep-local-data-accurate-using-national-sources'
     }
 }
-image: 'combine-local-data-to-create-new-services.png'
+image: 'combine-data-hero.svg'
 ---
 
 # Combine local data for regional and national services

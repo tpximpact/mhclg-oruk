@@ -1,7 +1,7 @@
 ---
 title: Open Referral UK use cases
 description: Explore practical applications and benefits of sharing data using the Open Referral UK standard.
-modified: '2025-08-26'
+modified: '2025-09-15'
 layout: 1-column'
 links: {
     next: {
@@ -9,7 +9,6 @@ links: {
         path: 'adopt/use-cases/reuse-data-one-source-many-places'
     }
 }
-image: 'use-cases.png'
 ---
 
 # Open Referral UK use cases 
@@ -40,6 +39,6 @@ These scenarios are designed to inspire you and help you build a strong business
 6. [Use combined data to plan and commission services](/adopt/use-cases/use-combined-data-to-plan-and-commission-services) 
    Use standardised data to see how services are being used and make evidence-driven decisions about funding and resources.
 
-## Get started
-
-If these use cases are relevant to your organisation, [follow this step by step guide](/adopt/use-cases/how-to-adopt-the-oruk-standard) to adoption.
+> ## Get started
+>
+> If this use case is relevant to your organisation, see a quick [step by step guide to adopt ORUK](/adopt/use-cases/how-to-adopt-the-oruk-standard).

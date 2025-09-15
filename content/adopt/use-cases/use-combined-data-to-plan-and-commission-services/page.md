@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/how-to-adopt-the-oruk-standard'
     }
 }
-image: 'use-combined-data-sets-to-plan-and-commission.png'
+image: 'combined-data-hero.svg'
 ---
 
 # Use combined data to plan and commission services 

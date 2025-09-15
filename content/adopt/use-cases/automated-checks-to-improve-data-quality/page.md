@@ -1,7 +1,7 @@
 ---
 title: Automated checks to improve data quality
 description: Use automated checks to keep your data accurate, up-to-date, and consistent, reducing errors and saving you time and money.
-modified: '2025-08-26'
+modified: '2025-09-15'
 layout: '2-columns'
 links: {
     previous: {
@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/combine-local-data-for-regional-and-national-services'
     }
 }
-image: 'automate-updates-to-improve-data-quality.png'
+image: 'automated-checks-hero.svg'
 ---
 
 # Automated checks to improve data quality

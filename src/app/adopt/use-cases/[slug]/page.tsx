@@ -1,9 +1,12 @@
-import image from '../use-cases.webp'
-import PageWithSingleColumnAndImage from '@/components/PageWithSingleColumnAndImage'
 import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
-import PageWithTwoColumnsAndImage from '@/components/PageWithTwoColumnsAndImage'
 import { Metadata, type ResolvingMetadata } from 'next'
+import { CSSProperties } from 'react'
+import Columns from '@/components/Columns'
+import { ArticleDateComponent, Links } from '@/components/DynamicSection/DynamicSectionPage'
+import { MarkdownComponentFromFile } from '@/components/MarkdownComponentFromFile'
+import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownContent'
+import Image from 'next/image'
 
 const contentFilePath = 'adopt/use-cases'
 
@@ -14,8 +17,7 @@ export async function generateStaticParams() {
 		'automated-checks-to-improve-data-quality',
 		'combine-local-data-for-regional-and-national-services',
 		'keep-local-data-accurate-using-national-sources',
-		'use-combined-data-to-plan-and-commission-services',
-		'how-to-adopt-the-oruk-standard'
+		'use-combined-data-to-plan-and-commission-services'
 	]
 
 	return slugs.map(slug => ({ slug }))
@@ -32,7 +34,7 @@ export async function generateMetadata(
 	const { slug } = await params
 
 	const markdownFilePath = `${contentFilePath}/${slug}`
-	const { data } = await getMarkdownData(markdownFilePath, 'page-content')
+	const { data } = await getMarkdownData(markdownFilePath, 'page')
 
 	if (!data) {
 		return {}
@@ -46,27 +48,54 @@ export async function generateMetadata(
 	}
 }
 
+const headerStyle: CSSProperties = {
+	minHeight: 250,
+	marginBottom: 48
+}
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
 	const { slug } = await params
 	const markdownFilePath = `${contentFilePath}/${slug}`
-	const { data, content } = await getMarkdownData(markdownFilePath, 'page-content')
+	const { data, content } = await getMarkdownData(markdownFilePath, 'page')
 
 	if (!data || !content) {
 		return notFound()
 	}
 
-	if (data.layout === '2-columns') {
-		return (
-			<PageWithTwoColumnsAndImage
-				metadata={data}
-				content={content}
-				image={image}
-				markdownFilePath={markdownFilePath}
-			/>
-		)
-	} else if (data.layout === '1-column') {
-		return <PageWithSingleColumnAndImage metadata={data} content={content} image={image} />
-	}
-
-	return notFound()
+	return (
+		<>
+			<section style={headerStyle}>
+				<MarkdownComponent html={content} />
+			</section>
+			<section>
+				<Columns
+					layout='42'
+					className={undefined}
+					debug={undefined}
+					supressTrailingSpace={undefined}
+				>
+					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='about' />
+					<div>{data.image && <Image src={data.image} alt={data.title} fill={true} />}</div>
+				</Columns>
+			</section>
+			<section>
+				<Columns
+					layout='11'
+					className={undefined}
+					debug={undefined}
+					supressTrailingSpace={undefined}
+				>
+					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='examples' />
+					<div>
+						<MarkdownComponentFromFile filePath={markdownFilePath} fileName='benefits' />
+						<MarkdownComponentFromFile filePath={markdownFilePath} fileName='outcomes' />
+					</div>
+				</Columns>
+			</section>
+			<section>
+				<ArticleDateComponent date={data.modified} />
+				<Links {...data.links} />
+			</section>
+		</>
+	)
 }

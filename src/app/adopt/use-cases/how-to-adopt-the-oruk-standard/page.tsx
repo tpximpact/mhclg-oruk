@@ -3,7 +3,7 @@ import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next/types'
 
-const contentFilePath = 'adopt/use-cases'
+const contentFilePath = 'adopt/use-cases/how-to-adopt-the-oruk-standard'
 
 export async function generateMetadata(): Promise<Metadata> {
 	const { data } = await getMarkdownData(contentFilePath, 'page')
@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
 	}
 
 	return {
-		title: data.title || 'Open Referral UK use cases',
-		description: data.description || 'Explore practical applications and benefits of sharing data using the Open Referral UK standard.'
+		title: data.title,
+		description: data.description
 	}
 }
 
@@ -25,13 +25,11 @@ export default async function Page() {
 		return notFound()
 	}
 
-	const image = data.image ? await import(`./${data.image}`) : null
-
 	return (
 		<PageWithSingleColumnAndImage
 			metadata={data}
 			content={content}
-			image={image}
+			image={data.image}
 		/>
 	)
 }

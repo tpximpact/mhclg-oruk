@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/practical-oruk-use-cases'
     }
 }
-image: 'how-to-adopt-the-oruk-standard.png'
+image: 'how-to-adopt-the-oruk-standard.svg'
 ---
 
 # How to adopt the ORUK standard

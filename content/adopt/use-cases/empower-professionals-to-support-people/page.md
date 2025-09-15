@@ -1,7 +1,7 @@
 ---
 title: Empower professionals to support people
 description: Help professionals find accurate, up-to-date community service information from a single, reliable source.
-modified: '2025-08-26'
+modified: '2025-09-15'
 layout: '2-columns'
 links: {
     previous: {
@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/automated-checks-to-improve-data-quality'
     }
 }
-image: 'reuse-data-to-help-professionals-support-people.png'
+image: 'empower-hero.svg'
 ---
 
 # Empower professionals to support people
