@@ -13,9 +13,10 @@ links: {
         path: 'adopt/use-cases/keep-local-data-accurate-using-national-sources'
     }
 }
-image: 'combine-data-hero.svg'
+image: '/combine-data-hero.svg'
 ---
 
-# Combine local data for regional and national services
+# Combine local data to create new regional and national services
+
 
 Consolidate data from multiple local sources into a single, reusable dataset.

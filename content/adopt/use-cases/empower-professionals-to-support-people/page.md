@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/automated-checks-to-improve-data-quality'
     }
 }
-image: 'empower-hero.svg'
+image: '/empower-hero.svg'
 ---
 
 # Empower professionals to support people

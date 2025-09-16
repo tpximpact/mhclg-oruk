@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/empower-professionals-to-support-people'
     }
 }
-image: 'reuse-data-hero.svg'
+image: '/reuse-data-hero.svg'
 ---
 
 # Reuse data - one source, many places

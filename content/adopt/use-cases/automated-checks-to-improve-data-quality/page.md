@@ -13,7 +13,7 @@ links: {
         path: 'adopt/use-cases/combine-local-data-for-regional-and-national-services'
     }
 }
-image: 'automated-checks-hero.svg'
+image: '/automated-checks-hero.svg'
 ---
 
 # Automated checks to improve data quality
