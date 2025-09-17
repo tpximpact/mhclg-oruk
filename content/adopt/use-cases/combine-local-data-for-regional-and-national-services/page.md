@@ -2,7 +2,6 @@
 title: Combine local data to create new regional and national services
 description: Consolidate data from multiple local sources into a single, reusable dataset.
 modified: '2025-08-26'
-layout: '2-columns'
 links: {
     previous: {
         title: 'Automated checks to improve data quality',

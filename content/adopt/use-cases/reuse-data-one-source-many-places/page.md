@@ -2,7 +2,6 @@
 title: Reuse data - one source, many places
 description: Reuse the same source of data, in different formats and places for different audiences. 
 modified: '2025-09-15'
-layout: '2-columns'
 links: {
     previous: {
         title: 'Open Referral UK use cases',
