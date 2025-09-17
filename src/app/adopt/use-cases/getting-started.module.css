@@ -1,0 +1,12 @@
+.gettingStartedBanner {
+	max-width: none;
+
+
+	blockquote {
+		border-color: cadetblue;
+		font-style: normal;
+		background-color: gainsboro;
+		width: 100%;
+		font-weight: normal;
+	}
+}

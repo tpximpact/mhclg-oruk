@@ -16,7 +16,7 @@ export default async function PageWithSingleColumnAndImage({
 }: {
 	metadata: MarkdownMetadata
 	content: string
-	image: StaticImageData
+	image: string | StaticImageData | undefined
 }) {
 	return (
 		<>
@@ -28,9 +28,11 @@ export default async function PageWithSingleColumnAndImage({
 					supressTrailingSpace={undefined}
 				>
 					<MarkdownComponent html={content} />
-					<div>
-						<Image src={image} alt={metadata.title} width={200} />
-					</div>
+					{image && (
+						<div>
+							<Image src={image} alt={metadata.title} fill={true} />
+						</div>
+					)}
 				</Columns>
 			</section>
 			<section>
