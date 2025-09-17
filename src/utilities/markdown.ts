@@ -20,7 +20,7 @@ export type MarkdownMetadata = {
 			path: string
 		}
 	}
-	image: string
+	image?: string
 }
 
 export const getMarkdownData = async (

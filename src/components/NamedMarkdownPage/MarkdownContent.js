@@ -18,10 +18,12 @@ const linkify = text => {
 	return arr.join('_')
 }
 
-export const MarkdownComponent = async ({ html}) => {
+export const MarkdownComponent = async ({ html, ...props }) => {
+	const { className = '', ...rest } = props;
+
 	return <div 
-	className={`${styles.content} ${styles.solo}`} 
-	dangerouslySetInnerHTML={{ __html: html }} />
+	className={`${styles.content} ${styles.solo} ${className}`} 
+	dangerouslySetInnerHTML={{ __html: html }} {...rest} />
 }
 
 export const MarkdownContentNoMenu = async ({ html, afterLinks }) => (
