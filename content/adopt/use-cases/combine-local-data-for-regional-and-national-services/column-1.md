@@ -17,7 +17,7 @@ The Department for Education (DfE) can [use existing data from local authorities
 They are [merging services data from multiple councils, health providers and community organisations](/steering/ORUK%20Steering%20Group%2002%20-%20Annex%20B%20-%20Lancs%20and%20South%20Cumbria%20health%20and%20care%20%20presentation.pdf) (.pdf) to create a single, reliable dataset for the entire region. This enables data reuse across different organisations and provides an overview of service availability, helping them identify and address service gaps.
 
 **Canada's federated datasets**  
-In this large-scale example, a Canadian province combines numerous federated datasets into a single, comprehensive record. This process removes duplicates and standardises data, making it easier to share, analyse, and reuse the information across the entire province.
+In this large-scale example, a Canadian province combines numerous federated datasets into a single, comprehensive data service. This process removes duplicates and standardises data, making it easier to share, analyse, and reuse the information across the entire province.
 
 ## Get started
 
