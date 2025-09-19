@@ -1,0 +1,16 @@
+.feedbackBanner {
+	max-width: none;
+
+	h4 {
+		font-weight: 400;
+		margin-bottom: 0;
+	}
+
+	blockquote {
+		border-color: #00625E;
+		font-style: normal;
+		background-color: #bedfd4;
+		width: 100%;
+		font-weight: normal;
+	}
+}

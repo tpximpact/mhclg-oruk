@@ -7,9 +7,9 @@ import { ArticleDateComponent, Links } from '@/components/DynamicSection/Dynamic
 import { MarkdownComponentFromFile } from '@/components/MarkdownComponentFromFile'
 import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownContent'
 import Image from 'next/image'
-import GettingStarted from '../getting-started'
-import styles from './page.module.css'
-import Feedback from '../feedback'
+import GettingStarted from '../_components/getting-started'
+import styles from '../use-cases.module.css'
+import Feedback from '../_components/feedback'
 
 const contentFilePath = 'adopt/use-cases'
 
@@ -77,9 +77,20 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 					supressTrailingSpace={undefined}
 				>
 					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='about' />
-					<div style={{position: 'relative'}}>
-						{data.image && <Image src={data.image} alt={data.title} fill={true} />}
+
+					<div style={{ position: 'relative', margin: 'auto' }}>
+						{data.image && <Image src={data.image} alt={data.title} width={500} height={300} />}
 					</div>
+				</Columns>
+			</section>
+			<section>
+				<Columns
+					layout='11'
+					className={styles.gap5}
+					debug={undefined}
+					supressTrailingSpace={undefined}
+				>
+					<Feedback />
 				</Columns>
 			</section>
 			<section>
@@ -100,10 +111,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 			<section>
 				<ArticleDateComponent date={data.modified} />
 				<Links {...data.links} />
-			</section>
-			<hr />
-			<section>
-				<Feedback />
 			</section>
 		</>
 	)
