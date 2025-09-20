@@ -47,7 +47,7 @@ export default async function Page() {
 					<MarkdownComponent html={content} />
 				</Columns>
 			</section>
-						<section>
+			<section>
 				<Columns
 					layout='11'
 					className={styles.gap5}
