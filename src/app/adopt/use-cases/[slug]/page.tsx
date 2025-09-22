@@ -100,11 +100,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 					debug={undefined}
 					supressTrailingSpace={undefined}
 				>
-					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='examples' />
 					<div>
 						<MarkdownComponentFromFile filePath={markdownFilePath} fileName='benefits' />
 						<MarkdownComponentFromFile filePath={markdownFilePath} fileName='outcomes' />
-					</div>
+					</div>					
+					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='examples' />
 				</Columns>
 			</section>
 			<GettingStarted />

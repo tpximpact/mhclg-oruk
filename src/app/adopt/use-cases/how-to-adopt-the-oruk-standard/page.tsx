@@ -59,7 +59,6 @@ export default async function Page() {
 			</section>
 			<section>
 				<ArticleDateComponent date={data.modified} />
-				<Links {...data.links} />
 			</section>
 		</>
 	)

@@ -2,16 +2,6 @@
 title: How to adopt the ORUK standard
 description: A quick guide to adopting the ORUK standard
 modified: '2025-09-15'
-links: {
-    previous: {
-        title: 'Use combined data to plan and commission services',
-        path: 'adopt/use-cases/use-combined-data-to-plan-and-commission-services'
-    },
-    next: {
-        title: 'Practical ORUK use cases',
-        path: 'adopt/use-cases/practical-oruk-use-cases'
-    }
-}
 image: '/how-to-adopt-the-oruk-standard.svg'
 ---
 
