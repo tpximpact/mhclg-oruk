@@ -1,5 +1,5 @@
 import Columns from '@/components/Columns'
-import { ArticleDateComponent, Links } from '@/components/DynamicSection/DynamicSectionPage'
+import { ArticleDateComponent } from '@/components/DynamicSection/DynamicSectionPage'
 import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownContent'
 import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
