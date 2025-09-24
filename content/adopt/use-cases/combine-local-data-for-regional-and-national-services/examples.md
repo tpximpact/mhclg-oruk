@@ -1,7 +1,10 @@
 ## Examples
 
-**DfE and Family Hubs**   
-The Department for Education (DfE) can [use existing data from local authorities to improve and expand its national Family Hubs services (.pdf).](/steering/ORUK%20Steering%20Group%2002%20-%20Annex%20A%20-%20DfE%20Family%20Hubs%20presentation.pdf)
+[CQC - national data for local directories](https://openreferraluk.org/developers/dashboard/67d1781a96f61f8df112a03f)<br/>
+The CQC's open, ORUK-compliant feed for care provider data means local directories have accurate, up-to-date information, benefiting services and citizens with minimal effort. 
 
-**Lancashire and South Cumbria ICB**   
-They are [merging services data from multiple councils, health providers and community organisations (.pdf)](/steering/ORUK%20Steering%20Group%2002%20-%20Annex%20B%20-%20Lancs%20and%20South%20Cumbria%20health%20and%20care%20%20presentation.pdf) to create a single, reliable dataset for the entire region. This enables data reuse across different organisations and provides an overview of service availability, helping them identify and address service gaps.
+**How this could be used in education**<br/>
+By providing an open, ORUK-compliant feed, organisations like Ofsted could give local councils direct access to school data. Automated updates would eliminate the need for manual data entry to maintain current school lists.
+
+**How this could be used in charities**<br/>
+National charities could publish ORUK-compliant service directories, enabling local teams to easily reuse this information. This saves time and ensures citizens have the most current information about available charity services

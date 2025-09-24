@@ -9,7 +9,7 @@ links: {
     },
     next: {
         title: 'How to get started',
-        path: 'adopt/use-cases/how-to-adopt-the-oruk-standard'
+        path: 'adopt/how-to-adopt-the-oruk-standard'
     }
 }
 image: '/combined-data-hero.svg'

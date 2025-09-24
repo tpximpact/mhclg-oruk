@@ -4,15 +4,10 @@ import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownConten
 import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next/types'
-import { CSSProperties } from 'react'
-import Feedback from '../_components/feedback'
+import Feedback from '../use-cases/_components/feedback'
+import styles from './page.module.css'
 
 const contentFilePath = 'adopt/use-cases/how-to-adopt-the-oruk-standard'
-
-const headerStyle: CSSProperties = {
-	minHeight: 250,
-	marginBottom: 48
-}
 
 export async function generateMetadata(): Promise<Metadata> {
 	const { data } = await getMarkdownData(contentFilePath, 'page')
@@ -39,10 +34,10 @@ export default async function Page() {
 			<section>
 				<Feedback />
 			</section>
-			<section style={headerStyle}>
+			<section>
 				<Columns
 					layout='42'
-					className={undefined}
+					className={styles.useCasesMarkdownStyle}
 					debug={undefined}
 					supressTrailingSpace={undefined}
 				>
