@@ -9,9 +9,13 @@ import Image from 'next/image'
 import GettingStarted from '../_components/getting-started'
 import styles from './page.module.css'
 import Feedback from '../_components/feedback'
-import { headerStyle } from '../layout'
+import { CSSProperties } from 'react'
 
 const contentFilePath = 'adopt/use-cases'
+
+const headerStyle: CSSProperties = {
+	fontSize: '1.4rem'
+}
 
 export async function generateStaticParams() {
 	const slugs = [

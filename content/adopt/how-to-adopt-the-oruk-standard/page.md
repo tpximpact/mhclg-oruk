@@ -2,7 +2,6 @@
 title: How to adopt the ORUK standard
 description: A quick guide to adopting the ORUK standard
 modified: '2025-09-15'
-image: '/how-to-adopt-the-oruk-standard.svg'
 ---
 
 # How to adopt the ORUK standard  
