@@ -1,9 +1,8 @@
 ## About 
+Manually collecting and maintaining service data for an entire region or country is a huge and often duplicated effort.
 
-Use an aggregator to combine data from multiple publishers, such as local authorities, so it can be reused on a larger scale. 
+This approach uses an aggregator to combine data from multiple publishers (such as local authorities and councils) into one central, reusable dataset.
 
-Maintaining one dataset avoids duplication in each local area, and helps you see a comprehensive list of available services. 
+This means each service is recorded once, making it easier to maintain and keep consistency across platforms. By combining this data, you get a clearer, more complete overview of the service landscape. This helps you identify service gaps so you can make informed decisions about where new services are most needed.
 
-For example, a central government Family Services directory could integrate relevant services from different counties and councils into one feed, that can be reused. 
-
-This method can also be applied regionally. For example, all councils within a combined authority, or all organisations within an Integrated Care Board (ICB) area.
+For example, a national directory for Family Services could pull relevant information from different counties and councils into one single feed for wider use. The same method works for regions, such as councils within a combined authority, or organisations within an Integrated Care Board (ICB) area.
