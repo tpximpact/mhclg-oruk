@@ -5,9 +5,10 @@ modified: '2025-09-15'
 image: '/how-to-adopt-the-oruk-standard.svg'
 ---
 
-# How to adopt the ORUK standard
+# How to adopt the ORUK standard  
+A quick guide to adopting the Open Referral UK data standard
 
-## A quick guide to adopting the Open Referral UK data standard
+## Adopting ORUK: step by step
 
 1. Understand the standards - read a [summary of the ORUK data standard](
 /about/10-introducing) to understand the core principles and how they can benefit your organisation
