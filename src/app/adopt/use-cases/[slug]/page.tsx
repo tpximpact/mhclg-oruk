@@ -8,7 +8,7 @@ import { MarkdownComponentFromFile } from '@/components/MarkdownComponentFromFil
 import { MarkdownComponent } from '@/components/NamedMarkdownPage/MarkdownContent'
 import Image from 'next/image'
 import GettingStarted from '../_components/getting-started'
-import styles from '../use-cases.module.css'
+import styles from './page.module.css'
 import Feedback from '../_components/feedback'
 
 const contentFilePath = 'adopt/use-cases'
@@ -66,31 +66,24 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
 	return (
 		<>
+			<section>
+				<Feedback />
+			</section>
 			<section style={headerStyle}>
 				<MarkdownComponent html={content} />
 			</section>
 			<section>
 				<Columns
 					layout='11'
-					className={styles.gap5}
+					className={styles.columnSpacing}
 					debug={undefined}
 					supressTrailingSpace={undefined}
 				>
 					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='about' />
 
-					<div style={{ position: 'relative', margin: 'auto' }}>
+					<div className={styles.imageContainer}>
 						{data.image && <Image src={data.image} alt={data.title} width={500} height={300} />}
 					</div>
-				</Columns>
-			</section>
-			<section>
-				<Columns
-					layout='11'
-					className={styles.gap5}
-					debug={undefined}
-					supressTrailingSpace={undefined}
-				>
-					<Feedback />
 				</Columns>
 			</section>
 			<section>
@@ -103,7 +96,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 					<div>
 						<MarkdownComponentFromFile filePath={markdownFilePath} fileName='benefits' />
 						<MarkdownComponentFromFile filePath={markdownFilePath} fileName='outcomes' />
-					</div>					
+					</div>
 					<MarkdownComponentFromFile filePath={markdownFilePath} fileName='examples' />
 				</Columns>
 			</section>

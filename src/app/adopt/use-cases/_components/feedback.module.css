@@ -1,16 +1,25 @@
-.feedbackBanner {
+.feedbackContainer {
 	max-width: none;
+	padding-bottom: 3em;
 
-	h4 {
-		font-weight: 400;
-		margin-bottom: 0;
+	h1 {
+		color: #00625E;
+		font-size: 1em;
+		font-weight: normal;
 	}
-
 	blockquote {
 		border-color: #00625E;
 		font-style: normal;
-		background-color: #bedfd4;
+		background-color: #FCF2E3;
 		width: 100%;
 		font-weight: normal;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-color: #00625E;
+		border-left: 8px solid #00625E;
+		gap: 1em;
+		padding: 1em;
+		max-height: 70px;
 	}
 }
