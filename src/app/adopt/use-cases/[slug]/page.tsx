@@ -1,7 +1,6 @@
 import { getMarkdownData } from '@/utilities/markdown'
 import { notFound } from 'next/navigation'
 import { Metadata, type ResolvingMetadata } from 'next'
-import { CSSProperties } from 'react'
 import Columns from '@/components/Columns'
 import { ArticleDateComponent, Links } from '@/components/DynamicSection/DynamicSectionPage'
 import { MarkdownComponentFromFile } from '@/components/MarkdownComponentFromFile'
@@ -10,6 +9,7 @@ import Image from 'next/image'
 import GettingStarted from '../_components/getting-started'
 import styles from './page.module.css'
 import Feedback from '../_components/feedback'
+import { headerStyle } from '../layout'
 
 const contentFilePath = 'adopt/use-cases'
 
@@ -49,10 +49,6 @@ export async function generateMetadata(
 		title: data.title || parentMetadata.title,
 		description: data.description || parentMetadata.description
 	}
-}
-
-const headerStyle: CSSProperties = {
-	fontSize: '1.4rem'
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

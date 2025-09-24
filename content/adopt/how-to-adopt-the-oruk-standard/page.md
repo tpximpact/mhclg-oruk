@@ -6,7 +6,7 @@ image: '/how-to-adopt-the-oruk-standard.svg'
 ---
 
 # How to adopt the ORUK standard  
-A quick guide to adopting the Open Referral UK data standard
+### A quick guide to adopting the Open Referral UK data standard
 
 ## Adopting ORUK: step by step
 
