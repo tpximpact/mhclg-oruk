@@ -2,6 +2,9 @@
 const nextConfig = {
 	experimental: {
 		serverComponentsHmrCache: false
+	},
+	images: {
+		dangerouslyAllowSVG: true
 	}
 }
 

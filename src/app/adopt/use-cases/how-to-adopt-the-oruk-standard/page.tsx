@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next/types'
 import { CSSProperties } from 'react'
 import Feedback from '../_components/feedback'
-import styles from '../use-cases.module.css'
 
 const contentFilePath = 'adopt/use-cases/how-to-adopt-the-oruk-standard'
 
@@ -37,6 +36,9 @@ export default async function Page() {
 
 	return (
 		<>
+			<section>
+				<Feedback />
+			</section>
 			<section style={headerStyle}>
 				<Columns
 					layout='42'
@@ -45,16 +47,6 @@ export default async function Page() {
 					supressTrailingSpace={undefined}
 				>
 					<MarkdownComponent html={content} />
-				</Columns>
-			</section>
-			<section>
-				<Columns
-					layout='11'
-					className={styles.gap5}
-					debug={undefined}
-					supressTrailingSpace={undefined}
-				>
-					<Feedback />
 				</Columns>
 			</section>
 			<section>
