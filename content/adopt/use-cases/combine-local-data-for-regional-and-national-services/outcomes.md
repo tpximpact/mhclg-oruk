@@ -1,6 +1,7 @@
 ## Outcomes
 
-* Reduced duplication of effort to maintain data
+* Less duplicated effort to maintain data
 * Better use of data gathered, leading to better quality checking
-* Improved visibility exposure of local services
-* Allows new services to be designed and built using data that is currently a burden to collect and update
+* A more complete view of services, and where service gaps exist
+* Improved visibility for local services
+* Enables new services to be designed and built using data that was previously a burden to collect and update
