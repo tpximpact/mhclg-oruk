@@ -2,7 +2,7 @@ import { siteStructureWithFullPaths } from './menuing'
 import { getRawPageTree } from './getRawPageTree'
 import { listDynamicSection } from './dynamicSection'
 
-const DYNAMIC_SECTION_ITEMCOUNT_LIMIT = 4
+const DYNAMIC_SECTION_ITEMCOUNT_LIMIT = 6
 
 export const getRootLayoutItems = () => {
 	let result = siteStructureWithFullPaths(getRawPageTree()).filter(item => item.hide != true)
