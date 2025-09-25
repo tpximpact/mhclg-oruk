@@ -9,7 +9,7 @@ modified: '2025-09-15'
 
 ## Adopting ORUK: step by step
 
-1. Understand the standards - read a [summary of the ORUK data standard](
+1. Understand the standard - read a [summary of the ORUK data standard](
 /about/10-introducing) to understand the core principles and how they can benefit your organisation
 2. [Explore use cases](/adopt/use-cases) - see how other organisations have used ORUK to improve efficiency and better target services
 3. Secure support from your senior leadership - use the [executive summary](/adopt/01_summary) to present the benefits to key decision-makers
