@@ -17,4 +17,4 @@ image: '/automated-checks-hero.svg'
 
 # Automated checks to improve data quality
 
-Use automated checks to keep your data accurate, up-to-date, and consistent, reducing errors and saving you time and money.
+Keep your data accurate, up-to-date, and consistent, reducing errors and saving you time and money.
