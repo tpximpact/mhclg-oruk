@@ -6,8 +6,9 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next/types'
 import Feedback from '../use-cases/_components/feedback'
 import styles from './page.module.css'
+import { PageMargin } from '@/components/PageMargin'
 
-const contentFilePath = 'adopt/use-cases/how-to-adopt-the-oruk-standard'
+const contentFilePath = 'adopt/how-to-adopt-the-oruk-standard'
 
 export async function generateMetadata(): Promise<Metadata> {
 	const { data } = await getMarkdownData(contentFilePath, 'page')
@@ -30,7 +31,7 @@ export default async function Page() {
 	}
 
 	return (
-		<>
+		<PageMargin>
 			<section>
 				<Feedback />
 			</section>
@@ -47,6 +48,6 @@ export default async function Page() {
 			<section>
 				<ArticleDateComponent date={data.modified} />
 			</section>
-		</>
+		</PageMargin>
 	)
 }
