@@ -1,6 +1,6 @@
 > ## Get started
 >
 > If this use case is relevant to your organisation, see<br/>
-> a quick [step by step guide to adopt ORUK](/adopts/how-to-adopt-the-oruk-standard).
+> a quick [step by step guide to adopt ORUK](/adopt/how-to-adopt-the-oruk-standard).
 > <br/>
 > <br/>
