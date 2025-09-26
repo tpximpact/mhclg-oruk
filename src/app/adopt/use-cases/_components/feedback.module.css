@@ -1,25 +1,29 @@
 .feedbackContainer {
-	max-width: none;
-	padding-bottom: 3em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	border-left: 8px solid #00625e;
+	background-color: #fcf2e3;
+	padding: 1em;
+	margin-bottom: 1em;
 
 	h1 {
-		color: #00625E;
+		color: #00625e;
 		font-size: 1em;
 		font-weight: normal;
 	}
-	blockquote {
-		border-color: #00625E;
-		font-style: normal;
-		background-color: #FCF2E3;
-		width: 100%;
-		font-weight: normal;
-		display: flex;
-		align-items: center;
+
+	svg {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
 		justify-content: center;
-		border-color: #00625E;
-		border-left: 8px solid #00625E;
-		gap: 1em;
-		padding: 1em;
-		max-height: 70px;
+		align-items: center;
+		margin-bottom: 3em;
+
+		svg {
+			display: block; /* Or inline-block, flex, etc. */
+		}
 	}
 }
