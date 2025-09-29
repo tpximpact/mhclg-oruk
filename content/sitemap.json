@@ -40,6 +40,13 @@
 				"contentPath": "how-to-adopt-the-oruk-standard"
 			},
 			{
+				"name": "use-cases",
+				"label": "Open Referral UK use cases",
+				"teaser": "Examples of how councils and service providers are using ORUK data",
+				"urlPath": "use-cases",
+				"contentPath": "use-cases"
+			},
+			{
 				"dynamic": true
 			}
 		]
