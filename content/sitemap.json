@@ -127,6 +127,13 @@
 				"teaser": "The data specification expressed in JavaScript Object Notation (JSON)."
 			},
 			{
+				"name": "sharing",
+				"label": "Sharing data",
+				"urlPath": "sharing",
+				"contentPath": "sharing",
+				"teaser": "Understanding data sharing and privacy."
+			},
+			{
 				"name": "changelog",
 				"label": "Changes in version 3.0",
 				"urlPath": "changelog",
