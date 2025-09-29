@@ -11,7 +11,7 @@ import { PageMargin } from '@/components/PageMargin'
 const contentFilePath = 'adopt/how-to-adopt-the-oruk-standard'
 
 export async function generateMetadata(): Promise<Metadata> {
-	const { data } = await getMarkdownData(contentFilePath, 'page')
+	const { data } = await getMarkdownData(contentFilePath, 'index')
 
 	if (!data) {
 		return {}
@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-	const { data, content } = await getMarkdownData(contentFilePath, 'page')
+	const { data, content } = await getMarkdownData(contentFilePath, 'index')
 
 	if (!data || !content) {
 		return notFound()
