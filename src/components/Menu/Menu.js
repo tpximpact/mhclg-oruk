@@ -1,4 +1,3 @@
-import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 import Link from 'next/link'
 import styles from './Menu.module.css'
 import { PageMargin } from '../PageMargin'
@@ -21,20 +20,20 @@ export const Menu = ({ ariaName, items, setShowMenu, open }) => {
 }
 
 const MenuSection = ({ data, setShowMenu }) => {
+	// Flatten menuItems so that dynamic child nodes and single nodes are merged into one array
+	const menuItems = data.childNodes
+		? data.childNodes.flatMap(node =>
+				node.dynamic
+					? data.dynamicChildNodes || []
+					: [{ title: node.label, path: node.urlPath, offsite: node.offsite, slug: node.teaser }]
+			)
+		: data.dynamicChildNodes || []
+
 	return (
 		<div className={styles.MenuSection}>
 			<div className={styles.heading}>{data.label}</div>
-			{data.dynamic && (
-				<List
-					setShowMenu={setShowMenu}
-					data={data.dynamicChildNodes}
-					overflow={data.dynamicOverflow}
-				/>
-			)}
 
-			{data.childNodes && (
-				<List setShowMenu={setShowMenu} data={formatNodesForPageMenu(data.childNodes)} />
-			)}
+			<List setShowMenu={setShowMenu} data={menuItems} overflow={data.dynamicOverflow} />
 		</div>
 	)
 }

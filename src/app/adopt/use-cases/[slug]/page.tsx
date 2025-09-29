@@ -41,7 +41,7 @@ export async function generateMetadata(
 	const { slug } = await params
 
 	const markdownFilePath = `${contentFilePath}/${slug}`
-	const { data } = await getMarkdownData(markdownFilePath, 'page')
+	const { data } = await getMarkdownData(markdownFilePath, 'index')
 
 	if (!data) {
 		return {}
@@ -58,7 +58,7 @@ export async function generateMetadata(
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
 	const { slug } = await params
 	const markdownFilePath = `${contentFilePath}/${slug}`
-	const { data, content } = await getMarkdownData(markdownFilePath, 'page')
+	const { data, content } = await getMarkdownData(markdownFilePath, 'index')
 
 	if (!data || !content) {
 		return notFound()

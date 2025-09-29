@@ -2,7 +2,6 @@ import styles from './Sitemap.module.css'
 import Link from 'next/link'
 import { PageList } from '@/components/PageList'
 import { PageMargin } from '@/components/PageMargin'
-import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 import { listDynamicSection } from '@/utilities/dynamicSection'
 
 export const Sitemap = ({ showHeading = true, data }) => (
@@ -27,20 +26,30 @@ const List = ({ data, children }) => (
 
 const Node = ({ data }) => {
 	if (!data.urlPath) return
+
+	const menuItems = data.childNodes
+		? data.childNodes.flatMap(node =>
+				node.dynamic
+					? listDynamicSection({
+							rootContentFolder: data.urlPath
+						})
+					: [
+							{
+								title: node.label,
+								path: node.urlPath,
+								offsite: node.offsite,
+								slug: node.teaser
+							}
+						]
+			)
+		: listDynamicSection({
+				rootContentFolder: data.urlPath
+			})
 	return (
 		<li>
 			<Link href={data.urlPath}>{data.label}</Link>
-			{data.dynamic && (
-				<PageList
-					suppressDetails={true}
-					data={listDynamicSection({
-						rootContentFolder: data.urlPath
-					})}
-				/>
-			)}
-			{data.childNodes && (
-				<PageList suppressDetails={true} data={formatNodesForPageMenu(data.childNodes)} />
-			)}
+
+			<PageList suppressDetails={true} data={menuItems} />
 		</li>
 	)
 }
