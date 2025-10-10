@@ -7,7 +7,7 @@ export default function Feedback() {
 		<div className={styles.feedbackContainer}>
 			<h1 className={styles.newPageText}>This is a new page</h1>
 			<Link
-				href='https://docs.google.com/forms/d/1JiSxJSOUguLZv-1myjg5neQW8aoAA_8ywiQKiHXEdPE/preview'
+				href='https://forms.gle/22DLBpxDD4HmKtLb7'
 				target='_blank'
 				rel='noopener noreferrer'
 			>
