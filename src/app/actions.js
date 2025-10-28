@@ -4,7 +4,7 @@ import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 import { fromErrorToFormState, toFormState } from '@/utilities/to-form-state'
 import { getCollection } from '@/lib/mongodb'
-import { insertRegistrationSchema, toRegistrationResponse } from '@/models/registration'
+import { insertRegistrationSchema } from '@/models/registration'
 
 const createMessageSchema = z.object({
 	name: z.string().min(1).max(191),
@@ -46,17 +46,10 @@ export const createMessage = async (formState, formData) => {
 
 		// Save to MongoDB
 		const registrations = await getCollection('registrations')
-		const result = await registrations.insertOne(registrationData)
+		const insertResult = await registrations.insertOne(registrationData)
 
-		// Fetch the created document
-		const created = await registrations.findOne({ _id: result.insertedId })
-		if (!created) {
-			return toFormState('ERROR', 'Registration created but not found')
-		}
-
-		// Generate update link
-		const response = toRegistrationResponse(created)
-		updateLink = response.updateLink
+		// Generate update link from inserted data
+		updateLink = `/developers/register/${insertResult.insertedId.toHexString()}`
 	} catch (error) {
 		return toFormState('ERROR', 'Failed to save registration')
 	}
