@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 // MongoDB client utility with global caching for Next.js (Node runtime only)
 // - Uses a single shared MongoClient across hot reloads in dev
 // - Exposes helpers to fetch DB and typed collections
@@ -24,7 +23,6 @@ export async function getMongoClient(): Promise<MongoClient> {
 	if (globalForMongo._mongoClient) return globalForMongo._mongoClient
 	if (globalForMongo._mongoPromise) return globalForMongo._mongoPromise
 
-	console.log(`Creating new MongoDB client connection..., {MONGODB_URI}`, MONGODB_URI)
 	if (!MONGODB_URI) {
 		throw new Error('MONGODB_URI is not set. Define it in .env or your deployment environment.')
 	}
@@ -53,7 +51,6 @@ export async function getDb(dbName?: string): Promise<Db> {
 	if (!name) {
 		throw new Error('No database name provided. Set MONGODB_DB or pass dbName.')
 	}
-	console.log('Using MongoDB database:', name)
 	return client.db(name)
 }
 
