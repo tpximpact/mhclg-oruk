@@ -3,8 +3,8 @@
 import { z } from 'zod'
 import { revalidatePath } from 'next/cache'
 import { fromErrorToFormState, toFormState } from '@/utilities/to-form-state'
-import { getCollection } from '@/lib/mongodb'
-import { insertRegistrationSchema } from '@/models/registration'
+import { ServiceRepository } from '@/repositories/service-repository'
+import { ValidationError } from '@/lib/mongodb-errors'
 
 const createMessageSchema = z.object({
 	name: z.string().min(1).max(191),
@@ -37,26 +37,26 @@ export const createMessage = async (formState, formData) => {
 	}
 
 	try {
-		// Validate and prepare data with timestamps
-		const registrationData = insertRegistrationSchema.parse({
+		// Save service using repository
+		const serviceRepo = new ServiceRepository()
+		const service = await serviceRepo.create({
 			...data,
 			createdAt: new Date(),
 			updatedAt: new Date()
 		})
 
-		// Save to MongoDB
-		const registrations = await getCollection('registrations')
-		const insertResult = await registrations.insertOne(registrationData)
-
-		// Generate update link from inserted data
-		updateLink = `/developers/register/${insertResult.insertedId.toHexString()}`
+		// Get update link from response
+		updateLink = service.updateLink
 	} catch (error) {
-		return toFormState('ERROR', 'Failed to save registration')
+		if (error instanceof ValidationError) {
+			return fromErrorToFormState(error, values)
+		}
+		return toFormState('ERROR', 'Failed to save service')
 	}
 
 	revalidatePath('/developers/register')
 
-	let result = toFormState('SUCCESS', 'Registration requested')
+	let result = toFormState('SUCCESS', 'Service requested')
 	result.updateLink = updateLink
 	return result
 }
