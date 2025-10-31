@@ -33,7 +33,7 @@ export const getContentVersion = ({ contentFolder, specificationFolderPath }) =>
 				schemata[k] = JSON.parse(rawJson)
 			})
 		}
-	} catch (e) {
+	} catch {
 		// console.log('nope: ' + fullPath)
 	}
 	// HACK: in case the Pages object is present among schemata, remove it

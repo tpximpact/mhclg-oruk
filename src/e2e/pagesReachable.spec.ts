@@ -2,9 +2,9 @@ import { flattenSite } from '../utilities/flattenSite'
 import { slugify } from '../utilities/dynamicSection'
 import fs from 'fs'
 import { join } from 'path'
-const { test, expect } = require('@playwright/test')
+import { test, expect, Page } from '@playwright/test'
 
-const getAllFiles = contentFolder => {
+const getAllFiles = (contentFolder: string) => {
 	const dir = join(process.cwd(), '/content', contentFolder)
 	const dirents = fs.readdirSync(dir, { withFileTypes: true })
 	return dirents
@@ -23,22 +23,22 @@ const dynamicPages = site
 	.filter(p => p.dynamic)
 	.flatMap(root =>
 		getAllFiles(root.contentPath).map(n => ({
-			path: `${root.contentPath}/${slugify(n)}`
+			path: `${root.contentPath}/${slugify(n)}`,
+			lookFor: root.e2eTestLookFor || 'open'
 		}))
 	)
 
-let data = nonDynamicPages
+const data = nonDynamicPages
 	.concat(dynamicPages)
 	.filter((value, index, self) => self.findIndex(v => v.path === value.path) === index)
 
 test.describe('Page Content Validation Tests', () => {
 	data.forEach(({ path, lookFor = 'open' }) => {
-		test(`should find "${lookFor}" on ${path}`, async ({ page }) => {
-			await page.goto(path)
-
-			// Check if the status code is 200
+		test(`should find "${lookFor}" on ${path}`, async ({ page }: { page: Page}) => {
+			// Navigate and capture response, then check status
 			const response = await page.goto(path)
-			expect(response.status()).toBe(200)
+			expect(response).not.toBeNull()
+			expect(response!.status()).toBe(200)
 
 			const bodyText = await page.textContent('body')
 			expect(bodyText).toContain(lookFor)

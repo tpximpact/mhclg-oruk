@@ -34,7 +34,7 @@ export const getMarkdownData = async (
 		const markdownContent = await marked.parse(content)
 
 		return { data: data as MarkdownMetadata, content: markdownContent }
-	} catch (error) {
+	} catch {
 		return { data: null, content: null }
 	}
 }
