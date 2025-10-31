@@ -16,7 +16,7 @@ export class ServiceRepository extends BaseRepository<
   ServiceResponse,
   InsertService
 > {
-  protected readonly collectionName = 'services'
+  protected readonly collectionName = 'registrations'
   protected readonly responseSchema = serviceResponseSchema
   protected readonly insertSchema = insertServiceSchema
   protected readonly updateSchema = insertServiceSchema.partial()
