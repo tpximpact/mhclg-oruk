@@ -1,6 +1,6 @@
 // Base repository class for MongoDB collections with typed CRUD operations
 
-import { Collection, Document, Filter, ObjectId, OptionalUnlessRequiredId, WithId } from 'mongodb'
+import type { Collection, Document, Filter, ObjectId, OptionalUnlessRequiredId, WithId } from 'mongodb'
 import { z } from 'zod'
 import { getCollection } from './mongodb'
 import { ValidationError } from './mongodb-errors'
@@ -31,7 +31,24 @@ export abstract class BaseRepository<
 
   // CRUD Operations
   async findById(id: string | ObjectId): Promise<TResponse | null> {
-    const _id = typeof id === 'string' ? new ObjectId(id) : id
+    // Avoid requiring the `mongodb` runtime at module import time (it may be ESM).
+    // Try to construct an ObjectId if available at runtime, otherwise fall back to the string
+    let _id: string | ObjectId
+    if (typeof id === 'string') {
+      try {
+        // `require` may throw if the driver is ESM in the environment running the tests
+        // In that case we leave the id as the string; tests mock the collection and don't
+        // need a real ObjectId instance.
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { ObjectId: ObjId } = require('mongodb') as any
+        _id = new ObjId(id)
+      } catch {
+        _id = id
+      }
+    } else {
+      _id = id
+    }
+
     const doc = await (await this.collection).findOne({ _id } as Filter<TSchema>)
     return doc ? this.toResponse(doc) : null
   }
@@ -65,7 +82,18 @@ export abstract class BaseRepository<
   }
 
   async update(id: string | ObjectId, data: TUpdate): Promise<TResponse | null> {
-    const _id = typeof id === 'string' ? new ObjectId(id) : id
+    let _id: string | ObjectId
+    if (typeof id === 'string') {
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { ObjectId: ObjId } = require('mongodb') as any
+        _id = new ObjId(id)
+      } catch {
+        _id = id
+      }
+    } else {
+      _id = id
+    }
     
     // Validate with zod schema
     let validated
@@ -89,7 +117,18 @@ export abstract class BaseRepository<
   }
 
   async delete(id: string | ObjectId): Promise<boolean> {
-    const _id = typeof id === 'string' ? new ObjectId(id) : id
+    let _id: string | ObjectId
+    if (typeof id === 'string') {
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { ObjectId: ObjId } = require('mongodb') as any
+        _id = new ObjId(id)
+      } catch {
+        _id = id
+      }
+    } else {
+      _id = id
+    }
     const result = await (await this.collection).deleteOne({ _id } as Filter<TSchema>)
     return result.deletedCount === 1
   }

@@ -1,6 +1,6 @@
 // Repository implementation for Service entity
 
-import { ObjectId } from 'mongodb'
+import type { ObjectId } from 'mongodb'
 import { BaseRepository } from '@/lib/base-repository'
 import {
   ServiceDocument,

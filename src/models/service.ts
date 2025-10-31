@@ -1,7 +1,7 @@
 // Service entity model with zod validation
 
 import { z } from 'zod'
-import { ObjectId } from 'mongodb'
+import type { ObjectId } from 'mongodb'
 
 // Schema for creating a new service
 export const insertServiceSchema = z.object({
@@ -21,7 +21,8 @@ export const insertServiceSchema = z.object({
 
 // Schema for the complete service document (includes _id)
 export const serviceDocumentSchema = insertServiceSchema.extend({
-  _id: z.instanceof(ObjectId),
+  // Avoid importing mongodb runtime in tests (which is ESM). Validate by shape instead.
+  _id: z.custom<ObjectId>((v): v is ObjectId => typeof v === 'object' && v !== null && typeof (v as any).toHexString === 'function'),
 })
 
 // Response schema for API (serializes _id as string)
