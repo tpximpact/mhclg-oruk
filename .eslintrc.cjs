@@ -1,7 +1,8 @@
 module.exports = {
 	env: {
 		browser: true,
-		es2021: true
+		es2021: true,
+		jest: true
 	},
 	extends: ['eslint:recommended', 'plugin:react/recommended', 'next/core-web-vitals', 'prettier'],
 	overrides: [
@@ -12,6 +13,13 @@ module.exports = {
 			files: ['.eslintrc.{js,cjs}'],
 			parserOptions: {
 				sourceType: 'script'
+			}
+		},
+		{
+			files: ['**/*.{spec,test}.{js,jsx,ts,tsx}'],
+			env: {
+				jest: true,
+				node: true
 			}
 		}
 	],
@@ -29,7 +37,7 @@ module.exports = {
 		'@next/next/no-img-element': 'off',
 		'react-hooks/exhaustive-deps': 'off',
 		'no-console': 'error',
-		'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }]
+		'no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
 	},
 
 	settings: {

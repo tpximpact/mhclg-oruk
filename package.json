@@ -2,6 +2,8 @@
 	"private": true,
 	"scripts": {
 		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:ci": "jest --ci",
 		"e2e": "npx playwright test",
 		"upd": "node 'src/scripts/update-frontmatter.js'",
 		"dev": "next dev",
@@ -49,6 +51,7 @@
 		"jest-environment-jsdom": "^30.2.0",
 		"js-yaml": "^4.1.0",
 		"prettier": "^3.6.2",
+		"ts-jest": "^29.4.5",
 		"ts-node": "^10.9.2",
 		"typescript": "5.9.3"
 	}
