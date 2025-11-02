@@ -3,8 +3,8 @@
 import { z } from 'zod'
 import type { ObjectId } from 'mongodb'
 
-// Schema for creating a new service
-export const insertServiceSchema = z.object({
+// Shared base fields for a Service (user-supplied fields)
+export const serviceBaseFieldsSchema = z.object({
   name: z.string().min(1).max(191),
   publisher: z.string().min(1).max(191),
   publisherUrl: z.string().url().max(191),
@@ -13,6 +13,13 @@ export const insertServiceSchema = z.object({
   developerUrl: z.string().url().max(191),
   serviceUrl: z.string().url().max(191),
   contactEmail: z.string().email().max(191),
+})
+
+// Narrow schema for client/server input (form + action)
+export const serviceInputSchema = serviceBaseFieldsSchema
+
+// Schema for inserting a new service into the DB (includes server-managed fields)
+export const insertServiceSchema = serviceBaseFieldsSchema.extend({
   status: z.enum(['pending', 'approved', 'rejected']),
   statusNote: z.string().max(1024).optional(),
   createdAt: z.date(),
@@ -45,6 +52,7 @@ export const serviceResponseSchema = z.object({
 
 // TypeScript types inferred from schemas
 export type InsertService = z.infer<typeof insertServiceSchema>
+export type ServiceInput = z.infer<typeof serviceInputSchema>
 export type ServiceDocument = z.infer<typeof serviceDocumentSchema>
 export type ServiceResponse = z.infer<typeof serviceResponseSchema>
 
