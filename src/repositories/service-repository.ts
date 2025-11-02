@@ -9,6 +9,7 @@ import {
   insertServiceSchema,
   serviceResponseSchema,
   toServiceResponse,
+  ServiceInput,
 } from '@/models/service'
 
 export class ServiceRepository extends BaseRepository<
@@ -16,12 +17,12 @@ export class ServiceRepository extends BaseRepository<
   ServiceResponse,
   InsertService
 > {
-  protected readonly collectionName = 'registrations'
+  protected readonly collectionName = 'services'
   protected readonly responseSchema = serviceResponseSchema
   protected readonly insertSchema = insertServiceSchema
   protected readonly updateSchema = insertServiceSchema.partial()
 
-  override async create(data: InsertService): Promise<ServiceResponse> {
+  async create(data: ServiceInput): Promise<ServiceResponse> {
     const now = new Date()
     return super.create({
       ...data,
