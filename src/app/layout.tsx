@@ -1,4 +1,6 @@
 import { Inter } from 'next/font/google'
+import { ReactNode } from 'react'
+import type { Metadata } from 'next'
 
 import '@/styles/reset.css'
 import '@/styles/tokens.css'
@@ -10,7 +12,6 @@ import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
-import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import { Crumbtrail } from '@/components/Crumbtrail'
@@ -18,12 +19,13 @@ import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
 import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
+import { CookieProvider } from '@/components/CookieProvider'
 
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/next'
 
 const font = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
 	generator: 'Next.js',
 	applicationName: 'Open Referral UK',
 	referrer: 'origin-when-cross-origin',
@@ -45,16 +47,24 @@ export const metadata = {
 	}
 }
 
-const Wrap = ({ children }) => (
+interface WrapProps {
+	children: ReactNode
+}
+
+const Wrap = ({ children }: WrapProps) => (
 	<html lang='en' id='html' className='no-js'>
 		<body className={`${font.className}`}>
-            {children}
-            <Analytics />
-        </body>
+			{children}
+			<Analytics />
+		</body>
 	</html>
 )
 
-export default async function RootLayout({ children }) {
+interface RootLayoutProps {
+	children: ReactNode
+}
+
+export default async function RootLayout({ children }: RootLayoutProps) {
 	// const headerList = await headers();
 	// const pathname = headerList.get("x-current-path");
 	// console.log ("--> " + pathname)
@@ -62,28 +72,28 @@ export default async function RootLayout({ children }) {
 	const items = getRootLayoutItems()
 	return (
 		<Wrap>
-			<div style={{ maxWidth: '100vw' }}>
-				{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
-				{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
-				<NoJsBanner />
-				<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
-				<LandmarkMain>
-					{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
-					{configValueToBoolean(process.env.USE_NAV) ? (
-						<Crumbtrail />
-					) : (
-						<div style={{ height: '4rem' }}></div>
-					)}
+			<CookieProvider>
+				<div style={{ maxWidth: '100vw' }}>
+					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
+					<NoJsBanner />
+					<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
+					<LandmarkMain>
+						{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
+						{configValueToBoolean(process.env.USE_NAV) ? (
+							<Crumbtrail />
+						) : (
+							<div style={{ height: '4rem' }}></div>
+						)}
 
-					{children}
-				</LandmarkMain>
-			</div>
-			<LandmarkContentInfo
-				items={items}
-				infoItems={getInfoMenuItems()}
-				showNav={configValueToBoolean(process.env.USE_NAV)}
-			/>
-			<NoJsFallback />
+						{children}
+					</LandmarkMain>
+				</div>
+				<LandmarkContentInfo
+					infoItems={getInfoMenuItems()}
+					showNav={configValueToBoolean(process.env.USE_NAV)}
+				/>
+				<NoJsFallback />
+			</CookieProvider>
 		</Wrap>
 	)
 }
