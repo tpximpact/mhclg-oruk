@@ -19,7 +19,8 @@ import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
 import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
 
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/next'
+import { CookieProvider } from '@/components/CookieProvider'
 
 const font = Inter({ subsets: ['latin'] })
 
@@ -48,9 +49,9 @@ export const metadata = {
 const Wrap = ({ children }) => (
 	<html lang='en' id='html' className='no-js'>
 		<body className={`${font.className}`}>
-            {children}
-            <Analytics />
-        </body>
+			{children}
+			<Analytics />
+		</body>
 	</html>
 )
 
@@ -62,28 +63,30 @@ export default async function RootLayout({ children }) {
 	const items = getRootLayoutItems()
 	return (
 		<Wrap>
-			<div style={{ maxWidth: '100vw' }}>
-				{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
-				{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
-				<NoJsBanner />
-				<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
-				<LandmarkMain>
-					{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
-					{configValueToBoolean(process.env.USE_NAV) ? (
-						<Crumbtrail />
-					) : (
-						<div style={{ height: '4rem' }}></div>
-					)}
+			<CookieProvider>
+				<div style={{ maxWidth: '100vw' }}>
+					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
+					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
+					<NoJsBanner />
+					<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
+					<LandmarkMain>
+						{configValueToBoolean(process.env.USE_NOWARRANTY) ? <NoWarranty /> : null}
+						{configValueToBoolean(process.env.USE_NAV) ? (
+							<Crumbtrail />
+						) : (
+							<div style={{ height: '4rem' }}></div>
+						)}
 
-					{children}
-				</LandmarkMain>
-			</div>
-			<LandmarkContentInfo
-				items={items}
-				infoItems={getInfoMenuItems()}
-				showNav={configValueToBoolean(process.env.USE_NAV)}
-			/>
-			<NoJsFallback />
+						{children}
+					</LandmarkMain>
+				</div>
+				<LandmarkContentInfo
+					items={items}
+					infoItems={getInfoMenuItems()}
+					showNav={configValueToBoolean(process.env.USE_NAV)}
+				/>
+				<NoJsFallback />
+			</CookieProvider>
 		</Wrap>
 	)
 }
