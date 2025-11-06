@@ -3,16 +3,13 @@ import redirects from './redirects.json'
 
 export function middleware(req: NextRequest) {
 	const url = req.nextUrl.clone()
-    
+
 	const {hostname, origin} = url;
 	
 	// Hostname based redirect
 	const targetPath = redirects[hostname as keyof typeof redirects]
 	if (targetPath) {
-		const isAbsolute = targetPath.startsWith('http')
-		const redirectUrl = isAbsolute
-			? new URL(targetPath)
-			: new URL(targetPath, origin)
+		const redirectUrl = new URL(targetPath)
 
 		return NextResponse.redirect(redirectUrl, 308)
 	}
