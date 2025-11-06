@@ -1,6 +1,6 @@
-@value breakpoint: 1024px;
+/* Replaced CSS Modules @value with literal breakpoint */
 
-@media (min-width: breakpoint) {
+@media (min-width: 1024px) {
 	.gantt {
 		width: 100%;
 		margin-top: 2rem;
