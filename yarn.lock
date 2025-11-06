@@ -497,10 +497,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@microlink/react-json-view@^1.24.0":
-  version "1.26.1"
-  resolved "https://registry.npmjs.org/@microlink/react-json-view/-/react-json-view-1.26.1.tgz"
-  integrity sha512-2H5QCYdZlJi+oN4YBiUYPPFTNh/KLCN9i9yz8NwmSkRqXSRXYtEVIRffc9L34jdopKGK/tK21SeuzXVJHQLkfQ==
+"@microlink/react-json-view@^1.27.0":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@microlink/react-json-view/-/react-json-view-1.27.0.tgz#2dde80d363bad6d36c97b0a591312ed65b563b34"
+  integrity sha512-/IwWmMuRR2edvxrRYRBJzjyi4vGvIn/ltM8wqesz+HLZsoGKIUgwiwEkblOLZqXj8BGWmeRnyAdCqf0uACqRFw==
   dependencies:
     react-base16-styling "~0.9.0"
     react-lifecycles-compat "~3.0.4"
@@ -764,22 +764,16 @@
   resolved "https://registry.npmjs.org/@types/base16/-/base16-1.0.5.tgz"
   integrity sha512-OzOWrTluG9cwqidEzC/Q6FAmIPcnZfm8BFRlIx0+UIUqnuAmi5OS88O0RpT3Yz6qdmqObvUhasrbNsCofE4W9A==
 
-"@types/cookie@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.npmjs.org/@types/cookie/-/cookie-0.6.0.tgz"
-  integrity sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==
-
 "@types/estree@^1.0.6":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.8.tgz#958b91c991b1867ced318bedea0e215ee050726e"
   integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
 
-"@types/hoist-non-react-statics@^3.3.5":
-  version "3.3.6"
-  resolved "https://registry.npmjs.org/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.6.tgz"
-  integrity sha512-lPByRJUer/iN/xa4qpyL0qmL11DqNW81iU/IG1S3uvRUq4oKagz8VCxZjiWkumgt66YT3vOdDgZ0o32sGKtCEw==
+"@types/hoist-non-react-statics@^3.3.6":
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.7.tgz#306e3a3a73828522efa1341159da4846e7573a6c"
+  integrity sha512-PQTyIulDkIDro8P+IHbKCsw7U2xxBYflVzW/FgWdCAePD9xGSidgA76/GeJ6lBKoblyhf9pBY763gbrN+1dI8g==
   dependencies:
-    "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
 "@types/json-schema@^7.0.15":
@@ -809,7 +803,7 @@
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.3.tgz"
   integrity sha512-rJXC08OG0h3W6wDMFxQrZF00Kq6qQvw0djHRdzl3U5DnIERz0MRce3WVc7IS6JYBwtaP/DwYtRRjVlvivNveKg==
 
-"@types/react@*", "@types/react@^19.0.10":
+"@types/react@^19.0.10":
   version "19.1.3"
   resolved "https://registry.npmjs.org/@types/react/-/react-19.1.3.tgz"
   integrity sha512-dLWQ+Z0CkIvK1J8+wrDPwGxEYFA4RAyHoZPxHVGspYmFVnwGSNT24cGIhFJrtfRnWVuW8X7NO52gCXmhkVUWGQ==
@@ -1037,11 +1031,6 @@ ajv@^6.12.4:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
-
-almost-equal@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/almost-equal/-/almost-equal-1.1.0.tgz"
-  integrity sha512-0V/PkoculFl5+0Lp47JoxUcO0xSxhIBvm+BxHdD/OgXNmdRpRHCFnKVuUoWyS9EzQP+otSGv0m9Lb4yVkQBn2A==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -1324,11 +1313,6 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-clamp@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/clamp/-/clamp-1.0.1.tgz"
-  integrity sha512-kgMuFyE78OC6Dyu3Dy7vcx4uy97EIbVxJB/B0eJ3bUNAkwdNcxYzgKltnyADiYwsR7SEqkkUPsEUT//OVS6XMA==
-
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
@@ -1348,15 +1332,13 @@ color-convert@^2.0.1:
   dependencies:
     color-name "~1.1.4"
 
-color-interpolate@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/color-interpolate/-/color-interpolate-1.0.5.tgz"
-  integrity sha512-EcWwYtBJdbeHyYq/y5QwVWLBUm4s7+8K37ycgO9OdY6YuAEa0ywAY+ItlAxE1UO5bXW4ugxNhStTV3rsTZ35ZA==
+color-interpolate@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/color-interpolate/-/color-interpolate-2.0.0.tgz#3ccff204e2684f6e4357919a65ee0f40ccc246c4"
+  integrity sha512-uR8SNQ9ZnNuJbh30CsaLjN14Lcvbm7iQxDTuN0ODUJE+pLNgCX7vegen+59rXx7Cwa2aWr5KDW6LZguxx0FcDw==
   dependencies:
-    clamp "^1.0.1"
-    color-parse "^1.2.0"
-    color-space "^1.14.3"
-    lerp "^1.0.3"
+    color-parse "^2.0.2"
+    color-space "^2.3.2"
 
 color-name@1.1.3:
   version "1.1.3"
@@ -1368,20 +1350,22 @@ color-name@^1.0.0, color-name@~1.1.4:
   resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-color-parse@^1.2.0:
-  version "1.4.3"
-  resolved "https://registry.npmjs.org/color-parse/-/color-parse-1.4.3.tgz"
-  integrity sha512-BADfVl/FHkQkyo8sRBwMYBqemqsgnu7JZAwUgvBvuwwuNUZAhSvLTbsEErS5bQXzOjDR0dWzJ4vXN2Q+QoPx0A==
-  dependencies:
-    color-name "^1.0.0"
+color-name@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/color-name/-/color-name-2.0.2.tgz#85054825a23e6d6f81d3503f660c4c4a2a15f04f"
+  integrity sha512-9vEt7gE16EW7Eu7pvZnR0abW9z6ufzhXxGXZEVU9IqPdlsUiMwJeJfRtq0zePUmnbHGT9zajca7mX8zgoayo4A==
 
-color-space@^1.14.3:
-  version "1.16.0"
-  resolved "https://registry.npmjs.org/color-space/-/color-space-1.16.0.tgz"
-  integrity sha512-A6WMiFzunQ8KEPFmj02OnnoUnqhmSaHaZ/0LVFcPTdlvm8+3aMJ5x1HRHy3bDHPkovkf4sS0f4wsVvwk71fKkg==
+color-parse@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/color-parse/-/color-parse-2.0.2.tgz#37b46930424924060988edf25b24e6ffb4a1dc3f"
+  integrity sha512-eCtOz5w5ttWIUcaKLiktF+DxZO1R9KLNY/xhbV6CkhM7sR3GhVghmt6X6yOnzeaM24po+Z9/S1apbXMwA3Iepw==
   dependencies:
-    hsluv "^0.0.3"
-    mumath "^3.3.4"
+    color-name "^2.0.0"
+
+color-space@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/color-space/-/color-space-2.3.2.tgz#d8c72bab09ef26b98abebc58bc1586ce3073033d"
+  integrity sha512-BcKnbOEsOarCwyoLstcoEztwT0IJxqqQkNwDuA3a65sICvvHL2yoeV13psoDFh5IuiOMnIOKdQDwB4Mk3BypiA==
 
 color-string@^1.6.0:
   version "1.9.1"
@@ -1409,10 +1393,10 @@ convert-source-map@^2.0.0:
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-2.0.0.tgz#4b560f649fc4e918dd0ab75cf4961e8bc882d82a"
   integrity sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==
 
-cookie@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz"
-  integrity sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==
+cookie@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.2.tgz#27360701532116bd3f1f9416929d176afe1e4610"
+  integrity sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==
 
 create-require@^1.1.0:
   version "1.1.1"
@@ -2407,11 +2391,6 @@ hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   dependencies:
     react-is "^16.7.0"
 
-hsluv@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/hsluv/-/hsluv-0.0.3.tgz"
-  integrity sha512-08iL2VyCRbkQKBySkSh6m8zMUa3sADAxGVWs3Z1aPcUkTJeK0ETG4Fc27tEmQBGUAXZjIsXOZqBvacuVNSC/fQ==
-
 html-dom-parser@5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/html-dom-parser/-/html-dom-parser-5.1.1.tgz"
@@ -2420,15 +2399,15 @@ html-dom-parser@5.1.1:
     domhandler "5.0.3"
     htmlparser2 "10.0.0"
 
-html-react-parser@^5.2.0:
-  version "5.2.5"
-  resolved "https://registry.npmjs.org/html-react-parser/-/html-react-parser-5.2.5.tgz"
-  integrity sha512-bRPdv8KTqG9CEQPMNGksDqmbiRfVQeOidry8pVetdh/1jQ1Edx4KX5m0lWvDD89Pt4CqTYjK1BLz6NoNVxN/Uw==
+html-react-parser@^5.2.8:
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-5.2.8.tgz#96bc08c669c8ffb1f24e1f256924eaa1de52e4b6"
+  integrity sha512-09WaI81tbpwhXWeMe1m9VptZVJUcigo0l59zVt+2HUIQT7+baU38/oNhllj6MKhOuGXqh0nrlwOgxbxbm6xXHw==
   dependencies:
     domhandler "5.0.3"
     html-dom-parser "5.1.1"
     react-property "2.0.2"
-    style-to-js "1.1.16"
+    style-to-js "1.1.19"
 
 htmlparser2@10.0.0:
   version "10.0.0"
@@ -2468,10 +2447,10 @@ indent-string@^4.0.0:
   resolved "https://registry.npmjs.org/indent-string/-/indent-string-4.0.0.tgz"
   integrity sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==
 
-inline-style-parser@0.2.4:
-  version "0.2.4"
-  resolved "https://registry.npmjs.org/inline-style-parser/-/inline-style-parser-0.2.4.tgz"
-  integrity sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==
+inline-style-parser@0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/inline-style-parser/-/inline-style-parser-0.2.6.tgz#e6bbb5288a635f6284a6249ce754da55c4bd1ff5"
+  integrity sha512-gtGXVaBdl5mAes3rPcMedEBm12ibjt1kDMFfheul1wUAOVEJW60voNdMVzVkfLN06O7ZaD/rxhfKgtlgtTbMjg==
 
 internal-slot@^1.1.0:
   version "1.1.0"
@@ -2794,11 +2773,6 @@ language-tags@^1.0.9:
   dependencies:
     language-subtag-registry "^0.3.20"
 
-lerp@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/lerp/-/lerp-1.0.3.tgz"
-  integrity sha512-70Rh4rCkJDvwWiTsyZ1HmJGvnyfFah4m6iTux29XmasRiZPDBpT9Cfa4ai73+uLZxnlKruUS62jj2lb11wURiA==
-
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz"
@@ -2853,10 +2827,10 @@ make-error@^1.1.1:
   resolved "https://registry.npmjs.org/make-error/-/make-error-1.3.6.tgz"
   integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
 
-marked@^15.0.3:
-  version "15.0.11"
-  resolved "https://registry.npmjs.org/marked/-/marked-15.0.11.tgz"
-  integrity sha512-1BEXAU2euRCG3xwgLVT1y0xbJEld1XOrmRJpUwRCcy7rxhSCwMrmEu9LXoPhHSCJG41V7YcQ2mjKRr5BA3ITIA==
+marked@^16.4.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-16.4.1.tgz#db37c878cfa28fa57b8dd471fe92a83282911052"
+  integrity sha512-ntROs7RaN3EvWfy3EZi14H4YxmT6A5YvywfhO+0pm+cH/dnSQRmdAmoFIc3B9aiwTehyk7pESH4ofyBY+V5hZg==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"
@@ -2904,13 +2878,6 @@ ms@^2.1.1, ms@^2.1.3:
   version "2.1.3"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
-
-mumath@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.npmjs.org/mumath/-/mumath-3.3.4.tgz"
-  integrity sha512-VAFIOG6rsxoc7q/IaY3jdjmrsuX9f15KlRLYTHmixASBZkZEKC1IFqE2BC5CdhXmK6WLM1Re33z//AGmeRI6FA==
-  dependencies:
-    almost-equal "^1.1.0"
 
 nanoid@^3.3.6:
   version "3.3.11"
@@ -3177,14 +3144,14 @@ react-cookie-consent@^9.0.0:
   dependencies:
     js-cookie "^2.2.1"
 
-react-cookie@^7.2.2:
-  version "7.2.2"
-  resolved "https://registry.npmjs.org/react-cookie/-/react-cookie-7.2.2.tgz"
-  integrity sha512-e+hi6axHcw9VODoeVu8WyMWyoosa1pzpyjfvrLdF7CexfU+WSGZdDuRfHa4RJgTpfv3ZjdIpHE14HpYBieHFhg==
+react-cookie@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/react-cookie/-/react-cookie-8.0.1.tgz#0d7f5112c9003b61c70d3d53f1f0a5b741e9f2e9"
+  integrity sha512-QNdAd0MLuAiDiLcDU/2s/eyKmmfMHtjPUKJ2dZ/5CcQ9QKUium4B3o61/haq6PQl/YWFqC5PO8GvxeHKhy3GFA==
   dependencies:
-    "@types/hoist-non-react-statics" "^3.3.5"
+    "@types/hoist-non-react-statics" "^3.3.6"
     hoist-non-react-statics "^3.3.2"
-    universal-cookie "^7.0.0"
+    universal-cookie "^8.0.0"
 
 react-dom@^19.0.0:
   version "19.1.0"
@@ -3193,10 +3160,10 @@ react-dom@^19.0.0:
   dependencies:
     scheduler "^0.26.0"
 
-react-hot-toast@^2.5.1:
-  version "2.5.2"
-  resolved "https://registry.npmjs.org/react-hot-toast/-/react-hot-toast-2.5.2.tgz"
-  integrity sha512-Tun3BbCxzmXXM7C+NI4qiv6lT0uwGh4oAfeJyNOjYUejTsm35mK9iCaYLGv8cBz9L5YxZLx/2ii7zsIwPtPUdw==
+react-hot-toast@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-hot-toast/-/react-hot-toast-2.6.0.tgz#4ada6ed3c75c5e42a90d562f55665ff37ee1442b"
+  integrity sha512-bH+2EBMZ4sdyou/DPrfgIouFpcRLCJ+HoCA32UoAYHn6T3Ur5yfcDCeSr5mwldl6pFOsiocmrXMuoCJ1vV8bWg==
   dependencies:
     csstype "^3.1.3"
     goober "^2.1.16"
@@ -3617,19 +3584,19 @@ strip-json-comments@^3.1.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-style-to-js@1.1.16:
-  version "1.1.16"
-  resolved "https://registry.npmjs.org/style-to-js/-/style-to-js-1.1.16.tgz"
-  integrity sha512-/Q6ld50hKYPH3d/r6nr117TZkHR0w0kGGIVfpG9N6D8NymRPM9RqCUv4pRpJ62E5DqOYx2AFpbZMyCPnjQCnOw==
+style-to-js@1.1.19:
+  version "1.1.19"
+  resolved "https://registry.yarnpkg.com/style-to-js/-/style-to-js-1.1.19.tgz#f3f671e74764c1e8eebfba95a9a672acf5c19011"
+  integrity sha512-Ev+SgeqiNGT1ufsXyVC5RrJRXdrkRJ1Gol9Qw7Pb72YCKJXrBvP0ckZhBeVSrw2m06DJpei2528uIpjMb4TsoQ==
   dependencies:
-    style-to-object "1.0.8"
+    style-to-object "1.0.12"
 
-style-to-object@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/style-to-object/-/style-to-object-1.0.8.tgz"
-  integrity sha512-xT47I/Eo0rwJmaXC4oilDGDWLohVhR6o/xAQcPQN8q6QBuZVL8qMYL85kLmST5cPjAorwvqIA4qXTRQoYHaL6g==
+style-to-object@1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/style-to-object/-/style-to-object-1.0.12.tgz#03a30e7f4e555bf50845f8b55c7d5bc2248e03f0"
+  integrity sha512-ddJqYnoT4t97QvN2C95bCgt+m7AAgXjVnkk/jxAfmp7EAB8nnqqZYEbMd3em7/vEomDb2LAQKAy1RFfv41mdNw==
   dependencies:
-    inline-style-parser "0.2.4"
+    inline-style-parser "0.2.6"
 
 styled-jsx@5.1.6:
   version "5.1.6"
@@ -3786,13 +3753,12 @@ undici-types@~6.21.0:
   resolved "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz"
   integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
-universal-cookie@^7.0.0:
-  version "7.2.2"
-  resolved "https://registry.npmjs.org/universal-cookie/-/universal-cookie-7.2.2.tgz"
-  integrity sha512-fMiOcS3TmzP2x5QV26pIH3mvhexLIT0HmPa3V7Q7knRfT9HG6kTwq02HZGLPw0sAOXrAmotElGRvTLCMbJsvxQ==
+universal-cookie@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-8.0.1.tgz#19263fcda6889978a081c610a90fc395eeaeec64"
+  integrity sha512-B6ks9FLLnP1UbPPcveOidfvB9pHjP+wekP2uRYB9YDfKVpvcjKgy1W5Zj+cEXJ9KTPnqOKGfVDQBmn8/YCQfRg==
   dependencies:
-    "@types/cookie" "^0.6.0"
-    cookie "^0.7.2"
+    cookie "^1.0.2"
 
 unrs-resolver@^1.6.2:
   version "1.7.2"
