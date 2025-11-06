@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
 				has: [
 					{
 						type: 'host',
-						value: 'validator.:domain*'
+						value: 'validator.openreferral.org'
 					}
 				],
 				destination: '/developers/validator',
@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
 				has: [
 					{
 						type: 'host',
-						value: 'developers.:domain*'
+						value: 'developers.openreferraluk.org'
 					}
 				],
 				destination: '/developers',
@@ -39,7 +39,7 @@ const nextConfig: NextConfig = {
 				has: [
 					{
 						type: 'host',
-						value: 'docs.:domain*'
+						value: 'docs.openreferraluk.org'
 					}
 				],
 				destination: '/developers/api',
@@ -50,7 +50,7 @@ const nextConfig: NextConfig = {
 				has: [
 					{
 						type: 'host',
-						value: 'taxonomy.:domain*'
+						value: 'taxonomy.openreferraluk.org'
 					}
 				],
 				destination: '/developers/overview',
@@ -61,7 +61,7 @@ const nextConfig: NextConfig = {
 				has: [
 					{
 						type: 'host',
-						value: 'schema.:domain*'
+						value: 'schema.openreferraluk.org'
 					}
 				],
 				destination: '/developers/schemata',
@@ -72,7 +72,7 @@ const nextConfig: NextConfig = {
 				has: [
 					{
 						type: 'host',
-						value: 'forum.:domain*'
+						value: 'forum.openreferraluk.org'
 					}
 				],
 				destination: 'https://forum.openreferral.org/',
