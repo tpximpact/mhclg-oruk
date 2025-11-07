@@ -53,7 +53,7 @@ describe('ServiceRepository', () => {
 
 	describe('create', () => {
 		it('should create a new service', async () => {
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			 
 			const { _id, ...insertData } = testService
 			mockCollection.insertOne.mockResolvedValueOnce({ acknowledged: true, insertedId: testId })
 			mockCollection.findOne.mockResolvedValueOnce(testService)
