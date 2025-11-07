@@ -39,7 +39,7 @@ export abstract class BaseRepository<
         // `require` may throw if the driver is ESM in the environment running the tests
         // In that case we leave the id as the string; tests mock the collection and don't
         // need a real ObjectId instance.
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
+         
         const { ObjectId: ObjId } = require('mongodb') as any
         _id = new ObjId(id)
       } catch {
@@ -85,7 +85,7 @@ export abstract class BaseRepository<
     let _id: string | ObjectId
     if (typeof id === 'string') {
       try {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
+         
         const { ObjectId: ObjId } = require('mongodb') as any
         _id = new ObjId(id)
       } catch {
@@ -120,7 +120,7 @@ export abstract class BaseRepository<
     let _id: string | ObjectId
     if (typeof id === 'string') {
       try {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
+         
         const { ObjectId: ObjId } = require('mongodb') as any
         _id = new ObjId(id)
       } catch {
