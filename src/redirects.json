@@ -1,0 +1,8 @@
+{
+    "validator.openreferraluk.org": "/developers/validator",
+    "developers.openreferraluk.org": "/developers",
+    "docs.openreferraluk.org": "/developers/api",
+    "taxonomy.openreferraluk.org": "/developers/overview",
+    "schema.openreferraluk.org": "/developers/schemata",
+    "forum.openreferraluk.org": "https://forum.openreferral.org"
+}
