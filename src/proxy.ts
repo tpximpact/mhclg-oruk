@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import redirects from './redirects.json'
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
 	const url = req.nextUrl.clone()
-    
-	const {hostname, origin} = url;
-	
+
+	const { hostname, origin } = url
+
 	// Hostname based redirect
 	const targetPath = redirects[hostname as keyof typeof redirects]
 	if (targetPath) {
@@ -16,7 +16,7 @@ export function middleware(req: NextRequest) {
 
 		return NextResponse.redirect(redirectUrl, 308)
 	}
-	
+
 	return NextResponse.next()
 }
 
