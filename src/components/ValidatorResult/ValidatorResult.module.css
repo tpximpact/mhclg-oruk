@@ -92,7 +92,7 @@
 .endpointContainer {
 	padding: 1rem;
 	background: var(--validatorResult-background);
-	.display: flex;
+	display: flex;
 	justify-content: space-between;
 
 	.endpointContainerLeft {

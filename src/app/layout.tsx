@@ -12,7 +12,6 @@ import { Header } from '@/components/Header'
 import { LandmarkMain } from '@/components/LandmarkMain'
 import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
 import { Cookies } from '@/components/Cookies'
-import Axe from '@/components/Axe'
 import { NoJsBanner } from '@/components/NoJsBanner'
 import { NoJsFallback } from '@/components/NoJsFallback'
 import { Crumbtrail } from '@/components/Crumbtrail'
@@ -75,7 +74,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 		<Wrap>
 			<CookieProvider>
 				<div style={{ maxWidth: '100vw' }}>
-					{configValueToBoolean(process.env.USE_AXE) ? <Axe /> : null}
 					{configValueToBoolean(process.env.USE_COOKIES) ? <Cookies /> : null}
 					<NoJsBanner />
 					<Header items={items} enableMenu={configValueToBoolean(process.env.USE_NAV)} />
