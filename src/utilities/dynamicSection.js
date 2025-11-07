@@ -69,7 +69,7 @@ const readFile = contentPath => {
 	try {
 		return fs.readFileSync(join(CONTENT_ROOT, contentPath), 'utf8')
 	} catch (err) {
-		// eslint-disable-next-line no-console
+		 
 		console.error(err)
 		notFound()
 	}
@@ -81,7 +81,7 @@ const statFile = contentPath => {
 	try {
 		return fs.statSync(join(CONTENT_ROOT, contentPath))
 	} catch (err) {
-		// eslint-disable-next-line no-console
+		 
 		console.error(err)
 		return null
 	}

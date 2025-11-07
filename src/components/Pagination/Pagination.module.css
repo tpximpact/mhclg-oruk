@@ -45,8 +45,8 @@
 }
 
 .pagination li[aria-current='page'] {
-	background-color: var(theme-ink);
+	background-color: var(--theme-ink);
 }
 .pagination li[aria-current='page'] * {
-	color: var(theme-paper) !important;
+	color: var(--theme-paper) !important;
 }

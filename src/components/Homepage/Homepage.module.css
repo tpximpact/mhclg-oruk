@@ -100,9 +100,9 @@
 	margin: 0;
 }
 
-@value breakpoint: 1024px;
+/* Replaced CSS Modules @value with literal breakpoint */
 
-@media (max-width: breakpoint) {
+@media (max-width: 1024px) {
 	.Logo {
 		display: none;
 	}

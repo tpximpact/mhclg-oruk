@@ -16,7 +16,7 @@ export const getSubdirectories = directoryPath => {
 			}
 		})
 	} catch (error) {
-		// eslint-disable-next-line no-console
+		 
 		console.error(`Error reading directory: ${error}`)
 	}
 
