@@ -1,6 +1,56 @@
 import Link from 'next/link'
-import type { ServiceData } from './types'
+import type { ServiceData, SortField, SortDirection } from './types'
 import styles from './ServicesTable.module.css'
+
+interface MobileSortSelectorProps {
+  currentSort: SortField
+  currentDirection: SortDirection
+  onSort: (field: SortField) => void
+}
+
+export function MobileSortSelector({ currentSort, currentDirection, onSort }: MobileSortSelectorProps) {
+  const sortOptions: { value: SortField; label: string }[] = [
+    { value: 'name', label: 'Name' },
+    { value: 'publisher', label: 'Publisher' },
+    { value: 'developer', label: 'Developer' },
+    { value: 'testDate', label: 'Last Tested' }
+  ]
+
+  const currentOption = sortOptions.find(option => option.value === currentSort)
+  const directionLabel = currentDirection === 'asc' ? 'A-Z' : 'Z-A'
+
+  return (
+    <div className={styles.mobileSortContainer}>
+      <label className={styles.sortLabel} htmlFor="mobile-sort">
+        Sort by:
+      </label>
+      <div className={styles.sortControls}>
+        <select
+          id="mobile-sort"
+          className={styles.sortSelect}
+          value={currentSort}
+          onChange={(e) => onSort(e.target.value as SortField)}
+        >
+          {sortOptions.map(option => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <button
+          className={styles.sortDirectionButton}
+          onClick={() => onSort(currentSort)}
+          aria-label={`Sort ${currentDirection === 'asc' ? 'descending' : 'ascending'}`}
+        >
+          <span className={styles.sortDirectionText}>{directionLabel}</span>
+          <span className={styles.sortDirectionIcon}>
+            {currentDirection === 'asc' ? '↑' : '↓'}
+          </span>
+        </button>
+      </div>
+    </div>
+  )
+}
 
 interface ServiceCardProps {
   service: ServiceData

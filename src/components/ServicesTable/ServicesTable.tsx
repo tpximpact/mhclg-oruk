@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { ServicesTableProps, SortConfig, SortField, SortDirection, TableHeaderConfig } from './types'
 import { useSortedData, usePaginatedData } from './hooks'
-import { TableHeader, TableCell, ServiceCard } from './TableComponents'
+import { TableHeader, TableCell, ServiceCard, MobileSortSelector } from './TableComponents'
 import { Pagination } from './Pagination'
 import styles from './ServicesTable.module.css'
 
@@ -62,6 +62,11 @@ export function ServicesTable({
     <div className={styles.table}>
       {/* Mobile Card View */}
       <div className={styles.mobileView}>
+        <MobileSortSelector
+          currentSort={sortConfig.field}
+          currentDirection={sortConfig.direction}
+          onSort={handleSort}
+        />
         {paginationInfo.paginatedData.length > 0 ? (
           paginationInfo.paginatedData.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
