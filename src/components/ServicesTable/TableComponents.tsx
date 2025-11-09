@@ -2,6 +2,65 @@ import Link from 'next/link'
 import type { ServiceData } from './types'
 import styles from './ServicesTable.module.css'
 
+interface ServiceCardProps {
+  service: ServiceData
+  index: number
+}
+
+export function ServiceCard({ service, index }: ServiceCardProps) {
+  const renderField = (label: string, data: ServiceData[keyof ServiceData]) => {
+    if (!data || !data.value || data.value === 'N/A') return null
+
+    const displayValue = String(data.value)
+    const { url } = data as { value: string; url?: string }
+
+    return (
+      <div className={styles.cardField}>
+        <dt className={styles.cardLabel}>{label}:</dt>
+        <dd className={styles.cardValue}>
+          {url ? (
+            url.startsWith('http') ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${styles.link} ${styles.externalLink}`}
+              >
+                {displayValue}
+              </a>
+            ) : (
+              <Link href={url} className={styles.link}>
+                {displayValue}
+              </Link>
+            )
+          ) : (
+            <span>{displayValue}</span>
+          )}
+        </dd>
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles.serviceCard}>
+      <dl className={styles.cardContent}>
+        {renderField('Name', service.name)}
+        {renderField('Publisher', service.publisher)}
+        {renderField('Developer', service.developer)}
+        {renderField('Last Tested', service.testDate)}
+        {service.comment && service.comment.value && service.comment.value !== 'N/A' && (
+          <div className={styles.cardField}>
+            <dt className={styles.cardLabel}>Description:</dt>
+            <dd className={`${styles.cardValue} ${styles.cardDescription}`}>
+              {service.comment.value}
+            </dd>
+          </div>
+        )}
+      </dl>
+    </div>
+  )
+}
+
 interface TableCellProps {
   data: ServiceData[keyof ServiceData]
   className?: string

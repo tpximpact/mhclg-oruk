@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { ServicesTableProps, SortConfig, SortField, SortDirection, TableHeaderConfig } from './types'
 import { useSortedData, usePaginatedData } from './hooks'
-import { TableHeader, TableCell } from './TableComponents'
+import { TableHeader, TableCell, ServiceCard } from './TableComponents'
 import { Pagination } from './Pagination'
 import styles from './ServicesTable.module.css'
 
@@ -60,46 +60,61 @@ export function ServicesTable({
 
   return (
     <div className={styles.table}>
-      {/* Table */}
-      <div className={styles.tableContainer}>
-        <table className={styles.htmlTable}>
-          <thead className={styles.thead}>
-            <tr className={styles.tr}>
-              {TABLE_HEADERS.map((header) => (
-                <TableHeader
-                  key={header.key}
-                  label={header.label}
-                  sortable={header.sortable}
-                  currentSort={getSortDirection(header.key)}
-                  onSort={() => header.sortable && handleSort(header.key)}
-                  className={header.className}
-                />
-              ))}
-            </tr>
-          </thead>
-          <tbody className={styles.tbody}>
-            {paginationInfo.paginatedData.length > 0 ? (
-              paginationInfo.paginatedData.map((service, index) => (
-                <tr key={index} className={styles.tr}>
-                  {TABLE_HEADERS.map((header) => (
-                    <TableCell
-                      key={`${index}-${header.key}`}
-                      data={service[header.key]}
-                      columnKey={header.key}
-                      className={`${styles.td} ${header.className || ''}`}
-                    />
-                  ))}
-                </tr>
-              ))
-            ) : (
+      {/* Mobile Card View */}
+      <div className={styles.mobileView}>
+        {paginationInfo.paginatedData.length > 0 ? (
+          paginationInfo.paginatedData.map((service, index) => (
+            <ServiceCard key={index} service={service} index={index} />
+          ))
+        ) : (
+          <div className={styles.emptyState}>
+            No services found.
+          </div>
+        )}
+      </div>
+
+      {/* Desktop Table View */}
+      <div className={styles.desktopView}>
+        <div className={styles.tableContainer}>
+          <table className={styles.htmlTable}>
+            <thead className={styles.thead}>
               <tr className={styles.tr}>
-                <td colSpan={TABLE_HEADERS.length} className={styles.emptyState}>
-                  No services found.
-                </td>
+                {TABLE_HEADERS.map((header) => (
+                  <TableHeader
+                    key={header.key}
+                    label={header.label}
+                    sortable={header.sortable}
+                    currentSort={getSortDirection(header.key)}
+                    onSort={() => header.sortable && handleSort(header.key)}
+                    className={header.className}
+                  />
+                ))}
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className={styles.tbody}>
+              {paginationInfo.paginatedData.length > 0 ? (
+                paginationInfo.paginatedData.map((service, index) => (
+                  <tr key={index} className={styles.tr}>
+                    {TABLE_HEADERS.map((header) => (
+                      <TableCell
+                        key={`${index}-${header.key}`}
+                        data={service[header.key]}
+                        columnKey={header.key}
+                        className={`${styles.td} ${header.className || ''}`}
+                      />
+                    ))}
+                  </tr>
+                ))
+              ) : (
+                <tr className={styles.tr}>
+                  <td colSpan={TABLE_HEADERS.length} className={styles.emptyState}>
+                    No services found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* Pagination */}
