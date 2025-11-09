@@ -81,22 +81,20 @@ const Td = ({ children, className, ...props }) => (
 )
 
 const getCellClassFordataType = dataType => {
-	let result
 	switch (dataType) {
 		case 'oruk:dataType.string':
-			result = styles.string
-			break
+			return styles.string
 		case 'oruk:dataType.numeric':
-			result = styles.numeric
-			break
+			return styles.numeric
 		case 'oruk:dataType.success':
-			result = null
-			break
+			return null
 		case 'oruk:dataType.dateTime':
-			result = styles.date
-			break
+			return styles.date
+		case 'oruk:dataType.markdown':
+			return styles.markdown || ''
+		default:
+			return ''
 	}
-	return <>{result}</>
 }
 
 const DisplayDate = ({ d }) => <span suppressHydrationWarning>{formatDate(d)}</span>
@@ -112,7 +110,15 @@ const truncate = (str, numWords) => {
 const MAX_TEXT_LENGTH_WORDCOUNT = 20
 
 const CellContent = ({ dataType, label, payload }) => {
-	let result
+	// Handle case where payload might not be an object
+	if (!payload || typeof payload !== 'object') {
+		return (
+			<>
+				<span className={styles.label}>{label}</span>
+				<span>{String(payload || '')}</span>
+			</>
+		)
+	}
 
 	let val = payload.value
 	const target = payload.url
@@ -120,18 +126,19 @@ const CellContent = ({ dataType, label, payload }) => {
 	// if the payload doesnt have a value
 	// but does have a url, use that as the value
 	if (val === undefined && target) {
-		val = <span className={styles.url}>{target}</span>
+		val = target
 	}
 
+	let result
 	switch (dataType) {
 		case 'oruk:dataType.markdown':
-			result = <span className={styles.markdown}>{truncate(val, MAX_TEXT_LENGTH_WORDCOUNT)}</span>
+			result = <span className={styles.markdown}>{truncate(String(val || ''), MAX_TEXT_LENGTH_WORDCOUNT)}</span>
 			break
 		case 'oruk:dataType.string':
-			result = val
+			result = String(val || '')
 			break
 		case 'oruk:dataType.numeric':
-			result = val
+			result = String(val || '')
 			break
 		case 'oruk:dataType.success':
 			result = <StatusReadout pass={val} />
@@ -139,13 +146,18 @@ const CellContent = ({ dataType, label, payload }) => {
 		case 'oruk:dataType.dateTime':
 			result = <DisplayDate d={val} />
 			break
+		default:
+			result = String(val || '')
+			break
 	}
+
 	const str = (
 		<>
 			<span className={styles.label}>{label}</span>
 			<span>{typeof result === 'string' && result.startsWith('http') ? '[view]' : result}</span>
 		</>
 	)
+
 	if (target) {
 		const offsite = target.startsWith('http')
 		if (offsite) {
