@@ -177,7 +177,26 @@
   font-size: 0.875rem;
 }
 
-/* Responsive classes */
+/* Mobile vs Desktop View Toggle */
+.mobileView {
+  display: block;
+}
+
+.desktopView {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobileView {
+    display: none;
+  }
+  
+  .desktopView {
+    display: block;
+  }
+}
+
+/* Responsive classes for table columns */
 .hiddenOnMobile {
   display: none;
 }
@@ -204,6 +223,77 @@
     display: table-cell;
   }
 }
+
+/* Mobile Card Styles */
+.serviceCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.serviceCard:last-child {
+  margin-bottom: 0;
+}
+
+.cardContent {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cardField:first-child .cardLabel {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cardField:first-child .cardValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.cardLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cardValue {
+  font-size: 0.875rem;
+  color: #111827;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cardDescription {
+  white-space: normal;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.cardValue .link {
+  word-break: break-all;
+}
+
+/*.externalLink::after {
+  content: ' ↗';
+  font-size: 0.75rem;
+  color: #6b7280;
+}*/
 
 /* Extra large screens - optimize spacing */
 @media (min-width: 1280px) {
