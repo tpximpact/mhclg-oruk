@@ -12,11 +12,11 @@ export const serviceBaseFieldsSchema = z.object({
 	developer: z.string().min(1).max(191),
 	developerUrl: z.url().max(191),
 	service: z.string().min(1).max(191),
-  serviceUrl: z.url().max(191),
+	serviceUrl: z.url().max(191),
 	contactEmail: z.email().max(191),
-  testDate: z.date().optional(),
+	testDate: z.date().optional(),
 	lastTested: z.date().optional(),
-  active: z.boolean().optional().default(false)
+	active: z.boolean().optional().default(false)
 })
 
 // Narrow schema for client/server input (form + action)
@@ -36,7 +36,19 @@ export const serviceDocumentSchema = insertServiceSchema.extend({
 	_id: z.custom<ObjectId>(
 		(v): v is ObjectId =>
 			typeof v === 'object' && v !== null && typeof (v as any).toHexString === 'function'
-	)
+	),
+	schemaVersion: z.object({
+		value: z.string().max(191)
+	}),
+	statusIsUp: z.object({
+		value: z.boolean().optional().default(false)
+	}),
+	statusIsValid: z.object({
+		value: z.boolean().optional().default(false)
+	}),
+	statusOverall: z.object({
+		value: z.boolean().optional().default(false)
+	})
 })
 
 // Response schema for API (serializes _id as string)
@@ -48,17 +60,21 @@ export const serviceResponseSchema = z.object({
 	description: z.string(),
 	developer: z.string(),
 	developerUrl: z.string(),
-  service: z.string(),
+	service: z.string(),
 	serviceUrl: z.string(),
 	contactEmail: z.string(),
 	status: z.enum(['pending', 'approved', 'rejected']),
 	statusNote: z.string().optional(),
+	statusOverall: z.boolean().optional().default(false),
 	createdAt: z.date(),
 	testDate: z.date().optional(),
 	lastTested: z.date().optional(),
 	updatedAt: z.date(),
 	updateLink: z.string(),
-	active: z.boolean().optional().default(false)
+	active: z.boolean().optional().default(false),
+	schemaVersion: z.string().optional(),
+	statusIsUp: z.boolean().optional().default(false),
+	statusIsValid: z.boolean().optional().default(false)
 })
 
 // TypeScript types inferred from schemas
@@ -77,16 +93,20 @@ export function toServiceResponse(doc: ServiceDocument): ServiceResponse {
 		description: doc.description,
 		developer: doc.developer,
 		developerUrl: doc.developerUrl,
-    service: doc.service,
+		service: doc.service,
 		serviceUrl: doc.serviceUrl,
 		contactEmail: doc.contactEmail,
 		status: doc.status,
 		statusNote: doc.statusNote,
+		statusOverall: Boolean(doc.statusOverall.value),
 		createdAt: doc.createdAt,
 		updatedAt: doc.updatedAt,
-    testDate: doc.testDate,
-    lastTested: doc.lastTested,
+		testDate: doc.testDate,
+		lastTested: doc.lastTested,
 		updateLink: `/developers/register/${doc._id.toHexString()}`,
-		active: doc.active ?? false
+		active: doc.active ?? false,
+		schemaVersion: doc.schemaVersion.value,
+		statusIsUp: Boolean(doc.statusIsUp.value),
+		statusIsValid: Boolean(doc.statusIsValid.value)
 	}
 }

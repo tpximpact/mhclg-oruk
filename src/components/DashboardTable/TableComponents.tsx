@@ -1,0 +1,220 @@
+import Link from 'next/link'
+import type { ServiceData, SortField, SortDirection } from './types'
+import styles from './ServicesTable.module.css'
+
+interface MobileSortSelectorProps {
+	currentSort: SortField
+	currentDirection: SortDirection
+	onSort: (field: SortField) => void
+}
+
+export function MobileSortSelector({
+	currentSort,
+	currentDirection,
+	onSort
+}: MobileSortSelectorProps) {
+	const sortOptions: { value: SortField; label: string }[] = [
+		{ value: 'name', label: 'Name' },
+		{ value: 'statusOverall', label: 'Feed passes' },
+		{ value: 'statusIsUp', label: 'Feed is live' },
+		{ value: 'statusIsValid', label: 'Feed is valid' },
+		{ value: 'schemaVersion', label: 'Schema Version' },
+		{ value: 'testDate', label: 'Last Tested' }
+	]
+
+	const currentOption = sortOptions.find(option => option.value === currentSort)
+	const directionLabel = currentDirection === 'asc' ? 'A-Z' : 'Z-A'
+
+	return (
+		<div className={styles.mobileSortContainer}>
+			<label className={styles.sortLabel} htmlFor='mobile-sort'>
+				Sort by:
+			</label>
+			<div className={styles.sortControls}>
+				<select
+					id='mobile-sort'
+					className={styles.sortSelect}
+					value={currentSort}
+					onChange={e => onSort(e.target.value as SortField)}
+				>
+					{sortOptions.map(option => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</select>
+				<button
+					className={styles.sortDirectionButton}
+					onClick={() => onSort(currentSort)}
+					aria-label={`Sort ${currentDirection === 'asc' ? 'descending' : 'ascending'}`}
+				>
+					<span className={styles.sortDirectionText}>{directionLabel}</span>
+					<span className={styles.sortDirectionIcon}>{currentDirection === 'asc' ? '↑' : '↓'}</span>
+				</button>
+			</div>
+		</div>
+	)
+}
+
+interface ServiceCardProps {
+	service: ServiceData
+	index: number
+}
+
+export function ServiceCard({ service, index }: ServiceCardProps) {
+	const renderField = (label: string, data: ServiceData[keyof ServiceData]) => {
+		if (!data) return null
+
+		const displayValue = String(data.value)
+		const { url } = data as { value: string; url?: string }
+
+		// Handle status field specially
+		const content =
+			typeof data.value === 'boolean' ? (
+				<PassFailindicator value={data.value} />
+			) : (
+				<span>{displayValue}</span>
+			)
+
+		return (
+			<div className={styles.cardField}>
+				<dt className={styles.cardLabel}>{label}:</dt>
+				<dd className={styles.cardValue}>
+					{url ? (
+						url.startsWith('http') ? (
+							<a
+								href={url}
+								target='_blank'
+								rel='noopener noreferrer'
+								className={`${styles.link} ${styles.externalLink}`}
+							>
+								{content}
+							</a>
+						) : (
+							<Link href={url} className={styles.link}>
+								{content}
+							</Link>
+						)
+					) : (
+						<span>{content}</span>
+					)}
+				</dd>
+			</div>
+		)
+	}
+
+	return (
+		<div className={styles.serviceCard}>
+			<dl className={styles.cardContent}>
+				{renderField('Name', service.name)}
+				{renderField('Feed passes', service.statusOverall)}
+				{renderField('Feed is live', service.statusIsUp)}
+				{renderField('Feed is valid', service.statusIsValid)}
+				{renderField('Schema Version', service.schemaVersion)}
+				{renderField('Last Tested', service.testDate)}
+			</dl>
+		</div>
+	)
+}
+
+// Status Display Component
+function PassFailindicator({ value }: { value: string | number | boolean }) {
+	const numValue = typeof value === 'string' ? parseInt(value, 10) : value
+	const isPass = numValue === 1 || numValue === true
+
+	return (
+		<span className={`${styles.statusDisplay} ${isPass ? styles.statusPass : styles.statusFail}`}>
+			<span className={styles.statusText}>{isPass ? 'pass' : 'fail'}</span>
+			<span className={styles.statusIcon}>{isPass ? '✓' : '✗'}</span>
+		</span>
+	)
+}
+
+interface TableCellProps {
+	data: ServiceData[keyof ServiceData]
+	className?: string
+	columnKey?: keyof ServiceData
+}
+
+export function TableCell({ data, className, columnKey }: TableCellProps) {
+	if (!data) {
+		return <td className={className}>-</td>
+	}
+
+	const { value, url }: { value: string | number | boolean; url?: string } = data
+
+	// Ensure value is a string and handle potential objects
+	const displayValue = value && value !== '[object Object]' ? String(value) : '-'
+
+	// Apply different styling for description column
+	const isBoolean = typeof value === 'boolean'
+	const contentClass = isBoolean
+		? `${styles.cellContent} ${styles.booleanContent}`
+		: styles.cellContent
+
+	// Handle status field specially
+	const content =
+		typeof value === 'boolean' ? (
+			<PassFailindicator value={value} />
+		) : (
+			<span className={contentClass} title={isBoolean ? undefined : displayValue}>
+				{displayValue}
+			</span>
+		)
+
+	if (url) {
+		const isExternal = url.startsWith('http')
+
+		if (isExternal) {
+			return (
+				<td className={className}>
+					<a
+						href={url}
+						target='_blank'
+						rel='noopener noreferrer'
+						className={`${styles.link} ${styles.externalLink}`}
+					>
+						{content}
+					</a>
+				</td>
+			)
+		} else {
+			return (
+				<td className={className}>
+					<Link href={url} className={styles.link}>
+						{content}
+					</Link>
+				</td>
+			)
+		}
+	}
+
+	return <td className={className}>{content}</td>
+}
+
+interface TableHeaderProps {
+	label: string
+	sortable: boolean
+	currentSort?: 'asc' | 'desc' | null
+	onSort?: () => void
+	className?: string
+}
+
+export function TableHeader({ label, sortable, currentSort, onSort, className }: TableHeaderProps) {
+	return (
+		<th className={`${styles.th} ${className || ''}`}>
+			{sortable ? (
+				<button onClick={onSort} className={styles.sortButton}>
+					{label}
+					<span className={styles.sortIcon}>
+						{currentSort === 'asc' && '↑'}
+						{currentSort === 'desc' && '↓'}
+						{!currentSort && '↕'}
+					</span>
+				</button>
+			) : (
+				label
+			)}
+		</th>
+	)
+}

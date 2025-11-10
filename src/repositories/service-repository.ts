@@ -33,6 +33,8 @@ export class ServiceRepository extends BaseRepository<
   }
 
   protected toResponse(doc: ServiceDocument): ServiceResponse {
+    //console.log('Converting ServiceDocument to ServiceResponse:', doc)
+    
     return toServiceResponse(doc)
   }
 
