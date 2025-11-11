@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from './ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
+import PassFailIndicator from '../ServicesTable/_components/PassFailIndicator'
 
 interface MobileSortSelectorProps {
   currentSort: SortField
@@ -72,7 +73,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
     // Handle status field specially
     const content =
       typeof data.value === 'boolean' ? (
-        <PassFailindicator value={data.value} />
+        <PassFailIndicator value={data.value} />
       ) : (
         <span>{displayValue}</span>
       )
@@ -101,19 +102,6 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
   )
 }
 
-// Status Display Component
-function PassFailindicator({ value }: { value: string | number | boolean }) {
-  const numValue = typeof value === 'string' ? parseInt(value, 10) : value
-  const isPass = numValue === 1 || numValue === true
-
-  return (
-    <span className={`${styles.statusDisplay} ${isPass ? styles.statusPass : styles.statusFail}`}>
-      <span className={styles.statusText}>{isPass ? 'pass' : 'fail'}</span>
-      <span className={styles.statusIcon}>{isPass ? '✓' : '✗'}</span>
-    </span>
-  )
-}
-
 interface TableCellProps {
   data: ServiceData[keyof ServiceData]
   className?: string
@@ -139,7 +127,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
   // Handle status field specially
   const content =
     typeof value === 'boolean' ? (
-      <PassFailindicator value={value} />
+      <PassFailIndicator value={value} />
     ) : (
       <span className={contentClass} title={isBoolean ? undefined : displayValue}>
         {displayValue}

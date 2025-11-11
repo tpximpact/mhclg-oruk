@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import type { DashboardTableProps, SortConfig, SortField, SortDirection, TableHeaderConfig } from './types'
 import { useSortedData, usePaginatedData } from './hooks'
 import { TableHeader, TableCell, ServiceCard, MobileSortSelector } from './TableComponents'
-import { Pagination } from './_components/Pagination'
+import { Pagination } from '../ServicesTable/_components/Pagination'
 import styles from './ServicesTable.module.css'
 
 const TABLE_HEADERS: TableHeaderConfig[] = [
