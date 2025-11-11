@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import type { ServicesTableProps, SortConfig, SortField, SortDirection, TableHeaderConfig } from './types'
 import { useSortedData, usePaginatedData } from './hooks'
 import { TableHeader, TableCell, ServiceCard, MobileSortSelector } from './TableComponents'
-import { Pagination } from './Pagination'
+import { Pagination } from './_components/Pagination'
 import styles from './ServicesTable.module.css'
 
 const TABLE_HEADERS: TableHeaderConfig[] = [
@@ -130,6 +130,7 @@ export function ServicesTable({
         itemsPerPage={itemsPerPage}
         startIndex={paginationInfo.startIndex}
         endIndex={paginationInfo.endIndex}
+        basePath='/community/directory'
       />
     </div>
   )

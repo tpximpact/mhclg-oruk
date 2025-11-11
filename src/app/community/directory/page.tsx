@@ -79,7 +79,7 @@ export default async function Page(props: PageProps) {
 			// Try different date field names and formats
 			const dateValue = s.updatedAt || s.createdAt || (s as any).testDate || (s as any).lastTested
 
-			//console.log('Raw date value for service', getName(), ':', dateValue)
+			console.log('Raw date value for service', getName(), ':', dateValue)
 
 			if (!dateValue) return 'Never tested'
 
@@ -89,7 +89,7 @@ export default async function Page(props: PageProps) {
 				if ('value' in dateValue && dateValue.value) {
 					try {
 						const dateString = String(dateValue.value)
-						return new Date(dateString).toLocaleDateString('en-GB')
+						return new Date(dateString).toLocaleString('en-GB')
 					} catch (error) {
 						//console.warn('Failed to parse date from object value:', dateValue.value)
 						return 'Invalid date'

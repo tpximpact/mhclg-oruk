@@ -2,7 +2,9 @@
   background: white;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .tableContainer {
@@ -138,7 +140,7 @@
   .cellContent:not(.descriptionContent) {
     max-width: 150px;
   }
-  
+
   .descriptionContent {
     max-width: 200px;
   }
@@ -149,22 +151,6 @@
     max-width: 300px;
   }
 }
-
-.link {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-.link:hover {
-  color: #1d4ed8;
-  text-decoration: underline;
-}
-
-/*.externalLink::after {
-  content: '↗';
-  margin-left: 0.25rem;
-  font-size: 0.75rem;
-}*/
 
 .emptyState {
   padding: 3rem 1.5rem;
@@ -186,7 +172,7 @@
   .mobileView {
     display: none;
   }
-  
+
   .desktopView {
     display: block;
   }
@@ -227,7 +213,9 @@
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .serviceCard:last-child {
@@ -284,12 +272,6 @@
 .cardValue .link {
   word-break: break-all;
 }
-
-/*.externalLink::after {
-  content: ' ↗';
-  font-size: 0.75rem;
-  color: #6b7280;
-}*/
 
 /* Mobile Sort Selector Styles */
 .mobileSortContainer {
@@ -348,7 +330,9 @@
   font-size: 0.875rem;
   color: #374151;
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }
 
 .sortDirectionButton:hover {
@@ -372,56 +356,12 @@
   line-height: 1;
 }
 
-
-/* Status Display Styles */
-.statusDisplay {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-
-.statusPass {
-  background-color: #dcfce7;
-  color: #166534;
-  border: 1px solid #bbf7d0;
-}
-
-.statusFail {
-  background-color: #fee2e2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
-}
-
-.statusText {
-  line-height: 1;
-}
-
-.statusIcon {
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.statusPass .statusIcon {
-  color: #059669;
-}
-
-.statusFail .statusIcon {
-  color: #dc2626;
-}
-
 /* Extra large screens - optimize spacing */
 @media (min-width: 1280px) {
   .td {
     padding: 1.25rem 1.5rem;
   }
-  
+
   .descriptionContent {
     max-width: 400px;
   }
