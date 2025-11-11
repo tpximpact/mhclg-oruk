@@ -1,14 +1,19 @@
 import Link from 'next/link'
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from './ServicesTable.module.css'
+import LinkComponent from './_components/LinkComponent'
 
-interface MobileSortSelectorProps {
+export interface MobileSortSelectorProps {
   currentSort: SortField
   currentDirection: SortDirection
   onSort: (field: SortField) => void
 }
 
-export function MobileSortSelector({ currentSort, currentDirection, onSort }: MobileSortSelectorProps) {
+export function MobileSortSelector({
+  currentSort,
+  currentDirection,
+  onSort
+}: MobileSortSelectorProps) {
   const sortOptions: { value: SortField; label: string }[] = [
     { value: 'name', label: 'Name' },
     { value: 'publisher', label: 'Publisher' },
@@ -21,15 +26,15 @@ export function MobileSortSelector({ currentSort, currentDirection, onSort }: Mo
 
   return (
     <div className={styles.mobileSortContainer}>
-      <label className={styles.sortLabel} htmlFor="mobile-sort">
+      <label className={styles.sortLabel} htmlFor='mobile-sort'>
         Sort by:
       </label>
       <div className={styles.sortControls}>
         <select
-          id="mobile-sort"
+          id='mobile-sort'
           className={styles.sortSelect}
           value={currentSort}
-          onChange={(e) => onSort(e.target.value as SortField)}
+          onChange={e => onSort(e.target.value as SortField)}
         >
           {sortOptions.map(option => (
             <option key={option.value} value={option.value}>
@@ -43,9 +48,7 @@ export function MobileSortSelector({ currentSort, currentDirection, onSort }: Mo
           aria-label={`Sort ${currentDirection === 'asc' ? 'descending' : 'ascending'}`}
         >
           <span className={styles.sortDirectionText}>{directionLabel}</span>
-          <span className={styles.sortDirectionIcon}>
-            {currentDirection === 'asc' ? '↑' : '↓'}
-          </span>
+          <span className={styles.sortDirectionIcon}>{currentDirection === 'asc' ? '↑' : '↓'}</span>
         </button>
       </div>
     </div>
@@ -69,20 +72,9 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
         <dt className={styles.cardLabel}>{label}:</dt>
         <dd className={styles.cardValue}>
           {url ? (
-            url.startsWith('http') ? (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${styles.link} ${styles.externalLink}`}
-              >
-                {displayValue}
-              </a>
-            ) : (
-              <Link href={url} className={styles.link}>
-                {displayValue}
-              </Link>
-            )
+            <LinkComponent url={url}>
+              <span>{displayValue}</span>
+            </LinkComponent>
           ) : (
             <span>{displayValue}</span>
           )}
@@ -123,13 +115,13 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
   }
 
   const { value, url }: { value: string; url?: string } = data
-  
+
   // Ensure value is a string and handle potential objects
   const displayValue = value && value !== '[object Object]' ? String(value) : '-'
-  
+
   // Apply different styling for description column
   const isDescription = columnKey === 'comment'
-  const contentClass = isDescription 
+  const contentClass = isDescription
     ? `${styles.cellContent} ${styles.descriptionContent}`
     : styles.cellContent
 
@@ -140,30 +132,11 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
   )
 
   if (url) {
-    const isExternal = url.startsWith('http')
-    
-    if (isExternal) {
-      return (
-        <td className={className}>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${styles.link} ${styles.externalLink}`}
-          >
-            {content}
-          </a>
-        </td>
-      )
-    } else {
-      return (
-        <td className={className}>
-          <Link href={url} className={styles.link}>
-            {content}
-          </Link>
-        </td>
-      )
-    }
+    return (
+      <td className={className}>
+        <LinkComponent url={url}>{content}</LinkComponent>
+      </td>
+    )
   }
 
   return <td className={className}>{content}</td>
@@ -181,10 +154,7 @@ export function TableHeader({ label, sortable, currentSort, onSort, className }:
   return (
     <th className={`${styles.th} ${className || ''}`}>
       {sortable ? (
-        <button
-          onClick={onSort}
-          className={styles.sortButton}
-        >
+        <button onClick={onSort} className={styles.sortButton}>
           {label}
           <span className={styles.sortIcon}>
             {currentSort === 'asc' && '↑'}

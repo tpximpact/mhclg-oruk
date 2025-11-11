@@ -12,7 +12,7 @@ export function useSortedData(data: ServiceData[], sortConfig: SortConfig | null
       const bValue = b[sortConfig.field]?.value || ''
       
       // Handle date sorting
-      if (sortConfig.field === 'testDate') {
+      if (sortConfig.field === 'testDate' && typeof aValue === 'string' && typeof bValue === 'string') {
         const aDate = new Date(aValue).getTime()
         const bDate = new Date(bValue).getTime()
         return sortConfig.direction === 'asc' ? aDate - bDate : bDate - aDate
