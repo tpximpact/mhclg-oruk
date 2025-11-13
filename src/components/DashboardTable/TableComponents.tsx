@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { ServiceData, SortField, SortDirection } from './types'
-import styles from './ServicesTable.module.css'
+import styles from '../ServicesTable/ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
 import PassFailIndicator from '../ServicesTable/_components/PassFailIndicator'
 

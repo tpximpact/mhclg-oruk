@@ -6,7 +6,7 @@ import type { DashboardTableProps, SortConfig, SortField, SortDirection, TableHe
 import { useSortedData, usePaginatedData } from './hooks'
 import { TableHeader, TableCell, ServiceCard, MobileSortSelector } from './TableComponents'
 import { Pagination } from '../ServicesTable/_components/Pagination'
-import styles from './ServicesTable.module.css'
+import styles from '../ServicesTable/ServicesTable.module.css'
 
 const TABLE_HEADERS: TableHeaderConfig[] = [
   { key: 'name', label: 'Name', sortable: true },
