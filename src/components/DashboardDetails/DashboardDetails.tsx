@@ -72,7 +72,7 @@ interface FVDateProps {
 
 export const DashboardDetails = ({ result }: DashboardDetailsProps) => {
   const testResult = result.result
-  console.log('Rendering DashboardDetails for:', testResult)
+  // console.log('Rendering DashboardDetails for:', testResult)
   return (
     <div className={styles.details}>
       <h1>{getDetailsTitle(testResult)}</h1>

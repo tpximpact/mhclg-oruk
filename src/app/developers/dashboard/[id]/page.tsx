@@ -2,7 +2,6 @@ import { ServiceRepository } from '@/repositories/service-repository'
 import { DashboardDetails } from '@/components/DashboardDetails'
 import { PageMargin } from '@/components/PageMargin'
 import { notFound } from 'next/navigation'
-import type { ServiceResponse } from '@/models/service'
 
 interface PageProps {
   params: Promise<{ id: string }>
