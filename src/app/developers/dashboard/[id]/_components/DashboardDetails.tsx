@@ -100,7 +100,7 @@ export const DashboardDetails = ({ result }: DashboardDetailsProps) => {
           }}
         />
 
-        <div style={{ background: 'lemonchiffon', padding: '1rem', borderRadius: '0.5rem' }}>
+        <div className={styles.feedNote}>
           Note: Open Referral feeds are <em>machine readable</em>, and are not designed for human
           readers or for display in a web browser.{' '}
           <a href={getDetailsURI(testResult)} target='_blank'>
@@ -118,11 +118,13 @@ const Validation = ({ status, result }: ValidationProps) => {
   const statusText = getDetailsStatus(result)
   const colour = getColourForStatus(statusText)
   return (
-    <section style={{ marginTop: '4rem' }}>
+    <section className={styles.validationSection}>
       <SectionHeading>
-        Validation status:{' '}
-        <Icon colour={colour} weight='4' icon={getIconForStatus(status)} size='48' />{' '}
-        <span style={{ color: colour }}>{status}</span>
+        <span className={styles.validationStatus}>
+          Validation status:{' '}
+          <Icon colour={colour} weight='4' icon={getIconForStatus(status)} size='48' />{' '}
+          <span style={{ color: colour }}>{status}</span>
+        </span>
       </SectionHeading>
 
       <Field
