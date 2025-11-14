@@ -121,10 +121,30 @@ const FVString = ({ data, url }) => {
 }
 
 const stringifyDateString = s => {
-	let result = Date.parse(s)
-	result = new Date(result)
-	result = result.toLocaleDateString('en-UK') + ', ' + result.toLocaleTimeString('en-UK')
-	return result
+	try {
+		const date = new Date(s)
+		if (isNaN(date.getTime())) {
+			return 'Invalid date'
+		}
+		
+		// Use user's local timezone and locale
+		const dateString = date.toLocaleDateString(undefined, {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		})
+		
+		const timeString = date.toLocaleTimeString(undefined, {
+			hour: '2-digit',
+			minute: '2-digit',
+			second: '2-digit',
+			timeZoneName: 'short'
+		})
+		
+		return `${dateString}, ${timeString}`
+	} catch (error) {
+		return 'Invalid date'
+	}
 }
 
 const FVDate = ({ data }) => <FVString data={stringifyDateString(data)} />
