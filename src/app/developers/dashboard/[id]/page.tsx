@@ -17,7 +17,6 @@ export async function generateMetadata() {
 
 // Transform ServiceResponse to match the expected format for DashboardDetails
 function transformServiceForDashboard(service: any) {
-
   // Helper function to extract value from structured objects
   const extractValue = (field: any): any => {
     if (field === null || field === undefined) return ''
@@ -68,21 +67,13 @@ function transformServiceForDashboard(service: any) {
       title: {
         value: extractValue(service.name)
       },
-      publisher: {
-        value: (service.publisher as any).value,
-        url: (service.publisher as any).url
+      publisher: service.publisher,
+      developer: service.developer,
+      service: {
+        url: (service.service as any).url,
+        value: (service.name as any).value
       },
-      developer: {
-        value: (service.developer as any).value,
-        url: (service.developer as any).url
-      },
-      serviceUrl: {
-        url: extractValue(service.serviceUrl),
-        value: extractValue(service.serviceUrl)
-      },
-      isValid: {
-        value: extractValue(service.statusIsValid) ? 'Valid' : 'Invalid'
-      },
+      isValid: service.statusIsValid,
       lastTested: {
         value: service.lastTested ? toISOString(service.lastTested) : toISOString(service.createdAt)
       },
@@ -92,64 +83,36 @@ function transformServiceForDashboard(service: any) {
           fields: [
             {
               label: 'Name',
-              value: extractValue(service.name),
+              value: service.name.value,
+              dataType: 'oruk:dataType:string',
+              url: service.service.url
+            },
+            {
+              label: 'Developed By',
+              value: service.developer.value,
+              dataType: 'oruk:dataType:string',
+              url: service.developer.url
+            },
+            {
+              label: 'Published By',
+              value: service.publisher.value,
+              dataType: 'oruk:dataType:string',
+              url: service.publisher.url
+            },
+            {
+              label: 'Comment',
+              value: service.comment.value,
               dataType: 'oruk:dataType:string'
             },
             {
               label: 'Description',
-              value: extractValue(service.description),
-              dataType: 'oruk:dataType:string'
-            },
-            ...(service.comment ? [{
-              label: 'Comment',
-              value: extractValue(service.comment),
-              dataType: 'oruk:dataType:string'
-            }] : []),
-            {
-              label: 'Developer',
-              value: extractValue(service.developer),
-              dataType: 'oruk:dataType:string',
-              url: extractValue(service.developerUrl)
-            },
-            {
-              label: 'Publisher URL',
-              value: extractValue(service.publisherUrl),
-              dataType: 'oruk:dataType:string',
-              url: extractValue(service.publisherUrl)
-            },
-            {
-              label: 'Contact Email',
-              value: extractValue(service.contactEmail),
+              value: service.description.value,
               dataType: 'oruk:dataType:string'
             },
             {
-              label: 'Status',
-              value: extractValue(service.status),
+              label: 'Schema Version',
+              value: service.schemaVersion,
               dataType: 'oruk:dataType:string'
-            },
-            {
-              label: 'Active',
-              value: extractValue(service.active) ? 'Yes' : 'No',
-              dataType: 'oruk:dataType:string'
-            },
-            ...(service.testDate
-              ? [
-                  {
-                    label: 'Test Date',
-                    value: toISOString(service.testDate),
-                    dataType: 'oruk:dataType:dateTime'
-                  }
-                ]
-              : []),
-            {
-              label: 'Created At',
-              value: toISOString(service.createdAt),
-              dataType: 'oruk:dataType:dateTime'
-            },
-            {
-              label: 'Updated At',
-              value: toISOString(service.updatedAt),
-              dataType: 'oruk:dataType:dateTime'
             }
           ]
         }
