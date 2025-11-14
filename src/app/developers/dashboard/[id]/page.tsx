@@ -105,6 +105,11 @@ function transformServiceForDashboard(service: any) {
               value: extractValue(service.description),
               dataType: 'oruk:dataType:string'
             },
+            ...(service.comment ? [{
+              label: 'Comment',
+              value: extractValue(service.comment),
+              dataType: 'oruk:dataType:string'
+            }] : []),
             {
               label: 'Developer',
               value: extractValue(service.developer),
