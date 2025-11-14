@@ -116,7 +116,7 @@ export default async function Page(props: PageProps) {
         }
         return String(dateValue)
       } catch (error) {
-        console.warn('Failed to parse date:', dateValue, error)
+        // console.warn('Failed to parse date:', dateValue, error)
         return 'Invalid date'
       }
     }
