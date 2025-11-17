@@ -5,6 +5,7 @@ import { fromErrorToFormState, toFormState } from '@/utilities/to-form-state'
 import { ServiceRepository } from '@/repositories/service-repository'
 import { ValidationError } from '@/lib/mongodb-errors'
 import { serviceInputSchema, type ServiceInput } from '@/models/service'
+import { GitHubService } from '@/lib/github-service'
 
 export const createMessage = async (
   formState: any,
@@ -40,6 +41,30 @@ export const createMessage = async (
     // Get update link from response
     // The response type includes updateLink
     updateLink = service.updateLink
+
+    // Create GitHub issue for manual verification
+    try {
+      const githubService = new GitHubService()
+      const issue = await githubService.createVerificationIssue({
+        id: service.id,
+        name: service.name,
+        publisher: service.publisher,
+        publisherUrl: service.publisherUrl,
+        description: service.description,
+        developer: service.developer,
+        developerUrl: service.developerUrl,
+        serviceUrl: service.serviceUrl,
+        contactEmail: service.contactEmail,
+        createdAt: service.createdAt,
+        updateLink: service.updateLink,
+      })
+      
+      console.log(`Created GitHub issue #${issue.number} for service verification: ${issue.url}`)
+    } catch (githubError) {
+      // Log the error but don't fail the entire operation
+      // The service was successfully created, GitHub issue creation is supplementary
+      console.error('Failed to create GitHub issue for service verification:', githubError)
+    }
   } catch (error) {
     if (error instanceof ValidationError) {
       return fromErrorToFormState(error, values)
