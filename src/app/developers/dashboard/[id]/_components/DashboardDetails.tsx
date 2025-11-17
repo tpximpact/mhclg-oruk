@@ -103,7 +103,7 @@ export const DashboardDetails = ({ result }: DashboardDetailsProps) => {
         <div className={styles.feedNote}>
           Note: Open Referral feeds are <em>machine readable</em>, and are not designed for human
           readers or for display in a web browser.{' '}
-          <a href={getDetailsURI(testResult)} target='_blank'>
+          <a href={testResult.service.url} target='_blank'>
             I understand: open the raw data in a new window
           </a>
         </div>
@@ -139,8 +139,6 @@ const Validation = ({ status, result }: ValidationProps) => {
 }
 
 const getDetailsTitle = (result: TestResult): string | undefined => result.title?.value
-const getDetailsURI = (result: TestResult): string | undefined => result.serviceUrl?.url
-const getDetailsURIValue = (result: TestResult): string | undefined => result.serviceUrl?.value
 const getDetailsPublisher = (result: TestResult): string | undefined => result.publisher?.value
 
 const Section = ({ data }: SectionProps) => (
