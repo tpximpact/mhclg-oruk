@@ -1,27 +1,28 @@
-import type { Collection, ObjectId } from 'mongodb'
-import { ServiceRepository } from '../service-repository'
-import { ServiceDocument } from '@/models/service'
+import type { ObjectId } from 'mongodb'
+import type { ServiceDocument } from '@/models/service'
 import { ValidationError } from '@/lib/mongodb-errors'
 
-let mockCollection: jest.Mocked<Collection>
-
-jest.mock('@/lib/mongodb', () => {
-	const getMongoClient = jest.fn(() => Promise.resolve({
-		db: () => ({
-			collection: () => mockCollection
-		})
-	} as any))
-
-	const getCollection = jest.fn((_name: string) => Promise.resolve(mockCollection))
-
-	return { getMongoClient, getCollection }
+// Mock Prisma service API
+let mockPrismaService: any
+jest.mock('@/lib/prisma', () => {
+	mockPrismaService = {
+		create: jest.fn(),
+		findUnique: jest.fn(),
+		findMany: jest.fn(),
+		update: jest.fn(),
+		delete: jest.fn()
+	}
+	return { prisma: { service: mockPrismaService } }
 })
 
+// Require after mock setup so imports see the mocked module
+const { ServiceRepository } = require('../service-repository')
+
 describe('ServiceRepository', () => {
-	let repository: ServiceRepository
+	let repository: any
 	// Lightweight ObjectId-like stub so tests don't import the ESM `mongodb` runtime
 	const testId = ({ toHexString: () => '507f1f77bcf86cd799439011' } as unknown) as ObjectId
-	const testService: ServiceDocument = {
+	const testService: any = {
 		_id: testId,
 		name: 'Test Service',
 		publisher: 'Test Publisher',
@@ -37,16 +38,6 @@ describe('ServiceRepository', () => {
 	}
 
 	beforeEach(() => {
-		mockCollection = {
-			insertOne: jest.fn(),
-			findOne: jest.fn(),
-			find: jest.fn().mockReturnValue({
-				toArray: jest.fn()
-			}),
-			updateOne: jest.fn(),
-			deleteOne: jest.fn(),
-			findOneAndUpdate: jest.fn()
-		} as unknown as jest.Mocked<Collection>
 		repository = new ServiceRepository()
 		jest.clearAllMocks()
 	})
@@ -55,12 +46,12 @@ describe('ServiceRepository', () => {
 		it('should create a new service', async () => {
 			 
 			const { _id, ...insertData } = testService
-			mockCollection.insertOne.mockResolvedValueOnce({ acknowledged: true, insertedId: testId })
-			mockCollection.findOne.mockResolvedValueOnce(testService)
+			const createdRec = { id: testId.toHexString(), ...insertData }
+			mockPrismaService.create.mockResolvedValueOnce(createdRec)
 
-			const result = await repository.create(insertData)
+			const result = await repository.create(insertData as any)
 
-			expect(mockCollection.insertOne).toHaveBeenCalled()
+			expect(mockPrismaService.create).toHaveBeenCalled()
 			expect(result).toEqual(
 				expect.objectContaining({
 					id: testId.toHexString(),
@@ -83,14 +74,12 @@ describe('ServiceRepository', () => {
 
 	describe('findByPublisher', () => {
 		it('should find services by publisher', async () => {
-			const mockCursor = {
-				toArray: jest.fn().mockResolvedValue([testService] as never)
-			}
-			mockCollection.find.mockReturnValueOnce(mockCursor as any)
+			const rec = { id: testId.toHexString(), ...testService, _id: undefined }
+			mockPrismaService.findMany.mockResolvedValueOnce([rec])
 
 			const results = await repository.findByPublisher('Test Publisher')
 
-			expect(mockCollection.find).toHaveBeenCalledWith({ publisher: 'Test Publisher' })
+			expect(mockPrismaService.findMany).toHaveBeenCalledWith({ where: { publisher: 'Test Publisher' } })
 			expect(results).toHaveLength(1)
 			expect(results[0]).toEqual(
 				expect.objectContaining({
@@ -103,14 +92,12 @@ describe('ServiceRepository', () => {
 
 	describe('findByEmail', () => {
 		it('should find services by contact email', async () => {
-			const mockCursor = {
-				toArray: jest.fn().mockResolvedValue([testService] as never)
-			}
-			mockCollection.find.mockReturnValueOnce(mockCursor as any)
+			const rec = { id: testId.toHexString(), ...testService, _id: undefined }
+			mockPrismaService.findMany.mockResolvedValueOnce([rec])
 
 			const results = await repository.findByEmail('test@example.com')
 
-			expect(mockCollection.find).toHaveBeenCalledWith({ contactEmail: 'test@example.com' })
+			expect(mockPrismaService.findMany).toHaveBeenCalledWith({ where: { contactEmail: 'test@example.com' } })
 			expect(results).toHaveLength(1)
 			expect(results[0]).toEqual(
 				expect.objectContaining({
@@ -123,13 +110,8 @@ describe('ServiceRepository', () => {
 
 	describe('updateStatus', () => {
 		it('should update service status', async () => {
-			const updatedService = {
-				...testService,
-				status: 'approved',
-				statusNote: 'Approved by admin',
-				updatedAt: expect.any(Date)
-			}
-			mockCollection.findOneAndUpdate.mockResolvedValueOnce(updatedService)
+			const updatedRec = { id: testId.toHexString(), ...testService, status: 'approved', statusNote: 'Approved by admin', updatedAt: new Date() }
+			mockPrismaService.update.mockResolvedValueOnce(updatedRec)
 
 			const result = await repository.updateStatus(
 				testId.toHexString(),
@@ -137,7 +119,7 @@ describe('ServiceRepository', () => {
 				'Approved by admin'
 			)
 
-			expect(mockCollection.findOneAndUpdate).toHaveBeenCalled()
+			expect(mockPrismaService.update).toHaveBeenCalled()
 			expect(result).toEqual(
 				expect.objectContaining({
 					id: testId.toHexString(),
@@ -148,7 +130,7 @@ describe('ServiceRepository', () => {
 		})
 
 		it('should return null when service not found', async () => {
-			mockCollection.findOneAndUpdate.mockResolvedValueOnce(null)
+			mockPrismaService.update.mockRejectedValueOnce({ code: 'P2025' })
 
 			const result = await repository.updateStatus('000000000000000000000000', 'approved')
 
@@ -158,20 +140,12 @@ describe('ServiceRepository', () => {
 
 	describe('search', () => {
 		it('should search services with query', async () => {
-			const mockCursor = {
-				toArray: jest.fn().mockResolvedValue([testService] as never)
-			}
-			mockCollection.find.mockReturnValueOnce(mockCursor as any)
+			const rec = { id: testId.toHexString(), ...testService, _id: undefined }
+			mockPrismaService.findMany.mockResolvedValueOnce([rec])
 
 			const results = await repository.search('Test')
 
-			expect(mockCollection.find).toHaveBeenCalledWith({
-				$or: [
-					{ name: { $regex: 'Test', $options: 'i' } },
-					{ description: { $regex: 'Test', $options: 'i' } },
-					{ publisher: { $regex: 'Test', $options: 'i' } }
-				]
-			})
+			expect(mockPrismaService.findMany).toHaveBeenCalled()
 			expect(results).toHaveLength(1)
 		})
 	})

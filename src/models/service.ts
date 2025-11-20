@@ -1,7 +1,7 @@
 // Service entity model with zod validation
 
 import { z } from 'zod'
-import type { ObjectId } from 'mongodb'
+// _id can be a MongoDB ObjectId-like object in tests or a string (Prisma)
 
 // Shared base fields for a Service (user-supplied fields)
 export const serviceBaseFieldsSchema = z.object({
@@ -12,7 +12,7 @@ export const serviceBaseFieldsSchema = z.object({
 	comment: z.string().max(1024).optional(),
 	developer: z.string().min(1).max(191),
 	developerUrl: z.url().max(191),
-	service: z.string().min(1).max(191),
+	service: z.string().min(1).max(191).optional(),
 	serviceUrl: z.url().max(191),
 	contactEmail: z.email().max(191),
 	testDate: z.date().optional(),
@@ -33,23 +33,25 @@ export const insertServiceSchema = serviceBaseFieldsSchema.extend({
 
 // Schema for the complete service document (includes _id)
 export const serviceDocumentSchema = insertServiceSchema.extend({
-	// Avoid importing mongodb runtime in tests (which is ESM). Validate by shape instead.
-	_id: z.custom<ObjectId>(
-		(v): v is ObjectId =>
+	// Accept either an ObjectId-like object (tests) or a string id (Prisma)
+	_id: z.union([
+		z.string(),
+		z.custom((v): v is { toHexString: () => string } =>
 			typeof v === 'object' && v !== null && typeof (v as any).toHexString === 'function'
-	),
+		)
+	]),
 	schemaVersion: z.object({
 		value: z.string().max(191)
-	}),
+	}).optional(),
 	statusIsUp: z.object({
 		value: z.boolean().optional().default(false)
-	}),
+	}).optional(),
 	statusIsValid: z.object({
 		value: z.boolean().optional().default(false)
-	}),
+	}).optional(),
 	statusOverall: z.object({
 		value: z.boolean().optional().default(false)
-	})
+	}).optional()
 })
 
 // Response schema for API (serializes _id as string)
@@ -60,9 +62,9 @@ export const serviceResponseSchema = z.object({
 	publisherUrl: z.string(),
 	description: z.string(),
 	comment: z.string().optional(),
+	service: z.string().optional(),
 	developer: z.string(),
 	developerUrl: z.string(),
-	service: z.string(),
 	serviceUrl: z.string(),
 	contactEmail: z.string(),
 	status: z.enum(['pending', 'approved', 'rejected']),
@@ -87,29 +89,34 @@ export type ServiceResponse = z.infer<typeof serviceResponseSchema>
 
 // Helper to convert a ServiceDocument to ServiceResponse
 export function toServiceResponse(doc: ServiceDocument): ServiceResponse {
-	return {
-		id: doc._id.toHexString(),
+	const id = typeof (doc as any)._id === 'string' ? (doc as any)._id : (doc as any)._id.toHexString()
+
+	const res: any = {
+		id,
 		name: doc.name,
 		publisher: doc.publisher,
 		publisherUrl: doc.publisherUrl,
 		description: doc.description,
-		comment: doc.comment,
 		developer: doc.developer,
 		developerUrl: doc.developerUrl,
-		service: doc.service,
 		serviceUrl: doc.serviceUrl,
 		contactEmail: doc.contactEmail,
 		status: doc.status,
-		statusNote: doc.statusNote,
-		statusOverall: Boolean(doc.statusOverall.value),
 		createdAt: doc.createdAt,
 		updatedAt: doc.updatedAt,
-		testDate: doc.testDate,
-		lastTested: doc.lastTested,
-		updateLink: `/developers/register/${doc._id.toHexString()}`,
-		active: doc.active ?? false,
-		schemaVersion: doc.schemaVersion.value,
-		statusIsUp: Boolean(doc.statusIsUp.value),
-		statusIsValid: Boolean(doc.statusIsValid.value)
+		updateLink: `/developers/register/${id}`,
 	}
+
+	if (typeof doc.comment !== 'undefined') res.comment = doc.comment
+	if (typeof doc.service !== 'undefined') res.service = doc.service
+	if (typeof doc.statusNote !== 'undefined') res.statusNote = doc.statusNote
+	if (typeof doc.testDate !== 'undefined') res.testDate = doc.testDate
+	if (typeof doc.lastTested !== 'undefined') res.lastTested = doc.lastTested
+	if (typeof doc.active !== 'undefined') res.active = doc.active
+	if (typeof doc.schemaVersion !== 'undefined') res.schemaVersion = doc.schemaVersion?.value
+	if (typeof doc.statusIsUp !== 'undefined') res.statusIsUp = Boolean(doc.statusIsUp?.value ?? false)
+	if (typeof doc.statusIsValid !== 'undefined') res.statusIsValid = Boolean(doc.statusIsValid?.value ?? false)
+	if (typeof doc.statusOverall !== 'undefined') res.statusOverall = Boolean(doc.statusOverall?.value ?? false)
+
+	return res
 }

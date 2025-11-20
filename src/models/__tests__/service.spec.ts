@@ -142,7 +142,7 @@ describe('toServiceResponse', () => {
 			updatedAt: new Date()
 		}
 
-		const response = toServiceResponse(doc)
+		const response = toServiceResponse(doc as any)
 
 		expect(response).toEqual({
 			id: id.toHexString(),

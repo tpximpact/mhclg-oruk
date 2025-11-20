@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model Service {
+  id            String   @id @map("_id") @default(auto()) @db.ObjectId
+  publisher     String
+  publisherUrl  String
+  // These fields are stored as objects with a `value` property in the DB
+  // Use Json so we can preserve structure while still accessing `value`.
+  name          Json
+  description   Json
+  comment       Json?
+  developer     String
+  developerUrl  String
+  service       Json
+  serviceUrl    String
+  contactEmail  String
+  status        String
+  statusNote    String?
+  statusOverall Boolean?  @default(false)
+  schemaVersion String?
+  statusIsUp    Boolean?  @default(false)
+  statusIsValid Boolean?  @default(false)
+  active        Boolean?  @default(false)
+  createdAt     DateTime
+  updatedAt     DateTime
+  testDate      DateTime?
+  lastTested    DateTime?
+}
