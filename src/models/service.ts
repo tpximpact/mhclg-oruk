@@ -12,7 +12,6 @@ export const serviceBaseFieldsSchema = z.object({
 	comment: z.string().max(1024).optional(),
 	developer: z.string().min(1).max(191),
 	developerUrl: z.url().max(191),
-	service: z.string().min(1).max(191),
 	serviceUrl: z.url().max(191),
 	contactEmail: z.email().max(191),
 	testDate: z.date().optional(),
@@ -23,10 +22,24 @@ export const serviceBaseFieldsSchema = z.object({
 // Narrow schema for client/server input (form + action)
 export const serviceInputSchema = serviceBaseFieldsSchema
 
-// Schema for inserting a new service into the DB (includes server-managed fields)
-export const insertServiceSchema = serviceBaseFieldsSchema.extend({
+// Schema for inserting a new service into the DB (nested { value, url } shape)
+export const insertServiceSchema = z.object({
+	name: z.object({ value: z.string().min(1).max(191) }),
+	comment: z.object({ value: z.string().max(1024).optional() }).optional(),
+	developer: z.object({ value: z.string().min(1).max(191), url: z.url().max(191) }),
+	publisher: z.object({ value: z.string().min(1).max(191), url: z.url().max(191) }),
+	service: z.object({ value: z.string().min(1).max(191), url: z.url().max(191) }),
+	description: z.object({ value: z.string().min(1).max(1024) }),
+	email: z.object({ value: z.email().max(191) }),
 	status: z.enum(['pending', 'approved', 'rejected']),
 	statusNote: z.string().max(1024).optional(),
+	schemaVersion: z.object({ value: z.string().max(191) }),
+	statusIsUp: z.object({ value: z.boolean().optional().default(false) }).optional(),
+	statusIsValid: z.object({ value: z.boolean().optional().default(false) }).optional(),
+	statusOverall: z.object({ value: z.boolean().optional().default(false) }).optional(),
+	testDate: z.object({ value: z.date().nullable().optional() }).optional(),
+	lastTested: z.object({ value: z.date().nullable().optional() }).optional(),
+	active: z.boolean().optional().default(false),
 	createdAt: z.date(),
 	updatedAt: z.date()
 })
@@ -37,19 +50,7 @@ export const serviceDocumentSchema = insertServiceSchema.extend({
 	_id: z.custom<ObjectId>(
 		(v): v is ObjectId =>
 			typeof v === 'object' && v !== null && typeof (v as any).toHexString === 'function'
-	),
-	schemaVersion: z.object({
-		value: z.string().max(191)
-	}),
-	statusIsUp: z.object({
-		value: z.boolean().optional().default(false)
-	}),
-	statusIsValid: z.object({
-		value: z.boolean().optional().default(false)
-	}),
-	statusOverall: z.object({
-		value: z.boolean().optional().default(false)
-	})
+	)
 })
 
 // Response schema for API (serializes _id as string)
@@ -89,27 +90,27 @@ export type ServiceResponse = z.infer<typeof serviceResponseSchema>
 export function toServiceResponse(doc: ServiceDocument): ServiceResponse {
 	return {
 		id: doc._id.toHexString(),
-		name: doc.name,
-		publisher: doc.publisher,
-		publisherUrl: doc.publisherUrl,
-		description: doc.description,
-		comment: doc.comment,
-		developer: doc.developer,
-		developerUrl: doc.developerUrl,
-		service: doc.service,
-		serviceUrl: doc.serviceUrl,
-		contactEmail: doc.contactEmail,
+		name: doc.name.value,
+		publisher: doc.publisher.value,
+		publisherUrl: doc.publisher.url,
+		description: doc.description.value,
+		comment: doc.comment?.value,
+		developer: doc.developer.value,
+		developerUrl: doc.developer.url,
+		service: doc.service.value,
+		serviceUrl: doc.service.url,
+		contactEmail: doc.email.value,
 		status: doc.status,
 		statusNote: doc.statusNote,
-		statusOverall: Boolean(doc.statusOverall.value),
+		statusOverall: Boolean(doc.statusOverall?.value),
 		createdAt: doc.createdAt,
 		updatedAt: doc.updatedAt,
-		testDate: doc.testDate,
-		lastTested: doc.lastTested,
+		testDate: doc.testDate?.value ?? undefined,
+		lastTested: doc.lastTested?.value ?? undefined,
 		updateLink: `/developers/register/${doc._id.toHexString()}`,
 		active: doc.active ?? false,
 		schemaVersion: doc.schemaVersion.value,
-		statusIsUp: Boolean(doc.statusIsUp.value),
-		statusIsValid: Boolean(doc.statusIsValid.value)
+		statusIsUp: Boolean(doc.statusIsUp?.value),
+		statusIsValid: Boolean(doc.statusIsValid?.value)
 	}
 }

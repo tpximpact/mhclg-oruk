@@ -23,14 +23,14 @@ describe('ServiceRepository', () => {
 	const testId = ({ toHexString: () => '507f1f77bcf86cd799439011' } as unknown) as ObjectId
 	const testService: ServiceDocument = {
 		_id: testId,
-		name: 'Test Service',
-		publisher: 'Test Publisher',
-		publisherUrl: 'https://test-publisher.com',
-		description: 'Test Description',
-		developer: 'Test Developer',
-		developerUrl: 'https://test-developer.com',
-		serviceUrl: 'https://test-service.com',
-		contactEmail: 'test@example.com',
+		name: { value: 'Test Service' },
+		publisher: { value: 'Test Publisher', url: 'https://test-publisher.com' },
+		description: { value: 'Test Description' },
+		developer: { value: 'Test Developer', url: 'https://test-developer.com' },
+		service: { value: 'Test Service', url: 'https://test-service.com' },
+		email: { value: 'test@example.com' },
+		schemaVersion: { value: '3.0' },
+		active: false,
 		status: 'pending',
 		createdAt: new Date(),
 		updatedAt: new Date()
@@ -54,7 +54,18 @@ describe('ServiceRepository', () => {
 	describe('create', () => {
 		it('should create a new service', async () => {
 			 
-			const { _id, ...insertData } = testService
+			const insertData = {
+				name: 'Test Service',
+				publisher: 'Test Publisher',
+				publisherUrl: 'https://test-publisher.com',
+				description: 'Test Description',
+				developer: 'Test Developer',
+				developerUrl: 'https://test-developer.com',
+				service: 'Test Service',
+				serviceUrl: 'https://test-service.com',
+				contactEmail: 'test@example.com',
+				active: false,
+			}
 			mockCollection.insertOne.mockResolvedValueOnce({ acknowledged: true, insertedId: testId })
 			mockCollection.findOne.mockResolvedValueOnce(testService)
 
@@ -90,7 +101,7 @@ describe('ServiceRepository', () => {
 
 			const results = await repository.findByPublisher('Test Publisher')
 
-			expect(mockCollection.find).toHaveBeenCalledWith({ publisher: 'Test Publisher' })
+			expect(mockCollection.find).toHaveBeenCalledWith({ publisher: { value: 'Test Publisher' } })
 			expect(results).toHaveLength(1)
 			expect(results[0]).toEqual(
 				expect.objectContaining({
@@ -167,9 +178,9 @@ describe('ServiceRepository', () => {
 
 			expect(mockCollection.find).toHaveBeenCalledWith({
 				$or: [
-					{ name: { $regex: 'Test', $options: 'i' } },
-					{ description: { $regex: 'Test', $options: 'i' } },
-					{ publisher: { $regex: 'Test', $options: 'i' } }
+					{ 'name.value': { $regex: 'Test', $options: 'i' } },
+					{ 'description.value': { $regex: 'Test', $options: 'i' } },
+					{ 'publisher.value': { $regex: 'Test', $options: 'i' } }
 				]
 			})
 			expect(results).toHaveLength(1)

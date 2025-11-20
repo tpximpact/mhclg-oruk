@@ -1,6 +1,6 @@
 // Repository implementation for Service entity
 
-import type { ObjectId } from 'mongodb'
+import type { ObjectId, OptionalUnlessRequiredId } from 'mongodb'
 import { BaseRepository } from '@/lib/base-repository'
 import {
   ServiceDocument,
@@ -22,14 +22,40 @@ export class ServiceRepository extends BaseRepository<
   protected readonly insertSchema = insertServiceSchema
   protected readonly updateSchema = insertServiceSchema.partial()
 
-  async create(data: ServiceInput): Promise<ServiceResponse> {
+  async create(data: ServiceInput): Promise<ServiceResponse>
+  async create(data: OptionalUnlessRequiredId<InsertService>): Promise<ServiceResponse>
+  async create(data: ServiceInput | OptionalUnlessRequiredId<InsertService>): Promise<ServiceResponse> {
     const now = new Date()
-    return super.create({
-      ...data,
+
+    // If caller passed an already-formed InsertService (nested), forward directly
+    if (typeof (data as any).name !== 'string') {
+      return super.create(data as OptionalUnlessRequiredId<InsertService>)
+    }
+
+    // Otherwise map the flat ServiceInput into the nested DB shape expected by insertServiceSchema
+    const flat = data as ServiceInput
+    const insertData: InsertService = {
+      name: { value: flat.name },
+      comment: flat.comment ? { value: flat.comment } : undefined,
+      developer: { value: flat.developer, url: flat.developerUrl },
+      publisher: { value: flat.publisher, url: flat.publisherUrl },
+      service: { value: flat.serviceUrl, url: flat.serviceUrl },
+      description: { value: flat.description },
+      email: { value: flat.contactEmail },
       status: 'pending',
+      statusNote: undefined,
+      schemaVersion: { value: '3.0' },
+      statusIsUp: { value: false },
+      statusIsValid: { value: false },
+      statusOverall: { value: false },
+      testDate: { value: null },
+      lastTested: { value: null },
+      active: flat.active ?? false,
       createdAt: now,
       updatedAt: now,
-    })
+    }
+
+    return super.create(insertData)
   }
 
   protected toResponse(doc: ServiceDocument): ServiceResponse {
@@ -40,11 +66,11 @@ export class ServiceRepository extends BaseRepository<
 
   // Custom methods for Registration entity
   async findByPublisher(publisher: string): Promise<ServiceResponse[]> {
-    return this.find({ publisher })
+    return this.find({ publisher: { value: publisher } } as any)
   }
 
   async findByEmail(email: string): Promise<ServiceResponse[]> {
-    return this.find({ contactEmail: email })
+    return this.find({ email: { value: email } } as any)
   }
 
   async updateStatus(
@@ -61,11 +87,11 @@ export class ServiceRepository extends BaseRepository<
 
   // Example of using query builder
   async search(query: string): Promise<ServiceResponse[]> {
-    const filter = {
+    const filter: any = {
       $or: [
-        { name: { $regex: query, $options: 'i' } },
-        { description: { $regex: query, $options: 'i' } },
-        { publisher: { $regex: query, $options: 'i' } },
+        { 'name.value': { $regex: query, $options: 'i' } },
+        { 'description.value': { $regex: query, $options: 'i' } },
+        { 'publisher.value': { $regex: query, $options: 'i' } },
       ],
     }
     return this.find(filter)
