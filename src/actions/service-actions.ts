@@ -7,13 +7,11 @@ import { ValidationError } from '@/lib/mongodb-errors'
 import { serviceInputSchema, type ServiceInput } from '@/models/service'
 import { createVerificationIssue } from '@/lib/github-service'
 
-export const createMessage = async (
-  formState: any,
-  formData: FormData
-): Promise<any> => {
+export const createMessage = async (formState: any, formData: FormData): Promise<any> => {
   let data: ServiceInput
   let values: Record<string, unknown> | undefined
   let updateLink: string | undefined
+  let html_url: string | undefined
 
   try {
     values = {
@@ -24,7 +22,7 @@ export const createMessage = async (
       developer: formData.get('developer'),
       developerUrl: formData.get('developerUrl'),
       serviceUrl: formData.get('serviceUrl'),
-      contactEmail: formData.get('contactEmail'),
+      contactEmail: formData.get('contactEmail')
     }
     data = serviceInputSchema.parse(values)
   } catch (error) {
@@ -35,7 +33,7 @@ export const createMessage = async (
     // Save service using repository
     const serviceRepo = new ServiceRepository()
     const service = await serviceRepo.create({
-      ...data,
+      ...data
     })
 
     // Get update link from response
@@ -45,7 +43,9 @@ export const createMessage = async (
     // Create GitHub issue for manual verification
     try {
       const issue = await createVerificationIssue(service)
-      
+
+      html_url = issue.html_url
+
       console.log(`Created GitHub issue #${issue.number} for service verification: ${issue.url}`)
     } catch (githubError) {
       // Log the error but don't fail the entire operation
@@ -54,7 +54,7 @@ export const createMessage = async (
     }
   } catch (error) {
     console.error('Error creating service:', error)
-    
+
     if (error instanceof ValidationError) {
       return fromErrorToFormState(error, values)
     }
@@ -65,5 +65,6 @@ export const createMessage = async (
 
   const result: any = toFormState('SUCCESS', 'Service requested')
   ;(result as any).updateLink = updateLink
+  ;(result as any).issueUrl = html_url
   return result
 }

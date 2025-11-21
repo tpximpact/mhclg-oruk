@@ -71,7 +71,7 @@ export const Form = () => {
   const noScriptFallback = useToastMessage(formState)
   const formRef = useFormReset(formState)
   if (formState?.status === 'SUCCESS') {
-    return <Success link={formState.updateLink as string} />
+    return <Success link={formState.issueUrl || formState.updateLink as string} />
   }
 
   return (
