@@ -51,7 +51,7 @@ describe('createVerificationIssue', () => {
     expect(callArg.title).toContain(serviceData.name)
     expect(callArg.body).toContain(serviceData.id)
     expect(callArg.labels).toEqual(expect.arrayContaining(['verification', 'new-service', 'manual-review']))
-    expect(callArg.assignee).toBe('owner')
+    expect(callArg.assignees).toEqual(['owner'])
 
     expect(result).toEqual({ id: 123, html_url: 'https://github.com/owner/repo/issues/1' })
   })
