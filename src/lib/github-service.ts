@@ -7,8 +7,7 @@ import { ServiceResponse } from '@/models/service'
  * Server Action to create a GitHub Issue.
  * This runs entirely on the server, keeping your Private Key secure.
  */
-export async function createVerificationIssue(serviceData: ServiceResponse,
-) {
+export async function createVerificationIssue(serviceData: ServiceResponse) {
   // Hardcode these or fetch them from your DB/Env
   const owner = process.env.GITHUB_REPO_OWNER!
   const repo = process.env.GITHUB_REPO_NAME!
