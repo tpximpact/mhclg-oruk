@@ -73,7 +73,8 @@ Please complete the following verification steps:
 
 ### Admin Actions
 
-- **Update Service Status:** [${serviceData.updateLink}](${process.env.NEXTAUTH_URL || 'http://localhost:3000'}${serviceData.updateLink})
+- **Update Service Status:** After verification, update the service status in the system.
+- **Add Verification Notes:** Document any findings or issues encountered during verification.
 
 ### Next Steps
 
