@@ -53,6 +53,8 @@ export const createMessage = async (
       console.error('Failed to create GitHub issue for service verification:', githubError)
     }
   } catch (error) {
+    console.error('Error creating service:', error)
+    
     if (error instanceof ValidationError) {
       return fromErrorToFormState(error, values)
     }

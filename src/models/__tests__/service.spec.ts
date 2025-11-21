@@ -16,7 +16,7 @@ describe('insertServiceSchema', () => {
 			description: { value: 'Test Description' },
 			developer: { value: 'Test Developer', url: 'https://test-developer.com' },
 			service: { value: 'Test Service', url: 'https://test-service.com' },
-			contactEmail: { value: 'test@example.com' },
+			email: { value: 'test@example.com' },
 			status: 'pending',
 			schemaVersion: { value: '3.0' },
 			createdAt: new Date(),
@@ -34,7 +34,7 @@ describe('insertServiceSchema', () => {
 				description: { value: 'Test Description' },
 				developer: { value: 'Test Developer', url: 'https://test-developer.com' },
 				service: { value: 'Test Service', url: 'https://test-service.com' },
-				contactEmail: { value: 'not-an-email' }, // Invalid email
+				email: { value: 'not-an-email' }, // Invalid email
 				status: 'invalid-status', // Invalid status
 				createdAt: new Date(),
 				updatedAt: new Date()
@@ -47,7 +47,7 @@ describe('insertServiceSchema', () => {
 			const paths = issues.map(issue => issue.path.join('.'))
 			expect(paths).toContain('name.value')
 			expect(paths).toContain('publisher.url')
-			expect(paths).toContain('contactEmail.value')
+			expect(paths).toContain('email.value')
 			expect(paths).toContain('status')
 			expect(paths).toContain('schemaVersion')
 		}
@@ -63,7 +63,7 @@ describe('serviceDocumentSchema', () => {
 				description: { value: 'Test Description' },
 				developer: { value: 'Test Developer', url: 'https://test-developer.com' },
 				service: { value: 'Test Service', url: 'https://test-service.com' },
-				contactEmail: { value: 'test@example.com' },
+				email: { value: 'test@example.com' },
 				status: 'pending',
 				schemaVersion: { value: '3.0' },
 				createdAt: new Date(),

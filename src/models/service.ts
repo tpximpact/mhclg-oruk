@@ -99,7 +99,7 @@ export function toServiceResponse(doc: ServiceDocument): ServiceResponse {
 		developerUrl: doc.developer.url,
 		service: doc.service.value,
 		serviceUrl: doc.service.url,
-		contactEmail: doc.email.value,
+		contactEmail: doc.email?.value,
 		status: doc.status,
 		statusNote: doc.statusNote,
 		statusOverall: Boolean(doc.statusOverall?.value),

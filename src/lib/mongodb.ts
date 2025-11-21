@@ -27,6 +27,8 @@ export async function getMongoClient(): Promise<MongoClient> {
 		throw new Error('MONGODB_URI is not set. Define it in .env or your deployment environment.')
 	}
 
+	console.log('Creating new MongoClient connection...', MONGODB_URI)
+	
 	const client = new MongoClient(MONGODB_URI, {
 		serverSelectionTimeoutMS: 5000, 
 		maxPoolSize: 10, 
