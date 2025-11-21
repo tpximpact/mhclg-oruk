@@ -121,7 +121,7 @@ describe('ServiceRepository', () => {
 
 			const results = await repository.findByEmail('test@example.com')
 
-			expect(mockCollection.find).toHaveBeenCalledWith({ contactEmail: 'test@example.com' })
+			expect(mockCollection.find).toHaveBeenCalledWith({ contactEmail: { value: 'test@example.com' } })
 			expect(results).toHaveLength(1)
 			expect(results[0]).toEqual(
 				expect.objectContaining({

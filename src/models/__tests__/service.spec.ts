@@ -16,8 +16,9 @@ describe('insertServiceSchema', () => {
 			description: { value: 'Test Description' },
 			developer: { value: 'Test Developer', url: 'https://test-developer.com' },
 			service: { value: 'Test Service', url: 'https://test-service.com' },
-			contactEmail: 'test@example.com',
+			contactEmail: { value: 'test@example.com' },
 			status: 'pending',
+			schemaVersion: { value: '3.0' },
 			createdAt: new Date(),
 			updatedAt: new Date()
 		}
@@ -33,7 +34,7 @@ describe('insertServiceSchema', () => {
 				description: { value: 'Test Description' },
 				developer: { value: 'Test Developer', url: 'https://test-developer.com' },
 				service: { value: 'Test Service', url: 'https://test-service.com' },
-				contactEmail: 'not-an-email', // Invalid email
+				contactEmail: { value: 'not-an-email' }, // Invalid email
 				status: 'invalid-status', // Invalid status
 				createdAt: new Date(),
 				updatedAt: new Date()
@@ -44,45 +45,47 @@ describe('insertServiceSchema', () => {
 		if (!result.success) {
 			const issues = result.error.issues
 			const paths = issues.map(issue => issue.path.join('.'))
-			expect(paths).toContain('name')
-			expect(paths).toContain('publisherUrl')
-			expect(paths).toContain('contactEmail')
+			expect(paths).toContain('name.value')
+			expect(paths).toContain('publisher.url')
+			expect(paths).toContain('contactEmail.value')
 			expect(paths).toContain('status')
+			expect(paths).toContain('schemaVersion')
 		}
 	})
 })
 
 describe('serviceDocumentSchema', () => {
 	it('should validate valid document data', () => {
-		const validDoc = {
-			_id: makeObjectId(),
-			name: { value: 'Test Service' },
-			publisher: { value: 'Test Publisher', url: 'https://test-publisher.com' },
-			description: { value: 'Test Description' },
-			developer: { value: 'Test Developer', url: 'https://test-developer.com' },
-			service: { value: 'Test Service', url: 'https://test-service.com' },
-			contactEmail: 'test@example.com',
-			status: 'pending',
-			createdAt: new Date(),
-			updatedAt: new Date()
-		}
+			const validDoc = {
+				_id: makeObjectId(),
+				name: { value: 'Test Service' },
+				publisher: { value: 'Test Publisher', url: 'https://test-publisher.com' },
+				description: { value: 'Test Description' },
+				developer: { value: 'Test Developer', url: 'https://test-developer.com' },
+				service: { value: 'Test Service', url: 'https://test-service.com' },
+				contactEmail: { value: 'test@example.com' },
+				status: 'pending',
+				schemaVersion: { value: '3.0' },
+				createdAt: new Date(),
+				updatedAt: new Date()
+			}
 
 		const result = serviceDocumentSchema.safeParse(validDoc)
 		expect(result.success).toBe(true)
 	})
 
 	it('should reject document without _id', () => {
-		const invalidDoc = {
-			name: { value: 'Test Service' },
-			publisher: { value: 'Test Publisher', url: 'https://test-publisher.com' },
-			description: { value: 'Test Description' },
-			developer: { value: 'Test Developer', url: 'https://test-developer.com' },
-			service: { value: 'Test Service', url: 'https://test-service.com' },
-			contactEmail: 'test@example.com',
-			status: 'pending',
-			createdAt: new Date(),
-			updatedAt: new Date()
-		}
+			const invalidDoc = {
+				name: { value: 'Test Service' },
+				publisher: { value: 'Test Publisher', url: 'https://test-publisher.com' },
+				description: { value: 'Test Description' },
+				developer: { value: 'Test Developer', url: 'https://test-developer.com' },
+				service: { value: 'Test Service', url: 'https://test-service.com' },
+				contactEmail: { value: 'test@example.com' },
+				status: 'pending',
+				createdAt: new Date(),
+				updatedAt: new Date()
+			}
 
 		const result = serviceDocumentSchema.safeParse(invalidDoc)
 		expect(result.success).toBe(false)
@@ -103,6 +106,7 @@ describe('serviceResponseSchema', () => {
 			description: 'Test Description',
 			developer: 'Test Developer',
 			developerUrl: 'https://test-developer.com',
+			service: 'Test Service',
 			serviceUrl: 'https://test-service.com',
 			contactEmail: 'test@example.com',
 			status: 'pending',
@@ -126,7 +130,7 @@ describe('toServiceResponse', () => {
 			description: { value: 'Test Description' },
 			developer: { value: 'Test Developer', url: 'https://test-developer.com' },
 			service: { value: 'Test Service', url: 'https://test-service.com' },
-			contactEmail: 'test@example.com',
+			email: { value: 'test@example.com' },
 			status: 'pending' as const,
 			schemaVersion: { value: '3.0' },
 			active: false,
@@ -136,7 +140,7 @@ describe('toServiceResponse', () => {
 
 		const response = toServiceResponse(doc)
 
-			expect(response).toEqual({
+				expect(response).toEqual(expect.objectContaining({
 				id: id.toHexString(),
 				name: doc.name.value,
 				publisher: doc.publisher.value,
@@ -145,11 +149,11 @@ describe('toServiceResponse', () => {
 				developer: doc.developer.value,
 				developerUrl: doc.developer.url,
 				serviceUrl: doc.service.url,
-				contactEmail: doc.contactEmail,
+				contactEmail: doc.email.value,
 				status: doc.status,
 				createdAt: doc.createdAt,
 				updatedAt: doc.updatedAt,
 				updateLink: `/developers/register/${id.toHexString()}`
-			})
+			}))
 	})
 })

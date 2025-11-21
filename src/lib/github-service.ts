@@ -1,94 +1,39 @@
-// GitHub service for creating issues for manual verification
+'use server'
 
-export interface GitHubIssueData {
-  title: string
-  body: string
-  labels?: string[]
-  assignees?: string[]
+import { appOctokit } from '@/lib/github'
+import { ServiceResponse } from '@/models/service'
+
+/**
+ * Server Action to create a GitHub Issue.
+ * This runs entirely on the server, keeping your Private Key secure.
+ */
+export async function createVerificationIssue(serviceData: ServiceResponse,
+) {
+  // Hardcode these or fetch them from your DB/Env
+  const owner = process.env.GITHUB_REPO_OWNER!
+  const repo = process.env.GITHUB_REPO_NAME!
+
+  // Because we used `createAppAuth` in lib/github.ts,
+  // this request is automatically signed as the GitHub App Installation.
+  const response = await appOctokit.rest.issues.create({
+    owner,
+    repo,
+    title: `Manual Verification Required: ${serviceData.name}`,
+    body: generateIssueBody(serviceData),
+    labels: ['verification', 'new-service', 'manual-review'],
+    assignee: owner // Optionally assign the issue to the repo owner
+  })
+
+  return response.data
 }
 
-export interface ServiceData {
-  id: string
-  name: string
-  publisher: string
-  publisherUrl: string
-  description: string
-  developer: string
-  developerUrl: string
-  serviceUrl: string
-  contactEmail: string
-  createdAt: Date
-  updateLink: string
-}
+/**
+ * Generates the issue body content with service details
+ */
+function generateIssueBody(serviceData: ServiceResponse): string {
+  const formatDate = (date: Date) => date.toISOString().split('T')[0]
 
-export class GitHubService {
-  private readonly baseUrl = 'https://api.github.com'
-  private readonly owner: string
-  private readonly repo: string
-  private readonly token: string
-
-  constructor() {
-    const owner = process.env.GITHUB_OWNER
-    const repo = process.env.GITHUB_REPO
-    const token = process.env.GITHUB_TOKEN
-
-    if (!owner || !repo || !token) {
-      throw new Error(
-        'Missing required GitHub configuration. Please set GITHUB_OWNER, GITHUB_REPO, and GITHUB_TOKEN environment variables.'
-      )
-    }
-
-    this.owner = owner
-    this.repo = repo
-    this.token = token
-  }
-
-  /**
-   * Creates a GitHub issue for manual verification of a new service
-   */
-  async createVerificationIssue(serviceData: ServiceData): Promise<{ url: string; number: number }> {
-    const issueData: GitHubIssueData = {
-      title: `Manual Verification Required: ${serviceData.name}`,
-      body: this.generateIssueBody(serviceData),
-      labels: ['verification', 'new-service', 'manual-review'],
-    }
-
-    try {
-      const response = await fetch(`${this.baseUrl}/repos/${this.owner}/${this.repo}/issues`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${this.token}`,
-          'Accept': 'application/vnd.github.v3+json',
-          'Content-Type': 'application/json',
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
-        body: JSON.stringify(issueData),
-      })
-
-      if (!response.ok) {
-        const errorBody = await response.text()
-        throw new Error(`GitHub API error (${response.status}): ${errorBody}`)
-      }
-
-      const issue = await response.json()
-      
-      return {
-        url: issue.html_url,
-        number: issue.number,
-      }
-    } catch (error) {
-      console.error('Failed to create GitHub issue:', error)
-      throw new Error(`Failed to create GitHub issue: ${error instanceof Error ? error.message : 'Unknown error'}`)
-    }
-  }
-
-  /**
-   * Generates the issue body content with service details
-   */
-  private generateIssueBody(serviceData: ServiceData): string {
-    const formatDate = (date: Date) => date.toISOString().split('T')[0]
-
-    return `## New Service Registration - Manual Verification Required
+  return `## New Service Registration - Manual Verification Required
 
 A new service has been registered and requires manual verification.
 
@@ -140,5 +85,4 @@ Once verification is complete:
 ---
 
 *This issue was automatically generated when the service was registered on ${formatDate(serviceData.createdAt)}.*`
-  }
 }
