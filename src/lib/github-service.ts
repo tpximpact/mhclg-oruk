@@ -11,6 +11,7 @@ export async function createVerificationIssue(serviceData: ServiceResponse) {
   // Hardcode these or fetch them from your DB/Env
   const owner = process.env.GITHUB_REPO_OWNER!
   const repo = process.env.GITHUB_REPO_NAME!
+  const assignees = process.env.GITHUB_REPO_ASSIGNEES?.split(',') || [owner]
 
   // Because we used `createAppAuth` in lib/github.ts,
   // this request is automatically signed as the GitHub App Installation.
@@ -20,7 +21,7 @@ export async function createVerificationIssue(serviceData: ServiceResponse) {
     title: `Manual Verification Required: ${serviceData.name}`,
     body: generateIssueBody(serviceData),
     labels: ['verification', 'new-service', 'manual-review'],
-    assignee: owner // Optionally assign the issue to the repo owner
+    assignees // Optionally assign the issue to the repo owner
   })
 
   return response.data
