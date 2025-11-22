@@ -14,105 +14,60 @@ export async function generateMetadata() {
   }
 }
 
-// Transform ServiceResponse to match the expected format for DashboardDetails
+// Transform ServiceResponse (flat) or nested DB doc to the format expected by DashboardDetails
 function transformServiceForDashboard(service: any) {
-  // Helper function to extract value from structured objects
   const extractValue = (field: any): any => {
     if (field === null || field === undefined) return ''
-    if (typeof field === 'object' && field.value !== undefined) {
-      return field.value
-    }
+    if (typeof field === 'object' && field.value !== undefined) return field.value
     return field
   }
 
-  // Helper function to safely convert dates to ISO strings (for server-side use)
+  const extractUrl = (obj: any, fallback?: string): string => {
+    if (!obj) return fallback ?? ''
+    if (typeof obj === 'object' && obj.url !== undefined) return obj.url
+    return fallback ?? ''
+  }
+
   const toISOString = (date: any): string => {
-    const dateValue = extractValue(date)
-
-    if (!dateValue) return new Date().toISOString()
-
+    const val = extractValue(date) || date
     try {
-      // Handle various date formats
-      if (dateValue instanceof Date) {
-        return dateValue.toISOString()
-      }
-
-      if (typeof dateValue === 'string') {
-        const parsed = new Date(dateValue)
-        if (isNaN(parsed.getTime())) {
-          return new Date().toISOString()
-        }
-        return parsed.toISOString()
-      }
-
-      // Handle MongoDB date objects
-      if (typeof dateValue === 'object' && dateValue.$date) {
-        return new Date(dateValue.$date).toISOString()
-      }
-
-      // Try to parse as date
-      const parsed = new Date(dateValue)
-      if (isNaN(parsed.getTime())) {
-        return new Date().toISOString()
-      }
-      return parsed.toISOString()
-    } catch (error) {
+      const d = val instanceof Date ? val : new Date(val)
+      if (isNaN(d.getTime())) return new Date().toISOString()
+      return d.toISOString()
+    } catch (e) {
       return new Date().toISOString()
     }
   }
 
+  // Support both the repository's flat ServiceResponse and the nested DB document
+  const title = extractValue(service.name ?? service.title)
+  const publisherValue = extractValue(service.publisher)
+  const publisherUrl = service.publisherUrl ?? extractUrl(service.publisher)
+  const developerValue = extractValue(service.developer)
+  const developerUrl = service.developerUrl ?? extractUrl(service.developer)
+  const serviceValue = extractValue(service.service ?? service.name)
+  const serviceUrl = service.serviceUrl ?? extractUrl(service.service)
+  const isValid = (service.statusIsValid && typeof service.statusIsValid === 'boolean') ? service.statusIsValid : extractValue(service.statusIsValid)
+  const lastTest = service.lastTested ?? service.testDate ?? service.createdAt
+
   return {
     result: {
-      title: {
-        value: extractValue(service.name)
-      },
-      publisher: service.publisher,
-      developer: service.developer,
-      service: {
-        url: (service.service as any).url,
-        value: (service.name as any).value
-      },
-      isValid: service.statusIsValid,
-      lastTested: {
-        value: service.lastTested ? toISOString(service.lastTested) : toISOString(service.createdAt)
-      },
+      title: { value: title },
+      publisher: { value: publisherValue, url: publisherUrl },
+      developer: { value: developerValue, url: developerUrl },
+      service: { value: serviceValue, url: serviceUrl },
+      isValid: Boolean(isValid),
+      lastTested: { value: lastTest ? toISOString(lastTest) : toISOString(service.createdAt) },
       payload: [
         {
           label: 'Service Details',
           fields: [
-            {
-              label: 'Name',
-              value: service.name.value,
-              dataType: 'oruk:dataType:string',
-              url: service.service.url
-            },
-            {
-              label: 'Developed By',
-              value: service.developer.value,
-              dataType: 'oruk:dataType:string',
-              url: service.developer.url
-            },
-            {
-              label: 'Published By',
-              value: service.publisher.value,
-              dataType: 'oruk:dataType:string',
-              url: service.publisher.url
-            },
-            {
-              label: 'Comment',
-              value: service.comment.value,
-              dataType: 'oruk:dataType:string'
-            },
-            {
-              label: 'Description',
-              value: service.description.value,
-              dataType: 'oruk:dataType:string'
-            },
-            {
-              label: 'Schema Version',
-              value: service.schemaVersion,
-              dataType: 'oruk:dataType:string'
-            }
+            { label: 'Name', value: title, dataType: 'oruk:dataType:string', url: serviceUrl },
+            { label: 'Developed By', value: developerValue, dataType: 'oruk:dataType:string', url: developerUrl },
+            { label: 'Published By', value: publisherValue, dataType: 'oruk:dataType:string', url: publisherUrl },
+            { label: 'Comment', value: extractValue(service.comment), dataType: 'oruk:dataType:string' },
+            { label: 'Description', value: extractValue(service.description), dataType: 'oruk:dataType:string' },
+            { label: 'Schema Version', value: extractValue(service.schemaVersion) || service.schemaVersion, dataType: 'oruk:dataType:string' }
           ]
         }
       ]
