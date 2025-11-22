@@ -1,6 +1,13 @@
 // Base repository class for MongoDB collections with typed CRUD operations
 
-import type { Collection, Document, Filter, ObjectId, OptionalUnlessRequiredId, WithId } from 'mongodb'
+import type {
+  Collection,
+  Document,
+  Filter,
+  ObjectId,
+  OptionalUnlessRequiredId,
+  WithId
+} from 'mongodb'
 import { z } from 'zod'
 import { getCollection } from './mongodb'
 import { ValidationError } from './mongodb-errors'
@@ -39,7 +46,7 @@ export abstract class BaseRepository<
         // `require` may throw if the driver is ESM in the environment running the tests
         // In that case we leave the id as the string; tests mock the collection and don't
         // need a real ObjectId instance.
-         
+
         const { ObjectId: ObjId } = require('mongodb') as any
         _id = new ObjId(id)
       } catch {
@@ -70,14 +77,16 @@ export abstract class BaseRepository<
       }
       throw error
     }
-    
-    const result = await (await this.collection).insertOne(validated as OptionalUnlessRequiredId<TSchema>)
+
+    const result = await (
+      await this.collection
+    ).insertOne(validated as OptionalUnlessRequiredId<TSchema>)
     const created = await this.findById(result.insertedId)
-    
+
     if (!created) {
       throw new Error('Created document not found')
     }
-    
+
     return created
   }
 
@@ -85,7 +94,6 @@ export abstract class BaseRepository<
     let _id: string | ObjectId
     if (typeof id === 'string') {
       try {
-         
         const { ObjectId: ObjId } = require('mongodb') as any
         _id = new ObjId(id)
       } catch {
@@ -94,7 +102,7 @@ export abstract class BaseRepository<
     } else {
       _id = id
     }
-    
+
     // Validate with zod schema
     let validated
     try {
@@ -107,7 +115,9 @@ export abstract class BaseRepository<
       throw error
     }
 
-    const result = await (await this.collection).findOneAndUpdate(
+    const result = await (
+      await this.collection
+    ).findOneAndUpdate(
       { _id } as Filter<TSchema>,
       { $set: { ...validated, updatedAt: new Date() } } as any,
       { returnDocument: 'after' }
@@ -120,7 +130,6 @@ export abstract class BaseRepository<
     let _id: string | ObjectId
     if (typeof id === 'string') {
       try {
-         
         const { ObjectId: ObjId } = require('mongodb') as any
         _id = new ObjId(id)
       } catch {
