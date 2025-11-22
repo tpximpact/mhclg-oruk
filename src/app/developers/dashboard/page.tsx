@@ -55,7 +55,7 @@ export default async function Page(props: PageProps) {
         // Handle Date objects or objects with toISOString
         if ('toISOString' in dateValue) {
           try {
-            return new Date((dateValue as any).toISOString()).toLocaleDateString('en-GB')
+            return new Date((dateValue as any).toISOString()).toLocaleString('en-GB')
           } catch (error) {
             return 'Invalid date'
           }
@@ -68,10 +68,10 @@ export default async function Page(props: PageProps) {
       // Handle simple string or Date values
       try {
         if (typeof dateValue === 'string') {
-          return new Date(dateValue).toLocaleDateString('en-GB')
+          return new Date(dateValue).toLocaleString('en-GB')
         }
         if (typeof dateValue === 'object' && (dateValue as any) instanceof Date) {
-          return (dateValue as Date).toLocaleDateString('en-GB')
+          return (dateValue as Date).toLocaleString('en-GB')
         }
         return String(dateValue)
       } catch (error) {
