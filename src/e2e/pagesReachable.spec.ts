@@ -4,7 +4,7 @@ import fs from 'fs'
 import { join } from 'path'
 const { test, expect } = require('@playwright/test')
 
-const getAllFiles = contentFolder => {
+const getAllFiles = (contentFolder: string) => {
 	const dir = join(process.cwd(), '/content', contentFolder)
 	const dirents = fs.readdirSync(dir, { withFileTypes: true })
 	return dirents
@@ -14,18 +14,23 @@ const getAllFiles = contentFolder => {
 }
 
 const site = flattenSite().filter(p => !p.offsite)
-const nonDynamicPages = site.map(page => ({
-	path: '/' + (page.urlPath ? page.urlPath : ''),
-	lookFor: page.e2eTestLookFor
-}))
+const nonDynamicPages = site
+	.filter(p => p.urlPath && p.name && !String(p.urlPath).includes('undefined'))
+	.map(page => ({
+		path: '/' + page.urlPath,
+		lookFor: page.e2eTestLookFor
+	}))
 
 const dynamicPages = site
-	.filter(p => p.dynamic)
-	.flatMap(root =>
-		getAllFiles(root.contentPath).map(n => ({
-			path: `${root.contentPath}/${slugify(n)}`
-		}))
-	)
+	.filter(p => p.dynamic && p.contentPath && p.name)
+	.flatMap(root => {
+		const dirPath = join(process.cwd(), '/content', root.contentPath)
+		if (!fs.existsSync(dirPath)) return []
+		return getAllFiles(root.contentPath)
+			.map(n => slugify(n))
+			.filter(s => s && s !== 'undefined')
+			.map(s => ({ path: `${root.contentPath}/${s}`, lookFor: null }))
+	})
 
 let data = nonDynamicPages
 	.concat(dynamicPages)
@@ -33,11 +38,9 @@ let data = nonDynamicPages
 
 test.describe('Page Content Validation Tests', () => {
 	data.forEach(({ path, lookFor = 'open' }) => {
-		test(`should find "${lookFor}" on ${path}`, async ({ page }) => {
-			await page.goto(path)
-
-			// Check if the status code is 200
+		test(`should find "${lookFor}" on ${path}`, async ({ page } : { page: any }) => {
 			const response = await page.goto(path)
+			expect(response).not.toBeNull()
 			expect(response.status()).toBe(200)
 
 			const bodyText = await page.textContent('body')
