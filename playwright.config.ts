@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
 import path from 'path'
+import dotenv from 'dotenv'
+
+// Load test env file if present. Keep secrets out of VCS by using `.env.test`.
+dotenv.config({ path: '.env.test' })
 
 // Use process.env.PORT by default and fallback to port 3000
 const PORT = process.env.PORT || 3000
@@ -24,7 +28,15 @@ export default defineConfig({
 		command: 'npm run dev',
 		url: baseURL,
 		timeout: 120 * 1000,
-		reuseExistingServer: !process.env.CI
+		reuseExistingServer: !process.env.CI,
+		// Inject test database URL into the dev server environment when running tests
+		// Build a safe env object to avoid passing undefined values to the web server
+		env: (() => {
+			const e: Record<string, string> = { NODE_ENV: 'test' }
+			const db = process.env.MONGODB_DB
+			if (db) e.MONGODB_DB = db
+			return e
+		})()
 	},
 
 	use: {

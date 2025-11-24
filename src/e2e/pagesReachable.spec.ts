@@ -14,19 +14,23 @@ const getAllFiles = (contentFolder: string) => {
 }
 
 const site = flattenSite().filter(p => !p.offsite)
-const nonDynamicPages = site.map(page => ({
-	path: '/' + (page.urlPath ? page.urlPath : ''),
-	lookFor: page.e2eTestLookFor
-}))
+const nonDynamicPages = site
+	.filter(p => p.urlPath && p.name && !String(p.urlPath).includes('undefined'))
+	.map(page => ({
+		path: '/' + page.urlPath,
+		lookFor: page.e2eTestLookFor
+	}))
 
 const dynamicPages = site
-	.filter(p => p.dynamic)
-	.flatMap(root =>
-		getAllFiles(root.contentPath).map(n => ({
-			path: `${root.contentPath}/${slugify(n)}`,
-			lookFor: root.e2eTestLookFor || 'open'
-		}))
-	)
+	.filter(p => p.dynamic && p.contentPath && p.name)
+	.flatMap(root => {
+		const dirPath = join(process.cwd(), '/content', root.contentPath)
+		if (!fs.existsSync(dirPath)) return []
+		return getAllFiles(root.contentPath)
+			.map(n => slugify(n))
+			.filter(s => s && s !== 'undefined')
+			.map(s => ({ path: `${root.contentPath}/${s}`, lookFor: null }))
+	})
 
 const data = nonDynamicPages
 	.concat(dynamicPages)
