@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from './ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
+import FormattedDateComponent from './_components/FormattedDateComponent'
 
 export interface MobileSortSelectorProps {
   currentSort: SortField
@@ -114,7 +115,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
     return <td className={className}>-</td>
   }
 
-  const { value, url }: { value: string; url?: string } = data
+  const { value, url }: { value: string | Date | undefined; url?: string } = data
 
   // Ensure value is a string and handle potential objects
   const displayValue = value && value !== '[object Object]' ? String(value) : '-'
@@ -125,11 +126,15 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
     ? `${styles.cellContent} ${styles.descriptionContent}`
     : styles.cellContent
 
-  const content = (
-    <span className={contentClass} title={isDescription ? undefined : displayValue}>
-      {displayValue}
-    </span>
-  )
+  // Handle date field specially
+  const content =
+    value instanceof Date ? (
+      <FormattedDateComponent value={value} />
+    ) : (
+      <span className={contentClass} title={isDescription ? undefined : displayValue}>
+        {displayValue}
+      </span>
+    )
 
   if (url) {
     return (

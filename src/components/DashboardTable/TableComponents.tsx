@@ -1,8 +1,8 @@
-import Link from 'next/link'
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from '../ServicesTable/ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
 import PassFailIndicator from '../ServicesTable/_components/PassFailIndicator'
+import FormattedDateComponent from '../ServicesTable/_components/FormattedDateComponent'
 
 interface MobileSortSelectorProps {
   currentSort: SortField
@@ -113,7 +113,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
     return <td className={className}>-</td>
   }
 
-  const { value, url }: { value: string | number | boolean; url?: string } = data
+  const { value, url }: { value: string | number | boolean | Date | undefined; url?: string } = data
 
   // Ensure value is a string and handle potential objects
   const displayValue = value && value !== '[object Object]' ? String(value) : '-'
@@ -128,6 +128,8 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
   const content =
     typeof value === 'boolean' ? (
       <PassFailIndicator value={value} />
+    ) : value instanceof Date ? (
+            <FormattedDateComponent value={value} />
     ) : (
       <span className={contentClass} title={isBoolean ? undefined : displayValue}>
         {displayValue}

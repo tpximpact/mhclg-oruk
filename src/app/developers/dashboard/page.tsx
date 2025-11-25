@@ -85,7 +85,7 @@ export default async function Page(props: PageProps) {
       statusIsUp: { value: s.statusIsUp },
       statusIsValid: { value: s.statusIsValid },
       schemaVersion: { value: String(s.schemaVersion || 'N/A') },
-      testDate: { value: getTestDate(), url: `/developers/dashboard/${s.id}` }
+      testDate: { value: s.testDate || s.lastTested, url: `/developers/dashboard/${s.id}` }
     }
   })
 
