@@ -4,9 +4,10 @@ import { useState, useEffect, FC } from 'react'
 // Define the shape of the component's props
 interface LocalisedDateProps {
   dateString: string // The raw date string, e.g., "2025-11-25T10:00:00.000Z"
+  fmtOptions?: Intl.DateTimeFormatOptions // Optional formatting options
 }
 
-const LocalisedDate: FC<LocalisedDateProps> = ({ dateString }) => {
+const LocalisedDate: FC<LocalisedDateProps> = ({ dateString, fmtOptions }) => {
   const date = new Date(dateString)
 
   // --- 1. Initial State for SSR (Universal Format) ---
@@ -23,7 +24,7 @@ const LocalisedDate: FC<LocalisedDateProps> = ({ dateString }) => {
     // This runs only on the client after successful hydration.
 
     // Define options for formatting (this will use the client's locale and timezone)
-    const options: Intl.DateTimeFormatOptions = {
+    const options: Intl.DateTimeFormatOptions = fmtOptions ?? {
       year: '2-digit',
       month: '2-digit',
       day: '2-digit',

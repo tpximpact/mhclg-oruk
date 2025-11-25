@@ -28,17 +28,6 @@ function transformServiceForDashboard(service: any) {
     return fallback ?? ''
   }
 
-  const toISOString = (date: any): string => {
-    const val = extractValue(date) || date
-    try {
-      const d = val instanceof Date ? val : new Date(val)
-      if (isNaN(d.getTime())) return new Date().toISOString()
-      return d.toISOString()
-    } catch (e) {
-      return new Date().toISOString()
-    }
-  }
-
   // Support both the repository's flat ServiceResponse and the nested DB document
   const title = extractValue(service.name ?? service.title)
   const publisherValue = extractValue(service.publisher)
@@ -47,9 +36,11 @@ function transformServiceForDashboard(service: any) {
   const developerUrl = service.developerUrl ?? extractUrl(service.developer)
   const serviceValue = extractValue(service.service ?? service.name)
   const serviceUrl = service.serviceUrl ?? extractUrl(service.service)
-  const isValid = (service.statusIsValid && typeof service.statusIsValid === 'boolean') ? service.statusIsValid : extractValue(service.statusIsValid)
-  const lastTest = service.lastTested ?? service.testDate ?? service.createdAt
-
+  const isValid =
+    service.statusIsValid && typeof service.statusIsValid === 'boolean'
+      ? service.statusIsValid
+      : extractValue(service.statusIsValid)
+  
   return {
     result: {
       title: { value: title },
@@ -57,17 +48,39 @@ function transformServiceForDashboard(service: any) {
       developer: { value: developerValue, url: developerUrl },
       service: { value: serviceValue, url: serviceUrl },
       isValid: Boolean(isValid),
-      lastTested: { value: lastTest ? toISOString(lastTest) : toISOString(service.createdAt) },
+      testDate: { value: service.testDate || service.lastTested },
       payload: [
         {
           label: 'Service Details',
           fields: [
             { label: 'Name', value: title, dataType: 'oruk:dataType:string', url: serviceUrl },
-            { label: 'Developed By', value: developerValue, dataType: 'oruk:dataType:string', url: developerUrl },
-            { label: 'Published By', value: publisherValue, dataType: 'oruk:dataType:string', url: publisherUrl },
-            { label: 'Comment', value: extractValue(service.comment), dataType: 'oruk:dataType:string' },
-            { label: 'Description', value: extractValue(service.description), dataType: 'oruk:dataType:string' },
-            { label: 'Schema Version', value: extractValue(service.schemaVersion) || service.schemaVersion, dataType: 'oruk:dataType:string' }
+            {
+              label: 'Developed By',
+              value: developerValue,
+              dataType: 'oruk:dataType:string',
+              url: developerUrl
+            },
+            {
+              label: 'Published By',
+              value: publisherValue,
+              dataType: 'oruk:dataType:string',
+              url: publisherUrl
+            },
+            {
+              label: 'Comment',
+              value: extractValue(service.comment),
+              dataType: 'oruk:dataType:string'
+            },
+            {
+              label: 'Description',
+              value: extractValue(service.description),
+              dataType: 'oruk:dataType:string'
+            },
+            {
+              label: 'Schema Version',
+              value: extractValue(service.schemaVersion) || service.schemaVersion,
+              dataType: 'oruk:dataType:string'
+            }
           ]
         }
       ]

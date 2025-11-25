@@ -34,51 +34,6 @@ export default async function Page(props: PageProps) {
       return s.name ? String(s.name) : 'N/A'
     }
 
-    const getTestDate = () => {
-      // Try different date field names and formats
-      const dateValue = s.updatedAt || s.createdAt || (s as any).testDate || (s as any).lastTested
-
-      if (!dateValue) return 'Never tested'
-
-      // Handle the complex object structure from database
-      if (typeof dateValue === 'object' && dateValue !== null) {
-        // Handle the specific structure: { _id, label, dataType, value, url, description, name }
-        if ('value' in dateValue && dateValue.value) {
-          try {
-            const dateString = String(dateValue.value)
-            return new Date(dateString).toLocaleString('en-GB')
-          } catch (error) {
-            //console.warn('Failed to parse date from object value:', dateValue.value)
-            return 'Invalid date'
-          }
-        }
-        // Handle Date objects or objects with toISOString
-        if ('toISOString' in dateValue) {
-          try {
-            return new Date((dateValue as any).toISOString()).toLocaleString('en-GB')
-          } catch (error) {
-            return 'Invalid date'
-          }
-        }
-        // If it's an object but doesn't match expected structure
-        //console.warn('Unexpected date object structure:', dateValue)
-        return 'Unknown date format'
-      }
-
-      // Handle simple string or Date values
-      try {
-        if (typeof dateValue === 'string') {
-          return new Date(dateValue).toLocaleString('en-GB')
-        }
-        if (typeof dateValue === 'object' && (dateValue as any) instanceof Date) {
-          return (dateValue as Date).toLocaleString('en-GB')
-        }
-        return String(dateValue)
-      } catch (error) {
-        return 'Invalid date'
-      }
-    }
-
     return {
       name: { value: getName(), url: String((s.service as any).url) || s.serviceUrl },
       statusOverall: { value: s.statusOverall },
