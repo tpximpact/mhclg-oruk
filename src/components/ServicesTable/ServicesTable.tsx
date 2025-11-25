@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import type { ServicesTableProps, SortConfig, SortField, SortDirection, TableHeaderConfig } from './types'

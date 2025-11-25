@@ -1,4 +1,5 @@
 'use client'
+
 import { useState, useEffect, FC } from 'react'
 
 // Define the shape of the component's props
