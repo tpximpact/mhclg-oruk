@@ -2,7 +2,7 @@ import type { ServiceData, SortField, SortDirection } from './types'
 import styles from '../ServicesTable/ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
 import PassFailIndicator from '../ServicesTable/_components/PassFailIndicator'
-import FormattedDateComponent from '../ServicesTable/_components/FormattedDateComponent'
+import LocalisedDate from '../ServicesTable/_components/LocalisedDate'
 
 interface MobileSortSelectorProps {
   currentSort: SortField
@@ -129,7 +129,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
     typeof value === 'boolean' ? (
       <PassFailIndicator value={value} />
     ) : value instanceof Date ? (
-            <FormattedDateComponent value={value} />
+            <LocalisedDate dateString={value.toISOString()} />
     ) : (
       <span className={contentClass} title={isBoolean ? undefined : displayValue}>
         {displayValue}
