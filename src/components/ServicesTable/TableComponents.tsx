@@ -1,8 +1,7 @@
-import Link from 'next/link'
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from './ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
-import FormattedDateComponent from './_components/FormattedDateComponent'
+import LocalisedDate from './_components/LocalisedDate'
 
 export interface MobileSortSelectorProps {
   currentSort: SortField
@@ -129,7 +128,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
   // Handle date field specially
   const content =
     value instanceof Date ? (
-      <FormattedDateComponent value={value} />
+      <LocalisedDate dateString={value.toISOString()} />
     ) : (
       <span className={contentClass} title={isDescription ? undefined : displayValue}>
         {displayValue}
