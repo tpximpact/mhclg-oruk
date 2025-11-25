@@ -128,11 +128,16 @@ const Validation = ({ status, result }: ValidationProps) => {
 
       <div className={styles.field}>
         <span className={styles.label}>Last checked</span>
-        {result.testDate.value ? (
-          <LocalisedDate dateString={result.testDate.value.toISOString()} fmtOptions={fmtOptions} />
-        ) : (
-          <span>Not Tested</span>
-        )}
+        <span className={styles.fv}>
+          {result.testDate.value ? (
+            <LocalisedDate
+              dateString={result.testDate.value.toISOString()}
+              fmtOptions={fmtOptions}
+            />
+          ) : (
+            <>Not Tested</>
+          )}
+        </span>
       </div>
     </section>
   )
