@@ -44,7 +44,7 @@ const LocalisedDate: FC<LocalisedDateProps> = ({ dateString, fmtOptions }) => {
   // --- 3. Render Output ---
   // The <time> element provides semantic meaning and the machine-readable ISO date.
   return (
-    <time style={{ whiteSpace: 'nowrap' }} dateTime={date.toISOString()}>
+    <time style={{ whiteSpace: 'nowrap' }} dateTime={date.toISOString()} suppressHydrationWarning={true}>
       {displayedDate}
     </time>
   )
