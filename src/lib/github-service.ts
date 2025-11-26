@@ -1,6 +1,6 @@
 'use server'
 
-import { appOctokit } from '@/lib/github'
+import { octokit } from '@/lib/github'
 import { ServiceResponse } from '@/models/service'
 
 /**
@@ -11,11 +11,11 @@ export async function createVerificationIssue(serviceData: ServiceResponse) {
   // Hardcode these or fetch them from your DB/Env
   const owner = process.env.GITHUB_REPO_OWNER!
   const repo = process.env.GITHUB_REPO_NAME!
-  const assignees = process.env.GITHUB_REPO_ASSIGNEES?.split(',') || [owner]
+  const assignees = process.env.GITHUB_ISSUE_ASSIGNEES?.split(',') || [owner]
 
   // Because we used `createAppAuth` in lib/github.ts,
   // this request is automatically signed as the GitHub App Installation.
-  const response = await appOctokit.rest.issues.create({
+  const response = await octokit.rest.issues.create({
     owner,
     repo,
     title: `Manual Verification Required: ${serviceData.name}`,

@@ -1,5 +1,4 @@
-import { Octokit } from 'octokit'
-import { createAppAuth } from '@octokit/auth-app'
+import { App } from 'octokit'
 
 // 1. Validate Environment Variables
 if (
@@ -15,12 +14,11 @@ if (
 const privateKey = process.env.GITHUB_APP_PRIVATE_KEY.replace(/\\n/g, '\n')
 
 // 3. Initialize Octokit with App Authentication
-// This automatically handles JWT generation and Installation Token retrieval
-export const appOctokit = new Octokit({
-  authStrategy: createAppAuth,
-  auth: {
-    appId: process.env.GITHUB_APP_ID,
-    privateKey: privateKey,
-    installationId: process.env.GITHUB_INSTALLATION_ID
-  }
+const app = new App({
+  appId: process.env.GITHUB_APP_ID,
+  privateKey
 })
+
+export const octokit = await app.getInstallationOctokit(
+  process.env.GITHUB_INSTALLATION_ID as unknown as number
+)
