@@ -70,10 +70,12 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
     const displayValue = String(data.value)
     const { url } = data as { value: string; url?: string }
 
-    // Handle status field specially
+    // Handle status and time fields specially
     const content =
       typeof data.value === 'boolean' ? (
         <PassFailIndicator value={data.value} />
+      ) : data.value instanceof Date ? (
+        <LocalisedDate value={data.value} />
       ) : (
         <span>{displayValue}</span>
       )
@@ -129,7 +131,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
     typeof value === 'boolean' ? (
       <PassFailIndicator value={value} />
     ) : value instanceof Date ? (
-            <LocalisedDate dateString={value.toISOString()} />
+      <LocalisedDate value={value} />
     ) : (
       <span className={contentClass} title={isBoolean ? undefined : displayValue}>
         {displayValue}

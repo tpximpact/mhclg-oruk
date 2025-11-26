@@ -131,8 +131,8 @@ const Validation = ({ status, result }: ValidationProps) => {
         <span className={styles.fv}>
           {result.testDate.value ? (
             <LocalisedDate
-              dateString={result.testDate.value.toISOString()}
-              fmtOptions={fmtOptions}
+              value={result.testDate.value}
+              options={fmtOptions}
             />
           ) : (
             <>Not Tested</>

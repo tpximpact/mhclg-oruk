@@ -2,7 +2,13 @@
 
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import type { ServicesTableProps, SortConfig, SortField, SortDirection, TableHeaderConfig } from './types'
+import type {
+  ServicesTableProps,
+  SortConfig,
+  SortField,
+  SortDirection,
+  TableHeaderConfig
+} from './types'
 import { useSortedData, usePaginatedData } from './hooks'
 import { TableHeader, TableCell, ServiceCard, MobileSortSelector } from './TableComponents'
 import { Pagination } from './_components/Pagination'
@@ -16,18 +22,18 @@ const TABLE_HEADERS: TableHeaderConfig[] = [
   { key: 'testDate', label: 'Last Tested', sortable: true, className: styles.hiddenOnMobile }
 ]
 
-export function ServicesTable({ 
-  services, 
-  currentPage = 1, 
-  itemsPerPage = 10 
+export function ServicesTable({
+  services,
+  currentPage = 1,
+  itemsPerPage = 10
 }: ServicesTableProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
-  
+
   // Get initial sort from URL params or default to name ascending
   const initialSortField = (searchParams.get('sort') as SortField) || 'name'
   const initialSortDirection = (searchParams.get('direction') as SortDirection) || 'asc'
-  
+
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     field: initialSortField,
     direction: initialSortDirection
@@ -37,9 +43,9 @@ export function ServicesTable({
   const paginationInfo = usePaginatedData(sortedData, currentPage, itemsPerPage)
 
   const handleSort = (field: SortField) => {
-    const newDirection: SortDirection = 
+    const newDirection: SortDirection =
       sortConfig.field === field && sortConfig.direction === 'asc' ? 'desc' : 'asc'
-    
+
     const newSortConfig = { field, direction: newDirection }
     setSortConfig(newSortConfig)
 
@@ -47,10 +53,10 @@ export function ServicesTable({
     const params = new URLSearchParams(searchParams.toString())
     params.set('sort', field)
     params.set('direction', newDirection)
-    
+
     // Reset to page 1 when sorting
     params.delete('page')
-    
+
     router.push(`/community/directory?${params.toString()}`, { scroll: false })
   }
 
@@ -72,9 +78,7 @@ export function ServicesTable({
             <ServiceCard key={index} service={service} index={index} />
           ))
         ) : (
-          <div className={styles.emptyState}>
-            No services found.
-          </div>
+          <div className={styles.emptyState}>No services found.</div>
         )}
       </div>
 
@@ -84,7 +88,7 @@ export function ServicesTable({
           <table className={styles.htmlTable}>
             <thead className={styles.thead}>
               <tr className={styles.tr}>
-                {TABLE_HEADERS.map((header) => (
+                {TABLE_HEADERS.map(header => (
                   <TableHeader
                     key={header.key}
                     label={header.label}
@@ -100,7 +104,7 @@ export function ServicesTable({
               {paginationInfo.paginatedData.length > 0 ? (
                 paginationInfo.paginatedData.map((service, index) => (
                   <tr key={index} className={styles.tr}>
-                    {TABLE_HEADERS.map((header) => (
+                    {TABLE_HEADERS.map(header => (
                       <TableCell
                         key={`${index}-${header.key}`}
                         data={service[header.key]}

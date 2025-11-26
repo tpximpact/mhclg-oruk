@@ -67,17 +67,19 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
     const displayValue = String(data.value)
     const { url } = data as { value: string; url?: string }
 
+    // Handle date field specially
+    const content =
+      data.value instanceof Date ? (
+        <LocalisedDate value={data.value} />
+      ) : (
+        <span>{displayValue}</span>
+      )
+
     return (
       <div className={styles.cardField}>
         <dt className={styles.cardLabel}>{label}:</dt>
         <dd className={styles.cardValue}>
-          {url ? (
-            <LinkComponent url={url}>
-              <span>{displayValue}</span>
-            </LinkComponent>
-          ) : (
-            <span>{displayValue}</span>
-          )}
+          {url ? <LinkComponent url={url}>{content}</LinkComponent> : content}
         </dd>
       </div>
     )
@@ -128,7 +130,7 @@ export function TableCell({ data, className, columnKey }: TableCellProps) {
   // Handle date field specially
   const content =
     value instanceof Date ? (
-      <LocalisedDate dateString={value.toISOString()} />
+      <LocalisedDate value={value} />
     ) : (
       <span className={contentClass} title={isDescription ? undefined : displayValue}>
         {displayValue}
