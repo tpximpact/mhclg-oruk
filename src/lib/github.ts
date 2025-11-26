@@ -1,12 +1,16 @@
 import { App } from 'octokit'
 
 // 1. Validate Environment Variables
-if (
-  !process.env.GITHUB_CLIENT_ID ||
-  !process.env.GITHUB_APP_PRIVATE_KEY ||
-  !process.env.GITHUB_INSTALLATION_ID
-) {
-  throw new Error('Missing GitHub App credentials in .env.local')
+if (!process.env.GITHUB_CLIENT_ID) {
+  throw new Error('Missing GitHub Client ID')
+}
+
+if (!process.env.GITHUB_APP_PRIVATE_KEY) {
+  throw new Error('Missing GitHub App Private Key')
+}
+
+if (!process.env.GITHUB_INSTALLATION_ID) {
+  throw new Error('Missing GitHub Installation ID')
 }
 
 // 2. Format the Private Key
