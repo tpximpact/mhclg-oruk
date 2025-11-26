@@ -20,7 +20,7 @@ export async function createVerificationIssue(serviceData: ServiceResponse) {
     repo,
     title: `Manual Verification Required: ${serviceData.name}`,
     body: generateIssueBody(serviceData),
-    labels: ['verification', 'new-service', 'manual-review', 'DASHBOARD', 'submission'],
+    labels: ['DASHBOARD', 'submission'],
     assignees // Optionally assign the issue to the repo owner
   })
 
