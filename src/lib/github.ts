@@ -2,7 +2,7 @@ import { App } from 'octokit'
 
 // 1. Validate Environment Variables
 if (
-  !process.env.GITHUB_APP_ID ||
+  !process.env.GITHUB_CLIENT_ID ||
   !process.env.GITHUB_APP_PRIVATE_KEY ||
   !process.env.GITHUB_INSTALLATION_ID
 ) {
@@ -15,7 +15,7 @@ const privateKey = process.env.GITHUB_APP_PRIVATE_KEY.replace(/\\n/g, '\n')
 
 // 3. Initialize Octokit with App Authentication
 const app = new App({
-  appId: process.env.GITHUB_APP_ID,
+  appId: process.env.GITHUB_CLIENT_ID,
   privateKey
 })
 
