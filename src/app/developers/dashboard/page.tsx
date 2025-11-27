@@ -27,15 +27,8 @@ export default async function Page(props: PageProps) {
 
   // Map to dashboard view shape expected by DataTable
   const serviceData = activeServices.map(s => {
-    const getName = () => {
-      if (typeof s.name === 'string') return s.name
-      if (s.name && typeof s.name === 'object' && 'value' in s.name)
-        return String((s.name as any).value)
-      return s.name ? String(s.name) : 'N/A'
-    }
-
     return {
-      name: { value: getName(), url: String((s.service as any).url) || s.serviceUrl },
+      name: { value: s.name, url: s.serviceUrl },
       statusOverall: { value: s.statusOverall },
       statusIsUp: { value: s.statusIsUp },
       statusIsValid: { value: s.statusIsValid },
