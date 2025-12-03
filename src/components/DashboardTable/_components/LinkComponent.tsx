@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './LinkComponent.module.css'
+import styles from '../../ServicesTable/_components/LinkComponent.module.css'
 
 interface LinkComponentProps {
   url: string

@@ -17,19 +17,13 @@
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 /* Responsive table layout */
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .htmlTable {
-    min-width: 800px; /* Prevent table from becoming too cramped */
-  }
-}
-
-@media (min-width: 768px) {
-  .htmlTable {
-    table-layout: auto;
+    min-width: 600px;
   }
 }
 
@@ -102,11 +96,11 @@
 .sortIcon {
   margin-left: 0.5rem;
   flex-shrink: 0;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .sortButton:hover .sortIcon {
-  color: #6b7280;
+  color: #4b5563;
 }
 
 .cellContent {

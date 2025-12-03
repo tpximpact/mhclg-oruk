@@ -62,7 +62,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index }: ServiceCardProps) {
   const renderField = (label: string, data: ServiceData[keyof ServiceData]) => {
-    if (!data || !data.value || data.value === 'N/A') return null
+    if (!data) return null
 
     const displayValue = String(data.value)
     const { url } = data as { value: string; url?: string }
