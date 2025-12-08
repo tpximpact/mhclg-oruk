@@ -21,9 +21,16 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./src/",
+    "types": [
+      "@testing-library/jest-dom"
+    ],
     "paths": {
+      "@/components/*": [
+        "components/*"
+      ],
       "@/*": [
-        "./src/*"
+        "*"
       ]
     },
     "target": "ES2017"
@@ -34,7 +41,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/MarkdownComponentFromFile.tsx",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "jest.config.ts",
+		"jest.setup.ts"
   ],
   "exclude": [
     "node_modules"

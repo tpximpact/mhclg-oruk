@@ -1,0 +1,351 @@
+.table {
+  background: transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+/*   box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06); */
+}
+
+.tableContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.htmlTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* Responsive table layout */
+@media (max-width: 767px) {
+  .htmlTable {
+    table-layout: auto;
+    min-width: 600px;
+  }
+  
+  .tableContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.thead {
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.tbody {
+  background-color: transparent§;
+}
+
+.tbody .tr {
+  border-bottom: 1px solid var(--dataTable-theme-dashboard-row-divider);
+}
+
+.tbody .tr:last-child {
+  border-bottom: var(--datatable-border-weight-heavy) solid var(--dataTable-theme-dashboard-border);
+}
+
+.tr:hover {
+  background-color: #f9fafb;
+}
+
+.th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--theme-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.td {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: #111827;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+  .td {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: center;
+  color: var(--theme-ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+.sortButton:hover {
+  color: var(--theme-interaction);
+}
+
+.sortIcon {
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.sortButton:hover .sortIcon {
+  color: #4b5563;
+}
+
+.cellContent {
+  display: block;
+  line-height: 1.5;
+}
+
+/* Default cell content - truncated for most columns */
+.cellContent:not(.descriptionContent) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+/* Description content - allows wrapping */
+.descriptionContent {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  display: block;
+}
+
+/* Responsive max-widths for different screen sizes */
+@media (max-width: 767px) {
+  .cellContent:not(.descriptionContent) {
+    max-width: 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .htmlTable {
+    table-layout: fixed;
+  }
+}
+
+.emptyState {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Mobile vs Desktop View Toggle */
+.mobileView {
+  display: block;
+}
+
+.desktopView {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobileView {
+    display: none;
+  }
+
+  .desktopView {
+    display: block;
+  }
+}
+
+/* Responsive classes for table columns */
+.hiddenOnMobile {
+  display: none;
+}
+
+.hiddenOnTablet {
+  display: none;
+}
+
+/* Show additional columns progressively */
+@media (min-width: 640px) {
+  .hiddenOnMobile {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 768px) {
+  .hiddenOnTablet {
+    display: table-cell;
+  }
+}
+
+/* Mobile Card Styles */
+.serviceCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.serviceCard:last-child {
+  margin-bottom: 0;
+}
+
+.cardContent {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cardField:first-child .cardLabel {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cardField:first-child .cardValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.cardLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cardValue {
+  font-size: 0.875rem;
+  color: #111827;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cardDescription {
+  white-space: normal;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.cardValue .link {
+  word-break: break-all;
+}
+
+/* Mobile Sort Selector Styles */
+.mobileSortContainer {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sortLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.sortControls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sortSelect {
+  flex: 1;
+  appearance: none;
+  background-color: white;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 4 5\"><path fill=\"%23666\" d=\"M2 0L0 2h4zm0 5L0 3h4z\"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 0.65rem auto;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #111827;
+}
+
+.sortSelect:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.sortDirectionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+.sortDirectionButton:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.sortDirectionButton:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.sortDirectionText {
+  font-weight: 500;
+}
+
+.sortDirectionIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Extra large screens - optimize spacing */
+@media (min-width: 1280px) {
+  .td {
+    padding: 1.25rem 1.5rem;
+  }
+}

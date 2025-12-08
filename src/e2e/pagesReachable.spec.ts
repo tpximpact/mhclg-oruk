@@ -2,7 +2,7 @@ import { flattenSite } from '../utilities/flattenSite'
 import { slugify } from '../utilities/dynamicSection'
 import fs from 'fs'
 import { join } from 'path'
-const { test, expect } = require('@playwright/test')
+import { test, expect, Page } from '@playwright/test'
 
 const getAllFiles = (contentFolder: string) => {
 	const dir = join(process.cwd(), '/content', contentFolder)
@@ -32,16 +32,17 @@ const dynamicPages = site
 			.map(s => ({ path: `${root.contentPath}/${s}`, lookFor: null }))
 	})
 
-let data = nonDynamicPages
+const data = nonDynamicPages
 	.concat(dynamicPages)
 	.filter((value, index, self) => self.findIndex(v => v.path === value.path) === index)
 
 test.describe('Page Content Validation Tests', () => {
 	data.forEach(({ path, lookFor = 'open' }) => {
-		test(`should find "${lookFor}" on ${path}`, async ({ page } : { page: any }) => {
+		test(`should find "${lookFor}" on ${path}`, async ({ page }: { page: Page}) => {
+			// Navigate and capture response, then check status
 			const response = await page.goto(path)
 			expect(response).not.toBeNull()
-			expect(response.status()).toBe(200)
+			expect(response!.status()).toBe(200)
 
 			const bodyText = await page.textContent('body')
 			expect(bodyText).toContain(lookFor)
