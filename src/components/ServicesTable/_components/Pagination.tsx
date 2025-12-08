@@ -1,4 +1,6 @@
-import Link from 'next/link'
+'use client'
+
+import { useRouter, useSearchParams } from 'next/navigation'
 import styles from './Pagination.module.css'
 
 interface PaginationProps {
@@ -20,13 +22,21 @@ export function Pagination({
   endIndex,
   basePath
 }: PaginationProps) {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  
   if (totalPages <= 1) return null
 
-  const getPageUrl = (page: number) => {
-    const searchParams = new URLSearchParams()
-    if (page > 1) searchParams.set('page', page.toString())
-    const queryString = searchParams.toString()
-    return `${basePath}${queryString ? `?${queryString}` : ''}`
+  const navigateToPage = (page: number) => {
+    const params = new URLSearchParams(searchParams.toString())
+    if (page > 1) {
+      params.set('page', page.toString())
+    } else {
+      params.delete('page')
+    }
+    const queryString = params.toString()
+    const url = `${basePath}${queryString ? `?${queryString}` : ''}`
+    router.push(url, { scroll: false })
   }
 
   const getVisiblePages = () => {
@@ -63,9 +73,12 @@ export function Pagination({
     <div className={styles.pagination}>
       <div className={styles.paginationSm}>
         {currentPage > 1 ? (
-          <Link href={getPageUrl(currentPage - 1)} className={styles.paginationButton}>
+          <button
+            onClick={() => navigateToPage(currentPage - 1)}
+            className={styles.paginationButton}
+          >
             Previous
-          </Link>
+          </button>
         ) : (
           <span className={`${styles.paginationButton} ${styles.paginationButtonDisabled}`}>
             Previous
@@ -73,9 +86,12 @@ export function Pagination({
         )}
 
         {currentPage < totalPages ? (
-          <Link href={getPageUrl(currentPage + 1)} className={styles.paginationButton}>
+          <button
+            onClick={() => navigateToPage(currentPage + 1)}
+            className={styles.paginationButton}
+          >
             Next
-          </Link>
+          </button>
         ) : (
           <span className={`${styles.paginationButton} ${styles.paginationButtonDisabled}`}>
             Next
@@ -95,7 +111,11 @@ export function Pagination({
           <nav className={styles.paginationNav} aria-label='Pagination'>
             {/* Previous button */}
             {currentPage > 1 ? (
-              <Link href={getPageUrl(currentPage - 1)} className={styles.paginationNavButton}>
+              <button
+                onClick={() => navigateToPage(currentPage - 1)}
+                className={styles.paginationNavButton}
+                aria-label='Previous page'
+              >
                 <span className={styles.srOnly}>Previous</span>
                 <svg
                   style={{ height: '1.25rem', width: '1.25rem' }}
@@ -109,7 +129,7 @@ export function Pagination({
                     clipRule='evenodd'
                   />
                 </svg>
-              </Link>
+              </button>
             ) : (
               <span
                 className={`${styles.paginationNavButton} ${styles.paginationNavButtonDisabled}`}
@@ -144,19 +164,28 @@ export function Pagination({
               const isCurrent = pageNumber === currentPage
 
               return isCurrent ? (
-                <span key={pageNumber} className={styles.pageNumberCurrent}>
+                <span key={pageNumber} className={styles.pageNumberCurrent} aria-current='page'>
                   {pageNumber}
                 </span>
               ) : (
-                <Link key={pageNumber} href={getPageUrl(pageNumber)} className={styles.pageNumber}>
+                <button
+                  key={pageNumber}
+                  onClick={() => navigateToPage(pageNumber)}
+                  className={styles.pageNumber}
+                  aria-label={`Go to page ${pageNumber}`}
+                >
                   {pageNumber}
-                </Link>
+                </button>
               )
             })}
 
             {/* Next button */}
             {currentPage < totalPages ? (
-              <Link href={getPageUrl(currentPage + 1)} className={styles.paginationNavButton}>
+              <button
+                onClick={() => navigateToPage(currentPage + 1)}
+                className={styles.paginationNavButton}
+                aria-label='Next page'
+              >
                 <span className={styles.srOnly}>Next</span>
                 <svg
                   style={{ height: '1.25rem', width: '1.25rem' }}
@@ -170,7 +199,7 @@ export function Pagination({
                     clipRule='evenodd'
                   />
                 </svg>
-              </Link>
+              </button>
             ) : (
               <span
                 className={`${styles.paginationNavButton} ${styles.paginationNavButtonDisabled}`}
