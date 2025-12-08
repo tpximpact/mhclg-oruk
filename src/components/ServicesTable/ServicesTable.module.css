@@ -8,22 +8,27 @@
 }
 
 .tableContainer {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  overflow: hidden;
 }
 
 .htmlTable {
-  min-width: 100%;
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
-  table-layout: auto;
+  table-layout: fixed;
 }
 
 /* Responsive table layout */
 @media (max-width: 767px) {
   .htmlTable {
+    table-layout: auto;
     min-width: 600px;
+  }
+  
+  .tableContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -64,7 +69,9 @@
   color: #111827;
   vertical-align: top;
   word-wrap: break-word;
+  overflow-wrap: break-word;
   hyphens: auto;
+  max-width: 0;
 }
 
 /* Mobile responsive adjustments */
@@ -113,14 +120,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: block;
 }
 
 /* Description content - allows wrapping */
 .descriptionContent {
   white-space: normal;
   word-wrap: break-word;
+  overflow-wrap: break-word;
   hyphens: auto;
-  max-width: none;
+  display: block;
 }
 
 /* Responsive max-widths for different screen sizes */
@@ -130,19 +139,9 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .cellContent:not(.descriptionContent) {
-    max-width: 150px;
-  }
-
-  .descriptionContent {
-    max-width: 200px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .descriptionContent {
-    max-width: 300px;
+@media (min-width: 768px) {
+  .htmlTable {
+    table-layout: fixed;
   }
 }
 
@@ -189,12 +188,6 @@
 }
 
 @media (min-width: 768px) {
-  .htmlTable {
-    min-width: 100%;
-  }
-}
-
-@media (min-width: 1024px) {
   .hiddenOnTablet {
     display: table-cell;
   }
@@ -354,9 +347,5 @@
 @media (min-width: 1280px) {
   .td {
     padding: 1.25rem 1.5rem;
-  }
-
-  .descriptionContent {
-    max-width: 400px;
   }
 }
