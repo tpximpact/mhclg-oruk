@@ -1,0 +1,60 @@
+'use server';
+
+interface ValidatorResult {
+  service: {
+    url: string;
+    isValid: boolean;
+    profile: string;
+    profileReason?: string;
+  };
+  metadata: any[];
+  testSuites: any[];
+}
+
+export interface ValidationState {
+  result?: ValidatorResult;
+  error?: string;
+  baseUrl?: string;
+}
+
+export async function validateFeed(prevState: ValidationState | null, formData: FormData): Promise<ValidationState> {
+  const baseUrl = formData.get('baseUrl') as string;
+
+  if (!baseUrl || !baseUrl.trim()) {
+    return {
+      error: 'Please provide a URL',
+      baseUrl: baseUrl || '',
+    };
+  }
+
+  try {
+    const response = await fetch(`${process.env.OPENAPI_VALIDATOR_ENDPOINT}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        baseUrl 
+      }),
+    });
+
+    if (!response.ok) {
+      return {
+        error: `Validation failed: ${response.statusText}`,
+        baseUrl,
+      };
+    }
+
+    const data = await response.json();
+    
+    return {
+      result: data,
+      baseUrl,
+    };
+  } catch (err) {
+    return {
+      error: err instanceof Error ? err.message : 'An error occurred during validation',
+      baseUrl,
+    };
+  }
+}
