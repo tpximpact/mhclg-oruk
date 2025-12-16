@@ -23,6 +23,7 @@ export const ValidatorResult = ({ result, apiData }) => {
     <>
       <div className={styles.result}>
         <Title result={result} />
+
         {Object.keys(endpoints).map((k, i) => (
           <Endpoint
             profile={result.service.profile}
