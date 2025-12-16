@@ -70,25 +70,10 @@ const deduplicate = arr => {
     }
   })
   uniques.forEach(u => {
-    const number = arr.filter(member => isSameError(member, u)).length
+    const number = arr.filter(member => isDeepEqual(member, u)).length
     u.count = number
   })
   return uniques
 }
 
-const isIn = (needle, haystack) => haystack.some(item => isSameError(item, needle))
-
-// Compare errors ignoring location-specific fields (errorIn, errorAt)
-// to deduplicate errors that are the same but occur at different array indices
-const isSameError = (a, b) => {
-  if (a === b) return true
-  if (!a || !b) return false
-
-  // Compare all fields except errorIn and errorAt
-  return (
-    a.name === b.name &&
-    a.message === b.message &&
-    a.description === b.description &&
-    isDeepEqual(a.parameters, b.parameters)
-  )
-}
+const isIn = (needle, haystack) => haystack.some(item => isDeepEqual(item, needle))
