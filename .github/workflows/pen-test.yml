@@ -35,6 +35,11 @@ jobs:
             echo "target=${{ secrets.TARGET_URL }}" >> $GITHUB_OUTPUT
           fi
 
+      - name: Prepare ZAP workspace
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/zap-wrk"
+          chmod 777 "$GITHUB_WORKSPACE/zap-wrk"
+
       - name: Run ZAP baseline scan (docker)
         run: |
           TARGET=${{ steps.target.outputs.target }}
@@ -42,16 +47,18 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v $(pwd):/zap/wrk/:rw zaproxy/zap-stable \
-            zap-baseline.py -t "$TARGET" -r zap-baseline-report.html -J zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
-
+          docker run --rm -v "$GITHUB_WORKSPACE/zap-wrk":/zap/wrk:rw zaproxy/zap-stable:latest \
+            zap-baseline.py -t "$TARGET" \
+            -r /zap/wrk/zap-baseline-report.html \
+            -J /zap/wrk/zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
+      
       - name: Upload baseline report artifact
         uses: actions/upload-artifact@v4
         with:
           name: zap-baseline-report
           path: |
-            zap-baseline-report.html
-            zap-baseline-report.json
+            zap-wrk/zap-baseline-report.html
+            zap-wrk/zap-baseline-report.json
 
   full-scan:
     name: OWASP ZAP Full Active Scan (intrusive — optional)
@@ -92,7 +99,7 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v $(pwd):/zap/wrk/:rw zaproxy/zap-stable \
+          docker run --rm -v $(pwd):/zap/wrk/:rw zaproxy/zap-stable:latest \
             zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
