@@ -1,0 +1,95 @@
+name: Web Pen Test (OWASP ZAP)
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Target URL (overrides TARGET_URL secret)'
+        required: false
+        default: ''
+  schedule:
+    - cron: '0 3 * * 0' # weekly on Sunday 03:00 UTC (adjust as needed)
+
+concurrency:
+  group: pen-test
+  cancel-in-progress: false
+
+env:
+  # Default timeout for scanner in seconds (adjust if needed)
+  ZAP_TIMEOUT: 1800
+
+jobs:
+  baseline-scan:
+    name: OWASP ZAP Baseline Scan (passive, safer)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (needed for artifact workspace)
+        uses: actions/checkout@v4
+
+      - name: Determine target URL
+        id: target
+        run: |
+          if [ -n "${{ github.event.inputs.target }}" ]; then
+            echo "target=${{ github.event.inputs.target }}" >> $GITHUB_OUTPUT
+          else
+            echo "target=${{ secrets.TARGET_URL }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run ZAP baseline scan (docker)
+        run: |
+          TARGET=${{ steps.target.outputs.target }}
+          if [ -z "$TARGET" ]; then
+            echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
+            exit 1
+          fi
+          docker run --rm -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable \
+            zap-baseline.py -t "$TARGET" -r zap-baseline-report.html -J zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
+
+      - name: Upload baseline report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-baseline-report
+          path: |
+            zap-baseline-report.html
+            zap-baseline-report.json
+
+  full-scan:
+    name: OWASP ZAP Full Active Scan (intrusive — optional)
+    runs-on: ubuntu-latest
+    needs: baseline-scan
+    if: ${{ secrets.ENABLE_FULL_SCAN == 'true' || github.event.inputs.target && secrets.ENABLE_FULL_SCAN == 'true' }}
+    timeout-minutes: 240
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine target URL
+        id: target2
+        run: |
+          if [ -n "${{ github.event.inputs.target }}" ]; then
+            echo "target=${{ github.event.inputs.target }}" >> $GITHUB_OUTPUT
+          else
+            echo "target=${{ secrets.TARGET_URL }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run ZAP full-scan (docker)
+        env:
+          ZAP_TIMEOUT: ${{ env.ZAP_TIMEOUT }}
+        run: |
+          TARGET=${{ steps.target2.outputs.target }}
+          if [ -z "$TARGET" ]; then
+            echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
+            exit 1
+          fi
+
+          # Example: simple full scan using zap-full-scan.py
+          docker run --rm -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable \
+            zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
+
+      - name: Upload full scan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-full-report
+          path: |
+            zap-full-report.html
+            zap-full-report.json
