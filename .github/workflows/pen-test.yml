@@ -42,7 +42,7 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable \
+          docker run --rm -v $(pwd):/zap/wrk/:rw zaproxy/zap-stable \
             zap-baseline.py -t "$TARGET" -r zap-baseline-report.html -J zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
 
       - name: Upload baseline report artifact
@@ -92,7 +92,7 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable \
+          docker run --rm -v $(pwd):/zap/wrk/:rw zaproxy/zap-stable \
             zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
