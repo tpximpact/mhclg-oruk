@@ -9,7 +9,7 @@ on:
         required: false
         default: ''
   schedule:
-    - cron: '0 3 * * 0'
+    - cron: '0 3 * * 0' # weekly on Sunday 03:00 UTC (adjust as needed)
 
 concurrency:
   group: pen-test
@@ -23,7 +23,7 @@ jobs:
     name: OWASP ZAP Baseline Scan (passive, safer)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (needed for artifact workspace)
         uses: actions/checkout@v4
 
       - name: Determine target URL
@@ -71,20 +71,32 @@ jobs:
             echo "target=${{ secrets.TARGET_URL }}" >> $GITHUB_OUTPUT
           fi
 
+      - name: Decide whether to run full scan
+        id: decide
+        env:
+          ENABLE: ${{ secrets.ENABLE_FULL_SCAN }}
+          TARGET: ${{ steps.target2.outputs.target }}
+        run: |
+          echo "Computed target='$TARGET' enable='$ENABLE'"
+          if [ "${ENABLE}" = "true" ] && [ -n "${TARGET}" ]; then
+            echo "run_full_scan=true" >> $GITHUB_OUTPUT
+          else
+            echo "run_full_scan=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run ZAP full-scan (docker)
-        if: ${{ secrets.ENABLE_FULL_SCAN == 'true' && (github.event.inputs.target != '' || secrets.TARGET_URL != '') }}
+        if: ${{ steps.decide.outputs.run_full_scan == 'true' }}
         run: |
           TARGET=${{ steps.target2.outputs.target }}
           if [ -z "$TARGET" ]; then
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-
           docker run --rm -v $(pwd):/zap/wrk/:rw owasp/zap2docker-stable \
             zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
-        if: ${{ secrets.ENABLE_FULL_SCAN == 'true' && (github.event.inputs.target != '' || secrets.TARGET_URL != '') }}
+        if: ${{ steps.decide.outputs.run_full_scan == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: zap-full-report
