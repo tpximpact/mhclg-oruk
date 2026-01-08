@@ -52,7 +52,6 @@ jobs:
             zap-baseline.py -t "$TARGET" \
             -r zap-baseline-report.html \
             -J zap-baseline-report.json \
-            -l zap-baseline.log \
             -z "-config api.disablekey=true" -d -T 10
       
       - name: Upload baseline report artifact
@@ -63,7 +62,6 @@ jobs:
           path: |
             zap-output/zap-baseline-report.html
             zap-output/zap-baseline-report.json
-            zap-output/zap-baseline.log
 
   full-scan:
     name: OWASP ZAP Full Active Scan (intrusive — optional)
@@ -115,7 +113,6 @@ jobs:
             zap-full-scan.py -t "$TARGET" \
             -r zap-full-report.html \
             -J zap-full-report.json \
-            -l zap-full.log \
             -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
@@ -126,4 +123,3 @@ jobs:
           path: |
             zap-output/zap-full-report.html
             zap-output/zap-full-report.json
-            zap-output/zap-full.log
