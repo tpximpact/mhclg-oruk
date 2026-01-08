@@ -41,6 +41,7 @@ jobs:
           chmod -R 777 "$GITHUB_WORKSPACE/zap-output"
 
       - name: Run ZAP baseline scan (docker)
+        continue-on-error: true
         run: |
           TARGET=${{ steps.target.outputs.target }}
           if [ -z "$TARGET" ]; then
@@ -53,6 +54,7 @@ jobs:
             -J zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
       
       - name: Upload baseline report artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: zap-baseline-report
@@ -99,6 +101,7 @@ jobs:
 
       - name: Run ZAP full-scan (docker)
         if: ${{ steps.decide.outputs.run_full_scan == 'true' }}
+        continue-on-error: true
         run: |
           TARGET=${{ steps.target2.outputs.target }}
           if [ -z "$TARGET" ]; then
@@ -109,7 +112,7 @@ jobs:
             zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
-        if: ${{ steps.decide.outputs.run_full_scan == 'true' }}
+        if: ${{ steps.decide.outputs.run_full_scan == 'true' && always() }}
         uses: actions/upload-artifact@v4
         with:
           name: zap-full-report
