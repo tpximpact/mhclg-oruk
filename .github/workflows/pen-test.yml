@@ -35,6 +35,11 @@ jobs:
             echo "target=${{ secrets.TARGET_URL }}" >> $GITHUB_OUTPUT
           fi
 
+      - name: Prepare ZAP output directory
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/zap-output"
+          chmod -R 777 "$GITHUB_WORKSPACE/zap-output"
+
       - name: Run ZAP baseline scan (docker)
         run: |
           TARGET=${{ steps.target.outputs.target }}
@@ -42,7 +47,7 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v "$GITHUB_WORKSPACE":/zap/wrk:rw zaproxy/zap-stable:latest \
+          docker run --rm -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw zaproxy/zap-stable:latest \
             zap-baseline.py -t "$TARGET" \
             -r zap-baseline-report.html \
             -J zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
@@ -52,8 +57,8 @@ jobs:
         with:
           name: zap-baseline-report
           path: |
-            zap-baseline-report.html
-            zap-baseline-report.json
+            zap-output/zap-baseline-report.html
+            zap-output/zap-baseline-report.json
 
   full-scan:
     name: OWASP ZAP Full Active Scan (intrusive — optional)
@@ -86,6 +91,12 @@ jobs:
             echo "run_full_scan=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Prepare ZAP output directory
+        if: ${{ steps.decide.outputs.run_full_scan == 'true' }}
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/zap-output"
+          chmod -R 777 "$GITHUB_WORKSPACE/zap-output"
+
       - name: Run ZAP full-scan (docker)
         if: ${{ steps.decide.outputs.run_full_scan == 'true' }}
         run: |
@@ -94,7 +105,7 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v "$GITHUB_WORKSPACE":/zap/wrk:rw zaproxy/zap-stable:latest \
+          docker run --rm -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw zaproxy/zap-stable:latest \
             zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
@@ -103,5 +114,5 @@ jobs:
         with:
           name: zap-full-report
           path: |
-            zap-full-report.html
-            zap-full-report.json
+            zap-output/zap-full-report.html
+            zap-output/zap-full-report.json
