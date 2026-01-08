@@ -51,7 +51,9 @@ jobs:
           docker run --rm -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw zaproxy/zap-stable:latest \
             zap-baseline.py -t "$TARGET" \
             -r zap-baseline-report.html \
-            -J zap-baseline-report.json -z "-config api.disablekey=true" -d -T 10
+            -J zap-baseline-report.json \
+            -l zap-baseline.log \
+            -z "-config api.disablekey=true" -d -T 10
       
       - name: Upload baseline report artifact
         if: always()
@@ -61,6 +63,7 @@ jobs:
           path: |
             zap-output/zap-baseline-report.html
             zap-output/zap-baseline-report.json
+            zap-output/zap-baseline.log
 
   full-scan:
     name: OWASP ZAP Full Active Scan (intrusive — optional)
@@ -109,7 +112,11 @@ jobs:
             exit 1
           fi
           docker run --rm -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw zaproxy/zap-stable:latest \
-            zap-full-scan.py -t "$TARGET" -r zap-full-report.html -J zap-full-report.json -z "-config api.disablekey=true" -T 5
+            zap-full-scan.py -t "$TARGET" \
+            -r zap-full-report.html \
+            -J zap-full-report.json \
+            -l zap-full.log \
+            -z "-config api.disablekey=true" -T 5
 
       - name: Upload full scan artifact
         if: ${{ steps.decide.outputs.run_full_scan == 'true' && always() }}
@@ -119,3 +126,4 @@ jobs:
           path: |
             zap-output/zap-full-report.html
             zap-output/zap-full-report.json
+            zap-output/zap-full.log
