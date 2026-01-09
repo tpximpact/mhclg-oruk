@@ -7,6 +7,7 @@
 		"e2e": "npx playwright test",
 		"upd": "node 'src/scripts/update-frontmatter.js'",
 		"dev": "NODE_OPTIONS=--no-webstorage next dev",
+		"dev:ci": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"tidy": "yarn prettier . --write",
@@ -33,6 +34,7 @@
 		"zod": "^4.2.1"
 	},
 	"devDependencies": {
+		"@axe-core/playwright": "^4.11.0",
 		"@playwright/test": "^1.57.0",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@types/jest": "^30.0.0",
