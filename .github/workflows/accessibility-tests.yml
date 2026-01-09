@@ -7,7 +7,8 @@ on:
     branches: [staging]
 
 jobs:
-  accessibility:
+  accessibility-tests:
+    name: Run Accessibility Tests
     runs-on: ubuntu-latest
     timeout-minutes: 15
     
