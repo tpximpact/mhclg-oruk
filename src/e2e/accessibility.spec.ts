@@ -95,8 +95,7 @@ test.describe('Accessibility Tests', () => {
 		}
 		
 		console.log(`Homepage: Found ${accessibilityScanResults.violations.length} accessibility violations`)
-		// Uncomment below to enforce accessibility compliance:
-		// expect(accessibilityScanResults.violations).toEqual([])
+		expect(accessibilityScanResults.violations).toEqual([])
 	})
 
 	test('about page should not have accessibility violations', async ({ page }) => {
@@ -120,8 +119,7 @@ test.describe('Accessibility Tests', () => {
 		}
 		
 		console.log(`About page: Found ${accessibilityScanResults.violations.length} accessibility violations`)
-		// Uncomment below to enforce accessibility compliance:
-		// expect(accessibilityScanResults.violations).toEqual([])
+		expect(accessibilityScanResults.violations).toEqual([])
 	})
 
 	test('developers page should not have accessibility violations', async ({ page }) => {
@@ -145,8 +143,7 @@ test.describe('Accessibility Tests', () => {
 		}
 		
 		console.log(`Developers page: Found ${accessibilityScanResults.violations.length} accessibility violations`)
-		// Uncomment below to enforce accessibility compliance:
-		// expect(accessibilityScanResults.violations).toEqual([])
+		expect(accessibilityScanResults.violations).toEqual([])
 	})
 
 	test('community page should not have accessibility violations', async ({ page }) => {
@@ -170,8 +167,7 @@ test.describe('Accessibility Tests', () => {
 		}
 		
 		console.log(`Community page: Found ${accessibilityScanResults.violations.length} accessibility violations`)
-		// Uncomment below to enforce accessibility compliance:
-		// expect(accessibilityScanResults.violations).toEqual([])
+		expect(accessibilityScanResults.violations).toEqual([])
 	})
 
 	test('adopt page should not have accessibility violations', async ({ page }) => {
@@ -195,8 +191,7 @@ test.describe('Accessibility Tests', () => {
 		}
 		
 		console.log(`Adopt page: Found ${accessibilityScanResults.violations.length} accessibility violations`)
-		// Uncomment below to enforce accessibility compliance:
-		// expect(accessibilityScanResults.violations).toEqual([])
+		expect(accessibilityScanResults.violations).toEqual([])
 	})
 
 	test('case studies page should not have accessibility violations', async ({ page }) => {
@@ -220,7 +215,6 @@ test.describe('Accessibility Tests', () => {
 		}
 		
 		console.log(`Case studies page: Found ${accessibilityScanResults.violations.length} accessibility violations`)
-		// Uncomment below to enforce accessibility compliance:
-		// expect(accessibilityScanResults.violations).toEqual([])
+		expect(accessibilityScanResults.violations).toEqual([])
 	})
 })
