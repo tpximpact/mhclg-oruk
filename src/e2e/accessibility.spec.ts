@@ -18,6 +18,11 @@ test.describe('Accessibility Tests', () => {
 		const jsonPath = path.join(reportDir, 'accessibility-report.json')
 		fs.writeFileSync(jsonPath, JSON.stringify(allViolations, null, 2))
 
+		// Helper function to escape HTML tags in markdown text
+		const escapeHtmlInText = (text: string) => {
+			return text.replace(/<([^>]+)>/g, '`<$1>`')
+		}
+
 		// Generate Markdown report
 		const mdPath = path.join(reportDir, 'accessibility-report.md')
 		let markdown = '# Accessibility Test Report\n\n'
@@ -36,8 +41,8 @@ test.describe('Accessibility Tests', () => {
 				pageReport.violations.forEach((violation: any, idx: number) => {
 					markdown += `### ${idx + 1}. ${violation.id}\n\n`
 					markdown += `**Impact:** ${violation.impact?.toUpperCase() || 'UNKNOWN'}\n\n`
-					markdown += `**Description:** ${violation.description}\n\n`
-					markdown += `**Help:** ${violation.help}\n\n`
+					markdown += `**Description:** ${escapeHtmlInText(violation.description)}\n\n`
+					markdown += `**Help:** ${escapeHtmlInText(violation.help)}\n\n`
 					markdown += `**Help URL:** ${violation.helpUrl}\n\n`
 					markdown += `**Affected Elements:** ${violation.nodes.length}\n\n`
 					
@@ -47,7 +52,7 @@ test.describe('Accessibility Tests', () => {
 						markdown += `${node.html}\n`
 						markdown += '```\n\n'
 						if (node.failureSummary) {
-							markdown += `**Issue:** ${node.failureSummary}\n\n`
+							markdown += `**Issue:** ${escapeHtmlInText(node.failureSummary)}\n\n`
 						}
 					})
 					
