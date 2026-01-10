@@ -11,7 +11,7 @@ export default async function Page() {
 	const allVersionsContent = loadMarkdownContent('index.md', '/developers/schemata')
 	const data = getAllContentVersions({
 		contentFolder: '/developers/schemata',
-		specificationFolder: './src/specifications'
+		specificationFolder: './public/specifications'
 	})
 
 	return (
