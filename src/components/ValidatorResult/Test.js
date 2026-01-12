@@ -17,7 +17,6 @@ export const Test = props => (
 )
 
 const IconColumn = ({ data }) => {
-  console.log('Test IconColumn data:', data)
   return (
     <div className={styles.icon}>
       <div className={styles.testIcon}>
