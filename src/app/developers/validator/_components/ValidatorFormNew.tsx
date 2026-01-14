@@ -52,15 +52,15 @@ const Form = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const [disabled, setDisabled] = useState(false);
 
-  const submit = (e: React.MouseEvent) => {
+  const submit = (e: React.MouseEvent): void => {
     if (!inputRef.current?.value || inputRef.current.value.length === 0) {
       e.preventDefault();
       alert('please enter the URL of the data feed');
-      return false;
+      return;
     }
     if (!inputRef.current.reportValidity()) {
       e.preventDefault();
-      return false;
+      return;
     }
 
     setDisabled(true);

@@ -4,6 +4,7 @@
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:ci": "jest --ci",
+		"test:coverage": "jest --coverage",
 		"e2e": "npx playwright test",
 		"upd": "node 'src/scripts/update-frontmatter.js'",
 		"dev": "NODE_OPTIONS=--no-webstorage next dev",
@@ -11,7 +12,10 @@
 		"build": "next build",
 		"start": "next start",
 		"tidy": "yarn prettier . --write",
-		"lint": "yarn run eslint . --fix"
+		"lint": "yarn run eslint . --fix",
+		"lint:check": "yarn run eslint .",
+		"type-check": "tsc --noEmit",
+		"validate": "yarn lint:check && yarn type-check && yarn test:ci"
 	},
 	"dependencies": {
 		"@microlink/react-json-view": "^1.27.0",

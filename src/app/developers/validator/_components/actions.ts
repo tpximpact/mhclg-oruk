@@ -17,7 +17,7 @@ export interface ValidationState {
   baseUrl?: string;
 }
 
-export async function validateFeed(prevState: ValidationState | null, formData: FormData): Promise<ValidationState> {
+export async function validateFeed(_prevState: ValidationState | null, formData: FormData): Promise<ValidationState> {
   const baseUrl = formData.get('baseUrl') as string;
 
   if (!baseUrl || !baseUrl.trim()) {

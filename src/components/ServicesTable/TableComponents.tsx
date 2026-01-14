@@ -21,7 +21,6 @@ export function MobileSortSelector({
     { value: 'testDate', label: 'Last Tested' }
   ]
 
-  const currentOption = sortOptions.find(option => option.value === currentSort)
   const directionLabel = currentDirection === 'asc' ? 'A-Z' : 'Z-A'
 
   return (
@@ -60,7 +59,7 @@ interface ServiceCardProps {
   index: number
 }
 
-export function ServiceCard({ service, index }: ServiceCardProps) {
+export function ServiceCard({ service, index: _index }: ServiceCardProps) {
   const renderField = (label: string, data: ServiceData[keyof ServiceData]) => {
     if (!data) return null
 

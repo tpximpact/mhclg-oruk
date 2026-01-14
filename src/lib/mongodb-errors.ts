@@ -1,8 +1,4 @@
-// Custom error classes for MongoDB operations
+// MongoDB error handling utilities
+// Re-exports from centralized error handling
 
-export class ValidationError extends Error {
-  constructor(message: string, public _errors: Record<string, string[]>) {
-    super(message)
-    this.name = 'ValidationError'
-  }
-}
+export { ValidationError, DuplicateError, DatabaseError, NotFoundError } from './errors'
