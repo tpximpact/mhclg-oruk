@@ -1,7 +1,7 @@
 // @ts-nocheck
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from './ValidatorForm.module.css'
 import { Button } from '@/components/Button'
@@ -10,6 +10,11 @@ export default function ValidatorForm({ initialUrl = '' }: { initialUrl?: string
   const [url, setUrl] = useState(initialUrl)
   const [error, setError] = useState('')
   const router = useRouter()
+
+  // Sync state with prop changes
+  useEffect(() => {
+    setUrl(initialUrl)
+  }, [initialUrl])
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -29,8 +34,10 @@ export default function ValidatorForm({ initialUrl = '' }: { initialUrl?: string
     }
 
     // Redirect to URL with query parameter for bookmarkable results
+    // Add timestamp to force re-validation even if URL is the same
     const encodedUrl = encodeURIComponent(url)
-    router.push(`/developers/validator?url=${encodedUrl}`)
+    const timestamp = Date.now()
+    router.push(`/developers/validator?url=${encodedUrl}&t=${timestamp}`)
   }
 
   const handleReset = () => {
@@ -50,7 +57,7 @@ export default function ValidatorForm({ initialUrl = '' }: { initialUrl?: string
               type='url'
               name='baseUrl'
               value={url}
-              onChange={(e) => setUrl(e.target.value)}
+              onChange={e => setUrl(e.target.value)}
               placeholder='Enter URL to check'
               required
             />
@@ -63,9 +70,7 @@ export default function ValidatorForm({ initialUrl = '' }: { initialUrl?: string
         </span>
 
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Button type='submit'>
-            Validate
-          </Button>
+          <Button type='submit'>Validate</Button>
           <Button type='button' onClick={handleReset}>
             Reset
           </Button>

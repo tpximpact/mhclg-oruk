@@ -8,12 +8,13 @@ import ValidationResults from './_components/ValidationResults'
 import { getAllContentVersions } from '@/utilities/getAllContentVersions'
 
 interface PageProps {
-  searchParams: Promise<{ url?: string }>
+  searchParams: Promise<{ url?: string; t?: string }>
 }
 
 export default async function Page({ searchParams }: PageProps) {
   const params = await searchParams
   const urlToValidate = params.url
+  const timestamp = params.t
 
   const apiData = getAllContentVersions({
     contentFolder: '/developers/api',
@@ -22,12 +23,14 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <>
-      <NamedMarkdownPage
-        name='validator'
-        autoMenu={false}
-        noMargin={undefined}
-        markdownRaw={undefined}
-      />
+      {!urlToValidate && (
+        <NamedMarkdownPage
+          name='validator'
+          autoMenu={false}
+          noMargin={undefined}
+          markdownRaw={undefined}
+        />
+      )}
       <PageMargin>
         <div style={{ marginTop: '6rem' }}>
           {!urlToValidate ? (
@@ -43,13 +46,17 @@ export default async function Page({ searchParams }: PageProps) {
             </Columns>
           ) : (
             <>
+              <div style={{ marginTop: '3rem' }}>
+                <Heading>Validation Results</Heading>
+                <ValidationResults
+                  key={`${urlToValidate}-${timestamp}`}
+                  url={urlToValidate}
+                  apiData={apiData}
+                />
+              </div>
               <div style={{ marginBottom: '2rem' }}>
                 <Heading>Check feed</Heading>
                 <ValidatorForm initialUrl={urlToValidate} />
-              </div>
-              <div style={{ marginTop: '3rem' }}>
-                <Heading>Validation Results</Heading>
-                <ValidationResults url={urlToValidate} apiData={apiData} />
               </div>
             </>
           )}

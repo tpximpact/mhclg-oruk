@@ -153,6 +153,68 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
         </p>
       </div>
       <ValidatorResult result={{ result }} apiData={apiData} />
+
+      <div className='mt-8 space-y-6'>
+        <div>
+          <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4'>
+            Understanding The Results
+          </h2>
+          <p className='text-gray-700 dark:text-gray-300 mb-4'>
+            To Pass validation, for V3 & V1 of the schema, no issues can be found with the API
+            responses of the basic endpoints. The basic endpoints are those that are deemed vital
+            for a feed to be useful.
+          </p>
+
+          <div className='mb-4'>
+            <p className='text-gray-700 dark:text-gray-300 font-semibold mb-2'>
+              The V3 basic endpoints are
+            </p>
+            <ul className='list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 ml-4'>
+              <li>
+                <strong>GET /</strong>
+              </li>
+              <li>
+                <strong>GET /services</strong>
+              </li>
+              <li>
+                <strong>GET /services/{'{id}'}</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div className='mb-4'>
+            <p className='text-gray-700 dark:text-gray-300 font-semibold mb-2'>
+              The V1 basic endpoints
+            </p>
+            <ul className='list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 ml-4'>
+              <li>
+                <strong>GET /services</strong>
+              </li>
+              <li>
+                <strong>GET /services/{'{id}'}</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 className='text-2xl font-bold text-teal-700 dark:text-teal-300 bg-teal-100 dark:bg-teal-900/30 px-4 py-2 rounded mb-4'>
+            Errors, Warnings, & Failing Validation
+          </h2>
+          <div className='space-y-3 text-gray-700 dark:text-gray-300'>
+            <p>
+              Any issues found with a response from one of the basic endpoints will be labelled as
+              an <strong>ERROR</strong> and the feed will fail validation.
+            </p>
+            <p>
+              Any issues found with any of the other endpoints will be marked as a{' '}
+              <strong>WARNING</strong>. These may include issues which are the same as those
+              labelled as errors but as the issue is not on one of the basic endpoints it is
+              labelled with a lower severity.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
