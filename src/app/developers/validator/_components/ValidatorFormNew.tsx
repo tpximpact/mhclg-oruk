@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState, useRef, useState } from 'react';
-import { validateSpec, type ValidationState } from './actions';
+import { validateFeed, type ValidationState } from './actions';
 import { ValidatorResult } from '@/components/ValidatorResult';
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage';
 import { getAllContentVersions } from '@/utilities/getAllContentVersions';
@@ -95,7 +95,7 @@ const Form = ({
 
 export default function ValidatorFormNew() {
   const [state, formAction] = useActionState<ValidationState, FormData>(
-    validateSpec,
+    validateFeed,
     {}
   );
 
@@ -113,7 +113,6 @@ export default function ValidatorFormNew() {
         <NamedMarkdownPage noMargin={true} name='results' autoMenu={false} markdownRaw={undefined} />
         <section style={{ marginTop: '2rem' }}>
           <div style={{ marginTop: '6rem' }}>
-            {/* @ts-expect-error - Columns is a JS component */}
             <Columns layout="42">
               <Form 
                 action={formAction} 
@@ -137,7 +136,6 @@ export default function ValidatorFormNew() {
           <p className="text-sm text-red-700 dark:text-red-300">{state.error}</p>
         </div>
         <div style={{ marginTop: '6rem' }}>
-          {/* @ts-expect-error - Columns is a JS component */}
           <Columns layout="42">
             <Form 
               action={formAction} 
@@ -154,7 +152,6 @@ export default function ValidatorFormNew() {
   // Default state - show the form
   return (
     <div style={{ marginTop: '6rem' }}>
-      {/* @ts-expect-error - Columns is a JS component */}
       <Columns layout="42">
         <Form 
           action={formAction} 

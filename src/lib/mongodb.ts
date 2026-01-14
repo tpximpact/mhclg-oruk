@@ -66,14 +66,3 @@ export async function getCollection<TSchema extends Document = Document>(
 	const db = await getDb(dbName)
 	return db.collection<TSchema>(name)
 }
-
-/**
- * Close the cached client (useful in tests or scripts). No-op if not connected.
- */
-export async function closeMongoClient(): Promise<void> {
-	if (globalForMongo._mongoClient) {
-		await globalForMongo._mongoClient.close()
-		globalForMongo._mongoClient = undefined
-		globalForMongo._mongoPromise = undefined
-	}
-}
