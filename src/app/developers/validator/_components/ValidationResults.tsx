@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { ValidatorResult } from '@/components/ValidatorResult'
+import Heading from './Heading'
+import Columns from '@/components/Columns'
+import LoadingOverlay from './LoadingOverlay'
+import styles from './ValidationResults.module.css'
 
 interface ValidationResultsProps {
   url: string
@@ -58,82 +62,15 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
   }, [url])
 
   if (loading) {
-    return (
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 9999
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: 'white',
-            borderRadius: '8px',
-            padding: '24px',
-            maxWidth: '500px',
-            margin: '16px',
-            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <svg
-              style={{
-                width: '32px',
-                height: '32px',
-                animation: 'spin 1s linear infinite'
-              }}
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-            >
-              <circle
-                style={{ opacity: 0.25 }}
-                cx='12'
-                cy='12'
-                r='10'
-                stroke='#2563eb'
-                strokeWidth='4'
-              />
-              <path
-                style={{ opacity: 0.75 }}
-                fill='#2563eb'
-                d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-              />
-            </svg>
-            <div>
-              <p
-                style={{ fontSize: '16px', fontWeight: 600, color: '#111827', marginBottom: '4px' }}
-              >
-                Validating your feed
-              </p>
-              <p style={{ fontSize: '14px', color: '#6b7280', wordBreak: 'break-all' }}>{url}</p>
-            </div>
-          </div>
-        </div>
-        <style>{`
-          @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-        `}</style>
-      </div>
-    )
+    return <LoadingOverlay url={url} />
   }
 
   if (error) {
     return (
-      <div className='p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg'>
-        <h3 className='text-sm font-semibold text-red-800 dark:text-red-400 mb-1'>Error</h3>
-        <p className='text-sm text-red-700 dark:text-red-300'>{error}</p>
-        <p className='text-xs text-red-600 dark:text-red-400 mt-2'>URL attempted: {url}</p>
+      <div className={styles.errorContainer}>
+        <h3 className={styles.errorTitle}>Error</h3>
+        <p className={styles.errorText}>{error}</p>
+        <p className={styles.errorUrl}>URL attempted: {url}</p>
       </div>
     )
   }
@@ -142,70 +79,68 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
     return null
   }
 
+  // Extract required endpoints from the validation results
+  const requiredEndpoints = result.testSuites
+    .filter(suite => suite.required)
+    .flatMap(suite => suite.tests.map(test => test.endpoint))
+    .filter((endpoint, index, self) => self.indexOf(endpoint) === index) // Remove duplicates
+    .sort()
+
+  // Normalize endpoint paths for display
+  const normalizeEndpoint = (endpoint: string) => {
+    const path = endpoint.replace(url, '')
+    if (!path || path === '/') return 'GET /'
+    if (path.endsWith('/')) return `GET ${path}{id}`
+    return `GET ${path}`
+  }
+
+  const displayEndpoints = requiredEndpoints.map(normalizeEndpoint)
+
   return (
     <div>
-      <div className='mb-4 p-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg'>
-        <p className='text-sm text-gray-700 dark:text-gray-300'>
-          Validated URL: <strong className='text-gray-900 dark:text-gray-100'>{url}</strong>
+      <div className={styles.infoContainer}>
+        <p className={styles.infoText}>
+          Validated URL: <strong className={styles.infoTextStrong}>{url}</strong>
         </p>
-        <p className='text-xs text-gray-500 dark:text-gray-400 mt-1'>
-          You can bookmark this page to return to these results
-        </p>
+        <p className={styles.infoSubtext}>You can bookmark this page to return to these results</p>
       </div>
       <ValidatorResult result={{ result }} apiData={apiData} />
 
-      <div className='mt-8 space-y-6'>
+      <Columns layout={42}>
         <div>
-          <h2 className='text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4'>
-            Understanding The Results
-          </h2>
-          <p className='text-gray-700 dark:text-gray-300 mb-4'>
-            To Pass validation, for V3 & V1 of the schema, no issues can be found with the API
-            responses of the basic endpoints. The basic endpoints are those that are deemed vital
-            for a feed to be useful.
+          <Heading>Understanding The Results</Heading>
+          <p className={styles.contentText}>
+            To Pass validation, for {result.service.profile} of the schema, no issues can be found
+            with the API responses of the basic endpoints. The basic endpoints are those that are
+            deemed vital for a feed to be useful.
           </p>
+          <div className={styles.spacer} />
 
-          <div className='mb-4'>
-            <p className='text-gray-700 dark:text-gray-300 font-semibold mb-2'>
-              The V3 basic endpoints are
+          <div className={styles.contentText}>
+            <p className={styles.contentTextSemibold}>
+              The {result.service.profile} basic endpoints are
             </p>
-            <ul className='list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 ml-4'>
-              <li>
-                <strong>GET /</strong>
-              </li>
-              <li>
-                <strong>GET /services</strong>
-              </li>
-              <li>
-                <strong>GET /services/{'{id}'}</strong>
-              </li>
-            </ul>
-          </div>
-
-          <div className='mb-4'>
-            <p className='text-gray-700 dark:text-gray-300 font-semibold mb-2'>
-              The V1 basic endpoints
-            </p>
-            <ul className='list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 ml-4'>
-              <li>
-                <strong>GET /services</strong>
-              </li>
-              <li>
-                <strong>GET /services/{'{id}'}</strong>
-              </li>
+            <div className={styles.spacer} />
+            <ul className={styles.endpointList}>
+              {displayEndpoints.map((endpoint, index) => (
+                <li key={index}>
+                  <strong>{endpoint}</strong>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
+      </Columns>
 
+      <Columns layout={42}>
         <div>
-          <h2 className='text-2xl font-bold text-teal-700 dark:text-teal-300 bg-teal-100 dark:bg-teal-900/30 px-4 py-2 rounded mb-4'>
-            Errors, Warnings, & Failing Validation
-          </h2>
-          <div className='space-y-3 text-gray-700 dark:text-gray-300'>
+          <Heading>Errors, Warnings, & Failing Validation</Heading>
+          <div className={`${styles.textSectionContainer} ${styles.textSection}`}>
             <p>
               Any issues found with a response from one of the basic endpoints will be labelled as
               an <strong>ERROR</strong> and the feed will fail validation.
             </p>
+            <div className={styles.spacer} />
             <p>
               Any issues found with any of the other endpoints will be marked as a{' '}
               <strong>WARNING</strong>. These may include issues which are the same as those
@@ -214,7 +149,7 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
             </p>
           </div>
         </div>
-      </div>
+      </Columns>
     </div>
   )
 }
