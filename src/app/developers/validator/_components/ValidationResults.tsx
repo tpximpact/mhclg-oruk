@@ -82,7 +82,7 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
   // Extract required endpoints from the validation results
   const requiredEndpoints = result.testSuites
     .filter(suite => suite.required)
-    .flatMap(suite => suite.tests.map(test => test.endpoint))
+    .flatMap(suite => suite.tests.map((test: any) => test.endpoint))
     .filter((endpoint, index, self) => self.indexOf(endpoint) === index) // Remove duplicates
     .sort()
 
