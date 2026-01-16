@@ -4,7 +4,21 @@ import { STATUS } from '@/utilities/status'
 import { getColourForStatus } from '@/utilities/getColourForStatus'
 import { getIconForStatus } from '@/utilities/getIconForStatus'
 
-export const Message = ({ data }) => (
+interface MessageData {
+	name: string
+	description: string
+	message: string
+	count?: number
+	parameters?: any
+	errorIn?: string
+	errorAt?: string
+}
+
+interface MessageProps {
+	data: MessageData
+}
+
+export const Message = ({ data }: MessageProps) => (
 	<div className={styles.message}>
 		<p>
 			{data.name}: <strong>{data.description}</strong>

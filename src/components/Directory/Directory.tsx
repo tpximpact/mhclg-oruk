@@ -11,10 +11,12 @@ import { SortedAndPaginatedTable } from '@/components/SortedAndPaginatedTable'
 interface DirectoryResult {
 	result: {
 		definitions: {
+			columns: Record<string, any>
 			views: {
 				directory: any
 			}
 		}
+		data: any[]
 	}
 }
 

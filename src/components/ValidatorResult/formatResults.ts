@@ -1,17 +1,52 @@
-import { STATUS } from '@/utilities/status'
+import { STATUS, StatusType } from '@/utilities/status'
 import { groupBy } from '@/utilities/groupBy'
 import { isDeepEqual } from '@/utilities/isDeepEqual'
 
-const normaliseEndpointName = endpointName =>
-  endpointName !== '/' && endpointName.slice(-1) === '/' ? `${endpointName}{id}` : endpointName
-
-const processTest = (suite, test) => {
-  test.parent = suite.name
-  test.status = test.success ? STATUS.PASS : suite.required ? STATUS.FAIL : STATUS.OTHER
-  return test
+interface Test {
+	endpoint: string
+	success: boolean
+	parent?: string
+	status?: StatusType
+	messages: any[]
+	[key: string]: any
 }
 
-const stripSharedPath = (str, sharedPath) => str.replace(sharedPath, '')
+interface TestSuite {
+	name: string
+	required: boolean
+	tests: Test[]
+}
+
+interface ServiceInput {
+	service: {
+		url: string
+	}
+	testSuites: TestSuite[]
+}
+
+interface GroupedTests {
+	[key: string]: Test[]
+}
+
+interface EndpointResult {
+	tests?: Test[]
+	groups?: GroupedTests
+}
+
+interface FormattedResults {
+	[endpointName: string]: EndpointResult
+}
+
+const normaliseEndpointName = (endpointName: string): string =>
+  endpointName !== '/' && endpointName.slice(-1) === '/' ? `${endpointName}{id}` : endpointName
+
+const processTest = (suite: TestSuite, test: Test): Test => {
+	test.parent = suite.name
+	test.status = test.success ? STATUS.PASS : suite.required ? STATUS.FAIL : STATUS.OTHER
+	return test
+}
+
+const stripSharedPath = (str: string, sharedPath: string): string => str.replace(sharedPath, '')
 
 const addTestToResult = (result, test, sharedPath) => {
   const endpointRaw = stripSharedPath(test.endpoint, sharedPath)
@@ -62,18 +97,18 @@ const deDuplicateMessages = input => {
   return result
 }
 
-const deduplicate = arr => {
-  let uniques = []
-  arr.forEach(item => {
-    if (!isIn(item, uniques)) {
-      uniques.push(item)
-    }
-  })
-  uniques.forEach(u => {
-    const number = arr.filter(member => isDeepEqual(member, u)).length
-    u.count = number
-  })
-  return uniques
+const deduplicate = (arr: any[]): any[] => {
+	let uniques: any[] = []
+	arr.forEach(item => {
+		if (!isIn(item, uniques)) {
+			uniques.push(item)
+		}
+	})
+	uniques.forEach(u => {
+		const number = arr.filter(member => isDeepEqual(member, u)).length
+		u.count = number
+	})
+	return uniques
 }
 
-const isIn = (needle, haystack) => haystack.some(item => isDeepEqual(item, needle))
+const isIn = (needle: any, haystack: any[]): boolean => haystack.some(item => isDeepEqual(item, needle))

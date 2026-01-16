@@ -6,7 +6,18 @@ import { getColourForStatus } from '@/utilities/getColourForStatus'
 import { getIconForStatus } from '@/utilities/getIconForStatus'
 import styles from './ValidatorResult.module.css'
 
-export const Title = ({ result }) => {
+interface TitleProps {
+	result: {
+		service: {
+			url: string
+			isValid: boolean
+			profile: string
+		}
+		[key: string]: any
+	}
+}
+
+export const Title = ({ result }: TitleProps) => {
 	const status = resultToStatus(result)
 	const colour = getColourForStatus(status, true)
 	return (

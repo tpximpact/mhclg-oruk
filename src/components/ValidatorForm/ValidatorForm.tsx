@@ -5,9 +5,9 @@ import Columns from '@/components/Columns'
 import { v4 as uuidv4 } from 'uuid'
 import styles from './ValidatorForm.module.css'
 import { Button } from '@/components/Button'
-import { useState, useRef } from 'react'
+import { useState, useRef, FormEvent, MouseEvent } from 'react'
 
-const Heading = ({ title }) => <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>{title}</h2>
+const Heading = ({ title }: { title: string }) => <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>{title}</h2>
 
 const Samples = () => (
 	<div className={styles.samples}>
@@ -33,7 +33,13 @@ const Samples = () => (
 	</div>
 )
 
-export const ValidatorForm = props => (
+interface ValidatorFormProps {
+	title?: string
+	action?: string
+	defaultValue?: string
+}
+
+export const ValidatorForm = (props: ValidatorFormProps) => (
 	<div style={{ marginTop: '6rem' }}>
 		<Columns layout={42}>
 			<Form {...props} />
@@ -42,14 +48,14 @@ export const ValidatorForm = props => (
 	</div>
 )
 
-const Form = ({ title, action, defaultValue }) => {
+const Form = ({ title, action, defaultValue }: ValidatorFormProps) => {
 	const UUID = uuidv4()
-	const formRef = useRef(null)
-	const inputRef = useRef(null)
+	const formRef = useRef<HTMLFormElement>(null)
+	const inputRef = useRef<HTMLInputElement>(null)
 	const [disabled, setDisabled] = useState(false)
 
-	const submit = e => {
-		if (!inputRef.current.value.length > 0) {
+	const submit = (e: MouseEvent<HTMLButtonElement>) => {
+		if (!inputRef.current?.value || inputRef.current.value.length === 0) {
 			e.preventDefault()
 			alert('please enter the URL of the data feed')
 			return false
@@ -60,7 +66,7 @@ const Form = ({ title, action, defaultValue }) => {
 		}
 
 		setDisabled(true)
-		formRef.current.requestSubmit()
+		formRef.current?.requestSubmit()
 	}
 
 	return (

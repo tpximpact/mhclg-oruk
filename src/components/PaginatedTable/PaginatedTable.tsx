@@ -4,7 +4,20 @@ import React, { useState, useEffect } from 'react'
 import { Pagination } from '@/components/Pagination'
 import { DataTable } from './DataTable'
 
-export const PaginatedTable = props => {
+interface PaginatedTableProps {
+	currentPage: number
+	rows: any[]
+	rowsPerPage: number
+	columns: string[]
+	headers: Record<string, any>
+	[key: string]: any
+}
+
+interface ViewProps extends PaginatedTableProps {
+	pageChangeFunction?: (event: any, page: number) => void
+}
+
+export const PaginatedTable = (props: PaginatedTableProps) => {
 	const [clientSide, setClientSide] = useState(false)
 
 	useEffect(() => {
@@ -14,7 +27,7 @@ export const PaginatedTable = props => {
 	return clientSide ? <InteractiveView {...props} /> : <NoJSView {...props} />
 }
 
-const NoJSView = ({ currentPage, ...props }) => (
+const NoJSView = ({ currentPage, ...props }: PaginatedTableProps) => (
 	<View
 		//title="NoJS"
 		currentPage={currentPage}
@@ -22,10 +35,10 @@ const NoJSView = ({ currentPage, ...props }) => (
 	/>
 )
 
-const InteractiveView = ({ currentPage, ...props }) => {
+const InteractiveView = ({ currentPage, ...props }: PaginatedTableProps) => {
 	const [activePage, setActivePage] = useState(currentPage)
 
-	const selectPage = (_, n) => setActivePage(n)
+	const selectPage = (_: any, n: number) => setActivePage(n)
 
 	return (
 		<View
@@ -37,9 +50,18 @@ const InteractiveView = ({ currentPage, ...props }) => {
 	)
 }
 
-const calculateNumPages = ({ numRows, rowsPerPage }) => Math.ceil(numRows / rowsPerPage)
+const calculateNumPages = ({ numRows, rowsPerPage }: { numRows: number; rowsPerPage: number }): number =>
+	Math.ceil(numRows / rowsPerPage)
 
-const paginateRows = ({ currentPage, rows, rowsPerPage }) => {
+const paginateRows = ({
+	currentPage,
+	rows,
+	rowsPerPage
+}: {
+	currentPage: number
+	rows: any[]
+	rowsPerPage: number
+}): any[] => {
 	const offset = (currentPage - 1) * rowsPerPage
 	return rows.slice(offset, offset + rowsPerPage)
 }
@@ -51,7 +73,7 @@ const View = ({
 	rows,
 	rowsPerPage,
 	...props
-}) => {
+}: ViewProps) => {
 	const baseUrl = '/developer/tools/dashboard?page='
 
 	const numPages = calculateNumPages({

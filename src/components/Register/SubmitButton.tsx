@@ -3,7 +3,12 @@
 import { useFormStatus } from 'react-dom'
 import styles from './Register.module.css'
 
-export const SubmitButton = ({ label, loading }) => {
+interface SubmitButtonProps {
+	label: string
+	loading: string
+}
+
+export const SubmitButton = ({ label, loading }: SubmitButtonProps) => {
 	const { pending } = useFormStatus()
 
 	return (

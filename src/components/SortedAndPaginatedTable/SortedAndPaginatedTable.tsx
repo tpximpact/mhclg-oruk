@@ -4,7 +4,28 @@ import { useState, useEffect } from 'react'
 import { PaginatedTable } from '@/components/PaginatedTable'
 import { TableSorting, getSortingOptions, getSortedRows } from '@/components/TableSorting'
 
-export const SortedAndPaginatedTable = ({ currentPage, tableData, view }) => {
+interface View {
+	defaultSortBy: string
+	defaultSortDirection: 'asc' | 'desc'
+	rowsPerPage: number
+	columns: string[]
+	[key: string]: any
+}
+
+interface TableData {
+	definitions: {
+		columns: Record<string, any>
+	}
+	data: any[]
+}
+
+interface SortedAndPaginatedTableProps {
+	currentPage: number
+	tableData: TableData
+	view: View
+}
+
+export const SortedAndPaginatedTable = ({ currentPage, tableData, view }: SortedAndPaginatedTableProps) => {
 	const headers = tableData.definitions.columns
 	const [sortBy, setSortBy] = useState(view.defaultSortBy)
 	const [sortDirection, setSortDirection] = useState(view.defaultSortDirection)
@@ -26,11 +47,11 @@ export const SortedAndPaginatedTable = ({ currentPage, tableData, view }) => {
 		sort()
 	}, [sortBy, sortDirection])
 
-	const changeSort = newVal => {
+	const changeSort = (newVal: string) => {
 		setSortBy(newVal)
 	}
 
-	const changeDirection = newVal => {
+	const changeDirection = (newVal: 'asc' | 'desc') => {
 		setSortDirection(newVal)
 		sort()
 	}

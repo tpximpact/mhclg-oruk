@@ -2,7 +2,11 @@
 
 import { getNamedSiteItem } from '@/utilities/getNamedSiteItem'
 
-export const MarkdownError = async ({ file }) => {
+interface MarkdownErrorProps {
+	file: string
+}
+
+export const MarkdownError = async ({ file }: MarkdownErrorProps) => {
 	const pageData = getNamedSiteItem(file)
 	return (
 		<div>

@@ -1,5 +1,5 @@
-export const formatDate = dateString => {
-	const options = {
+export const formatDate = (dateString: string): string => {
+	const options: Intl.DateTimeFormatOptions = {
 		hour: 'numeric',
 		minute: 'numeric',
 		year: '2-digit',

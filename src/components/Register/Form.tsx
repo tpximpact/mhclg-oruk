@@ -9,7 +9,22 @@ import { useToastMessage } from '@/hooks/use-toast-message'
 import { FieldError } from './FieldError'
 import { useFormReset } from '@/hooks/use-form-reset'
 
-const TextField = ({ id, label, note, formState }) => {
+interface FormState {
+	status?: string
+	updateLink?: string
+	formData?: Record<string, any>
+	fieldErrors?: Record<string, string[]>
+	[key: string]: any
+}
+
+interface TextFieldProps {
+	id: string
+	label: string
+	note?: string
+	formState: FormState
+}
+
+const TextField = ({ id, label, note, formState }: TextFieldProps) => {
 	const v = formState?.formData?.[id] ?? ''
 
 	return (
@@ -22,7 +37,7 @@ const TextField = ({ id, label, note, formState }) => {
 	)
 }
 
-const TextArea = ({ id, label, note, formState }) => {
+const TextArea = ({ id, label, note, formState }: TextFieldProps) => {
 	const v = formState?.formData?.[id] ?? ''
 
 	return (
@@ -35,7 +50,7 @@ const TextArea = ({ id, label, note, formState }) => {
 	)
 }
 
-const Success = ({ link }) => {
+const Success = ({ link }: { link: string }) => {
 	return (
 		<div>
 			<h3 id='success'>Registration request submitted</h3>
