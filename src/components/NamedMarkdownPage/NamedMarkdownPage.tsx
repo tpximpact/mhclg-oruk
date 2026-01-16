@@ -3,7 +3,6 @@ import { readFile } from '@/utilities/readFile'
 import { MarkdownPage } from './MarkdownPage'
 import { PageMargin } from '@/components/PageMargin'
 import { parseMarkdown } from '@/utilities/parseMarkdown'
-import { ReactNode } from 'react'
 
 interface NamedMarkdownPageProps {
   name: string
@@ -27,8 +26,8 @@ export const NamedMarkdownPage = ({
           })
         : null
   }
-  const parsed = parseMarkdown(markdownRaw)
-  const html = parsed ? parsed.content : null
+  const parsed = parseMarkdown(markdownRaw ?? '')
+  const html = parsed ? parsed.content : undefined
   if (noMargin) return <MarkdownPage file={name} html={html} {...props} />
   return (
     <PageMargin>

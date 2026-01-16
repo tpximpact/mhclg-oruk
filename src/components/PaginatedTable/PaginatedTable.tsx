@@ -1,111 +1,117 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Pagination } from '@/components/Pagination'
 import { DataTable } from './DataTable'
 
 interface PaginatedTableProps {
-	currentPage: number
-	rows: any[]
-	rowsPerPage: number
-	columns: string[]
-	headers: Record<string, any>
-	[key: string]: any
+  currentPage: number
+  rows: any[]
+  rowsPerPage: number
+  columns: string[]
+  headers: Record<string, any>
+  [key: string]: any
 }
 
 interface ViewProps extends PaginatedTableProps {
-	pageChangeFunction?: (event: any, page: number) => void
+  pageChangeFunction: (event: any, page: number) => void
 }
 
 export const PaginatedTable = (props: PaginatedTableProps) => {
-	const [clientSide, setClientSide] = useState(false)
+  const [clientSide, setClientSide] = useState(false)
 
-	useEffect(() => {
-		setClientSide(true)
-	}, [])
+  useEffect(() => {
+    setClientSide(true)
+  }, [])
 
-	return clientSide ? <InteractiveView {...props} /> : <NoJSView {...props} />
+  return clientSide ? <InteractiveView {...props} /> : <NoJSView {...props} />
 }
 
 const NoJSView = ({ currentPage, ...props }: PaginatedTableProps) => (
-	<View
-		//title="NoJS"
-		currentPage={currentPage}
-		{...props}
-	/>
+  <View
+    //title="NoJS"
+    currentPage={currentPage}
+    pageChangeFunction={() => {}}
+    {...props}
+  />
 )
 
 const InteractiveView = ({ currentPage, ...props }: PaginatedTableProps) => {
-	const [activePage, setActivePage] = useState(currentPage)
+  const [activePage, setActivePage] = useState(currentPage)
 
-	const selectPage = (_: any, n: number) => setActivePage(n)
+  const selectPage = (_: any, n: number) => setActivePage(n)
 
-	return (
-		<View
-			//title="Interactive"
-			pageChangeFunction={selectPage}
-			currentPage={activePage}
-			{...props}
-		/>
-	)
+  return (
+    <View
+      //title="Interactive"
+      pageChangeFunction={selectPage}
+      currentPage={activePage}
+      {...props}
+    />
+  )
 }
 
-const calculateNumPages = ({ numRows, rowsPerPage }: { numRows: number; rowsPerPage: number }): number =>
-	Math.ceil(numRows / rowsPerPage)
+const calculateNumPages = ({
+  numRows,
+  rowsPerPage
+}: {
+  numRows: number
+  rowsPerPage: number
+}): number => Math.ceil(numRows / rowsPerPage)
 
 const paginateRows = ({
-	currentPage,
-	rows,
-	rowsPerPage
+  currentPage,
+  rows,
+  rowsPerPage
 }: {
-	currentPage: number
-	rows: any[]
-	rowsPerPage: number
+  currentPage: number
+  rows: any[]
+  rowsPerPage: number
 }): any[] => {
-	const offset = (currentPage - 1) * rowsPerPage
-	return rows.slice(offset, offset + rowsPerPage)
+  const offset = (currentPage - 1) * rowsPerPage
+  return rows.slice(offset, offset + rowsPerPage)
 }
 
 const View = ({
-	//title,
-	pageChangeFunction,
-	currentPage,
-	rows,
-	rowsPerPage,
-	...props
+  //title,
+  pageChangeFunction,
+  currentPage,
+  rows,
+  rowsPerPage,
+  ...props
 }: ViewProps) => {
-	const baseUrl = '/developer/tools/dashboard?page='
+  const baseUrl = '/developer/tools/dashboard?page='
 
-	const numPages = calculateNumPages({
-		numRows: rows.length,
-		rowsPerPage: rowsPerPage
-	})
+  const numPages = calculateNumPages({
+    numRows: rows.length,
+    rowsPerPage: rowsPerPage
+  })
 
-	const pagedRows =
-		numPages > 1
-			? paginateRows({
-					currentPage: currentPage,
-					rows: rows,
-					rowsPerPage: rowsPerPage
-				})
-			: rows
+  const pagedRows =
+    numPages > 1
+      ? paginateRows({
+          currentPage: currentPage,
+          rows: rows,
+          rowsPerPage: rowsPerPage
+        })
+      : rows
 
-	return (
-		<div>
-			{/*<div>
+  return (
+    <div>
+      {/*<div>
 			{title} version. CurrentPage = <strong>{currentPage}</strong>
 		</div>*/}
-			<DataTable {...props} rows={pagedRows} />
-			{numPages > 1 ? (
-				<Pagination
-					baseUrl={baseUrl}
-					numPages={numPages}
-					currentPage={currentPage}
-					pageChangeFunction={pageChangeFunction}
-				/>
-			) : null}
-		</div>
-	)
+      <DataTable {...props} rows={pagedRows} />
+      {numPages > 1 ? (
+        <Pagination
+          baseUrl={baseUrl}
+          numPages={numPages}
+          currentPage={currentPage}
+          pageChangeFunction={pageChangeFunction}
+        />
+      ) : null}
+    </div>
+  )
 }
 
 /*

@@ -64,7 +64,7 @@ export const APIRequest = ({ src, exampleId, apiPath }: APIRequestProps) => {
 
 const Result = ({ status, response }: { status: string; response: any }) => (
   <div>
-    {status === RESPONSE_STATUS.ERROR && <Error message={response} />}
+    {status === RESPONSE_STATUS.ERROR && <ErrorMessage message={response} />}
     {status === RESPONSE_STATUS.PENDING && <Spinner />}
     {/*status === RESPONSE_STATUS.SUCCESS && (
 			<div style={{ marginTop: '1rem' }}>
@@ -282,7 +282,7 @@ const Button = ({ dispatchRequest, text, q }) => (
 	</button>
 )*/
 
-const Error = ({ message }: { message: string }) => (
+const ErrorMessage = ({ message }: { message: string }) => (
   <div
     style={{
       marginTop: '1rem',

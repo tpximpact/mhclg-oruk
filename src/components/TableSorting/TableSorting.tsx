@@ -117,7 +117,7 @@ export const TableSorting = ({
         <select
           id='sortDir'
           defaultValue={selectedDirection}
-          onChange={({ target: { value } }) => onDirectionChange(value)}
+          onChange={({ target: { value } }) => onDirectionChange(value as Direction)}
           {...rest}
         >
           <option value={DIRECTION.ASCENDING}>Ascending</option>

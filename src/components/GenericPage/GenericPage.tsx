@@ -7,33 +7,36 @@ import { formatNodesForPageMenu } from '@/utilities/formatNodesForPageMenu'
 import { Metadata } from 'next'
 
 export const metadata = (name: string): Metadata => {
-	const pageData = getNamedSiteItem(name)
-	return {
-		title: pageData && pageData.label ? pageData.label : 'Open Referral UK'
-	}
+  const pageData = getNamedSiteItem(name)
+  return {
+    title: pageData && pageData.label ? pageData.label : 'Open Referral UK'
+  }
 }
 
 interface GenericPageProps {
-	name: string
+  name: string
 }
 
 export const GenericPage = ({ name }: GenericPageProps) => {
-	const pageData = getNamedSiteItem(name)
-	if (!pageData) return notFound()
-	let nodes = pageData.childNodes
-	if (nodes) {
-		nodes = nodes.map(node => getNamedSiteItem(node))
-		nodes = formatNodesForPageMenu(nodes)
-	}
+  const pageData = getNamedSiteItem(name)
+  if (!pageData) return notFound()
+  const childNodes = pageData.childNodes
+  let menuNodes
+  if (childNodes) {
+    const siteItems = childNodes
+      .map(node => (typeof node === 'string' ? getNamedSiteItem(node) : node))
+      .filter((node): node is NonNullable<typeof node> => node !== undefined)
+    menuNodes = formatNodesForPageMenu(siteItems as any)
+  }
 
-	return (
-		<>
-			<NamedMarkdownPage name={name} autoMenu={pageData.autoMenu} />
-			{nodes && nodes.length > 0 && (
-				<PageMargin>
-					<PageList data={nodes} />
-				</PageMargin>
-			)}
-		</>
-	)
+  return (
+    <>
+      <NamedMarkdownPage name={name} autoMenu={pageData.autoMenu} />
+      {menuNodes && menuNodes.length > 0 && (
+        <PageMargin>
+          <PageList data={menuNodes} />
+        </PageMargin>
+      )}
+    </>
+  )
 }

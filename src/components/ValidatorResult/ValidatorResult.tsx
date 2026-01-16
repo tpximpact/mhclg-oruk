@@ -10,10 +10,15 @@ import { formatResults } from './formatResults'
 
 //import exampleData from './example.json'
 
-export const ValidatorResult = ({ result, apiData }) => {
+interface ValidatorResultProps {
+  result: any
+  apiData: any
+}
+
+export const ValidatorResult = ({ result, apiData }: ValidatorResultProps) => {
   result = result.result
 
-  const endpoints = useMemo(() => formatResults(result), [result])
+  const endpoints: Record<string, any> = useMemo(() => formatResults(result), [result])
 
   useEffect(() => {
     window.scrollTo(0, 0)

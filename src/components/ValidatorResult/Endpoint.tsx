@@ -35,12 +35,12 @@ export const TabsContent = ({
 }: {
   tabData: { id: string; title: string; content: any }[]
   activeTab: string
-}) => <div className={styles.tabContent}>{tabData.find(tab => tab.id === activeTab).content}</div>
+}) => <div className={styles.tabContent}>{tabData.find(tab => tab.id === activeTab)?.content}</div>
 
 const ValidationTab = ({ groups }: { groups: Record<string, any[]> }) => (
   <div>
     {Object.keys(groups).map((k, i) => (
-      <Group key={i} path={k} data={groups[k]} />
+      <Group key={i} data={groups[k] || []} />
     ))}
   </div>
 )
@@ -68,7 +68,8 @@ const profileNameToVersionNumber = (name: string) => {
 
 const getExampleId = (data: any) => {
   let id
-  const defaultGroup = data.groups[Object.keys(data.groups)[0]]
+  const firstKey = Object.keys(data.groups)[0]
+  const defaultGroup = firstKey ? data.groups[firstKey] : undefined
 
   if (defaultGroup) {
     const defaultItem = defaultGroup[0]
@@ -106,7 +107,9 @@ export const Endpoint = ({
     {
       id: 'Tab 3',
       title: 'Docs',
-      content: <DocsTab path={path} apiData={apiData[profileVersion]} />
+      content: (
+        <DocsTab path={path} apiData={profileVersion ? apiData[profileVersion] : undefined} />
+      )
     }
   ]
 

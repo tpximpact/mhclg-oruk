@@ -9,7 +9,7 @@ import styles from './Maintenance.module.css'
 export const Maintenance = async () => {
   const contentFilePath = 'maintenance.md'
   const contentRaw = read(contentFilePath)
-  const html = parseMarkdown(contentRaw).content
+  const html = parseMarkdown(contentRaw ?? '')?.content ?? ''
 
   return (
     <div className={styles.Maintenance}>

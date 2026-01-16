@@ -1,8 +1,10 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import css from './PageMargin.module.css'
 
 interface PageMarginProps {
-	children: ReactNode
+  children: ReactNode
 }
 
-export const PageMargin = ({ children }: PageMarginProps) => <div className={css.pagemargin}>{children}</div>
+export const PageMargin = ({ children }: PageMarginProps) => (
+  <div className={css.pagemargin}>{children}</div>
+)

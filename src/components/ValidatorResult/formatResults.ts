@@ -3,52 +3,32 @@ import { groupBy } from '@/utilities/groupBy'
 import { isDeepEqual } from '@/utilities/isDeepEqual'
 
 interface Test {
-	endpoint: string
-	success: boolean
-	parent?: string
-	status?: StatusType
-	messages: any[]
-	[key: string]: any
+  endpoint: string
+  success: boolean
+  parent?: string
+  status?: StatusType
+  messages: any[]
+  [key: string]: any
 }
 
 interface TestSuite {
-	name: string
-	required: boolean
-	tests: Test[]
-}
-
-interface ServiceInput {
-	service: {
-		url: string
-	}
-	testSuites: TestSuite[]
-}
-
-interface GroupedTests {
-	[key: string]: Test[]
-}
-
-interface EndpointResult {
-	tests?: Test[]
-	groups?: GroupedTests
-}
-
-interface FormattedResults {
-	[endpointName: string]: EndpointResult
+  name: string
+  required: boolean
+  tests: Test[]
 }
 
 const normaliseEndpointName = (endpointName: string): string =>
   endpointName !== '/' && endpointName.slice(-1) === '/' ? `${endpointName}{id}` : endpointName
 
 const processTest = (suite: TestSuite, test: Test): Test => {
-	test.parent = suite.name
-	test.status = test.success ? STATUS.PASS : suite.required ? STATUS.FAIL : STATUS.OTHER
-	return test
+  test.parent = suite.name
+  test.status = test.success ? STATUS.PASS : suite.required ? STATUS.FAIL : STATUS.OTHER
+  return test
 }
 
 const stripSharedPath = (str: string, sharedPath: string): string => str.replace(sharedPath, '')
 
-const addTestToResult = (result, test, sharedPath) => {
+const addTestToResult = (result: any, test: Test, sharedPath: string) => {
   const endpointRaw = stripSharedPath(test.endpoint, sharedPath)
   const endpointName = normaliseEndpointName(endpointRaw)
   if (!result[endpointName]) {
@@ -57,7 +37,7 @@ const addTestToResult = (result, test, sharedPath) => {
   result[endpointName].tests.push(test)
 }
 
-const groupTestsByParent = result => {
+const groupTestsByParent = (result: any) => {
   Object.keys(result).forEach(key => {
     const groupedTests = groupBy(result[key].tests, 'parent')
     result[key].groups = groupedTests
@@ -65,12 +45,12 @@ const groupTestsByParent = result => {
   })
 }
 
-export const formatResults = input => {
+export const formatResults = (input: any) => {
   let result = {}
 
   const sharedPath = input.service.url
-  input.testSuites.forEach(suite => {
-    suite.tests.forEach(test => {
+  input.testSuites.forEach((suite: TestSuite) => {
+    suite.tests.forEach((test: Test) => {
       const processedTest = processTest(suite, test)
       addTestToResult(result, processedTest, sharedPath)
     })
@@ -82,14 +62,14 @@ export const formatResults = input => {
   return result
 }
 
-const deDuplicateMessages = input => {
+const deDuplicateMessages = (input: any) => {
   const result = JSON.parse(JSON.stringify(input))
   Object.keys(result).forEach(endpointKey => {
     const endpoint = result[endpointKey]
 
     Object.keys(endpoint.groups).forEach(groupKey => {
       const group = endpoint.groups[groupKey]
-      group.forEach(test => {
+      group.forEach((test: Test) => {
         test.messages = deduplicate(test.messages)
       })
     })
@@ -98,17 +78,18 @@ const deDuplicateMessages = input => {
 }
 
 const deduplicate = (arr: any[]): any[] => {
-	let uniques: any[] = []
-	arr.forEach(item => {
-		if (!isIn(item, uniques)) {
-			uniques.push(item)
-		}
-	})
-	uniques.forEach(u => {
-		const number = arr.filter(member => isDeepEqual(member, u)).length
-		u.count = number
-	})
-	return uniques
+  let uniques: any[] = []
+  arr.forEach(item => {
+    if (!isIn(item, uniques)) {
+      uniques.push(item)
+    }
+  })
+  uniques.forEach(u => {
+    const number = arr.filter(member => isDeepEqual(member, u)).length
+    u.count = number
+  })
+  return uniques
 }
 
-const isIn = (needle: any, haystack: any[]): boolean => haystack.some(item => isDeepEqual(item, needle))
+const isIn = (needle: any, haystack: any[]): boolean =>
+  haystack.some(item => isDeepEqual(item, needle))

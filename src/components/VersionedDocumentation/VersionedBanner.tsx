@@ -72,7 +72,7 @@ export const VersionedBanner = ({
   version: string
   setVersion: (v: string) => void
 }) => {
-  const currentVersion = allVersions[0]
+  const currentVersion = allVersions[0] || ''
   const isCurrent = version === currentVersion
 
   const colourClass = isCurrent ? styles.current : styles.legacy

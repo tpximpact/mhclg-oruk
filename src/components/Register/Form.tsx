@@ -13,7 +13,7 @@ interface FormState {
   status?: string
   updateLink?: string
   formData?: Record<string, any>
-  fieldErrors?: Record<string, string[]>
+  fieldErrors?: Record<string, string[] | undefined>
   [key: string]: any
 }
 
@@ -43,7 +43,7 @@ const TextArea = ({ id, label, note, formState }: TextFieldProps) => {
   return (
     <div className={styles.Field}>
       <label htmlFor={id}>{label}</label>
-      <textarea rows='4' cols='50' id={id} name={id} defaultValue={v} />
+      <textarea rows={4} cols={50} id={id} name={id} defaultValue={v} />
       <FieldError formState={formState} name={id} />
       {note ? <span className={styles.Note}>{note}</span> : null}
     </div>

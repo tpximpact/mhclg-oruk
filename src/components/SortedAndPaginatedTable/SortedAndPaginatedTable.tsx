@@ -10,6 +10,7 @@ import {
 } from '@/components/TableSorting'
 
 interface View {
+  sortBy: string[]
   defaultSortBy: string
   defaultSortDirection: 'asc' | 'desc'
   rowsPerPage: number

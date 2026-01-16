@@ -41,7 +41,7 @@ const Property = ({ name, data, references }: { name: string; data: any; referen
 
 // Render a reference
 const Reference = ({ data, references }: { data: string; references: any }) => {
-  const referent = data.split('/').slice(-1)
+  const referent = data.split('/').slice(-1)[0] || ''
   return <Property name={referent} data={'(instance)'} references={references} />
 }
 

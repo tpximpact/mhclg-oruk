@@ -1,1 +1,0 @@
-export { InfoMenu } from './InfoMenu'
