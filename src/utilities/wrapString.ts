@@ -1,8 +1,8 @@
-export const wrapString = (text, maxLength) => {
+export const wrapString = (text: string, maxLength: number): string[] => {
 	// Remove leading/trailing whitespace and split on one or more whitespace characters
 	const words = text.trim().split(/\s+/)
 
-	const lines = []
+	const lines: string[] = []
 	let currentLine = ''
 
 	for (const word of words) {

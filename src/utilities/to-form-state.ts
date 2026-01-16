@@ -1,6 +1,15 @@
 import { ZodError } from 'zod'
 
-export const EMPTY_FORM_STATE = {
+export interface FormState {
+	status: string
+	message: string
+	formData?: any
+	fieldErrors: Record<string, string[] | undefined>
+	timestamp: number
+	updateLink?: string
+}
+
+export const EMPTY_FORM_STATE: FormState = {
 	status: 'UNSET',
 	message: '',
 	formData: null,
@@ -8,7 +17,7 @@ export const EMPTY_FORM_STATE = {
 	timestamp: Date.now()
 }
 
-export const fromErrorToFormState = (error, formData) => {
+export const fromErrorToFormState = (error: unknown, formData?: any): FormState => {
 	if (error instanceof ZodError) {
 		return {
 			status: 'ERROR',
@@ -36,7 +45,7 @@ export const fromErrorToFormState = (error, formData) => {
 	}
 }
 
-export const toFormState = (status, message) => {
+export const toFormState = (status: string, message: string): FormState => {
 	return {
 		status,
 		message,

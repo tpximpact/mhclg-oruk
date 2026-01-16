@@ -11,7 +11,7 @@ nested array: location_details.accessibility_for_disability
 
 */
 
-export const pluralToSingular = str => {
+export const pluralToSingular = (str: string): string => {
 	// Handle words ending in 'ies' (e.g., 'cities' -> 'city')
 	if (str.endsWith('ies')) {
 		return str.replace('ies', 'y')
