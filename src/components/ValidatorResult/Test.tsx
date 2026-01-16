@@ -7,8 +7,11 @@ import Columns from '@/components/Columns'
 import { Message } from './Message'
 // import { Debug } from '@/utilities/Debug'
 
-export const Test = props => (
-  <div className={styles.test} style={{ '--statuscolor': getColourForStatus(props.data.status) }}>
+export const Test = (props: { data: any }) => (
+  <div
+    className={styles.test}
+    style={{ ['--statuscolor']: getColourForStatus(props.data.status) } as any}
+  >
     <Columns layout='51' supressTrailingSpace>
       <PayloadColumn {...props} />
       <IconColumn {...props} />
@@ -16,11 +19,11 @@ export const Test = props => (
   </div>
 )
 
-const IconColumn = ({ data }) => {
+const IconColumn = ({ data }: { data: any }) => {
   return (
     <div className={styles.icon}>
       <div className={styles.testIcon}>
-        <Icon colour='#fff' weight='4' icon={getIconForStatus(data.status)} size='48' />
+        <Icon colour='#fff' weight={4} icon={getIconForStatus(data.status)} size={48} />
       </div>
       <div className={styles.testText}>
         <span>{data.status === STATUS.PASS ? 'PASS' : 'FAIL'}</span>
@@ -29,10 +32,10 @@ const IconColumn = ({ data }) => {
   )
 }
 
-const PayloadColumn = ({ data }) => (
+const PayloadColumn = ({ data }: { data: any }) => (
   <div className={styles.payload}>
     <h3>{data.description}?</h3>
-    {data.messages.map((message, i) => (
+    {data.messages.map((message: any, i: number) => (
       <Message key={i} data={message} />
     ))}
   </div>

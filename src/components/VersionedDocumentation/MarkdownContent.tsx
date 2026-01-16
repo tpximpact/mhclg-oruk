@@ -1,1 +1,3 @@
-export const MarkdownContent = ({ html }) => <div dangerouslySetInnerHTML={{ __html: html }} />
+export const MarkdownContent = ({ html }: { html: any }) => (
+  <div dangerouslySetInnerHTML={{ __html: html }} />
+)

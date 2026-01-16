@@ -11,41 +11,44 @@ const path = require('path')
  * @param {function} fn - The function to call on each matching file.
  * @returns {Promise<void>}
  */
-async function forEachFile(dir, ext, fn) {
-	try {
-		// Ensure extension starts with a dot
-		if (!ext.startsWith('.')) {
-			ext = `.${ext}`
-		}
+async function forEachFile(dir: string, ext: string, fn: (fp: string) => Promise<void> | void) {
+  try {
+    // Ensure extension starts with a dot
+    if (!ext.startsWith('.')) {
+      ext = `.${ext}`
+    }
 
-		// Check if the directory exists
-		const stats = await fs.stat(dir)
-		if (!stats.isDirectory()) {
-			throw new Error(`The path ${dir} is not a directory`)
-		}
+    // Check if the directory exists
+    const stats = await fs.stat(dir)
+    if (!stats.isDirectory()) {
+      throw new Error(`The path ${dir} is not a directory`)
+    }
 
-		// Read the contents of the directory
-		const files = await fs.readdir(dir)
+    // Read the contents of the directory
+    const files = await fs.readdir(dir)
 
-		// Process each file or directory in the directory
-		for (const file of files) {
-			const fullPath = path.join(dir, file)
-			const fileStats = await fs.stat(fullPath)
+    // Process each file or directory in the directory
+    for (const file of files) {
+      const fullPath = path.join(dir, file)
+      const fileStats = await fs.stat(fullPath)
 
-			if (fileStats.isDirectory()) {
-				// Recursively process subdirectories
-				await forEachFile(fullPath, ext, fn)
-			} else if (fileStats.isFile() && fullPath.endsWith(ext)) {
-				// Apply the function on matching files
-				await fn(fullPath)
-			}
-		}
-	} catch (err) {
-		console.error(`Error processing directory ${dir}:`, err.message)
-	}
+      if (fileStats.isDirectory()) {
+        // Recursively process subdirectories
+        await forEachFile(fullPath, ext, fn)
+      } else if (fileStats.isFile() && fullPath.endsWith(ext)) {
+        // Apply the function on matching files
+        await fn(fullPath)
+      }
+    }
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error(`Error processing directory ${dir}:`, msg)
+  }
 }
 
 module.exports = forEachFile
+
+export {}
 
 /*
 // Example usage:
