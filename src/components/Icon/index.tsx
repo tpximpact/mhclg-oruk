@@ -14,7 +14,7 @@ There are several ways to achieve this last one. Your first port of call should 
 import React, { CSSProperties } from 'react'
 import css from './Icon.module.css'
 
-interface IconType {
+export interface IconType {
 	names: string[]
 	path: string
 }
