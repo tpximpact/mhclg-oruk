@@ -6,21 +6,25 @@ import { Metadata } from 'next'
 const inFolder = 'adopt'
 
 interface PageProps {
-	params: Promise<{
-		slug: string
-	}>
+  params: Promise<{
+    slug: string
+  }>
 }
 
 export default async function Page(props: PageProps) {
-	const params = await props.params
-	const data = getDynamicPageContent(inFolder, params.slug)
-	return (
-		<PageMargin>
-			<DynamicSectionPage {...data} />
-		</PageMargin>
-	)
+  const params = await props.params
+  const data = getDynamicPageContent(inFolder, params.slug)
+  return (
+    <PageMargin>
+      <DynamicSectionPage
+        {...data}
+        next={data.next || undefined}
+        previous={data.previous || undefined}
+      />
+    </PageMargin>
+  )
 }
 
 export const metadata: Metadata = {
-	title: 'Adopt ORUK'
+  title: 'Adopt ORUK'
 }

@@ -27,7 +27,10 @@ export default function Page() {
           </span>
         </Banner>
       </PageMargin>
-      <Sitemap showHeading={false} data={siteStructureWithFullPaths(getRawPageTree())} />
+      <Sitemap
+        showHeading={false}
+        data={siteStructureWithFullPaths(getRawPageTree() as any) as any}
+      />
     </>
   )
 }

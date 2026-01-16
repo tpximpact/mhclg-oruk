@@ -121,7 +121,7 @@ const Validation = ({ status, result }: ValidationProps) => {
       <SectionHeading>
         <span className={styles.validationStatus}>
           Validation status:{' '}
-          <Icon colour={colour} weight='4' icon={getIconForStatus(status)} size='48' />{' '}
+          <Icon colour={colour} weight={4} icon={getIconForStatus(status)} size={48} />{' '}
           <span style={{ color: colour }}>{status}</span>
         </span>
       </SectionHeading>
@@ -130,10 +130,7 @@ const Validation = ({ status, result }: ValidationProps) => {
         <span className={styles.label}>Last checked</span>
         <span className={styles.fv}>
           {result.testDate.value ? (
-            <LocalisedDate
-              value={result.testDate.value}
-              options={fmtOptions}
-            />
+            <LocalisedDate value={result.testDate.value} options={fmtOptions} />
           ) : (
             <>Not Tested</>
           )}

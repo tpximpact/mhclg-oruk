@@ -4,9 +4,11 @@ import { siteStructureWithFullPaths } from '@/utilities/menuing'
 import { Metadata } from 'next'
 
 export default function Page() {
-	return <Sitemap showHeading={true} data={siteStructureWithFullPaths(getRawPageTree())} />
+  return (
+    <Sitemap showHeading={true} data={siteStructureWithFullPaths(getRawPageTree() as any) as any} />
+  )
 }
 
 export const metadata: Metadata = {
-	title: 'ORUK sitemap'
+  title: 'ORUK sitemap'
 }

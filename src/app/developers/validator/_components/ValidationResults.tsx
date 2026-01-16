@@ -106,7 +106,7 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
       </div>
       <ValidatorResult result={{ result }} apiData={apiData} />
 
-      <Columns layout={42}>
+      <Columns layout='42'>
         <div>
           <Heading>Understanding The Results</Heading>
           <p className={styles.contentText}>
@@ -132,7 +132,7 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
         </div>
       </Columns>
 
-      <Columns layout={42}>
+      <Columns layout='42'>
         <div>
           <Heading>Errors, Warnings, & Failing Validation</Heading>
           <div className={`${styles.textSectionContainer} ${styles.textSection}`}>

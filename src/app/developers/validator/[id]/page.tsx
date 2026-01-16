@@ -48,10 +48,10 @@ export default async function Page(props: PageProps) {
                 />
               </div>
             )}
-            ResultRenderComponent={ValidatorResult}
-            endpoint={process.env.VALIDATOR_ENDPOINT}
+            ResultRenderComponent={props => <ValidatorResult {...props} apiData={apiData} />}
+            endpoint={process.env.VALIDATOR_ENDPOINT!}
             queryParams={{
-              serviceUrl: searchParams.uri
+              serviceUrl: searchParams.uri || ''
             }}
             apiData={apiData}
           />

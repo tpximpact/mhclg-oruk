@@ -1,7 +1,15 @@
 import { SortedAndPaginatedTable } from '@/components/SortedAndPaginatedTable'
 
-export const Dashboard = ({ result, currentPage /* ,method,endpoint,currentPage*/ }) => {
-	const view = result.result.definitions.views.dashboard
+interface DashboardProps {
+  result: any
+  currentPage: any
+}
 
-	return <SortedAndPaginatedTable view={view} tableData={result.result} currentPage={currentPage} />
+export const Dashboard = ({
+  result,
+  currentPage /* ,method,endpoint,currentPage*/
+}: DashboardProps) => {
+  const view = result.result.definitions.views.dashboard
+
+  return <SortedAndPaginatedTable view={view} tableData={result.result} currentPage={currentPage} />
 }

@@ -34,7 +34,7 @@ export default async function Page({ searchParams }: PageProps) {
       <PageMargin>
         <div style={{ marginTop: '6rem' }}>
           {!urlToValidate ? (
-            <Columns layout={42}>
+            <Columns layout='42'>
               <div>
                 <Heading>Check feed</Heading>
                 <ValidatorForm />
