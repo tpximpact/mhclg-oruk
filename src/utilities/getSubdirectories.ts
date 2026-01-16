@@ -1,8 +1,8 @@
 import fs from 'fs'
 import { join } from 'path'
 
-export const getSubdirectories = directoryPath => {
-	const subdirectories = []
+export const getSubdirectories = (directoryPath: string): string[] => {
+	const subdirectories: string[] = []
 
 	try {
 		const directoryContents = fs.readdirSync(directoryPath)
@@ -16,7 +16,6 @@ export const getSubdirectories = directoryPath => {
 			}
 		})
 	} catch (error) {
-		 
 		console.error(`Error reading directory: ${error}`)
 	}
 

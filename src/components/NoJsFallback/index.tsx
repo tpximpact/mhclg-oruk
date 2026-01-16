@@ -6,7 +6,9 @@ export const NoJsFallback = () => {
 
 	const amendHtmlTagClass = useCallback(() => {
 		const e = document.getElementById('html')
-		e.classList.remove('no-js')
+		if (e) {
+			e.classList.remove('no-js')
+		}
 	}, [state])
 
 	useEffect(() => {

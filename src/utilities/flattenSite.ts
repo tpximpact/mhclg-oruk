@@ -1,32 +1,40 @@
 import { getRawPageTree } from './getRawPageTree'
 
-export const flattenSite = () => {
+interface SiteItem {
+	name: string
+	urlPath: string
+	contentPath: string
+	offsite?: boolean
+	parent?: string
+	childNodes?: string[] | SiteItem[]
+	[key: string]: any
+}
+
+export const flattenSite = (): SiteItem[] => {
 	return flatten(getRawPageTree())
 }
 
-const flatten = (a, parent) => {
+const flatten = (a: SiteItem[], parent?: SiteItem): SiteItem[] => {
 	a = JSON.parse(JSON.stringify(a))
 	if (parent) {
 		parent = JSON.parse(JSON.stringify(parent))
 	}
-	let result = []
+	let result: SiteItem[] = []
 	a.forEach(item => {
-		let items = []
+		let items: SiteItem[] = []
 		if (parent) {
 			item.parent = parent.name
-			//console.log(parent )
 			if (!item.offsite) {
 				item.urlPath = parent.urlPath + '/' + item.urlPath
 				item.contentPath = parent.contentPath + '/' + item.contentPath
 			}
 		}
 		if (item.childNodes) {
-			items = flatten(item.childNodes, item)
-			item.childNodes = item.childNodes.map(child => child.name)
+			items = flatten(item.childNodes as SiteItem[], item)
+			item.childNodes = (item.childNodes as SiteItem[]).map(child => child.name)
 		}
 		items.push(item)
 		result = result.concat(items)
 	})
-	//console.log(result)
 	return result
 }

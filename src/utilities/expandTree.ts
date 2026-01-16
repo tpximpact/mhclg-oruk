@@ -1,5 +1,14 @@
-export const expandTree = (structure, parentNode) => {
-	return structure.reduce((acc, node) => {
+interface TreeNode {
+	name?: string
+	urlPath: string
+	offsite?: boolean
+	childNodes?: TreeNode[]
+	parentNodeName?: string
+	[key: string]: any
+}
+
+export const expandTree = (structure: TreeNode[], parentNode?: TreeNode): TreeNode[] => {
+	return structure.reduce((acc: TreeNode[], node) => {
 		const updatedNode = { ...node }
 
 		if (parentNode) {

@@ -1,4 +1,4 @@
-import React from 'react'
+import { ReactNode, HTMLAttributes } from 'react'
 
 import columns from './columns.module.css'
 
@@ -19,6 +19,13 @@ const DebugWidget = () => (
 	</aside>
 )
 
+interface ColumnsProps extends HTMLAttributes<HTMLDivElement> {
+	children: ReactNode
+	layout?: string
+	debug?: boolean
+	supressTrailingSpace?: boolean
+}
+
 const Columns = ({
 	className,
 	children,
@@ -26,7 +33,7 @@ const Columns = ({
 	debug,
 	supressTrailingSpace,
 	...props
-}) => (
+}: ColumnsProps) => (
 	<div
 		className={[
 			columns.columns,
@@ -42,12 +49,3 @@ const Columns = ({
 )
 
 export default Columns
-
-/*
-export const Column = ({
-	start,
-	end,
-	children,
-	...props
-}) => <div style={{gridColumn: `${start} / ${end}`}} className={columns.column} {...props}>{children}</div>
-*/
