@@ -26,16 +26,15 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./src/",
     "types": [
       "@testing-library/jest-dom"
     ],
     "paths": {
       "@/components/*": [
-        "components/*"
+        "./src/components/*"
       ],
       "@/*": [
-        "*"
+        "./src/*"
       ]
     },
     "target": "ES2020"

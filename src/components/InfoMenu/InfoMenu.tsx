@@ -1,9 +1,19 @@
 import styles from './InfoMenu.module.css'
 import Link from 'next/link'
 
-export const InfoMenu = ({ items }) => {
+interface InfoMenuItem {
+	name: string
+	contentPath: string
+	label: string
+}
+
+interface InfoMenuProps {
+	items?: InfoMenuItem[]
+}
+
+export const InfoMenu = ({ items }: InfoMenuProps) => {
 	if (!items) {
-		return
+		return null
 	}
 	return (
 		<ol className={styles.InfoMenu}>

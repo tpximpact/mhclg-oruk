@@ -1,6 +1,7 @@
 import { PageMargin } from '@/components/PageMargin'
 import { Timeline } from '@/components/Timeline'
 import config from '../../../../content/adopt/gantt/data.json'
+import { Metadata } from 'next'
 
 export default function Page() {
 	return (
@@ -11,6 +12,6 @@ export default function Page() {
 	)
 }
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'ORUK planning timeline'
 }

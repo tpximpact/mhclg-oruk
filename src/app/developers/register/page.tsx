@@ -1,7 +1,8 @@
 import { ToastProvider, Register } from '@/components/Register'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Register'
 }
 

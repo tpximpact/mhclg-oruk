@@ -1,6 +1,7 @@
 import { DynamicSectionListing } from '@/components/DynamicSection'
 import { listDynamicSection } from '@/utilities/dynamicSection'
 import { PageMargin } from '@/components/PageMargin'
+import { Metadata } from 'next'
 
 export default function Page() {
 	const data = [
@@ -26,6 +27,6 @@ export default function Page() {
 	)
 }
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'News from ORUK'
 }

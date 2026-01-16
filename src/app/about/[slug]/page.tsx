@@ -1,10 +1,17 @@
 import { DynamicSectionPage } from '@/components/DynamicSection'
 import { getDynamicPageContent } from '@/utilities/dynamicSection'
 import { PageMargin } from '@/components/PageMargin'
+import { Metadata } from 'next'
 
-const inFolder = 'adopt'
+const inFolder = 'about'
 
-export default async function Page(props) {
+interface PageProps {
+	params: Promise<{
+		slug: string
+	}>
+}
+
+export default async function Page(props: PageProps) {
 	const params = await props.params
 	const data = getDynamicPageContent(inFolder, params.slug)
 	return (
@@ -14,6 +21,6 @@ export default async function Page(props) {
 	)
 }
 
-export const metadata = {
-	title: 'Adopt ORUK'
+export const metadata: Metadata = {
+	title: 'About ORUK'
 }

@@ -14,7 +14,7 @@ const COLOURS = {
 		colour: 'black',
 		background: '#bfdbfe'
 	}
-}
+} as const
 
 export const BadgeInPath = () => <Badge label='in path' {...COLOURS.IN_PATH} />
 
@@ -22,7 +22,13 @@ export const BadgeRequired = () => <Badge label='required' {...COLOURS.REQUIRED}
 
 export const BadgeUnique = () => <Badge label='unique' {...COLOURS.UNIQUE} />
 
-export const Badge = ({ label, colour, background }) => (
+interface BadgeProps {
+	label: string
+	colour: string
+	background: string
+}
+
+export const Badge = ({ label, colour, background }: BadgeProps) => (
 	<div
 		style={{
 			color: colour,

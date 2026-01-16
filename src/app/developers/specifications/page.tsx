@@ -2,15 +2,16 @@ import { getAllContentVersions } from '@/utilities/getAllContentVersions'
 import { PageMargin } from '@/components/PageMargin'
 import { VersionedDocumentation } from '@/components/VersionedDocumentation'
 import { loadMarkdownContent } from '@/utilities/loadMarkdownContent'
+import { Metadata } from 'next'
 
-export const metadata = {
-	title: 'ORUK API'
+export const metadata: Metadata = {
+	title: 'ORUK OpenAPI Specification'
 }
 
 export default async function Page() {
-	const allVersionsContent = loadMarkdownContent('index.md', '/developers/api')
+	const allVersionsContent = loadMarkdownContent('index.md', '/developers/specification')
 	const data = getAllContentVersions({
-		contentFolder: '/developers/api',
+		contentFolder: '/developers/specification',
 		specificationFolder: './src/specifications'
 	})
 
@@ -18,7 +19,7 @@ export default async function Page() {
 		<PageMargin>
 			<VersionedDocumentation
 				allVersionsContent={allVersionsContent}
-				displayComponentName='APIModel'
+				displayComponentName='OpenAPIModel'
 				data={data}
 			/>
 		</PageMargin>

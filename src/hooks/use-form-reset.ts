@@ -1,7 +1,12 @@
 import { useRef, useEffect } from 'react'
 
-const useFormReset = formState => {
-	const formRef = useRef(null)
+interface FormState {
+	status?: string
+	timestamp?: number
+}
+
+const useFormReset = (formState: FormState) => {
+	const formRef = useRef<HTMLFormElement>(null)
 	const prevTimestamp = useRef(formState.timestamp)
 
 	useEffect(() => {
