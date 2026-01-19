@@ -5,23 +5,23 @@ import { loadMarkdownContent } from '@/utilities/loadMarkdownContent'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-	title: 'ORUK OpenAPI Specification'
+  title: 'ORUK OpenAPI Specification'
 }
 
 export default async function Page() {
-	const allVersionsContent = loadMarkdownContent('index.md', '/developers/specification')
-	const data = getAllContentVersions({
-		contentFolder: '/developers/specification',
-		specificationFolder: './src/specifications'
-	})
+  const allVersionsContent = loadMarkdownContent('index.md', '/developers/specification')
+  const data = getAllContentVersions({
+    contentFolder: '/developers/specification',
+    specificationFolder: './public/specifications'
+  })
 
-	return (
-		<PageMargin>
-			<VersionedDocumentation
-				allVersionsContent={allVersionsContent}
-				displayComponentName='OpenAPIModel'
-				data={data}
-			/>
-		</PageMargin>
-	)
+  return (
+    <PageMargin>
+      <VersionedDocumentation
+        allVersionsContent={allVersionsContent}
+        displayComponentName='OpenAPIModel'
+        data={data}
+      />
+    </PageMargin>
+  )
 }
