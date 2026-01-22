@@ -2,7 +2,7 @@ import styles from './BannerMHCLG.module.css'
 import { PageMargin } from '@/components/PageMargin'
 
 export const BannerMHCLG = () => (
-  <aside className={styles.BannerMHCLG}>
+  <div className={styles.BannerMHCLG}>
     <PageMargin>
       <div className={styles.inner}>
         <div className={styles.supported}>Open Referral UK is supported by</div>
@@ -11,7 +11,7 @@ export const BannerMHCLG = () => (
         </div>
       </div>
     </PageMargin>
-  </aside>
+  </div>
 )
 
 const Logo = () => (

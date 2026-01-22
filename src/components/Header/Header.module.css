@@ -1,90 +1,80 @@
 .content {
-	display: flex;
+  display: flex;
 }
 
 .left {
-	padding: 1.2rem 0;
-	flex: 0 0 150px;
+  padding: 1.2rem 0;
+  flex: 0 0 150px;
 }
 
 .centre {
-	flex: 1;
+  flex: 1;
 }
 
 .right {
-	flex: 0 0 170px;
-	display: flex;
+  flex: 0 0 170px;
+  display: flex;
 }
 
 .right button,
 .noJsLink {
-	padding: 0 2rem;
-	border: 0;
-	display: block;
-	font-weight: var(--link-weight);
-	margin: 0 0;
-	cursor: pointer;
-	color: var(--Header-button-color);
+  padding: 0 2rem;
+  border: 0;
+  display: block;
+  font-weight: var(--link-weight);
+  margin: 0 0;
+  cursor: pointer;
+  color: var(--Header-button-color);
 }
 
 .noJsLink {
-	margin-top: 3rem;
-	animation: fadeIn 5s;
-}
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  margin-top: 3rem;
 }
 
 .right button div {
-	display: flex;
-	height: 100%;
-	padding-top: 3rem;
+  display: flex;
+  height: 100%;
+  padding-top: 3rem;
 }
 
 .right button.open {
-	/*background: #EEFFFE;*/
-	background: var(--Header-background-open);
+  /*background: #EEFFFE;*/
+  background: var(--Header-background-open);
 }
 
 .right button.closed {
-	background: var(--Header-background-closed);
+  background: var(--Header-background-closed);
 }
 
 .right button div {
-	border-bottom: 2px solid transparent;
-	font-weight: 700;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
 }
 
 .right button.open div,
 .right button:hover div {
-	border-bottom: 2px solid var(--Header-border-color);
+  border-bottom: 2px solid var(--Header-border-color);
 }
 
 .right button span:before {
-	border-bottom-color: var(--Header-border-color);
-	border-right-color: var(--Header-border-color);
-	border-bottom-style: solid;
-	border-bottom-width: 2px;
-	border-right-style: solid;
-	border-right-width: 2px;
-	content: '';
-	display: inline-block;
-	height: 8px;
-	margin-bottom: 0px;
-	margin-left: 2px;
-	margin-right: 10px;
-	margin-top: 0px;
-	vertical-align: middle;
-	width: 8px;
-	transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, -3.5);
+  border-bottom-color: var(--Header-border-color);
+  border-right-color: var(--Header-border-color);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-right-style: solid;
+  border-right-width: 2px;
+  content: '';
+  display: inline-block;
+  height: 8px;
+  margin-bottom: 0px;
+  margin-left: 2px;
+  margin-right: 10px;
+  margin-top: 0px;
+  vertical-align: middle;
+  width: 8px;
+  transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, -3.5);
 }
 
 .right button.open span:before {
-	transform: matrix(-0.707107, -0.707107, 0.707107, -0.707107, 0, 1);
+  transform: matrix(-0.707107, -0.707107, 0.707107, -0.707107, 0, 1);
 }
