@@ -41,7 +41,7 @@ export const ValidatorResult = ({ result, apiData }: ValidatorResultProps) => {
         ))}
       </div>
 
-      {result && (
+      {/*       {result && (
         <div className='mt-4'>
           <h4 className='text-sm font-medium text-gray-800 dark:text-gray-400 mb-1'>
             Full Result:
@@ -50,7 +50,7 @@ export const ValidatorResult = ({ result, apiData }: ValidatorResultProps) => {
             {JSON.stringify(result, null, 2)}
           </pre>
         </div>
-      )}
+      )} */}
     </>
   )
 }

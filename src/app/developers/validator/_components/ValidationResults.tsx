@@ -6,7 +6,7 @@ import Heading from './Heading'
 import Columns from '@/components/Columns'
 import LoadingOverlay from './LoadingOverlay'
 import styles from './ValidationResults.module.css'
-import { env } from '@/lib/env'
+import { fetchValidationResults } from './actions'
 
 interface ValidationResultsProps {
   url: string
@@ -36,20 +36,15 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
       setResult(null)
 
       try {
-        const response = await fetch(process.env.VALIDATOR_ENDPOINT!, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ baseUrl: url })
-        })
+        const response = await fetchValidationResults(url)
 
-        if (!response.ok) {
-          throw new Error(`Validation failed: ${response.statusText}`)
+        if (response.error) {
+          throw new Error(response.error)
         }
 
-        const data = await response.json()
-        setResult(data)
+        if (response.result) {
+          setResult(response.result)
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred during validation')
       } finally {
