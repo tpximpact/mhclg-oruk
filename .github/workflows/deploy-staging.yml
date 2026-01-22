@@ -32,7 +32,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile.dev
+          file: ./Dockerfile
           tags: ${{ env.DOCKER_IMAGE }}:${{ github.sha }},${{ env.DOCKER_IMAGE }}:latest
           load: true
           cache-from: type=gha
@@ -104,30 +104,34 @@ jobs:
           echo "=== Application Logs ==="
           docker logs ${{ env.CONTAINER_NAME }}
 
-      - name: Stop and remove container
-        if: always()
-        run: |
-          docker stop ${{ env.CONTAINER_NAME }} || true
-          docker rm ${{ env.CONTAINER_NAME }} || true
-
       - name: Setup Node.js for Playwright
+        if: always()
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'yarn'
 
       - name: Install dependencies for tests
+        if: always()
         run: yarn install --frozen-lockfile
 
       - name: Install Playwright Browsers
+        if: always()
         run: npx playwright install --with-deps chromium
 
       - name: Run accessibility tests
+        if: always()
         run: |
           # Set the base URL to the running container
           BASE_URL=http://localhost:${{ env.TEST_PORT }} yarn e2e src/e2e/accessibility.spec.ts
         env:
           CI: true
+
+      - name: Stop and remove container
+        if: always()
+        run: |
+          docker stop ${{ env.CONTAINER_NAME }} || true
+          docker rm ${{ env.CONTAINER_NAME }} || true
 
       - name: Upload accessibility report
         uses: actions/upload-artifact@v4
