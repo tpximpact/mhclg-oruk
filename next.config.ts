@@ -43,10 +43,6 @@ const nextConfig: NextConfig = {
         value: 'nosniff'
       },
       {
-        key: 'X-XSS-Protection',
-        value: '1; mode=block'
-      },
-      {
         key: 'Referrer-Policy',
         value: 'strict-origin-when-cross-origin'
       },
@@ -60,7 +56,7 @@ const nextConfig: NextConfig = {
       },
       {
         key: 'Cross-Origin-Opener-Policy',
-        value: 'same-origin-allow-popups'
+        value: 'same-origin'
       },
       {
         key: 'Cross-Origin-Resource-Policy',
@@ -72,7 +68,7 @@ const nextConfig: NextConfig = {
           "default-src 'self'",
           "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
           "style-src 'self' 'unsafe-inline'",
-          "img-src 'self' data: https:",
+          "img-src 'self' data: https://openreferraluk.org https://*.vercel-scripts.com",
           "font-src 'self' data:",
           "connect-src 'self' https://va.vercel-scripts.com https://*.herokuapp.com",
           "frame-ancestors 'self'",
