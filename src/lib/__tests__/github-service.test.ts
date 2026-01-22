@@ -1,8 +1,12 @@
 jest.mock('@/lib/github', () => ({
-  appOctokit: {
+  octokit: {
     rest: {
       issues: {
-        create: jest.fn().mockResolvedValue({ data: { id: 123, html_url: 'https://github.com/owner/repo/issues/1' } })
+        create: jest
+          .fn()
+          .mockResolvedValue({
+            data: { id: 123, html_url: 'https://github.com/owner/repo/issues/1' }
+          })
       }
     }
   }
@@ -25,7 +29,7 @@ describe('createVerificationIssue', () => {
 
   it('calls octokit issues.create with expected payload and returns response data', async () => {
     // require the mocked modules so the mock is applied before importing the service
-    const { appOctokit } = require('@/lib/github')
+    const { octokit } = require('@/lib/github')
     const { createVerificationIssue } = require('@/lib/github-service')
 
     const serviceData: any = {
@@ -44,13 +48,13 @@ describe('createVerificationIssue', () => {
 
     const result = await createVerificationIssue(serviceData)
 
-    expect(appOctokit.rest.issues.create).toHaveBeenCalledTimes(1)
-    const callArg = appOctokit.rest.issues.create.mock.calls[0][0]
+    expect(octokit.rest.issues.create).toHaveBeenCalledTimes(1)
+    const callArg = octokit.rest.issues.create.mock.calls[0][0]
     expect(callArg.owner).toBe('owner')
     expect(callArg.repo).toBe('repo')
     expect(callArg.title).toContain(serviceData.name)
     expect(callArg.body).toContain(serviceData.id)
-    expect(callArg.labels).toEqual(expect.arrayContaining(['verification', 'new-service', 'manual-review']))
+    expect(callArg.labels).toEqual(expect.arrayContaining(['DASHBOARD', 'submission']))
     expect(callArg.assignees).toEqual(['owner'])
 
     expect(result).toEqual({ id: 123, html_url: 'https://github.com/owner/repo/issues/1' })

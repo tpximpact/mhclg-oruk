@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: mhclg-oruk-dev
+    ports:
+      - '3000:3000'
+    volumes:
+      # Mount source code for hot reloading
+      - .:/app
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+      # Cache Next.js build files
+      - ./.next:/app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+      # Add any other environment variables from .env files
+    env_file:
+      - .env.local
+      - .env
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

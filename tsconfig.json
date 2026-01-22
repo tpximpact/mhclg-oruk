@@ -16,24 +16,28 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "baseUrl": "./src/",
     "types": [
       "@testing-library/jest-dom"
     ],
     "paths": {
       "@/components/*": [
-        "components/*"
+        "./src/components/*"
       ],
       "@/*": [
-        "*"
+        "./src/*"
       ]
     },
-    "target": "ES2017"
+    "target": "ES2020"
   },
   "include": [
     "next-env.d.ts",

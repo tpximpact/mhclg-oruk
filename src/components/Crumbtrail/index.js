@@ -1,1 +1,0 @@
-export { Crumbtrail } from './Crumbtrail'

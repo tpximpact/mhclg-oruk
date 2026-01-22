@@ -1,1 +1,0 @@
-export { InPageMenu } from './InPageMenu'

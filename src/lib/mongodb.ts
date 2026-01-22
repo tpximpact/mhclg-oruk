@@ -4,6 +4,7 @@
 // - Validates env configuration at first use, not at import time
 
 import { MongoClient, Db, Collection, Document } from 'mongodb'
+import { logger } from './logger'
 
 const MONGODB_URI = process.env.MONGODB_URI
 const MONGODB_DB = process.env.MONGODB_DB
@@ -27,7 +28,7 @@ export async function getMongoClient(): Promise<MongoClient> {
 		throw new Error('MONGODB_URI is not set. Define it in .env or your deployment environment.')
 	}
 
-	console.log('Creating new MongoClient connection...', MONGODB_URI)
+	logger.info('Creating new MongoClient connection...')
 	
 	const client = new MongoClient(MONGODB_URI, {
 		serverSelectionTimeoutMS: 5000, 
@@ -65,15 +66,4 @@ export async function getCollection<TSchema extends Document = Document>(
 ): Promise<Collection<TSchema>> {
 	const db = await getDb(dbName)
 	return db.collection<TSchema>(name)
-}
-
-/**
- * Close the cached client (useful in tests or scripts). No-op if not connected.
- */
-export async function closeMongoClient(): Promise<void> {
-	if (globalForMongo._mongoClient) {
-		await globalForMongo._mongoClient.close()
-		globalForMongo._mongoClient = undefined
-		globalForMongo._mongoPromise = undefined
-	}
 }

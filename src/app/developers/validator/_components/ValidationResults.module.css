@@ -1,0 +1,134 @@
+.errorContainer {
+  padding: 1rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+}
+
+.errorContainer[data-theme='dark'] {
+  background-color: rgba(127, 29, 29, 0.2);
+  border-color: #991b1b;
+}
+
+.errorTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #991b1b;
+  margin-bottom: 0.25rem;
+}
+
+.errorContainer[data-theme='dark'] .errorTitle {
+  color: #f87171;
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+.errorContainer[data-theme='dark'] .errorText {
+  color: #fca5a5;
+}
+
+.errorUrl {
+  font-size: 0.75rem;
+  color: #dc2626;
+  margin-top: 0.5rem;
+}
+
+.errorContainer[data-theme='dark'] .errorUrl {
+  color: #f87171;
+}
+
+.infoContainer {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.infoContainer[data-theme='dark'] {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.infoText {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.infoContainer[data-theme='dark'] .infoText {
+  color: #d1d5db;
+}
+
+.infoTextStrong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.infoContainer[data-theme='dark'] .infoTextStrong {
+  color: #f9fafb;
+}
+
+.infoSubtext {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.infoContainer[data-theme='dark'] .infoSubtext {
+  color: #9ca3af;
+}
+
+.contentText {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.contentText[data-theme='dark'] {
+  color: #d1d5db;
+}
+
+.contentTextSemibold {
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contentText[data-theme='dark'].contentTextSemibold {
+  color: #d1d5db;
+}
+
+.spacer {
+  margin-bottom: 1rem;
+}
+
+.endpointList {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1rem;
+  color: #374151;
+}
+
+.endpointList[data-theme='dark'] {
+  color: #d1d5db;
+}
+
+.endpointList li {
+  margin-bottom: 0.25rem;
+}
+
+.textSection {
+  color: #374151;
+}
+
+.textSection[data-theme='dark'] {
+  color: #d1d5db;
+}
+
+.textSectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

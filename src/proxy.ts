@@ -4,7 +4,7 @@ import redirects from './redirects.json'
 export function proxy(req: NextRequest) {
 	const url = req.nextUrl.clone()
 
-	const { hostname, origin } = url
+	const { hostname } = url
 
 	// Hostname based redirect
 	const targetPath = redirects[hostname as keyof typeof redirects]
