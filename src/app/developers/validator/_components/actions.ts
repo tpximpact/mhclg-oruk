@@ -61,3 +61,43 @@ export async function validateFeed(
     }
   }
 }
+
+export async function fetchValidationResults(url: string): Promise<ValidationState> {
+  if (!url || !url.trim()) {
+    return {
+      error: 'Please provide a URL',
+      baseUrl: url || ''
+    }
+  }
+
+  try {
+    const response = await fetch(`${process.env.VALIDATOR_ENDPOINT}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        baseUrl: url
+      })
+    })
+
+    if (!response.ok) {
+      return {
+        error: `Validation failed: ${response.statusText}`,
+        baseUrl: url
+      }
+    }
+
+    const data = await response.json()
+
+    return {
+      result: data,
+      baseUrl: url
+    }
+  } catch (err) {
+    return {
+      error: err instanceof Error ? err.message : 'An error occurred during validation',
+      baseUrl: url
+    }
+  }
+}
