@@ -18,7 +18,7 @@ export default async function Page({ searchParams }: PageProps) {
 
   const apiData = getAllContentVersions({
     contentFolder: '/developers/api',
-    specificationFolder: './src/specifications'
+    specificationFolder: './/public/specifications'
   })
 
   return (

@@ -28,7 +28,7 @@ export default async function Page(props: PageProps) {
   const searchParams = await props.searchParams
   const apiData = getAllContentVersions({
     contentFolder: '/developers/api',
-    specificationFolder: './src/specifications'
+    specificationFolder: './public/specifications'
   })
 
   return (

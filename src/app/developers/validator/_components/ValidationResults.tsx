@@ -6,6 +6,7 @@ import Heading from './Heading'
 import Columns from '@/components/Columns'
 import LoadingOverlay from './LoadingOverlay'
 import styles from './ValidationResults.module.css'
+import { env } from '@/lib/env'
 
 interface ValidationResultsProps {
   url: string
@@ -35,7 +36,7 @@ export default function ValidationResults({ url, apiData }: ValidationResultsPro
       setResult(null)
 
       try {
-        const response = await fetch('http://localhost:6969/api/openapi/validate', {
+        const response = await fetch(process.env.VALIDATOR_ENDPOINT!, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
