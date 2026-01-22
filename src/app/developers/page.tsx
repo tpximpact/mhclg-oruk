@@ -1,10 +1,10 @@
-import {
-	GenericPage
-	//, metadata
-} from '@/components/GenericPage'
+import { GenericPage } from '@/components/GenericPage'
+import { Metadata } from 'next'
 
-export default async function Page() {
-	return <GenericPage name='developers' />
+export const metadata: Metadata = {
+  title: 'Developer resources'
 }
 
-// export const generateMetadata = ({ params }) => metadata(params[pageNameParam])
+export default async function Page() {
+  return <GenericPage name='developers' />
+}
