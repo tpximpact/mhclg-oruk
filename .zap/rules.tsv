@@ -2,4 +2,4 @@
 # Format: RULE_ID THRESHOLD
 # THRESHOLD: IGNORE, INFO, LOW, MEDIUM, HIGH, or OFF
 # Rule ID 10202 = Anti-CSRF Tokens Check (Next.js has built-in CSRF protection)
-10202   IGNORE    Next.js has built-in CSRF protection via Server Actions and Origin header validation
+10202	IGNORE	Next.js has built-in CSRF protection via Server Actions and Origin header validation
