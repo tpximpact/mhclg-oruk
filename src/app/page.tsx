@@ -1,4 +1,4 @@
-import { Homepage } from '@/components/Homepage'
+import { Homepage } from './page/_components/Homepage'
 import { Metadata } from 'next'
 
 import data from '../../content/home/index.json'

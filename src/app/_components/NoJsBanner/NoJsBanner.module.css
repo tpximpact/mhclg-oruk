@@ -1,0 +1,14 @@
+.banner {
+  background-color: var(--NoJsBanner-bg);
+  color: var(--NoJsBanner-fg);
+  padding: 1rem 0px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.offsite,
+.offsite:link,
+.offsite:visited,
+.offsite:active {
+  color: var(--NoJsBanner-fg) !important;
+}

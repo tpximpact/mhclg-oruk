@@ -1,4 +1,4 @@
-import { ServicesTable } from '@/components/ServicesTable'
+import { ServicesTable } from './_components/ServicesTable'
 import { ServiceRepository } from '@/repositories/service-repository'
 import { PageMargin } from '@/components/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
