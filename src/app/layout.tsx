@@ -11,19 +11,19 @@ import '@/styles/global.css'
 // @ts-ignore
 import '@/styles/no-js.css'
 
-import { NoWarranty } from '@/components/NoWarranty'
-import { Header } from '@/components/Header'
-import { LandmarkMain } from '@/components/LandmarkMain'
-import { LandmarkContentInfo } from '@/components/LandmarkContentInfo'
-import { Cookies } from '@/components/Cookies'
-import { NoJsBanner } from '@/components/NoJsBanner'
-import { NoJsFallback } from '@/components/NoJsFallback'
-import { Crumbtrail } from '@/components/Crumbtrail'
+import { NoWarranty } from './_components/NoWarranty'
+import { Header } from './_components/Header'
+import { LandmarkMain } from './_components/LandmarkMain'
+import { LandmarkContentInfo } from './_components/LandmarkContentInfo'
+import { Cookies } from './_components/Cookies'
+import { NoJsBanner } from './_components/NoJsBanner'
+import { NoJsFallback } from './_components/NoJsFallback'
+import { Crumbtrail } from './_components/Crumbtrail'
 import { configValueToBoolean } from '@/utilities/configValueToBoolean'
 import { getInfoMenuItems } from '@/utilities/getInfoMenuItems'
 
 import { getRootLayoutItems } from '@/utilities/getRootLayoutItems'
-import { CookieProvider } from '@/components/CookieProvider'
+import { CookieProvider } from './_components/CookieProvider'
 
 import { Analytics } from '@vercel/analytics/next'
 

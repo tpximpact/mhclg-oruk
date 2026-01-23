@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 import { DataModel } from '@/components/DataModel'
 import { APIModel } from '@/components/APIModel'
-import { OpenAPIModel } from '@/components/OpenAPIModel'
+import { OpenAPIModel } from './_components/OpenAPIModel'
 
 interface VersionedDocumentationProps {
   allVersionsContent: string

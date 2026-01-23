@@ -1,4 +1,4 @@
-import { RemoteJSON, METHOD } from '@/components/RemoteJSON'
+import { RemoteJSON, METHOD } from '../_components/RemoteJSON'
 import { ValidatorResult, ValidatorResultPageTitle } from '@/components/ValidatorResult'
 import { PageMargin } from '@/components/PageMargin'
 import { Suspense } from 'react'

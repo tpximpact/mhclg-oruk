@@ -2,7 +2,7 @@ import { PageMargin } from '@/components/PageMargin'
 import { NamedMarkdownPage } from '@/components/NamedMarkdownPage'
 import { ServiceRepository } from '@/repositories/service-repository'
 import type { Metadata } from 'next'
-import { DashboardTable } from '@/components/DashboardTable'
+import { DashboardTable } from './_components/DashboardTable'
 
 export const metadata: Metadata = {
   title: 'ORUK verified feed availabilty'

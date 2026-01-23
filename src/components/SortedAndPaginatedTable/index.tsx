@@ -1,13 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { PaginatedTable } from '@/components/PaginatedTable'
+import { PaginatedTable } from './_components/PaginatedTable'
 import {
   TableSorting,
   getSortingOptions,
   getSortedRows,
   DIRECTION
-} from '@/components/TableSorting'
+} from './_components/TableSorting'
 
 interface View {
   sortBy: string[]

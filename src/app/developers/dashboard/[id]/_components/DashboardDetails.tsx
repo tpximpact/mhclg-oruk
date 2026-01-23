@@ -3,7 +3,7 @@ import { getColourForStatus } from '@/utilities/getColourForStatus'
 import { getIconForStatus } from '@/utilities/getIconForStatus'
 import Icon from '@/components/Icon'
 import { ReactNode } from 'react'
-import LocalisedDate from '@/components/ServicesTable/_components/LocalisedDate'
+import LocalisedDate from '@/app/community/directory/_components/ServicesTable/_components/LocalisedDate'
 
 interface ServiceUrl {
   url?: string
