@@ -1,5 +1,5 @@
 import { headers } from 'next/headers'
-import { SuspenseIf } from '@/components/SuspenseIf'
+import { SuspenseIf } from './_components/SuspenseIf'
 import Spinner from '@/components/Spinner'
 
 export const METHOD = {

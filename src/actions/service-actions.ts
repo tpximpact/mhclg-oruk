@@ -1,13 +1,13 @@
 'use server'
 
 import { revalidatePath } from 'next/cache'
-import { fromErrorToFormState, toFormState } from '@/utilities/to-form-state'
+import { FormState, fromErrorToFormState, toFormState } from '@/utilities/to-form-state'
 import { ServiceRepository } from '@/repositories/service-repository'
 import { ValidationError } from '@/lib/mongodb-errors'
 import { serviceInputSchema, type ServiceInput } from '@/models/service'
 import { createVerificationIssue } from '@/lib/github-service'
 
-export const createMessage = async (_formState: any, formData: FormData): Promise<any> => {
+export const createMessage = async (_formState: any, formData: FormData): Promise<FormState> => {
   let data: ServiceInput
   let values: Record<string, unknown> | undefined
   let updateLink: string | undefined
