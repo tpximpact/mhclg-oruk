@@ -88,9 +88,11 @@ jobs:
           docker run --rm \
             --network host \
             -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw \
+            -v "$GITHUB_WORKSPACE/.zap/rules.tsv":/zap/wrk/rules.tsv:ro \
             zaproxy/zap-stable:latest \
             zap-baseline.py \
             -t http://localhost:${{ env.TEST_PORT }} \
+            -c rules.tsv \
             -r zap-baseline-report.html \
             -J zap-baseline-report.json \
             -w zap-baseline-report.md \
