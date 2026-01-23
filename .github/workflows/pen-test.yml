@@ -23,7 +23,7 @@ jobs:
     name: OWASP ZAP Baseline Scan (passive, safer)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout (needed for artifact workspace)
+      - name: Checkout (needed for artifact workspace and rules)
         uses: actions/checkout@v4
 
       - name: Determine target URL
@@ -48,12 +48,16 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw zaproxy/zap-stable:latest \
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw \
+            -v "$GITHUB_WORKSPACE/.zap/rules.tsv":/zap/wrk/rules.tsv:ro \
+            zaproxy/zap-stable:latest \
             zap-baseline.py -t "$TARGET" \
+            -c rules.tsv \
             -r zap-baseline-report.html \
             -J zap-baseline-report.json \
             -z "-config api.disablekey=true" -d -T 10 2>&1 | tee "$GITHUB_WORKSPACE/zap-output/zap-baseline.log"
-      
+
       - name: Upload baseline report artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -111,8 +115,12 @@ jobs:
             echo "No target provided. Provide TARGET_URL secret or workflow input 'target'." >&2
             exit 1
           fi
-          docker run --rm -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw zaproxy/zap-stable:latest \
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE/zap-output":/zap/wrk:rw \
+            -v "$GITHUB_WORKSPACE/.zap/rules.tsv":/zap/wrk/rules.tsv:ro \
+            zaproxy/zap-stable:latest \
             zap-full-scan.py -t "$TARGET" \
+            -c rules.tsv \
             -r zap-full-report.html \
             -J zap-full-report.json \
             -z "-config api.disablekey=true" -T 5 2>&1 | tee "$GITHUB_WORKSPACE/zap-output/zap-full.log"
