@@ -67,8 +67,8 @@ const nextConfig: NextConfig = {
         key: 'Content-Security-Policy',
         value: [
           "default-src 'self'",
-          "script-src 'self' https://va.vercel-scripts.com https://vercel.live",
-          "style-src 'self'",
+          "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vercel.live",
+          "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: https://openreferraluk.org https://*.vercel-scripts.com",
           "font-src 'self' data:",
           "connect-src 'self' https://va.vercel-scripts.com https://*.herokuapp.com https://vercel.live",
@@ -96,16 +96,6 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=3600, immutable'
-          }
-        ]
-      },
-      {
-        source: '/(services|service_at_locations|taxonomies|taxonomy_terms)/',
-        headers: [
-          ...securityHeaders,
-          {
-            key: 'Content-Type',
-            value: 'application/json'
           }
         ]
       }
