@@ -1,7 +1,7 @@
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from '../ServicesTable/ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
-import PassFailIndicator from '../ServicesTable/_components/PassFailIndicator'
+import PassFailIndicator from '@/components/PassFailIndicator'
 import LocalisedDate from '../ServicesTable/_components/LocalisedDate'
 
 interface MobileSortSelectorProps {

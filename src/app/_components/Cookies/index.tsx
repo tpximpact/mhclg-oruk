@@ -20,10 +20,17 @@ export const Cookies = ({ name = DEFAULT_COOKIE_NAME }: CookiesProps) => (
     declineButtonClasses='cookie-decline-button'
     contentClasses='cookie-content'
     expires={150}
+    ariaAcceptLabel='Accept cookies'
+    ariaDeclineLabel='Decline cookies'
+    contentStyle={{ display: 'flex', alignItems: 'center' }}
+    style={{ alignItems: 'center' }}
+    overlay={false}
   >
-    By using our site, you acknowledge that you have read and understand our{' '}
-    <Link href='/info/privacy'>
-      <span style={{ color: 'white' }}>Cookie Policy</span>
-    </Link>
+    <div role='complementary' aria-label='Cookie consent banner' style={{ flex: 1 }}>
+      By using our site, you acknowledge that you have read and understand our{' '}
+      <Link href='/info/privacy'>
+        <span style={{ color: 'white' }}>Cookie Policy</span>
+      </Link>
+    </div>
   </CookieConsent>
 )
