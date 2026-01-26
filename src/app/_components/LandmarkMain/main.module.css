@@ -1,0 +1,11 @@
+.main {
+  padding: 0 0 4rem;
+}
+
+.main a,
+.main a:active,
+.main a:hover,
+.main a:visited {
+  font-weight: bold;
+  color: var(--colour-black);
+}

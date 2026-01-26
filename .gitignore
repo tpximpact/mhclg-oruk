@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+*.lcov
 
 # next.js
 /.next/
@@ -29,6 +30,7 @@ yarn-error.log*
 .env*.local
 .env
 /.env.test
+.env.production
 
 # vercel
 .vercel
@@ -43,3 +45,4 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+docs/**

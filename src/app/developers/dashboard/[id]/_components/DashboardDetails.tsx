@@ -3,7 +3,7 @@ import { getColourForStatus } from '@/utilities/getColourForStatus'
 import { getIconForStatus } from '@/utilities/getIconForStatus'
 import Icon from '@/components/Icon'
 import { ReactNode } from 'react'
-import LocalisedDate from '@/components/ServicesTable/_components/LocalisedDate'
+import LocalisedDate from '@/app/community/directory/_components/ServicesTable/_components/LocalisedDate'
 
 interface ServiceUrl {
   url?: string
@@ -121,7 +121,7 @@ const Validation = ({ status, result }: ValidationProps) => {
       <SectionHeading>
         <span className={styles.validationStatus}>
           Validation status:{' '}
-          <Icon colour={colour} weight='4' icon={getIconForStatus(status)} size='48' />{' '}
+          <Icon colour={colour} weight={4} icon={getIconForStatus(status)} size={48} />{' '}
           <span style={{ color: colour }}>{status}</span>
         </span>
       </SectionHeading>
@@ -130,10 +130,7 @@ const Validation = ({ status, result }: ValidationProps) => {
         <span className={styles.label}>Last checked</span>
         <span className={styles.fv}>
           {result.testDate.value ? (
-            <LocalisedDate
-              value={result.testDate.value}
-              options={fmtOptions}
-            />
+            <LocalisedDate value={result.testDate.value} options={fmtOptions} />
           ) : (
             <>Not Tested</>
           )}

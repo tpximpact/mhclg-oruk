@@ -17,12 +17,16 @@ This platform serves multiple audiences:
 
 **Key Features:**
 
-- **API Documentation**: Complete OpenAPI specifications for ORUK data standard versions
-- **Validator Tool**: Real-time validation of ORUK API feeds for compliance checking
-- **Dashboard**: Monitoring of verified feed availability and health status
-- **Data Model Explorer**: Interactive documentation of the ORUK schema
-- **Content Management**: Markdown-based content system with frontmatter support
+- **API Documentation**: Complete OpenAPI specifications for ORUK data standard versions (1.0, 3.0)
+- **Validator Tool**: Real-time validation of ORUK API feeds for compliance checking with detailed error reporting
+- **Dashboard**: Live monitoring of verified feed availability and health status with service tables
+- **Data Model Explorer**: Interactive documentation of the ORUK schema with JSON visualization
+- **Content Management**: Markdown-based content system with YAML frontmatter support and dynamic routing
 - **Case Studies**: Real-world implementation examples from councils and organizations across the UK
+- **Service Registration**: Integrated GitHub issue creation workflow for new service feed registration
+- **Accessibility**: Built-in accessibility features with Axe-core testing integration
+- **Analytics**: Vercel Analytics for performance monitoring and usage insights
+- **Cookie Management**: Compliant cookie consent and management system
 
 ## Technical Architecture
 
@@ -30,35 +34,56 @@ This platform serves multiple audiences:
 
 This is a modern Next.js 16 application built with:
 
-- **Framework**: Next.js 16 with App Router and React 19
-- **Language**: TypeScript 5.9 with strict type checking
+- **Framework**: Next.js 16.1 with App Router and Server Components
+- **Runtime**: React 19.2 with enhanced server-side rendering
+- **Language**: TypeScript 5.9 with strict type checking and enhanced compiler options
 - **Styling**: CSS Modules for component-scoped styles
-- **Database**: MongoDB for service feed tracking and dashboard data
-- **Testing**: Jest for unit tests, Playwright for end-to-end testing
-- **Deployment**: Vercel with continuous deployment
-- **Code Quality**: ESLint, Prettier, and TypeScript compiler checks
+- **Database**: MongoDB 7.0 for service feed tracking and dashboard data
+- **Schema Validation**: Zod 4.3 for runtime type safety and data validation
+- **Testing**: Jest 30 for unit tests, Playwright 1.57 for end-to-end testing with accessibility checks
+- **Deployment**: Vercel with continuous deployment and analytics
+- **Code Quality**: ESLint 9, Prettier 3.8, Husky for Git hooks, and lint-staged for pre-commit checks
+- **Integrations**: GitHub API via Octokit for issue tracking and workflow automation
 
 ### Architecture Components
 
 #### Frontend
-- **Server Components**: Leverages Next.js 16 server components for optimal performance
-- **Dynamic Routing**: File-based routing with dynamic segments for content pages
-- **Markdown Processing**: Custom markdown rendering with `gray-matter` for frontmatter and `marked` for parsing
-- **Component Library**: Reusable React components for common UI patterns (buttons, banners, forms, documentation viewers)
+
+- **Server Components**: Leverages Next.js 16 server components with experimental HMR cache disabled for optimal development
+- **Dynamic Routing**: File-based routing with dynamic segments for content pages and automatic redirects
+- **Markdown Processing**: Custom markdown rendering with `gray-matter` for YAML frontmatter and `marked` 17.0 for parsing
+- **Component Library**: Extensive library of 50+ reusable React components including:
+  - Documentation components (APIModel, OpenAPIModel, VersionedDocumentation)
+  - Data visualization (Dashboard, ServicesTable, PaginatedTable, SortedAndPaginatedTable)
+  - Form components (ValidatorForm, ValidatorResult, Register)
+  - Navigation (Header, Menu, Crumbtrail, InPageMenu)
+  - UI elements (Button, Badge, Banner, Icon, Spinner)
+  - Content display (ContentHTML, GenericPage, NamedMarkdownPage, PageList)
+- **Image Optimization**: Next.js image optimization with AVIF and WebP support
+- **Responsive Design**: Mobile-first design with device-specific image sizes
 
 #### Backend Services
-- **MongoDB Integration**: Service repository pattern for data access with Zod schema validation
+
+- **MongoDB Integration**: Service repository pattern for data access with Zod 4.3 schema validation and type safety
 - **API Proxy**: Server-side proxy for external API validation and dashboard data fetching
-- **Server Actions**: Next.js server actions for form handling and data mutations
-- **Content Loading**: Dynamic content loading from filesystem with versioning support
+- **Server Actions**: Next.js server actions for form handling, data mutations, and service validation
+- **Content Loading**: Dynamic content loading from filesystem with versioning support and JSON metadata
+- **GitHub Integration**: Octokit-based integration for automated issue creation and repository management
+- **Caching**: HTTP headers configuration for static asset caching and specification files
+- **Environment Configuration**: Feature flags for cookies, navigation, and warranty notices
 
 #### Developer Tools
+
 - **Validator**: POST endpoint integration with external validation service for ORUK API compliance
-- **Dashboard**: Real-time monitoring of registered service feeds with status tracking
-- **API Explorer**: Interactive API documentation with request/response examples
+- **Dashboard**: Real-time monitoring of registered service feeds with status tracking, health checks, and service tables
+- **API Explorer**: Interactive API documentation with request/response examples and JSON viewer
 - **Schema Browser**: Navigable data model documentation with relationship visualization
+- **Type Safety**: Strict TypeScript configuration with noUncheckedIndexedAccess and noImplicitReturns
+- **Hot Reload**: Fast refresh in development with Next.js HMR
+- **Testing Infrastructure**: Comprehensive test setup with Jest and Playwright including accessibility testing
 
 #### Key Directories
+
 ```
 src/
 ├── app/              # Next.js app router pages
@@ -105,6 +130,7 @@ The standard originates with and the Open Referral UK project is built upon the 
 This project uses dual licensing:
 
 ### Content and Documentation
+
 The Human Services Data Specification UK (HSDS-UK) and associated documentation are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)** license.
 
 - Full license text: https://creativecommons.org/licenses/by-sa/4.0/
@@ -113,6 +139,7 @@ The Human Services Data Specification UK (HSDS-UK) and associated documentation 
 Unless otherwise stated, contributions are copyright of the Open Referral UK project.
 
 ### Source Code
+
 The application source code in this repository is available under the **BSD 3-Clause License** terms. This allows you to:
 
 - Use the code commercially
@@ -126,29 +153,120 @@ See the repository license file for full BSD 3-Clause terms.
 
 ### Getting Started
 
-1. Clone the repository
-2. Install dependencies: `yarn install`
-3. Set up environment variables (copy `.env.example` to `.env.local`)
-4. Run development server: `yarn dev`
-5. Open [http://localhost:3000](http://localhost:3000)
+#### Prerequisites
+
+- Node.js 25+ (LTS recommended)
+- Yarn package manager
+- MongoDB 7.0+ (local or remote instance)
+- Git
+
+#### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/tpximpact/mhclg-oruk.git
+   cd mhclg-oruk
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   yarn install
+   ```
+
+3. **Set up environment variables**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Edit `.env.local` with your configuration (see Environment Variables section below)
+
+4. **Start MongoDB** (if running locally)
+
+   ```bash
+   mongod --dbpath /path/to/your/data/directory
+   ```
+
+5. **Run development server**
+
+   ```bash
+   yarn dev
+   ```
+
+6. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+#### Development Workflow
+
+The project uses Husky and lint-staged for pre-commit hooks to ensure code quality. On commit:
+
+- ESLint checks and fixes code issues
+- Prettier formats code
+- TypeScript type checking runs
+- Tests run (if configured)
+
+To manually validate before committing:
+
+```bash
+yarn validate
+```
 
 ### Available Scripts
 
-- `yarn dev` - Start development server
+- `yarn dev` - Start development server with Node.js webstorage disabled
+- `yarn dev:ci` - Start development server for CI environments
 - `yarn build` - Build for production
 - `yarn start` - Start production server
 - `yarn test` - Run Jest unit tests
 - `yarn test:watch` - Run tests in watch mode
+- `yarn test:ci` - Run tests in CI mode
+- `yarn test:coverage` - Run tests with coverage reports
 - `yarn e2e` - Run Playwright end-to-end tests
 - `yarn lint` - Lint and fix code with ESLint
+- `yarn lint:check` - Check code without fixing
+- `yarn type-check` - Run TypeScript type checking without emitting files
+- `yarn validate` - Run all checks (lint, type-check, and tests)
 - `yarn tidy` - Format code with Prettier
+- `yarn upd` - Update content frontmatter metadata
+- `yarn prepare` - Set up Husky Git hooks
 
 ### Environment Variables
 
-Required environment variables:
-- `MONGODB_URI` - MongoDB connection string
-- `MONGODB_DB` - MongoDB database name
-- `VALIDATOR_ENDPOINT` - External validator service endpoint
+Copy `.env.example` to `.env.local` and configure the following:
+
+**Database Configuration:**
+
+- `MONGODB_URI` - MongoDB connection string (default: mongodb://localhost:27017)
+- `MONGODB_DB` - MongoDB database name (default: oruk_dev)
+
+**External Service Endpoints:**
+
+- `OPENAPI_VALIDATOR_ENDPOINT` - OpenAPI validator service endpoint
+- `VALIDATOR_ENDPOINT` - ORUK feed validator service endpoint
+- `REGISTER_ENDPOINT` - Service registration endpoint
 - `DASHBOARD_DETAILS_ENDPOINT` - Dashboard data service endpoint
+
+**GitHub Integration (for service registration):**
+
+- `GITHUB_CLIENT_ID` - GitHub App client ID
+- `GITHUB_APP_PRIVATE_KEY` - GitHub App private key (PEM format)
+- `GITHUB_INSTALLATION_ID` - GitHub App installation ID
+- `GITHUB_REPO_OWNER` - Repository owner/organization
+- `GITHUB_REPO_NAME` - Repository name for issue creation
+- `GITHUB_ISSUE_ASSIGNEES` - Comma-separated list of issue assignees
+
+**Feature Flags:**
+
+- `USE_COOKIES` - Enable cookie consent banner (default: true)
+- `USE_NAV` - Enable navigation components (default: true)
+- `USE_NOWARRANTY` - Display no warranty notice (default: true)
+
+**Application Configuration:**
+
+- `NEXTAUTH_URL` - Application base URL (default: http://localhost:3000)
+- `NODE_ENV` - Environment mode (development/production/test)
+- `LOG_LEVEL` - Logging level (info/debug/error)
 
 For full documentation, see [the wiki](https://github.com/tpximpact/mhclg-oruk/wiki)

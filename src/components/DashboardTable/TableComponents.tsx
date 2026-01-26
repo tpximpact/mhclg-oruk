@@ -1,7 +1,7 @@
 import type { ServiceData, SortField, SortDirection } from './types'
 import styles from '../ServicesTable/ServicesTable.module.css'
 import LinkComponent from './_components/LinkComponent'
-import PassFailIndicator from '../ServicesTable/_components/PassFailIndicator'
+import PassFailIndicator from '@/components/PassFailIndicator'
 import LocalisedDate from '../ServicesTable/_components/LocalisedDate'
 
 interface MobileSortSelectorProps {
@@ -24,7 +24,6 @@ export function MobileSortSelector({
     { value: 'testDate', label: 'Last Tested' }
   ]
 
-  const currentOption = sortOptions.find(option => option.value === currentSort)
   const directionLabel = currentDirection === 'asc' ? 'A-Z' : 'Z-A'
 
   return (
@@ -63,7 +62,7 @@ interface ServiceCardProps {
   index: number
 }
 
-export function ServiceCard({ service, index }: ServiceCardProps) {
+export function ServiceCard({ service, index: _index }: ServiceCardProps) {
   const renderField = (label: string, data: ServiceData[keyof ServiceData]) => {
     if (!data) return null
 
@@ -110,7 +109,7 @@ interface TableCellProps {
   columnKey?: keyof ServiceData
 }
 
-export function TableCell({ data, className, columnKey }: TableCellProps) {
+export function TableCell({ data, className, columnKey: _columnKey }: TableCellProps) {
   if (!data) {
     return <td className={className}>-</td>
   }

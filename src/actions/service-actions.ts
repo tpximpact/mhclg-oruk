@@ -7,7 +7,7 @@ import { ValidationError } from '@/lib/mongodb-errors'
 import { serviceInputSchema, type ServiceInput } from '@/models/service'
 import { createVerificationIssue } from '@/lib/github-service'
 
-export const createMessage = async (formState: any, formData: FormData): Promise<any> => {
+export const createMessage = async (_formState: any, formData: FormData): Promise<any> => {
   let data: ServiceInput
   let values: Record<string, unknown> | undefined
   let updateLink: string | undefined

@@ -17,7 +17,7 @@ export function Pagination({
   currentPage,
   totalPages,
   totalItems,
-  itemsPerPage,
+  itemsPerPage: _itemsPerPage,
   startIndex,
   endIndex,
   basePath

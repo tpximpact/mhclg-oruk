@@ -1,1 +1,0 @@
-export { BannerMHCLG } from './BannerMHCLG'

@@ -1,0 +1,20 @@
+.link {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.externalLink {
+  display: flex;
+
+  ::after {
+    content: ' ↗';
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+    color: var(--theme-ink);
+  }
+}
