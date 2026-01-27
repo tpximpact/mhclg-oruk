@@ -1,9 +1,9 @@
 import styles from './ContentHTML.module.css'
 
 interface ContentHTMLProps {
-	html: string
+  html: string
 }
 
 export const ContentHTML = ({ html }: ContentHTMLProps) => (
-	<div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />
+  <div className={styles.content} dangerouslySetInnerHTML={{ __html: html }} />
 )

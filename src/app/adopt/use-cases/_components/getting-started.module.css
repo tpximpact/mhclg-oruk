@@ -1,12 +1,11 @@
 .gettingStartedBanner {
-	max-width: none;
+  max-width: none;
 
-
-	blockquote {
-		border-color: #00625E;
-		font-style: normal;
-		background-color: #FCF2E3;
-		width: 100%;
-		font-weight: normal;
-	}
+  blockquote {
+    border-color: #00625e;
+    font-style: normal;
+    background-color: #fcf2e3;
+    width: 100%;
+    font-weight: normal;
+  }
 }

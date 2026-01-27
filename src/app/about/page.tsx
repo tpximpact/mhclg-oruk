@@ -4,18 +4,18 @@ import { PageMargin } from '@/components/PageMargin'
 import { Metadata } from 'next'
 
 export default function Page() {
-	return (
-		<PageMargin>
-			<DynamicSectionListing
-				mainHeading='About ORUK'
-				data={listDynamicSection({
-					rootContentFolder: 'about'
-				})}
-			/>
-		</PageMargin>
-	)
+  return (
+    <PageMargin>
+      <DynamicSectionListing
+        mainHeading='About ORUK'
+        data={listDynamicSection({
+          rootContentFolder: 'about'
+        })}
+      />
+    </PageMargin>
+  )
 }
 
 export const metadata: Metadata = {
-	title: 'About from ORUK'
+  title: 'About from ORUK'
 }

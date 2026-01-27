@@ -1,38 +1,38 @@
 {
-	"service": {
-		"url": "https://run.mocky.io/",
-		"isValid": false, // overall validation status
-		"profile": "HSDS-3.0-UK"
-	},
-	"metadata": [], // used only by dashboard
-	"contents": [], // used only by dashboard
-	"testSuites": [
-		{
-			"name": "Level One",
-			"dealbreaker": true, // if any test fails overall validarion fails
-			"label": "error", // string used by ui to label results - eg error, warning, info, recommendation, optional etc
-			"tests": [
-				{
-					"name": "Test One",
-					"endpoint": "/",
-					"description": "Lorem ipsum",
-					"success": true
-				},
-				{
-					"name": "Test Two",
-					"endpoint": "/",
-					"description": "Lorem ipsum",
-					"success": false,
-					"results": [
-						{
-							"name": "required",
-							"description": "A schema validation issue has been found",
-							"message": "Required properties [\"id\",\"name\",\"status\"] are not present",
-							"parameters": null
-						}
-					]
-				}
-			]
-		}
-	]
+  "service": {
+    "url": "https://run.mocky.io/",
+    "isValid": false, // overall validation status
+    "profile": "HSDS-3.0-UK"
+  },
+  "metadata": [], // used only by dashboard
+  "contents": [], // used only by dashboard
+  "testSuites": [
+    {
+      "name": "Level One",
+      "dealbreaker": true, // if any test fails overall validarion fails
+      "label": "error", // string used by ui to label results - eg error, warning, info, recommendation, optional etc
+      "tests": [
+        {
+          "name": "Test One",
+          "endpoint": "/",
+          "description": "Lorem ipsum",
+          "success": true
+        },
+        {
+          "name": "Test Two",
+          "endpoint": "/",
+          "description": "Lorem ipsum",
+          "success": false,
+          "results": [
+            {
+              "name": "required",
+              "description": "A schema validation issue has been found",
+              "message": "Required properties [\"id\",\"name\",\"status\"] are not present",
+              "parameters": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

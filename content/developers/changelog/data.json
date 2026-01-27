@@ -1,136 +1,136 @@
 [
-	{
-		"versionNumber": "3.0",
-		"fields": [
-			{
-				"title": "services",
+  {
+    "versionNumber": "3.0",
+    "fields": [
+      {
+        "title": "services",
 
-				"added": [
-					{ "name": "alert" },
-					{ "name": "alternate_name" },
-					{ "name": "application_process" },
-					{ "name": "assurer_email" },
-					{ "name": "attributes", "isCollection": true },
-					{ "name": "metadata", "isCollection": true },
-					{ "name": "eligibility_description" },
-					{ "name": "fees_description" },
-					{ "name": "interpretation_services" },
-					{ "name": "last_modified" },
-					{ "name": "licenses" },
-					{ "name": "maximum_age" },
-					{ "name": "metadata" },
-					{ "name": "minimum_age" },
-					{ "name": "wait_time" }
-				],
-				"removed": [
-					{ "name": "deliverable_type" },
-					{ "name": "eligibilitys", "isCollection": true },
-					{ "name": " holiday_schedule", "isCollection": true },
-					{ "name": "reviews", "isCollection": true },
-					{ "name": "service_taxonomys", "isCollection": true }
-				],
-				"renamed": [
-					{ "name": "fundings", "renamed": "funding", "isCollection": true },
-					{ "name": "regular_schedules", "renamed": "schedules", "isCollection": true }
-				]
-			},
-			{
-				"title": "phones",
+        "added": [
+          { "name": "alert" },
+          { "name": "alternate_name" },
+          { "name": "application_process" },
+          { "name": "assurer_email" },
+          { "name": "attributes", "isCollection": true },
+          { "name": "metadata", "isCollection": true },
+          { "name": "eligibility_description" },
+          { "name": "fees_description" },
+          { "name": "interpretation_services" },
+          { "name": "last_modified" },
+          { "name": "licenses" },
+          { "name": "maximum_age" },
+          { "name": "metadata" },
+          { "name": "minimum_age" },
+          { "name": "wait_time" }
+        ],
+        "removed": [
+          { "name": "deliverable_type" },
+          { "name": "eligibilitys", "isCollection": true },
+          { "name": " holiday_schedule", "isCollection": true },
+          { "name": "reviews", "isCollection": true },
+          { "name": "service_taxonomys", "isCollection": true }
+        ],
+        "renamed": [
+          { "name": "fundings", "renamed": "funding", "isCollection": true },
+          { "name": "regular_schedules", "renamed": "schedules", "isCollection": true }
+        ]
+      },
+      {
+        "title": "phones",
 
-				"added": [
-					{ "name": "extension" },
-					{ "name": "languages" },
-					{ "name": "metadata" },
-					{ "name": "type" }
-				],
-				"replaced": [{ "name": "contact", "replacedWith": "description" }]
-			},
-			{
-				"title": "contacts",
-				"added": [
-					{
-						"name": "attributes",
-						"isCollection": true,
-						"attrs": [{ "name": "phones" }, { "name": "program" }, { "name": "required_documents" }]
-					}
-				],
-				"removed": [{ "name": "service" }]
-			},
-			{
-				"title": "cost_options",
-				"added": [{ "name": "attributes" }, { "name": "metadata" }, { "name": "currency" }],
-				"removed": [{ "name": "linkId" }, { "name": "service" }]
-			},
-			{
-				"title": "language",
-				"added": [
-					{ "name": "attributes" },
-					{ "name": "code" },
-					{ "name": "name" },
-					{ "name": "metadata" },
-					{ "name": "note" }
-				],
-				"removed": [{ "name": "language" }, { "name": "serviceId" }]
-			},
-			{
-				"title": "organization",
-				"added": [
-					{ "name": "alternate_name" },
-					{ "name": "attributes" },
-					{ "name": "contacts" },
-					{ "name": "email" },
-					{ "name": "funding" },
-					{ "name": "legal_status" },
-					{ "name": "locations" },
-					{ "name": "metadata" },
-					{ "name": "organization_identifiers" },
-					{ "name": "parent_organization_id" },
-					{ "name": "phones" },
-					{ "name": "programs" },
-					{ "name": "tax_id" },
-					{ "name": "tax_status" },
-					{ "name": "website" },
-					{ "name": "year_incorporated" }
-				]
-			},
-			{
-				"title": "service_areas",
-				"added": [
-					{ "name": "attributes" },
-					{ "name": "description" },
-					{ "name": "extent_type" },
-					{ "name": "metadata" },
-					{ "name": "name" }
-				]
-			},
-			{
-				"title": "service_at_locations",
-				"added": [
-					{ "name": "attributes" },
-					{ "name": "contacts" },
-					{ "name": "description" },
-					{ "name": "location" }
-				]
-			},
-			{
-				"title": "location",
-				"added": [
-					{ "name": "accessibility" },
-					{ "name": "addresses" },
-					{ "name": "alternate_name" },
-					{ "name": "attributes" },
-					{ "name": "contacts" },
-					{ "name": "external_identifier" },
-					{ "name": "external_identifier_type" },
-					{ "name": "languages" },
-					{ "name": "location_type" },
-					{ "name": "metadata" },
-					{ "name": "phones" },
-					{ "name": "schedules" },
-					{ "name": "transportation" },
-					{ "name": "url" }
-				]
-			}
-		]
-	}
+        "added": [
+          { "name": "extension" },
+          { "name": "languages" },
+          { "name": "metadata" },
+          { "name": "type" }
+        ],
+        "replaced": [{ "name": "contact", "replacedWith": "description" }]
+      },
+      {
+        "title": "contacts",
+        "added": [
+          {
+            "name": "attributes",
+            "isCollection": true,
+            "attrs": [{ "name": "phones" }, { "name": "program" }, { "name": "required_documents" }]
+          }
+        ],
+        "removed": [{ "name": "service" }]
+      },
+      {
+        "title": "cost_options",
+        "added": [{ "name": "attributes" }, { "name": "metadata" }, { "name": "currency" }],
+        "removed": [{ "name": "linkId" }, { "name": "service" }]
+      },
+      {
+        "title": "language",
+        "added": [
+          { "name": "attributes" },
+          { "name": "code" },
+          { "name": "name" },
+          { "name": "metadata" },
+          { "name": "note" }
+        ],
+        "removed": [{ "name": "language" }, { "name": "serviceId" }]
+      },
+      {
+        "title": "organization",
+        "added": [
+          { "name": "alternate_name" },
+          { "name": "attributes" },
+          { "name": "contacts" },
+          { "name": "email" },
+          { "name": "funding" },
+          { "name": "legal_status" },
+          { "name": "locations" },
+          { "name": "metadata" },
+          { "name": "organization_identifiers" },
+          { "name": "parent_organization_id" },
+          { "name": "phones" },
+          { "name": "programs" },
+          { "name": "tax_id" },
+          { "name": "tax_status" },
+          { "name": "website" },
+          { "name": "year_incorporated" }
+        ]
+      },
+      {
+        "title": "service_areas",
+        "added": [
+          { "name": "attributes" },
+          { "name": "description" },
+          { "name": "extent_type" },
+          { "name": "metadata" },
+          { "name": "name" }
+        ]
+      },
+      {
+        "title": "service_at_locations",
+        "added": [
+          { "name": "attributes" },
+          { "name": "contacts" },
+          { "name": "description" },
+          { "name": "location" }
+        ]
+      },
+      {
+        "title": "location",
+        "added": [
+          { "name": "accessibility" },
+          { "name": "addresses" },
+          { "name": "alternate_name" },
+          { "name": "attributes" },
+          { "name": "contacts" },
+          { "name": "external_identifier" },
+          { "name": "external_identifier_type" },
+          { "name": "languages" },
+          { "name": "location_type" },
+          { "name": "metadata" },
+          { "name": "phones" },
+          { "name": "schedules" },
+          { "name": "transportation" },
+          { "name": "url" }
+        ]
+      }
+    ]
+  }
 ]

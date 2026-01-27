@@ -1,8 +1,8 @@
 .useCasesMarkdownStyle {
-	h3 {
-		font-size: 1.1875rem;
-        font-weight:normal;
-        color: var(--theme-ink);
-        line-height: 1.5;
-	}
+  h3 {
+    font-size: 1.1875rem;
+    font-weight: normal;
+    color: var(--theme-ink);
+    line-height: 1.5;
+  }
 }

@@ -24,7 +24,7 @@ export function Pagination({
 }: PaginationProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
-  
+
   if (totalPages <= 1) return null
 
   const navigateToPage = (page: number) => {

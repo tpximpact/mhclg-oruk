@@ -1,24 +1,24 @@
 .crumbtrail {
-	padding: 0;
-	margin: 2rem 0 3rem;
+  padding: 0;
+  margin: 2rem 0 3rem;
 }
 
 .crumbtrail ol {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .crumbtrail li {
-	display: inline;
-	padding: 0;
-	margin: 0;
-	text-indent: 0;
+  display: inline;
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
 }
 
 .crumbtrail li:after {
-	padding: 1rem;
-	font-weight: 900;
-	color: var(--crumbtrail-separator-color);
-	content: '/\00a0';
+  padding: 1rem;
+  font-weight: 900;
+  color: var(--crumbtrail-separator-color);
+  content: '/\00a0';
 }
