@@ -34,16 +34,18 @@ This platform serves multiple audiences:
 
 This is a modern Next.js 16 application built with:
 
-- **Framework**: Next.js 16.1 with App Router and Server Components
-- **Runtime**: React 19.2 with enhanced server-side rendering
+- **Framework**: Next.js 16.1.6 with App Router and Server Components
+- **Runtime**: React 19.2.4 with enhanced server-side rendering
 - **Language**: TypeScript 5.9 with strict type checking and enhanced compiler options
 - **Styling**: CSS Modules for component-scoped styles
 - **Database**: MongoDB 7.0 for service feed tracking and dashboard data
-- **Schema Validation**: Zod 4.3 for runtime type safety and data validation
-- **Testing**: Jest 30 for unit tests, Playwright 1.57 for end-to-end testing with accessibility checks
+- **Schema Validation**: Zod 4.3.6 for runtime type safety and data validation
+- **Testing**: Jest 30 for unit tests, Playwright 1.58 for end-to-end testing with accessibility checks
 - **Deployment**: Vercel with continuous deployment and analytics
 - **Code Quality**: ESLint 9, Prettier 3.8, Husky for Git hooks, and lint-staged for pre-commit checks
 - **Integrations**: GitHub API via Octokit for issue tracking and workflow automation
+
+> **📖 Full Technical Documentation**: For comprehensive architecture details, development guides, and implementation documentation, visit the [project wiki](https://github.com/tpximpact/mhclg-oruk/wiki).
 
 ### Architecture Components
 
@@ -54,7 +56,7 @@ This is a modern Next.js 16 application built with:
 - **Markdown Processing**: Custom markdown rendering with `gray-matter` for YAML frontmatter and `marked` 17.0 for parsing
 - **Component Library**: Extensive library of 50+ reusable React components including:
   - Documentation components (APIModel, OpenAPIModel, VersionedDocumentation)
-  - Data visualization (Dashboard, ServicesTable, PaginatedTable, SortedAndPaginatedTable)
+  - Data visualization (Dashboard, DashboardTable, ServicesTable, PaginatedTable, SortedAndPaginatedTable)
   - Form components (ValidatorForm, ValidatorResult, Register)
   - Navigation (Header, Menu, Crumbtrail, InPageMenu)
   - UI elements (Button, Badge, Banner, Icon, Spinner)
@@ -155,7 +157,7 @@ See the repository license file for full BSD 3-Clause terms.
 
 #### Prerequisites
 
-- Node.js 25+ (LTS recommended)
+- Node.js 20+ (LTS recommended)
 - Yarn package manager
 - MongoDB 7.0+ (local or remote instance)
 - Git
@@ -269,4 +271,15 @@ Copy `.env.example` to `.env.local` and configure the following:
 - `NODE_ENV` - Environment mode (development/production/test)
 - `LOG_LEVEL` - Logging level (info/debug/error)
 
-For full documentation, see [the wiki](https://github.com/tpximpact/mhclg-oruk/wiki)
+## Documentation
+
+For comprehensive technical documentation, including detailed architecture, testing guides, content management, and development workflows, visit:
+
+**📖 [Project Wiki](https://github.com/tpximpact/mhclg-oruk/wiki)**
+
+Key documentation sections:
+
+- [Architecture](https://github.com/tpximpact/mhclg-oruk/wiki) - Technical architecture and system design
+- [Managing Content](https://github.com/tpximpact/mhclg-oruk/wiki/Managing-Content) - Content authoring and management
+- [Testing](https://github.com/tpximpact/mhclg-oruk/wiki/Testing) - Testing strategies and guidelines
+- [GitHub Integration](https://github.com/tpximpact/mhclg-oruk/wiki/GitHub-Issue-Creation-for-Service-Verification) - Service verification workflow
