@@ -48,7 +48,9 @@ export const metadata: Metadata = {
     siteName: 'Open Referral UK',
     locale: 'en_GB',
     type: 'website'
-  }
+  },
+  description:
+    'Open Referral UK is a open data standard which makes it easy to publish, find and use community services data.'
 }
 
 interface WrapProps {
