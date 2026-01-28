@@ -1,159 +1,159 @@
 .title {
-	font-size: 1.6rem;
-	margin-top: 0;
-	margin-bottom: 1.8rem;
-	margin-top: 2rem;
-	color: var(--validatorResult-black);
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+  margin-top: 2rem;
+  color: var(--validatorResult-black);
 }
 
 .titleDesc {
-	font-weight: 300;
+  font-weight: 300;
 }
 .url {
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	-ms-word-break: break-all;
-	word-break: break-all;
-	word-break: break-word;
-	font-family: var(--font-mono);
-	letter-spacing: -1px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  font-family: var(--font-mono);
+  letter-spacing: -1px;
 }
 
 .field {
-	font-weight: 700;
-	font-size: 1.6rem;
-	.fieldLabel {
-		font-weight: 300;
-	}
+  font-weight: 700;
+  font-size: 1.6rem;
+  .fieldLabel {
+    font-weight: 300;
+  }
 }
 
 .banner {
-	background: var(--validatorResult-banner-background);
-	padding: 2rem;
-	font-weight: 400;
-	margin-bottom: 1rem;
+  background: var(--validatorResult-banner-background);
+  padding: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 .banner p + p {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .banner code {
-	font-weight: 900;
-	display: inline-block;
-	position: relative;
-	top: -1px;
-	background: var(--validatorResult-banner-code-background);
-	padding: 1px 9px;
-	border-radius: 5px;
-	font-family: var(--font-mono);
+  font-weight: 900;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  background: var(--validatorResult-banner-code-background);
+  padding: 1px 9px;
+  border-radius: 5px;
+  font-family: var(--font-mono);
 }
 
 .icon {
-	background: var(--statuscolor);
-	min-height: 6rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding-top: 1.5rem;
+  background: var(--statuscolor);
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
 
-	.testText {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-	}
+  .testText {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 
-	.testIcon {
-		flex: 1;
-	}
+  .testIcon {
+    flex: 1;
+  }
 }
 
 .test h3 {
-	font-size: 1.4rem;
-	color: var(--theme-ink);
-	line-height: 2rem;
+  font-size: 1.4rem;
+  color: var(--theme-ink);
+  line-height: 2rem;
 }
 
 .message {
-	margin-left: 2rem;
-	margin-top: 1rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 .section {
-	margin-bottom: 1rem;
-	border: 2px solid var(--validatorResult-black);
+  margin-bottom: 1rem;
+  border: 2px solid var(--validatorResult-black);
 }
 
 .endpointContainer {
-	padding: 1rem;
-	background: var(--validatorResult-background);
-	display: flex;
-	justify-content: space-between;
+  padding: 1rem;
+  background: var(--validatorResult-background);
+  display: flex;
+  justify-content: space-between;
 
-	.endpointContainerLeft {
-		flex: 0 0 350px;
+  .endpointContainerLeft {
+    flex: 0 0 350px;
 
-		.light {
-			font-weight: 500;
-			color: var(--validatorResult-black);
-			display: block;
-			font-size: 1rem;
-			margin-bottom: 0.8rem;
-		}
-	}
+    .light {
+      font-weight: 500;
+      color: var(--validatorResult-black);
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+  }
 
-	.endpointContainerRight {
-		flex: 1;
-		text-align: right;
-	}
+  .endpointContainerRight {
+    flex: 1;
+    text-align: right;
+  }
 }
 
 .tabs {
-	& button {
-		appearance: none;
-		padding: 1rem 1rem;
-		background: transparent;
-		border: 0;
-		border-bottom: 4px transparent solid;
-		margin: 0 2rem 0 0;
-		cursor: pointer;
-		text-align: left;
-		color: var(--theme-ink);
-	}
+  & button {
+    appearance: none;
+    padding: 1rem 1rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 4px transparent solid;
+    margin: 0 2rem 0 0;
+    cursor: pointer;
+    text-align: left;
+    color: var(--theme-ink);
+  }
 
-	& button.activeTab {
-		border-bottom: 4px solid var(--theme-ink);
-	}
+  & button.activeTab {
+    border-bottom: 4px solid var(--theme-ink);
+  }
 }
 
 .tabContent {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 /* MOBILE */
 @media only screen and (max-width: 1024px) {
-	.tabs {
-		& button {
-			font-family: 0.9rem;
-			padding: 1rem 0.4rem;
-			margin: 0;
-		}
-	}
+  .tabs {
+    & button {
+      font-family: 0.9rem;
+      padding: 1rem 0.4rem;
+      margin: 0;
+    }
+  }
 
-	.endpointContainer {
-		display: block;
+  .endpointContainer {
+    display: block;
 
-		.endpointContainerRight {
-			text-align: left;
-		}
-	}
+    .endpointContainerRight {
+      text-align: left;
+    }
+  }
 
-	.test .icon {
-		margin-top: 1rem;
-	}
+  .test .icon {
+    margin-top: 1rem;
+  }
 }

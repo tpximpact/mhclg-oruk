@@ -5,7 +5,7 @@ import { PageMargin } from '@/components/PageMargin'
 
 export default function Error({
   error,
-  reset,
+  reset
 }: {
   error: Error & { digest?: string }
   reset: () => void
@@ -18,10 +18,12 @@ export default function Error({
   return (
     <PageMargin>
       <div style={{ padding: '2rem 0' }}>
-        <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Unable to Load Developer Resources</h1>
+        <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+          Unable to Load Developer Resources
+        </h1>
         <p style={{ marginBottom: '2rem' }}>
-          We&apos;re unable to load this developer resource at the moment. This may be due to missing
-          specification files or a temporary issue.
+          We&apos;re unable to load this developer resource at the moment. This may be due to
+          missing specification files or a temporary issue.
         </p>
         <p style={{ marginBottom: '2rem' }}>
           Please try again later or contact support if the problem persists.

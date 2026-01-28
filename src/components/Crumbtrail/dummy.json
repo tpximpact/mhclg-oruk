@@ -1,17 +1,17 @@
 [
-	{
-		"name": "developers",
-		"label": "For developers",
-		"urlPath": "/developer",
-		"contentPath": "/developer",
-		"children": ["data-standard", "api", "tools"]
-	},
-	{
-		"name": "tools",
-		"label": "Tools",
-		"urlPath": "/developer/tools",
-		"contentPath": "/developer/tools",
-		"children": ["api-query", "exporter", "validator", "dashboard"],
-		"parent": "developers"
-	}
+  {
+    "name": "developers",
+    "label": "For developers",
+    "urlPath": "/developer",
+    "contentPath": "/developer",
+    "children": ["data-standard", "api", "tools"]
+  },
+  {
+    "name": "tools",
+    "label": "Tools",
+    "urlPath": "/developer/tools",
+    "contentPath": "/developer/tools",
+    "children": ["api-query", "exporter", "validator", "dashboard"],
+    "parent": "developers"
+  }
 ]

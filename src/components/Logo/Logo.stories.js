@@ -1,8 +1,8 @@
 import { Logo } from './Logo'
 
 export default {
-	title: 'Hub/Logo',
-	component: Logo
+  title: 'Hub/Logo',
+  component: Logo
 }
 
 export const Basic = () => <Logo />

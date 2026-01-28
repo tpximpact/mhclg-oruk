@@ -1,18 +1,18 @@
 .DocumentationFeatureSection {
-	+ .DocumentationFeatureSection {
-		margin-top: 1rem;
-	}
+  + .DocumentationFeatureSection {
+    margin-top: 1rem;
+  }
 
-	.description {
-		margin-bottom: 1rem;
-		font-style: italic;
-	}
+  .description {
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
 
-	.Box {
-		border: 1px solid var(--theme-ink);
-	}
+  .Box {
+    border: 1px solid var(--theme-ink);
+  }
 
-	& h3 {
-		font-size: 1.2rem !important;
-	}
+  & h3 {
+    font-size: 1.2rem !important;
+  }
 }

@@ -1,44 +1,44 @@
 .box {
-	border: 1px solid var(--theme-ink);
-	margin-bottom: 4rem;
+  border: 1px solid var(--theme-ink);
+  margin-bottom: 4rem;
 }
 
 .box > div {
-	margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .box > div > div:first-child {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .box > div > div:last-child {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .box label {
-	display: block;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  display: block;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .box select {
-	width: 100%;
-	font-weight: 900;
-	font-size: 1rem;
-	color: var(--versioned-document-picker-fg);
+  width: 100%;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--versioned-document-picker-fg);
 }
 
 .box p {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 .box.current {
-	/*
+  /*
 	border-color: var(--VersionedDocumentation-current-border-color);
 	background: var(--VersionedDocumentation-current-background);
 	color: var(--VersionedDocumentation-current-color);
@@ -46,7 +46,7 @@
 }
 
 .box.current select {
-	/*
+  /*
 	border-color: var(--VersionedDocumentation-current-border-color);
 	background: var(--VersionedDocumentation-current-background);
 	color: var(--VersionedDocumentation-current-color);
@@ -54,17 +54,17 @@
 }
 
 .box.legacy {
-	border-color: var(--VersionedDocumentation-legacy-border-color);
-	background: var(--VersionedDocumentation-legacy-background);
-	color: var(--VersionedDocumentation-legacy-color);
+  border-color: var(--VersionedDocumentation-legacy-border-color);
+  background: var(--VersionedDocumentation-legacy-background);
+  color: var(--VersionedDocumentation-legacy-color);
 }
 
 .box.legacy a {
-	color: var(--VersionedDocumentation-legacy-color) !important;
+  color: var(--VersionedDocumentation-legacy-color) !important;
 }
 
 .box.legacy select {
-	border-color: var(--VersionedDocumentation-legacy-border-color);
-	background: var(--VersionedDocumentation-legacy-background);
-	color: var(--VersionedDocumentation-legacy-color);
+  border-color: var(--VersionedDocumentation-legacy-border-color);
+  background: var(--VersionedDocumentation-legacy-background);
+  color: var(--VersionedDocumentation-legacy-color);
 }

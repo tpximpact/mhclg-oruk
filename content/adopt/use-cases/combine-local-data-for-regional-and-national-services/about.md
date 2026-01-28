@@ -1,4 +1,5 @@
-## About 
+## About
+
 Manually collecting and maintaining service data for an entire region or country is a huge and often duplicated effort.
 
 This approach uses an aggregator to combine data from multiple publishers (such as local authorities and councils) into one central, reusable dataset.

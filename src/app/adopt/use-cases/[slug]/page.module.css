@@ -1,12 +1,12 @@
 .imageContainer {
-	align-self: center;
+  align-self: center;
 
-	img {
-		width: 100%;
-		height: auto;	
-	}
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .columnSpacing {
-	gap: 5rem;
+  gap: 5rem;
 }

@@ -2,11 +2,9 @@ jest.mock('@/lib/github', () => ({
   octokit: {
     rest: {
       issues: {
-        create: jest
-          .fn()
-          .mockResolvedValue({
-            data: { id: 123, html_url: 'https://github.com/owner/repo/issues/1' }
-          })
+        create: jest.fn().mockResolvedValue({
+          data: { id: 123, html_url: 'https://github.com/owner/repo/issues/1' }
+        })
       }
     }
   }

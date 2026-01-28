@@ -1,44 +1,44 @@
 /* via https://codepen.io/raubaca/pen/bGWmZje */
 
 .sorting {
-	--arrow-bg: var(--sorting-arrow-bg);
-	--arrow-icon: var(--sorting-arrow-icon);
-	--option-bg: var(--sorting-option-bg);
-	--select-bg: var(--sorting-select-bg);
+  --arrow-bg: var(--sorting-arrow-bg);
+  --arrow-icon: var(--sorting-arrow-icon);
+  --option-bg: var(--sorting-option-bg);
+  --select-bg: var(--sorting-select-bg);
 }
 
 .sorting label {
-	font-weight: bold;
-	margin-right: 2rem;
+  font-weight: bold;
+  margin-right: 2rem;
 }
 
 .sorting select {
-	/* Reset */
-	appearance: none;
-	border: 0;
-	outline: 0;
-	font: inherit;
-	/* Personalize */
-	width: 20rem;
-	padding: 1rem 4rem 1rem 1rem;
-	background:
-		var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
-		linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
-	color: var(--sorting-select-color);
-	border-radius: 0.25em;
-	box-shadow: 0 0 1em 0 var(--sorting-box-shadow-color);
-	cursor: pointer;
-	/* Remove IE arrow */
-	&::-ms-expand {
-		display: none;
-	}
-	/* Remove focus outline */
-	&:focus {
-		outline: none;
-	}
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background:
+    var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: var(--sorting-select-color);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 var(--sorting-box-shadow-color);
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
 }
 /* <option> colors */
 .sorting option {
-	color: inherit;
-	background-color: var(--option-bg);
+  color: inherit;
+  background-color: var(--option-bg);
 }

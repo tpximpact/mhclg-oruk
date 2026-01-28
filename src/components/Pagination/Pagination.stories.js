@@ -1,17 +1,17 @@
 import { Pagination } from './Pagination'
 
 const dummyPageChange = (baseUrl, targetPage) => {
-	alert('would request page ' + baseUrl + targetPage)
+  alert('would request page ' + baseUrl + targetPage)
 }
 
 export default {
-	title: 'Hub/Pagination',
-	component: Pagination
+  title: 'Hub/Pagination',
+  component: Pagination
 }
 
 const defaultArgs = {
-	baseUrl: 'http://example.com/page?number=',
-	pageChangeFunction: dummyPageChange
+  baseUrl: 'http://example.com/page?number=',
+  pageChangeFunction: dummyPageChange
 }
 
 export const PageOneOfFour = () => <Pagination {...defaultArgs} numPages={4} currentPage={1} />
@@ -23,12 +23,12 @@ export const PageThreeOfFour = () => <Pagination {...defaultArgs} numPages={4} c
 export const PageFourOfFour = () => <Pagination {...defaultArgs} numPages={4} currentPage={4} />
 
 export const PageTwoOfOneHundred = () => (
-	<>
-		<p>
-			NB: This is a stress test, not supported functionality. Anticipated number of pages is
-			currently low so for now just dont break. Better future behaviour woukd be a window of, eg 2
-			pages either side of current page...
-		</p>
-		<Pagination {...defaultArgs} numPages={100} currentPage={2} />
-	</>
+  <>
+    <p>
+      NB: This is a stress test, not supported functionality. Anticipated number of pages is
+      currently low so for now just dont break. Better future behaviour woukd be a window of, eg 2
+      pages either side of current page...
+    </p>
+    <Pagination {...defaultArgs} numPages={100} currentPage={2} />
+  </>
 )

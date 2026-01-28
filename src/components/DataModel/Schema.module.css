@@ -1,10 +1,10 @@
 .properties {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 .propertiesList {
-	border: 1px solid var(--theme-ink);
+  border: 1px solid var(--theme-ink);
 }
 
 .properties summary {
-	cursor: pointer;
+  cursor: pointer;
 }

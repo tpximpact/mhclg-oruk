@@ -1,14 +1,14 @@
 .button {
-	color: var(--button-color);
-	border: 3px solid var(--button-border-color);
-	background: var(--button-background-color);
-	padding: 0.5rem 2rem;
-	margin: 1rem 0;
+  color: var(--button-color);
+  border: 3px solid var(--button-border-color);
+  background: var(--button-background-color);
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
 }
 
 .button:disabled,
 .button[disabled] {
-	color: var(--button-disabled-color);
-	border: 3px solid var(--button-disabled-border-color);
-	background: var(--button-disabled-border-color);
+  color: var(--button-disabled-color);
+  border: 3px solid var(--button-disabled-border-color);
+  background: var(--button-disabled-border-color);
 }

@@ -21,16 +21,22 @@ test('developers register page submits form', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Publisher organisation name' }).fill('test')
 
   await page.getByRole('textbox', { name: 'Publisher organisation URL' }).click()
-  await page.getByRole('textbox', { name: 'Publisher organisation URL' }).fill('https://example.com')
+  await page
+    .getByRole('textbox', { name: 'Publisher organisation URL' })
+    .fill('https://example.com')
 
   await page.getByRole('textbox', { name: 'Publisher organisation email' }).click()
-  await page.getByRole('textbox', { name: 'Publisher organisation email' }).fill('publicITteam@org.com')
+  await page
+    .getByRole('textbox', { name: 'Publisher organisation email' })
+    .fill('publicITteam@org.com')
 
   await page.getByRole('textbox', { name: 'Developer organisation name' }).click()
   await page.getByRole('textbox', { name: 'Developer organisation name' }).fill('test')
 
   await page.getByRole('textbox', { name: 'Developer organisation URL' }).click()
-  await page.getByRole('textbox', { name: 'Developer organisation URL' }).fill('https://example.com')
+  await page
+    .getByRole('textbox', { name: 'Developer organisation URL' })
+    .fill('https://example.com')
 
   await page.getByRole('button', { name: 'Register' }).click()
 

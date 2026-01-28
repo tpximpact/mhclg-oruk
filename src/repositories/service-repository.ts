@@ -9,7 +9,7 @@ import {
   insertServiceSchema,
   serviceResponseSchema,
   toServiceResponse,
-  ServiceInput,
+  ServiceInput
 } from '@/models/service'
 
 export class ServiceRepository extends BaseRepository<
@@ -24,7 +24,9 @@ export class ServiceRepository extends BaseRepository<
 
   async create(data: ServiceInput): Promise<ServiceResponse>
   async create(data: OptionalUnlessRequiredId<InsertService>): Promise<ServiceResponse>
-  async create(data: ServiceInput | OptionalUnlessRequiredId<InsertService>): Promise<ServiceResponse> {
+  async create(
+    data: ServiceInput | OptionalUnlessRequiredId<InsertService>
+  ): Promise<ServiceResponse> {
     const now = new Date()
 
     // If caller passed an already-formed InsertService (nested), forward directly
@@ -52,7 +54,7 @@ export class ServiceRepository extends BaseRepository<
       lastTested: { value: null },
       active: flat.active ?? false,
       createdAt: now,
-      updatedAt: now,
+      updatedAt: now
     }
 
     return super.create(insertData)
@@ -60,7 +62,7 @@ export class ServiceRepository extends BaseRepository<
 
   protected toResponse(doc: ServiceDocument): ServiceResponse {
     //console.log('Converting ServiceDocument to ServiceResponse:', doc)
-    
+
     return toServiceResponse(doc)
   }
 
@@ -81,7 +83,7 @@ export class ServiceRepository extends BaseRepository<
     return this.update(id, {
       status,
       statusNote: note,
-      updatedAt: new Date(),
+      updatedAt: new Date()
     })
   }
 
@@ -91,8 +93,8 @@ export class ServiceRepository extends BaseRepository<
       $or: [
         { 'name.value': { $regex: query, $options: 'i' } },
         { 'description.value': { $regex: query, $options: 'i' } },
-        { 'publisher.value': { $regex: query, $options: 'i' } },
-      ],
+        { 'publisher.value': { $regex: query, $options: 'i' } }
+      ]
     }
     return this.find(filter)
   }

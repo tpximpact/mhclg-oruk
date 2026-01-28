@@ -11,43 +11,43 @@ import { PageMargin } from '@/components/PageMargin'
 const contentFilePath = 'adopt/how-to-adopt-the-oruk-standard'
 
 export async function generateMetadata(): Promise<Metadata> {
-	const { data } = await getMarkdownData(contentFilePath, 'index')
+  const { data } = await getMarkdownData(contentFilePath, 'index')
 
-	if (!data) {
-		return {}
-	}
+  if (!data) {
+    return {}
+  }
 
-	return {
-		title: data.title,
-		description: data.description
-	}
+  return {
+    title: data.title,
+    description: data.description
+  }
 }
 
 export default async function Page() {
-	const { data, content } = await getMarkdownData(contentFilePath, 'index')
+  const { data, content } = await getMarkdownData(contentFilePath, 'index')
 
-	if (!data || !content) {
-		return notFound()
-	}
+  if (!data || !content) {
+    return notFound()
+  }
 
-	return (
-		<PageMargin>
-			<section>
-				<Feedback />
-			</section>
-			<section>
-				<Columns
-					layout='42'
-					className={styles.useCasesMarkdownStyle}
-					debug={undefined}
-					supressTrailingSpace={undefined}
-				>
-					<MarkdownComponent html={content} />
-				</Columns>
-			</section>
-			<section>
-				<ArticleDateComponent date={data.modified} />
-			</section>
-		</PageMargin>
-	)
+  return (
+    <PageMargin>
+      <section>
+        <Feedback />
+      </section>
+      <section>
+        <Columns
+          layout='42'
+          className={styles.useCasesMarkdownStyle}
+          debug={undefined}
+          supressTrailingSpace={undefined}
+        >
+          <MarkdownComponent html={content} />
+        </Columns>
+      </section>
+      <section>
+        <ArticleDateComponent date={data.modified} />
+      </section>
+    </PageMargin>
+  )
 }
