@@ -2,39 +2,39 @@
 }
 
 .samplesList {
-	list-style: none;
-	margin-top: 1rem;
+  list-style: none;
+  margin-top: 1rem;
 }
 
 .samplesList li {
-	margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .submit {
-	padding: 0.2rem 2rem;
+  padding: 0.2rem 2rem;
 }
 
 .example {
-	display: block;
-	font-style: italic;
-	margin-top: 0.5rem;
+  display: block;
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
 .label {
-	display: block;
-	font-weight: bold;
+  display: block;
+  font-weight: bold;
 }
 
 .label input {
-	margin: 0;
-	width: 30rem;
-	display: block;
-	font-weight: normal;
-	padding: 5px;
-	border-radius: 0;
-	border: 1px solid var(--ValidatorForm-border-color);
+  margin: 0;
+  width: 30rem;
+  display: block;
+  font-weight: normal;
+  padding: 5px;
+  border-radius: 0;
+  border: 1px solid var(--ValidatorForm-border-color);
 }
 
 .submit {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }

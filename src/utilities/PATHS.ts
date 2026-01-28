@@ -2,6 +2,6 @@
  * Paths constants.
  */
 export const PATHS = {
-	contentRoot: 'content',
-	developer: 'developer'
+  contentRoot: 'content',
+  developer: 'developer'
 } as const

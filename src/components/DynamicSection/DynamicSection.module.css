@@ -1,43 +1,43 @@
 .mainHeading {
-	margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
 /* content page */
 
 .links {
-	display: flex;
-	margin-bottom: 2rem;
+  display: flex;
+  margin-bottom: 2rem;
 
-	& a {
-		/* TODO - this shoildnt need repearing here - investigate */
-		color: var(--theme-anchor);
-		text-decoration: underline;
-		text-decoration-color: var(--theme-anchor-underline);
-		text-decoration-thickness: 10%;
-		text-underline-position: under;
-		cursor: pointer;
-		font-weight: var(--link-weight);
-	}
+  & a {
+    /* TODO - this shoildnt need repearing here - investigate */
+    color: var(--theme-anchor);
+    text-decoration: underline;
+    text-decoration-color: var(--theme-anchor-underline);
+    text-decoration-thickness: 10%;
+    text-underline-position: under;
+    cursor: pointer;
+    font-weight: var(--link-weight);
+  }
 }
 
 .spacer {
-	flex: 0 0 30vw;
+  flex: 0 0 30vw;
 }
 
 .blank,
 .linkedPage {
-	flex: 1;
+  flex: 1;
 }
 
 .linkedPage:first-child {
-	text-align: left;
+  text-align: left;
 }
 
 .linkedPage:last-child {
-	text-align: right;
+  text-align: right;
 }
 
 .articleDate {
-	font-style: italic;
-	margin-bottom: 2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
 }

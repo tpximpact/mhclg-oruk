@@ -1,25 +1,25 @@
 .hidden {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 svg.logographic {
-	fill: var(--theme-ink);
+  fill: var(--theme-ink);
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

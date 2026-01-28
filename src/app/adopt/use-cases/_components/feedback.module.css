@@ -1,29 +1,29 @@
 .feedbackContainer {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5em;
-	border-left: 8px solid #00625e;
-	background-color: #fcf2e3;
-	padding: 1em;
-	margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  border-left: 8px solid #00625e;
+  background-color: #fcf2e3;
+  padding: 1em;
+  margin-bottom: 1em;
 
-	h1 {
-		color: #00625e;
-		font-size: 1em;
-		font-weight: normal;
-	}
+  h1 {
+    color: #00625e;
+    font-size: 1em;
+    font-weight: normal;
+  }
 
-	svg {
-		display: none;
-	}
+  svg {
+    display: none;
+  }
 
-	@media (min-width: 768px) {
-		justify-content: center;
-		align-items: center;
-		margin-bottom: 3em;
+  @media (min-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
 
-		svg {
-			display: block; /* Or inline-block, flex, etc. */
-		}
-	}
+    svg {
+      display: block; /* Or inline-block, flex, etc. */
+    }
+  }
 }

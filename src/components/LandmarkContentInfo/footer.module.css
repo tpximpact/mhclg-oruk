@@ -1,24 +1,24 @@
 .footer {
-	display: block;
-	margin-top: 0;
-	/*background: #eee;*/
+  display: block;
+  margin-top: 0;
+  /*background: #eee;*/
 }
 
 .bottom {
-	/*dbackground: var(--theme-footer-bg);
+  /*dbackground: var(--theme-footer-bg);
 	dcolor: var(--theme-footer-fg);*/
-	padding: 0 0 1rem 0;
+  padding: 0 0 1rem 0;
 }
 
 .bottom a {
-	display: block;
-	margin-bottom: 1rem;
-	font-weight: var(--link-weight);
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: var(--link-weight);
 }
 .copyright {
-	font-size: 0.9rem;
-	max-width: 90vw;
+  font-size: 0.9rem;
+  max-width: 90vw;
 }
 .break {
-	display: inline !important;
+  display: inline !important;
 }

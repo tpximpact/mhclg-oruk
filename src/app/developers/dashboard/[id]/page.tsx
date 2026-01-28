@@ -40,7 +40,7 @@ function transformServiceForDashboard(service: any) {
     service.statusIsValid && typeof service.statusIsValid === 'boolean'
       ? service.statusIsValid
       : extractValue(service.statusIsValid)
-  
+
   return {
     result: {
       title: { value: title },

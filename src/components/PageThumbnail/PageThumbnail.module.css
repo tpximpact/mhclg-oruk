@@ -1,33 +1,33 @@
 .thumbnail,
 .thumbnail * {
-	text-decoration: none;
-	font-weight: normal;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 .itemHeading {
-	/* TODO - this shouldnt need repearing here - investigate */
-	color: var(--theme-anchor);
-	text-decoration: underline;
-	text-decoration-color: var(--theme-anchor-underline);
-	text-decoration-thickness: 10%;
-	text-underline-position: under;
-	cursor: pointer;
-	font-weight: var(--link-weight);
+  /* TODO - this shouldnt need repearing here - investigate */
+  color: var(--theme-anchor);
+  text-decoration: underline;
+  text-decoration-color: var(--theme-anchor-underline);
+  text-decoration-thickness: 10%;
+  text-underline-position: under;
+  cursor: pointer;
+  font-weight: var(--link-weight);
 }
 
 .itemHeading {
-	font-weight: 800;
-	display: block;
-	font-size: 1.2rem;
+  font-weight: 800;
+  display: block;
+  font-size: 1.2rem;
 }
 
 .itemDate {
-	display: block;
-	font-style: italic;
-	font-size: 1.2rem;
+  display: block;
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
 .itemBody {
-	display: block;
-	margin-top: 0.5rem;
+  display: block;
+  margin-top: 0.5rem;
 }

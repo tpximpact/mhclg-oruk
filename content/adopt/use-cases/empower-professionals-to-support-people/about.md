@@ -6,7 +6,7 @@ By providing a single, up-to-date data source, you can present services in a way
 
 This makes matching clients to community-based support more efficient by enabling professionals to search, filter, and match services based on criteria such as:
 
-* Age
-* Location
-* Needs
-* Circumstances
+- Age
+- Location
+- Needs
+- Circumstances

@@ -1,160 +1,160 @@
 {
-	"rows": [
-		{
-			"tranche": {
-				"content": "Leadership"
-			},
-			"deliverable": {
-				"content": "Discovery landscape"
-			},
-			"tasks": {
-				"content": "Interviews/workshops with stakeholders to understand current processes, software and resources."
-			},
-			"effort": {
-				"content": "PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts"
-			},
-			"months": [1]
-		},
-		{
-			"tranche": {
-				"content": "Leadership",
-				"hide": true
-			},
-			"deliverable": {
-				"content": "Agree the scope"
-			},
-			"tasks": {
-				"content": "Agree who & which software will be involved in collection, aggregation and consumption."
-			},
-			"effort": {
-				"content": "PM will make recommendation to project board to make a decision"
-			},
-			"months": [1]
-		},
-		{
-			"tranche": {
-				"content": "Collect & manage data"
-			},
-			"deliverable": {
-				"content": "Process of collecting data"
-			},
-			"tasks": {
-				"content": "Map out the process to be used for collecting data into a single repository"
-			},
-			"effort": {
-				"content": "Service provider/collector will submit their data in 1 day.Collectors will continue to work in the scope"
-			},
-			"months": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-		},
-		{
-			"tranche": {
-				"content": "Assure data quality"
-			},
-			"deliverable": {
-				"content": "Repository of trusted data"
-			},
-			"tasks": {
-				"content": "Allocate service providers to a team of assurers, with guidance on how data can be trusted by consumers."
-			},
-			"effort": {
-				"content": "Assurer will work on initial data for 0.5 day per service provider and then 0.25 per regular assurance"
-			},
-			"months": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-		},
-		{
-			"tranche": {
-				"content": "Publish & re-use"
-			},
-			"deliverable": {
-				"content": "Aggregating into single repository"
-			},
-			"tasks": {
-				"content": "A database will be used to store all the collected data. De-duplication should be considered"
-			},
-			"effort": {
-				"content": "Automated process will need to be set up and then used throughout project "
-			},
-			"months": [4, 5, 6, 7, 8, 9, 10, 11, 12]
-		},
-		{
-			"tranche": {
-				"content": " Publish & re-use  ",
-				"hide": true
-			},
-			"deliverable": {
-				"content": "  Building the API "
-			},
-			"tasks": {
-				"content": " An API will be built and validated through ORUK validator  "
-			},
-			"effort": {
-				"content": " This could be purchasing a licence, re-using open source or building from scratch. Expected £10k costs.  "
-			},
-			"months": [1, 2]
-		},
-		{
-			"tranche": {
-				"content": "  Publish & re-use ",
-				"hide": true
-			},
-			"deliverable": {
-				"content": " Applications showing use of collected data  "
-			},
-			"tasks": {
-				"content": " The consumers will need to be able to extract appropriate data from the API and use in their process/application  "
-			},
-			"effort": {
-				"content": "\n- New import routines, changed user interfaces. \n- Expected costs £10k.\n- Test against API\n"
-			},
-			"months": [1, 2, 3, 4]
-		},
-		{
-			"tranche": {
-				"content": "  Publish & re-use ",
-				"hide": true
-			},
-			"deliverable": {
-				"content": "  Applications showing use of collected data ",
-				"hide": true
-			},
-			"tasks": {
-				"content": "  The consumers will need to be able to extract appropriate data from the API and use in their process/application ",
-				"hide": true
-			},
-			"effort": {
-				"content": "\n- Run live in private beta. \n- Run live in public beta "
-			},
-			"months": [5, 6, 7, 8, 9, 10, 11]
-		},
-		{
-			"tranche": {
-				"content": " Performance monitoring  "
-			},
-			"deliverable": {
-				"content": "  Management report "
-			},
-			"tasks": {
-				"content": " Define the management data that is required including evidence for business case  "
-			},
-			"effort": {
-				"content": " Write Power BI, Tableau report using data from repository and applications  "
-			},
-			"months": [12]
-		},
-		{
-			"tranche": {
-				"content": " Project close  "
-			},
-			"deliverable": {
-				"content": " Recommendations for scaling  "
-			},
-			"tasks": {
-				"content": " Document all lessons learned, what worked and new ideas for scaling further. Give opinion whether the business case and concept is proven.  "
-			},
-			"effort": {
-				"content": " PM to write bullet point list under main headings of Collect, Assure and Re-use to support a further scaling of the project  "
-			},
-			"months": [12]
-		}
-	]
+  "rows": [
+    {
+      "tranche": {
+        "content": "Leadership"
+      },
+      "deliverable": {
+        "content": "Discovery landscape"
+      },
+      "tasks": {
+        "content": "Interviews/workshops with stakeholders to understand current processes, software and resources."
+      },
+      "effort": {
+        "content": "PM plus a facilitator if required will spend up to 20 days finding out and mapping current efforts"
+      },
+      "months": [1]
+    },
+    {
+      "tranche": {
+        "content": "Leadership",
+        "hide": true
+      },
+      "deliverable": {
+        "content": "Agree the scope"
+      },
+      "tasks": {
+        "content": "Agree who & which software will be involved in collection, aggregation and consumption."
+      },
+      "effort": {
+        "content": "PM will make recommendation to project board to make a decision"
+      },
+      "months": [1]
+    },
+    {
+      "tranche": {
+        "content": "Collect & manage data"
+      },
+      "deliverable": {
+        "content": "Process of collecting data"
+      },
+      "tasks": {
+        "content": "Map out the process to be used for collecting data into a single repository"
+      },
+      "effort": {
+        "content": "Service provider/collector will submit their data in 1 day.Collectors will continue to work in the scope"
+      },
+      "months": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    },
+    {
+      "tranche": {
+        "content": "Assure data quality"
+      },
+      "deliverable": {
+        "content": "Repository of trusted data"
+      },
+      "tasks": {
+        "content": "Allocate service providers to a team of assurers, with guidance on how data can be trusted by consumers."
+      },
+      "effort": {
+        "content": "Assurer will work on initial data for 0.5 day per service provider and then 0.25 per regular assurance"
+      },
+      "months": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    },
+    {
+      "tranche": {
+        "content": "Publish & re-use"
+      },
+      "deliverable": {
+        "content": "Aggregating into single repository"
+      },
+      "tasks": {
+        "content": "A database will be used to store all the collected data. De-duplication should be considered"
+      },
+      "effort": {
+        "content": "Automated process will need to be set up and then used throughout project "
+      },
+      "months": [4, 5, 6, 7, 8, 9, 10, 11, 12]
+    },
+    {
+      "tranche": {
+        "content": " Publish & re-use  ",
+        "hide": true
+      },
+      "deliverable": {
+        "content": "  Building the API "
+      },
+      "tasks": {
+        "content": " An API will be built and validated through ORUK validator  "
+      },
+      "effort": {
+        "content": " This could be purchasing a licence, re-using open source or building from scratch. Expected £10k costs.  "
+      },
+      "months": [1, 2]
+    },
+    {
+      "tranche": {
+        "content": "  Publish & re-use ",
+        "hide": true
+      },
+      "deliverable": {
+        "content": " Applications showing use of collected data  "
+      },
+      "tasks": {
+        "content": " The consumers will need to be able to extract appropriate data from the API and use in their process/application  "
+      },
+      "effort": {
+        "content": "\n- New import routines, changed user interfaces. \n- Expected costs £10k.\n- Test against API\n"
+      },
+      "months": [1, 2, 3, 4]
+    },
+    {
+      "tranche": {
+        "content": "  Publish & re-use ",
+        "hide": true
+      },
+      "deliverable": {
+        "content": "  Applications showing use of collected data ",
+        "hide": true
+      },
+      "tasks": {
+        "content": "  The consumers will need to be able to extract appropriate data from the API and use in their process/application ",
+        "hide": true
+      },
+      "effort": {
+        "content": "\n- Run live in private beta. \n- Run live in public beta "
+      },
+      "months": [5, 6, 7, 8, 9, 10, 11]
+    },
+    {
+      "tranche": {
+        "content": " Performance monitoring  "
+      },
+      "deliverable": {
+        "content": "  Management report "
+      },
+      "tasks": {
+        "content": " Define the management data that is required including evidence for business case  "
+      },
+      "effort": {
+        "content": " Write Power BI, Tableau report using data from repository and applications  "
+      },
+      "months": [12]
+    },
+    {
+      "tranche": {
+        "content": " Project close  "
+      },
+      "deliverable": {
+        "content": " Recommendations for scaling  "
+      },
+      "tasks": {
+        "content": " Document all lessons learned, what worked and new ideas for scaling further. Give opinion whether the business case and concept is proven.  "
+      },
+      "effort": {
+        "content": " PM to write bullet point list under main headings of Collect, Assure and Re-use to support a further scaling of the project  "
+      },
+      "months": [12]
+    }
+  ]
 }
