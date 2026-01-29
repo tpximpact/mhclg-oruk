@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import * as fs from 'fs'
 import * as path from 'path'
