@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Banner } from '../Banner'
+import { Banner } from '../index'
 
 describe('Banner', () => {
   it('should render banner with label', () => {

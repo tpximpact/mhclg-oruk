@@ -24,12 +24,12 @@ const nonDynamicPages = site
 const dynamicPages = site
   .filter(p => p.dynamic && p.contentPath && p.name)
   .flatMap(root => {
-    const dirPath = join(process.cwd(), '/content', root.contentPath)
+    const dirPath = join(process.cwd(), '/content', root.contentPath!)
     if (!fs.existsSync(dirPath)) return []
-    return getAllFiles(root.contentPath)
+    return getAllFiles(root.contentPath!)
       .map(n => slugify(n))
       .filter(s => s && s !== 'undefined')
-      .map(s => ({ path: `${root.contentPath}/${s}`, lookFor: null }))
+      .map(s => ({ path: `${root.contentPath}/${s}`, lookFor: 'open' }))
   })
 
 const data = nonDynamicPages
@@ -37,7 +37,7 @@ const data = nonDynamicPages
   .filter((value, index, self) => self.findIndex(v => v.path === value.path) === index)
 
 test.describe('Page Content Validation Tests', () => {
-  data.forEach(({ path, lookFor = 'open' }) => {
+  data.forEach(({ path, lookFor = 'open' }: { path: string; lookFor?: string }) => {
     test(`should find "${lookFor}" on ${path}`, async ({ page }: { page: Page }) => {
       // Navigate and capture response, then check status
       const response = await page.goto(path)
@@ -45,7 +45,7 @@ test.describe('Page Content Validation Tests', () => {
       expect(response!.status()).toBe(200)
 
       const bodyText = await page.textContent('body')
-      expect(bodyText).toContain(lookFor)
+      expect(bodyText).toContain(lookFor || 'open')
     })
   })
 })
