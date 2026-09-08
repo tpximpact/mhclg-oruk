@@ -13,7 +13,6 @@ updates:
     open-pull-requests-limit: 12 # Slightly higher is fine with groups
     labels:
       - 'dependencies'
-      - 'yarn' # Easier filtering than generic "npm"
     commit-message:
       prefix: 'chore'
       prefix-development: 'chore(dev)' # Distinguishes dev vs prod commits
