@@ -354,11 +354,32 @@ jobs:
     permissions:
       contents: write
     steps:
+      # Date-based tags read as a point in time, which is what a release
+      # marks. github.run_number is a workflow counter: it increments on
+      # unrelated runs and carries no meaning as a version.
+      - name: Compute release tag
+        id: tag
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          base="v$(date -u +'%Y.%m.%d')"
+          tag="$base"
+          n=1
+          # A second release on the same day would otherwise reuse the tag and
+          # fail, so append a suffix until an unused one is found.
+          while gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; do
+            tag="$base.$n"
+            n=$((n + 1))
+          done
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "Release tag: $tag"
+
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2.5.0
         with:
-          tag_name: v${{ github.run_number }}
-          name: Release v${{ github.run_number }}
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Release ${{ steps.tag.outputs.tag }}
+          generate_release_notes: true
           draft: false
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
