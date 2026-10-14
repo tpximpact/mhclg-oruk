@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v7.0.0
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -61,7 +61,7 @@ jobs:
         run: corepack enable
 
       - name: Restore Yarn cache
-        uses: actions/setup-node@v7.0.0
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
@@ -96,7 +96,7 @@ jobs:
 
       - name: Upload test artifacts
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: test-results
           path: ./coverage
@@ -123,21 +123,21 @@ jobs:
       # --- CodeQL ---
       - name: Initialize CodeQL
         if: matrix.check == 'codeql'
-        uses: github/codeql-action/init@v4.38.2
+        uses: github/codeql-action/init@v4.38.3
         with:
           languages: javascript-typescript
           build-mode: none
 
       - name: Perform CodeQL analysis
         if: matrix.check == 'codeql'
-        uses: github/codeql-action/analyze@v4.38.2
+        uses: github/codeql-action/analyze@v4.38.3
 
       # --- Playwright accessibility ---
       # This leg needs Node and dependencies, so it repeats the Corepack
       # ordering used by build-and-test.
       - name: Setup Node.js
         if: matrix.check == 'playwright-a11y'
-        uses: actions/setup-node@v7.0.0
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -147,7 +147,7 @@ jobs:
 
       - name: Restore Yarn cache
         if: matrix.check == 'playwright-a11y'
-        uses: actions/setup-node@v7.0.0
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
@@ -170,7 +170,7 @@ jobs:
 
       - name: Upload Playwright reports
         if: always() && matrix.check == 'playwright-a11y'
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: accessibility-reports
           path: |
@@ -200,7 +200,7 @@ jobs:
 
       - name: Upload Trivy FS SARIF
         if: always() && matrix.check == 'trivy-fs'
-        uses: github/codeql-action/upload-sarif@v4.38.2
+        uses: github/codeql-action/upload-sarif@v4.38.3
         with:
           sarif_file: trivy-fs-results.sarif
 
@@ -251,7 +251,7 @@ jobs:
 
       - name: Upload Trivy image SARIF
         if: always() && hashFiles('trivy-image-results.sarif') != ''
-        uses: github/codeql-action/upload-sarif@v4.38.2
+        uses: github/codeql-action/upload-sarif@v4.38.3
         with:
           sarif_file: trivy-image-results.sarif
 
