@@ -1,0 +1,107 @@
+name: Promotion drift
+
+# main only moves when someone opens a staging -> main pull request. Nothing
+# else does, while Dependabot keeps staging current on its own. In September
+# 2026 that gap reached 28 days and 17 merges, leaving a critical advisory
+# live in production with its fix already sitting on staging.
+#
+# This job watches the gap and keeps a single issue in step with it: opened
+# when the gap crosses a threshold, updated while it persists, closed when a
+# promotion clears it. It notifies only -- it opens no pull request and
+# changes no branch.
+
+on:
+  schedule:
+    - cron: '0 9 * * 1-5' # weekdays, 09:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  MAX_COMMITS: '5' # merges on staging before this is worth saying
+  MAX_DAYS: '7' # days since main last moved
+  ISSUE_TITLE: 'Promotion drift: main is behind staging'
+  ISSUE_LABEL: promotion-drift
+
+jobs:
+  check-drift:
+    name: Check main against staging
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Measure the gap
+        id: gap
+        run: |
+          git fetch --quiet origin main staging
+
+          commits=$(git rev-list --count origin/main..origin/staging)
+          merges=$(git rev-list --count --merges origin/main..origin/staging)
+          last=$(git log -1 --format=%cI origin/main)
+          days=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 86400 ))
+
+          over=false
+          if [ "$commits" -ge "$MAX_COMMITS" ] || [ "$days" -ge "$MAX_DAYS" ]; then
+            over=true
+          fi
+
+          {
+            echo "commits=$commits"
+            echo "merges=$merges"
+            echo "days=$days"
+            echo "last=${last%T*}"
+            echo "over=$over"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "staging is $commits commits ($merges merges) ahead; main last moved $days days ago on ${last%T*}"
+
+      - name: Open, update or close the drift issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMITS: ${{ steps.gap.outputs.commits }}
+          MERGES: ${{ steps.gap.outputs.merges }}
+          DAYS: ${{ steps.gap.outputs.days }}
+          LAST: ${{ steps.gap.outputs.last }}
+          OVER: ${{ steps.gap.outputs.over }}
+          REPO: ${{ github.repository }}
+        run: |
+          existing=$(gh issue list --repo "$REPO" --state open \
+            --label "$ISSUE_LABEL" --limit 1 --json number --jq '.[0].number // ""')
+
+          if [ "$OVER" != "true" ]; then
+            if [ -n "$existing" ]; then
+              gh issue close "$existing" --repo "$REPO" \
+                --comment "Closed automatically: main is now $COMMITS commits behind staging, last updated $LAST."
+              echo "gap cleared; closed #$existing"
+            else
+              echo "no drift, nothing open"
+            fi
+            exit 0
+          fi
+
+          # One issue, kept current. The body is rewritten each run rather than
+          # commented on, so a long-running gap does not accumulate noise.
+          body=$(cat <<BODY
+          \`main\` is **$COMMITS commits** behind \`staging\` ($MERGES merges), and last moved on **$LAST** — $DAYS days ago.
+
+          Production deploys from \`main\`, so anything merged to \`staging\` since then is not live. That includes dependency and security updates, which reach \`staging\` automatically but never move further on their own.
+
+          **To clear it:** open a \`staging\` → \`main\` pull request and merge it once \`Final Workflow Status\` passes. If \`main\` is ahead, sync it into \`staging\` first with a pull request — direct pushes are rejected.
+
+          This issue is maintained by [\`promotion-drift.yml\`](.github/workflows/promotion-drift.yml). It updates itself while the gap persists and closes once a promotion lands. Thresholds: $MAX_COMMITS commits or $MAX_DAYS days.
+          BODY
+          )
+          body=$(echo "$body" | sed 's/^          //')
+
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --repo "$REPO" --body "$body"
+            echo "updated #$existing"
+          else
+            gh issue create --repo "$REPO" --title "$ISSUE_TITLE" \
+              --label "$ISSUE_LABEL" --body "$body"
+            echo "opened a new drift issue"
+          fi
